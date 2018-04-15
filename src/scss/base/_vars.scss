@@ -1,0 +1,44 @@
+//Variables
+
+//FONT
+$f          :roboto-400, sans-serif;
+$f-light    :roboto-300, sans-serif;
+$f-medium   :roboto-500, sans-serif;
+$f-bold     :roboto-600, sans-serif;
+$f-black    :roboto-700, sans-serif;
+
+$font-size-base  : 16px;
+$font-family-base: $f;
+$line-height-base: 1.5;
+$font-weight-base: 400;
+
+//Отступы
+$base-indent   : 30px;
+$half-indent   : $base-indent / 2;
+$section-indent: 60px;
+
+//Base Variebles
+$color-accent              :#a40c95;
+
+//gray
+$gray                      :#707070; 
+$gray--dark                :#27303b; 
+
+//text
+$color-text                :$gray;
+$color-text--header        :#000;
+
+//bg
+$color-bg--dark            :#090113;
+
+$bg-gradient--from         :#090113;
+$bg-gradient--to           :#1c0439;
+
+//border
+$color-border              :$gray;
+$color-border--lighten     :#e5e5e5;
+
+$border-radius             :2px;
+
+
+$color-placeholder         :#999;

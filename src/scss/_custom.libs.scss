@@ -1,0 +1,59 @@
+//CUSTOM LIBS
+
+//noUiSlider
+.noUi-horizontal{
+	height: 2px;
+	.noUi-handle{
+		width: 8px;
+		height: 8px;
+		top: -3px;
+		left: -5px;
+		border-radius: 50%;
+		background: $color-accent;
+		@include max-screen(480) {
+			width: 10px;
+			height: 10px;
+		}
+	}
+}
+
+.noUi-handle{
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	position: relative;
+	cursor: pointer;
+	outline: none;
+	&::after{
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		background-color: rgba($color-accent, .5);
+		@include vcenter;
+		@include tr(.5s);
+		@include max-screen(480) {
+			width: 28px;
+			height: 28px;
+		}
+	}
+	&::before{
+		display: none;
+	}
+}
+
+.noUi-connect, .noUi-target{
+	background: $color-accent;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.noUi-base, .noUi-handle{background-color: $gray;}
+
+//Mas Gray
+[class*="ymaps-2"][class*="-ground-pane"] {
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    /* Firefox 3.5+ */
+    -webkit-filter: grayscale(100%);
+    /* Chrome 19+ & Safari 6+ */
+}

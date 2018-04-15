@@ -1,0 +1,103 @@
+.footer
+	//footer__top
+	&__top
+		padding: 55px 0 40px
+		border-bottom: 1px solid $color-border
+		@extend %flex
+		+r(768)
+			padding: 35px 0
+			border: 0
+			justify-content: center
+
+		//footer__top .footer__item
+		.footer__item
+			width: 20%
+			margin-right: 15px
+			&:last-child
+				margin-right: 0
+			+r(768)
+				width: auto
+				margin-right: 0
+
+	//footer__bottom
+	&__bottom
+		padding: 35px 0
+		font-size: 14px
+		@extend %flex
+		justify-content: space-between
+		+r(768)
+			flex-direction: column
+			padding: 0 0 35px
+		.policy
+			color: $gray
+
+		//footer__bottom .footer__item
+		.footer__item
+			width: 33.33%
+			margin-right: 15px
+			+r(768)
+				margin-right: 0
+				margin-bottom: 20px
+				width: auto
+				text-align: center
+				&_social
+					order: 3
+					margin-bottom: 0
+			&:last-child
+				margin-right: 0
+
+	//footer__item
+	&__item
+		&_social
+			@extend %flex
+			flex: 1
+			justify-content: center
+		&_dev
+			@extend %flex
+			text-align: right
+			.dev
+				display: block
+				margin-left: auto
+				text-align: center
+				+r(768)
+					margin: auto
+				span
+					display: block
+					+r(768)
+						display: inline-block
+
+	//footer__list
+	&__list
+		li
+			margin-bottom: 10px			
+		a
+			font-family: $f-light
+			color: #fff
+			&:hover
+				color: $color-accent
+//footer
+
+.block-pay
+	//block-pay__list
+	&__list
+		@extend %flexCenter
+	//block-pay__item
+	&__item
+		& + &
+			margin-left: 15px
+	//block-pay__icon
+	&__icon
+		width: 45px
+		height: 45px
+//block-pay
+
+
+.policy
+	&:hover
+		text-decoration: underline
+//policy
+
+.copyright
+	+r(768)
+		margin-bottom: 15px
+//copyright

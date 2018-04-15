@@ -1,0 +1,114 @@
+$icons: (0:0)
+$icons: map-merge($icons,('mobile__catalog': (X: 0px, Y:-184px, W: 17px, H: 16px, TW: 21px, TH: 252px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,('mobile__company': (X: 0px, Y:-158px, W: 16px, H: 16px, TW: 21px, TH: 252px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,('mobile__contacts': (X: 0px, Y:-110px, W: 14px, H: 14px, TW: 21px, TH: 252px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,('mobile__delivery': (X: 0px, Y:-42px, W: 21px, H: 12px, TW: 21px, TH: 252px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,('mobile__garanty': (X: 0px, Y:-64px, W: 13px, H: 13px, TW: 21px, TH: 252px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,('mobile__home': (X: 0px, Y:0px, W: 14px, H: 11px, TW: 21px, TH: 252px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,('mobile__news': (X: 0px, Y:-87px, W: 13px, H: 13px, TW: 21px, TH: 252px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,('mobile__partners': (X: 0px, Y:-134px, W: 16px, H: 14px, TW: 21px, TH: 252px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,('mobile__pay': (X: 0px, Y:-21px, W: 15px, H: 11px, TW: 21px, TH: 252px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,('mobile__user': (X: 0px, Y:-210px, W: 16px, H: 16px, TW: 21px, TH: 252px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,('telephone': (X: 0px, Y:-236px, W: 16px, H: 16px, TW: 21px, TH: 252px, IMG: '../img/icons.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+  $icon: map-get($icons, $icon)
+  @return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  width: icon-attr($iconName, W)
+  height: icon-attr($iconName, H)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  $width: icon-attr($iconName, W)
+  $height: icon-attr($iconName, H)
+  width: $width/2
+  height: $height/2
+  $x: icon-attr($iconName, X)
+  $y: icon-attr($iconName, Y)
+  background-position: $x/2 $y/2
+  $tw: icon-attr($iconName, TW)   
+  $th: icon-attr($iconName, TH)
+  background-size: $tw/2 $th/2    
+
+
+@mixin s($i)
+  +sprite($i)
+@mixin sp($i)
+  +sprite-position($i)
+@mixin sr($i)
+  +sprite-retina($i)  
+
+//
+//.icon-mobile__catalog
+//  width: 17px
+//  height: 16px
+//  background-image: url('../img/icons.png')
+//  background-position: 0px -184px
+//
+//.icon-mobile__company
+//  width: 16px
+//  height: 16px
+//  background-image: url('../img/icons.png')
+//  background-position: 0px -158px
+//
+//.icon-mobile__contacts
+//  width: 14px
+//  height: 14px
+//  background-image: url('../img/icons.png')
+//  background-position: 0px -110px
+//
+//.icon-mobile__delivery
+//  width: 21px
+//  height: 12px
+//  background-image: url('../img/icons.png')
+//  background-position: 0px -42px
+//
+//.icon-mobile__garanty
+//  width: 13px
+//  height: 13px
+//  background-image: url('../img/icons.png')
+//  background-position: 0px -64px
+//
+//.icon-mobile__home
+//  width: 14px
+//  height: 11px
+//  background-image: url('../img/icons.png')
+//  background-position: 0px 0px
+//
+//.icon-mobile__news
+//  width: 13px
+//  height: 13px
+//  background-image: url('../img/icons.png')
+//  background-position: 0px -87px
+//
+//.icon-mobile__partners
+//  width: 16px
+//  height: 14px
+//  background-image: url('../img/icons.png')
+//  background-position: 0px -134px
+//
+//.icon-mobile__pay
+//  width: 15px
+//  height: 11px
+//  background-image: url('../img/icons.png')
+//  background-position: 0px -21px
+//
+//.icon-mobile__user
+//  width: 16px
+//  height: 16px
+//  background-image: url('../img/icons.png')
+//  background-position: 0px -210px
+//
+//.icon-telephone
+//  width: 16px
+//  height: 16px
+//  background-image: url('../img/icons.png')
+//  background-position: 0px -236px
+//

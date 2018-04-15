@@ -1,0 +1,140 @@
+---
+title: Интернет-магазин износостойких автокомпонентов с доставкой по РФ
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<main class="main home">
+
+	<!-- begin cs-section -->
+	<section class="cs-section category">
+		<div class="container">
+
+			<h2 class="section-title">Категории товаров</h2>
+			<div class="category__items">
+				<div class="cs-grid-container">
+					<div class="cs-grid cs-grid--left">
+						<a href="#" class="category__item">
+							<span class="category__title">Элементы подвески</span>
+							<picture>
+								<source media="(max-width: 1024px)" srcset="img/general/category/tabl/1.png">
+								<source media="(max-width: 480px)" srcset="img/general/category/mob/1.png">
+								<img class="category__img" src="img/general/category/desk/1.png" alt="Элементы подвески">
+							</picture>
+						</a>
+						<div class="cs-grid cs-grid--column">
+							<a href="#" class="category__item">
+								<span class="category__title">Патрубки / Шлаги</span>
+								<picture>
+									<source media="(max-width: 1024px)" srcset="img/general/category/tabl/2.png">
+									<source media="(max-width: 480px)" srcset="img/general/category/mob/2.png">
+									<img class="category__img" src="img/general/category/desk/2.png" alt="Элементы подвески">
+								</picture>
+							</a>
+							<a href="#" class="category__item js-category-item-moveto">
+								<span class="category__title">Подушки двигателя</span>
+								<picture>
+									<source media="(max-width: 1024px)" srcset="img/general/category/tabl/3.png">
+									<source media="(max-width: 480px)" srcset="img/general/category/mob/3.png">
+									<img class="category__img" src="img/general/category/desk/3.png" alt="Элементы подвески">
+								</picture>
+							</a>
+						</div>
+					</div>
+					<div class="cs-grid cs-grid--right cs-grid--column">
+						<div class="cs-grid cs-grid--wide js-category-moveto">
+							<a href="#" class="category__item">
+								<span class="category__title">Крепления глушителя</span>
+								<picture>
+									<source media="(max-width: 1024px)" srcset="img/general/category/tabl/4.png">
+									<source media="(max-width: 480px)" srcset="img/general/category/mob/4.png">
+									<img class="category__img" src="img/general/category/desk/4.png" alt="Элементы подвески">
+								</picture>
+							</a>
+							<a href="#" class="category__item">
+								<span class="category__title">Коврики</span>
+								<picture>
+									<source media="(max-width: 1024px)" srcset="img/general/category/tabl/5.png">
+									<source media="(max-width: 480px)" srcset="img/general/category/mob/5.png">
+									<img class="category__img" src="img/general/category/desk/5.png" alt="Элементы подвески">
+								</picture>
+							</a>
+						</div>
+						<div class="cs-grid cs-grid--wide cs-grid--reverse">
+							<a href="#" class="category__item">
+								<span class="category__title">Прокладки / Ремкомплекты</span>
+								<picture>
+									<sourrce media="(max-width:4804px)" srcset="img/general/categorymobl/6.png">
+									<img class="category__img" src="img/general/category/desk/6.png" alt="Элементы подвески">
+								</picture>
+							</a>
+							<a href="#" class="category__item">
+								<span class="category__title">Брызговики</span>
+								<picture>
+									<source media="(max-width: 1024px)" srcset="img/general/category/tabl/7.png">
+									<source media="(max-width: 480px)" srcset="img/general/category/mob/7.png">
+									<img class="category__img" src="img/general/category/desk/7.png" alt="Элементы подвески">
+								</picture>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section><!-- end cs-section -->
+
+	<!-- begin cs-section -->
+	<section class="cs-section adv">
+		<div class="container">
+
+			<div class="info-block">
+				<div class="info-block__items">
+					<div class="info-block__item">
+						{{mixin.icon('delivery', 'info-block__icon')}}
+						<div class="info-block__text">
+							<span class="info-block__title">Бесплатная доставка</span>
+							<p class="info-block__desc">При заказе в интернет-магазине <br> от 1000 рублей. По России.</p>
+						</div>
+					</div>
+					<div class="info-block__item">
+						{{mixin.icon('garanty', 'info-block__icon')}}
+						<div class="info-block__text">
+							<span class="info-block__title">Расширенная гарантия</span>
+							<p class="info-block__desc">Обмен товара на аналогичный <br> в течении 2 лет</p>
+						</div>
+					</div>
+					<div class="info-block__item">
+						{{mixin.icon('giftbox', 'info-block__icon')}}
+						<div class="info-block__text">
+							<span class="info-block__title">Подарок каждому</span>
+							<p class="info-block__desc">Прочные перчатки в подарок <br> к каждому заказу</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>			
+	</section>
+	<!-- end cs-section -->
+
+	<!-- begin cs-section -->
+	<section class="cs-section baner">
+		<div class="container">
+			<div class="cs-slider js-cs-slider">
+				{% for i in range(0, 2) %}
+				<div class="cs-slider__item baner__bg" style="background-image: url(img/general/baner-home.png);">
+					<h2 class="baner__title">Не нашли?</h2>
+					<div class="baner__desc">Эксперты бесплатно подберут детали для Вашей машины по телефону. Звонок бесплатный!</div>
+					<a href="#" class="baner__phone">8 800 555 25 40</a>
+				</div>
+				{% endfor %}﻿
+			</div>
+		</div>
+	</section><!-- end cs-section -->
+
+</main>	
+<!-- end home -->
+
+{% endblock %}

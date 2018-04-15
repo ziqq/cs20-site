@@ -1,0 +1,189 @@
+.adv
+	+r(768)
+		margin-bottom: $section-indent - 30px
+//adv
+
+.info-block
+	//info-block__items
+	&__items
+		+row-flex()
+		justify-content: space-between
+		+r(768)
+			justify-content: center
+	//info-block__item
+	&__item
+		+col()		
+		+size(4)
+		+size-sm(6)
+		+size-xs(12)
+		@extend %flexCenter
+		+r(768)
+			margin-bottom: 30px			
+	//info-block__icon
+	&__icon
+		width: 60px
+		height: 40px
+		margin-right: 20px
+	//info-block__title
+	&__title
+		color: $color-accent
+		font-size: 18px
+	//info-block__text
+	&__text
+		color: #000000
+		font-size: 14px
+	//info-block__desc
+	&__desc
+//info-block
+
+.baner
+	//bener__bg
+	&__bg
+		max-height: 390px
+		height: 100%
+		padding: 60px 40px
+		+cover
+		+r(768)
+			max-height: 280px
+			padding: 40px
+		+r(480)
+			max-height: 200px
+			padding: 20px
+	//bener__title
+	&__title
+		margin-bottom: 25px
+		color: #000
+		font-family: $f-black
+		+r(480)
+			font-size: 20px
+			margin-bottom: 10px
+	//bener__desc
+	&__desc
+		max-width: 300px
+		margin-bottom: 30px
+		color: #000
+		font-family: $f-medium
+		font-size: 18px
+		+r(480)
+			font-size: 14px
+			margin-bottom: 10px
+	//bener__phone
+	&__phone
+		color: #000
+		font-family: $f-black
+		font-size: 24px
+		+r(480)
+			font-size: 18px
+	
+	//baner .slick-dots
+	.slick-dots
+		padding: 0 44px
+		bottom: 35px
+		+r(768)
+			display: none !important
+//baner
+
+.category
+	margin-bottom: 50px
+	//category__items
+	&__items
+		@extend %flex
+		// flex-wrap: wrap
+	//category__item
+	&__item
+		min-height: 190px
+		min-width: 220px
+		width: 100%
+		margin-bottom: 10px
+		margin-right: 10px
+		background-color: #eee
+		position: relative
+		overflow: hidden
+		&:hover
+			.category__img
+				transform: scale(1.05)
+			.category__title
+				text-decoration: underline
+	//category__title
+	&__title
+		color: #ffffff
+		font-size: 14px
+		position: absolute
+		bottom: 20px
+		left: 15px
+		z-index: 2
+	//category__img
+	&__img
+		transform: scale(1)
+		transition: transform .5s ease-in-out
+		+coverdiv
+
+.cs-grid
+	@extend %flex
+	+r(480)
+		flex-direction: column
+	&-container
+		margin-right: -10px
+		@extend %flex
+		width: 100%
+		+r(1024)
+			flex-direction: column
+	//category__box--left
+	&--left
+		width: 40%
+		margin-right: 10px
+		+r(1024)
+			width: 100%
+			margin-right: -10px
+			.cs-grid--column
+				flex-direction: row
+				flex: 1
+				.category__item
+					width: 50%
+					&:last-child
+						margin-right: 0
+			.category__item
+				width: 33.33%
+		+r(768)
+			.category__item
+				width: 50%
+			.cs-grid--column
+				.category__item
+					width: 100%
+		+r(480)
+			.category__item
+				width: 100%
+	//category__box--right
+	&--right
+		width: 60%
+		+r(1024)
+			width: 100%
+	//category__box--column
+	&--column
+		flex-direction: column
+		.category__item
+	//catecory__box--wide
+	&--wide
+		@extend %flex
+		.category__item
+			+r(1024)
+				width: 50%
+				&:last-child
+					margin-right: 0
+			&:first-child
+				flex: 1
+				+r(1024)
+					flex: inherit
+			+r(480)
+				width: 100%
+	//catecory__box--reverse
+	&--reverse
+		.category__item
+			&:last-child
+				flex: 1
+				+r(1024)					
+					flex: inherit
+			&:first-child
+				flex: inherit
+
+//category

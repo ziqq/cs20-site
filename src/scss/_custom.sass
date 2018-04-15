@@ -1,0 +1,420 @@
+.cs-checkbox
+	font-size: 14px
+	cursor: pointer
+	+nosel
+	&:hover
+		.bb-checkbox__box
+			border: 2px solid $color-accent
+
+	//bb-checkbox__wrap
+	&__wrap
+		display: flex
+		align-items: center
+		width: 100%
+		text-align: center
+
+	//bb-checkbox__dell
+	&__dell
+		display: none
+		background-color: rgba(#fff, .8)
+		+coverdiv
+		z-index: 10
+		.icon
+			width: 32px
+			height: 32px
+			fill: $color-accent
+			+vcenter
+
+	//bb-checkbox__title input
+	input
+		display: none
+		&:checked + .bb-checkbox__box
+			border: 2px solid $color-accent
+			background-color: $color-accent
+			&::before
+				display: block
+
+	//bb-checkbox__title
+	&__title
+		color: $gray
+
+	//bb-checkbox__box
+	&__box
+		display: inline-block
+		margin-right: 5px
+		width: 18px
+		height: 18px
+		border: 1px solid $color-border
+		border-radius: 2px
+		position: relative
+		top: 4px
+		&::before
+			content: ''
+			width: 7px
+			height: 11px
+			border: solid #fff
+			border-width: 0 2px 2px 0
+			position: absolute
+			left: 4px
+			top: 0px
+			transform: rotate(45deg)
+			display: none
+
+	//bb-checkbox--pseudo
+	&--pseudo
+		&.is-checked
+			.bb-checkbox__box
+				border: 2px solid $color-accent
+				background-color: $color-accent
+				&::before
+					display: block
+
+	//bb-checkbox--big
+	&--big
+		&:hover
+			.bb-checkbox__box
+				border-color: $color-border
+		input
+			&:checked + .bb-checkbox__box
+				background-color: $color-accent
+				border-color: transparent
+				&::after
+					left: auto
+					right: 0
+					border-color: transparent
+		.bb-checkbox__box
+			display: block
+			width: 40px
+			background-color: $color-border
+			+br(10px)
+			&::after
+				content: ''
+				display: block
+				width: 16px
+				height: 16px
+				background-color: #fff
+				+br(50%)
+				+tr
+				position: absolute
+				top: 2%
+				left: 0px
+				height: 96%
+			&::before
+				color: #fff
+				left: 4px
+
+	//bb-checkbox--radio
+	&--radio
+		background-color: transparent
+		&:hover
+			input 
+				&:checked + .bb-checkbox__box 
+					border-color: lighten($color-accent, 7%)
+					&::before
+						background-color: lighten($color-accent, 7%)
+		input
+			&:checked + .bb-checkbox__box
+				border: 2px solid $color-accent
+				background-color: transparent
+				&::before
+					display: block
+		.bb-checkbox__box
+			display: inline-block
+			border-radius: 50%
+			background-color: transparent
+			&::before
+				display: none
+				content: ''
+				width: 8px
+				height: 8px
+				border-radius: 50%
+				border: none
+				background-color: $color-accent
+				+vcenter
+
+		//bb-checkbox--radio_inline
+		&_inline
+			padding: 7px 0 9px
+			width: 50%
+			color: $color-text
+			border: 1px solid $color-border
+			border-right-color: transparent
+			background-color: $gray
+			&:first-child
+				border-radius: $border-radius 0 0 $border-radius
+				border-color: $color-border
+				border-right-color: transparent
+			&:last-child
+				border-radius: 0 $border-radius $border-radius 0
+				border-color: $color-border
+			&:hover
+				border-color: $color-border
+			&.is-checked
+				background-color: #fff
+				color: $color-text
+				&::before
+					color: $color-accent
+			.bb-checkbox__box
+				display: none
+
+	//bb-checkbox--inline
+	&--inline
+		border: 1px solid $color-border
+		border-right-color: transparent
+		position: relative
+		z-index: 20
+		&:first-child
+			border-radius: 4px 0 0 4px
+		&:last-child
+			border-right: 1px solid $color-border
+			border-radius: 0  4px 4px 0
+		&:hover
+			border-color: $color-border
+			border-right-color: transparent
+			color: #000
+			& + .bb-checkbox--inline
+				border-left-color: $color-border
+			&:last-child
+				border-right: 1px solid $color-border
+		&.is-checked
+			color: #fff
+			background-color: $color-accent
+			&:hover
+				color: #fff
+			& + .bb-checkbox--inline,
+			& + .bb-checkbox--inline.is-checked
+				border-left-color: #fff
+		input
+			&:checked + .bb-checkbox__box
+				background-color: #C4C4C4
+		.bb-checkbox__box
+			display: none
+
+	//bb-checkbox--transform
+	&--transform
+		.bb-checkbox
+			&__title
+				@include max-screen(480)
+					padding: 4px 15px 5px
+					font-family: $f-light
+					border: 1px solid $color-border
+					border-radius: 50px
+			&__box
+				@include max-screen(480)
+					display: none
+		
+		input 
+			@include max-screen(480) 
+				&:checked ~ .bb-checkbox__title
+					font-family: $f-light
+					color: #fff
+					background-color: $color-accent
+
+	//bb-checkbox--small
+	&--small
+		padding: 2px 8px
+		border: 1px solid $color-border
+		& + .bb-checkbox--small
+			border-left-color: transparent
+		&:hover
+			border-color: $color-border
+		&.is-checked
+			background-color: #ffeba0
+		.bb-checkbox
+			&__title
+				font-size: 13px
+				line-height: 24px
+//cs-checkbox
+
+
+.cs-dropdown
+	position: relative
+	&--hover
+		position: relative
+		&:hover
+			.bb-dropdown__list
+				visibility: visible
+				opacity: 1
+				-webkit-filter: none
+				filter: none
+				display: block
+				top: 35px
+				pointer-events: auto
+
+	&.is-active
+		.bb-dropdown__list	
+			visibility: visible
+			opacity: 1
+			-webkit-filter: none
+			filter: none
+			display: block
+			top: 35px
+			pointer-events: auto
+
+	//cs-dropdown__list
+	&__list
+		min-width: 150px
+		max-width: 320px
+		padding: 8px 12px 9px
+		text-align: left
+		position: absolute
+		top: 45px
+		left: 0
+		z-index: 99
+		pointer-events: none
+		visibility: hidden
+		opacity: 0
+		filter: alpha(opacity=0)
+		transition: opacity 100ms linear, top 100ms linear, bottom 100ms linear, visibility 100ms linear
+		border: 1px solid $color-border
+		+nosel
+		&::before
+			content: ''
+			width: 12px
+			height: 12px
+			background-color: #fff
+			border-top: 1px solid $color-border
+			border-right: 1px solid $color-border
+			border-top-right-radius: $border-radius
+			position: absolute
+			top: -6px
+			left: 12px
+			+rotate(-45)
+
+	//cs-dropdown.top
+	&.top
+		.bb-dropdown
+			&__list
+				top: -35px
+				&::before
+					top: auto
+					bottom: -5px
+		&:hover
+			.bb-dropdown
+				&__list
+					top: -45px
+	
+	//cs-dropdown.right
+	&.right
+		.bb-dropdown
+			&__list
+				left: auto
+				right: 0
+				&::before
+					left: auto
+					right: 8px
+//cs-dropdown
+
+
+.cs-accordeon
+	+nosel
+	//bb-accordeon--other
+	&--other
+		.bb-accordeon
+			&__item
+				&.is-open
+					.bb-accordeon
+						&__title
+							&::before
+								content: ''
+								transform: rotate(90deg)
+							&::after
+								transform: rotate(90deg)
+								opacity: 0
+			&__title
+				padding: 15px 50px 15px 15px
+				margin: 0
+				&::after
+					content: ''
+					display: block
+					position: absolute
+					top: 50%
+					right: 20px
+					width: 11px
+					height: 1px
+					background-color: $color-accent
+					transform-origin: 50% 50%
+					will-change: transform
+					+tr						
+				&::before
+					content: ''
+					display: block
+					position: absolute
+					top: 50%
+					margin-top: -5px
+					right: 10px
+					width: 1px
+					height: 11px
+					background-color: $color-accent
+					transform-origin: 50% 50%
+					will-change: transform
+					+tr
+
+			&__content
+				width: 100%
+
+	//bb-accordeon__item
+	&__item
+		& + .bb-accordeon__item
+			margin-top: 10px
+		&.is-open
+			.bb-accordeon
+				&__title
+					&:hover
+						box-shadow: none
+					&::before
+						content: '\f106'
+
+	//bb-accordeon__title
+	&__title
+		padding: 18px 20px
+		font-family: $f-light
+		font-size: 15px
+		color: #000
+		border-radius: $border-radius
+		cursor: pointer
+		position: relative
+		&::before
+			margin-right: 15px
+			content: '\f107'
+			font-family: fontawesome
+			font-size: 20px
+			color: $color-accent
+		// &:hover
+		// 	box-shadow: $bxs-hover		
+		+r(768)
+			&:hover
+				box-shadow: none
+
+	&--mobile
+		.bb-accordeon
+			&__item
+				border-bottom: 1px solid $color-border
+				&:first-child
+					border-top: 1px solid $color-border
+				& + .bb-accordeon__item
+					margin-top: 0
+			&__title
+				display: block
+				width: 100%
+				padding: 10px 0 9px
+				&::before
+					margin-right: 0
+					+vy
+					right: 10px
+			&__content
+				padding: 0 10px 7px
+				font-size: 14px
+				a
+					padding: 5px 0
+
+	&--dark
+		.bb-accordeon
+			&__item
+				background-color: $gray
+			
+			&__title
+				color: rgba(#fff, 0.4)
+				&::before
+					color: rgba(#fff, 0.4)
+//cs-accordeon

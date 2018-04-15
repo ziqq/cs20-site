@@ -1,0 +1,14 @@
+//Fonts
+
+//Font-Family FontAwesome
+@include font(fontawesome, FontAwesome, fontawesome-webfont);
+
+//Font-Family roboto
+@include font(roboto-700, Roboto, robotoblack);
+@include font(roboto-600c, Roboto, robotocondensedbold);
+@include font(roboto-600, Roboto, robotobold);
+@include font(roboto-500, Roboto, robotomedium);
+@include font(roboto-400, Roboto, robotoregular);
+@include font(roboto-400c, Roboto, robotocondensedregular);
+@include font(roboto-300, Roboto, robotolight);
+@include font(roboto-300c, Roboto, robotocondensedlight);

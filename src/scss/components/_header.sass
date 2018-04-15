@@ -1,0 +1,88 @@
+.header
+	position: relative
+	//header__inner
+	&__inner
+		height: 100px
+		@extend %flex
+		+r(480)
+			height: 70px
+
+	//header__left
+	&__left, &__right
+		width: 50%
+		@extend %flexCenter
+
+	//header__right
+	&__right
+		justify-content: flex-end
+
+	&__logo, &__cart, &__search
+		margin-right: 30px
+
+	&__phone, &__search
+		+r(768)
+			display: none
+
+	&__logo
+		+r(768)
+			margin-right: 0
+			+vcenter
+
+	&__cart
+		+r(768)
+			margin-right: 15px
+//header
+
+.logo
+	display: inline-block
+	&__img
+		width: 80px
+		height: 70px
+		+r(480)
+			width: 60px
+			height: 50px
+//logo
+
+.search
+	&__icon
+		fill: #fff
+//search
+
+.cart
+	position: relative
+	//cart__counter
+	&__counter		
+		position: absolute
+		top: -11px
+		left: 10px
+//cart
+
+.phone
+	position: relative
+	//phone__link
+	&__link
+		display: block
+		color: #fff
+		font-size: 20px
+		line-height: 1
+	//phone__text
+	&__text
+		color: #fff
+		font-family: $f-light
+		font-size: 11px
+		line-height: 1
+		letter-spacing: 1.43px
+		text-transform: uppercase
+	//phone--icon
+	&--icon
+		.phone__link
+			padding-left: 25px
+			position: relative
+			&::before
+				content: ''
+				display: block
+				+s(telephone)
+				position: absolute
+				top: 3px
+				left: 0
+//phone

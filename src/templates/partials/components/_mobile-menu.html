@@ -1,0 +1,28 @@
+<!-- begin mobile-nave -->
+<nav class="mobile-nav js-nav">
+	<ul class="mobile-nav__list">
+		{% import "data/data.html" as manu %}		
+		{% for item in manu.menuMobileTop %}
+		<li class="mobile-nav__item {{ item.class }}">
+			<a href="#" class="mobile-nav__link mobile-nav__link--{{ item.icon }}">{{ item.title }}</a>
+		</li>
+		{% endfor %}			
+	</ul>
+	<ul class="mobile-nav__list">
+		{% import "data/data.html" as manu %}		
+		{% for item in manu.menuMobileBottom %}
+		<li class="mobile-nav__item {{ item.class }}">
+			<a href="#" class="mobile-nav__link mobile-nav__link--{{ item.icon }}">{{ item.title }}</a>
+		</li>
+		{% endfor %}	
+	</ul>		
+
+	<!-- begin phone -->
+	<div class="phone phone--icon">
+		<a href="#" class="phone__link" itemprop="telephone">8 800 555 25 40</a>
+	</div>
+	<!-- end phone -->
+
+	{{ item.socialBtn() }}
+</nav>
+<!-- end mobile-nav -->

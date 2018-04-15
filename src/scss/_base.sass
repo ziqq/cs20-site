@@ -1,0 +1,142 @@
+@import "_helpers/all"
+@import "base/all"
+@import "_generated/sprite-png"
+@import "libs"
+@import "custom.libs"
+@import "custom"
+@import "_generated/smart-grid"
+
+=cs-scroll
+	+scrollbar
+		width: 5px
+	+scrollbar-track
+		width: 5px
+	+scrollbar-thumb
+		background-color: $color-accent
+
+%flex
+	display: flex
+
+%flexCenter
+	display: flex
+	align-items: center
+
+%flexColumn
+	display: flex
+	flex-direction: column
+
+//base style
+html 
+	height: 100%
+	overflow-x: hidden
+
+body 
+	position: relative
+	min-width: 320px
+	font-family: $font-family-base
+	font-size: $font-size-base
+	color: $color-text
+	line-height: $line-height-base
+	background-color: #fff
+	overflow-x: hidden
+	z-index: 1
+	scroll-behavior: smooth
+	+smooth-scroll
+	+smooth-font
+	+cs-scroll
+
+header,footer,main,div,section,ul,ol
+	+clr
+		
+b, strong
+	font-family: $f-bold
+
+input, textarea, select
+	outline: none
+	+placeholder
+		font-family: $f-light
+		font-size: 14px
+		color: #eee
+
+img
+	display: block
+	width: 100%
+
+a
+	color: $color-accent
+	text-decoration: none
+	outline: none
+	+tr
+	&:hover
+		color: lighten($color-accent, 10%)
+
+h1,.h1, h2,.h2, h3,.h3, h4,.h4, h5,.h5, h6,.h6
+	margin-top: 0
+	font-family: $f
+
+h1,.h1
+	font-size: 36px
+	line-height: 1.05em
+	+r(1024)
+		font-size: 34px
+		line-height: 1.125em
+	+r(768)
+		font-size: 28px	
+
+h2,.h2
+	font-size: 36px
+	line-height: 1.25em
+	+r(1024)
+		font-size: 32px
+		line-height: 1.25em
+	+r(768)
+		font-size: 25px
+		line-height: 1.15384615em
+
+h3,.h3
+	font-size: 28px
+	line-height: 1.25em
+	+r(1024)
+		font-size: 24px
+	+r(768)
+		font-size: 22px
+		line-height: 1.13636364em
+
+h4,.h4, h5,.h5, h6,.h6
+	font-size: 18px
+	line-height: 1.22222222em
+	margin-bottom: $half-indent
+	+r(768)
+		line-height: 1.11111111em
+
+//HELPER CLASSES
+.is-hidden
+	display: none !important
+.hidden
+	display: none
+.lg-only, .md-only, .sm-only, .xs-only 
+	display: none
++r(1200)
+	.lg-only 
+		display: block
+	.lg-hide 
+		display: none
++r(1024)
+	.md-only
+		display: block
+	.md-hide 
+		display: none
++r(768)
+	.sm-only
+		isplay: block
+	.sm-hide
+		display: none
++r(480)
+	.xs-only
+		display: block
+	.xs-hide
+		display: none !important
+
+.text
+	&--right
+		text-align: right

@@ -1,0 +1,63 @@
+<!-- begin header -->
+<header class="header {{headerClass}}" itemscope itemtype="http://schema.org/WPHeader">
+	<div class="container">
+		<div class="header__inner">
+			<div class="header__left">
+				<!-- begin logo -->
+				<div class="logo header__logo" itemscope itemprop="logo" itemtype="http://schema.org/Organization">
+					<a href="home.html" class="logo__link" itemprop="url">
+						<img src="../img/general/logo.png" alt="CS20" class="logo__img">
+					</a>
+				</div>
+				<!-- end logo -->
+				
+				<!-- begin nav -->
+				<nav class="nav nav--main">
+					<ul class="nav__list">
+						{% import "data/data.html" as manu %}		
+						{% for item in manu.menu %}
+						<li class="nav__item {{ item.class }}">
+							<a href="#" class="nav__link">{{ item.title }}</a>
+						</li>
+						{% endfor %}					
+					</ul>
+				</nav>
+				<!-- end nav -->
+			</div>
+			<div class="header__right">
+				<!-- begin search -->
+				<div class="search header__search">
+					{{mixin.icon('search', 'search__icon')}}
+				</div>
+				<!-- end search -->
+				<!-- begin cart -->
+				<div class="cart header__cart">
+					{{mixin.icon('cart')}}
+					<span class="cart__counter badge">32</span>
+				</div>
+				<!-- end cart -->		
+				<!-- begin phone -->
+				<div class="phone header__phone">
+					<a href="#" class="phone__link" itemprop="telephone">8 800 555 25 40</a>
+					<span class="phone__text">звонок бесплатный</span>
+				</div>
+				<!-- end phone -->
+			</div>
+		</div>
+
+		<!-- begin mobile-toggle-btn -->
+		<div class="js-nav-toggle menu-toggle">
+			<div class="menu-toggle__boxes">
+				<span class="menu-toggle__box"></span>
+				<span class="menu-toggle__box"></span>
+				<span class="menu-toggle__box"></span>
+				<div class="menu-toggle__box--other"></div>
+			</div>
+		</div>
+		<!-- end mobile-toggle-btn -->
+
+		{% include "partials/components/_mobile-menu.html" %}
+
+	</div>
+</header>
+<!-- end header -->
