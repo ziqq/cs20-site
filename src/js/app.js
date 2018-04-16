@@ -147,4 +147,18 @@ $(document).ready(function () {
     //Stop drag
     $("img").on("dragstart", function(event) { event.preventDefault(); });
 
+    
+    /*
+     * Catalog.js
+     */
+
+    //=include partials/catalog.js
+
+    
+    /*
+     * cs-scripts.js
+     */
+
+    //=include partials/cs-scripts.js
+
 });

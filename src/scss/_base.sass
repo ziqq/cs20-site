@@ -6,25 +6,6 @@
 @import "custom"
 @import "_generated/smart-grid"
 
-=cs-scroll
-	+scrollbar
-		width: 5px
-	+scrollbar-track
-		width: 5px
-	+scrollbar-thumb
-		background-color: $color-accent
-
-%flex
-	display: flex
-
-%flexCenter
-	display: flex
-	align-items: center
-
-%flexColumn
-	display: flex
-	flex-direction: column
-
 //base style
 html 
 	height: 100%
@@ -58,6 +39,9 @@ input, textarea, select
 		font-size: 14px
 		color: #eee
 
+textarea, select
+	+cs-scroll
+
 img
 	display: block
 	width: 100%
@@ -73,6 +57,7 @@ a
 h1,.h1, h2,.h2, h3,.h3, h4,.h4, h5,.h5, h6,.h6
 	margin-top: 0
 	font-family: $f
+	color: #000
 
 h1,.h1
 	font-size: 36px

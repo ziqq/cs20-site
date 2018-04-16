@@ -1,0 +1,31 @@
+.button
+	display: inline-block
+	padding: 9px 45px
+	font-family: $f-light
+	font-size: 14px
+	text-align: center
+	text-decoration: none	
+	border: 0
+	+tr(.35s)
+
+	&:hover
+		box-shadow: $bxs-hover
+
+	//button--accent
+	&--accent
+		color: #fff
+		background-color: $color-accent
+
+	//button--gray
+	&--gray
+		color: #fff
+		background-color: $gray
+		&:hover
+			background-color: lighten($gray, 10%)
+
+	//button--transparent
+	&--transparent
+		color: #000
+		border: 1px solid $color-border--light
+		background-color: transparent
+//button

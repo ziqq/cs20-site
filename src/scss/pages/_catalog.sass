@@ -1,0 +1,122 @@
+.catalog
+	padding-bottom: 100px
+	//catalog__topline
+	&__topline
+		margin-bottom: 40px
+		@extend %flexCenter
+		justify-content: space-between
+	//catalog__sorting
+	&__sorting
+		margin-left: auto
+	//catalog__content
+	&__content
+		@extend %flex
+	//catalog__filter
+	&__filter
+		width: 260px
+		margin-right: 30px
+	//catalog__products
+	&__products
+		width: calc(100% - 260px - 30px)
+		flex: 1
+//catalog
+
+.filter	
+	border: 1px solid $color-border--light
+	background-color: #ffffff
+	//filter__inner
+	&__inner
+		padding: 25px 20px
+	//filter__item
+	&__item
+		margin-bottom: 20px
+	//filter__title
+	&__title
+		display: block
+		margin-bottom: 15px
+		padding-bottom: 10px
+		color: #000
+		font-family: $f-bold
+		font-size: 15px
+		border-bottom: 2px solid $color-border--light
+	//filter__checkbox
+	&__checkbox
+		display: block
+		margin-bottom: 10px
+	//filter__btn
+	&__btn
+		display: block
+		margin: auto
+		width: 100%
+//filter
+
+.range
+	//range__diapazon
+	&__diapazon
+		@extend %flexCenter
+		margin-bottom: 25px
+	//range__from
+	&__from, &__to
+		width: 90px
+		height: 35px
+		line-height: 35px
+		text-align: center
+		font-family: $f-black
+		font-size: 14px
+		font-weight: 700
+		border: 1px solid $color-border--light
+	//range__to
+	&__to
+		margin-left: auto
+	//range__slider
+	&__slider
+//range
+
+.sorting
+	@extend %flexCenter
+	//sorting__count
+	&__count
+		margin-right: 15px
+		.select2-container
+			width: 65px !important
+		.select2-container--default .select2-selection--multiple, .select2-container--default .select2-selection--single, input, select, textarea
+			height: 36px
+		.select2-container--default .select2-selection--single .select2-selection__rendered
+			line-height: 33px
+		.select2-container--default .select2-selection--single .select2-selection__arrow
+			height: 36px
+			top: 4px
+	//sorting__title
+	&__title
+		margin-right: 5px
+		color: #000
+		font-size: 14px
+	//sorting__select
+	&__select
+	//sorting__list
+	&__list
+		@extend %flexCenter
+	//sorting__btn
+	&__btn
+		padding: 7px
+		border: 1px solid transparent
+		cursor: pointer
+		@extend %flex
+		& + &
+			margin-left: 5px
+		&.is-active
+			border-color: #d5d1d1
+			background-color: #e9e8e9
+		//sorting__btn--list
+		&--list
+			&::before
+				content: ''
+				display: inline-block
+				+s(sorting--list)
+		//sorting__btn--tile
+		&--tile
+			&::before
+				content: ''
+				display: inline-block
+				+s(sorting--tile)
+//sorting

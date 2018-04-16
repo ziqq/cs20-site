@@ -1,0 +1,169 @@
+---
+title: Каталог | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
+
+filterType:
+ - title: Элементы подвески
+ - title: Прокладки / Ремкомплекты
+ - title: Патрубки / Шланги
+ - title: Крепления глушителя
+ - title: Подушки двигателя
+ - title: Брызговики
+ - title: Коврики
+
+filterCar:
+ - title: 1118 Калина
+ - title: 1119 Калина
+ - title: 2101-2107
+ - title: 2108-2109
+ - title: 2110-2112
+ - title: 2113-2115
+
+filterSeries:
+ - title: Comfort
+ - title: Drive
+ - title: Profi
+ - title: Original+
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<main class="main catalog">
+
+	<!-- begin breadcrumbs -->
+	<div class="container">
+		<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+			<ul class="breadcrumbs__list">
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link" itemprop="url">
+						<span class="breadcrumbs__title" itemprop="title">Главная</span>
+					</a>
+				</li>
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link" itemprop="url">
+						<span class="breadcrumbs__title" itemprop="title">Каталог</span>
+					</a>
+				</li>
+				<li class="breadcrumbs__item">
+					<span class="breadcrumbs__title" itemprop="title">Патрубки / Шланги</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- end breadcrumbs -->
+
+	<!-- begin catalog__topline -->
+	<div class="container">
+		<div class="catalog__topline">
+			<h1 class="h1 page__title" itemprop="headline">Патрубки / Шланги</h1>
+			<!-- begin sorting -->
+			<div class="sorting catalog__sorting">
+				<div class="sorting__count">
+					<span class="sorting__title">Показывать по:</span>
+					<select class="sorting__select js-select no-search">
+						{% for i in range(0, 11) %}
+						<option value="{{i+1}}">{{i+1}}</option>
+						{% endfor %}﻿		 				
+					</select>	
+				</div>
+				<div class="sorting__list">
+					<span class="sorting__btn sorting__btn--list js-sorting--btn"></span>
+					<span class="sorting__btn sorting__btn--tile js-sorting--btn is-active"></span>
+				</div>
+			</div>
+			<!-- end sorting -->
+		</div>
+	</div>
+	<!-- end catalog__topline -->
+
+	<!-- begin catalog__content -->
+	<div class="container">
+		<div class="catalog__content">
+
+			<!-- begin catalog__filter -->
+			<div class="filter catalog__filter">
+				<div class="filter__inner">
+				
+				<div class="filter__header"></div>
+					<div class="filter__body js-cs-accordeon cs-accordeon cs-accordeon--other">
+						<div class="filter__item filter__item_price cs-accordeon__item is-open">
+							<span class="filter__title cs-accordeon__title">Цена</span>
+							<div class="filter__content cs-accordeon__content">
+								<div class="range__diapazon">
+									<div class="range__from">
+										<span id="jsPriceStart"></span>
+										<i class="fa fa-rub"></i>
+									</div>
+									<div class="range__to">
+										<span id="jsPriceEnd"></span>
+										<i class="fa fa-rub"></i>
+									</div>
+								</div>
+								<div class="filter__range range">
+									<div
+									class="range__slider"
+									id="js-filter-slider"
+									data-start="500"
+									data-end="15000"></div>
+								</div>
+							</div>
+						</div>
+						<div class="filter__item filter__item_type cs-accordeon__item">
+							<span class="filter__title cs-accordeon__title">Тип продукции</span>
+							<div class="filter__content cs-accordeon__content" style="display: none;">
+								{% for item in filterType %}
+								<label class="cs-checkbox filter__checkbox">
+									<input type="checkbox">
+									<span class="cs-checkbox__box"></span>
+									<span class="cs-checkbox__title">{{item.title}}</span>
+								</label>
+								{% endfor %}
+							</div>
+						</div>
+						<div class="filter__item filter__item_car cs-accordeon__item">
+							<span class="filter__title cs-accordeon__title">Тип продукции</span>
+							<div class="filter__content cs-accordeon__content" style="display: none;">
+								{% for item in filterCar %}
+								<label class="cs-checkbox filter__checkbox">
+									<input type="checkbox">
+									<span class="cs-checkbox__box"></span>
+									<span class="cs-checkbox__title">{{item.title}}</span>
+								</label>
+								{% endfor %}
+							</div>
+						</div>
+						<div class="filter__item filter__item_series cs-accordeon__item">
+							<span class="filter__title cs-accordeon__title">Тип продукции</span>
+							<div class="filter__content cs-accordeon__content" style="display: none;">
+								{% for item in filterSeries %}
+								<label class="cs-checkbox filter__checkbox">
+									<input type="checkbox">
+									<span class="cs-checkbox__box"></span>
+									<span class="cs-checkbox__title">{{item.title}}</span>
+								</label>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+					<div class="filter__footer">
+						<button class="button button--gray filter__btn">Очистить все</button>
+					</div>
+				</div>
+			</div>
+			<!-- end catalog__filter -->
+
+			<!-- begin catalog__products -->
+			<div class="catalog__products">
+				<hr>
+			</div>
+			<!-- end catalog__products -->
+
+		</div>
+	</div>
+	<!-- end catalog__content -->	
+
+</main>	
+<!-- end home -->
+
+{% endblock %}

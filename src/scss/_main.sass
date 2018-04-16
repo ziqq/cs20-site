@@ -96,3 +96,33 @@
 	&__icon
 		fill: $color-text
 //social
+
+.breadcrumbs
+	padding: 40px 0
+	//breadcrumbs__list
+	&__list
+		@extend %flexCenter
+	//breadcrumbs__item
+	&__item
+		position: relative
+		& + &
+			margin-left: 15px
+		&::after
+			content: '/'
+			font-size: 14px
+			+vy
+			right: -10px
+		&:last-child
+			&::after
+				display: none
+	//breadcrumbs__link
+	&__link
+		font-size: 14px		
+		.breadcrumbs__title
+			color: $color-accent
+
+	//breadcrumbs__title
+	&__title
+		font-size: 14px
+		color: #000
+//breadcrumbs

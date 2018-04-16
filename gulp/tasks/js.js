@@ -11,10 +11,7 @@ var browserSync = require('browser-sync');
 reload          = browserSync.reload;
 
 gulp.task('js', function () {
-    return gulp.src([
-        config.src.js + '/main.js',
-        config.src.js + '/del.js'
-    ])
+    return gulp.src(config.src.js + '/app.js')
     .pipe(include())
     .pipe(sourcemaps.init())
     .on('error', function(){notify("Javascript include error");})
@@ -35,15 +32,15 @@ gulp.task('js:libs', function() {
 	.pipe(reload({stream: true}));
 });
 
-gulp.task('js:dev', function () {
-    return gulp.src(config.src.js + '/dev.js')
-    .pipe(include())
-    .on('error', function(){notify("Javascript include error");})
-    .pipe(babel())
-    .pipe(uglify())
-    .pipe(gulp.dest(config.production ? config.src.jsTemp + '/' : ''))
-    .pipe(reload({stream: true}));
-});
+// gulp.task('js:dev', function () {
+//     return gulp.src(config.src.js + '/dev.js')
+//     .pipe(include())
+//     .on('error', function(){notify("Javascript include error");})
+//     .pipe(babel())
+//     .pipe(uglify())
+//     .pipe(gulp.dest(config.production ? config.src.jsTemp + '/' : ''))
+//     .pipe(reload({stream: true}));
+// });
 
 gulp.task('js:concat', function() {
     return gulp.src([
@@ -68,7 +65,7 @@ gulp.task('js:all', function(js) {
 gulp.task('js:build', function(js) {
     runSequence(
         'js:libs',
-        'js:dev',
+        // 'js:dev',
         'js',
         'js:concat',
         js
@@ -76,7 +73,7 @@ gulp.task('js:build', function(js) {
 });
 
 gulp.task('js:watch', function() {
-    gulp.watch(config.src.js + '/main.js', ['js']);
+    gulp.watch(config.src.js + '/app.js', ['js']);
     gulp.watch(config.src.js + '/libs.js', ['js:libs']);
     // gulp.watch(config.src.js + '/assets/**/*.js', ['js:assets']);
 });

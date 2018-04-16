@@ -1,29 +1,29 @@
 {% import "partials/assets/_mixins.html" as mixin %}
 
 <!-- 
-<div class="bb-dropdown js-bb-dropdown">
+<div class="cs-dropdown js-cs-dropdown">
 	наведи сюда
-	<div class="bb-dropdown__list">это появится</div>
+	<div class="cs-dropdown__list">это появится</div>
 </div>
 -->
 
 {% macro checkbox(title, class) %}
-<label class="bb-checkbox {{class}}">
+<label class="cs-checkbox {{class}}">
 	<input type="checkbox">
-	<span class="bb-checkbox__box"></span>
-	<span class="bb-checkbox__title">{{title}}</span>
+	<span class="cs-checkbox__box"></span>
+	<span class="cs-checkbox__title">{{title}}</span>
 </label>
 {% endmacro %}
-<!-- item.checkbox('мужской', 'bb-checkbox--radio, profile-editor__checkbox') -->
+<!-- item.checkbox('мужской', 'cs-checkbox--radio, profile-editor__checkbox') -->
 
 {% macro radio(title, name, class) %}
-<label class="bb-checkbox bb-checkbox--radio {{class}}">
+<label class="cs-checkbox cs-checkbox--radio {{class}}">
 	<input type="radio" name="{{name}}">
-	<span class="bb-checkbox__box"></span>
-	<span class="bb-checkbox__title">{{title}}</span>
+	<span class="cs-checkbox__box"></span>
+	<span class="cs-checkbox__title">{{title}}</span>
 </label>
 {% endmacro %}
-<!-- item.checkbox('мужской', 'bb-checkbox--radio, profile-editor__checkbox') -->
+<!-- item.checkbox('мужской', 'cs-checkbox--radio, profile-editor__checkbox') -->
 
 {% macro button(title, class) %}
 <button class="button-animate js-btn-animate {{class}}">
@@ -54,7 +54,7 @@
 <a href="card.html" class="catalog-item js-catalog-item{{class}}">
 
 	<div class="catalog-item__inner">
-		<div class="catalog-item__img bb-slider js-ss-slider image-wrapper" 
+		<div class="catalog-item__img cs-slider js-ss-slider image-wrapper" 
 		data-ss-images="img/examples/user/catalog/catalog-0.jpg;img/examples/user/catalog/catalog-1.jpg;img/examples/user/catalog/catalog-2.jpg;img/examples/user/catalog/catalog-3.jpg;img/examples/user/catalog/catalog-4.jpg"></div>
 
 		<div class="catalog-item__text">
@@ -82,13 +82,13 @@
 
 				<div class="catalog-item__properties properties">
 					<ul class="properties__list">
-						<li class="properties__item properties__item_sale bb-dropdown bb-dropdown--hover js-bb-dropdown">
+						<li class="properties__item properties__item_sale cs-dropdown cs-dropdown--hover js-cs-dropdown">
 							{{mixin.icon('procent')}}
-							<div class="bb-dropdown__list">есть скидки</div>
+							<div class="cs-dropdown__list">есть скидки</div>
 						</li>
-						<li class="properties__item properties__item_car bb-dropdown bb-dropdown--hover js-bb-dropdown">
+						<li class="properties__item properties__item_car cs-dropdown cs-dropdown--hover js-cs-dropdown">
 							{{mixin.icon('car')}}
-							<div class="bb-dropdown__list">могу приехать</div>
+							<div class="cs-dropdown__list">могу приехать</div>
 						</li>
 					</ul>
 				</div>
