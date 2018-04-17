@@ -11,6 +11,7 @@
 	//catalog__content
 	&__content
 		@extend %flex
+		align-items: end;
 	//catalog__filter
 	&__filter
 		width: 260px
@@ -18,18 +19,74 @@
 	//catalog__products
 	&__products
 		width: calc(100% - 260px - 30px)
-		flex: 1
+		margin-left: auto
+		position: relative
+		+r(768)
+			width: 100%
 //catalog
 
 .filter	
 	border: 1px solid $color-border--light
-	background-color: #ffffff
-	//filter__inner
-	&__inner
+	background-color: #fff
+	position: relative
+	+r(768)
+		width: 300px
+		position: fixed
+		left: 0
+		top: 0
+		bottom: 0
+		z-index: 301
+		transform: translateX(-200%)
+		will-change: transform
+		transition: all .3s cubic-bezier(.25,.8,.4,.95)
+	//filter__header
+	&__header
+		height: 60px
+		line-height: 60px
+		margin-bottom: 25px
+		padding: 0 20px
+		background-color: #fff
+		border-right: 1px solid $color-border--light
+		border-bottom: 1px solid $color-border--light
+		position: fixed
+		top: 0
+		left: 0
+		width: 300px
+		@extend %flexCenter
+		.filter__title
+			margin: 0
+			padding: 0
+			font-family: $f
+			border-bottom: 0
+			@extend %flexCenter
+	//filter__body
+	&__body
 		padding: 25px 20px
+		+r(768)
+			position: absolute
+			top: 60px
+			left: 0
+			right: 0
+			bottom: 0
+			overflow-y: auto
+			+cs-scroll
+			+smooth-scroll
+	//filter__icon
+	&__icon
+		&--filter
+			width: 16px
+			height: 16px
+			margin-right: 8px
+		&--close
+			width: 13px
+			height: 13px
+			margin-left: auto
 	//filter__item
 	&__item
 		margin-bottom: 20px
+		&_price
+			.filter__content
+				margin-bottom: 20px
 	//filter__title
 	&__title
 		display: block
@@ -38,7 +95,7 @@
 		color: #000
 		font-family: $f-bold
 		font-size: 15px
-		border-bottom: 2px solid $color-border--light
+		border-bottom: 1px solid $color-border--light
 	//filter__checkbox
 	&__checkbox
 		display: block
@@ -48,6 +105,7 @@
 		display: block
 		margin: auto
 		width: 100%
+		border-radius: 5px
 //filter
 
 .range
@@ -65,9 +123,20 @@
 		font-size: 14px
 		font-weight: 700
 		border: 1px solid $color-border--light
+		position: relative
 	//range__to
 	&__to
 		margin-left: auto
+		&::before
+			content: ''
+			display: block
+			height: 2px
+			width: 18px
+			background-color: $gray
+			+vy
+			left: -29px
+			+r(768)
+				left: -45px
 	//range__slider
 	&__slider
 //range
@@ -120,3 +189,75 @@
 				display: inline-block
 				+s(sorting--tile)
 //sorting
+
+.product-item
+	width: 33.33%
+	padding: 25px
+	margin: 0 -1px -1px 0
+	background-color: #fff
+	border: 1px solid $color-border--light
+	box-shadow: 0 1px 1px transparent
+	z-index: 1
+	+tr
+	+gpu
+	+nosel
+	&:hover
+		border: 1px solid transparent
+		box-shadow: 0 20px 82px -5px rgba(0,0,9,0.25)
+		z-index: 2
+	+r(1024)
+		width: 50%
+	+r(768)
+		width: 33.33%
+	//product-item__wrap
+	&__wrap
+		margin-bottom: 80px
+		@extend %flex
+		justify-content: flex-start
+		flex-wrap: wrap
+	//product-item__img
+	&__img
+		margin-bottom: 20px
+
+	//product-item__desc
+	&__desc
+
+	//product-item__title
+	&__title
+		height: 66px
+		margin-bottom: 13px
+		font-size: 16px
+		line-height: 1.4
+		color: #000
+		overflow: hidden
+	    text-overflow: ellipsis;
+	    position: relative
+		span
+			text-transform: uppercase
+	//product-item__price
+	&__price
+		margin-bottom: 18px
+		font-family: $f-black
+		font-size: 25px
+		color: #000
+		@extend %flexCenter
+		.price__stock
+			margin-left: auto
+			font-family: $f
+			font-size: 14px
+			color: $color-text
+
+	//product-item__stock
+	&__stock
+
+	//product-item__buttons
+	&__buttons
+
+	//product-item__btn
+	&__btn
+		display: block
+		width: 100%
+		&:first-child
+			margin-bottom: 7px
+			padding: 10px 0
+//product-item

@@ -451,77 +451,64 @@
 .cs-accordeon{
 	@include nosel;
 
-	&--other{
-		.cs-accordeon{
-			&__item{
-				&.is-open{
-					.cs-accordeon{
-						&__title{
-							&::before{
-								content: '';
-								transform: rotate(90deg);
-							}
-							&::after{
-								transform: rotate(90deg);
-								opacity: 0;
-							}
-						}
-					}
-				}
-			}
-			&__title{
-				&::after{
-					content: '';
-					display: block;
-					position: absolute;
-					top: 50%;
-					margin-top: -4px;
-					right: 3.5px;
-					width: 11px;
-					height: 1px;
-					background-color: $gray;
-					transform-origin: 50% 50%;
-					will-change: transform;
-					@include tr;
-				}
-				&::before{
-					content: '';
-					display: block;
-					position: absolute;
-					top: 50%;
-					margin-top: -9px;
-					right: 8px;
-					width: 1px;
-					height: 11px;
-					background-color: $gray;
-					transform-origin: 50% 50%;
-					will-change: transform;
-					@include tr;
-				}
-			}
-			&__content{
-				width: 100%;
-			}
-		}
-	}//cs-accordeon--other
-
 	&__item{
-		@include max-screen(480) {
-			box-shadow: none;
-		}
 		&.is-open{
 			.cs-accordeon{
-				&__title{
-					&:hover{
-						box-shadow: none;
-					}
+				&__icon{
 					&::before{
-						content: '\f106';
+						content: '';
+						transform: rotate(90deg);
+					}
+					&::after{
+						transform: rotate(90deg);
+						opacity: 0;
 					}
 				}
 			}
 		}
-	}//cs-accordeon__item
+	}
+	
+	&__icon{
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		background-color: $gray;
+		border-radius: 50%;
+		position: absolute;
+		top: 1px;
+		right: 0;
+		&::after, &::before{
+
+		}
+		&::after{
+			content: '';
+			display: block;
+			position: absolute;
+			top: 10px;
+			right: 4.5px;
+			width: 11px;
+			height: 1px;
+			background-color: #fff;
+			transform-origin: 50% 50%;
+			will-change: transform;
+			@include tr;
+		}
+		&::before{
+			content: '';
+			display: block;
+			position: absolute;
+			top: 4.5px;
+			right: 9px;
+			width: 1px;
+			height: 11px;
+			background-color: #fff;
+			transform-origin: 50% 50%;
+			will-change: transform;
+			@include tr;
+		}				
+	}
+
+	&__content{width: 100%;}
 
 	&__title{
 		font-family: $f-light;
@@ -530,50 +517,4 @@
 		cursor: pointer;
 		position: relative;
 	}//cs-accordeon__title
-
-	&--mobile{
-		.cs-accordeon{
-			&__item{
-				border-bottom: 1px solid $color-border;
-				&:first-child{
-					border-top: 1px solid $color-border;
-				}
-				& + .cs-accordeon__item{margin-top: 0;}
-			}
-			&__title{
-				display: block;
-				width: 100%;
-				padding: 10px 0 9px;
-				&::before{
-					margin-right: 0;
-					@include vy;
-					right: 10px;
-				}
-			}
-			&__content{
-				padding: 0 10px 7px;
-				font-size: 14px;
-				a{
-					padding: 5px 0;
-				}
-			}
-		}
-	}
-
-	&--dark{
-		.cs-accordeon{
-			&__item{
-				background-color: $gray--dark;
-			}
-			&__title{
-				color: rgba(#fff, 0.4);
-				&::before{
-					color: rgba(#fff, 0.4);
-				}
-			}
-			&__content{
-			}
-		}
-	}
-
 }//cs-accordeon

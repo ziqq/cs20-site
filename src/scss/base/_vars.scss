@@ -32,12 +32,9 @@ $color-text--header        :#000;
 //bg
 $color-bg--dark            :#090113;
 
-$bg-gradient--from         :#090113;
-$bg-gradient--to           :#1c0439;
-
 //border
 $color-border              :$gray;
-$color-border--light       :#e3dede;
+$color-border--light       :$gray--light;
 $color-border--lighten     :#e5e5e5;
 
 $border-radius             :2px;

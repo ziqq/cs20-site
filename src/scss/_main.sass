@@ -63,6 +63,17 @@
 .js-scroll
 	+smooth-scroll
 
+.overlay
+	display: none
+	background-color: rgba(#000, .5)
+	+coverdiv
+	z-index: 300
+
+.page-title
+	+r(768)
+		font-size: 24px
+//page-title
+
 .badge
 	min-width: 20px
 	height: 19px
@@ -99,6 +110,8 @@
 
 .breadcrumbs
 	padding: 40px 0
+	+r(768)
+		padding: 15px 0
 	//breadcrumbs__list
 	&__list
 		@extend %flexCenter
@@ -126,3 +139,42 @@
 		font-size: 14px
 		color: #000
 //breadcrumbs
+
+.pagination
+	//pagination__list
+	&__list
+		@extend %flexCenter
+		justify-content: center
+	//pagination__item
+	&__item
+		& + &
+			margin-left: 3px
+		&:first-child, &:last-child
+			.pagination__link
+				font-size: 20px
+				color: $gray--light
+				border: 0
+				&:hover
+					color: $color-text
+					background-color: transparent
+	//pagination__link
+	&__link
+		display: inline-block
+		width: 30px
+		height: 30px
+		line-height: 28px
+		text-align: center
+		font-size: 14px
+		color: #000
+		border: 1px solid $color-border--light
+		transition: initial
+		&:hover
+			color: #fff
+			background-color: $gray
+			border-color: $gray
+	//pagination__icon
+	&__icon
+		line-height: 1
+		position: relative
+		top: -1px
+//pagination
