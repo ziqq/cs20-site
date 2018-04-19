@@ -2,6 +2,7 @@
 @import "base/all"
 @import "_generated/sprite-png"
 @import "libs"
+@import "csmixins"
 @import "custom.libs"
 @import "custom"
 @import "_generated/smart-grid"
@@ -37,7 +38,7 @@ input, textarea, select
 	+placeholder
 		font-family: $f-light
 		font-size: 14px
-		color: #eee
+		color: $color-placeholder
 
 textarea, select
 	+cs-scroll

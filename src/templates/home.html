@@ -1,11 +1,136 @@
 ---
 title: Интернет-магазин износостойких автокомпонентов с доставкой по РФ
+wrapClass: page-home
+---
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
 
 <!-- begin home -->
-<main class="main home">
+<div class="content-wrapper home">
+
+	<!-- begin firstscreen -->
+	<div class="firstscreen js-firstscreen">
+		<div class="container">
+
+			<h1 class="h1 page__title firstscreen__title" itemprop="headline">Интернет-магазин износостойких <br> автокомпонентов с доставкой по РФ</h1>
+
+			<!-- begin home-search -->
+			<div class="home-search js-home-search">
+				<div class="tab">
+					<div class="tab__wrap">
+						<div class="tab__titles js-home-search-tab">
+							<div class="tab__title is-active" data-tab="0">
+								{{ mixin.icon('home-search__car', 'home-search__icon home-search__icon--car') }}
+								Поиск по автомобилю
+							</div>
+							<div class="tab__title" data-tab="1">
+								{{ mixin.icon('home-search__product', 'home-search__icon home-search__icon--product') }}
+								Поиск по продукции
+							</div>
+							<div class="tab__title" data-tab="2">
+								{{ mixin.icon('home-search__series', 'home-search__icon home-search__icon--series') }}
+								Поиск по сериям
+							</div>
+							<div class="tab__title" data-tab="3">
+								{{ mixin.icon('home-search__articul', 'home-search__icon home-search__icon--articul') }}
+								Поиск по артикулу
+							</div>
+						</div>
+						<div class="tab__contentes">
+							<div class="tab__content tab__content--car" style="display: block;">
+								<form class="home-search__form">
+									<div class="home-search__block">
+										<select class="home-search__select js-select no-search">
+											<option value="Марка автомобиля" selected disabled>Марка автомобиля</option>	
+											<option value="ВАЗ">ВАЗ</option>			
+											<option value="ГАЗ">ГАЗ</option>			
+											<option value="УАЗ">УАЗ</option>			
+											<option value="RENAULT">RENAULT</option>			
+										</select>	
+										<select class="home-search__select js-select no-search">
+											<option value="Модель автомобиля" selected disabled>Модель автомобиля</option>	
+											<option value="1118 Калина">1118 Калина</option>			
+											<option value="1119 Калина">1119 Калина</option>			
+											<option value="2101-2107">2101-2107</option>			
+											<option value="2108-2109">2108-2109</option>				
+										</select>
+									</div>
+									<button class="button button--accent home-search__btn" type="submit">Поиск</button>
+								</form>
+							</div>
+
+							<div class="tab__content tab__content--product">
+								<div class="home-search__in">
+									<ul class="home-search__list">
+										<li class="home-search__item">
+											<a href="#" class="home-search__link">Элементы подвески</a>
+										</li>
+										<li class="home-search__item">
+											<a href="#" class="home-search__link">Прокладки / Ремкомплекты</a>
+										</li>
+									</ul>
+									<ul class="home-search__list">
+										<li class="home-search__item">
+											<a href="#" class="home-search__link">Патрубки / Шлаги</a>
+										</li>
+										<li class="home-search__item">
+											<a href="#" class="home-search__link">Крепления глушителя</a>
+										</li>
+									</ul>
+									<ul class="home-search__list">
+										<li class="home-search__item">
+											<a href="#" class="home-search__link">Подушки двигателя</a>
+										</li>
+										<li class="home-search__item">
+											<a href="#" class="home-search__link">Брызговики</a>
+										</li>
+									</ul>
+									<ul class="home-search__list">
+										<li class="home-search__item">
+											<a href="#" class="home-search__link">Коврики</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="tab__content tab__content--series">
+								<div class="home-search__in">
+									<ul class="home-search__list home-search__list--wide">
+										<li class="home-search__item">
+											<a href="#" class="home-search__link">Comfort</a>
+										</li>
+										<li class="home-search__item">
+											<a href="#" class="home-search__link">Drive</a>
+										</li>
+										<li class="home-search__item">
+											<a href="#" class="home-search__link">Profi</a>
+										</li>
+										<li class="home-search__item">
+											<a href="#" class="home-search__link">Original+</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="tab__content tab__content--articul">
+								<form class="home-search__form">
+									<div class="home-search__search">
+										<input type="text" placeholder="Например, крепление глушителя">
+										<i class="home-search__clear js-home-search-clear">X</i>
+									</div>
+									<button type="submit" class="button button--accent home-search__btn">Поиск</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end home-search -->
+
+		</div>
+	</div>
+	<!-- end firstscreen -->
 
 	<!-- begin cs-section -->
 	<section class="cs-section category">
@@ -17,28 +142,16 @@ title: Интернет-магазин износостойких автоком
 					<div class="cs-grid cs-grid--left">
 						<a href="#" class="category__item">
 							<span class="category__title">Элементы подвески</span>
-							<picture>
-								<source media="(max-width: 1024px)" srcset="img/general/category/tabl/1.png">
-								<source media="(max-width: 480px)" srcset="img/general/category/mob/1.png">
-								<img class="category__img" src="img/general/category/desk/1.png" alt="Элементы подвески">
-							</picture>
+							{{item.categoryImg(1)}}
 						</a>
 						<div class="cs-grid cs-grid--column">
 							<a href="#" class="category__item">
 								<span class="category__title">Патрубки / Шлаги</span>
-								<picture>
-									<source media="(max-width: 1024px)" srcset="img/general/category/tabl/2.png">
-									<source media="(max-width: 480px)" srcset="img/general/category/mob/2.png">
-									<img class="category__img" src="img/general/category/desk/2.png" alt="Элементы подвески">
-								</picture>
+								{{item.categoryImg(2)}}
 							</a>
 							<a href="#" class="category__item js-category-item-moveto">
 								<span class="category__title">Подушки двигателя</span>
-								<picture>
-									<source media="(max-width: 1024px)" srcset="img/general/category/tabl/3.png">
-									<source media="(max-width: 480px)" srcset="img/general/category/mob/3.png">
-									<img class="category__img" src="img/general/category/desk/3.png" alt="Элементы подвески">
-								</picture>
+								{{item.categoryImg(3)}}
 							</a>
 						</div>
 					</div>
@@ -46,36 +159,21 @@ title: Интернет-магазин износостойких автоком
 						<div class="cs-grid cs-grid--wide js-category-moveto">
 							<a href="#" class="category__item">
 								<span class="category__title">Крепления глушителя</span>
-								<picture>
-									<source media="(max-width: 1024px)" srcset="img/general/category/tabl/4.png">
-									<source media="(max-width: 480px)" srcset="img/general/category/mob/4.png">
-									<img class="category__img" src="img/general/category/desk/4.png" alt="Элементы подвески">
-								</picture>
+								{{item.categoryImg(4)}}
 							</a>
 							<a href="#" class="category__item">
 								<span class="category__title">Коврики</span>
-								<picture>
-									<source media="(max-width: 1024px)" srcset="img/general/category/tabl/5.png">
-									<source media="(max-width: 480px)" srcset="img/general/category/mob/5.png">
-									<img class="category__img" src="img/general/category/desk/5.png" alt="Элементы подвески">
-								</picture>
+								{{item.categoryImg(5)}}
 							</a>
 						</div>
 						<div class="cs-grid cs-grid--wide cs-grid--reverse">
 							<a href="#" class="category__item">
 								<span class="category__title">Прокладки / Ремкомплекты</span>
-								<picture>
-									<sourrce media="(max-width:4804px)" srcset="img/general/categorymobl/6.png">
-									<img class="category__img" src="img/general/category/desk/6.png" alt="Элементы подвески">
-								</picture>
+								{{item.categoryImg(6)}}
 							</a>
 							<a href="#" class="category__item">
 								<span class="category__title">Брызговики</span>
-								<picture>
-									<source media="(max-width: 1024px)" srcset="img/general/category/tabl/7.png">
-									<source media="(max-width: 480px)" srcset="img/general/category/mob/7.png">
-									<img class="category__img" src="img/general/category/desk/7.png" alt="Элементы подвески">
-								</picture>
+								{{item.categoryImg(7)}}
 							</a>
 						</div>
 					</div>
@@ -83,7 +181,8 @@ title: Интернет-магазин износостойких автоком
 			</div>
 
 		</div>
-	</section><!-- end cs-section -->
+	</section>
+	<!-- end cs-section -->
 
 	<!-- begin cs-section -->
 	<section class="cs-section adv">
@@ -132,9 +231,10 @@ title: Интернет-магазин износостойких автоком
 				{% endfor %}﻿
 			</div>
 		</div>
-	</section><!-- end cs-section -->
+	</section>
+	<!-- end cs-section -->
 
-</main>	
+</div>	
 <!-- end home -->
 
 {% endblock %}

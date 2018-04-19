@@ -5,7 +5,8 @@ $('.js-sorting--btn').on('click', function(){
 });
 
 //Catalog Filter Acordeon Open
-$('.js-filter').find('.js-filter-content').removeClass('is-open').slideDown();
+// $('.js-filter').find('.cs-accordeon__item').removeClass('is-open');
+// $('.js-filter').find('.cs-accordeon__item').removeClass('is-open');.slideDown();
 
 if ($('#js-filter-slider').length > 0) {
 

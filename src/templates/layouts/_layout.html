@@ -36,11 +36,9 @@
 </head>
 <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
 	
-	<div class="wrapper {{ wrapperClass }}">
-		<div class="wrapper__inner">
-			{% include "partials/_header.html" %}
-			{% block content %}{% endblock %}
-		</div>
+	<div class="page-wrapper {{wrapClass}}">
+		{% include "partials/_header.html" %}
+		{% block content %}{% endblock %}
 		{% include "partials/_footer.html" %}
 	</div>
 	

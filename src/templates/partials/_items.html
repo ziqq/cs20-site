@@ -25,14 +25,6 @@
 {% endmacro %}
 <!-- item.checkbox('мужской', 'cs-checkbox--radio, profile-editor__checkbox') -->
 
-{% macro button(title, class) %}
-<button class="button-animate js-btn-animate {{class}}">
-	{{title}}
-	<span class="button-animate__hover"></span>
-</button>
-{% endmacro %}
-<!-- item.button('Пригласить', 'invite__btn') -->
-
 {% macro starRating() %}
 <div class="star-rating">
 	<div class="star-rating__wrap">
@@ -48,6 +40,14 @@
 		<label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-1" title="1 из 5"></label>
 	</div>
 </div>
+{% endmacro %}
+
+{% macro categoryImg(img) %}
+<picture>
+	<source media="(max-width: 1024px)" srcset="img/general/category/tabl/{{img}}.png">
+	<source media="(max-width: 480px)" srcset="img/general/category/mob/{{img}}.png">
+	<img class="category__img" src="img/general/category/desk/{{img}}.png" alt="alt">
+</picture>
 {% endmacro %}
 
 {% macro catalogItem(class) %}

@@ -1,16 +1,54 @@
 $(document).ready(function () {
 
     if ($(window).width() > 768) {
-        //wrapper padding
-        function wrapOffset(){
-            $('.wrapper').css('padding-bottom', $('.footer').outerHeight(true));
-        }wrapOffset();
-        $(window).on('resize', function(){
-            wrapOffset();
-        })
     }else{
         $('.js-category-item-moveto').prependTo('.js-category-moveto');
+
+        //Home Search < 768
+        $('.js-home-search-tab').addClass('js-cs-accordeon');
+        $('.js-home-search').find('.tab__title').addClass('cs-accordeon__title').wrap('<div class="cs-accordeon__item">');
+        $('.js-home-search').find('.tab__content--car').insertAfter('[data-tab="0"]');
+        $('.js-home-search').find('.tab__content--product').insertAfter('[data-tab="1"]');
+        $('.js-home-search').find('.tab__content--series').insertAfter('[data-tab="2"]');
+        $('.js-home-search').find('.tab__content--articul').insertAfter('[data-tab="3"]');
+        $('.js-home-search').find('.tab__content').addClass('cs-accordeon__content');
+        $('.js-home-search').find('.tab__contentes').remove();
+
+        $('.js-header-phone').insertAfter('.home-search');
     }
+
+    //First Screen Padding-Top
+    $('.js-firstscreen').css('padding-top', $('.header').outerHeight(true));
+
+    //Tabs Script
+    if ( $('.js-home-search-tab').length > 0 && $(window).width() > 768) {
+        document.querySelector('.js-home-search-tab').addEventListener('click', tabs);       
+    }
+
+    function tabs(e) {
+        var target = e.target;
+        if (target.className == 'tab__title') {
+            var dataTab    = target.getAttribute('data-tab');
+            var tabContent = document.querySelectorAll('.tab__content');
+            var tabTitle   = document.querySelectorAll('.tab__title');
+            for (var i = 0; i < tabTitle.length; i++) {
+                tabTitle[i].classList.remove('is-active');
+            }
+            target.classList.add('is-active');
+            for (var i = 0; i < tabContent.length; i++) {
+                if (dataTab == i) {
+                    tabContent[i].style.display = 'block';
+                }else{
+                    tabContent[i].style.display = 'none';
+                }
+            }
+        }   
+    }  
+
+    //Clear Input Vall
+    $('.js-home-search-clear').on('click', function(){
+        $(this).parent().find('input[type="text"]').val('');
+    });
     
 
     $(window).on("load",function(){
@@ -65,57 +103,26 @@ $(document).ready(function () {
     }
 
     //Custom Select https://select2.org/
-    if($('.js-select').length > 0 && $(window).width() > 480){
+    if($('.js-select').length > 0 && $(window).width() > 320){
         $('.js-select').select2({
             placeholder: "Select a State",
-            container: ".bb-select__container"
-        });
-
-        $('.js-select.bb-select--metro').select2({
-            templateResult: addUserPic
+            container: ".cs-select__container"
         });
         $('.js-select.no-search').select2({
             minimumResultsForSearch: -1
         });
-        function addUserPic (opt) {
-            if (!opt.id) {
-                return opt.text;
-            }               
-            var optimage = $(opt.element).data('image'); 
-            if(!optimage){
-                return opt.text;
-            } else {
-                var $opt = $(
-                    '<span class="metro-icon metro-icon--' + optimage + '">' + $(opt.element).text() + '</span>'
-                    );
-                return $opt;
-            }
-        };
+
         $(document).click(function(event) {
             if ($(event.target).closest('.select2-dropdown, .select2-container').length) return;
             $('.js-select').select2('close');
             event.stopPropagation();
         });
+
         $(document).on("focus", '.select2-search__field', function(e) {
             e.stopPropagation();
         });
     }else{
-        $('.js-select').wrap('<label class="bb-select">');
-    }
-
-    //Datepicker http://t1m0n.name/air-datepicker/docs/index-ru.html
-    if(('.js-date').length > 0){
-        $('.js-date').datepicker({
-            dateFormat: 'dd.mm.yy',
-            autoClose: true
-        });
-    }
-    if(('.js-date--inverse').length > 0){
-        $('.js-date--inverse').datepicker({
-            position : 'top left',
-            classes  : 'ak-datepicker--inverse',
-            dateFormat: 'dd.mm.yy'
-        });
+        // $('.js-select').wrap('<label class="bb-select">');
     }
 
     //Masked inputmask https://github.com/RobinHerbots/Inputmask

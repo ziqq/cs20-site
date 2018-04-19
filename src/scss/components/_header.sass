@@ -19,9 +19,14 @@
 	&__logo, &__cart, &__search
 		margin-right: 30px
 
-	&__phone, &__search
+	&__search
 		+r(768)
 			display: none
+
+	&__phone
+		+r(768)
+			margin-bottom: 35px
+			text-align: center
 
 	&__logo
 		+r(768)
@@ -47,6 +52,55 @@
 	&__icon
 		fill: #fff
 //search
+
+.search
+	display: inline-block
+	position: relative
+	height: 32px
+	padding: 0
+	position: relative
+
+	&__field
+		height: 32px
+		padding: 3px
+		padding-right: 45px
+		display: inline-block
+		font-family: $f-light
+		font-size: 15px
+		color: #fff
+		width: 0px
+		border: none
+		outline: none
+		cursor: pointer
+		background: none
+		position: absolute
+		top: 0
+		right: 0
+		z-index: 3
+		transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000)
+
+		&:focus:hover
+			border-bottom: 1px solid #BBB
+
+		&:focus
+			width: 300px
+			z-index: 1
+			border-bottom: 1px solid #BBB
+			cursor: text
+
+	&__submit
+		display: inline-block
+		height: 30px
+		width: 26px
+		text-indent: -10000px
+		cursor: pointer
+		border: none
+		background-color: transparent
+		+s('search')
+		position: absolute
+		top: 2px
+		right: 0
+		z-index: 2
 
 .cart
 	position: relative
