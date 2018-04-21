@@ -7,7 +7,7 @@ $(document).ready(function () {
         //Home Search < 768
         $('.js-home-search-tab').addClass('js-cs-accordeon');
         $('.js-home-search').find('.tab__title').addClass('cs-accordeon__title').wrap('<div class="cs-accordeon__item">');
-        $('.js-home-search').find('.tab__content--car').insertAfter('[data-tab="0"]');
+        $('.js-home-search').find('.tab__content--car').removeAttr('style').insertAfter('[data-tab="0"]');
         $('.js-home-search').find('.tab__content--product').insertAfter('[data-tab="1"]');
         $('.js-home-search').find('.tab__content--series').insertAfter('[data-tab="2"]');
         $('.js-home-search').find('.tab__content--articul').insertAfter('[data-tab="3"]');
@@ -71,12 +71,23 @@ $(document).ready(function () {
         }        
     });
 
+    //Input Focus
+    if($('.js-input').length){
+        $('.js-input').focus(function (){
+            $(this).parent('.input').addClass('is-focus');
+        }).blur(function(){
+            if($(this).val() == ''){
+                $(this).parent('.input').removeClass('is-focus');
+            }
+        });
+    }
+
     //Slick Slider https://kenwheeler.github.io/slick/
     if($('.js-cs-slider').length > 0){
         $('.js-cs-slider').slick({
             nextArrow: '.cs-slider__arrow--next',
             prevArrow: '.cs-slider__arrow--prev',
-            arrows: false,
+            arrows: true,
             infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -90,8 +101,8 @@ $(document).ready(function () {
     //Modal FancyBox 3 https://fancyapps.com/fancybox/3/
     if($('[data-fancybox]').length > 0){
         $('[data-fancybox]').fancybox({
-            baseClass : 'bb-window__wrap',      
-            // touch: false,
+            baseClass : 'modal-window__wrap',      
+            touch: false,
             closeClickOutside : true,
             autoFocus: false,
             helpers: {
@@ -103,7 +114,7 @@ $(document).ready(function () {
     }
 
     //Custom Select https://select2.org/
-    if($('.js-select').length > 0 && $(window).width() > 320){
+    if($('.js-select').length > 0){
         $('.js-select').select2({
             placeholder: "Select a State",
             container: ".cs-select__container"

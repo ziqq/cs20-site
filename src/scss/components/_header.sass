@@ -49,11 +49,6 @@
 //logo
 
 .search
-	&__icon
-		fill: #fff
-//search
-
-.search
 	display: inline-block
 	position: relative
 	height: 32px
@@ -87,6 +82,8 @@
 			z-index: 1
 			border-bottom: 1px solid #BBB
 			cursor: text
+			+r(320)
+				width: 250px
 
 	&__submit
 		display: inline-block
@@ -102,8 +99,19 @@
 		right: 0
 		z-index: 2
 
+	&__icon
+		fill: #fff
+//search
+
 .cart
+	cursor: pointer
 	position: relative
+	&:hover
+		.cart__icon
+			color: $gray--light
+	//cart__icon
+	&__icon
+		fill: #fff
 	//cart__counter
 	&__counter		
 		position: absolute

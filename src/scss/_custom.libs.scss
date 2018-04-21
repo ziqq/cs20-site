@@ -61,10 +61,10 @@
 }
 
 .select2-dropdown{
-	max-height: 133px;
+	// max-height: 133px;
 	border-radius: $border-radius;
-	overflow: hidden;
-	@include cs-scroll;
+	// overflow: hidden;
+	// @include cs-scroll;
 }
 .select2-results__options{
 	@include cs-scroll;

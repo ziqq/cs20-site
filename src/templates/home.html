@@ -221,14 +221,18 @@ wrapClass: page-home
 	<!-- begin cs-section -->
 	<section class="cs-section baner">
 		<div class="container">
-			<div class="cs-slider js-cs-slider">
-				{% for i in range(0, 2) %}
-				<div class="cs-slider__item baner__bg" style="background-image: url(img/general/baner-home.png);">
-					<h2 class="baner__title">Не нашли?</h2>
-					<div class="baner__desc">Эксперты бесплатно подберут детали для Вашей машины по телефону. Звонок бесплатный!</div>
-					<a href="#" class="baner__phone">8 800 555 25 40</a>
+			<div class="cs-slider">
+				<div class="cs-slider__arrow cs-slider__arrow--prev"></div>
+				<div class="cs-slider__arrow cs-slider__arrow--next"></div>
+				<div class="cs-slider__slides js-cs-slider">
+					{% for i in range(0, 2) %}
+					<div class="cs-slider__slided baner__bg" style="background-image: url(img/general/baner-home.png);">
+						<h2 class="baner__title">Не нашли?</h2>
+						<div class="baner__desc">Эксперты бесплатно подберут детали для Вашей машины по телефону. Звонок бесплатный!</div>
+						<a href="#" class="baner__phone">8 800 555 25 40</a>
+					</div>
+					{% endfor %}﻿
 				</div>
-				{% endfor %}﻿
 			</div>
 		</div>
 	</section>

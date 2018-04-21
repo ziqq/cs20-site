@@ -19,11 +19,41 @@
 			margin-right: 0
 			&::before
 				display: none
+		&.is-active
+			.nav__link
+				&::after
+					width: 100%
+		&.cs-dropdown
+			border-radius: $border-radius $border-radius 0 0
+			&:hover
+				.nav__link
+					color: #000
+					background-color: #fff
+					&::before
+						content: '\f106'
+			.nav__link
+				padding-right: 25px
+				transition: initial
+				&::after
+					display: none
+				&::before
+					content: '\f107'
+					font-family: fontawesome
+					display: inline-block
+					+vy
+					right: 10px
+		
+		.cs-dropdown
+			&__link
+				&::after
+					+rmin(481)
+						display: none
 	//nav__link
 	&__link
 		display: block
-		padding: 5px 7.5px
+		padding: 5px 10px
 		font-size: 14px
+		border-radius: $border-radius
 		color: #fff
 		position: relative
 		&::after
@@ -41,7 +71,6 @@
 			color: #fff
 			&::after
 				width: 100%
-
 	//nav--main
 	&--main
 		+r(768)
@@ -69,10 +98,12 @@
 	//mobile-menu__link
 	&__link
 		display: block
-		padding: 10px 0 10px 25px
+		padding: 10px 0 10px 30px
 		font-size: 14px
 		color: $color-secondary
 		position: relative
+		&:hover, &:focus
+			color: #000
 		&::after
 			content: '\f105'
 			font-family: fontawesome
@@ -85,6 +116,28 @@
 			+s(mobile__home)
 			+vy
 			left: 0
+		@each $m in catalog, company, contacts, delivery, garanty, home, lk, news, partners, pay, contacts
+			&--#{$m}
+				&::before
+					+s(mobile__#{$m})
+		&--lk
+			&::after
+				display: none
+
+	.cs-dropdown
+		&.is-active
+			&::before
+				content: '\f107'
+		&::before
+			content: '\f105'
+			right: 0
+			top: 3px
+			transform: translateY(0)
+		&__list
+			position: static
+			border-top: 0
+		&__link
+			padding-left: 25px
 
 	.phone
 		margin-top: 30px
@@ -93,9 +146,23 @@
 		&__link
 			margin: auto
 			color: $color-text
+
 	.social
 		&__list
 			margin: auto
+
+	//mobile-menu__search
+	&__search
+		position: absolute
+		right: 22px
+		top: 21px
+		z-index: 99
+
+	.search
+		&__submit
+			+s(search--mobile)
+		&__field
+			color: #000
 //mobile-nav
 
 .menu-toggle

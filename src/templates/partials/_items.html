@@ -25,6 +25,14 @@
 {% endmacro %}
 <!-- item.checkbox('мужской', 'cs-checkbox--radio, profile-editor__checkbox') -->
 
+{% macro input(type, title, class) %}
+<label class="input {{class}}">
+	<span class="input__title">{{title}}</span>
+	<input type="{{type}}" class="input__field js-input">
+</label>
+{% endmacro %}
+<!-- item.input('ЛОгин', 'form__input) -->
+
 {% macro starRating() %}
 <div class="star-rating">
 	<div class="star-rating__wrap">

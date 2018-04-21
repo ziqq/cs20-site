@@ -1,12 +1,31 @@
 <!-- begin mobile-nave -->
-<nav class="mobile-nav js-nav">
+<nav class="mobile-nav js-nav">	
+	<!-- begin search -->
+	<div class="search mobile-nav__search">
+		<form action="" autocomplete="on">
+			<input class="search__field" type="text" placeholder="Что вы ищите ?">
+			<input class="search__submit" type="submit">
+		</form>
+	</div>
+	<!-- end search -->
 	<ul class="mobile-nav__list">
 		{% import "data/data.html" as manu %}		
 		{% for item in manu.menuMobileTop %}
 		<li class="mobile-nav__item {{ item.class }}">
 			<a href="#" class="mobile-nav__link mobile-nav__link--{{ item.icon }}">{{ item.title }}</a>
 		</li>
-		{% endfor %}			
+		{% endfor %}		
+		<li class="mobile-nav__item cs-dropdown js-cs-dropdown">
+			<span class="mobile-nav__link mobile-nav__link--lk">Личный кабинет</span>
+			<ul class="cs-dropdown__list">
+				<li class="cs-dropdown__item">
+					<a href="#enter" class="cs-dropdown__link" data-fancybox>Вход</a>
+				</li>
+				<li class="cs-dropdown__item">
+					<a href="#register" class="cs-dropdown__link" data-fancybox>Регистрация</a>
+				</li>
+			</ul>
+		</li>	
 	</ul>
 	<ul class="mobile-nav__list">
 		{% import "data/data.html" as manu %}		

@@ -1,0 +1,21 @@
+%inputStyle
+	display: inline-block
+	height: 40px
+	line-height: 38px
+	border: 1px solid $gray--light
+	border-radius: $border-radius
+	background-color: #fff
+	+placeholder
+		color: $gray--light
+		font-size: 14px
+
+%responsMobile
+	+r(480)
+		max-width: 425px
+		width: 100%
+	+r(425)
+		max-width: 414px
+	+r(414)
+		max-width: 375px
+	+r(375)
+		max-width: 320px

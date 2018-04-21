@@ -1,0 +1,37 @@
+.cs-slider
+	position: relative
+	overflow: hidden
+
+	//cs-slider__arrow
+	&__arrow
+		width: 25px
+		height: 60px
+		line-height: 60px
+		text-align: center
+		background-color: #fff
+		opacity: .3
+		cursor: pointer
+		+tr
+		+vy
+		&.is-disable
+			display: none
+		&:hover
+			opacity: 1
+			&::before
+				color: #000
+				opacity: 1
+		&::before
+			font-family: fontawesome
+			font-size: 18px
+		&--next
+			right: 0
+			z-index: 1
+			&::before
+				content: '\f105'
+		&--prev
+			left: 0
+			z-index: 1
+			&::before
+				content: '\f104'
+
+//cs-slider

@@ -1,4 +1,37 @@
-<!-- begin auth-form -->
-<div class="cs-window" id="">
+<!-- begin register -->
+<div class="modal-window modal-window--mobile register" id="register">
+	<div class="modal-window__header">
+		<h4 class="modal-window__title">Регистрация</h4>
+	</div>
+	<div class="modal-window__body">
+		<form class="form form__register">
+			{{item.input('text', 'Логин', 'form__input')}}
+			{{item.input('text', 'Ваше имя', 'form__input')}}
+			{{item.input('email', 'Email', 'form__input')}}
+			{{item.input('password', 'Пароль', 'form__input')}}
+			<button type="submit" class="button button--accent form__btn">Зарегистрироваться</button>
+		</form>
+		<div class="info-text">Нажимая кнопку «Зарегистрироваться», я подтверждаю свою дееспособность, согласие на получение информации об оформлении и получении заказа, согласие на обработку персональных данных в соответствии с указанным <a href="#">здесь</a> текстом.</div>
+	</div>
 </div>
-<!-- end auth-form -->
+<!-- end register -->
+
+<!-- begin enter -->
+<div class="modal-window modal-window--mobile enter" id="enter">
+	<div class="modal-window__header">
+		<h4 class="modal-window__title">Авторизация</h4>
+	</div>
+	<div class="modal-window__body">
+		<form class="form form__register">
+			{{item.input('text', 'Логин или e-mail', 'form__input')}}
+			{{item.input('password', 'Пароль', 'form__input')}}
+			<div class="form__box">
+				{{item.checkbox('Запомнить меня', 'form__checkbox')}}
+				<a class="password-recovery" href="#" data-fancybox>Забыли пароль?</a>
+			</div>
+			<button type="submit" class="button button--accent form__btn">Вход</button>
+		</form>
+		<div class="info-text">если у Вас еще нет учетной записи, <a href="#register" data-fancybox>зарегистрируйтесь</a></div>
+	</div>
+</div>
+<!-- end enter -->

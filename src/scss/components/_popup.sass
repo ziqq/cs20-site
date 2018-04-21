@@ -1,0 +1,37 @@
+.modal-window
+	padding: 30px
+	border-radius: $border-radius
+	//modal-window--mobile
+	&--mobile
+		max-width: 460px
+		width: 100%
+		@extend %responsMobile
+	//modal-window__wrap
+	&__wrap
+
+	//modal-window__title
+	&__title
+		margin-bottom: 25px
+		color: #000
+		font-family: $f-medium
+		font-weight: 500
+		font-size: 24px
+
+	.fancybox-close-small
+		top: 23px
+		right: 17px
+		svg
+			width: 36px
+			opacity: 0.5
+			&:hover
+				opacity: 1
+
+	.info-text
+		margin-top: 20px
+
+//modal-window
+
+.info-text
+	color: #000
+	font-size: 13px
+	line-height: 1.2

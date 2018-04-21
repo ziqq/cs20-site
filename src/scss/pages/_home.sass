@@ -37,7 +37,8 @@
 		width: 27px
 		height: 27px
 		margin-right: 15px
-		fill: #bdbdbd
+		fill: $gray--light
+		+tr
 		+r(768)
 			fill: $color-secondary
 		&--series
@@ -58,7 +59,7 @@
 		flex: 1
 		@extend %flexCenter
 		+r(480)
-			margin-bottom: 30px
+			margin-bottom: 15px
 			flex-direction: column
 		.select2-container
 			width: 50% !important
@@ -72,12 +73,14 @@
 
 	//home-search__btn
 	&__btn
-		padding: 8.5px 65px
+		padding: 9px 65px
 		text-transform: uppercase
 		letter-spacing: 0.7px
 		+r(768)
 			display: block
 			margin: auto
+		+r(480)
+			width: 100%
 
 	//home-search__list
 	&__list
@@ -141,7 +144,7 @@
 		+r(480)
 			width: 100%
 			margin-right: 0			
-			margin-bottom: 30px
+			margin-bottom: 15px
 		input
 			width: 100%
 			color: #000
@@ -159,8 +162,6 @@
 		right: 0
 		&:hover
 			color: #000
-	//home-search__btn
-	&__btn
 
 	//home-search .tab
 	.tab
@@ -174,8 +175,17 @@
 			line-height: 46px
 			width: 25%
 			padding: 0 45px
+			color: $gray--light
 			border-radius: $border-radius $border-radius 0 0
 			position: relative
+			transition: color 0.35s ease
+			&:hover
+				color: #fff
+				.home-search__icon
+					fill: #fff
+			&.is-active
+				&:hover
+					color: initial
 			+r(1024)
 				padding: 0 20px
 			+r(768)
@@ -197,6 +207,8 @@
 
 		&__content
 			padding: 30px
+			+r(480)
+				padding: 15px
 	
 	//home-search .cs-accordeon
 	.cs-accordeon
@@ -208,7 +220,7 @@
 					&::after
 						content: '\f107'
 		&__content
-			margin-top: 1px
+			margin-top: -2px
 			background-color: #fff
 			border-radius: 0 0 $border-radius $border-radius
 
@@ -303,6 +315,9 @@
 		+r(480)
 			font-size: 18px
 	
+	//baner .slick-slide
+	.slick-slide
+		margin: 0
 	//baner .slick-dots
 	.slick-dots
 		padding: 0 44px
@@ -327,7 +342,9 @@
 		background-color: #eee
 		position: relative
 		overflow: hidden
+		filter: grayscale(100%)
 		&:hover
+			filter: grayscale(0)
 			.category__img
 				transform: scale(1.05)
 			.category__title

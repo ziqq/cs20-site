@@ -11,18 +11,8 @@
 				</div>
 				<!-- end logo -->
 				
-				<!-- begin nav -->
-				<nav class="nav nav--main">
-					<ul class="nav__list">
-						{% import "data/data.html" as manu %}		
-						{% for item in manu.menu %}
-						<li class="nav__item {{ item.class }}">
-							<a href="#" class="nav__link">{{ item.title }}</a>
-						</li>
-						{% endfor %}					
-					</ul>
-				</nav>
-				<!-- end nav -->
+				{% include "partials/components/_menu.html" %}
+
 			</div>
 			<div class="header__right">
 				<!-- begin search -->
@@ -35,7 +25,7 @@
 				<!-- end search -->
 				<!-- begin cart -->
 				<div class="cart header__cart">
-					{{mixin.icon('cart')}}
+					{{mixin.icon('cart', 'cart__icon')}}
 					<span class="cart__counter badge">32</span>
 				</div>
 				<!-- end cart -->		
