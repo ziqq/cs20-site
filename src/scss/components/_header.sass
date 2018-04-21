@@ -1,16 +1,35 @@
 .header
+	height: 100px
 	position: relative
+	+tr
+	+r(768)
+		height: 70px
+	&.is-fixed
+		height: 70px
+		.header__inner
+			height: 70px
+		.logo
+			&__img
+				width: 60px
+				height: 50px
 	//header__inner
 	&__inner
 		height: 100px
+		+tr
 		@extend %flex
-		+r(480)
+		+r(768)
 			height: 70px
 
 	//header__left
 	&__left, &__right
 		width: 50%
 		@extend %flexCenter
+	&__left
+		+r(1024)
+			width: 60%
+	&__right
+		+r(1024)
+			width: 40%
 
 	//header__right
 	&__right
@@ -25,8 +44,7 @@
 
 	&__phone
 		+r(768)
-			margin-bottom: 35px
-			text-align: center
+			display: none
 
 	&__logo
 		+r(768)
@@ -43,7 +61,8 @@
 	&__img
 		width: 80px
 		height: 70px
-		+r(480)
+		+tr
+		+r(768)
 			width: 60px
 			height: 50px
 //logo

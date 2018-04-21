@@ -1,7 +1,19 @@
 $('.js-sorting--btn').on('click', function(){
     $('.js-sorting--btn').removeClass('is-active');
     $(this).addClass('is-active');
-    console.log('test');
+});
+
+//Filter Open Btn
+$('.js-filter--open').on('click', function(){
+    $('.js-filter').addClass('is-open');
+    $('html').css('overflow', 'hidden');
+    $('.overlay').css('display', 'block');
+});
+//Filter Close Btn
+$('.js-filter--close').on('click', function(){
+    $('.js-filter').removeClass('is-open');
+    $('html').removeAttr('style');
+    $('.overlay').removeAttr('style');
 });
 
 //Catalog Filter Acordeon Open
