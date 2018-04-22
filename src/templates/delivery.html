@@ -1,0 +1,71 @@
+---
+title: Доставка | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
+
+delivery:
+ - img: img/general/delivery/pr.png
+   alt: Почта России
+ - img: img/general/delivery/dl.png
+   alt: Деловые линии
+ - img: img/general/delivery/pek.png
+   alt: Пек
+ - img: img/general/delivery/energy.png
+   alt: Енергия
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper delivery">
+
+	<!-- begin breadcrumbs -->
+	<div class="container">
+		<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+			<ul class="breadcrumbs__list">
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link" itemprop="url">
+						<span class="breadcrumbs__title" itemprop="title">Главная</span>
+					</a>
+				</li>
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link" itemprop="url">
+						<span class="breadcrumbs__title" itemprop="title">Каталог</span>
+					</a>
+				</li>
+				<li class="breadcrumbs__item">
+					<span class="breadcrumbs__title" itemprop="title">Патрубки / Шланги</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- end breadcrumbs -->
+
+	<!-- begin delivery -->
+	<div class="container">
+		<div class="delivery__section">
+			<h1 class="h1 page-title delivery__title" itemprop="headline">Доставка</h1>
+			<div class="delivery__desc">О точном времени доставки Вам сообщит менеджер при уточнении заказа. Если заказанный товар отсутствует на складе интернет-магазина, доставка заказа проводится на следующий рабочий день после оступления товара на склад. О времени поступления заказанного товара на склад Вам сообщит наш менеджер.</div>
+		</div>
+		
+		<div class="delivery__section">
+			<h3 class="h3 delivery__subtitle">Возможные способы доставки</h3>
+			<div class="delivery__items">
+				{% for item in delivery %}
+				<div class="delivery__item">
+					<img src="{{item.img}}" alt="{{item.фде}}" class="delivery__img">
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="delivery__section">
+			<h3 class="h3 delivery__subtitle">Самовывоз со склада</h3>
+			<div class="delivery__desc">Только для города Балаково.Склад находится по адресу: г. Балаково, ул. Транспортная 6/1, время работы: Пн-Пт 8:00-17:00, телефон: 8-800-555-25-40</div>
+		</div>
+	</div>
+	<!-- end delivery -->
+
+</div>	
+<!-- end home -->
+
+{% endblock %}

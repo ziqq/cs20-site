@@ -19,7 +19,15 @@ PageList:
 
 - file: payment.html
   ready: 50
-  desc : Контакты
+  desc : Способы оплаты
+
+- file: delivery.html
+  ready: 50
+  desc : Доставка
+
+- file: cart.html
+  ready: 50
+  desc : Корзина
 
   #404
 - file: 404.html

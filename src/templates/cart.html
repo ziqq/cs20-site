@@ -1,0 +1,146 @@
+---
+title: Доставка | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
+
+breadcrumbs:
+ - title: Корзина
+   icon: cart
+ - title: Авторизация
+   icon: user
+   class: is-disable
+ - title: Способ доставки
+   icon: delivery
+   class: is-disable
+ - title: Способ оплаты
+   icon: pay
+   class: is-disable
+ - title: Подтверждение заказа
+   icon: check
+   class: is-disable
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper cart">
+
+	<!-- begin breadcrumbs -->
+	<div class="container">
+		<div class="breadcrumbs breadcrumbs--icon">
+			<ul class="breadcrumbs__list">
+				{% for item in breadcrumbs %}
+				<li class="breadcrumbs__item {{item.class}}">
+					<a href="#" class="breadcrumbs__link">
+						<svg class="icon icon-{{item.icon}} ">
+							<use xlink:href="img/sprite.svg#{{item.icon}}"></use>
+						</svg>
+						{{item.title}}
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<!-- end breadcrumbs -->
+
+	<!-- begin cart -->
+	<div class="container">
+		<div class="cart__inner">
+			<!-- begin cart__left -->
+			<div class="cart__left">
+				<div class="cart__items js-fixed-block">
+					<div class="cart__item">
+						<div class="cart__img">
+							<img src="img/general/cart/1.png" alt="alt">
+						</div>
+						<div class="cart__text">Комплект патрубков ВАЗ-21073 инжектор (7 шт) <span>profi синий силикон</span> Состав: код 09246/07081/ 10096</div>
+						<div class="cart__price">150 <i class="fa fa-rub"></i></div>
+						<div class="cart__counter counter">
+							<span class="counter__control counter__control--minus js-counter--minus">—</span>
+							<input type="text" class="counter__field" value="1">
+							<span class="counter__control counter__control--plus js-counter--plus">+</span>
+						</div>
+						{{mixin.icon('close', 'cart__dell')}}
+					</div>
+					<div class="cart__item">
+						<div class="cart__img">
+							<img src="img/general/cart/1.png" alt="alt">
+						</div>
+						<div class="cart__text">Комплект патрубков ВАЗ-21073 инжектор (7 шт) <span>profi синий силикон</span> Состав: код 09246/07081/ 10096</div>
+						<div class="cart__price">150 <i class="fa fa-rub"></i></div>
+						<div class="cart__counter counter">
+							<span class="counter__control counter__control--minus js-counter--minus">—</span>
+							<input type="text" class="counter__field" value="1">
+							<span class="counter__control counter__control--plus js-counter--plus">+</span>
+						</div>
+						{{mixin.icon('close', 'cart__dell')}}
+					</div>
+					<div class="cart__item">
+						<div class="cart__img">
+							<img src="img/general/cart/1.png" alt="alt">
+						</div>
+						<div class="cart__text">Комплект патрубков ВАЗ-21073 инжектор (7 шт) <span>profi синий силикон</span> Состав: код 09246/07081/ 10096</div>
+						<div class="cart__price">150 <i class="fa fa-rub"></i></div>
+						<div class="cart__counter counter">
+							<span class="counter__control counter__control--minus js-counter--minus">—</span>
+							<input type="text" class="counter__field" value="1">
+							<span class="counter__control counter__control--plus js-counter--plus">+</span>
+						</div>
+						{{mixin.icon('close', 'cart__dell')}}
+					</div>
+				</div>
+			</div>
+			<!-- end cart__left -->
+			<!-- begin cart__right -->
+			<div class="cart__right">
+				<div class="cart__sum js-stiky-block">
+					<span class="cart__sum-title">Итого: 300 <i class="fa fa-rub"></i></span>
+					<button class="button button--accent product-item__btn">Оформить заказ</button>
+					<button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
+				</div>
+			</div>
+			<!-- end cart__right -->
+		</div>
+	</div>
+	<!-- end cart -->
+
+	<!-- begin cs-section -->
+	<section class="cs-section adv">
+		<div class="container">
+
+			<h2 class="h2 cs-section__title">При покупке этих товаров вы получаете</h2>
+
+			<div class="info-block">
+				<div class="info-block__items">
+					<div class="info-block__item">
+						{{mixin.icon('delivery', 'info-block__icon')}}
+						<div class="info-block__text">
+							<span class="info-block__title">Бесплатная доставка</span>
+							<p class="info-block__desc">При заказе в интернет-магазине <br> от 1000 рублей. По России.</p>
+						</div>
+					</div>
+					<div class="info-block__item">
+						{{mixin.icon('garanty', 'info-block__icon')}}
+						<div class="info-block__text">
+							<span class="info-block__title">Расширенная гарантия</span>
+							<p class="info-block__desc">Обмен товара на аналогичный <br> в течении 2 лет</p>
+						</div>
+					</div>
+					<div class="info-block__item">
+						{{mixin.icon('giftbox', 'info-block__icon')}}
+						<div class="info-block__text">
+							<span class="info-block__title">Подарок каждому</span>
+							<p class="info-block__desc">Прочные перчатки в подарок <br> к каждому заказу</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>			
+	</section>
+	<!-- end cs-section -->
+
+</div>	
+<!-- end home -->
+
+{% endblock %}

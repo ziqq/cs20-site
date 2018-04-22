@@ -132,6 +132,12 @@ $(document).ready(function () {
 
     
     /*
+     * Cart.js
+     */
+    //=include partials/cart.js
+
+    
+    /*
      * cs-scripts.js
      */
     //=include partials/cs-scripts.js

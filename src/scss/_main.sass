@@ -20,8 +20,7 @@
 	+r(1200)
 		padding: 0 10px
 
-.content-wrapper
-	min-height: 100vh
+.content-wrapper	
 	flex: 1
 
 
@@ -38,6 +37,13 @@
 
 .cs-section
 	margin-bottom: $section-indent
+	&__title
+		display: block
+		margin-bottom: 30px
+		font-family: $f-medium
+		font-weight: 500
+		font-size: 25px
+		color: #000
 
 .page-title
 	margin-bottom: 40px
@@ -59,6 +65,10 @@
 
 .js-scroll
 	+smooth-scroll
+
+.text
+	&--right
+		text-align: right
 
 .overlay
 	display: none
@@ -130,11 +140,56 @@
 		font-size: 14px		
 		.breadcrumbs__title
 			color: $color-accent
-
 	//breadcrumbs__title
 	&__title
 		font-size: 14px
 		color: #000
+
+	//breadcrumbs--icon
+	&--icon
+		.breadcrumbs
+			&__list
+				@extend %flexCenter
+				justify-content: spase-between
+			&__item
+				margin: auto
+				&.is-disable
+					.breadcrumbs__link
+						color: $color-text
+					.icon
+						fill: $color-text
+				&:last-child
+					.breadcrumbs__link
+						&::before
+							display: none
+				&::after
+					display: none
+			&__link
+				padding: 0 35px 0 45px
+				color: #000
+				font-size: 18px
+				line-height: 1
+				position: relative
+				&::before
+					content: '\f105'
+					font-family: fontawesome
+					font-size: 18px
+					+vy
+					right: 0
+				.icon
+					fill: #000
+					+vy
+					left: 0
+					&-cart
+						width: 21px
+					&-user
+						width: 20px
+					&-delivery
+						width: 25px
+					&-pay
+						width: 23px
+					&-check
+						width: 18px
 //breadcrumbs
 
 .pagination
