@@ -1,0 +1,63 @@
+---
+title: Варианты оплаты | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper payment">
+
+	<!-- begin breadcrumbs -->
+	<div class="container">
+		<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+			<ul class="breadcrumbs__list">
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link" itemprop="url">
+						<span class="breadcrumbs__title" itemprop="title">Главная</span>
+					</a>
+				</li>
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link" itemprop="url">
+						<span class="breadcrumbs__title" itemprop="title">Каталог</span>
+					</a>
+				</li>
+				<li class="breadcrumbs__item">
+					<span class="breadcrumbs__title" itemprop="title">Патрубки / Шланги</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- end breadcrumbs -->
+
+	<div class="container"><h1 class="h1 page-title payment__title" itemprop="headline">Варианты оплаты</h1></div>
+
+	<!-- begin payment -->
+	<div class="container">
+		<div class="payment__items">
+			<div class="payment__item">
+				<h2 class="h2 payment__title">1. Оплата на складе при получении:</h2>
+				<div class="payment__text">При оплате на складе Вы лично или Ваше доверенное лицо забираете товар с нашего склада и оплачиваете его на месте. Склад находится по адресу: г. Балаково, ул. Транспортная 6/1, время работы: Пн-Пт 8:00-17:00, телефон: 8-800-555-25-40</div>
+			</div>
+			<div class="payment__item">
+				<h2 class="h2 payment__title">2. Оплата банковской картой</h2>
+				<div class="payment__text">Оплата происходит через систему Робокасса. Данный вид оплаты является самым простым и распространенным, ведь система Робокасса включает в себя более 40 способов оплаты.</div>
+				<div class="payment__icons">
+					{{mixin.icon('robokassa', 'payment__icon')}}
+					<img class="payment__icons--robokassa" src="img/general/robokassa.png" alt="Способы оплаты">
+					{{mixin.icon('robokassa', 'payment__icon')}}
+					<img class="payment__icons--pay-method" src="img/general/pay-method.png" alt="Способы оплаты">
+				</div>
+			</div>
+			<div class="payment__item">
+				<h2 class="h2 payment__title">3. Безналичный платеж через банк</h2>
+				<div class="payment__text">Этот способ предназначен только для Юридических лиц. Ваши реквизиты для выставления счета Вы можете указать в комментариях при оформлении заказа или выслать на нашу эл. почту info@cs-20.ru с указанием номера заказа. Во время отгрузки вместе с товаром будут высланы все необходимые отчетные документы.</div>
+			</div>
+		</div>
+	</div>
+	<!-- end payment -->
+
+</div>	
+<!-- end home -->
+
+{% endblock %}

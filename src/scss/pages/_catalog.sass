@@ -2,12 +2,26 @@
 	padding-bottom: 100px
 	//catalog__topline
 	&__topline
-		margin-bottom: 40px
 		@extend %flexCenter
 		justify-content: space-between
+		+r(480)
+			flex-wrap: wrap
+
+	//catalog__title	
+	&__title
+		+r(1024)
+			margin: 0
+		+r(480)
+			margin-bottom: $gutter
+
 	//catalog__sorting
 	&__sorting
+		width: auto
 		margin-left: auto
+		display: flex
+		align-items: center
+		+r(480)
+			margin: auto
 	//catalog__content
 	&__content
 		@extend %flex
@@ -20,9 +34,12 @@
 	&__products
 		width: calc(100% - 270px - 30px)
 		margin-left: auto
+		margin-bottom: ($gutter*2 +20px)
 		position: relative
 		+r(768)
 			width: 100%
+		+r(480)
+			margin-bottom: $gutter
 //catalog
 
 .filter	
@@ -168,17 +185,6 @@
 .sorting
 	@extend %flexCenter
 	//sorting__count
-	&__count
-		margin-right: 15px
-		.select2-container
-			width: 65px !important
-		.select2-container--default .select2-selection--multiple, .select2-container--default .select2-selection--single, input, select, textarea
-			height: 36px
-		.select2-container--default .select2-selection--single .select2-selection__rendered
-			line-height: 33px
-		.select2-container--default .select2-selection--single .select2-selection__arrow
-			height: 36px
-			top: 4px
 	//sorting__title
 	&__title
 		margin-right: 5px
@@ -189,6 +195,8 @@
 	//sorting__list
 	&__list
 		@extend %flexCenter
+		+r(480)
+			margin-left: auto
 	//sorting__btn
 	&__btn
 		padding: 7px
@@ -212,6 +220,19 @@
 				content: ''
 				display: inline-block
 				+s(sorting--tile)
+	&__count
+		margin-right: 15px
+		.select2-container
+			width: 65px !important
+			+r(480)
+				width: auto
+		.select2-container--default .select2-selection--multiple, .select2-container--default .select2-selection--single, input, select, textarea
+			height: 36px
+		.select2-container--default .select2-selection--single .select2-selection__rendered
+			line-height: 33px
+		.select2-container--default .select2-selection--single .select2-selection__arrow
+			height: 36px
+			top: 4px
 //sorting
 
 .product-item
@@ -232,13 +253,20 @@
 	+r(1024)
 		width: 50%
 	+r(768)
-		width: 33.33%
+		width: 50%
+	+r(480)
+		width: 100%
+		margin-bottom: $gutter
+		&:last-child
+			margin-bottom: 0
 	//product-item__wrap
 	&__wrap
 		margin-bottom: 80px
 		@extend %flex
 		justify-content: flex-start
 		flex-wrap: wrap
+		+r(480)
+			margin-bottom: 50px
 	//product-item__img
 	&__img
 		margin-bottom: 20px

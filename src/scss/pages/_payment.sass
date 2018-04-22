@@ -1,0 +1,44 @@
+.payment
+	//payment__title
+	&__title
+		margin-bottom: 20px
+		color: #000
+		font-size: 24px
+		+r(480)
+			font-size: 18px
+	//payment__text
+	&__text
+		color: #000
+		font-size: 16px
+		+r(480)
+			font-size: 15px
+	//payment__items
+	//payment__item
+	&__item
+		margin-bottom: $gutter/2
+		padding: 20px 20px 25px
+		border: 1px solid $gray--lighten
+		border-radius: $border-radius
+	//payment__icons
+	&__icons
+		margin-top: $gutter/2
+		@extend %flexCenter
+		+r(480)
+			flex-wrap: wrap
+		&--robokassa
+			width: 17%
+			margin-left: -20px
+			margin-right: $gutter*2
+			+r(768)
+				width: 20%
+			+r(480)
+				width: 30%
+				margin-bottom: $gutter/2
+		&--pay-method
+			width: 50%
+			+r(768)
+				width: 70%
+			+r(480)
+				width: 100%
+
+//payment

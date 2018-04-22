@@ -1,54 +1,14 @@
 $(document).ready(function () {
 
-    if ($(window).width() > 768) {
-    }else{
-        $('.js-category-item-moveto').prependTo('.js-category-moveto');
-
-        //Home Search < 768
-        $('.js-home-search-tab').addClass('js-cs-accordeon');
-        $('.js-home-search').find('.tab__title').addClass('cs-accordeon__title').wrap('<div class="cs-accordeon__item">');
-        $('.js-home-search').find('.tab__content--car').removeAttr('style').insertAfter('[data-tab="0"]');
-        $('.js-home-search').find('.tab__content--product').insertAfter('[data-tab="1"]');
-        $('.js-home-search').find('.tab__content--series').insertAfter('[data-tab="2"]');
-        $('.js-home-search').find('.tab__content--articul').insertAfter('[data-tab="3"]');
-        $('.js-home-search').find('.tab__content').addClass('cs-accordeon__content');
-        $('.js-home-search').find('.tab__contentes').remove();
-
-        $('.js-header-phone').insertAfter('.home-search');
-    }
+    $('.content-wrapper').css('padding-top', $('.header').outerHeight(true));
 
     //First Screen Padding-Top
     $('.js-firstscreen').css('padding-top', $('.header').outerHeight(true));
 
-    //Tabs Script
+    //Табы в поиске на главной
     if ( $('.js-home-search-tab').length > 0 && $(window).width() > 768) {
         document.querySelector('.js-home-search-tab').addEventListener('click', tabs);       
-    }
-
-    function tabs(e) {
-        var target = e.target;
-        if (target.className == 'tab__title') {
-            var dataTab    = target.getAttribute('data-tab');
-            var tabContent = document.querySelectorAll('.tab__content');
-            var tabTitle   = document.querySelectorAll('.tab__title');
-            for (var i = 0; i < tabTitle.length; i++) {
-                tabTitle[i].classList.remove('is-active');
-            }
-            target.classList.add('is-active');
-            for (var i = 0; i < tabContent.length; i++) {
-                if (dataTab == i) {
-                    tabContent[i].style.display = 'block';
-                }else{
-                    tabContent[i].style.display = 'none';
-                }
-            }
-        }   
-    }  
-
-    //Clear Input Vall
-    $('.js-home-search-clear').on('click', function(){
-        $(this).parent().find('input[type="text"]').val('');
-    });
+    } 
     
 
     $(window).on("load",function(){
@@ -141,13 +101,6 @@ $(document).ready(function () {
         $('.js-phone-mask').inputmask({"mask": "+7 (999) 999-99-99"});        
     }
 
-    //Toggle Menu Button
-    $('.js-nav-toggle').on('click', function() {
-        $(this).toggleClass('is-open');
-        $('.js-nav').fadeToggle();
-        return false;
-    });
-
     //Click event to scroll to top
     $('.js-go-top').on('click', function (e) {
         e.preventDefault();
@@ -167,16 +120,26 @@ $(document).ready(function () {
 
     
     /*
+     * Header.js
+     */
+      //=include partials/header.js
+
+    
+    /*
      * Catalog.js
      */
-
     //=include partials/catalog.js
 
     
     /*
      * cs-scripts.js
      */
-
     //=include partials/cs-scripts.js
 
 });
+
+    
+    /*
+     * function
+     */
+      //=include partials/functions.js

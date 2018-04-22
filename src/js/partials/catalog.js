@@ -16,6 +16,15 @@ $('.js-filter--close').on('click', function(){
     $('.overlay').removeAttr('style');
 });
 
+//По клику в не блока скрываем его  
+$(document).click(function(event) {
+    if ($(event.target).closest('.js-filter, .js-filter--open').length) return;
+    event.stopPropagation();
+    $('.js-filter').removeClass('is-open');
+    $('html').removeAttr('style');
+    $('.overlay').removeAttr('style');
+});
+
 //Catalog Filter Acordeon Open
 // $('.js-filter').find('.cs-accordeon__item').removeClass('is-open');
 // $('.js-filter').find('.cs-accordeon__item').removeClass('is-open');.slideDown();

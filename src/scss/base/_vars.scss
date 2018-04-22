@@ -16,6 +16,7 @@ $font-weight-base: 400;
 $base-indent   : 30px;
 $half-indent   : $base-indent / 2;
 $section-indent: 60px;
+$gutter        : $base-indent;
 
 //Base Variebles
 $color-accent              :#a40c95;
@@ -44,3 +45,15 @@ $border-radius             :2px;
 $color-placeholder         :$gray;
 
 $bxs-hover: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+
+//z-index
+$z-index: (
+	bottom         : -9999,
+	down           : -1,
+	default        : 1,
+	sucsess        : 50,
+	fixed          : 201,
+	dropdown       : 333,
+	overlay        : 999,
+	modal          : 1001
+);
