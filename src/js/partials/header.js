@@ -1,3 +1,14 @@
+//При скроле добавляем класс к хедеру
+var lastScrollTop = 0;
+$(window).scroll(function(event){
+    var scroll = $(this).scrollTop();
+    if (scroll > 0){   
+        $('.header').addClass('is-fixed');
+    } else {
+        $('.header').removeClass('is-fixed');
+    }
+});
+
 //Header hamburger
 $('.js-nav-toggle').on('click', function() {
     $(this).toggleClass('is-open');
