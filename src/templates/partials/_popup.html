@@ -35,3 +35,22 @@
 	</div>
 </div>
 <!-- end enter -->
+
+<!-- begin buy-one-click -->
+<div class="modal-window modal-window--mobile buy-one-click" id="buy-one-click">
+	<div class="modal-window__header">
+		<h4 class="modal-window__title">Купить в 1 клик</h4>
+		<span class="modal-window__subtitle">Наши менеджеры свяжутся с Вами в течении 15 мин.</span>
+	</div>
+	<div class="modal-window__body">
+		<form class="form form__request">
+			{{item.input('text', 'Ваше имя', 'form__input')}}
+			<label class="input form__input">
+				<span class="input__title">Ваш ьелефон</span>
+				<input type="tel" class="input__field js-input js-phone-mask">
+			</label>
+			<button type="submit" class="button button--accent form__btn">Купить</button>
+		</form>
+	</div>
+</div>
+<!-- end buy-one-click -->

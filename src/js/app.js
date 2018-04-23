@@ -101,7 +101,10 @@ $(document).ready(function () {
 
     //Masked inputmask https://github.com/RobinHerbots/Inputmask
     if($('.js-phone-mask').length > 0){
-        $('.js-phone-mask').inputmask({"mask": "+7 (999) 999-99-99"});        
+        $('.js-phone-mask').inputmask({
+            mask: "+7 (999) 999-99-99",
+            showMaskOnHover: false
+        });        
     }
 
     //Click event to scroll to top

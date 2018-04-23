@@ -6,22 +6,30 @@
 		max-width: 460px
 		width: 100%
 		@extend %responsMobile
+
+	//modal-window__header
+	&__header		
+		margin-bottom: 25px
+
 	//modal-window__wrap
 	&__wrap
 
 	//modal-window__title
 	&__title
-		margin-bottom: 25px
+		margin-bottom: 0
 		color: #000
 		font-family: $f-medium
 		font-weight: 500
 		font-size: 24px
 
 	.fancybox-close-small
-		top: 23px
-		right: 17px
+		padding: 0
+		width: 30px
+		height: 30px
+		top: 3px
+		right: 2px
 		svg
-			width: 36px
+			width: 30px
 			opacity: 0.5
 			&:hover
 				opacity: 1
