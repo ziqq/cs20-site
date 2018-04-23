@@ -44,6 +44,10 @@
 		font-weight: 500
 		font-size: 25px
 		color: #000
+		+r(1024)
+			font-size: 20px
+		+r(768)
+			text-align: center
 
 .page-title
 	margin-bottom: 40px
@@ -151,33 +155,45 @@
 			&__list
 				@extend %flexCenter
 				justify-content: spase-between
+				+r(480)
+					justify-content: center
 			&__item
 				margin: auto
-				&.is-disable
+				&.is-active
 					.breadcrumbs__link
-						color: $color-text
+						color: #000
 					.icon
-						fill: $color-text
+						fill: #000
 				&:last-child
 					.breadcrumbs__link
 						&::before
 							display: none
 				&::after
 					display: none
+				+r(480)
+					&:not(.is-active)
+						display: none
+					.breadcrumbs__link
+						font-size: 16px
 			&__link
 				padding: 0 35px 0 45px
-				color: #000
+				color: $color-text
 				font-size: 18px
 				line-height: 1
 				position: relative
+				+r(768)
+					padding: 0 22px 0 30px
+					font-size: 15px
 				&::before
 					content: '\f105'
 					font-family: fontawesome
 					font-size: 18px
 					+vy
 					right: 0
+					+r(768)
+						display: none
 				.icon
-					fill: #000
+					fill: $color-text
 					+vy
 					left: 0
 					&-cart

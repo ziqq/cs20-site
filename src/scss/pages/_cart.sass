@@ -1,81 +1,95 @@
 .cart
-
 	//cart__inner
 	&__inner
 		margin-bottom: 60px
 		border: 1px solid $gray--lighten
+		border-bottom-color: transparent
 		@extend %flex
+		+r(1024)
+			flex-wrap: wrap
+			border: 0
+
 	//cart__left
 	&__left
 		width: calc(100% - 300px)
+		+r(1024)
+			width: 100%
+			margin-bottom: $gutter
+
 	//cart__right
 	&__right
 		width: 300px
 		margin-left: auto
-		border-left: 1px solid $gray--lighten
+		border-bottom: 1px solid $gray--lighten
+		+r(1024)
+			width: 100%
+			border: 0
+			display: flex
+			justify-content: center
+			align-items: center
 	
 	//cart__items
 	&__items
 		@extend %flexColumn
 
-	//cart__item
-	&__item
-		padding: 20px 65px 20px 20px
-		position: relative
-		@extend %flexCenter
-		& + &
-			border-top: 1px solid $gray--lighten
-	//cart__img
-	&__img
-		width: 175px
-		margin-right: 15px
-	//cart__text
-	&__text
-		max-width: 365px
-		margin-right: 15px
-		font-family: $f-medium
-		font-size: 14px
-		color: #000
-		span
-			text-transform: uppercase
-	//cart__price
-	&__price
-		margin-left: auto
-		margin-right: 30px
-		color: #000
-		font-family: $f-bold
-		font-size: 25px
-		.fa
-			font-size: 22px
-	//cart__counter
-	&__counter
-	//cart__dell
-	&__dell
-		width: 10px
-		fill: $gray--light
-		position: absolute
-		top: 15px
-		right: 15px
-		+tr
-		&:hover
-			fill: #000
-
 	//cart__sum
 	&__sum
 		width: 300px
-		padding: 10px 25px 25px
+		padding: 5px 25px 11px
+		+r(1024)
+			width: 100%
+			text-align: center
+			.button-box
+				max-width: 480px
+				margin: auto
+				display: flex
+				align-items: center
+		+r(480)
+			padding: 5px 0 11px
+			.button-box
+				max-width: 100%
+				flex-direction: column
 		&-title
 			display: block
-			margin-bottom: 25px
+			margin-bottom: 10px
 			font-family: $f-bold
 			font-size: 25px
 			color: #000
+			+r(1024)
+				margin-bottom: $gutter
 			.fa
 				font-size: 22px
 		.button
 			margin-bottom: 10px
 			&:last-child
 				margin-bottom: 0
+			+r(1024)
+				margin-bottom: 0
+				margin-right: 15px
+				&:last-child
+					margin-right: 0
+			+r(480)
+				margin-right: 0
+				margin-bottom: 10px
+				&:last-child
+					margin-bottom: 0
+
+	.product-item
+		+r(480)
+			&__desc
+				display: flex
+				align-items: center
+				flex-wrap: wrap
+			&__title
+				width: 100%
+			&__price, &__counter
+				margin-bottom: 0
+			&__counter
+				margin-left: auto
+		&--wide
+			padding: 20px 65px 20px 20px
+			+r(768)
+				padding: 20px
 
 //cart
 

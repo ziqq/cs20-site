@@ -1,6 +1,9 @@
 $(document).ready(function () {
 
-    $('.content-wrapper').css('padding-top', $('.header').outerHeight(true));
+    function contentPadding(){
+        $('.content-wrapper').css('padding-top', $('.header').outerHeight(true));
+    }contentPadding();
+    
 
     //First Screen Padding-Top
     $('.js-firstscreen').css('padding-top', $('.header').outerHeight(true));

@@ -4,18 +4,15 @@ title: Доставка | Интернет-магазин износостойк
 breadcrumbs:
  - title: Корзина
    icon: cart
+   class: is-active
  - title: Авторизация
    icon: user
-   class: is-disable
  - title: Способ доставки
    icon: delivery
-   class: is-disable
  - title: Способ оплаты
    icon: pay
-   class: is-disable
  - title: Подтверждение заказа
    icon: check
-   class: is-disable
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -48,46 +45,64 @@ breadcrumbs:
 		<div class="cart__inner">
 			<!-- begin cart__left -->
 			<div class="cart__left">
-				<div class="cart__items js-fixed-block">
-					<div class="cart__item">
-						<div class="cart__img">
-							<img src="img/general/cart/1.png" alt="alt">
+				<div class="cart__items js-fixed-block js-cart-items">
+					<a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+						<div class="product-item__img">
+							<img src="img/general/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
 						</div>
-						<div class="cart__text">Комплект патрубков ВАЗ-21073 инжектор (7 шт) <span>profi синий силикон</span> Состав: код 09246/07081/ 10096</div>
-						<div class="cart__price">150 <i class="fa fa-rub"></i></div>
-						<div class="cart__counter counter">
-							<span class="counter__control counter__control--minus js-counter--minus">—</span>
-							<input type="text" class="counter__field" value="1">
-							<span class="counter__control counter__control--plus js-counter--plus">+</span>
+						<div class="product-item__desc">
+							<h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт) <span>profi синий силикон</span></h4>
+							<div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<span class="price__cost">2232 <i class="fa fa-rub"></i></span>
+								<meta itemprop="price" content="2232">
+								<meta itemprop="priceCurrency" content="RUB" />
+							</div>
+							<div class="product-item__counter counter">
+								<span class="counter__control counter__control--minus js-counter--minus">—</span>
+								<input type="text" class="counter__field" value="1">
+								<span class="counter__control counter__control--plus js-counter--plus">+</span>
+							</div>
 						</div>
-						{{mixin.icon('close', 'cart__dell')}}
-					</div>
-					<div class="cart__item">
-						<div class="cart__img">
-							<img src="img/general/cart/1.png" alt="alt">
+						<button class="product-item__dell" title="Убрать из корзины">{{mixin.icon('close')}}</button>
+					</a>
+					<a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+						<div class="product-item__img">
+							<img src="img/general/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
 						</div>
-						<div class="cart__text">Комплект патрубков ВАЗ-21073 инжектор (7 шт) <span>profi синий силикон</span> Состав: код 09246/07081/ 10096</div>
-						<div class="cart__price">150 <i class="fa fa-rub"></i></div>
-						<div class="cart__counter counter">
-							<span class="counter__control counter__control--minus js-counter--minus">—</span>
-							<input type="text" class="counter__field" value="1">
-							<span class="counter__control counter__control--plus js-counter--plus">+</span>
+						<div class="product-item__desc">
+							<h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт) <span>profi синий силикон</span></h4>
+							<div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<span class="price__cost">2232 <i class="fa fa-rub"></i></span>
+								<meta itemprop="price" content="2232">
+								<meta itemprop="priceCurrency" content="RUB" />
+							</div>
+							<div class="product-item__counter counter">
+								<span class="counter__control counter__control--minus js-counter--minus">—</span>
+								<input type="text" class="counter__field" value="1">
+								<span class="counter__control counter__control--plus js-counter--plus">+</span>
+							</div>
 						</div>
-						{{mixin.icon('close', 'cart__dell')}}
-					</div>
-					<div class="cart__item">
-						<div class="cart__img">
-							<img src="img/general/cart/1.png" alt="alt">
+						<button class="product-item__dell" title="Убрать из корзины">{{mixin.icon('close')}}</button>						
+					</a>
+					<a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+						<div class="product-item__img">
+							<img src="img/general/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
 						</div>
-						<div class="cart__text">Комплект патрубков ВАЗ-21073 инжектор (7 шт) <span>profi синий силикон</span> Состав: код 09246/07081/ 10096</div>
-						<div class="cart__price">150 <i class="fa fa-rub"></i></div>
-						<div class="cart__counter counter">
-							<span class="counter__control counter__control--minus js-counter--minus">—</span>
-							<input type="text" class="counter__field" value="1">
-							<span class="counter__control counter__control--plus js-counter--plus">+</span>
+						<div class="product-item__desc">
+							<h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт) <span>profi синий силикон</span></h4>
+							<div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<span class="price__cost">2232 <i class="fa fa-rub"></i></span>
+								<meta itemprop="price" content="2232">
+								<meta itemprop="priceCurrency" content="RUB" />
+							</div>
+							<div class="product-item__counter counter">
+								<span class="counter__control counter__control--minus js-counter--minus">—</span>
+								<input type="text" class="counter__field" value="1">
+								<span class="counter__control counter__control--plus js-counter--plus">+</span>
+							</div>
 						</div>
-						{{mixin.icon('close', 'cart__dell')}}
-					</div>
+						<button class="product-item__dell" title="Убрать из корзины">{{mixin.icon('close')}}</button>
+					</a>
 				</div>
 			</div>
 			<!-- end cart__left -->
@@ -95,8 +110,10 @@ breadcrumbs:
 			<div class="cart__right">
 				<div class="cart__sum js-stiky-block">
 					<span class="cart__sum-title">Итого: 300 <i class="fa fa-rub"></i></span>
-					<button class="button button--accent product-item__btn">Оформить заказ</button>
-					<button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
+					<div class="button-box">
+						<button class="button button--accent product-item__btn">Оформить заказ</button>
+						<button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
+					</div>
 				</div>
 			</div>
 			<!-- end cart__right -->
