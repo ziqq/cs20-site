@@ -57,4 +57,25 @@
 			fill: #fff
 			width: 18px
 			height: 18px
+
+	//button-link
+	&-link
+		font-size: 14px
+		color: $color-accent
+		border-bottom: 1px dashed $color-accent
+		position: relative
+		&:hover
+			border-bottom: 1px dashed lighten($color-accent, 10%)
+
 //button
+
+.back-to-search
+	&::before
+		content: '\f002'
+		font-family: fontawesome
+		+vy
+		left: -20px
+	&:hover
+		&::before
+			color: lighten($color-accent, 10%)
+//back-to-search

@@ -243,6 +243,16 @@
 			top: 4px
 //sorting
 
+.price
+	font-family: $f-black
+	font-size: 25px
+	color: #000
+	&__stock		
+		font-family: $f
+		font-size: 14px
+		color: $color-text
+//price
+
 .product-item
 	width: 33.33%
 	padding: 25px
@@ -303,15 +313,9 @@
 	//product-item__price
 	&__price
 		margin-bottom: 18px
-		font-family: $f-black
-		font-size: 25px
-		color: #000
 		@extend %flexCenter
 		.price__stock
 			margin-left: auto
-			font-family: $f
-			font-size: 14px
-			color: $color-text
 
 	//product-item__stock
 	&__stock

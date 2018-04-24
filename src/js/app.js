@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     function contentPadding(){
-        $('.content-wrapper').css('padding-top', $('.header').outerHeight(true));
+        $('.content-wrapper').not('.home').css('padding-top', $('.header').outerHeight(true));
     }contentPadding();
     
 

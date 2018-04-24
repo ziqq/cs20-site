@@ -1,0 +1,110 @@
+.card
+	//card__top-line
+	&__top-line
+		@extend %flexCenter
+		+r(480)
+			flex-wrap: wrap
+			margin-bottom: 0
+		.back-to-search
+			margin-left: auto
+			+r(480)
+				display: none
+	//card__content
+	&__content
+		margin-bottom: 40px
+		@extend %flex
+		+r(480)
+			flex-direction: column
+		&--center
+			align-items: center
+			+r(1024)
+				flex-direction: column
+				.card__left
+					order: 2
+				.card__right
+					order: 1
+					width: 100%
+	//card__left
+	&__left
+		margin-right: 30px
+		border: 1px solid $color-border--light
+		flex: 1
+		+r(480)
+			margin-right: 0
+			margin-bottom: 30px
+		+r(375)
+			margin-bottom: 20px
+		&--no-border
+			border: 0
+		.product-item
+			+r(768)
+				.price__cost
+					font-size: 20px
+			&__wrap
+				margin-bottom: 0
+				+r(1024)
+					flex-wrap: nowrap
+				+r(480)
+					flex-wrap: wrap
+	//card__img
+	&__img
+		@extend %flexCenter
+	//card__info
+	&__info
+		margin-bottom: 20px
+		@extend %flexCenter
+		.button-link
+			margin-left: auto
+	//card__right
+	&__right
+		width: 370px
+		+r(480)
+			width: 100%
+		.button-link
+			color: $color-text
+			border-color: $color-text
+		.info-block
+			&__items
+				flex-direction: column
+				+r(1024)
+					flex-direction: row
+			&__item
+				margin-bottom: 30px
+				+size(12)
+				+size-md(4)
+				+size-sm(6)
+				+size-xs(12)
+				justify-content: center
+				+r(768)
+					margin-bottom: 40px
+				+r(480)
+					justify-content: flex-start
+	//card__title
+	&__title
+		margin-bottom: $gutter
+		font-family: $f
+		font-size: 24px
+		line-height: 1.4
+		color: #000
+		+r(768)
+			margin-bottom: $gutter/2
+			font-size: 18px
+		span
+			text-transform: uppercase
+	//card__sum
+	&__sum
+		margin-bottom: $gutter
+		@extend %flexCenter
+		+r(768)
+			margin-bottom: $gutter/2
+	//card__price
+	&__price
+		.price
+			&__cost
+				font-family: $f-bold
+				font-size: 36px
+				color: #000
+	//card__counter
+	&__counter
+		margin-left: auto
+//card
