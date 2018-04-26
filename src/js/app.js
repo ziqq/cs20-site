@@ -124,13 +124,20 @@ $(document).ready(function () {
     //Stop drag
     $("img").on("dragstart", function(event) { event.preventDefault(); });
 
+    var sidebar = new StickySidebar('.catalog__filter', {
+        topSpacing: 80,
+        bottomSpacing: 10,
+        containerSelector: '.catalog__content',
+        innerWrapperSelector: '.filter__inner'
+    });
+
     
     /*
      * Header.js
      */
       //=include partials/header.js
 
-    
+
     /*
      * Catalog.js
      */
@@ -150,7 +157,7 @@ $(document).ready(function () {
 
 });
 
-    
+
     /*
      * function
      */

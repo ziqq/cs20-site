@@ -39,18 +39,19 @@
 	&__products
 		width: calc(100% - 270px - 30px)
 		margin-left: auto
-		margin-bottom: ($gutter*2 +20px)
 		position: relative
 		+r(768)
 			width: 100%
 		+r(480)
 			margin-bottom: $gutter
+
+	//catalog__pagination
+	&__pagination
+		margin-left: 300px
+		margin-top: 80px
 //catalog
 
 .filter	
-	border: 1px solid $color-border--light
-	background-color: #fff
-	position: relative
 	+r(768)
 		width: 301px
 		position: fixed
@@ -63,6 +64,12 @@
 		transition: all .3s cubic-bezier(.25,.8,.4,.95)
 		&.is-open
 			transform: translateX(0)
+
+	//filter__inner
+	&__inner
+		border: 1px solid $color-border--light
+		background-color: #fff
+		position: relative
 
 	//filter__header
 	&__header
@@ -279,12 +286,10 @@
 			margin-bottom: 0
 	//product-item__wrap
 	&__wrap
-		margin-bottom: 80px
 		@extend %flex
 		justify-content: flex-start
 		flex-wrap: wrap
-		+r(480)
-			margin-bottom: 50px
+			
 	//product-item__img
 	&__img
 		margin-bottom: 20px
@@ -293,7 +298,7 @@
 	&__desc
 
 	//product-item__numbers
-	&__numbers
+	&__product-info
 		display: none
 		margin-top: 15px
 
@@ -398,7 +403,7 @@
 					font-size: 20px
 				.fa
 					font-size: 22px
-			&__numbers
+			&__product-info
 				display: block	
 
 	//product-item__footer
@@ -410,7 +415,7 @@
 				margin-right: 20px
 //product-item
 
-.numbers
+.product-info
 	//numbers__list
 	&__list
 	//numbers__item

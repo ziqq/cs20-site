@@ -6,14 +6,11 @@
 //=include ../../bower_components/jquery.nicescroll/dist/jquery.nicescroll.js
 //=include ../../bower_components/inputmask/dist/jquery.inputmask.bundle.js
 //=include ../../bower_components/nouislider/distribute/nouislider.js
-//=include ../../bower_components/air-datepicker/dist/js/datepicker.js
 
-//=include ../libs/select2/select2.js
-
-//=include ../libs/scrollspy.js
-//=include ../libs/piechart.js
 //=include ../libs/slick/slick.js
-//=include ../libs/simpleslider/simpleslider.js
+//=include ../libs/select2/select2.js
+//=include ../libs/resize.js
+//=include ../libs/sticky-sidebar.js
 
 //=include assets/yandex.map.js
 //=include ../../bower_components/svg4everybody/dist/svg4everybody.js

@@ -9,6 +9,7 @@
 			margin-left: auto
 			+r(480)
 				display: none
+
 	//card__content
 	&__content
 		margin-bottom: 40px
@@ -24,6 +25,7 @@
 				.card__right
 					order: 1
 					width: 100%
+
 	//card__left
 	&__left
 		margin-right: 30px
@@ -49,12 +51,18 @@
 	//card__img
 	&__img
 		@extend %flexCenter
+
 	//card__info
 	&__info
 		margin-bottom: 20px
 		@extend %flexCenter
-		.button-link
-			margin-left: auto
+
+	//card__product-info
+	&__product-info
+		display: inline-block
+		margin-left: auto
+		font-size: 14px
+
 	//card__right
 	&__right
 		width: 370px
@@ -79,6 +87,7 @@
 					margin-bottom: 40px
 				+r(480)
 					justify-content: flex-start
+
 	//card__title
 	&__title
 		margin-bottom: $gutter
@@ -91,12 +100,14 @@
 			font-size: 18px
 		span
 			text-transform: uppercase
+
 	//card__sum
 	&__sum
 		margin-bottom: $gutter
 		@extend %flexCenter
 		+r(768)
 			margin-bottom: $gutter/2
+
 	//card__price
 	&__price
 		.price
@@ -104,6 +115,7 @@
 				font-family: $f-bold
 				font-size: 36px
 				color: #000
+
 	//card__counter
 	&__counter
 		margin-left: auto

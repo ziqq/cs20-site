@@ -30,6 +30,7 @@
     "slick-carousel": "^1.8.1",
     "inputmask": "^3.3.11",
     "select2": "^4.0.5",
-    "magnific-popup": "^1.1.0"
+    "magnific-popup": "^1.1.0",
+    "sticky-sidebar": "^3.3.3"
   }
 }

@@ -79,150 +79,153 @@ filterSeries:
 
 	<!-- begin catalog__content -->
 	<div class="container">
-		<div class="catalog__content">
+		<div class="catalog__inner">
 
-			<!-- begin catalog__filter -->
-			<div class="filter catalog__filter js-stiky-block js-filter">			
-				<div class="filter__header">
-					<span class="filter__title">
-						{{mixin.icon('filter', 'filter__icon filter__icon--filter')}}
-						Фильтры
-					</span>
-					{{mixin.icon('close', 'filter__icon filter__icon--close js-filter--close')}}
-				</div>
-				<div class="filter__body js-cs-accordeon cs-accordeon cs-accordeon--other">
-					<div class="filter__item filter__item_price cs-accordeon__item is-open">
-						<span class="filter__title cs-accordeon__title">
-							Цена
-							<i class="cs-accordeon__icon"></i>
-						</span>
-						<div class="filter__content cs-accordeon__content js-filter-content">
-							<div class="range__diapazon">
-								<div class="range__from">
-									<span id="jsPriceStart"></span>
-									<i class="fa fa-rub"></i>
-								</div>
-								<div class="range__to">
-									<span id="jsPriceEnd"></span>
-									<i class="fa fa-rub"></i>
-								</div>
-							</div>
-							<div class="filter__range range">
-								<div
-								class="range__slider"
-								id="js-filter-slider"
-								data-start="500"
-								data-end="15000"></div>
-							</div>
+			<div class="catalog__content">
+				<!-- begin catalog__filter -->
+				<div class="filter catalog__filter js-filter">			
+					<div class="filter__inner">
+						<div class="filter__header">
+							<span class="filter__title">
+								{{mixin.icon('filter', 'filter__icon filter__icon--filter')}}
+								Фильтры
+							</span>
+							{{mixin.icon('close', 'filter__icon filter__icon--close js-filter--close')}}
 						</div>
-					</div>
-					<div class="filter__item filter__item_type cs-accordeon__item">
-						<span class="filter__title cs-accordeon__title">
-							Тип продукции
-							<i class="cs-accordeon__icon"></i>
-						</span>
-						<div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
-							{% for item in filterType %}
-							<label class="cs-checkbox filter__checkbox">
-								<input type="checkbox">
-								<span class="cs-checkbox__box"></span>
-								<span class="cs-checkbox__title">{{item.title}}</span>
-							</label>
-							{% endfor %}
-						</div>
-					</div>
-					<div class="filter__item filter__item_car cs-accordeon__item">
-						<span class="filter__title cs-accordeon__title">
-							Модель авто
-							<i class="cs-accordeon__icon"></i>
-						</span>
-						<div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
-							{% for item in filterCar %}
-							<label class="cs-checkbox filter__checkbox">
-								<input type="checkbox">
-								<span class="cs-checkbox__box"></span>
-								<span class="cs-checkbox__title">{{item.title}}</span>
-							</label>
-							{% endfor %}
-						</div>
-					</div>
-					<div class="filter__item filter__item_series cs-accordeon__item">
-						<span class="filter__title cs-accordeon__title">
-							Серия
-							<i class="cs-accordeon__icon"></i>
-						</span>
-						<div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
-							{% for item in filterSeries %}
-							<label class="cs-checkbox filter__checkbox">
-								<input type="checkbox">
-								<span class="cs-checkbox__box"></span>
-								<span class="cs-checkbox__title">{{item.title}}</span>
-							</label>
-							{% endfor %}
-						</div>
-					</div>
-					<div class="filter__footer">
-						<button class="button button--gray filter__btn">Очистить все</button>
-					</div>
-				</div>
-			</div>
-			<button class="button button--filter js-filter--open">{{mixin.icon('filter')}}</button>
-			<!-- end catalog__filter -->
-
-			<!-- begin catalog__products -->
-			<div class="catalog__products">
-				<div class="product-item__wrap js-products js-fixed-block">
-					{% for i in range(0, 10) %}
-					<a href="#" class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-						<div class="product-item__img">
-							<img src="img/general/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
-						</div>
-						<div class="product-item__desc">
-							<div class="product-item__desc_in">
-								<h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт) <span>profi синий силикон</span></h4>
-								<div class="product-item__numbers numbers">
-									<ul class="numbers__list">
-										<li class="numbers__item">Артикул: <span>05748</span></li>
-										<li class="numbers__item">Каталожный номер: <span>3105-1203132</span></li>
-									</ul>
+						<div class="filter__body js-cs-accordeon cs-accordeon cs-accordeon--other">
+							<div class="filter__item filter__item_price cs-accordeon__item is-open">
+								<span class="filter__title cs-accordeon__title">
+									Цена
+									<i class="cs-accordeon__icon"></i>
+								</span>
+								<div class="filter__content cs-accordeon__content js-filter-content">
+									<div class="range__diapazon">
+										<div class="range__from">
+											<span id="jsPriceStart"></span>
+											<i class="fa fa-rub"></i>
+										</div>
+										<div class="range__to">
+											<span id="jsPriceEnd"></span>
+											<i class="fa fa-rub"></i>
+										</div>
+									</div>
+									<div class="filter__range range">
+										<div
+										class="range__slider"
+										id="js-filter-slider"
+										data-start="500"
+										data-end="15000"></div>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="product-item__footer">
-							<div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-								<span class="price__cost">2232 <i class="fa fa-rub"></i></span>
-								<meta itemprop="price" content="2232">
-								<meta itemprop="priceCurrency" content="RUB" />
-								<span class="price__stock">Есть в наличии</span>
+							<div class="filter__item filter__item_type cs-accordeon__item">
+								<span class="filter__title cs-accordeon__title">
+									Тип продукции
+									<i class="cs-accordeon__icon"></i>
+								</span>
+								<div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
+									{% for item in filterType %}
+									<label class="cs-checkbox filter__checkbox">
+										<input type="checkbox">
+										<span class="cs-checkbox__box"></span>
+										<span class="cs-checkbox__title">{{item.title}}</span>
+									</label>
+									{% endfor %}
+								</div>
 							</div>
-							<div class="product-item__buttons">
-								<button class="button button--accent product-item__btn">Добавить в корзину</button>
-								<button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
+							<div class="filter__item filter__item_car cs-accordeon__item">
+								<span class="filter__title cs-accordeon__title">
+									Модель авто
+									<i class="cs-accordeon__icon"></i>
+								</span>
+								<div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
+									{% for item in filterCar %}
+									<label class="cs-checkbox filter__checkbox">
+										<input type="checkbox">
+										<span class="cs-checkbox__box"></span>
+										<span class="cs-checkbox__title">{{item.title}}</span>
+									</label>
+									{% endfor %}
+								</div>
+							</div>
+							<div class="filter__item filter__item_series cs-accordeon__item">
+								<span class="filter__title cs-accordeon__title">
+									Серия
+									<i class="cs-accordeon__icon"></i>
+								</span>
+								<div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
+									{% for item in filterSeries %}
+									<label class="cs-checkbox filter__checkbox">
+										<input type="checkbox">
+										<span class="cs-checkbox__box"></span>
+										<span class="cs-checkbox__title">{{item.title}}</span>
+									</label>
+									{% endfor %}
+								</div>
+							</div>
+							<div class="filter__footer">
+								<button class="button button--gray filter__btn">Очистить все</button>
 							</div>
 						</div>
-					</a>
-					{% endfor %}﻿
+					</div>
 				</div>
-
-				<!-- begin pagination -->
-				<div class="pagination">
-					<ul class="pagination__list">
-						<li class="pagination__item">
-							<a href="#" class="pagination__link"><i class="fa fa-angle-left pagination__icon"></i></a>
-						</li>
-						{% for i in range(1, 8) %}
-						<li class="pagination__item">
-							<a href="#" class="pagination__link">{{i}}</a>
-						</li>
+				<!-- end catalog__filter -->				
+				<!-- begin catalog__products -->
+				<div class="catalog__products">
+					<div class="product-item__wrap js-products">
+						{% for i in range(0, 10) %}
+						<a href="#" class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+							<div class="product-item__img">
+								<img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
+							</div>
+							<div class="product-item__desc">
+								<div class="product-item__desc_in">
+									<h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт) <span>profi синий силикон</span></h4>
+									<div class="product-item__product-info product-info">
+										<ul class="product-info__list">
+											<li class="product-info__item">Артикул: <span>05748</span></li>
+											<li class="product-info__item">Каталожный номер: <span>3105-1203132</span></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="product-item__footer">
+								<div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+									<span class="price__cost">2232 <i class="fa fa-rub"></i></span>
+									<meta itemprop="price" content="2232">
+									<meta itemprop="priceCurrency" content="RUB" />
+									<span class="price__stock">Есть в наличии</span>
+								</div>
+								<div class="product-item__buttons">
+									<button class="button button--accent product-item__btn">Добавить в корзину</button>
+									<button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
+								</div>
+							</div>
+						</a>
 						{% endfor %}﻿
-						<li class="pagination__item">
-							<a href="#" class="pagination__link"><i class="fa fa-angle-right pagination__icon"></i></a>
-						</li>
-					</ul>
+					</div>
 				</div>
-				<!-- end pagination -->
+				<!-- end catalog__products -->
+				<button class="button button--filter js-filter--open">{{mixin.icon('filter')}}</button>
 			</div>
-			<!-- end catalog__products -->
+
+			<!-- begin pagination -->
+			<div class="catalog__pagination pagination">
+				<ul class="pagination__list">
+					<li class="pagination__item">
+						<a href="#" class="pagination__link"><i class="fa fa-angle-left pagination__icon"></i></a>
+					</li>
+					{% for i in range(1, 8) %}
+					<li class="pagination__item">
+						<a href="#" class="pagination__link">{{i}}</a>
+					</li>
+					{% endfor %}﻿
+					<li class="pagination__item">
+						<a href="#" class="pagination__link"><i class="fa fa-angle-right pagination__icon"></i></a>
+					</li>
+				</ul>
+			</div>
+			<!-- end pagination -->
 
 		</div>
 	</div>
