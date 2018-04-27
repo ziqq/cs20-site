@@ -33,5 +33,24 @@
 			z-index: 1
 			&::before
 				content: '\f104'
+	
+	//cs-slider--expanded
+	&--expanded
+		.cs-slider__arrow
+			&--next
+				right: -150%
+			&--prev
+				left: -150%
+		&:hover
+			.cs-slider__arrow
+				&--next
+					right: 0
+				&--prev
+					left: 0
 
+		.slick-dots
+			left: 15px
+			bottom: 10px
+		.slick-list, .slick-slider
+			position: static
 //cs-slider

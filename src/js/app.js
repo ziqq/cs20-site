@@ -46,19 +46,25 @@ $(document).ready(function () {
     }
 
     //Slick Slider https://kenwheeler.github.io/slick/
-    if($('.js-cs-slider').length > 0){
-        $('.js-cs-slider').slick({
+    if($('.js-cs-slider').length > 0 || $('.js-cs-slider--card').length > 0){
+        var options = {
             nextArrow: '.cs-slider__arrow--next',
             prevArrow: '.cs-slider__arrow--prev',
             arrows: true,
             infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
-            speed: 1000,
-            autoplaySpeed: 5000,
+            dots: true            
+        };
+        $('.js-cs-slider').slick({
+            options,
             autoplay: true,
-            dots: true
+            dots: true,
+            speed: 2000,
+            autoplaySpeed: 5000,
         });
+
+        $('.js-cs-slider--card').slick(options);
     }
 
     //Modal FancyBox 3 https://fancyapps.com/fancybox/3/
@@ -124,12 +130,14 @@ $(document).ready(function () {
     //Stop drag
     $("img").on("dragstart", function(event) { event.preventDefault(); });
 
-    var sidebar = new StickySidebar('.catalog__filter', {
-        topSpacing: 80,
-        bottomSpacing: 10,
-        containerSelector: '.catalog__content',
-        innerWrapperSelector: '.filter__inner'
-    });
+    if ($('.js-filter').length > 0) {
+        var sidebar = new StickySidebar('.js-filter', {
+            topSpacing: 80,
+            bottomSpacing: 10,
+            containerSelector: '.catalog__content',
+            innerWrapperSelector: '.filter__inner'
+        });        
+    }
 
     
     /*

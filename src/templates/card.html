@@ -46,30 +46,25 @@ title: Комплект патрубков 2170 PROFI СИНИЙ СИЛИКОН
 	<!-- begin card__content -->
 	<div class="container">
 		<div class="card__content">
-			<!-- begin card__left -->
-			<div class="card__left card__img">
-				<img src="img/cart/product.png" alt="Комплект патрубков 2170 PROFI СИНИЙ СИЛИКОН ">
-			</div>
-			<!-- end card__left -->
-			<!-- begin card__right -->
-			<div class="card__right">
-				<h1 class="card__title">Комплект патрубков 2170 (7 шт) <span>profi синий силикон</span> Состав: код 8811/6535/8049/10098/10102</h1>
-				<div class="card__info">
-					<span class="price__stock">Есть в наличии</span>						
-					<div class="card__product-info dropdown dropdown--right dropdown--hover dropdown--big js-dropdown button-link">
-						Все характеристики
-						<div class="product-info dropdown__list">
-							<ul class="product-info__list">
-								<li class="product-info__item">Артикул:
-									<span>05748</span>
-								</li>
-								<li class="product-info__item">Каталожный номер:
-									<span>3105-1203132</span>
-								</li>
-							</ul>
+			<!-- begin card__img -->
+			<div class="card__img">
+				<!-- <img src="img/cart/product.png" al	t="Комплект патрубков 2170 PROFI СИНИЙ СИЛИКОН "> -->
+				<div class="cs-slider cs-slider--expanded">
+					<div class="cs-slider__arrow cs-slider__arrow--prev"></div>
+					<div class="cs-slider__arrow cs-slider__arrow--next"></div>
+					<div class="cs-slider__slides js-cs-slider--card">
+						{% for i in range(0, 2) %}
+						<div class="cs-slider__slided">
+							<img src="img/cart/product.png" alt="Комплект патрубков 2170 PROFI СИНИЙ СИЛИКОН ">
 						</div>
+						{% endfor %}﻿
 					</div>
 				</div>
+			</div>
+			<!-- end card__img -->
+			<!-- begin card__desc -->
+			<div class="card__desc">
+				<h1 class="card__title">Комплект патрубков 2170 (7 шт) <span>profi синий силикон</span> Состав: код 8811/6535/8049/10098/10102</h1>
 				<div class="card__sum">
 					<div class="card__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 						<span class="price__cost">2232 <i class="fa fa-rub"></i></span>
@@ -83,11 +78,44 @@ title: Комплект патрубков 2170 PROFI СИНИЙ СИЛИКОН
 					</div>
 				</div>
 				<div class="button-box">
-					<button class="button button--accent product-item__btn">Оформить заказ</button>
-					<button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
+					<button class="button button--accent card__btn">Оформить заказ</button>
+					<button class="button button--transparent card__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
+				</div>
+				<div class="card__info cs-accordeon js-cs-accordeon">
+					<span class="price__stock">Есть в наличии</span>						
+					<div class="card__product-info cs-accordeon__item">
+						<div class="cs-accordeon__title">Все характеристики</div>
+						<div class="cs-accordeon__content">						
+							<div class="product-info">
+								<ul class="product-info__list">
+									<li class="product-info__item">О товаре:
+										<span>Патрубки и шланги являются неотъемлемый частью системы охлаждения двигателя и отопления автомобиля. Они обеспечивают циркуляцию охлаждающей жидкости (тосол, антифриз)</span>
+									</li>
+									<li class="product-info__item">Артикул:
+										<span>05748</span>
+									</li>
+									<li class="product-info__item">Модель Авто:
+										<span>2170 Приора</span>
+									</li>
+									<li class="product-info__item">Каталожный номер:
+										<span>3105-1203132</span>
+									</li>
+									<li class="product-info__item">Состав комплекта:
+										<span>8811/6535/8049/10098/10102</span>
+									</li>
+									<li class="product-info__item">Упаковка:
+										<span>Пакет</span>
+									</li>
+									<li class="product-info__item">Пакет:
+										<span>4627131277727</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<!-- end card__right -->
+			<!-- end card__desc -->
 		</div>
 	</div>
 	<!-- end card__content -->

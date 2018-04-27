@@ -9,7 +9,7 @@
 
 //=include ../libs/slick/slick.js
 //=include ../libs/select2/select2.js
-//=include ../libs/resize.js
+//=include ../libs/sticky-sidebar-resize.js
 //=include ../libs/sticky-sidebar.js
 
 //=include assets/yandex.map.js

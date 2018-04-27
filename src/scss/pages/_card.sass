@@ -14,7 +14,8 @@
 	&__content
 		margin-bottom: 40px
 		@extend %flex
-		+r(480)
+		+r(768)
+			margin-bottom: 20px
 			flex-direction: column
 		&--center
 			align-items: center
@@ -26,18 +27,67 @@
 					order: 1
 					width: 100%
 
-	//card__left
-	&__left
+	//card__img
+	&__img
+		width: calc(50% - 15px)
 		margin-right: 30px
 		border: 1px solid $color-border--light
-		flex: 1
-		+r(480)
+		@extend %flex
+		+r(768)
+			width: 100%
 			margin-right: 0
 			margin-bottom: 30px
 		+r(375)
 			margin-bottom: 20px
 		&--no-border
 			border: 0
+
+	//card__info
+	&__info
+		margin-bottom: 20px
+		+r(768)
+			margin-bottom: 0
+		.price__stock
+			display: block
+			margin-bottom: 20px
+		.cs-accordeon
+			&__title
+				display: inline-block
+				margin-bottom: 20px
+				border-bottom: 1px dashed $color-border--light
+				cursor: pointer
+				+rmin(769)
+					display: none
+			&__content
+				+r(768)
+					display: none
+
+	//card__product-info
+	&__product-info
+		display: inline-block
+		margin-left: auto
+		font-size: 14px
+
+	//card__desc
+	&__desc
+		width: calc(50% - 15px)
+		+r(768)
+			width: 100%
+		.button-box
+			margin-bottom: 30px
+			@extend %flexCenter
+			+r(480)
+				flex-direction: column
+		.button-link
+			color: $color-text
+			border-color: $color-text
+
+	//card__left
+	&__left
+		margin-right: 30px
+		flex: 1
+		+r(768)
+			margin-right: 0
 		.product-item
 			+r(768)
 				.price__cost
@@ -48,33 +98,16 @@
 					flex-wrap: nowrap
 				+r(480)
 					flex-wrap: wrap
-	//card__img
-	&__img
-		@extend %flexCenter
-
-	//card__info
-	&__info
-		margin-bottom: 20px
-		@extend %flexCenter
-
-	//card__product-info
-	&__product-info
-		display: inline-block
-		margin-left: auto
-		font-size: 14px
-
+	
 	//card__right
 	&__right
-		width: 370px
-		+r(480)
-			width: 100%
-		.button-link
-			color: $color-text
-			border-color: $color-text
+		width: 30%
 		.info-block
 			&__items
+				margin-top: 60px
 				flex-direction: column
 				+r(1024)
+					margin-top: 0
 					flex-direction: row
 			&__item
 				margin-bottom: 30px
@@ -82,15 +115,15 @@
 				+size-md(4)
 				+size-sm(6)
 				+size-xs(12)
-				justify-content: center
 				+r(768)
 					margin-bottom: 40px
+					justify-content: center
 				+r(480)
 					justify-content: flex-start
 
 	//card__title
 	&__title
-		margin-bottom: $gutter
+		margin-bottom: 15px
 		font-family: $f
 		font-size: 24px
 		line-height: 1.4
@@ -103,7 +136,7 @@
 
 	//card__sum
 	&__sum
-		margin-bottom: $gutter
+		margin-bottom: 20px
 		@extend %flexCenter
 		+r(768)
 			margin-bottom: $gutter/2
@@ -119,4 +152,15 @@
 	//card__counter
 	&__counter
 		margin-left: auto
+
+	//card__btn
+	&__btn
+		width: 50%
+		&:first-child
+			margin-right: 15px
+		+r(480)
+			width: 100%
+			&:first-child
+				margin-right: 0
+				margin-bottom: 10px
 //card
