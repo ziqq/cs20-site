@@ -13,11 +13,6 @@ $('.js-counter--plus').click(function () {
     return false;
 });
 
-//Initial Sticky Block in Cart
-if ($('.content-wrapper').hasClass('cart') && $(window).width() > 1024) {
-    stikyBlock();
-}
-
 //Cart Items make in a column at ww <= 480
 if ($(window).width() <= 480) {
     $('.js-cart-items').find('.product-item').removeClass('product-item--wide');

@@ -89,6 +89,25 @@
 	}
 }
 
+
+.select2-container{
+	width: 100% !important;
+}
+.select2-container .select2-selection--single{
+	height: 40px;
+	border: 1px solid $gray--light;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+	line-height: 38px;
+}
+.select2-container .select2-selection--single .select2-selection__rendered{
+	padding-left: 15px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+	top: 6px;
+	right: 5px;
+}
+
 //Mas Gray
 [class*="ymaps-2"][class*="-ground-pane"] {
 	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");

@@ -26,10 +26,10 @@
 <!-- item.checkbox('мужской', 'cs-checkbox--radio, profile-editor__checkbox') -->
 
 {% macro input(type, title, class) %}
-<label class="input {{class}}">
-	<span class="input__title">{{title}}</span>
-	<input type="{{type}}" class="input__field js-input">
-</label>
+<div class="cs-input {{class}}">
+	<input type="{{type}}" class="cs-input__field" placeholder="{{title}}">
+	<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+</div>
 {% endmacro %}
 <!-- item.input('ЛОгин', 'form__input) -->
 

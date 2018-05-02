@@ -5,10 +5,10 @@
 	</div>
 	<div class="modal-window__body">
 		<form class="form form__register">
-			{{item.input('text', 'Логин', 'form__input')}}
-			{{item.input('text', 'Ваше имя', 'form__input')}}
-			{{item.input('email', 'Email', 'form__input')}}
-			{{item.input('password', 'Пароль', 'form__input')}}
+			{{item.input('text', 'Логин', 'form__input is-invalid')}}
+			{{item.input('text', 'Ваше имя', 'form__input is-invalid')}}
+			{{item.input('email', 'Email', 'form__input is-invalid')}}
+			{{item.input('password', 'Пароль', 'form__input is-invalid')}}
 			<button type="submit" class="button button--accent form__btn">Зарегистрироваться</button>
 		</form>
 		<div class="info-text">Нажимая кнопку «Зарегистрироваться», я подтверждаю свою дееспособность, согласие на получение информации об оформлении и получении заказа, согласие на обработку персональных данных в соответствии с указанным <a href="#">здесь</a> текстом.</div>
@@ -23,8 +23,8 @@
 	</div>
 	<div class="modal-window__body">
 		<form class="form form__register">
-			{{item.input('text', 'Логин или e-mail', 'form__input')}}
-			{{item.input('password', 'Пароль', 'form__input')}}
+			{{item.input('text', 'Логин или e-mail', 'form__input is-invalid')}}
+			{{item.input('password', 'Пароль', 'form__input is-invalid')}}
 			<div class="form__box">
 				{{item.checkbox('Запомнить меня', 'form__checkbox')}}
 				<a class="password-recovery" href="#" data-fancybox>Забыли пароль?</a>
@@ -44,11 +44,11 @@
 	</div>
 	<div class="modal-window__body">
 		<form class="form form__request">
-			{{item.input('text', 'Ваше имя', 'form__input')}}
-			<label class="input form__input">
-				<span class="input__title">Ваш ьелефон</span>
-				<input type="tel" class="input__field js-input js-phone-mask">
-			</label>
+			{{item.input('text', 'Ваше имя', 'form__input is-invalid')}}
+			<div class="cs-input form__input">
+				<input type="tel" class="cs-input__field js-input js-phone-mask" placeholder="Ваш телефон">
+				<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+			</div>
 			<button type="submit" class="button button--accent form__btn">Купить</button>
 		</form>
 	</div>

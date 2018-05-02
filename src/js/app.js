@@ -47,24 +47,29 @@ $(document).ready(function () {
 
     //Slick Slider https://kenwheeler.github.io/slick/
     if($('.js-cs-slider').length > 0 || $('.js-cs-slider--card').length > 0){
-        var options = {
+        $('.js-cs-slider').slick({
+            arrows: true,
             nextArrow: '.cs-slider__arrow--next',
             prevArrow: '.cs-slider__arrow--prev',
-            arrows: true,
-            infinite: true,
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
             slidesToShow: 1,
             slidesToScroll: 1,
-            dots: true            
-        };
-        $('.js-cs-slider').slick({
-            options,
-            autoplay: true,
-            dots: true,
-            speed: 2000,
-            autoplaySpeed: 5000,
+            infinite: true
         });
 
-        $('.js-cs-slider--card').slick(options);
+        $('.js-cs-slider--card').slick({            
+            arrows: true,
+            nextArrow: '.cs-slider__arrow--next',
+            prevArrow: '.cs-slider__arrow--prev',
+            dots: true,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true
+        });
     }
 
     //Modal FancyBox 3 https://fancyapps.com/fancybox/3/
@@ -85,7 +90,6 @@ $(document).ready(function () {
     //Custom Select https://select2.org/
     if($('.js-select').length > 0){
         $('.js-select').select2({
-            placeholder: "Select a State",
             container: ".cs-select__container"
         });
         $('.js-select.no-search').select2({
@@ -101,8 +105,6 @@ $(document).ready(function () {
         $(document).on("focus", '.select2-search__field', function(e) {
             e.stopPropagation();
         });
-    }else{
-        // $('.js-select').wrap('<label class="bb-select">');
     }
 
     //Masked inputmask https://github.com/RobinHerbots/Inputmask

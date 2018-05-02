@@ -173,10 +173,16 @@
 			border-radius: $border-radius $border-radius 0 0
 			position: relative
 			transition: color 0.35s ease
+			+r(768)
+				color: $color-secondary
 			&:hover
 				color: #fff
+				+r(480)
+					color: initial
 				.home-search__icon
 					fill: #fff
+					+r(480)
+						fill: initial
 			&.is-active
 				&:hover
 					color: initial
@@ -196,6 +202,7 @@
 				background-color: #fff
 				.home-search__icon
 					fill: $color-secondary
+
 		&__contentes
 			background-color: #fff
 
@@ -206,6 +213,7 @@
 	
 	//home-search .cs-accordeon
 	.cs-accordeon
+
 		&__item
 			width: 100%
 			margin-bottom: 5px
@@ -213,6 +221,7 @@
 				.cs-accordeon__title
 					&::after
 						content: '\f107'
+							
 		&__content
 			margin-top: -2px
 			background-color: #fff

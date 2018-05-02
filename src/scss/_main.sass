@@ -123,9 +123,11 @@
 	padding: 40px 0
 	+r(768)
 		padding: 15px 0
+
 	//breadcrumbs__list
 	&__list
 		@extend %flexCenter
+
 	//breadcrumbs__item
 	&__item
 		position: relative
@@ -139,15 +141,19 @@
 		&:last-child
 			&::after
 				display: none
+
 	//breadcrumbs__link
 	&__link
 		font-size: 14px		
 		.breadcrumbs__title
 			color: $color-accent
+
 	//breadcrumbs__title
 	&__title
 		font-size: 14px
 		color: #000
+		+r(320)
+			font-size: 13px
 
 	//breadcrumbs--icon
 	&--icon
@@ -159,7 +165,7 @@
 					justify-content: center
 			&__item
 				margin: auto
-				&.is-active
+				&.is-active, &.is-checked
 					.breadcrumbs__link
 						color: #000
 					.icon

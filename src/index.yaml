@@ -29,6 +29,14 @@ PageList:
   ready: 50
   desc : Корзина
 
+- file: cart-auth.html
+  ready: 50
+  desc : Корзина авторизация
+
+- file: cart-success.html
+  ready: 50
+  desc : Подтверждение заказа
+
   #404
 - file: 404.html
   ready: 50

@@ -1,4 +1,16 @@
 .cart
+
+	//cart__wrap
+	&__wrap
+		padding-bottom: 50px
+
+	//cart__title
+	&__title
+		margin-bottom: 40px
+		font-family: $f-medium
+		font-weight: 500
+		font-size: 25px
+
 	//cart__inner
 	&__inner
 		margin-bottom: 60px
@@ -73,6 +85,21 @@
 				margin-bottom: 10px
 				&:last-child
 					margin-bottom: 0
+	
+	//cartbutton-box
+	&__button-box
+		text-align: right
+		+r(480)
+			text-align: center
+
+	.button
+		+r(480)
+			width: 100%
+		&:first-child
+			margin-right: 15px
+			+r(480)
+				margin-bottom: 15px
+				margin-right: 0
 
 	.product-item
 		+r(480)
@@ -91,4 +118,78 @@
 			+r(768)
 				padding: 20px
 
+	.row
+		margin-bottom: 25px
 //cart
+
+.pedit
+	//pedit__item
+	&__item
+		margin-bottom: 25px
+		@extend %flexCenter
+		flex-wrap: wrap
+
+	//pedit__title
+	&__title
+		min-width: 185px
+		margin-right: 30px
+		font-size: 14px
+		+r(480)
+			width: 100%
+			margin-bottom: 15px
+
+	//pedit__field
+	&__field
+		flex: 1
+		
+	//pedit__select
+	&__select
+
+	//pedit__checkbox
+	&__checkbox
+		.cs-checkbox__title
+			font-size: 14px
+//pedit
+
+.cart-success
+
+	//cart-success__wrap
+	&__wrap
+		padding: 20px 0 50px
+		text-align: center
+		+r(480)
+			padding-top: 20px
+
+	//cart-success__title
+	&__title
+		@extend .cart__title
+		display: inline-block
+		position: relative
+		&::before		
+			display: block	
+			content: ''
+			width: 17px
+			height: 30px
+			border: solid $color-accent
+			border-width: 0 5px 5px 0
+			position: absolute
+			left: -35px
+			top: -8px
+			transform: rotate(45deg)
+			+r(480)
+				left: 10px
+
+	//cart-success__subtitle
+	&__subtitle, &__text
+		display: block
+		margin-bottom: 40px
+		color: #000
+
+	&__subtitle
+		font-family: $f-bold
+		font-size: 18px
+		&.mb-10
+			margin-bottom: 10px
+		span
+			font-size: 28px
+//cart-success

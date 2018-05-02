@@ -1,0 +1,81 @@
+---
+title: Доставка | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
+
+breadcrumbs:
+ - title: Корзина
+   icon: cart
+   class: is-checked
+ - title: Авторизация
+   icon: user
+   class: is-checked
+ - title: Способ доставки
+   icon: delivery
+   class: is-checked
+ - title: Способ оплаты
+   icon: pay
+   class: is-checked
+ - title: Подтверждение заказа
+   icon: check
+   class: is-active
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper cart">
+
+	<!-- begin breadcrumbs -->
+	<div class="container">
+		<div class="breadcrumbs breadcrumbs--icon">
+			<ul class="breadcrumbs__list">
+				{% for item in breadcrumbs %}
+				<li class="breadcrumbs__item {{item.class}}">
+					<a href="#" class="breadcrumbs__link">
+						<svg class="icon icon-{{item.icon}} ">
+							<use xlink:href="img/sprite.svg#{{item.icon}}"></use>
+						</svg>
+						{{item.title}}
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<!-- end breadcrumbs -->
+
+	<!-- begin cart -->
+	<div class="container">
+
+		<div class="cart-success__wrap">
+
+			<h1 class="cart-success__title">Заказ успешно оформлен. Спасибо!</h1>
+
+			<div class="cart-success__inner">
+				<span class="cart-success__subtitle">Ваш заказ: №490 от 01.05.2018 14:58</span>
+				
+				<div class="cart-success__text">
+					В ближайшее время с Вами свяжется наш менеджер для подтверждения заказа. <br>
+					Вы можете следить за выполнением своего заказа в <a href="#">Личном кабинете</a>. <br>
+					Отправка заказа производится только после платы. <br>
+					Товар бронируется на складе в течении трех рабочих дней.
+				</div>
+				
+				<span class="cart-success__subtitle mb-10">Счет: <span>№492</span> от 01.05.2018 14:58</span>
+				
+				<span class="cart-success__subtitle">Сумма к оплате по счету: <span>3254</span> <i class="fa fa-rub"></i></span>
+			</div>
+			
+			<div class="button-box">
+				<a href="#" class="button button--transparent button--back">Вернуться в магазин</a>
+				<a href="#" class="button button--accent">Оплатить</a>
+			</div>
+		</div>
+
+	</div>
+	<!-- end cart -->
+
+</div>	
+<!-- end home -->
+
+{% endblock %}

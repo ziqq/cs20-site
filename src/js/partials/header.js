@@ -11,8 +11,15 @@ $(window).scroll(function(event){
 
 //Header hamburger
 $('.js-nav-toggle').on('click', function() {
-    $(this).toggleClass('is-open');
-    $('.js-nav').fadeToggle();
+    if($(this).hasClass('is-open')){
+        $(this).removeClass('is-open');
+        $('.js-nav').fadeOut();
+        $('html').removeAttr('style');
+    }else{
+        $(this).addClass('is-open');
+        $('.js-nav').fadeIn();
+        $('html').css('overflow', 'hidden');
+    }
     return false;
 });
 

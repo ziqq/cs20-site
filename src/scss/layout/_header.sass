@@ -8,6 +8,7 @@
 	+tr
 	+r(768)
 		height: 70px
+
 	&.is-fixed
 		height: 70px
 		.header__inner
@@ -16,6 +17,7 @@
 			&__img
 				width: 60px
 				height: 50px
+
 	//header__inner
 	&__inner
 		height: 100px
@@ -28,33 +30,37 @@
 	&__left, &__right
 		width: 50%
 		@extend %flexCenter
+
 	&__left
 		+r(1024)
 			width: 60%
-	&__right
-		+r(1024)
-			width: 40%
 
 	//header__right
 	&__right
 		justify-content: flex-end
+		+r(1024)
+			width: 40%
 
 	&__logo, &__cart, &__search
 		margin-right: 30px
 
+	//header__search
 	&__search
 		+r(768)
 			display: none
-
+	
+	//header__phone
 	&__phone
 		+r(768)
 			display: none
 
+	//header__logo
 	&__logo
 		+r(768)
 			margin-right: 0
 			+vcenter
 
+	//header__cart
 	&__cart
 		+r(768)
 			margin-right: 15px
@@ -96,6 +102,8 @@
 		right: 0
 		z-index: 3
 		transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000)
+		+placeholder
+			color: #fff
 
 		&:focus:hover
 			border-bottom: 1px solid #BBB
@@ -132,9 +140,11 @@
 	&:hover
 		.cart__icon
 			color: $gray--light
+
 	//cart__icon
 	&__icon
 		fill: #fff
+		
 	//cart__badge
 	&__badge		
 		position: absolute
@@ -144,12 +154,14 @@
 
 .phone
 	position: relative
+
 	//phone__link
 	&__link
 		display: block
 		color: #fff
 		font-size: 20px
 		line-height: 1
+
 	//phone__text
 	&__text
 		color: #fff
@@ -158,6 +170,7 @@
 		line-height: 1
 		letter-spacing: 1.43px
 		text-transform: uppercase
+
 	//phone--icon
 	&--icon
 		.phone__link
