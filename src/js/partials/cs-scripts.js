@@ -7,7 +7,7 @@ $('.js-cs-accordeon').find('.cs-accordeon__item').find('.cs-accordeon__title').o
 	} 
 });
 
- //BB dropdown
+ //cs dropdown
  if($('.js-dropdown').length > 0){
  	$(document).on('click', '.js-dropdown', function (){
  		if($(this).hasClass('is-active')){
@@ -23,3 +23,31 @@ $('.js-cs-accordeon').find('.cs-accordeon__item').find('.cs-accordeon__title').o
  		e.stopPropagation();
  	});
  }
+
+//cs checkbox
+$(document).on('click', '.js-cs-checkbox', function (){
+    var _this = $(this);
+    var input = _this.find('input');
+    if(input.is(':checked')){
+        _this.addClass('is-checked');
+    }else{
+        _this.removeClass('is-checked');
+    }
+});
+
+$(document).on('click', '.js-cs-checkbox--pseudo', function (){
+    if($(this).hasClass('is-checked')){
+        $(this).removeClass('is-checked');
+    }else{
+        $(this).addClass('is-checked');
+    }
+});
+
+$(document).on('click', '.js-cs-radio--pseudo', function (){
+    if($(this).hasClass('is-checked')){
+        $(this).removeClass('is-checked');
+    }else{
+        $('.js-cs-radio--pseudo').removeClass('is-checked');
+        $(this).addClass('is-checked');
+    }
+});

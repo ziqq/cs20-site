@@ -10,6 +10,9 @@
 			{{item.input('email', 'Email', 'form__input is-invalid')}}
 			{{item.input('password', 'Пароль', 'form__input is-invalid')}}
 			<button type="submit" class="button button--accent form__btn">Зарегистрироваться</button>
+			<div class="success">
+				<div class="success__text">Спасибо за регистрацию!</div>
+			</div>
 		</form>
 		<div class="info-text">Нажимая кнопку «Зарегистрироваться», я подтверждаю свою дееспособность, согласие на получение информации об оформлении и получении заказа, согласие на обработку персональных данных в соответствии с указанным <a href="#">здесь</a> текстом.</div>
 	</div>
@@ -30,6 +33,9 @@
 				<a class="password-recovery" href="#" data-fancybox>Забыли пароль?</a>
 			</div>
 			<button type="submit" class="button button--accent form__btn">Вход</button>
+			<div class="success">
+				<div class="success__text">Добро пожаловать!</div>
+			</div>
 		</form>
 		<div class="info-text">если у Вас еще нет учетной записи, <a href="#register" data-fancybox>зарегистрируйтесь</a></div>
 	</div>
@@ -50,6 +56,13 @@
 				<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
 			</div>
 			<button type="submit" class="button button--accent form__btn">Купить</button>
+			<div class="success">
+				<div class="success__text">
+					Спасибо за заказ!
+					<div class="success__text--small">Наши менеджеры свяжутся с Вами в ближайшее время.</div>
+				</div>
+				
+			</div>
 		</form>
 	</div>
 </div>

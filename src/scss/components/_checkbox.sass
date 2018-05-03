@@ -1,0 +1,293 @@
+.cs-checkbox
+	font-size: 14px
+	cursor: pointer
+	+nosel
+
+	&:hover
+		.cs-checkbox__box
+			border: 1px solid $color-accent
+
+	//cs-checkbox__wrap
+	&__wrap
+		display: flex
+		align-items: center
+		width: 100%
+		text-align: center
+	
+	//cs-checkbox__dell
+	&__dell
+		display: none
+		background-color: rgba(#fff, .8)
+		+coverdiv
+		z-index: 10
+		.icon
+			width: 32px
+			height: 32px
+			fill: $color-accent
+			@include vcenter
+
+	input 
+		display: none;
+		&:checked + .cs-checkbox__box 
+			background-color: transparent
+			&::before
+				display: block
+
+	//cs-checkbox__title
+	&__title
+		font-size: 15px
+		color: $color-secondary
+
+	//cs-checkbox__box
+	&__box
+		display: inline-block
+		margin-right: 5px
+		width: 18px
+		height: 18px
+		border: 1px solid $gray
+		border-radius: 2px
+		position: relative
+		top: 4px
+		&::before
+			content: ''
+			width: 7px
+			height: 11px
+			border: solid $color-accent
+			border-width: 0 2px 2px 0	
+			position: absolute
+			left: 5px
+			top: 1px
+			transform: rotate(45deg)
+			display: none
+
+	//cs-checkbox--pseudo
+	&--pseudo
+		&.is-checked
+			.cs-checkbox__box
+				&::before
+					display: block
+
+	//cs-checkbox--big
+	&--big
+		&:hover
+			.cs-checkbox__box
+				border-color: $color-border
+
+		input
+			&:checked + .cs-checkbox__box
+				background-color: $color-accent
+				border-color: transparent
+				&::after
+					left: auto
+					right: 0
+					border-color: transparent
+
+		.cs-checkbox__box
+			display: block
+			width: 40px
+			background-color: $color-border
+			+br(10px)
+			&::after
+				content: ''
+				display: block
+				width: 16px
+				height: 16px
+				background-color: #fff
+				+br(50%)
+				+tr
+				position: absolute
+				top: 2%
+				left: 0px
+				height: 96%
+			&::before
+				color: #fff
+				left: 4px
+	
+	//cs-checkbox--radio
+	&--radio
+		background-color: transparent
+		&:hover
+			input 
+				&:checked + .cs-checkbox__box
+					border-color: lighten($color-accent, 7%)
+					&::before
+						background-color: lighten($color-accent, 7%)
+
+		input 
+			&:checked + .cs-checkbox__box
+				border: 2px solid $color-accent
+				background-color: transparent
+				&::before
+					display: block
+
+		.cs-checkbox__box
+			display: inline-block
+			border-radius: 50%
+			background-color: transparent
+			&::before
+				display: none
+				content: ''
+				width: 8px
+				height: 8px
+				border-radius: 50%
+				border: none
+				background-color: $color-accent
+				+vcenter
+
+		//cs-checkbox--radio_inline
+		&_inline
+			padding: 7px 0 9px
+			width: 50%
+			color: $color-text
+			border: 1px solid $color-border--lighten
+			border-right-color: transparent
+			background-color: $gray
+			&:first-child
+				border-radius: $border-radius 0 0 $border-radius
+				border-color: $color-border--lighten
+				border-right-color: transparent				
+			&:last-child
+				border-radius: 0 $border-radius $border-radius 0
+				border-color: $color-border--lighten
+			&:hover
+				border-color: $color-border
+			&.is-checked
+				background-color: #fff
+				color: $color-text
+				&::before
+					color: $color-accent
+
+			.cs-checkbox__box
+				display: none
+
+	//cs-checkbox--inline
+	&--inline
+		border: 1px solid $color-border
+		border-right-color: transparent
+		position: relative
+		z-index: 20
+		&:first-child
+			border-radius: 4px 0 0 4px		
+		&:last-child
+			border-right: 1px solid $color-border
+			border-radius: 0  4px 4px 0		
+		&:hover
+			border-color: $color-border
+			border-right-color: transparent
+			color: #000
+			& + .cs-checkbox--inline
+				border-left-color: $color-border
+			&:last-child
+				border-right: 1px solid $color-border
+		&.is-checked
+			color: #fff
+			background-color: $color-accent
+			&:hover
+				color: #fff
+			& + .cs-checkbox--inline,
+			& + .cs-checkbox--inline.is-checked
+				border-left-color: #fff
+
+		input
+			&:checked + .cs-checkbox__box
+				background-color: #C4C4C4
+
+		.cs-checkbox__box
+			display: none
+
+	//cs-checkbox--transform
+	&--transform
+		.cs-checkbox
+			&__title
+				+r(480)
+					padding: 4px 15px 5px
+					font-family: $f-light
+					border: 1px solid $color-border--lighten
+					border-radius: 50px
+
+			&__box
+				@include max-screen(480)
+					display: none
+		
+		input
+			@include max-screen(480)
+				&:checked ~ .cs-checkbox__title
+					font-family: $f-light
+					color: #fff
+					background-color: $color-accent
+					border: none
+
+	//cs-checkbox--small
+	&--small
+		padding: 2px 8px
+		border: 1px solid $color-border--light
+		& + .cs-checkbox--small
+			border-left-color: transparent
+
+		&:hover
+			border-color: $color-border
+
+		&.is-checked
+			background-color: #ffeba0
+
+		.cs-checkbox
+			&__title
+				font-size: 13px
+				line-height: 24px
+
+	//cs-checkbox--slide
+	&--slide
+		position: relative
+		left: 3px
+		& + .cs-checkbox--small
+			border-left-color: transparent
+
+		&:hover
+			.cs-checkbox__box
+				border: 0
+
+		&.is-checked
+			.cs-checkbox__box
+				background-color: lighten($color-accent, 17%)
+				border-color: transparent
+				&::after
+					left: auto
+					right: -3px
+					background-color: $color-accent
+				&::before
+					display: none
+
+		input
+			&:checked + .cs-checkbox__box
+				background-color: lighten($color-accent, 17%)
+				border-color: transparent
+				&::after
+					left: auto
+					right: -3px
+					background-color: $color-accent
+				&::before
+					display: none
+
+		.cs-checkbox
+			&__title
+				font-size: 13px
+				line-height: 24px
+			&__box
+				margin-right: 0
+				width: 45px
+				height: 16px
+				background-color: $gray--light
+				border: 0
+				border-radius: 35px
+				top: 4px
+				&::after
+					content: ''
+					display: block
+					width: 23px
+					height: 23px
+					border-radius: 50%
+					+vy
+					left: -3px
+				&::before
+					display: none
+//cs-checkbox

@@ -1,4 +1,8 @@
 .form
+
+	&.is-success
+		.success
+			+trfY(0)
 	
 	//form__input
 	&__input
@@ -22,6 +26,31 @@
 	&__btn
 		width: 100%
 //form
+
+.success
+	text-align: center
+	background-color: #fff
+	+coverdiv
+	+trfY(-200%)
+	+tr
+	z-index: (z-success)
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-direction: column
+
+	//success__text
+	&__text
+		margin: auto
+		text-transform: uppercase
+		font-family: $f-bold
+		font-size: 23px
+		color: #000
+		&--small
+			text-transform: initial
+			font-family: $f
+			font-size: 15px
+//success
 
 .cs-input
 	@extend %inputStyle

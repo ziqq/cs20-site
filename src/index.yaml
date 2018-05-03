@@ -13,10 +13,6 @@ PageList:
   ready: 50
   desc : Подробная карточа
 
-- file: contacts.html
-  ready: 50
-  desc : Контакты
-
 - file: payment.html
   ready: 50
   desc : Способы оплаты
@@ -32,6 +28,14 @@ PageList:
 - file: cart-auth.html
   ready: 50
   desc : Корзина авторизация
+
+- file: cart-delivery.html
+  ready: 50
+  desc : Корзина способ доставки
+
+- file: cart-payment.html
+  ready: 50
+  desc : Корзина способ оплаты
 
 - file: cart-success.html
   ready: 50
