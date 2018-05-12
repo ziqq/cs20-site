@@ -29,9 +29,9 @@ $(document).on('click', '.js-cs-checkbox', function (){
     var _this = $(this);
     var input = _this.find('input');
     if(input.is(':checked')){
-        _this.addClass('is-checked');
-    }else{
         _this.removeClass('is-checked');
+    }else{
+        _this.addClass('is-checked');
     }
 });
 
@@ -39,6 +39,7 @@ $(document).on('click', '.js-cs-checkbox--pseudo', function (){
     if($(this).hasClass('is-checked')){
         $(this).removeClass('is-checked');
     }else{
+        $('.js-cs-checkbox--pseudo').removeClass('is-checked');
         $(this).addClass('is-checked');
     }
 });

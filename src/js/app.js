@@ -11,27 +11,15 @@ $(document).ready(function () {
     //Табы в поиске на главной
     if ( $('.js-home-search-tab').length > 0 && $(window).width() > 768) {
         document.querySelector('.js-home-search-tab').addEventListener('click', tabs);       
-    } 
-    
+    }
 
-    $(window).on("load",function(){
-        //GetNiceScroll https://github.com/inuyaksa/jquery.nicescroll
-        if($('.js-scroll').length > 0){
-            $('.js-scroll').niceScroll({
-                cursorcolor: '#e0e0e0',
-                horizrailenabled: false,
-                // autohidemode: false,
-                boxzoom: false,
-                "verge": "500",
-                cursorwidth: '4px',
-                cursorborder: 'none',
-                cursorborderradius:'0'
-            });
-            $('.js-scroll').mouseover(function() {
-                $(this).getNiceScroll().resize();
-            });
+    //Mobile menu subnav toggle
+    $('.js-mobile-nav-sub--open').on('click', function(){
+        $(this).parent().find('.mobile-nav--sub').addClass('is-open');
+    });
 
-        }        
+    $('.js-mobile-nav-sub--close').on('click', function(){
+        $(this).closest('.mobile-nav--sub').removeClass('is-open');
     });
 
     //Input Focus
@@ -70,6 +58,13 @@ $(document).ready(function () {
             slidesToScroll: 1,
             infinite: true
         });
+        // $('.cs-slider__img').zoom();
+        
+        $('.zoom')
+        .wrap('<span style="display:inline-block"></span>')
+        .css('display', 'block')
+        .parent()
+        .zoom();
     }
 
     //Modal FancyBox 3 https://fancyapps.com/fancybox/3/
@@ -131,15 +126,6 @@ $(document).ready(function () {
 
     //Stop drag
     $("img").on("dragstart", function(event) { event.preventDefault(); });
-
-    if ($('.js-filter').length > 0) {
-        var sidebar = new StickySidebar('.js-filter', {
-            topSpacing: 80,
-            bottomSpacing: 10,
-            containerSelector: '.catalog__content',
-            innerWrapperSelector: '.filter__inner'
-        });        
-    }
 
     
     /*

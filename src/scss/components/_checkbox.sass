@@ -7,6 +7,12 @@
 		.cs-checkbox__box
 			border: 1px solid $color-accent
 
+	&.is-checked
+		.cs-checkbox__box
+			background-color: transparent
+			&::before
+				display: block
+
 	//cs-checkbox__wrap
 	&__wrap
 		display: flex

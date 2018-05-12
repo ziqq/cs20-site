@@ -50,4 +50,4 @@ var settings = {
     }
 };
 
-smartgrid(config.src.sassGen, settings);
+smartgrid(config.src.libs, settings);

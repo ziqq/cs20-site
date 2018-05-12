@@ -24,6 +24,12 @@ $('.js-filter--close').on('click', function(){
     $('.overlay').removeAttr('style');
 });
 
+//Filter Select All
+$('.js-select-all').on('click', function(){
+    $(this).closest('.js-filter-content').find('.cs-checkbox').addClass('is-checked');
+    console.log('');
+});
+
 //По клику в не блока скрываем его  
 $(document).click(function(event) {
     if ($(event.target).closest('.js-filter, .js-filter--open').length) return;
@@ -32,6 +38,15 @@ $(document).click(function(event) {
     $('html').removeAttr('style');
     $('.overlay').removeAttr('style');
 });
+
+if ($('.js-filter').length > 0 && $(window).width() > 480) {
+    var sidebar = new StickySidebar('.js-filter', {
+        topSpacing: 80,
+        bottomSpacing: 10,
+        containerSelector: '.catalog__content',
+        innerWrapperSelector: '.filter__inner'
+    });        
+}
 
 if ($('#js-filter-slider').length > 0) {
 

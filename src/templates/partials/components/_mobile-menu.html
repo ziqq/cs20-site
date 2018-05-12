@@ -9,12 +9,29 @@
 	</div>
 	<!-- end search -->
 	<ul class="mobile-nav__list">
-		{% import "data/data.html" as manu %}		
-		{% for item in manu.menuMobileTop %}
-		<li class="mobile-nav__item {{ item.class }}">
-			<a href="#" class="mobile-nav__link mobile-nav__link--{{ item.icon }}">{{ item.title }}</a>
+		<li class="mobile-nav__item">
+			<a href="#" class="mobile-nav__link mobile-nav__link--home">Главная</a>
 		</li>
-		{% endfor %}		
+		<li class="mobile-nav__item">
+			<a href="#" class="mobile-nav__link mobile-nav__link--catalog js-mobile-nav-sub--open">Каталог</a>
+			<ul class="mobile-nav--sub">
+				<li class="mobile-nav__item">
+					<a href="#" class="mobile-nav__link mobile-nav__link--back js-mobile-nav-sub--close">Назад</a>
+				</li>
+				{% import "data/data.html" as submenu %}		
+				{% for item in submenu.filterType %}
+				<li class="mobile-nav__item">
+					<a href="#" class="mobile-nav__link">{{ item.title }}</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</li>
+		<li class="mobile-nav__item">
+			<a href="#" class="mobile-nav__link mobile-nav__link--pay">Оплата</a>
+		</li>
+		<li class="mobile-nav__item">
+			<a href="#" class="mobile-nav__link mobile-nav__link--delivery">Доставка</a>
+		</li>	
 		<li class="mobile-nav__item cs-dropdown js-dropdown">
 			<span class="mobile-nav__link mobile-nav__link--lk">Личный кабинет</span>
 			<ul class="cs-dropdown__list">

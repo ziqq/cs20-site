@@ -16,7 +16,7 @@ var config = {
         pagelist     : 'src/index.yaml',
         sass         : 'src/scss',
         // path for sass files that will be generated automatically via some of tasks
-        sassGen      : 'src/scss/_generated',
+        sassGen      : 'src/scss/generated',
 
         js           : 'src/js',
         jsAssets     : 'src/js/assets',

@@ -103,7 +103,6 @@
 
 	//filter__body
 	&__body
-		padding: 25px 20px
 		+r(768)
 			position: absolute
 			top: 60px
@@ -113,6 +112,33 @@
 			overflow-y: auto
 			+cs-scroll
 			+smooth-scroll
+
+	//filter__footer
+	&__footer
+		padding: 0 20px 20px
+
+	//filter__item
+	&__item
+		margin-bottom: 20px
+		padding: 0 20px
+		&_type
+			padding: 0
+			.filter__title
+				margin: 15px 20px 15px
+		&_price
+			.filter__content
+				margin-bottom: 20px
+		&_car
+			.filter__content
+				max-height: 250px
+				overflow-y: auto
+				+cs-scroll
+				+smooth-scroll
+		.button-link
+			font-family: $f-light
+			font-size: 13px
+			color: $gray--light
+			border-color: $gray--light
 
 	//filter__content
 	&__content
@@ -127,19 +153,6 @@
 			width: 13px
 			height: 13px
 			margin-left: auto
-
-	//filter__item
-	&__item
-		margin-bottom: 20px
-		&_price
-			.filter__content
-				margin-bottom: 20px
-		&_car
-			.filter__content
-				max-height: 250px
-				overflow-y: auto
-				+cs-scroll
-				+smooth-scroll
 
 	//filter__title
 	&__title
@@ -162,6 +175,26 @@
 		display: block
 		margin: auto
 		width: 100%
+		padding: 8px 20px
+		text-align: left
+		color: #000
+		font-size: 14px
+		background-color: transparent
+		box-shadow: 0
+		border: 0
+		outline: none
+		&:hover, &.is-checked
+			background-color: $gray--lighten
+
+	//filter__btn
+	&__btn-link
+		padding: 0
+		border-left: none
+		border-right: none
+		border-top: none
+		background-color: transparent
+		outline: none
+
 //filter
 
 .range
@@ -310,6 +343,8 @@
 	&__title
 		height: 66px
 		margin-bottom: 13px
+		font-family: $f-medium
+		font-weight: 500
 		font-size: 16px
 		line-height: 1.4
 		color: #000
@@ -416,6 +451,8 @@
 			margin-right: 0
 			&__cost
 				margin-right: 20px
+				.fa
+					font-size: 22px
 //product-item
 
 .product-info
@@ -423,11 +460,11 @@
 	&__list
 	//numbers__item
 	&__item
-		margin-bottom: 10px
-		font-family: $f-light
+		margin-bottom: 5px
 		font-size: 15px
 		color: $color-text
-		span
-			font-family: $f-medium
-			color: #000
+		&:first-child
+			margin-bottom: 30px
+			span
+				color: #000
 //numbers

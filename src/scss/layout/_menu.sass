@@ -51,19 +51,20 @@
 	//nav__link
 	&__link
 		display: block
-		padding: 5px 10px
+		padding: 0 10px
 		font-size: 14px
+		line-height: 100px
 		border-radius: $border-radius
 		color: #fff
 		position: relative
 		&::after
 			content: ''
 			display: block
-			height: 2px
+			height: 4px
 			width: 100%
 			background-color: $color-accent
 			position: absolute
-			bottom: -1px
+			bottom: 0
 			left: 0
 			width: 0
 			+tr
@@ -120,7 +121,6 @@
 		&::before
 			content: ''
 			display: inline-block
-			+s(mobile__home)
 			+vy
 			left: 0
 		@each $m in catalog, company, contacts, delivery, garanty, home, lk, news, partners, pay, contacts
@@ -130,13 +130,32 @@
 		&--lk
 			&::after
 				display: none
+		&--back
+			&::after
+				content: '\f104'
+				right: auto
+				left: 0
 
 	//mobile-menu__search
 	&__search
-		position: absolute
+		position: fixed
 		right: 22px
 		top: 21px
-		z-index: 99
+		z-index: z(dropdown)
+
+	//mobile-nav--sub
+	&--sub
+		padding-top: 70px;
+		padding-left: 50px
+		padding-right: 30px
+		background-color: #fff
+		+coverdiv
+		z-index: z(fixed)
+		transform: translateX(-200%)
+		transition: transform 0.35s linear
+		will-change: transform
+		&.is-open
+			transform: translateX(0)
 
 	.search
 		&__submit

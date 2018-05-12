@@ -2,6 +2,8 @@
 title: Каталог | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
 
 filterType:
+ - title: Все категории
+   class: is-checked
  - title: Элементы подвески
  - title: Прокладки / Ремкомплекты
  - title: Патрубки / Шланги
@@ -93,6 +95,16 @@ filterSeries:
 							{{mixin.icon('close', 'filter__icon filter__icon--close js-filter--close')}}
 						</div>
 						<div class="filter__body js-cs-accordeon cs-accordeon cs-accordeon--other">
+
+							<div class="filter__item filter__item_type">
+								<span class="filter__title">Категории</span>
+								<div class="filter__content">
+									{% for item in filterType %}
+									<button class="filter__btn js-cs-checkbox--pseudo {{item.class}}">{{item.title}}</button>
+									{% endfor %}
+								</div>
+							</div>
+
 							<div class="filter__item filter__item_price cs-accordeon__item is-open">
 								<span class="filter__title cs-accordeon__title">
 									Цена
@@ -118,21 +130,7 @@ filterSeries:
 									</div>
 								</div>
 							</div>
-							<div class="filter__item filter__item_type cs-accordeon__item">
-								<span class="filter__title cs-accordeon__title">
-									Тип продукции
-									<i class="cs-accordeon__icon"></i>
-								</span>
-								<div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
-									{% for item in filterType %}
-									<label class="cs-checkbox filter__checkbox">
-										<input type="checkbox">
-										<span class="cs-checkbox__box"></span>
-										<span class="cs-checkbox__title">{{item.title}}</span>
-									</label>
-									{% endfor %}
-								</div>
-							</div>
+
 							<div class="filter__item filter__item_car cs-accordeon__item">
 								<span class="filter__title cs-accordeon__title">
 									Модель авто
@@ -146,8 +144,10 @@ filterSeries:
 										<span class="cs-checkbox__title">{{item.title}}</span>
 									</label>
 									{% endfor %}
+									<button class="button-link filter__btn-link js-select-all">Выбрать все</button>
 								</div>
 							</div>
+
 							<div class="filter__item filter__item_series cs-accordeon__item">
 								<span class="filter__title cs-accordeon__title">
 									Серия
@@ -161,10 +161,12 @@ filterSeries:
 										<span class="cs-checkbox__title">{{item.title}}</span>
 									</label>
 									{% endfor %}
+									<button class="button-link filter__btn-link js-select-all">Выбрать все</button>
 								</div>
 							</div>
+
 							<div class="filter__footer">
-								<button class="button button--gray filter__btn">Очистить все</button>
+								<button class="button button--gray">Очистить все</button>
 							</div>
 						</div>
 					</div>
@@ -174,7 +176,7 @@ filterSeries:
 				<div class="catalog__products">
 					<div class="product-item__wrap js-products">
 						{% for i in range(0, 10) %}
-						<a href="#" class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+						<a href="card.html" class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
 							<div class="product-item__img">
 								<img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
 							</div>
