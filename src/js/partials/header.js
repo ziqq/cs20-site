@@ -39,7 +39,7 @@ if ($(window).width() > 768) {
 
     $('.js-tab--transform').find('.tab__content').each(function(e){
         console.log(e);
-        $(this).removeAttr('style').insertAfter($(this).closest('.js-tab--transform').find('[data-tab="' + e + ']'));
+        // $(this).removeAttr('style').insertAfter($(this).closest('.js-tab--transform').find('[data-tab="' + e + ']'));
     });
 
     // $('.js-tab--transform').find('.tab__content--car').removeAttr('style').insertAfter('[data-tab="0"]');

@@ -304,8 +304,6 @@
 					color: initial
 					&:hover
 						color: initial
-					&::after						
-						transform: translateY(-50%) rotate(90deg)
 				+r(1024)
 					padding: 0 20px
 				+r(768)
@@ -339,8 +337,8 @@
 				margin-bottom: 5px
 				&.is-open
 					.cs-accordeon__title
-						&::after
-							content: '\f107'								
+						&::after						
+							transform: translateY(-50%) rotate(90deg)							
 			&__content
 				margin-top: -2px
 				background-color: #fff

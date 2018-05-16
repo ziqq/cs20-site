@@ -211,6 +211,8 @@
 			margin: 0
 			border: 1px solid $gray--lighten
 			border-radius: $border-radius
+			+r(768)
+				border: 0
 		&__titles
 		&__title
 			width: 100%
@@ -223,11 +225,15 @@
 			cursor: pointer
 			background-color: transparent
 			border-bottom: 2px solid transparent
+			+r(768)
+				border-bottom: 0
 			&:hover
 				color: #000
 			&.is-active
 				color: #000
 				border-bottom: 2px solid $color-accent
+				+r(768)
+					border-bottom: 0
 		&__contentes
 		&__content
 			min-width: 100%
@@ -235,6 +241,18 @@
 			padding: 30px 190px 30px 60px
 			color: #000
 			font-size: 14px
+
+		&--transform
+			+r(768)
+				.cs-accordeon__item
+					margin-bottom: 0
+					border-top: 1px solid $gray--lighten
+					&:last-child
+						border-bottom: 1px solid $gray--lighten
+					&.is-open
+						.cs-accordeon__title
+							background-color: $gray--lighten
+
 //.card-info
 
 .sertificate
