@@ -9,8 +9,8 @@ $(document).ready(function () {
     $('.js-firstscreen').css('padding-top', $('.header').outerHeight(true));
 
     //Табы в поиске на главной
-    if ( $('.js-home-search-tab').length > 0 && $(window).width() > 768) {
-        document.querySelector('.js-home-search-tab').addEventListener('click', tabs);       
+    if ( $('.js-tab').length > 0 && $(window).width() > 768) {
+        document.querySelector('.js-tab').addEventListener('click', tabs);       
     }
 
     //Mobile menu subnav toggle

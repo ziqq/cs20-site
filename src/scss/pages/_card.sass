@@ -4,15 +4,27 @@
 	&__slider
 		height: 100%
 		margin: auto
-		// display: flex
-		// flex-direction: column
-		// align-items: center
-		// justify-content: center
 		.cs-slider
 			&__slides
 				padding-top: 17%
+				+r(768)
+					padding-top: 0
 		.slick-dots
-			bottom: -110px
+			bottom: -112px
+			left: 0
+			@extend %flex
+			+r(768)
+				bottom: 2px
+			li
+				width: 100%
+				button
+					padding: 0
+					width: 100%
+					&::before
+						position: absolute
+						top: 0
+						left: 0
+						width: 100%
 	
 	//card__top-line
 	&__top-line
@@ -27,7 +39,7 @@
 
 	//card__content
 	&__content
-		margin-bottom: 40px
+		margin-bottom: $gutter*2
 		@extend %flex
 		+r(768)
 			margin-bottom: 20px
@@ -96,6 +108,10 @@
 		.button-link
 			color: $color-text
 			border-color: $color-text
+		.price__stock
+			display: block
+			+r(768)
+				margin-bottom: $gutter
 
 	//card__left
 	&__left
@@ -117,24 +133,6 @@
 	//card__right
 	&__right
 		width: 30%
-		.info-block
-			&__items
-				margin-top: 60px
-				flex-direction: column
-				+r(1024)
-					margin-top: 0
-					flex-direction: row
-			&__item
-				margin-bottom: 30px
-				+size(12)
-				+size-md(4)
-				+size-sm(6)
-				+size-xs(12)
-				+r(768)
-					margin-bottom: 40px
-					justify-content: center
-				+r(480)
-					justify-content: flex-start
 
 	//card__title
 	&__title
@@ -178,4 +176,93 @@
 			&:first-child
 				margin-right: 0
 				margin-bottom: 10px
+
+	//.card__info-block
+	&__info-block
+		.info-block
+			&__items
+				margin-top: 60px
+				flex-direction: column
+				+r(1024)
+					margin-top: 0
+					flex-direction: row
+			&__item
+				margin-bottom: 30px
+				+size(12)
+				+size-md(4)
+				+size-sm(6)
+				+size-xs(12)
+				+r(768)
+					margin-bottom: 40px
+					justify-content: center
+				+r(480)
+					justify-content: flex-start
+
+	&__card-info
+		+r(768)
+			margin: 0 -11px $gutter*2
 //card
+
+.card-info
+	margin-bottom: $gutter*2
+	.tab
+		&__wrap
+			width: 100%
+			margin: 0
+			border: 1px solid $gray--lighten
+			border-radius: $border-radius
+		&__titles
+		&__title
+			width: 100%
+			height: 45px
+			line-height: 45
+			text-align: center
+			justify-content: center
+			color: #000
+			font-size: 14px
+			cursor: pointer
+			background-color: transparent
+			border-bottom: 2px solid transparent
+			&:hover
+				color: #000
+			&.is-active
+				color: #000
+				border-bottom: 2px solid $color-accent
+		&__contentes
+		&__content
+			min-width: 100%
+			min-height: 150px
+			padding: 30px 190px 30px 60px
+			color: #000
+			font-size: 14px
+//.card-info
+
+.sertificate
+	&__items
+		@extend %flexCenter
+	&__item
+		max-height: 305px
+		width: 20%
+		margin-left: 20px
+		&:first-child
+			flex: 1
+			margin-left: 0
+	&__download
+		@extend %flexCenter
+		.icon
+			width: 38px
+			height: 38px
+			margin-right: 20px
+		a
+			color: #000
+			font-size: 14px
+			&:hover
+				span
+					border-bottom-color: transparent
+		span
+			display: block
+			border-bottom: 1px dashed #000
+
+
+
+//.sertificate

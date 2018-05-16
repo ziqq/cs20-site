@@ -78,19 +78,77 @@ title: Комплект патрубков 2170 PROFI СИНИЙ СИЛИКОН
 					</div>
 				</div>
 				<div class="button-box">
-					<button class="button button--accent card__btn">Оформить заказ</button>
+					<button class="button button--accent card__btn">Добавить в корзину</button>
 					<button class="button button--transparent card__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
 				</div>
-				<div class="card__info cs-accordeon js-cs-accordeon">
-					<span class="price__stock">Есть в наличии</span>						
-					<div class="card__product-info cs-accordeon__item">
-						<div class="cs-accordeon__title">Все характеристики</div>
-						<div class="cs-accordeon__content">						
+
+				<span class="price__stock">Есть в наличии</span>	
+
+				<div class="card__info-block">
+					<div class="info-block__items">
+						<div class="info-block__item">
+							{{mixin.icon('delivery', 'info-block__icon')}}
+							<div class="info-block__text">
+								<span class="info-block__title">Бесплатная доставка</span>
+								<p class="info-block__desc">При заказе в интернет-магазине от 1000 рублей. По России.</p>
+							</div>
+						</div>
+						<div class="info-block__item">
+							{{mixin.icon('garanty', 'info-block__icon')}}
+							<div class="info-block__text">
+								<span class="info-block__title">Расширенная гарантия</span>
+								<p class="info-block__desc">Обмен товара на аналогичный в течении 2 лет</p>
+							</div>
+						</div>
+						<div class="info-block__item">
+							{{mixin.icon('giftbox', 'info-block__icon')}}
+							<div class="info-block__text">
+								<span class="info-block__title">Подарок каждому</span>
+								<p class="info-block__desc">Прочные перчатки в подарок к каждому заказу</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end card__desc -->
+		</div>
+	</div>
+	<!-- end card__content -->
+
+	<!-- begin card-info -->
+	<section class="card-info card__card-info">
+		<div class="container">	
+
+			<div class="tab tab--transform js-tab--transform">
+				<div class="tab__wrap">
+					<div class="tab__titles js-tab">
+						<div class="tab__title is-active" data-tab="0">
+							О товаре
+						</div>
+						<div class="tab__title" data-tab="1">
+							Характеристики
+						</div>
+						<div class="tab__title" data-tab="2">
+							Где применяется
+						</div>
+						<div class="tab__title" data-tab="3">
+							Сертификаты
+						</div>
+						<div class="tab__title" data-tab="4">
+							Отзывы
+						</div>
+						<div class="tab__title" data-tab="5">
+							Обзоры
+						</div>
+					</div>
+					<div class="tab__contentes">
+						<div class="tab__content" style="display: block;" data-tab-content="0">
+							<p>Патрубки и шланги являются неотъемлемый частью системы охлаждения двигателя и отопления автомобиля. Они обеспечивают циркуляцию охлаждающей жидкости (тосол, антифриз).</p>
+						</div>
+
+						<div class="tab__content" data-tab-content="1">					
 							<div class="product-info">
 								<ul class="product-info__list">
-									<li class="product-info__item">О товаре:
-										<span>Патрубки и шланги являются неотъемлемый частью системы охлаждения двигателя и отопления автомобиля. Они обеспечивают циркуляцию охлаждающей жидкости (тосол, антифриз)</span>
-									</li>
 									<li class="product-info__item">Артикул:
 										<span>05748</span>
 									</li>
@@ -112,83 +170,79 @@ title: Комплект патрубков 2170 PROFI СИНИЙ СИЛИКОН
 								</ul>
 							</div>
 						</div>
+
+						<div class="tab__content" data-tab-content="2">
+							<p>Модель Авто 2170 Приора</p>
+						</div>
+
+						<div class="tab__content" data-tab-content="3">
+							<div class="sertificate">
+								<div class="sertificate__items">
+									<div class="sertificate__item">
+										<div class="sertificate__download">
+											{{ mixin.icon('pdf') }}
+											<a href="img/general/sertificate/1.png" download><span>Скачать сертификаты соответствия	</span>	(4,45 МВ)
+											</a>
+										</div>
+									</div>
+									<div class="sertificate__item">
+										<img src="img/general/sertificate/1.png" alt="Сертифика соответствия">
+									</div>
+									<div class="sertificate__item">
+										<img src="img/general/sertificate/2.png" alt="Сертифика соответствия">
+									</div>
+									<div class="sertificate__item">
+										<img src="img/general/sertificate/3.png" alt="Сертифика соответствия">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="tab__content" data-tab-content="4">
+
+						</div>
+
+						<div class="tab__content" data-tab-content="5">
+
+						</div>
 					</div>
 				</div>
 			</div>
-			<!-- end card__desc -->
+
 		</div>
-	</div>
-	<!-- end card__content -->
+	</section>
+	<!-- end card-info -->
 
 	<!-- begin card__content -->
 	<div class="container">
-		<div class="card__content card__content--center">
 
-			<!-- begin card__left -->
-			<div class="card__left card__left--no-border">
+		<h2 class="h2 cs-section__title">Вместе с этим товаром покупают</h2>
 
-				<h2 class="h2 cs-section__title">Вместе с этим товаром покупают</h2>
-				
-				<div class="product-item__wrap">
-					{% for i in range(0, 3) %}
-					<a href="#" class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-						<div class="product-item__img">
-							<img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
-						</div>
-						<div class="product-item__desc">
-							<h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт) <span>profi синий силикон</span></h4>
-						</div>
-						<div class="product-item__footer">
-							<div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-								<span class="price__cost">2232 <i class="fa fa-rub"></i></span>
-								<meta itemprop="price" content="2232">
-								<meta itemprop="priceCurrency" content="RUB" />
-								<span class="price__stock">Есть в наличии</span>
-							</div>
-							<div class="product-item__buttons">
-								<button class="button button--accent product-item__btn">Добавить в корзину</button>
-							</div>
-						</div>
-					</a>
-					{% endfor %}﻿
+		<div class="product-item__wrap">
+			{% for i in range(0, 4) %}
+			<a href="#" class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+				<div class="product-item__img">
+					<img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
 				</div>
-
-			</div>
-			<!-- end card__left -->
-			<!-- begin card__right -->
-			<div class="card__right">
-
-				<div class="info-block">
-					<div class="info-block__items">
-						<div class="info-block__item">
-							{{mixin.icon('delivery', 'info-block__icon')}}
-							<div class="info-block__text">
-								<span class="info-block__title">Бесплатная доставка</span>
-								<p class="info-block__desc">При заказе в интернет-магазине <br> от 1000 рублей. По России.</p>
-							</div>
-						</div>
-						<div class="info-block__item">
-							{{mixin.icon('garanty', 'info-block__icon')}}
-							<div class="info-block__text">
-								<span class="info-block__title">Расширенная гарантия</span>
-								<p class="info-block__desc">Обмен товара на аналогичный <br> в течении 2 лет</p>
-							</div>
-						</div>
-						<div class="info-block__item">
-							{{mixin.icon('giftbox', 'info-block__icon')}}
-							<div class="info-block__text">
-								<span class="info-block__title">Подарок каждому</span>
-								<p class="info-block__desc">Прочные перчатки в подарок <br> к каждому заказу</p>
-							</div>
-						</div>
+				<div class="product-item__desc">
+					<h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт) <span>profi синий силикон</span></h4>
+				</div>
+				<div class="product-item__footer">
+					<div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+						<span class="price__cost">2232 <i class="fa fa-rub"></i></span>
+						<meta itemprop="price" content="2232">
+						<meta itemprop="priceCurrency" content="RUB" />
+						<span class="price__stock">Есть в наличии</span>
+					</div>
+					<div class="product-item__buttons">
+						<button class="button button--accent product-item__btn">Добавить в корзину</button>
 					</div>
 				</div>
-
-			</div>
-			<!-- end card__right -->
+			</a>
+			{% endfor %}﻿
 		</div>
+
 	</div>
-	<!-- end card__content -->
 
 </div>	
 <!-- end home -->

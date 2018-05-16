@@ -202,6 +202,7 @@
 	&__diapazon
 		@extend %flexCenter
 		margin-bottom: 25px
+
 	//range__from
 	&__from, &__to
 		width: 90px
@@ -213,6 +214,7 @@
 		font-weight: 700
 		border: 1px solid $color-border--light
 		position: relative
+
 	//range__to
 	&__to
 		margin-left: auto
@@ -226,26 +228,27 @@
 			left: -29px
 			+r(768)
 				left: -45px
+
 	//range__slider
 	&__slider
 //range
 
 .sorting
 	@extend %flexCenter
-	//sorting__count
+
 	//sorting__title
 	&__title
 		margin-right: 5px
 		color: #000
 		font-size: 14px
-	//sorting__select
-	&__select
+
 	//sorting__list
 	&__list
 		@extend %flexCenter
 		+r(480)
 			display: none
 			margin-left: auto
+
 	//sorting__btn
 	&__btn
 		padding: 7px
@@ -271,6 +274,7 @@
 				content: ''
 				display: inline-block
 				+s(sorting--tile)
+
 	&__count
 		margin-right: 15px
 		.select2-container
@@ -297,7 +301,7 @@
 //price
 
 .product-item
-	width: 33.33%
+	width: 25%
 	padding: 25px
 	margin: 0 -1px -1px 0
 	background-color: #fff
@@ -323,6 +327,7 @@
 
 	//product-item__wrap
 	&__wrap
+		margin-bottom: $gutter*2
 		@extend %flex
 		justify-content: flex-start
 		flex-wrap: wrap
@@ -460,11 +465,8 @@
 	&__list
 	//numbers__item
 	&__item
-		margin-bottom: 5px
-		font-size: 15px
+		margin-bottom: 10px
 		color: $color-text
-		&:first-child
-			margin-bottom: 30px
-			span
-				color: #000
+		span
+			color: #000
 //numbers

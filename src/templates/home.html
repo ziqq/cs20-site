@@ -16,10 +16,10 @@ wrapClass: page-home
 			<h1 class="h1 page__title firstscreen__title" itemprop="headline">Интернет-магазин износостойких <br> автокомпонентов с доставкой по РФ</h1>
 
 			<!-- begin home-search -->
-			<div class="home-search js-home-search">
-				<div class="tab">
+			<div class="home-search">
+				<div class="tab tab--transform js-tab--transform">
 					<div class="tab__wrap">
-						<div class="tab__titles js-home-search-tab">
+						<div class="tab__titles js-tab">
 							<div class="tab__title is-active" data-tab="0">
 								{{ mixin.icon('home-search__car', 'home-search__icon home-search__icon--car') }}
 								Поиск по автомобилю
@@ -38,7 +38,7 @@ wrapClass: page-home
 							</div>
 						</div>
 						<div class="tab__contentes">
-							<div class="tab__content tab__content--car" style="display: block;">
+							<div class="tab__content tab__content--car" style="display: block;" data-tab-content="0">
 								<form class="home-search__form">
 									<div class="home-search__block">
 										<select class="home-search__select js-select no-search">
@@ -60,7 +60,7 @@ wrapClass: page-home
 								</form>
 							</div>
 
-							<div class="tab__content tab__content--product">
+							<div class="tab__content tab__content--product" data-tab-content="1">
 								<div class="home-search__in">
 									<ul class="home-search__list">
 										<li class="home-search__item">
@@ -94,7 +94,7 @@ wrapClass: page-home
 								</div>
 							</div>
 
-							<div class="tab__content tab__content--series">
+							<div class="tab__content tab__content--series" data-tab-content="2">
 								<div class="home-search__in">
 									<ul class="home-search__list home-search__list--wide">
 										<li class="home-search__item">
@@ -113,7 +113,7 @@ wrapClass: page-home
 								</div>
 							</div>
 
-							<div class="tab__content tab__content--articul">
+							<div class="tab__content tab__content--articul" data-tab-content="3">
 								<form class="home-search__form">
 									<div class="home-search__search">
 										<input type="text" placeholder="Например, 10498">
