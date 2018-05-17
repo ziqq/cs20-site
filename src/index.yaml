@@ -41,6 +41,11 @@ PageList:
   ready: 50
   desc : Подтверждение заказа
 
+  #contacts
+- file: contacts.html
+  ready: 50
+  desc : Контакты
+
   #news
 - file: news.html
   ready: 50

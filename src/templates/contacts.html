@@ -1,0 +1,152 @@
+---
+title: Контакты | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper">
+
+	<!-- begin breadcrumbs -->
+	<div class="container">
+		<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+			<ul class="breadcrumbs__list">
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link" itemprop="url">
+						<span class="breadcrumbs__title" itemprop="title">Главная</span>
+					</a>
+				</li>
+				<li class="breadcrumbs__item">
+					<span class="breadcrumbs__title" itemprop="title">Новости</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- end breadcrumbs -->
+
+	<!-- begin contacts -->
+	<section class="contacts js-contacts">
+		<div class="container">
+
+			<h1 class="h1 page-title" itemprop="headline">Контакты</h1>
+
+			<div class="contacts__inner">
+
+				<div class="contacts__left">
+					<div class="contacts-item">
+						<div class="contacts-item__title">Адрес:</div>
+						<ul class="contacts-item__list">
+							<li>413800, Россия, Саратовская область, г.Балаково, Транспортная, 6/1</li>
+						</ul>
+					</div>
+					<div class="contacts-item">
+						<div class="contacts-item__title">Телефоны:</div>
+						<ul class="contacts-item__list">
+							<li>8 800 555 25 40 (Звонок бесплатный)</li>
+							<li>+7 (8453) 63 10 67</li>
+							<li>+7 (8453) 68 32 88</li>
+							<li>+7 996 201 00 00</li>
+							<li>+7 927 225 32 88</li>
+						</ul>
+					</div>
+					<div class="contacts-item">
+						<div class="contacts-item__title">E-mail:</div>
+						<ul class="contacts-item__list">
+							<li><a href="mailto:info@cs-20.ru">info@cs-20.ru</a></li>
+						</ul>
+					</div>
+					<div class="contacts-item">
+						<div class="contacts-item__title">Режим работы:</div>
+						<ul class="contacts-item__list">
+							<li>пн-сб: с 8:00 до 17:00</li>
+							<li>вс: выходной</li>
+						</ul>
+					</div>
+					<div class="contacts-item">
+						<div class="contacts-item__title">Мы в социальных сетях:</div>
+						<div class="social">
+							<ul class="social__list">
+								<li class="social__item">
+									<a href="#" class="social__link">
+										{{ mixin.icon('social__instagram', 'social__icon') }}
+									</a>
+								</li>
+								<li class="social__item">
+									<a href="#" class="social__link">
+										{{ mixin.icon('social__youtube', 'social__icon') }}
+									</a>
+								</li>
+								<li class="social__item">
+									<a href="#" class="social__link">
+										{{ mixin.icon('social__telegram', 'social__icon') }}
+									</a>
+								</li>
+								<li class="social__item">
+									<a href="#" class="social__link">
+										{{ mixin.icon('social__vk', 'social__icon') }}
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="contacts__right">
+					<div class="contacts__map">
+						<div id="contacts-map"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="contacts-owner">
+				<div class="contacts-owner__inner">
+					<div class="contacts-owner__item">
+						<ul class="contacts-owner__list">
+							<li>Индивидуальный предприниматель</li>
+							<li class="text-upercase">Михельсон Ирина Александровна</li>
+						</ul>
+					</div>
+					<div class="contacts-owner__item">
+						<ul class="contacts-owner__list">
+							<li>СВ№: 18270 от 24.11.2000г</li>
+							<li>ИНН: 643900621640</li>
+							<li>ОГРН: 3046433910500216</li>
+						</ul>
+					</div>
+					<div class="contacts-owner__item">
+						<ul class="contacts-owner__list">
+							<li><a href="#">Свидетельство о постановке на учёт</a></li>
+							<li><a href="#">Свидетельство о государственной регистрации</a></li>
+							<li><a href="#">Сертификция соответствия продукции</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</section>
+	<!-- end contacts -->
+
+</div>	
+<!-- end home -->
+
+{% endblock %}
+
+{% block scripts %}
+<script async defer src ="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnkTBYnYseWFYqDk3wb4-eWn4507c7CSw&callback=initMap"></script>
+
+<script>
+	function initMap() {
+		var uluru = {lat: 51.9958, lng: 47.8191};
+		var map = new google.maps.Map(document.getElementById('contacts-map'), {
+			zoom: 17,
+			center: uluru
+		});
+		var marker = new google.maps.Marker({
+			position: uluru,
+			map: map
+		});
+	}
+</script>
+{% endblock %}

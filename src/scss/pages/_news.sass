@@ -27,6 +27,7 @@ $news-gutter-text : 20px
 		+r(768)
 			width: 100%
 
+	//.news .cs-slider
 	.cs-slider
 		overflow: initial
 		&__arrow
@@ -42,6 +43,7 @@ $news-gutter-text : 20px
 				right: auto
 				bottom: -68px
 
+	//.news .slick-slide
 	.slick-slide
 		border: 1px solid $gray--lighten
 		border-top-color: transparent
@@ -50,14 +52,15 @@ $news-gutter-text : 20px
 			border-top-color: $gray--lighten
 		&:hover, &.is-checked
 			background-color: $gray--lighten
-
 //news
 
 .news-item
 	color: #000
+
 	//.news-item__title
 	&__title
 		margin-bottom: $news-gutter-text
+
 	//.news-item__date
 	&__date
 		display: block
@@ -67,18 +70,21 @@ $news-gutter-text : 20px
 	//.news-item__text
 	&__text
 		margin-bottom: $news-gutter-text
+
 	//.news-item__img
 	&__img
 //.news-item
 
 .news-item-preview
 	padding: 15px 20px
+
 	//.news-item-preview__date
 	&__date
 		display: block
 		margin-bottom: 5px
 		font-size: 14px
 		color: #000
+		
 	//.news-item-preview__text
 	&__text
 		color: #000

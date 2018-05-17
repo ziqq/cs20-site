@@ -1,0 +1,87 @@
+.contacts
+	margin-bottom: $gutter
+	//contacts__inner
+	&__inner
+		margin-bottom: 5px
+		@extend %flex
+		+r(768)
+			align-items: flex-start
+			flex-wrap: wrap
+	//contacts__left
+	&__left
+		width: 50%
+		padding-right: 30px
+		+r(480)
+			width: 100%
+			padding-right: 0
+	//contacts__right
+	&__right
+		width: 50%
+		+r(480)
+			width: 100%
+	//contacts__map
+	&__map
+		min-height: 280px
+		height: 100%
+		position: relative
+		+r(768)
+			margin-bottom: $gutter
+		+r(480)
+			margin-top: 15px
+			margin-bottom: 0
+
+
+//contacts
+
+#contacts-map
+	+coverdiv
+//#contacts-map
+
+.contacts-item
+	margin-bottom: 20px
+	//.contacts-item__title
+	&__title
+		margin-bottom: 10px
+	//.contacts-item__list
+	&__list
+		li
+			display: block
+			margin-bottom: 7px
+			font-size: 15px
+			font-family: $f-medium
+			color: #000
+		a
+			color: #000
+			&:hover
+				text-decoration: underline
+
+	.social__icon
+		&:hover
+			fill: #000
+//.contacts-item
+
+.contacts-owner
+	//.contacts-owner__inner
+	&__inner
+		@extend %flex
+		flex-wrap: wrap
+	//.contacts-owner__item
+	&__item
+		margin-bottom: 30px
+		width: 50%
+		&:first-child
+			width: 100%
+		+r(768)
+			width: 100%
+			margin-bottom: 10px
+	//.contacts-owner__list
+	&__list
+		li
+			display: block
+			margin-bottom: 5px
+			color: #000
+		a
+			color: $color-text
+			&:hover
+				text-decoration: underline
+//.contacts-owner
