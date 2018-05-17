@@ -34,7 +34,7 @@ $(document).ready(function () {
     }
 
     //Slick Slider https://kenwheeler.github.io/slick/
-    if($('.js-cs-slider').length > 0 || $('.js-cs-slider--card').length > 0){
+    if($('.js-cs-slider').length > 0 || $('.js-cs-slider--card').length > 0 || $('.js-cs-slider--news')){
         $('.js-cs-slider').slick({
             arrows: true,
             nextArrow: '.cs-slider__arrow--next',
@@ -58,7 +58,26 @@ $(document).ready(function () {
             slidesToScroll: 1,
             infinite: true
         });
-        // $('.cs-slider__img').zoom();
+
+        $('.js-cs-slider--news').slick({            
+            arrows: true,
+            nextArrow: '.cs-slider__arrow--next',
+            prevArrow: '.cs-slider__arrow--prev',
+            // dots: false,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            infinite: false,
+            vertical: true,
+            verticalSwiping: true
+        });
+
+        $('.js-cs-slider--news').find('.slick-slide').first().addClass('is-checked');
+        $('.js-cs-slider--news').find('.slick-slide').on('click', function(){
+            $('.js-cs-slider--news').find('.slick-slide').removeClass('is-checked');
+            $(this).addClass('is-checked');
+        });
         
         $('.zoom')
         .wrap('<span style="display:inline-block"></span>')

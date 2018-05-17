@@ -120,7 +120,7 @@
 //social
 
 .breadcrumbs
-	padding: 40px 0
+	padding: $gutter 0
 	+r(768)
 		padding: 15px 0
 
@@ -255,11 +255,14 @@
 
 .tab
 	@extend %flexCenter
+
 	&__wrap
 		margin: auto
+		
 	&__titles
 		@extend %flexCenter
 		justify-content: center
+
 	&__title
 		font-size: 15px
 		background-color: $color-secondary
@@ -268,8 +271,10 @@
 		@extend %flexCenter
 		& + &
 			margin-left: 1px
+
 	&__contentes
 		border-radius: 0 0 $border-radius $border-radius
+
 	&__content
 		display: none
 		padding: 15px 30px

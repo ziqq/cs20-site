@@ -41,6 +41,11 @@ PageList:
   ready: 50
   desc : Подтверждение заказа
 
+  #news
+- file: news.html
+  ready: 50
+  desc : Новости
+
   #404
 - file: 404.html
   ready: 50

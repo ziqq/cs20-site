@@ -39,12 +39,21 @@ $(document).click(function(event) {
     $('.overlay').removeAttr('style');
 });
 
-if ($('.js-filter').length > 0 && $(window).width() > 480) {
-    var sidebar = new StickySidebar('.js-filter', {
+if ($('.js-filter-sticky').length > 0 && $(window).width() > 480) {
+    var sidebar = new StickySidebar('.js-filter-sticky', {
         topSpacing: 80,
         bottomSpacing: 10,
         containerSelector: '.catalog__content',
         innerWrapperSelector: '.filter__inner'
+    });        
+}
+
+if ($('.js-sticky--news').length > 0 && $(window).width() > 768) {
+    var sidebar = new StickySidebar('.js-sticky--news', {
+        topSpacing: 120,
+        bottomSpacing: 10,
+        containerSelector: '.news__content',
+        innerWrapperSelector: '.news__slider'
     });        
 }
 

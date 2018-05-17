@@ -13,6 +13,8 @@
 			bottom: -112px
 			left: 0
 			@extend %flex
+			+r(1024)
+				bottom: -126px
 			+r(768)
 				bottom: 2px
 			li
@@ -179,6 +181,8 @@
 
 	//.card__info-block
 	&__info-block
+		+r(1024)
+			margin-top: 30px
 		.info-block
 			&__items
 				margin-top: 60px
@@ -188,8 +192,14 @@
 					flex-direction: row
 			&__item
 				margin-bottom: 30px
+				+r(480)
+					margin-bottom: 15px
+				&:last-child
+					margin-bottom: 0
+					+r(480)
+						margin-bottom: 15px
 				+size(12)
-				+size-md(4)
+				// +size-md(4)
 				+size-sm(6)
 				+size-xs(12)
 				+r(768)
@@ -197,10 +207,23 @@
 					justify-content: center
 				+r(480)
 					justify-content: flex-start
+					margin-left: 35px
 
 	&__card-info
 		+r(768)
 			margin: 0 -11px $gutter*2
+
+	.product-item
+		+r(1024)
+			width: 33.33%
+			&:last-child
+				display: none
+		+r(768)
+			width: 50%
+			&:last-child
+				display: block
+		+r(480)
+			width: 100%
 //card
 
 .card-info
@@ -217,7 +240,7 @@
 		&__title
 			width: 100%
 			height: 45px
-			line-height: 45
+			line-height: 45px
 			text-align: center
 			justify-content: center
 			color: #000
@@ -227,6 +250,7 @@
 			border-bottom: 2px solid transparent
 			+r(768)
 				border-bottom: 0
+				height: auto
 			&:hover
 				color: #000
 			&.is-active
@@ -241,6 +265,8 @@
 			padding: 30px 190px 30px 60px
 			color: #000
 			font-size: 14px
+			+r(768)
+				min-height: auto
 
 		&--transform
 			+r(768)

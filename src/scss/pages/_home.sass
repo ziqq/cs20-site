@@ -180,8 +180,9 @@
 	&__items
 		+row-flex()
 		justify-content: space-between
-		+r(768)
+		+r(1024)
 			justify-content: center
+
 	//info-block__item
 	&__item
 		+col()		
@@ -190,22 +191,37 @@
 		+size-xs(12)
 		@extend %flexCenter
 		+r(768)
-			margin-bottom: 30px			
+			margin-bottom: 30px
+		.icon-delivery
+			margin-left: 4px
+			width: 50px
+			+r(480)
+				width: 57px
+				margin-left: 8px
+				margin-right: 28px
+			+r(375)
+				width: 65px
+				margin-left: 3px
+				margin-right: 25px
+
 	//info-block__icon
 	&__icon
 		width: 60px
 		height: 40px
 		margin-right: 20px
 		fill: $color-text
+
 	//info-block__title
 	&__title
 		color: $color-accent
 		font-size: 18px
+
 	//info-block__text
 	&__text
 		color: #000000
 		font-size: 14px
 	//info-block__desc
+	
 	&__desc
 //info-block
 
