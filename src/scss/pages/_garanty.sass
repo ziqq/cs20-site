@@ -1,0 +1,77 @@
+.garanty
+	margin-bottom: $gutter*2
+	//.garanty__title
+	&__title
+		margin-bottom: $gutter
+		@extend %flexCenter
+		+r(480)
+			flex-direction: column
+		.page-title
+			margin-bottom: 0
+			+r(480)
+				width: 100%
+				margin-bottom: $gutter
+		.sertificate__download
+			margin-left: auto
+			+r(480)
+				margin-left: 0
+				width: 100%
+
+	//.garanty__form
+	&__form
+		margin-top: $gutter
+		.button-box
+			text-align: right
+			+r(768)
+				text-align: center
+
+//.garanty
+
+.garanty-item
+	margin-bottom: $gutter
+	&:last-child
+		margin-bottom: 0
+	//.garanty-item__more
+	&__more
+		margin-top: 10px
+		padding: 0
+		@extend %textLight
+		color: #a2a2a2
+		position: relative
+		&::after
+			content: '\f175'
+			font-family: fontawesome
+			font-size: 11px
+			margin-left: 5px
+		&:hover
+			border-color: #a2a2a2
+
+	//.garanty-item__title
+	&__title
+		margin-bottom: 15px
+		font-size: 18px
+		color: #000
+		small
+			display: block
+			margin-top: 7px
+			@extend %textLight
+			font-size: 14px
+
+	//.garanty-item__desc
+	&__desc
+		display: block
+		margin-bottom: 10px
+		font-size: 15px
+		color: #000
+
+	//.garanty-item__list
+	&__list
+		color: #000
+		+counter(li)
+		li
+			display: block
+			margin-bottom: 5px
+			font-size: 15px
+			&::before
+				margin-right: 5px
+//.garanty-item

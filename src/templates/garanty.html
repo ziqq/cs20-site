@@ -1,0 +1,144 @@
+---
+title: Гарантия и возврат | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper">
+
+	<!-- begin breadcrumbs -->
+	<div class="container">
+		<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+			<ul class="breadcrumbs__list">
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link" itemprop="url">
+						<span class="breadcrumbs__title" itemprop="title">Главная</span>
+					</a>
+				</li>
+				<li class="breadcrumbs__item">
+					<span class="breadcrumbs__title" itemprop="title">Гарантия и возврат</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- end breadcrumbs -->
+
+	<!-- begin garanty -->
+	<section class="garanty">
+		<div class="container">
+
+			<div class="garanty__title">
+				<h1 class="h1 page-title" itemprop="headline">Гарантия и возврат</h1>
+				
+				<div class="sertificate__download">
+					{{ mixin.icon('pdf') }}
+					<a href="img/general/docs/CS-20.zip" download><span>Скачать сертификаты соответствия	</span>	(4,45 МВ)
+					</a>
+				</div>
+			</div>
+
+			<!-- begin garanty__items -->
+			<div class="garanty__items">
+				<div class="garanty-item">
+					<h3 class="garanty-item__title">Рекомендации по установке изделий из полиуретана CS-20.</h3>
+					<p class="garanty-item__desc">При установке новых полиуретановых деталей с металлическими элементами, с места крепежа, требуется удалить ржавчину и остатки резины. Если имеются большие раковины и потертости на крепежных элементах их следует заменить на новые. При наличии заусенцев, удалить. При значительных отклонениях геометрии и повреждениях металлических элементов подвески – рекомендуем заменить повреждённые детали на новые, для правильной работы новых полиуретановых деталей. Перед установкой полиуретановых деталей, смажьте места контакта полиуретана с металлическими деталями подвески или кузова автомобиля литиевой смазкой.</p>
+					<button class="button-link garanty-item__more js-garanty-item--more">Показать полностью</button>
+				</div>
+				<div class="garanty-item">
+					<h3 class="garanty-item__title">Порядок обмена или возврата товара надлежащего качества.</h3>
+					<p class="garanty-item__desc">Покупатель имеет право обменять купленную деталь надлежащего качества в течении 14 дней, если указанный товар не подошел по форме, габаритам, размеру или комплектации,при условии соблюдения следующих пунктов: </p>
+					<ul class="garanty-item__list">
+						<li>Покупателем предоставляется заявление в произвольной форме с контактными данными (ФИО, адрес, номер телефона), указанием детали и причины возврата.</li>
+						<li>Имеются документы подтверждающие факт покупки (товарная накладная, кассовый или товарный чеки) </li>
+						<li>Не нарушена заводская упаковка (если она имелась) и сохранен товарный вид приобретенного изделия (отсутствуют следы установки или иных механических, или химических воздействий.</li>
+						<li class="is-hidden">Не нарушена заводская упаковка (если она имелась) и сохранен товарный вид приобретенного изделия (отсутствуют следы установки или иных механических, или химических воздействий.</li>
+						<li class="is-hidden">Не нарушена заводская упаковка (если она имелась) и сохранен товарный вид приобретенного изделия (отсутствуют следы установки или иных механических, или химических воздействий.</li>
+
+						<button class="button-link garanty-item__more js-garanty-item--more">Показать полностью</button>
+					</ul>
+				</div>
+				<div class="garanty-item">
+					<h3 class="garanty-item__title">При возникновении гарантийного случая.</h3>
+					<p class="garanty-item__desc">При выходе из строя детали во время ее эксплуатации в период действия гарантии, предоставленной производителем, осуществляется замена вышедшей из строя детали через наш интернет-магазин.</p>
+					<p class="garanty-item__desc">Для замены вышедшей из строя детали необходимо предоставить:</p>
+					<ul class="garanty-item__list">
+						<li>Гарантийный талон на приобретенное изделие.</li>
+						<li>Заявление в произвольной форме с указанием контактных данных (ФИО, адрес, номер телефона), детали и описанием дефекта, а также датой установки на автомобиль.</li>
+						<li>Заключение сертифицированной СТО о причине выхода из строя детали и копию сертификата СТО.</li>
+
+						<button class="button-link garanty-item__more js-garanty-item--more">Показать полностью</button>
+					</ul>
+				</div>
+				<div class="garanty-item">
+					<h3 class="garanty-item__title">
+						Вы можете заявить о гарантийном случае, заполнив форму на сайте
+						<small>или позвонив на бесплатный телефон горячей линии 8 800 555 25 40</small>
+					</h3>
+
+					<!-- begin garanty__form -->
+					<form class="garanty__form pedit">
+						<div class="row">
+							<div class="col-2">
+								<div class="pedit__item">
+									<div class="pedit__title">Фамилия Имя Отчество:<i>*</i></div>
+									<div class="pedit__field">
+										{{item.input('text')}}
+									</div>
+								</div>
+								<div class="pedit__item">
+									<div class="pedit__title">Эл. почта:<i>*</i></div>
+									<div class="pedit__field">
+										<div class="cs-input">
+											<input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="cs-input__field">
+											<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+										</div>
+									</div>
+								</div>
+								<div class="pedit__item">
+									<div class="pedit__title">Телефон:<i>*</i></div>
+									<div class="pedit__field">
+										<div class="cs-input is-invalid">
+											<input type="num" class="cs-input__field js-phone-mask">
+											<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-2">
+								<div class="pedit__item pedit__item--text">
+									<div class="pedit__title">Комментарий:</div>
+									<div class="pedit__field">
+										<textarea class="pedit__textarea"></textarea>
+									</div>
+								</div>
+								<div class="pedit__item">
+									<label class="pedit__file">
+										<span>Прикрепить файл</span>(не более 6 МВ)
+										<input type="file" name="" id="">
+									</label>
+								</div>
+							</div>
+						</div>
+					
+						<div class="button-box">
+							<a href="#" class="button button--gray pedit__btn">Заявить о гарантийном случае</a>
+						</div>
+					</form>
+					<!-- end garanty__form -->
+
+				</div>
+			</div>
+			<!-- end garanty__items -->
+
+			
+		</div>
+	</section>
+	<!-- end garanty -->
+
+</div>	
+<!-- end home -->
+
+{% endblock %}

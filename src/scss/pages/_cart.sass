@@ -141,6 +141,12 @@
 		margin-bottom: 25px
 		@extend %flexCenter
 		flex-wrap: wrap
+		&--text
+			align-items: flex-start
+			.pedit__title
+				text-align: right
+				+r(768)
+					text-align: left
 
 	//pedit__title
 	&__title
@@ -162,6 +168,51 @@
 	&__checkbox
 		.cs-checkbox__title
 			font-size: 14px
+
+	//pedit__checkbox
+	&__textarea
+		min-height: 132px
+		width: 100%
+		border-radius: $border-radius
+		border-color: $gray--light
+		resize: none
+		&:focus
+			border-color: $color-border
+
+	//pedit__btn
+	&__btn
+		width: auto
+		padding: 0 45px
+		+r(480)
+			width: 100%
+
+	//pedit__file
+	&__file
+		margin-left: auto
+		padding-left: 25px
+		@extend %textLight
+		font-size: 14px
+		color: $color-text
+		cursor: pointer
+		position: relative
+		+r(480)
+			margin-left: 0
+		&::before
+			content: ''
+			display: inline-block
+			margin-right: 5px
+			+s(clip)
+			+vy
+			left: 0
+		span
+			margin-right: 7px
+			font-family: $f
+			font-weight: 400
+			font-size: 15px
+			color: #000
+			border-bottom: 1px dashed $color-border
+		input
+			display: none
 //pedit
 
 .cart-success

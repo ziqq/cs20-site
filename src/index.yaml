@@ -46,6 +46,11 @@ PageList:
   ready: 50
   desc : Контакты
 
+  #garanty
+- file: garanty.html
+  ready: 50
+  desc : Гарантия и возврат
+
   #news
 - file: news.html
   ready: 50

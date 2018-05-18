@@ -24,6 +24,9 @@ $news-gutter-text : 20px
 
 	//news__slider
 	&__slider
+		.cs-slider__arrow
+			&.slick-disabled
+				display: none
 		+r(768)
 			width: 100%
 
@@ -45,13 +48,16 @@ $news-gutter-text : 20px
 
 	//.news .slick-slide
 	.slick-slide
+		margin: 0
 		border: 1px solid $gray--lighten
 		border-top-color: transparent
 		cursor: pointer
-		&:first-child
-			border-top-color: $gray--lighten
 		&:hover, &.is-checked
 			background-color: $gray--lighten
+			
+	.slick-list
+		border-top: 1px solid $gray--lighten
+		border-botom: 1px solid $gray--lighten
 //news
 
 .news-item

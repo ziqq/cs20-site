@@ -59,7 +59,12 @@ $(document).ready(function () {
             infinite: true
         });
 
-        $('.js-cs-slider--news').slick({            
+        const $slider = $(".js-cs-slider--news");
+        $slider
+        .on('init', () => {
+            mouseWheel($slider)
+        })
+        .slick({    
             arrows: true,
             nextArrow: '.cs-slider__arrow--next',
             prevArrow: '.cs-slider__arrow--prev',
@@ -71,7 +76,21 @@ $(document).ready(function () {
             infinite: false,
             vertical: true,
             verticalSwiping: true
-        });
+        })
+        function mouseWheel($slider) {
+            $(window).on('wheel', { $slider: $slider }, mouseWheelHandler)
+        }
+        function mouseWheelHandler(event) {
+            event.preventDefault()
+            const $slider = event.data.$slider
+            const delta = event.originalEvent.deltaY
+            if(delta > 0) {
+                $slider.slick('slickNext')
+            }
+            else {
+                $slider.slick('slickPrev')
+            }
+        }
 
         $('.js-cs-slider--news').find('.slick-slide').first().addClass('is-checked');
         $('.js-cs-slider--news').find('.slick-slide').on('click', function(){
@@ -165,6 +184,12 @@ $(document).ready(function () {
     $("img").on("dragstart", function(event) { event.preventDefault(); });
 
     
+    $('.js-garanty-item--more').on('click', function(){
+        $(this).closest('.garanty-item').find('.is-hidden').removeClass('is-hidden');
+         $(this).css('display', 'none');
+    });
+
+
     /*
      * Header.js
      */
