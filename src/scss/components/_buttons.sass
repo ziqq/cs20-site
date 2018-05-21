@@ -1,8 +1,8 @@
 .button
 	display: inline-block
 	width: 230px
-	height: 38px
-	line-height: 36px
+	height: 40px
+	line-height: 38px
 	font-family: $f-light
 	font-size: 14px
 	text-align: center
@@ -74,13 +74,31 @@
 	&-link
 		font-size: 14px
 		color: $color-accent
+		border-left: 0
+		border-right: 0
+		border-top: 0
 		border-bottom: 1px dashed $color-accent
 		background-color: transparent
-		border: 0
 		outline: none
 		position: relative
 		&:hover
 			border-bottom: 1px dashed lighten($color-accent, 10%)
+
+		&--exit
+			padding-left: 20px
+			&::before
+				content: ''
+				display: block
+				+s(logout)
+				position: absolute
+				top: 4px
+				left: 0
+			span
+				border-bottom: 1px dashed $color-accent
+			&:hover
+				border-bottom: none
+				span
+					border-bottom: none
 
 //button
 

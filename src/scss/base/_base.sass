@@ -32,6 +32,11 @@ input, textarea, select
 		color: $color-placeholder
 
 textarea, select
+	min-height: 100px
+	width: 100%
+	border: 1px solid $gray--light
+	border-radius: $border-radius
+	resize: none
 	+cs-scroll
 
 img
@@ -92,6 +97,12 @@ h4,.h4, h5,.h5, h6,.h6
 	margin-bottom: $half-indent
 	+r(768)
 		line-height: 1.11111111em
+
+p
+	margin-bottom: 20px
+	color: #000
+	font-size: 15px
+	line-height: 1.7
 
 //HELPER CLASSES
 .is-hidden

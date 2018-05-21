@@ -32,17 +32,34 @@
 		<li class="mobile-nav__item">
 			<a href="#" class="mobile-nav__link mobile-nav__link--delivery">Доставка</a>
 		</li>	
-		<li class="mobile-nav__item cs-dropdown js-dropdown">
+		<li class="mobile-nav__item mobile-nav__item--not-auth cs-dropdown js-dropdown">
 			<span class="mobile-nav__link mobile-nav__link--lk">Личный кабинет</span>
 			<ul class="cs-dropdown__list">
-				<li class="cs-dropdown__item">
-					<a href="#enter" class="cs-dropdown__link" data-fancybox>Вход</a>
+				<li class="mobile-nav__item">
+					<a href="#enter" class="mobile-nav__link" data-fancybox>Вход</a>
 				</li>
-				<li class="cs-dropdown__item">
-					<a href="#register" class="cs-dropdown__link" data-fancybox>Регистрация</a>
+				<li class="mobile-nav__item">
+					<a href="#register" class="mobile-nav__link" data-fancybox>Регистрация</a>
 				</li>
 			</ul>
 		</li>	
+		<li class="mobile-nav__item mobile-nav__item--auth cs-dropdown js-dropdown">
+			<a href="#" class="mobile-nav__link mobile-nav__link--lk">VeronikaSam</a>
+			<ul class="cs-dropdown__list">
+				<li class="mobile-nav__item">
+					<a href="lk-user.html" class="mobile-nav__link">Личные данные</a>
+				</li>
+				<li class="mobile-nav__item">
+					<a href="lk-order.html" class="mobile-nav__link">Мои заказы</a>
+				</li>
+				<li class="mobile-nav__item">
+					<a href="lk-sale.html" class="mobile-nav__link">Персональные скидки</a>
+				</li>
+				<li class="mobile-nav__item">
+					<a href="#" class="mobile-nav__link">Выход</a>
+				</li>
+			</ul>
+		</li>
 	</ul>
 	<ul class="mobile-nav__list">
 		{% import "data/data.html" as manu %}		

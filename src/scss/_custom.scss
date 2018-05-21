@@ -119,8 +119,8 @@
 		transition: initial;
 		position: relative;
 		&:hover{
-			color: #fff;
-			background-color: $color-accent;
+			color: #000;
+			background-color: $gray--lighten;
 		}
 		&::after{
 			content: '\f105';

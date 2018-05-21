@@ -13,13 +13,13 @@ $('.js-sorting--btn--tile').on('click', function(){
 
 //Filter Open Btn
 $('.js-filter--open').on('click', function(){
-    $('.js-filter').addClass('is-open');
+    $('.js-filter-sticky').addClass('is-open');
     $('html').css('overflow', 'hidden');
     $('.overlay').css('display', 'block');
 });
 //Filter Close Btn
 $('.js-filter--close').on('click', function(){
-    $('.js-filter').removeClass('is-open');
+    $('.js-filter-sticky').removeClass('is-open');
     $('html').removeAttr('style');
     $('.overlay').removeAttr('style');
 });
@@ -32,9 +32,9 @@ $('.js-select-all').on('click', function(){
 
 //По клику в не блока скрываем его  
 $(document).click(function(event) {
-    if ($(event.target).closest('.js-filter, .js-filter--open').length) return;
+    if ($(event.target).closest('.js-filter-sticky, .js-filter--open').length) return;
     event.stopPropagation();
-    $('.js-filter').removeClass('is-open');
+    $('.js-filter-sticky').removeClass('is-open');
     $('html').removeAttr('style');
     $('.overlay').removeAttr('style');
 });

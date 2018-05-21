@@ -46,6 +46,19 @@ PageList:
   ready: 50
   desc : Контакты
 
+  #LK
+- file: lk-user.html
+  ready: 50
+  desc : личные данные
+
+- file: lk-order.html
+  ready: 50
+  desc : мои заказы
+
+- file: lk-sale.html
+  ready: 50
+  desc : персональные скидки
+
   #garanty
 - file: garanty.html
   ready: 50
@@ -55,6 +68,16 @@ PageList:
 - file: news.html
   ready: 50
   desc : Новости
+
+  #Согласие на обработку персональных данных
+- file: privacy.html
+  ready: 50
+  desc : Согласие на обработку персональных данных
+
+  #Политика обработки данных
+- file: policy.html
+  ready: 50
+  desc : Политика обработки данных
 
   #404
 - file: 404.html

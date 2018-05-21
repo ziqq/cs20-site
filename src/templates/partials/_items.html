@@ -40,7 +40,7 @@
 		<label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-5" title="5 из 5"></label>
 		<input class="star-rating__input" id="star-rating-4" type="radio" name="rating" value="4">
 		<label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-4" title="4 из 5"></label>
-		<input class="star-rating__input" id="star-rating-3" type="radio" name="rating" value="3">
+		<input class="star-rating__input" id="star-rating-3" type="radio" name="rating" value="3" checked>
 		<label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-3" title="3 из 5"></label>
 		<input class="star-rating__input" id="star-rating-2" type="radio" name="rating" value="2">
 		<label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-2" title="2 из 5"></label>
@@ -179,5 +179,17 @@
 	<span class="phone__text">звонок бесплатный</span>
 </div>
 <!-- end phone -->
+{% endmacro %}
+
+{% macro lkNav(class) %}
+<!-- begin lk-nav -->
+<nav class="lk__nav lk-nav js-lk-nav">
+	<ul class="lk-nav__list">
+		<li class="lk-nav__item is-active"><a href="lk-user.html" class="lk-nav__link">Личные данные</a></li>
+		<li class="lk-nav__item"><a href="lk-order.html" class="lk-nav__link">Мои заказы</a></li>
+		<li class="lk-nav__item"><a href="lk-sale.html" class="lk-nav__link">Персональные скидки</a></li>
+	</ul>
+</nav>
+<!-- end lk-nav -->
 {% endmacro %}
 			

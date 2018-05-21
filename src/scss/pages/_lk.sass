@@ -1,0 +1,363 @@
+.lk
+	margin-bottom: $gutter*2
+	+r(480)
+		padding-top: 30px
+
+	//.lk__top-line
+	&__top-line
+		margin-bottom: 40px
+		@extend %flexCenter
+		+r(768)
+			flex-direction: column
+		.lk-user
+			max-width: 260px
+			margin-bottom: 0
+			margin-right: 60px
+			flex: 1
+			+r(768)
+				max-width: 100%
+				width: 100%
+				margin-right: 0
+				margin-bottom: 30px
+		.pedit
+			&__wrap
+				flex: 1
+				+r(480)
+					flex-wrap: wrap
+			&__title
+				min-width: initial !important
+				margin-right: 15px
+			&__item
+				margin-bottom: 0
+				margin-right: 30px
+				+r(480)
+					width: 100%
+					margin-right: 0
+					margin-bottom: 20px
+			&__date
+				margin-left: auto
+				.pedit__item
+					width: 100%
+					position: relative
+					&:first-child
+						margin-right: 15px
+						.pedit__field
+							position: relative
+							&::after
+								content: '—'
+								+vy
+								right: -21px
+					&:last-child
+						width: 68%
+						margin-left: 15px
+						+r(480)
+							width: 100%
+							margin-top: 35px
+					+r(480)
+						margin-bottom: 0
+					&:last-child
+						margin-right: 0
+
+	//.lk__inner
+	&__inner
+		@extend %flex
+		align-items: flex-start
+
+	//.lk__nav
+	&__nav
+		width: 260px
+		margin-right: 60px
+		border: 1px solid $gray--lighten
+		border-radius: $border-radius
+		+r(768)
+			display: none
+
+	//.lk__content
+	&__content
+		flex: 1	
+
+		.col-2
+			+size-md(12)
+
+	//.lk__form
+	&__form
+		.pedit
+			&__btn
+				padding: 0 15px
+				width: 100%
+		.button-box
+			max-width: 283px
+			margin-left: auto
+			text-align: right
+			+r(768)
+				margin: auto
+			+r(480)
+				max-width: 100%
+			.privacy-block
+				margin-bottom: 20px
+				margin-top: 40px
+				font-size: 11px
+				text-align: left
+
+	.pedit
+		&__title
+			min-width: 111px
+//.lk
+
+.lk-user
+	margin-bottom: 30px
+
+	//.lk-user__login
+	&__login
+		display: block
+		font-family: $f-medium
+		color: #000
+		font-size: 25px
+
+	//.lk-user__name
+	&__name
+		color: #000
+		font-size: 16px
+//.lk-user
+
+.lk-nav
+
+	//.lk-nav__list
+	&__list
+
+	//.lk-nav__item
+	&__item
+		&.is-active
+			.lk-nav__link
+				background-color: $gray--lighten
+
+	//.lk-nav__link
+	&__link
+		display: block
+		width: 100%
+		padding: 15px 20px
+		color: #000
+		font-size: 14px
+		&:hover
+			color: #000
+			background-color: lighten($gray--lighten, 8%)
+//.lk-nav
+
+.lk-order
+	.lk-user
+		+r(480)
+			display: none
+//.lk-order
+
+.order-item
+	margin-bottom: $gutter/2
+	border: 1px solid $color-border--lightest
+	border-radius: $border-radius
+	+r(480)
+		border-right-color: transparent
+		border-left-color: transparent
+		margin: 0 -10px
+		& + .order-item
+			border-top-color: transparent
+
+	&.is-open
+		.order-item__title
+			border-bottom: 1px solid $color-border--lightest
+			&::after
+				content: '\f106'
+
+	&.is-accepted
+		.order-item__status
+			span
+				color: #c57103
+
+	&.is-abort
+		.order-item__status
+			span
+				color: $color-error
+
+	&.is-success
+		.order-item__status
+			span
+				color: $color-success
+
+	//order-item__title
+	&__title
+		padding: 0 30px 0 20px
+		height: 50px
+		font-family: $f
+		font-weight: 400
+		color: #000
+		border-bottom-color: transparent
+		position: relative
+		@extend %flexCenter
+		+r(480)
+			height: auto
+			padding: 10px 30px 10px 10px
+			flex-wrap: wrap
+		&::after
+			content: '\f105'
+			font-family: fontawesome
+			display: block
+			+vy
+			right: 19px
+		span
+			margin-right: 15px
+			&:first-child
+				max-width: 550px
+				+text-overflow
+
+	//order-item__status
+	&__status
+		margin-left: auto
+		color: $color-text
+		+r(480)
+			margin-left: 0
+		span
+			margin-right: 0
+			color: #000
+
+	//order-item__content
+	&__content		
+		padding: 0 20px 25px
+		+r(480)
+			padding: 0 10px 25px
+
+	//order-item__list
+	&__list
+		margin-bottom: 10px
+		+counter(li)
+
+	//order-item__product
+	&__product
+		position: relative
+		+r(480)
+			margin-bottom: 10px
+		&::before
+			font-size: 15px
+			color: #000
+			+vy
+			left: 1.5px
+			z-index: 10
+			+r(480)
+				top: 10px
+				transform: translate(0)
+
+	//order-item__more
+	&__more
+		display: inline-block
+		margin-bottom: 15px
+		color: #000
+		border-bottom: 1px dashed #000
+		+r(480)
+			margin-bottom: 20px
+		&:hover
+			color: #000
+			border-bottom-color: transparent
+
+	//order-item__info
+	&__info
+		@extend %flex
+		+r(480)
+			flex-direction: column
+		ul
+			flex: 1
+			+r(480)
+				margin-bottom: 20px
+			li
+				margin-bottom: 5px
+				font-size: 15px
+		.button-box
+			max-width: 220px	
+			width: 100%
+			+r(480)
+				max-width: 100%
+
+	.product-item
+		padding: 10px 25px
+		margin: 0
+		border: 0
+		box-shadow: none
+		&:hover
+			box-shadow: none
+		&__title
+			width: 100%
+			font-size: 14px
+			+r(480)
+				max-width: 100%
+				width: 100%
+				margin-bottom: 10px
+				margin-right: 0
+		&__counter
+			margin-left: 100px
+			font-size: 14px
+			color: #000
+			+r(480)
+				margin-left: 0
+		&__price
+			margin-right: 0
+			font-size: 18px
+			+r(480)
+				margin-right: 0
+			.fa
+				font-size: 18px
+		&__desc
+			+r(480)
+				flex-wrap: wrap
+//order-item
+
+.lk-sale
+	color: #000
+	//.lk-sale__title
+	&__title
+		font-family: $f-medium
+		font-weight: 500
+	//.lk-sale__inner
+	&__inner
+		@extend %flex
+		+r(480)
+			flex-wrap: wrap
+	//.lk-sale__text
+	&__text
+		width: calc(100% - 33%)
+		margin-right: 60px
+		+r(768)
+			width: calc(100% - 45%)
+		+r(480)
+			width: 100%
+		p
+			&:last-child
+				margin-bottom: 0
+				+r(480)
+					margin-bottom: 20px
+	//.lk-sale__data
+	&__data
+		width: 33%
+		+r(768)
+			width: 45%
+		+r(480)
+			width: 100%
+	//.lk-sale__list
+	&__list
+		padding: 25px 30px
+		border-radius: $border-radius
+		border: 1px solid $color-border--lightest
+		li
+			font-size: 15px
+			@extend %flexCenter
+			&:first-child
+				color: $color-text
+			& + li
+				margin-top: 13px
+			span
+				display: inline-block
+				min-width: 60px
+				margin-left: auto
+				text-align: center
+		.fa-rub
+			font-size: 13px
+
+	.lk-nav, .lk__top-line
+		+r(1024)
+			display: none
+//.lk-sale

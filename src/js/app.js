@@ -22,17 +22,6 @@ $(document).ready(function () {
         $(this).closest('.mobile-nav--sub').removeClass('is-open');
     });
 
-    //Input Focus
-    if($('.js-input').length){
-        $('.js-input').focus(function (){
-            $(this).parent('.input').addClass('is-focus');
-        }).blur(function(){
-            if($(this).val() == ''){
-                $(this).parent('.input').removeClass('is-focus');
-            }
-        });
-    }
-
     //Slick Slider https://kenwheeler.github.io/slick/
     if($('.js-cs-slider').length > 0 || $('.js-cs-slider--card').length > 0 || $('.js-cs-slider--news')){
         $('.js-cs-slider').slick({
@@ -78,7 +67,7 @@ $(document).ready(function () {
             verticalSwiping: true
         })
         function mouseWheel($slider) {
-            $(window).on('wheel', { $slider: $slider }, mouseWheelHandler)
+            $('.js-cs-slider--news').on('wheel', { $slider: $slider }, mouseWheelHandler)
         }
         function mouseWheelHandler(event) {
             event.preventDefault()
@@ -105,7 +94,7 @@ $(document).ready(function () {
         .zoom();
     }
 
-    if ($('.js-filter-sticky').length > 0 && $(window).width() > 480) {
+    if ($('.js-filter-sticky').length > 0 && $(window).width() > 768) {
         var sidebar = new StickySidebar('.js-filter-sticky', {
             topSpacing: 80,
             bottomSpacing: 10,
@@ -121,6 +110,27 @@ $(document).ready(function () {
             containerSelector: '.news__content',
             innerWrapperSelector: '.news__slider'
         });        
+    }
+
+    if ($('.js-cart-sticky').length > 0 && $(window).width() > 1024) {
+        var sidebar = new StickySidebar('.js-cart-sticky', {
+            topSpacing: 80,
+            bottomSpacing: 10,
+            containerSelector: '.cart__inner',
+            innerWrapperSelector: '.cart__sum'
+        });        
+    }
+
+    //Datepicker http://t1m0n.name/air-datepicker/docs/index-ru.html
+    if (('.js-date').length > 0) {
+        $('.js-date').datepicker({
+            dateFormat: 'dd.mm.yy',
+            autoClose: true
+        });
+        $('.js-input-icon').click(function (event) {
+            event.preventDefault();
+            $(this).parent().find('.js-date').focus();
+        });
     }
 
     //Modal FancyBox 3 https://fancyapps.com/fancybox/3/
@@ -186,7 +196,13 @@ $(document).ready(function () {
     
     $('.js-garanty-item--more').on('click', function(){
         $(this).closest('.garanty-item').find('.is-hidden').removeClass('is-hidden');
-         $(this).css('display', 'none');
+        $(this).css('display', 'none');
+    });
+
+    
+    $('.js-lk-nav').find('.lk-nav__item').on('click', function(){
+        $('.js-lk-nav').find('.lk-nav__item').removeClass('is-active');
+        $(this).addClass('is-active');
     });
 
 

@@ -1,0 +1,261 @@
+---
+title: Мои заказы | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper">
+
+	<!-- begin breadcrumbs -->
+	<div class="container">
+		<div class="breadcrumbs__wrap">
+			<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+				<ul class="breadcrumbs__list">
+					<li class="breadcrumbs__item">
+						<a href="#" class="breadcrumbs__link" itemprop="url">
+							<span class="breadcrumbs__title" itemprop="title">Главная</span>
+						</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<a href="#" class="breadcrumbs__link" itemprop="url">
+							<span class="breadcrumbs__title" itemprop="title">Личный кабинет</span>
+						</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<span class="breadcrumbs__title" itemprop="title">Мои заказы</span>
+					</li>
+				</ul>
+			</div>
+			<a href="#" class="button-link button-link--exit"><span>Выход</span></a>
+		</div>
+	</div>
+	<!-- end breadcrumbs -->
+
+	<!-- begin lk -->
+	<div class="lk lk-order">
+		<div class="container">			
+			
+			<h1 class="h1 page-title" itemprop="headline">Мои заказы</h1>			
+
+			<div class="lk__top-line">
+				<div class="lk-user">
+					<div class="lk-user__login">VeronikaSam</div>
+					<div class="lk-user__name">Самсонова Вероника Павловна</div>
+				</div>
+
+				<div class="pedit__wrap">					
+					<div class="pedit__item">
+						<div class="pedit__title">Номер заказа</div>
+						<div class="pedit__field">
+							{{item.input('text')}}
+						</div>
+					</div>				
+					<div class="pedit__date">
+						<div class="pedit__item pedit__item--date">
+							<div class="pedit__title">Дата заказа</div>
+							<div class="pedit__field">
+								 <div class="cs-input">
+								 	<input type="text" class="cs-input__field js-date" placeholder="дд.мм.гг">
+		                               	 <i class="fa fa-calendar pedit__icon js-input-icon"></i>
+								 </div>
+							</div>
+						</div>	
+						<div class="pedit__item pedit__item--date">
+							<div class="pedit__field">
+								<div class="cs-input">
+									 <input type="text" data-position="bottom right" class="cs-input__field js-date" placeholder="дд.мм.гг">
+	                               	 <i class="fa fa-calendar pedit__icon js-input-icon"></i>
+	                           	</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="lk__inner">
+
+				{{item.lkNav()}}
+				
+				<!-- begin lk__content -->
+				<div class="lk__content">
+					<div class="cs-accorderon js-cs-accordeon">
+						<div class="cs-accordeon__item order-item is-accepted">
+							<div class="cs-accordeon__title order-item__title">
+								<span>Заказ № 490 от 24.04.18 на сумму 3258 рублей</span>
+								<span class="order-item__status">Статус: <span>принят, ожидается оплата</span></span>
+							</div>
+							<div class="cs-accordeon__content order-item__content" style="display: none;">
+								<ul class="order-item__list">
+									{% for i in range(0, 2) %}
+									<li class="order-item__product">
+										<a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product">
+						                    <div class="product-item__desc">
+						                        <h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт)
+						                            <span>profi синий силикон</span>
+						                        </h4>
+						                        <div class="product-item__counter counter">
+						                            1 шт.
+						                        </div>
+						                        <div class="product-item__price price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+						                            <span class="price__cost">1624
+						                                <i class="fa fa-rub"></i>
+						                            </span>
+						                        </div>
+						                    </div>
+						                </a>
+									</li>
+									{% endfor %}﻿
+								</ul>
+								<a href="#" class="button-link order-item__more">Повторить заказ</a>
+								<div class="order-item__info">
+									<ul>
+										<li>Оплачен: Нет</li>
+										<li>Способ оплаты: RoboKassa</li>
+										<li>Способ доставки: Бесплатная доставка Почтой России</li>
+									</ul>
+									<div class="button-box">
+	                                    <button class="button button--accent product-item__btn">Оплатить</button>
+	                                    <button class="button button--transparent product-item__btn">Отменить заказ</button>
+	                                </div>
+								</div>
+							</div>
+						</div>
+						<div class="cs-accordeon__item order-item is-abort">
+							<div class="cs-accordeon__title order-item__title">
+								<span>Заказ № 490 от 24.04.18 на сумму 3258 рублей</span>
+								<span class="order-item__status">Статус: <span>принят, ожидается оплата</span></span>
+							</div>
+							<div class="cs-accordeon__content order-item__content" style="display: none;">
+								<ul class="order-item__list">
+									{% for i in range(0, 2) %}
+									<li class="order-item__product">
+										<a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product">
+						                    <div class="product-item__desc">
+						                        <h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт)
+						                            <span>profi синий силикон</span>
+						                        </h4>
+						                        <div class="product-item__counter counter">
+						                            1 шт.
+						                        </div>
+						                        <div class="product-item__price price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+						                            <span class="price__cost">1624
+						                                <i class="fa fa-rub"></i>
+						                            </span>
+						                        </div>
+						                    </div>
+						                </a>
+									</li>
+									{% endfor %}﻿
+								</ul>
+								<a href="#" class="button-link order-item__more">Повторить заказ</a>
+								<div class="order-item__info">
+									<ul>
+										<li>Оплачен: Нет</li>
+										<li>Способ оплаты: RoboKassa</li>
+										<li>Способ доставки: Бесплатная доставка Почтой России</li>
+									</ul>
+									<div class="button-box">
+	                                    <button class="button button--accent product-item__btn">Оплатить</button>
+	                                    <button class="button button--transparent product-item__btn">Отменить заказ</button>
+	                                </div>
+								</div>
+							</div>
+						</div>
+						<div class="cs-accordeon__item order-item is-success">
+							<div class="cs-accordeon__title order-item__title">
+								<span>Заказ № 490 от 24.04.18 на сумму 3258 рублей</span>
+								<span class="order-item__status">Статус: <span>принят, ожидается оплата</span></span>
+							</div>
+							<div class="cs-accordeon__content order-item__content" style="display: none;">
+								<ul class="order-item__list">
+									{% for i in range(0, 2) %}
+									<li class="order-item__product">
+										<a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product">
+						                    <div class="product-item__desc">
+						                        <h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт)
+						                            <span>profi синий силикон</span>
+						                        </h4>
+						                        <div class="product-item__counter counter">
+						                            1 шт.
+						                        </div>
+						                        <div class="product-item__price price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+						                            <span class="price__cost">1624
+						                                <i class="fa fa-rub"></i>
+						                            </span>
+						                        </div>
+						                    </div>
+						                </a>
+									</li>
+									{% endfor %}﻿
+								</ul>
+								<a href="#" class="button-link order-item__more">Повторить заказ</a>
+								<div class="order-item__info">
+									<ul>
+										<li>Оплачен: Нет</li>
+										<li>Способ оплаты: RoboKassa</li>
+										<li>Способ доставки: Бесплатная доставка Почтой России</li>
+									</ul>
+									<div class="button-box">
+	                                    <button class="button button--accent product-item__btn">Оплатить</button>
+	                                    <button class="button button--transparent product-item__btn">Отменить заказ</button>
+	                                </div>
+								</div>
+							</div>
+						</div>
+						<div class="cs-accordeon__item order-item">
+							<div class="cs-accordeon__title order-item__title">
+								<span>Заказ № 490 от 24.04.18 на сумму 3258 рублей</span>
+								<span class="order-item__status">Статус: <span>принят, ожидается оплата</span></span>
+							</div>
+							<div class="cs-accordeon__content order-item__content" style="display: none;">
+								<ul class="order-item__list">
+									{% for i in range(0, 2) %}
+									<li class="order-item__product">
+										<a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/Product">
+						                    <div class="product-item__desc">
+						                        <h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт)
+						                            <span>profi синий силикон</span>
+						                        </h4>
+						                        <div class="product-item__counter counter">
+						                            1 шт.
+						                        </div>
+						                        <div class="product-item__price price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+						                            <span class="price__cost">1624
+						                                <i class="fa fa-rub"></i>
+						                            </span>
+						                        </div>
+						                    </div>
+						                </a>
+									</li>
+									{% endfor %}﻿
+								</ul>
+								<a href="#" class="button-link order-item__more">Повторить заказ</a>
+								<div class="order-item__info">
+									<ul>
+										<li>Оплачен: Нет</li>
+										<li>Способ оплаты: RoboKassa</li>
+										<li>Способ доставки: Бесплатная доставка Почтой России</li>
+									</ul>
+									<div class="button-box">
+	                                    <button class="button button--accent product-item__btn">Оплатить</button>
+	                                    <button class="button button--transparent product-item__btn">Отменить заказ</button>
+	                                </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end lk__content -->
+
+			</div>
+			
+		</div>
+	</div>
+	<!-- end ;l -->
+
+</div>	
+<!-- end home -->
+
+{% endblock %}

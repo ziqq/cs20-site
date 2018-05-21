@@ -2,6 +2,7 @@
 	//nav__list
 	&__list
 		@extend %flexCenter
+
 	//nav__item
 	&__item
 		margin-right: 15px
@@ -32,7 +33,8 @@
 					&::before
 						content: '\f106'
 			.nav__link
-				padding-right: 25px
+				padding: 5px 25px 5px 10px
+				line-height: 1.7
 				transition: initial
 				&::after
 					display: none
@@ -76,6 +78,14 @@
 	&--main
 		+r(768)
 			display: none
+		.nav
+			&__item
+				&--auth
+					display: none
+					min-width: 170px
+					width: 100%
+					.nav__link
+						+text-overflow
 //nav
 
 .mobile-nav
@@ -102,6 +112,8 @@
 
 	//mobile-menu__item
 	&__item
+		&--auth
+			display: none
 
 	//mobile-menu__link
 	&__link
@@ -130,11 +142,17 @@
 		&--lk
 			&::after
 				display: none
+
 		&--back
 			&::after
 				content: '\f104'
 				right: auto
 				left: 0
+
+		&--not-auth
+
+		&--auth
+			display: none
 
 	//mobile-menu__search
 	&__search

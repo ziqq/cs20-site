@@ -44,3 +44,23 @@
 	color: #000
 	font-size: 13px
 	line-height: 1.2
+
+.review-add
+	.pedit__file 
+		margin-left: 0
+	.star-rating
+		&__ico		
+			width: 20%
+			height: 38px
+			border: 1px solid $gray--light
+			border-left: 0
+			@extend %flexCenter
+			justify-content: center
+			&::before
+				margin: auto
+			&[for='star-rating-1']
+				border-left: 1px solid $gray--light
+				border-radius: $border-radius 0 0 $border-radius
+			&[for='star-rating-5']
+				border-radius: 0 $border-radius $border-radius 0
+//.review-add

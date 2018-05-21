@@ -9,17 +9,3 @@ if($('.js-contacts').length > 0 && $(window).width() <= 768 && $(window).width()
 
   contactsMap.appendTo(contactsItemFirst);
 }
-
-// if($('#contacts-map').length > 0){
-//   function initMap() {
-//     var uluru = {lat: 51.9958, lng: 47.8191};
-//     var map = new google.maps.Map(document.getElementById('contacts-map'), {
-//       zoom: 17,
-//       center: uluru
-//     });
-//     var marker = new google.maps.Marker({
-//       position: uluru,
-//       map: map
-//     });
-//   }initMap();
-// }

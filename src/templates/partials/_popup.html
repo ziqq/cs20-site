@@ -19,6 +19,55 @@
 </div>
 <!-- end register -->
 
+<!-- begin review-add -->
+<div class="modal-window modal-window--mobile review-add" id="review-add">
+	<div class="modal-window__header">
+		<h4 class="modal-window__title">Написать отзыв</h4>
+	</div>
+	<div class="modal-window__body">
+		<form class="form form__review-add">
+			<div class="cs-input">
+				<span class="cs-input__title">Ваше имя</span>
+				<input type="text" class="cs-input__field">
+				<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+			</div>
+			<div class="cs-input cs-input--select form__input">
+				<span class="cs-input__title">Город</span>
+				<select class="js-select">
+					<option value="Выберите город..." disabled selected>Выберите город...</option>
+					{% for i in range(0, 11) %}
+					<option value="Балаково">Балаково</option>
+					{% endfor %}﻿		 				
+				</select>
+				<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+			</div>
+
+			<div class="cs-input cs-input--rating">
+				<span class="cs-input__title">Оценка</span>
+				{{ item.starRating() }}
+			</div>
+
+			<div class="cs-input cs-input--text">
+				<div class="cs-input__title">Отзыв</div>
+				<textarea></textarea>
+			</div>
+
+			<div class="pedit__item">
+				<label class="pedit__file">
+					<span>Прикрепить файл</span>(не более 6 МВ)
+					<input type="file">
+				</label>
+			</div>
+
+			<button type="submit" class="button button--accent form__btn">Отправить</button>
+			<div class="success">
+				<div class="success__text">Спасибо за отзыв!</div>
+			</div>
+		</form>
+	</div>
+</div>
+<!-- end review-add -->
+
 <!-- begin enter -->
 <div class="modal-window modal-window--mobile enter" id="enter">
 	<div class="modal-window__header">

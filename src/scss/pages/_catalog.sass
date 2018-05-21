@@ -51,6 +51,8 @@
 	&__pagination
 		margin-left: 300px
 		margin-top: 80px
+		+r(768)
+			margin-left: 0
 //catalog
 
 .filter	
@@ -327,7 +329,6 @@
 
 	//product-item__wrap
 	&__wrap
-		margin-bottom: $gutter*2
 		@extend %flex
 		justify-content: flex-start
 		flex-wrap: wrap

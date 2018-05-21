@@ -53,8 +53,8 @@
 //success
 
 .cs-input
-	@extend %inputStyle
 	width: 100%
+	margin-bottom: 20px
 	position: relative
 
 	&.is-invalid
@@ -66,20 +66,18 @@
 
 	//cs-input__title
 	&__title
-		color: $gray--light
-		font-size: 16px
-		+vy
-		left: 15px
-		+tr
+		color: $gray
+		font-size: 15px
 
 	//cs-input__field
 	&__field
 		width: 100%
 		height: 100%
-		padding: 0 15px
+		// padding: 0 15px
 		font-size: 15px
 		border: 1px solid $gray--light
 		border-radius: $border-radius
+		@extend %inputStyle
 		&:focus
 			border-color: $color-border
 
@@ -104,4 +102,10 @@
 			border: 0
 			.select2-container .select2-selection--single
 				border: 1px solid $color-error
+
+	//cs-input--rating
+	&--rating
+		.cs-input__title
+			display: block
+			margin-bottom: 5px
 //cs-input

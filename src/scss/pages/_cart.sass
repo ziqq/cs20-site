@@ -17,7 +17,6 @@
 	&__inner
 		margin-bottom: 60px
 		border: 1px solid $gray--lighten
-		border-bottom-color: transparent
 		@extend %flex
 		+r(1024)
 			flex-wrap: wrap
@@ -34,7 +33,6 @@
 	&__right
 		width: 300px
 		margin-left: auto
-		border-bottom: 1px solid $gray--lighten
 		+r(1024)
 			width: 100%
 			border: 0
@@ -115,6 +113,10 @@
 				margin-right: 0
 
 	.product-item
+		&:last-child
+			border-bottom-color: transparent
+			+r(1024)
+				border-bottom-color: $gray--lighten
 		+r(480)
 			&__desc
 				display: flex
@@ -136,9 +138,14 @@
 //cart
 
 .pedit
+	//pedit__wrao
+	&__wrap
+		@extend %flexCenter
+
 	//pedit__item
 	&__item
 		margin-bottom: 25px
+		position: relative
 		@extend %flexCenter
 		flex-wrap: wrap
 		&--text
@@ -147,6 +154,15 @@
 				text-align: right
 				+r(768)
 					text-align: left
+		.cs-input
+			margin-bottom: 0
+	
+	//pedit__icon
+	&__icon
+		color: $gray
+		+vy
+		right: 10px
+		cursor: pointer
 
 	//pedit__title
 	&__title
@@ -161,11 +177,24 @@
 	&__field
 		flex: 1
 		
+	//pedit__date
+	&__date
+		@extend %flexCenter
+		.pedit__title
+			min-width: 260px
+			margin-right: 60px
+		.pedit__item
+			margin-right: 15px
+			&:last-child
+				margin-right: 0
+
 	//pedit__select
 	&__select
 
 	//pedit__checkbox
 	&__checkbox
+		& + &
+			margin-left: 30px
 		.cs-checkbox__title
 			font-size: 14px
 

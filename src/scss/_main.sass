@@ -4,12 +4,38 @@
 .text-upercase
 	text-transform: uppercase
 
+.list-style
+	&--circle
+		li
+			margin-left: 22px
+			list-style-type: disc
+	&--def
+		li
+			padding-left: 20px
+			position: relative
+			&::before
+				content: '—'
+				+vy
+				left: 0
+
 .windows
 	display: none
 
 .page-wrapper
 	min-height: 100vh
 	@extend %flexColumn
+	&.is-auth
+		.nav--main
+			.nav__item
+				&--auth
+					display: block				
+				&--not-auth
+					display: none
+		.mobile-nav__item
+			&--auth
+				display: block
+			&--not-auth
+				display: none
 	&__inner
 		background-color: #fff
 		box-shadow: 0 1px 20px #000
@@ -84,8 +110,13 @@
 	z-index: 300
 
 .page-title
+	font-family: $f-medium
+	font-weight: 500
 	+r(768)
+		margin-bottom: 30px
 		font-size: 24px
+	+r(480)
+		margin-bottom: 25px
 //page-title
 
 .badge
@@ -126,6 +157,14 @@
 	padding: $gutter 0
 	+r(768)
 		padding: 15px 0
+
+	//breadcrumbs__wrap
+	&__wrap
+		@extend %flexCenter
+		.button-link--exit
+			margin-left: auto
+		+r(480)
+			display: none
 
 	//breadcrumbs__list
 	&__list
@@ -375,3 +414,41 @@
 		background-color: transparent
 		+nosel
 //counter
+
+.privacy
+	font-size: 11px
+	text-align-last: auto
+	a
+		color: $color-accent
+//privacy
+
+.star-rating
+	font-size: 0
+
+	&__wrap
+		@extend %flexCenter
+		flex-direction: row-reverse
+		justify-content: flex-end
+		font-size: 16px
+		&::after
+			content: ""
+			display: table
+			clear: both
+
+	&__ico
+		padding-left: 2px
+		cursor: pointer
+		color: #FFB300
+		&:last-child
+			padding-left: 0
+
+	&__input
+		display: none
+
+.star-rating__ico:hover
+	&:before, ~ .star-rating__ico:before
+		content: "\f005"
+
+.star-rating__input:checked ~ .star-rating__ico:before
+	content: "\f005"
+//.star-rating

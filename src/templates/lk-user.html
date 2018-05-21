@@ -1,0 +1,150 @@
+---
+title: Гарантия и возврат | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper">
+
+	<!-- begin breadcrumbs -->
+	<div class="container">
+		<div class="breadcrumbs__wrap">
+			<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+				<ul class="breadcrumbs__list">
+					<li class="breadcrumbs__item">
+						<a href="#" class="breadcrumbs__link" itemprop="url">
+							<span class="breadcrumbs__title" itemprop="title">Главная</span>
+						</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<a href="#" class="breadcrumbs__link" itemprop="url">
+							<span class="breadcrumbs__title" itemprop="title">Личный кабинет</span>
+						</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<span class="breadcrumbs__title" itemprop="title">Личные данные</span>
+					</li>
+				</ul>
+			</div>
+			<a href="#" class="button-link button-link--exit"><span>Выход</span></a>
+		</div>
+	</div>
+	<!-- end breadcrumbs -->
+
+	<!-- begin lk -->
+	<div class="lk">
+		<div class="container">
+
+			<h1 class="h1 page-title" itemprop="headline">Личные данные</h1>
+
+			<div class="lk-user">
+				<div class="lk-user__login">VeronikaSam</div>
+				<div class="lk-user__name">Самсонова Вероника Павловна</div>
+			</div>
+			
+			<div class="lk__inner">
+
+				{{item.lkNav()}}
+				
+				<!-- begin lk__content -->
+				<div class="lk__content">
+					<!-- begin lk__form -->
+					<form class="lk__form pedit">
+						<div class="row">
+							<div class="col-2">
+								<div class="pedit__item">
+									<div class="pedit__title">Логин:<i>*</i></div>
+									<div class="pedit__field">
+										{{item.input('text')}}
+									</div>
+								</div>
+								<div class="pedit__item">
+									<div class="pedit__title">Имя:<i>*</i></div>
+									<div class="pedit__field">
+										{{item.input('text')}}
+									</div>
+								</div>
+								<div class="pedit__item">
+									<div class="pedit__title">Фамилия:<i>*</i></div>
+									<div class="pedit__field">
+										{{item.input('text')}}
+									</div>
+								</div>
+								<div class="pedit__item">
+									<div class="pedit__title">Отчество:</div>
+									<div class="pedit__field">
+										{{item.input('text')}}
+									</div>
+								</div>
+								<div class="pedit__item">
+									<div class="pedit__title">Получать уведомления:</div>
+									<div class="pedit__field">
+										{{item.checkbox('по SMS', 'pedit__checkbox')}}
+										{{item.checkbox('по E-mail', 'pedit__checkbox')}}
+									</div>
+								</div>
+							</div>
+						
+							<div class="col-2">
+								<div class="pedit__item">
+									<div class="pedit__title">Эл. почта:<i>*</i></div>
+									<div class="pedit__field">
+										<div class="cs-input">
+											<input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="cs-input__field">
+											<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+										</div>
+									</div>
+								</div>
+								<div class="pedit__item">
+									<div class="pedit__title">Телефон:<i>*</i></div>
+									<div class="pedit__field">
+										<div class="cs-input is-invalid">
+											<input type="num" class="cs-input__field js-phone-mask">
+											<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+										</div>
+									</div>
+								</div>	
+								<div class="pedit__item">
+									<div class="pedit__title">Пароль:<i>*</i></div>
+									<div class="pedit__field">
+										<div class="cs-input is-invalid">
+											<input type="password" class="cs-input__field">
+											<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+										</div>
+									</div>
+								</div>	
+								<div class="pedit__item">
+									<div class="pedit__title">Подтверждение <br> пароля:<i>*</i></div>
+									<div class="pedit__field">
+										<div class="cs-input is-invalid">
+											<input type="password" class="cs-input__field">
+											<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+										</div>
+									</div>
+								</div>	
+					
+								<div class="button-box">
+									<div class="privacy-block">
+										Нажимая на кнопку "Сохранить настройки профиля",я даю согласие на <a href="privacy.html">обработку персональных данных</a>
+									</div>
+									<a href="#" class="button button--gray pedit__btn">Сохранить настройки профиля</a>
+								</div>	
+
+							</div>
+						</div>
+					</form>
+					<!-- end lk__form -->					
+				</div>
+				<!-- end lk__content -->
+			</div>
+			
+		</div>
+	</div>
+	<!-- end ;l -->
+
+</div>	
+<!-- end home -->
+
+{% endblock %}

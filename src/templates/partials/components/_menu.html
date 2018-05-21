@@ -1,5 +1,5 @@
 <!-- begin nav -->
-<nav class="nav nav--main">
+<nav class="nav nav--main is-auth">
 	<ul class="nav__list">
 		<li class="nav__item">
 			<a href="catalog.html" class="nav__link">Каталог</a>
@@ -10,7 +10,7 @@
 		<li class="nav__item">
 			<a href="delivery.html" class="nav__link">Доставка</a>
 		</li>	
-		<li class="nav__item cs-dropdown cs-dropdown--hover">
+		<li class="nav__item nav__item--not-auth cs-dropdown cs-dropdown--hover">
 			<a href="#" class="nav__link">Личный кабинет</a>
 			<ul class="cs-dropdown__list">
 				<li class="cs-dropdown__item">
@@ -18,6 +18,23 @@
 				</li>
 				<li class="cs-dropdown__item">
 					<a href="#register" class="cs-dropdown__link" data-fancybox>Регистрация</a>
+				</li>
+			</ul>
+		</li>
+		<li class="nav__item nav__item--auth cs-dropdown cs-dropdown--hover">
+			<a href="#" class="nav__link">VeronikaSam</a>
+			<ul class="cs-dropdown__list">
+				<li class="cs-dropdown__item">
+					<a href="lk-user.html" class="cs-dropdown__link">Личные данные</a>
+				</li>
+				<li class="cs-dropdown__item">
+					<a href="lk-order.html" class="cs-dropdown__link">Мои заказы</a>
+				</li>
+				<li class="cs-dropdown__item">
+					<a href="lk-sale.html" class="cs-dropdown__link">Персональные скидки</a>
+				</li>
+				<li class="cs-dropdown__item">
+					<a href="#" class="cs-dropdown__link">Выход</a>
 				</li>
 			</ul>
 		</li>				
