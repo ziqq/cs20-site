@@ -201,11 +201,18 @@
 			display: block
 			+vy
 			right: 19px
+			+r(480)
+				right: 10px
 		span
 			margin-right: 15px
+			+r(480)
+				margin-right: 0
 			&:first-child
 				max-width: 550px
 				+text-overflow
+				+r(480)
+					max-width: 100%
+					white-space: initial
 
 	//order-item__status
 	&__status
@@ -219,7 +226,7 @@
 
 	//order-item__content
 	&__content		
-		padding: 0 20px 25px
+		padding: 15px 20px 25px
 		+r(480)
 			padding: 0 10px 25px
 

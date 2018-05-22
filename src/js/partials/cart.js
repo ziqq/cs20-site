@@ -14,6 +14,11 @@ $('.js-counter--plus').click(function () {
 });
 
 //Cart Items make in a column at ww <= 480
-if ($(window).width() <= 480) {
-    $('.js-cart-items').find('.product-item').removeClass('product-item--wide');
-}
+$(window).resize(productTransform);
+function productTransform(){
+    if ($(window).width() <= 480) {
+        $('.js-cart-items').find('.product-item').removeClass('product-item--wide');
+    }else{
+        $('.js-cart-items').find('.product-item').addClass('product-item--wide');
+    }
+}productTransform();

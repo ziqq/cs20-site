@@ -193,8 +193,11 @@
 		+r(768)
 			margin-bottom: 30px
 		.icon-delivery
+			margin-right: 26px
 			margin-left: 4px
 			width: 50px
+			+r(768)
+				width: 70px
 			+r(480)
 				width: 57px
 				margin-left: 8px
@@ -270,9 +273,15 @@
 	//baner .slick-dots
 	.slick-dots
 		padding: 0 44px
-		bottom: 35px
+		bottom: 25px
 		+r(768)
 			display: none !important
+		li
+			button
+				&::before
+					width: 10px
+					height: 10px
+					border-radius: 50%
 //baner
 
 .category

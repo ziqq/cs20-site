@@ -1,8 +1,12 @@
 .error
 	//error__wrap
 	&__wrap
-		padding-top: 100px
+		padding: 100px 0 50px
 		@extend %flexCenter
+		+i8-l
+			padding-top: 35px
+		+r(480)
+			padding: 35px 0
 	//error__content
 	&__content
 		max-width: 860px
@@ -16,7 +20,18 @@
 		background: -webkit-linear-gradient(#af3186, #632483)
 		-webkit-background-clip: text
 		-webkit-text-fill-color: transparent
+		+r(1024)
+			font-size: 150px
+		+r(768)
+			font-size: 120px
+
 	//error__text
 	&__text
 		font-size: 24px
 		line-height: 36px
+		+r(1024)
+			font-size: 20px
+			line-height: 30px
+		+r(768)
+			font-size: 18px
+			line-height: 25px

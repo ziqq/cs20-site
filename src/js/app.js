@@ -181,6 +181,13 @@ $(document).ready(function () {
         e.preventDefault();
         $('html, body').animate({ scrollTop: 0 }, 800);
     });
+    $(window).scroll(function(){
+        if($(this).scrollTop() > $(this).height()){
+            $('.js-go-top').addClass('is-visible');
+        }else{
+            $('.js-go-top').removeClass('is-visible');
+        }
+    });
 
     //Click event to scroll to section whith id like href
     $('.js-goto').click(function () {
@@ -204,6 +211,10 @@ $(document).ready(function () {
         $('.js-lk-nav').find('.lk-nav__item').removeClass('is-active');
         $(this).addClass('is-active');
     });
+
+    if ($(window).width() <= 768) {
+        tabTransform();
+    }
 
 
     /*

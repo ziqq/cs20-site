@@ -13,6 +13,8 @@
 	&__title
 		+r(1024)
 			margin: 0
+		+i8-l
+			margin: 0
 		+r(480)
 			margin-bottom: $gutter
 
@@ -427,6 +429,8 @@
 			&__desc
 				@extend %flexCenter
 				flex: 1
+				+i8-l
+					flex-wrap: wrap
 			&__title
 				height: auto
 				max-width: 365px
@@ -435,6 +439,11 @@
 				color: #000
 				+r(768)
 					max-width: 300px
+				+i8-l
+					width: 100%
+					max-width: 100%
+					margin-right: 0
+					margin-bottom: 15px
 				span
 					text-transform: uppercase
 			&__price
@@ -445,10 +454,15 @@
 				+r(768)
 					margin-right: 20px
 					font-size: 20px
+				+i8-l
+					margin-left: 0
 				.fa
-					font-size: 22px
+					font-size: 17px
 			&__product-info
 				display: block	
+			&__counter
+				+i8-l
+					margin-left: auto
 
 	//product-item__footer
 	&__footer
