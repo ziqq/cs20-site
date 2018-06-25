@@ -1,0 +1,90 @@
+ProjectTitle: CS20
+
+PageList:
+- file: home.html
+  ready: 50
+  desc : Главная
+
+- file: catalog.html
+  ready: 50
+  desc : Каталог
+  
+- file: card.html
+  ready: 50
+  desc : Подробная карточа
+
+- file: payment.html
+  ready: 50
+  desc : Способы оплаты
+
+- file: delivery.html
+  ready: 50
+  desc : Доставка
+
+- file: cart.html
+  ready: 50
+  desc : Корзина
+
+- file: cart-auth.html
+  ready: 50
+  desc : Корзина авторизация
+
+- file: cart-delivery.html
+  ready: 50
+  desc : Корзина способ доставки
+
+- file: cart-payment.html
+  ready: 50
+  desc : Корзина способ оплаты
+
+- file: cart-success.html
+  ready: 50
+  desc : Подтверждение заказа
+
+  #contacts
+- file: contacts.html
+  ready: 50
+  desc : Контакты
+
+  #LK
+- file: lk-user.html
+  ready: 50
+  desc : личные данные
+
+- file: lk-order.html
+  ready: 50
+  desc : мои заказы
+
+- file: lk-sale.html
+  ready: 50
+  desc : персональные скидки
+
+  #garanty
+- file: garanty.html
+  ready: 50
+  desc : Гарантия и возврат
+
+  #news
+- file: news.html
+  ready: 50
+  desc : Новости
+
+  #Согласие на обработку персональных данных
+- file: privacy.html
+  ready: 50
+  desc : Согласие на обработку персональных данных
+
+  #Политика обработки данных
+- file: policy.html
+  ready: 50
+  desc : Политика обработки данных
+
+  #404
+- file: 404.html
+  ready: 50
+  desc : Error Page
+
+  #Попап окна
+- file: popups.html
+  ready: 50
+  desc : Попап окна

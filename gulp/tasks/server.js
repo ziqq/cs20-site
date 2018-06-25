@@ -18,6 +18,7 @@ gulp.task('server', function() {
         files: [
             config.dest.html + '/*.html',
             config.dest.css + '/*.css',
+            config.src.js + '/*.js',
             config.dest.img + '/**/*'
         ],
         port: util.env.port || 7070,

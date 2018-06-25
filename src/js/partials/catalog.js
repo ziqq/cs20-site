@@ -25,9 +25,20 @@ $('.js-filter--close').on('click', function(){
 });
 
 //Filter Select All
+$(document).on('click', '.js-cs-checkbox--pseudo', function (){
+    if($(this).hasClass('is-checked')){
+        $(this).removeClass('is-checked');
+    }else{
+        $('.js-cs-checkbox--pseudo').removeClass('is-checked');
+        $(this).addClass('is-checked');
+    }
+    return false;
+});
+
 $('.js-select-all').on('click', function(){
     $(this).closest('.js-filter-content').find('.cs-checkbox').addClass('is-checked');
-    console.log('');
+    $(this).closest('.js-filter-content').find('.cs-checkbox').find('input').prop("checked", true);
+    return false;
 });
 
 //По клику в не блока скрываем его  

@@ -85,7 +85,7 @@ filterSeries:
 
 			<div class="catalog__content">
 				<!-- begin catalog__filter -->
-				<div class="filter catalog__filter js-filter-sticky">			
+				<form class="filter catalog__filter js-filter-sticky">			
 					<div class="filter__inner">
 						<div class="filter__header">
 							<span class="filter__title">
@@ -138,7 +138,7 @@ filterSeries:
 								</span>
 								<div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
 									{% for item in filterCar %}
-									<label class="cs-checkbox filter__checkbox">
+									<label class="cs-checkbox filter__checkbox js-cs-checkbox">
 										<input type="checkbox">
 										<span class="cs-checkbox__box"></span>
 										<span class="cs-checkbox__title">{{item.title}}</span>
@@ -155,7 +155,7 @@ filterSeries:
 								</span>
 								<div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
 									{% for item in filterSeries %}
-									<label class="cs-checkbox filter__checkbox">
+									<label class="cs-checkbox filter__checkbox js-cs-checkbox">
 										<input type="checkbox">
 										<span class="cs-checkbox__box"></span>
 										<span class="cs-checkbox__title">{{item.title}}</span>
@@ -170,13 +170,13 @@ filterSeries:
 							</div>
 						</div>
 					</div>
-				</div>
+				</form>
 				<!-- end catalog__filter -->				
 				<!-- begin catalog__products -->
 				<div class="catalog__products">
 					<div class="product-item__wrap js-products">
 						{% for i in range(0, 10) %}
-						<a href="card.html" class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+						<div class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
 							<div class="product-item__img">
 								<img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
 							</div>
@@ -203,7 +203,7 @@ filterSeries:
 									<button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
 								</div>
 							</div>
-						</a>
+						</div>
 						{% endfor %}﻿
 					</div>
 					

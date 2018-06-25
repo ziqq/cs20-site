@@ -30,17 +30,10 @@ $(document).on('click', '.js-cs-checkbox', function (){
     var input = _this.find('input');
     if(input.is(':checked')){
         _this.removeClass('is-checked');
+        input.prop("checked", false);
     }else{
         _this.addClass('is-checked');
-    }
-});
-
-$(document).on('click', '.js-cs-checkbox--pseudo', function (){
-    if($(this).hasClass('is-checked')){
-        $(this).removeClass('is-checked');
-    }else{
-        $('.js-cs-checkbox--pseudo').removeClass('is-checked');
-        $(this).addClass('is-checked');
+        input.prop("checked", true);
     }
 });
 
