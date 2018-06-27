@@ -35,3 +35,31 @@ if ($(window).width() > 768) {
 
     $('.js-header-phone').insertAfter('.home-search');
 }
+
+//Mobile Search  
+if ($('.js-search-input').length > 0) {
+    var searchInput = $('.js-search-input');
+
+    searchInput.on('keyup', function () {      
+        var hint = $(this).closest('.js-search').find('.search__hint');  
+        if ($(this).val() !== '') {
+            hint.removeAttr('style');
+        } else {
+            hint.css('display', 'none');
+        }
+    });
+
+    searchInput.on('focus', function() {
+        if ($(this).val() !== '') {
+            var hint = $(this).closest('.js-search').find('.search__hint'); 
+            hint.removeAttr('style');
+        } else {
+            hint.css('display', 'none');
+        }
+    });
+
+    searchInput.on('blur', function() {
+        var hint = $(this).closest('.js-search').find('.search__hint'); 
+        hint.css('display', 'none');
+    });
+} 

@@ -1,4 +1,8 @@
 //MIXINS
+@mixin scroll{
+	overflow-y: auto;
+	-webkit-overflow-scrolling:touch;
+}
 
 @mixin gp($position, $color1, $color2){
 	background-image: linear-gradient($position, $color1, $color2);

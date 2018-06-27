@@ -16,10 +16,23 @@
 			</div>
 			<div class="header__right">
 				<!-- begin search -->
-				<div class="search header__search">
+				<div class="search header__search js-search">
 					<form action="" autocomplete="on">
-						<input class="search__field" type="text" placeholder="Что вы ищите ?">
-						<input class="search__submit" type="submit">
+						<input class="search__field js-search-input" type="text" placeholder="Что вы ищите ?" autocomplete="off">
+						<input class="search__submit js-search-input-btn" type="submit">
+						<div class="search__hint" style="display: none;">
+							<div class="search-hint search-hint--cyties">
+								<ul class="search-hint__list">
+									{% for i in range(0, 5) %}
+										<li class="search-hint__item">
+											<a href="#" class="search-hint__link">
+												<span class="search-hint__text">Комплект патрубков</span>
+											</a>
+										</li>
+									{% endfor %}﻿
+								</ul>
+							</div>
+						</div>
 					</form>
 				</div>
 				<!-- end search -->
