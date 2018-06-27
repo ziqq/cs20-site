@@ -181,6 +181,16 @@
 		&__field
 			color: #000
 
+	.search-hint
+		border: 1px solid #bbb
+		border-top-color: transparent
+		background-color: #fff
+		&__item
+			& + .search-hint__item
+				border-top-color: #bbb
+		&__link
+			color: $color-text
+
 	.cs-dropdown
 		&.is-active
 			&::before
