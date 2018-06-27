@@ -1,4 +1,5 @@
 //=include ../../bower_components/jQuery/dist/jquery.js
+//=include ../libs/tabs/tabs.ui.min.js
 //=include ../../bower_components/jquery-migrate/jquery-migrate.js
 //=include ../../bower_components/fancybox/dist/jquery.fancybox.js
 
@@ -11,8 +12,6 @@
 //=include ../libs/jquery.zoom.js
 //=include ../libs/sticky-sidebar-resize.js
 //=include ../libs/sticky-sidebar.js
-
-//=include ../libs/tabs/tabs.ui.min.js
 
 //=include ../../bower_components/svg4everybody/dist/svg4everybody.js
 //=include assets/svg-sprite.js
