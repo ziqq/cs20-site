@@ -1,6 +1,7 @@
-//=include ../../bower_components/jQuery/dist/jquery.js
+//=include ../libs/jQuery/jquery.min.js
+//=include ../libs/jQuery/jquery-migrate.min.js
 //=include ../libs/tabs/tabs.ui.min.js
-//=include ../../bower_components/jquery-migrate/jquery-migrate.js
+
 //=include ../../bower_components/fancybox/dist/jquery.fancybox.js
 
 //=include ../../bower_components/inputmask/dist/jquery.inputmask.bundle.js
@@ -10,6 +11,7 @@
 //=include ../libs/datepicker/datepicker.js
 //=include ../libs/select2/select2.js
 //=include ../libs/jquery.zoom.js
+
 //=include ../libs/sticky-sidebar-resize.js
 //=include ../libs/sticky-sidebar.js
 

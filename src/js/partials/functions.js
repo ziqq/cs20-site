@@ -16,11 +16,11 @@ function tabs(e) {
                 tabContent[i].style.display = 'none';
             }
         }
-    }   
-} 
+    }
+}
 
 //tabs ---> accordeon
-function tabTransform(){
+function tabTransform() {
     var tab = $('.js-tab--transform');
 
     $('.js-tab').addClass('js-cs-accordeon');

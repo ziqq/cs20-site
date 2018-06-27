@@ -1,32 +1,32 @@
 //Catalog Item View Toggle
-$('.js-sorting-btn').on('click', function(){
+$('.js-sorting-btn').on('click', function() {
     $('.js-sorting-btn').removeClass('is-active');
     $(this).addClass('is-active');
 });
 
-$('.js-sorting-btn--list').on('click', function(){
+$('.js-sorting-btn--list').on('click', function() {
     $('.js-products').find('.product-item').addClass('product-item--wide');
 });
-$('.js-sorting--btn--tile').on('click', function(){
+$('.js-sorting--btn--tile').on('click', function() {
     $('.js-products').find('.product-item').removeClass('product-item--wide');
 });
 
 //Filter Open Btn
-$('.js-filter--open').on('click', function(){
+$('.js-filter--open').on('click', function() {
     $('.js-filter-sticky').addClass('is-open');
     $('html').css('overflow', 'hidden');
     $('.overlay').css('display', 'block');
 });
 //Filter Close Btn
-$('.js-filter--close').on('click', function(){
+$('.js-filter--close').on('click', function() {
     $('.js-filter-sticky').removeClass('is-open');
     $('html').removeAttr('style');
     $('.overlay').removeAttr('style');
 });
 
 //Filter Select All
-$(document).on('click', '.js-cs-checkbox--pseudo', function (){
-    if($(this).hasClass('is-checked')){
+$(document).on('click', '.js-cs-checkbox--pseudo', function() {
+    if($(this).hasClass('is-checked')) {
         $(this).removeClass('is-checked');
     }else{
         $('.js-cs-checkbox--pseudo').removeClass('is-checked');
@@ -35,13 +35,13 @@ $(document).on('click', '.js-cs-checkbox--pseudo', function (){
     return false;
 });
 
-$('.js-select-all').on('click', function(){
+$('.js-select-all').on('click', function() {
     $(this).closest('.js-filter-content').find('.cs-checkbox').addClass('is-checked');
-    $(this).closest('.js-filter-content').find('.cs-checkbox').find('input').prop("checked", true);
+    $(this).closest('.js-filter-content').find('.cs-checkbox').find('input').prop('checked', true);
     return false;
 });
 
-//По клику в не блока скрываем его  
+//По клику в не блока скрываем его
 $(document).click(function(event) {
     if ($(event.target).closest('.js-filter-sticky, .js-filter--open').length) return;
     event.stopPropagation();
@@ -64,7 +64,7 @@ if ($('#js-filter-slider').length > 0) {
     if (spans[0].text() == '') {
         startPrice = allPriceStart;
     } else {
-        startPrice = parseInt(spans[0].text())
+        startPrice = parseInt(spans[0].text());
     }
 
     if (spans[1].text() == '') {
@@ -82,7 +82,7 @@ if ($('#js-filter-slider').length > 0) {
             'max': allPriceEnd
         }
     });
-    slider.noUiSlider.on('update', function (values, handle) {
+    slider.noUiSlider.on('update', function(values, handle) {
         spans[handle].text(parseInt(values[handle]));
     });
 }

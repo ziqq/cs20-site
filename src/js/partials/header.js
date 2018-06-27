@@ -1,8 +1,7 @@
 //При скроле добавляем класс к хедеру
-var lastScrollTop = 0;
-$(window).scroll(function(event){
+$(window).scroll(function() {
     var scroll = $(this).scrollTop();
-    if (scroll > 0){   
+    if (scroll > 0) {
         $('.header').addClass('is-fixed');
     } else {
         $('.header').removeClass('is-fixed');
@@ -11,7 +10,7 @@ $(window).scroll(function(event){
 
 //Header hamburger
 $('.js-nav-toggle').on('click', function() {
-    if($(this).hasClass('is-open')){
+    if($(this).hasClass('is-open')) {
         $(this).removeClass('is-open');
         $('.js-nav').fadeOut();
         $('html').removeAttr('style');
@@ -24,7 +23,7 @@ $('.js-nav-toggle').on('click', function() {
 });
 
 //Очитска  инпута  по клику на кнопку
-$('.js-home-search-clear').on('click', function(){
+$('.js-home-search-clear').on('click', function() {
     $(this).parent().find('input[type="text"]').val('');
 });
 
@@ -36,12 +35,12 @@ if ($(window).width() > 768) {
     $('.js-header-phone').insertAfter('.home-search');
 }
 
-//Mobile Search  
+//Mobile Search
 if ($('.js-search-input').length > 0) {
     var searchInput = $('.js-search-input');
 
-    searchInput.on('keyup', function () {      
-        var hint = $(this).closest('.js-search').find('.search__hint');  
+    searchInput.on('keyup', function() {
+        var hint = $(this).closest('.js-search').find('.search__hint');
         if ($(this).val() !== '') {
             hint.removeAttr('style');
         } else {
@@ -51,7 +50,7 @@ if ($('.js-search-input').length > 0) {
 
     searchInput.on('focus', function() {
         if ($(this).val() !== '') {
-            var hint = $(this).closest('.js-search').find('.search__hint'); 
+            var hint = $(this).closest('.js-search').find('.search__hint');
             hint.removeAttr('style');
         } else {
             hint.css('display', 'none');
@@ -59,7 +58,7 @@ if ($('.js-search-input').length > 0) {
     });
 
     searchInput.on('blur', function() {
-        var hint = $(this).closest('.js-search').find('.search__hint'); 
+        var hint = $(this).closest('.js-search').find('.search__hint');
         hint.css('display', 'none');
     });
-} 
+}
