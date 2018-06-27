@@ -9,6 +9,9 @@
 		+r(480)
 			flex-wrap: wrap
 
+		.page-title
+			margin-bottom: 0
+
 	//catalog__title	
 	&__title
 		+r(1024)
@@ -485,3 +488,21 @@
 		span
 			color: #000
 //numbers
+
+.search-result
+	margin-bottom: $gutter*2.5
+	.product-item
+		width: 25%
+		+r(1024)
+			width: 33.33%
+		+r(768)
+			width: 50%
+		+r(480)
+			width: 100%
+			margin-bottom: $gutter/2
+			&:last-child
+				margin-bottom: 0
+		&.product-item--wide
+			width: 100% !important
+
+//.search-result

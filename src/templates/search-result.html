@@ -1,0 +1,117 @@
+---
+title: Каталог | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
+
+filterType:
+ - title: Все категории
+   class: is-checked
+ - title: Элементы подвески
+ - title: Прокладки / Ремкомплекты
+ - title: Патрубки / Шланги
+ - title: Крепления глушителя
+ - title: Подушки двигателя
+ - title: Брызговики
+ - title: Коврики
+
+filterCar:
+ - title: 1118 Калина
+ - title: 1119 Калина
+ - title: 2101-2107
+ - title: 2108-2109
+ - title: 2110-2112
+ - title: 2113-2115
+
+filterSeries:
+ - title: Comfort
+ - title: Drive
+ - title: Profi
+ - title: Original+
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper">
+
+	<!-- begin breadcrumbs -->
+	<div class="container">
+		<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+			<ul class="breadcrumbs__list">
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link" itemprop="url">
+						<span class="breadcrumbs__title" itemprop="title">Главная</span>
+					</a>
+				</li>
+				<li class="breadcrumbs__item">
+					<span class="breadcrumbs__title" itemprop="title">Поиск</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- end breadcrumbs -->
+
+	<!-- begin search-result -->
+	<div class="search-result">
+		<div class="container">
+			<div class="catalog__topline">
+				<h1 class="h1 catalog__title page-title" itemprop="headline">Результаты поиска</h1>
+				<!-- begin sorting -->
+				<div class="sorting catalog__sorting">
+					<div class="sorting__count">
+						<span class="sorting__title">Показывать по:</span>
+						<select class="sorting__select js-select no-search">
+							{% for i in range(0, 11) %}
+							<option value="{{i+1}}">{{i+1}}</option>
+							{% endfor %}﻿		 				
+						</select>	
+					</div>
+					<div class="sorting__list">
+						<button class="sorting__btn sorting__btn--list js-sorting-btn js-sorting-btn--list"></button>
+						<button class="sorting__btn sorting__btn--tile js-sorting-btn js-sorting--btn--tile is-active"></button>
+					</div>
+				</div>
+				<!-- end sorting -->
+			</div>
+
+		
+		
+			<div class="product-item__wrap js-products">
+				{% for i in range(0, 10) %}
+				<div class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+					<div class="product-item__img">
+						<img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
+					</div>
+					<div class="product-item__desc">
+						<div class="product-item__desc_in">
+							<h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт) <span>profi синий силикон</span></h4>
+							<div class="product-item__product-info product-info">
+								<ul class="product-info__list">
+									<li class="product-info__item">Артикул: <span>05748</span></li>
+									<li class="product-info__item">Каталожный номер: <span>3105-1203132</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="product-item__footer">
+						<div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+							<span class="price__cost">2232 <i class="fa fa-rub"></i></span>
+							<meta itemprop="price" content="2232">
+							<meta itemprop="priceCurrency" content="RUB" />
+							<span class="price__stock">Есть в наличии</span>
+						</div>
+						<div class="product-item__buttons">
+							<button class="button button--accent product-item__btn">Добавить в корзину</button>
+							<button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
+						</div>
+					</div>
+				</div>
+				{% endfor %}﻿
+			</div>
+
+		</div>
+	</div><!-- end search-result -->
+
+</div>	
+<!-- end home -->
+
+{% endblock %}
