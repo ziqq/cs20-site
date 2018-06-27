@@ -22,3 +22,5 @@ function productTransform(){
         $('.js-cart-items').find('.product-item').addClass('product-item--wide');
     }
 }productTransform();
+
+$( "#cart-tab" ).tabs();

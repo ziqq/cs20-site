@@ -137,6 +137,73 @@
 		margin-bottom: 25px
 //cart
 
+.cart-tab
+	&__list
+		margin: $gutter 0
+		@extend %flexCenter
+		justify-content: spase-between
+		+r(480)
+			justify-content: center
+
+	&__item
+		margin: auto
+		outline: none
+		&.ui-state-active, &.ui-state-hover
+			.cart-tab__link
+				color: #000
+			.icon
+				fill: #000
+		&:last-child
+			.cart-tab__link
+				&::before
+					display: none
+		&::after
+			display: none
+		+i8-l
+			&:not(.is-active)
+				display: none
+			.cart-tab__link
+				font-size: 16px
+		+r(480)
+			&:not(.is-active)
+				display: none
+			.cart-tab__link
+				font-size: 16px
+
+	&__link
+		padding: 0 35px 0 45px
+		color: $color-text
+		font-size: 18px
+		line-height: 1
+		position: relative
+		outline: none
+		+r(768)
+			padding: 0 22px 0 30px
+			font-size: 15px
+		&::before
+			content: '\f105'
+			font-family: fontawesome
+			font-size: 18px
+			+vy
+			right: 0
+			+r(768)
+				display: none
+		.icon
+			fill: $gray--light
+			+vy
+			left: 0
+			&-cart
+				width: 21px
+			&-user
+				width: 20px
+			&-delivery--transparent
+				width: 27px
+			&-pay
+				width: 23px
+			&-check
+				width: 18px
+//.cart-tab
+
 .pedit
 	//pedit__wrao
 	&__wrap
