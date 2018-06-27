@@ -71,9 +71,7 @@ filterSeries:
 					</div>
 				</div>
 				<!-- end sorting -->
-			</div>
-
-		
+			</div>		
 		
 			<div class="product-item__wrap js-products">
 				{% for i in range(0, 10) %}
@@ -107,6 +105,24 @@ filterSeries:
 				</div>
 				{% endfor %}﻿
 			</div>
+
+			<!-- begin pagination -->
+			<div class="search-result__pagination pagination">
+				<ul class="pagination__list">
+					<li class="pagination__item">
+						<a href="#" class="pagination__link"><i class="fa fa-angle-left pagination__icon"></i></a>
+					</li>
+					{% for i in range(1, 8) %}
+					<li class="pagination__item">
+						<a href="#" class="pagination__link">{{i}}</a>
+					</li>
+					{% endfor %}﻿
+					<li class="pagination__item">
+						<a href="#" class="pagination__link"><i class="fa fa-angle-right pagination__icon"></i></a>
+					</li>
+				</ul>
+			</div>
+			<!-- end pagination -->
 
 		</div>
 	</div><!-- end search-result -->
