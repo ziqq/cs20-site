@@ -38,7 +38,7 @@
                             <!-- begin logo -->
                             <div class="logo header__logo" itemscope itemprop="logo" itemtype="http://schema.org/Organization">
                                 <a href="/" class="logo__link" itemprop="url">
-                                    <img src="../img/general/logo.png" alt="CS20" class="logo__img">
+                                    <img src="img/general/logo.png" alt="CS20" class="logo__img">
                                 </a>
                             </div>
                             <!-- end logo -->
@@ -370,6 +370,7 @@
                 </div>
             </header>
             <!-- end header
+
 		
 
 <!-- begin home -->
@@ -470,21 +471,21 @@
                                             <span class="filter__title">Категории</span>
                                             <div class="filter__content">
 
-                                                <button class="filter__btn js-cs-checkbox--pseudo is-checked">Все категории</button>
+                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo is-checked">Все категории</a>
 
-                                                <button class="filter__btn js-cs-checkbox--pseudo ">Элементы подвески</button>
+                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo ">Элементы подвески</a>
 
-                                                <button class="filter__btn js-cs-checkbox--pseudo ">Прокладки / Ремкомплекты</button>
+                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo ">Прокладки / Ремкомплекты</a>
 
-                                                <button class="filter__btn js-cs-checkbox--pseudo ">Патрубки / Шланги</button>
+                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo ">Патрубки / Шланги</a>
 
-                                                <button class="filter__btn js-cs-checkbox--pseudo ">Крепления глушителя</button>
+                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo ">Крепления глушителя</a>
 
-                                                <button class="filter__btn js-cs-checkbox--pseudo ">Подушки двигателя</button>
+                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo ">Подушки двигателя</a>
 
-                                                <button class="filter__btn js-cs-checkbox--pseudo ">Брызговики</button>
+                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo ">Брызговики</a>
 
-                                                <button class="filter__btn js-cs-checkbox--pseudo ">Коврики</button>
+                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo ">Коврики</a>
 
                                             </div>
                                         </div>
@@ -600,6 +601,7 @@
                                 </div>
                             </form>
                             <!-- end catalog__filter -->
+
                             <!-- begin catalog__products -->
                             <div class="catalog__products">
                                 <div class="product-item__wrap js-products">
@@ -973,13 +975,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                
+
                                 </div>
 
                                 <div class="catalog__empty is-hidden">К сожалению, на ваш поисковый запрос ничего не найдено.</div>
                             </div>
-
                             <!-- end catalog__products -->
+
                             <button class="button button--filter js-filter--open">
                                 <svg class="icon icon-filter ">
                                     <use xlink:href="img/sprite.svg#filter"></use>
@@ -995,8 +997,7 @@
                                         <i class="fa fa-angle-left pagination__icon"></i>
                                     </a>
                                 </li>
-
-                                <li class="pagination__item">
+                                <li class="pagination__item is-active">
                                     <a href="#" class="pagination__link">1</a>
                                 </li>
 
@@ -1020,10 +1021,6 @@
                                     <a href="#" class="pagination__link">6</a>
                                 </li>
 
-                                <li class="pagination__item">
-                                    <a href="#" class="pagination__link">7</a>
-                                </li>
-                            
                                 <li class="pagination__item">
                                     <a href="#" class="pagination__link">
                                         <i class="fa fa-angle-right pagination__icon"></i>
@@ -1049,7 +1046,7 @@
                             <!-- begin logo -->
                             <div class="logo footer__logo" itemscope itemprop="logo" itemtype="http://schema.org/Organization">
                                 <a href="home.html" class="logo__link" itemprop="url">
-                                    <img src="../img/general/logo.png" alt="CS20" class="logo__img">
+                                    <img src="img/general/logo.png" alt="CS20" class="logo__img">
                                 </a>
                             </div>
                             <!-- end logo -->
@@ -1394,5 +1391,13 @@
 
         <script type="text/javascript" src="js/app.js"></script>
         <!-- end scripts -->
+        <!-- begin svg -->
+        <div id="elements-placeholder" style="border: 0; clip: rect(0 0 0 0); overflow: hidden; margin: -1px; padding: 0; position: absolute; width: 1px; height: 1px;">
+            <script>
+                document.getElementById("elements-placeholder").innerHTML = SVG_SPRITE;
+
+            </script>
+        </div>
+        <!-- end svg -->
     </body>
 </html>

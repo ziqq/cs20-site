@@ -28,7 +28,7 @@
 		.nav--main
 			.nav__item
 				&--auth
-					display: block				
+					display: block
 				&--not-auth
 					display: none
 		.mobile-nav__item
@@ -36,6 +36,7 @@
 				display: block
 			&--not-auth
 				display: none
+
 	&__inner
 		background-color: #fff
 		box-shadow: 0 1px 20px #000
@@ -49,7 +50,7 @@
 	+r(1200)
 		padding: 0 10px
 
-.content-wrapper	
+.content-wrapper
 	flex: 1
 
 
@@ -60,7 +61,7 @@
 	+r(768)
 		background-image: url('../img/general/header-decor--tablet.png'), linear-gradient(to right,#090113,#1c0439)
 		background-position: 80% 100%
-		
+
 .footer
 	background-color: $color-bg--dark
 
@@ -181,13 +182,13 @@
 			+vy
 			right: -10px
 		&:last-child
-			+r(480)			
+			+r(480)
 				max-width: 335px
 				+text-overflow
-			+r(375)			
+			+r(375)
 				max-width: 285px
 				+text-overflow
-			+r(320)			
+			+r(320)
 				max-width: 235px
 				+text-overflow
 			&::after
@@ -195,7 +196,7 @@
 
 	//breadcrumbs__link
 	&__link
-		font-size: 14px		
+		font-size: 14px
 		.breadcrumbs__title
 			color: $color-accent
 
@@ -277,8 +278,17 @@
 		justify-content: center
 	//pagination__item
 	&__item
+		&.is-active
+			.pagination__link
+				color: #fff
+				background-color: $gray
+				border-color: $gray
+				&:hover
+					background-color: darken($gray, 10%)
+					border-color: darken($gray, 10%)
+
 		& + &
-			margin-left: 3px
+			margin-left: 5px
 		&:first-child, &:last-child
 			.pagination__link
 				font-size: 20px
@@ -314,7 +324,7 @@
 
 	&__wrap
 		margin: auto
-		
+
 	&__titles
 		@extend %flexCenter
 		justify-content: center
@@ -335,7 +345,7 @@
 		display: none
 		padding: 15px 30px
 
-	&--transform	
+	&--transform
 		.tab
 			&__wrap
 				width: 100%
@@ -379,7 +389,7 @@
 						top: 50%
 						transform: translateY(-50%) rotate(-90deg)
 						right: 10px
-						
+
 				&.is-active
 					background-color: #fff
 					.home-search__icon
@@ -398,8 +408,8 @@
 				margin-bottom: 5px
 				&.is-open
 					.cs-accordeon__title
-						&::after						
-							transform: translateY(-50%) rotate(90deg)							
+						&::after
+							transform: translateY(-50%) rotate(90deg)
 			&__content
 				margin-top: -2px
 				background-color: #fff

@@ -12,7 +12,7 @@
 		.page-title
 			margin-bottom: 0
 
-	//catalog__title	
+	//catalog__title
 	&__title
 		+r(1024)
 			margin: 0
@@ -60,7 +60,7 @@
 			margin-left: 0
 //catalog
 
-.filter	
+.filter
 	background-color: #fff
 
 	+r(768)
@@ -190,7 +190,9 @@
 		box-shadow: 0
 		border: 0
 		outline: none
+		cursor: pointer
 		&:hover, &.is-checked
+			color: #000
 			background-color: $gray--lighten
 
 	//filter__btn
@@ -301,7 +303,7 @@
 	font-family: $f-black
 	font-size: 25px
 	color: #000
-	&__stock		
+	&__stock
 		font-family: $f
 		font-size: 14px
 		color: $color-text
@@ -337,7 +339,7 @@
 		@extend %flex
 		justify-content: flex-start
 		flex-wrap: wrap
-			
+
 	//product-item__img
 	&__img
 		margin-bottom: 20px
@@ -462,7 +464,7 @@
 				.fa
 					font-size: 17px
 			&__product-info
-				display: block	
+				display: block
 			&__counter
 				+i8-l
 					margin-left: auto

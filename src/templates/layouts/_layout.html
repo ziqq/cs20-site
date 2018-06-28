@@ -31,13 +31,13 @@
 	<link rel="stylesheet" media="all" href="css/app.css">
 </head>
 <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
-	
+
 	<div class="page-wrapper is-auth {{wrapClass}}">
 		{% include "partials/_header.html" %}
 		{% block content %}{% endblock %}
 		{% include "partials/_footer.html" %}
 	</div>
-	
+
 	<div class="overlay"></div>
 	<div class="go-top js-go-top">На верх</div>
 	<!-- begin windows -->
@@ -50,5 +50,8 @@
 	{% block scripts %}{% endblock %}
 	<script type="text/javascript" src="js/app.js"></script>
 	<!-- end scripts -->
+	<!-- begin svg -->
+	{% include "partials/assets/_svg.html" %}
+	<!-- end svg -->
 </body>
 </html>

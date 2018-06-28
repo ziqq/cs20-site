@@ -34,16 +34,16 @@ breadcrumbs:
 			<ul class="cart-tab__list">
 				{% for item in breadcrumbs %}
 				<li class="cart-tab__item">
-					<a class="cart-tab__link" href="#{{ item.tabTitleCount }}">				
+					<a class="cart-tab__link" href="#{{ item.tabTitleCount }}">
 						<svg class="icon icon-{{ item.icon }}">
 							<use xlink:href="img/sprite.svg#{{ item.icon }}"></use>
 						</svg>
-						{{ item.title }}
+						<span class="cart-tab__text">{{ item.title }}</span>
 					</a>
 				</li>
 				{% endfor %}
 			</ul>
-			
+
 			<!-- begin tabs-1 -->
 			<div id="tabs-1">
 
@@ -88,9 +88,9 @@ breadcrumbs:
 										<span class="counter__control counter__control--plus js-counter--plus">+</span>
 									</div>
 								</div>
-								<button class="product-item__dell" title="Убрать из корзины">{{mixin.icon('close')}}</button>						
+								<button class="product-item__dell" title="Убрать из корзины">{{mixin.icon('close')}}</button>
 							</a>
-							
+
 							<a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
 								<div class="product-item__img">
 									<img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
@@ -159,10 +159,10 @@ breadcrumbs:
 			</div><!-- end tabs-1 -->
 
 			<!-- begin tabs-2 -->
-			<div id="tabs-2">	
+			<div id="tabs-2">
 				<div class="cart__wrap">
 					<h1 class="cart__title">Информация о получателе</h1>
-					
+
 					<form class="cart__form pedit">
 						<div class="row">
 							<div class="col-2">
@@ -204,7 +204,7 @@ breadcrumbs:
 												<option value="Выберите город..." disabled selected>Выберите город...</option>
 												{% for i in range(0, 11) %}
 												<option value="Балаково">Балаково</option>
-												{% endfor %}﻿		 				
+												{% endfor %}﻿
 											</select>
 											<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
 										</div>
@@ -217,7 +217,7 @@ breadcrumbs:
 									</div>
 								</div>
 							</div>
-						
+
 							<div class="col-2">
 								<div class="pedit__item">
 									<div class="pedit__title">Серия паспорта:</div>
@@ -239,10 +239,10 @@ breadcrumbs:
 								</div>
 								<div class="pedit__item">
 									{{item.checkbox('Я юридическое лицо', 'pedit__checkbox')}}
-								</div>			
+								</div>
 							</div>
 						</div>
-					
+
 						<div class="button-box cart__button-box">
 							<a href="#" class="button button--transparent button--back">Вернуться назад</a>
 							<a href="#" class="button button--accent">Далее</a>
@@ -250,17 +250,17 @@ breadcrumbs:
 					</form>
 				</div>
 			</div><!-- end tabs-2 -->
-			
+
 			<!-- begin tabs-3 -->
 			<div id="tabs-3">
 				<div class="cart__wrap">
 					<h1 class="cart__title">Выберите способ доставки</h1>
-					
+
 					<div class="row">
 						<div class="col-2">
 							<div class="delivery-item">
 								<div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-			                        {{ mixin.icon('delivery') }} 
+			                        {{ mixin.icon('delivery') }}
 			                        <span class="cs-checkbox__box"></span>
 			                  	</div>
 			                  	<div class="delivery-item__text">
@@ -289,7 +289,7 @@ breadcrumbs:
 			                  	</div>
 							</div>
 						</div>
-					
+
 						<div class="col-2">
 							<div class="delivery-item">
 								<div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
@@ -313,7 +313,7 @@ breadcrumbs:
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="button-box cart__button-box">
 						<a href="#" class="button button--transparent button--back">Вернуться назад</a>
 						<a href="#" class="button button--accent">Далее</a>
@@ -328,7 +328,7 @@ breadcrumbs:
 
 					<div class="delivery-item">
 						<div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-		                    {{ mixin.icon('pay') }} 
+		                    {{ mixin.icon('pay') }}
 		                    <span class="cs-checkbox__box"></span>
 		              	</div>
 		              	<div class="delivery-item__text">
@@ -348,7 +348,7 @@ breadcrumbs:
 					</div>
 					<div class="delivery-item">
 						<div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-		                    {{ mixin.icon('pay-bank') }} 
+		                    {{ mixin.icon('pay-bank') }}
 		                    <span class="cs-checkbox__box"></span>
 		              	</div>
 		              	<div class="delivery-item__text">
@@ -358,7 +358,7 @@ breadcrumbs:
 					</div>
 
 					<textarea class="cart__textarea" placeholder="Комментарии к заказу..."></textarea>
-					
+
 					<div class="button-box cart__button-box">
 						<a href="#" class="button button--transparent button--back">Вернуться назад</a>
 						<a href="#" class="button button--accent">Далее</a>
@@ -374,19 +374,19 @@ breadcrumbs:
 
 					<div class="cart-success__inner">
 						<span class="cart-success__subtitle">Ваш заказ: №490 от 01.05.2018 14:58</span>
-						
+
 						<div class="cart-success__text">
 							В ближайшее время с Вами свяжется наш менеджер для подтверждения заказа. <br>
 							Вы можете следить за выполнением своего заказа в <a href="#">Личном кабинете</a>. <br>
 							Отправка заказа производится только после платы. <br>
 							Товар бронируется на складе в течении трех рабочих дней.
 						</div>
-						
+
 						<span class="cart-success__subtitle mb-10">Счет: <span>№492</span> от 01.05.2018 14:58</span>
-						
+
 						<span class="cart-success__subtitle">Сумма к оплате по счету: <span>3254</span> <i class="fa fa-rub"></i></span>
 					</div>
-					
+
 					<div class="button-box">
 						<a href="#" class="button button--transparent button--back">Вернуться в магазин</a>
 						<a href="#" class="button button--accent">Оплатить</a>
@@ -397,7 +397,7 @@ breadcrumbs:
 	</div>
 	<!-- end cart -->
 
-</div>	
+</div>
 <!-- end home -->
 
 {% endblock %}

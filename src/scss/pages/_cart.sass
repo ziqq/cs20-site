@@ -39,7 +39,7 @@
 			display: flex
 			justify-content: center
 			align-items: center
-	
+
 	//cart__items
 	&__items
 		@extend %flexColumn
@@ -85,7 +85,7 @@
 				margin-bottom: 10px
 				&:last-child
 					margin-bottom: 0
-	
+
 	//cartbutton-box
 	&__button-box
 		text-align: right
@@ -138,6 +138,7 @@
 //cart
 
 .cart-tab
+
 	&__list
 		margin: $gutter 0
 		@extend %flexCenter
@@ -160,15 +161,15 @@
 		&::after
 			display: none
 		+i8-l
-			&:not(.is-active)
-				display: none
 			.cart-tab__link
 				font-size: 16px
 		+r(480)
-			&:not(.is-active)
-				display: none
-			.cart-tab__link
-				font-size: 16px
+			.cart-tab
+				&__text
+					display: none
+				&__link
+					font-size: 16px
+					padding-right: 2px
 
 	&__link
 		padding: 0 35px 0 45px
@@ -205,7 +206,8 @@
 //.cart-tab
 
 .pedit
-	//pedit__wrao
+
+	//pedit__wrap
 	&__wrap
 		@extend %flexCenter
 
@@ -223,7 +225,7 @@
 					text-align: left
 		.cs-input
 			margin-bottom: 0
-	
+
 	//pedit__icon
 	&__icon
 		color: $gray
@@ -243,7 +245,7 @@
 	//pedit__field
 	&__field
 		flex: 1
-		
+
 	//pedit__date
 	&__date
 		@extend %flexCenter
@@ -325,8 +327,8 @@
 		@extend .cart__title
 		display: inline-block
 		position: relative
-		&::before		
-			display: block	
+		&::before
+			display: block
 			content: ''
 			width: 17px
 			height: 30px
@@ -411,7 +413,6 @@
 		.icon
 			width: 50px
 			height: 50px
-			margin: auto			
+			margin: auto
 			fill: $gray--light
-
 //delivery-item

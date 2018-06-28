@@ -38,7 +38,7 @@
                             <!-- begin logo -->
                             <div class="logo header__logo" itemscope itemprop="logo" itemtype="http://schema.org/Organization">
                                 <a href="/" class="logo__link" itemprop="url">
-                                    <img src="../img/general/logo.png" alt="CS20" class="logo__img">
+                                    <img src="img/general/logo.png" alt="CS20" class="logo__img">
                                 </a>
                             </div>
                             <!-- end logo -->
@@ -370,6 +370,7 @@
                 </div>
             </header>
             <!-- end header
+
 		
 
 <!-- begin home -->
@@ -387,7 +388,7 @@
                                     <svg class="icon icon-cart">
                                         <use xlink:href="img/sprite.svg#cart"></use>
                                     </svg>
-                                    Корзина
+                                    <span class="cart-tab__text">Корзина</span>
                                 </a>
                             </li>
 
@@ -396,7 +397,7 @@
                                     <svg class="icon icon-cart__user">
                                         <use xlink:href="img/sprite.svg#cart__user"></use>
                                     </svg>
-                                    Авторизация
+                                    <span class="cart-tab__text">Авторизация</span>
                                 </a>
                             </li>
 
@@ -405,7 +406,7 @@
                                     <svg class="icon icon-delivery--transparent">
                                         <use xlink:href="img/sprite.svg#delivery--transparent"></use>
                                     </svg>
-                                    Способ доставки
+                                    <span class="cart-tab__text">Способ доставки</span>
                                 </a>
                             </li>
 
@@ -414,7 +415,7 @@
                                     <svg class="icon icon-pay">
                                         <use xlink:href="img/sprite.svg#pay"></use>
                                     </svg>
-                                    Способ оплаты
+                                    <span class="cart-tab__text">Способ оплаты</span>
                                 </a>
                             </li>
 
@@ -423,7 +424,7 @@
                                     <svg class="icon icon-cart__check">
                                         <use xlink:href="img/sprite.svg#cart__check"></use>
                                     </svg>
-                                    Подтверждение заказа
+                                    <span class="cart-tab__text">Подтверждение заказа</span>
                                 </a>
                             </li>
 
@@ -929,7 +930,7 @@
                             <!-- begin logo -->
                             <div class="logo footer__logo" itemscope itemprop="logo" itemtype="http://schema.org/Organization">
                                 <a href="home.html" class="logo__link" itemprop="url">
-                                    <img src="../img/general/logo.png" alt="CS20" class="logo__img">
+                                    <img src="img/general/logo.png" alt="CS20" class="logo__img">
                                 </a>
                             </div>
                             <!-- end logo -->
@@ -1274,5 +1275,13 @@
 
         <script type="text/javascript" src="js/app.js"></script>
         <!-- end scripts -->
+        <!-- begin svg -->
+        <div id="elements-placeholder" style="border: 0; clip: rect(0 0 0 0); overflow: hidden; margin: -1px; padding: 0; position: absolute; width: 1px; height: 1px;">
+            <script>
+                document.getElementById("elements-placeholder").innerHTML = SVG_SPRITE;
+
+            </script>
+        </div>
+        <!-- end svg -->
     </body>
 </html>
