@@ -1,29 +1,39 @@
 $(document).ready(function() {
-
     function contentPadding() {
-        $('.content-wrapper').not('.home').css('padding-top', $('.header').outerHeight(true));
-    }contentPadding();
-
+        $('.content-wrapper')
+            .not('.home')
+            .css('padding-top', $('.header').outerHeight(true));
+    }
+    contentPadding();
 
     //First Screen Padding-Top
     $('.js-firstscreen').css('padding-top', $('.header').outerHeight(true));
 
     //Табы в поиске на главной
-    if ( $('.js-tab').length > 0 && $(window).width() > 768) {
+    if ($('.js-tab').length > 0 && $(window).width() > 768) {
         document.querySelector('.js-tab').addEventListener('click', tabs);
     }
 
     //Mobile menu subnav toggle
     $('.js-mobile-nav-sub--open').on('click', function() {
-        $(this).parent().find('.mobile-nav--sub').addClass('is-open');
+        $(this)
+            .parent()
+            .find('.mobile-nav--sub')
+            .addClass('is-open');
     });
 
     $('.js-mobile-nav-sub--close').on('click', function() {
-        $(this).closest('.mobile-nav--sub').removeClass('is-open');
+        $(this)
+            .closest('.mobile-nav--sub')
+            .removeClass('is-open');
     });
 
     //Slick Slider https://kenwheeler.github.io/slick/
-    if($('.js-cs-slider').length > 0 || $('.js-cs-slider--card').length > 0 || $('.js-cs-slider--news')) {
+    if (
+        $('.js-cs-slider').length > 0 ||
+        $('.js-cs-slider--card').length > 0 ||
+        $('.js-cs-slider--news')
+    ) {
         $('.js-cs-slider').slick({
             arrows: true,
             nextArrow: '.cs-slider__arrow--next',
@@ -74,19 +84,25 @@ $(document).ready(function() {
             event.preventDefault();
             const $slider = event.data.$slider;
             const delta = event.originalEvent.deltaY;
-            if(delta > 0) {
+            if (delta > 0) {
                 $slider.slick('slickNext');
-            }
-            else {
+            } else {
                 $slider.slick('slickPrev');
             }
         }
 
-        $('.js-cs-slider--news').find('.slick-slide').first().addClass('is-checked');
-        $('.js-cs-slider--news').find('.slick-slide').on('click', function() {
-            $('.js-cs-slider--news').find('.slick-slide').removeClass('is-checked');
-            $(this).addClass('is-checked');
-        });
+        $('.js-cs-slider--news')
+            .find('.slick-slide')
+            .first()
+            .addClass('is-checked');
+        $('.js-cs-slider--news')
+            .find('.slick-slide')
+            .on('click', function() {
+                $('.js-cs-slider--news')
+                    .find('.slick-slide')
+                    .removeClass('is-checked');
+                $(this).addClass('is-checked');
+            });
 
         if ($(window).width() > 480) {
             $('.zoom')
@@ -95,7 +111,6 @@ $(document).ready(function() {
                 .parent()
                 .zoom();
         }
-
     }
 
     if ($('.js-filter-sticky').length > 0 && $(window).width() > 768) {
@@ -126,26 +141,29 @@ $(document).ready(function() {
     }
 
     //Datepicker http://t1m0n.name/air-datepicker/docs/index-ru.html
-    if (('.js-date').length > 0) {
+    if ('.js-date'.length > 0) {
         $('.js-date').datepicker({
             dateFormat: 'dd.mm.yy',
             autoClose: true
         });
         $('.js-input-icon').click(function(event) {
             event.preventDefault();
-            $(this).parent().find('.js-date').focus();
+            $(this)
+                .parent()
+                .find('.js-date')
+                .focus();
         });
     }
 
     //Modal FancyBox 3 https://fancyapps.com/fancybox/3/
-    if($('[data-fancybox]').length > 0) {
+    if ($('[data-fancybox]').length > 0) {
         $('[data-fancybox]').fancybox({
-            baseClass : 'modal-window__wrap',
+            baseClass: 'modal-window__wrap',
             touch: false,
-            closeClickOutside : true,
+            closeClickOutside: true,
             autoFocus: false,
             helpers: {
-                overlay:{
+                overlay: {
                     locked: false
                 }
             }
@@ -153,7 +171,7 @@ $(document).ready(function() {
     }
 
     //Custom Select https://select2.org/
-    if($('.js-select').length > 0) {
+    if ($('.js-select').length > 0) {
         $('.js-select').select2({
             container: '.cs-select__container'
         });
@@ -162,7 +180,11 @@ $(document).ready(function() {
         });
 
         $(document).click(function(event) {
-            if ($(event.target).closest('.select2-dropdown, .select2-container').length) return;
+            if (
+                $(event.target).closest('.select2-dropdown, .select2-container')
+                    .length
+            )
+                return;
             $('.js-select').select2('close');
             event.stopPropagation();
         });
@@ -173,7 +195,7 @@ $(document).ready(function() {
     }
 
     //Masked inputmask https://github.com/RobinHerbots/Inputmask
-    if($('.js-phone-mask').length > 0) {
+    if ($('.js-phone-mask').length > 0) {
         $('.js-phone-mask').inputmask({
             mask: '+7 (999) 999-99-99',
             showMaskOnHover: false
@@ -186,9 +208,9 @@ $(document).ready(function() {
         $('html, body').animate({ scrollTop: 0 }, 800);
     });
     $(window).scroll(function() {
-        if($(this).scrollTop() > $(this).height()) {
+        if ($(this).scrollTop() > $(this).height()) {
             $('.js-go-top').addClass('is-visible');
-        }else{
+        } else {
             $('.js-go-top').removeClass('is-visible');
         }
     });
@@ -202,56 +224,56 @@ $(document).ready(function() {
     });
 
     //Stop drag
-    $('img').on('dragstart', function(event) { event.preventDefault(); });
-
+    $('img').on('dragstart', function(event) {
+        event.preventDefault();
+    });
 
     $('.js-garanty-item--more').on('click', function() {
-        $(this).closest('.garanty-item').find('.is-hidden').removeClass('is-hidden');
+        $(this)
+            .closest('.garanty-item')
+            .find('.is-hidden')
+            .removeClass('is-hidden');
         $(this).css('display', 'none');
     });
 
-
-    $('.js-lk-nav').find('.lk-nav__item').on('click', function() {
-        $('.js-lk-nav').find('.lk-nav__item').removeClass('is-active');
-        $(this).addClass('is-active');
-    });
+    $('.js-lk-nav')
+        .find('.lk-nav__item')
+        .on('click', function() {
+            $('.js-lk-nav')
+                .find('.lk-nav__item')
+                .removeClass('is-active');
+            $(this).addClass('is-active');
+        });
 
     if ($(window).width() <= 768) {
         tabTransform();
     }
-
 
     /*
      * Header.js
      */
     //=include partials/header.js
 
-
     /*
      * Catalog.js
      */
     //=include partials/catalog.js
-
 
     /*
      * contacts.js
      */
     //=include partials/contacts.js
 
-
     /*
      * Cart.js
      */
     //=include partials/cart.js
 
-
     /*
      * cs-scripts.js
      */
     //=include partials/cs-scripts.js
-
 });
-
 
 /*
      * function

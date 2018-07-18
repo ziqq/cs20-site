@@ -53,7 +53,6 @@
 .content-wrapper
 	flex: 1
 
-
 .header
 	background-image: url('../img/general/header-decor.png'), linear-gradient(to right,#090113,#1c0439)
 	background-repeat: no-repeat
@@ -154,123 +153,6 @@
 		fill: $color-text
 //social
 
-.breadcrumbs
-	padding: $gutter 0
-	+r(768)
-		padding: 15px 0
-
-	//breadcrumbs__wrap
-	&__wrap
-		@extend %flexCenter
-		.button-link--exit
-			margin-left: auto
-		+r(480)
-			display: none
-
-	//breadcrumbs__list
-	&__list
-		@extend %flexCenter
-
-	//breadcrumbs__item
-	&__item
-		position: relative
-		& + &
-			margin-left: 15px
-		&::after
-			content: '/'
-			font-size: 14px
-			+vy
-			right: -10px
-		&:last-child
-			+r(480)
-				max-width: 335px
-				+text-overflow
-			+r(375)
-				max-width: 285px
-				+text-overflow
-			+r(320)
-				max-width: 235px
-				+text-overflow
-			&::after
-				display: none
-
-	//breadcrumbs__link
-	&__link
-		font-size: 14px
-		.breadcrumbs__title
-			color: $color-accent
-
-	//breadcrumbs__title
-	&__title
-		font-size: 14px
-		color: #000
-		+r(320)
-			font-size: 13px
-
-	//breadcrumbs--icon
-	&--icon
-		.breadcrumbs
-			&__list
-				@extend %flexCenter
-				justify-content: spase-between
-				+r(480)
-					justify-content: center
-			&__item
-				margin: auto
-				&.is-active, &.is-checked
-					.breadcrumbs__link
-						color: #000
-					.icon
-						fill: #000
-				&:last-child
-					.breadcrumbs__link
-						&::before
-							display: none
-				&::after
-					display: none
-				+i8-l
-					&:not(.is-active)
-						display: none
-					.breadcrumbs__link
-						font-size: 16px
-				+r(480)
-					&:not(.is-active)
-						display: none
-					.breadcrumbs__link
-						font-size: 16px
-			&__link
-				padding: 0 35px 0 45px
-				color: $color-text
-				font-size: 18px
-				line-height: 1
-				position: relative
-				+r(768)
-					padding: 0 22px 0 30px
-					font-size: 15px
-				&::before
-					content: '\f105'
-					font-family: fontawesome
-					font-size: 18px
-					+vy
-					right: 0
-					+r(768)
-						display: none
-				.icon
-					fill: $gray--light
-					+vy
-					left: 0
-					&-cart
-						width: 21px
-					&-user
-						width: 20px
-					&-delivery--transparent
-						width: 27px
-					&-pay
-						width: 23px
-					&-check
-						width: 18px
-//breadcrumbs
-
 .pagination
 	//pagination__list
 	&__list
@@ -319,103 +201,6 @@
 		top: -1px
 //pagination
 
-.tab
-	@extend %flexCenter
-
-	&__wrap
-		margin: auto
-
-	&__titles
-		@extend %flexCenter
-		justify-content: center
-
-	&__title
-		font-size: 15px
-		background-color: $color-secondary
-		border-radius: $border-radius $border-radius 0 0
-		cursor: pointer
-		@extend %flexCenter
-		& + &
-			margin-left: 1px
-
-	&__contentes
-		border-radius: 0 0 $border-radius $border-radius
-
-	&__content
-		display: none
-		padding: 15px 30px
-
-	&--transform
-		.tab
-			&__wrap
-				width: 100%
-			&__titles
-				+r(768)
-					flex-direction: column
-			&__title
-				height: 46px
-				line-height: 46px
-				width: 25%
-				padding: 0 20px
-				color: $gray--light
-				border-radius: $border-radius $border-radius 0 0
-				position: relative
-				transition: color 0.35s ease
-				+r(768)
-					color: $color-secondary
-				&:hover
-					color: #fff
-					+r(480)
-						color: initial
-					.home-search__icon
-						fill: #fff
-						+r(480)
-							fill: initial
-				&.is-active
-					color: initial
-					&:hover
-						color: initial
-				+r(1024)
-					padding: 0 20px
-				+r(768)
-					width: 100%
-					border-radius: $border-radius
-					background-color: #fff
-					&::after
-						content: '\f105'
-						font-family: fontawesome
-						line-height: 1
-						position: absolute
-						top: 50%
-						transform: translateY(-50%) rotate(-90deg)
-						right: 10px
-
-				&.is-active
-					background-color: #fff
-					.home-search__icon
-						fill: $color-secondary
-
-			&__contentes
-				background-color: #fff
-			&__content
-				padding: 30px
-				+r(480)
-					padding: 15px
-
-		.cs-accordeon
-			&__item
-				width: 100%
-				margin-bottom: 5px
-				&.is-open
-					.cs-accordeon__title
-						&::after
-							transform: translateY(-50%) rotate(90deg)
-			&__content
-				margin-top: -2px
-				background-color: #fff
-				border-radius: 0 0 $border-radius $border-radius
-//tab
-
 .counter
 	//counter__field
 	&__field
@@ -445,37 +230,6 @@
 	a
 		color: $color-accent
 //privacy
-
-.star-rating
-	font-size: 0
-
-	&__wrap
-		@extend %flexCenter
-		flex-direction: row-reverse
-		justify-content: flex-end
-		font-size: 16px
-		&::after
-			content: ""
-			display: table
-			clear: both
-
-	&__ico
-		padding-left: 2px
-		cursor: pointer
-		color: #FFB300
-		&:last-child
-			padding-left: 0
-
-	&__input
-		display: none
-
-.star-rating__ico:hover
-	&:before, ~ .star-rating__ico:before
-		content: "\f005"
-
-.star-rating__input:checked ~ .star-rating__ico:before
-	content: "\f005"
-//.star-rating
 
 .go-top
 	padding: 0 30px

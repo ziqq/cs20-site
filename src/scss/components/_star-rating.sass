@@ -1,0 +1,30 @@
+.star-rating
+	font-size: 0
+
+	&__wrap
+		@extend %flexCenter
+		flex-direction: row-reverse
+		justify-content: flex-end
+		font-size: 16px
+		&::after
+			content: ""
+			display: table
+			clear: both
+
+	&__ico
+		padding-left: 2px
+		cursor: pointer
+		color: #FFB300
+		&:last-child
+			padding-left: 0
+
+	&__input
+		display: none
+
+.star-rating__ico:hover
+	&:before, ~ .star-rating__ico:before
+		content: "\f005"
+
+.star-rating__input:checked ~ .star-rating__ico:before
+	content: "\f005"
+//.star-rating

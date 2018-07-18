@@ -4,7 +4,8 @@ $news-gutter-text : 20px
 	//news__inner
 	&__inner
 		margin-bottom: $gutter*2
-		@extend %flex
+		display: flex
+		align-items: flex-start
 		+r(768)
 			flex-wrap: wrap
 
@@ -19,6 +20,8 @@ $news-gutter-text : 20px
 	//news__sidebar
 	&__sidebar
 		width: 400px
+		max-height: 409px
+		+cs-scroll
 		+r(768)
 			width: 100%
 
@@ -54,7 +57,7 @@ $news-gutter-text : 20px
 		cursor: pointer
 		&:hover, &.is-checked
 			background-color: $gray--lighten
-			
+
 	.slick-list
 		border-top: 1px solid $gray--lighten
 		border-botom: 1px solid $gray--lighten
@@ -62,6 +65,7 @@ $news-gutter-text : 20px
 
 .news-item
 	color: #000
+
 
 	//.news-item__title
 	&__title
@@ -82,7 +86,17 @@ $news-gutter-text : 20px
 //.news-item
 
 .news-item-preview
+	display: block
+	width: 100%
 	padding: 15px 20px
+	margin-right: 6px
+	border: 1px solid $gray--lighten
+	border-top-color: transparent
+	&:first-child
+		border-top: 1px solid $gray--lighten
+	&.ui-tabs-active
+			background-color: $gray--lighten
+
 
 	//.news-item-preview__date
 	&__date
@@ -90,7 +104,7 @@ $news-gutter-text : 20px
 		margin-bottom: 5px
 		font-size: 14px
 		color: #000
-		
+
 	//.news-item-preview__text
 	&__text
 		color: #000
