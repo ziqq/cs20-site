@@ -29,35 +29,7 @@ $(document).ready(function() {
     });
 
     //Slick Slider https://kenwheeler.github.io/slick/
-    if (
-        $('.js-cs-slider').length > 0 ||
-        $('.js-cs-slider--card').length > 0 ||
-        $('.js-cs-slider--news')
-    ) {
-        $('.js-cs-slider').slick({
-            arrows: true,
-            nextArrow: '.cs-slider__arrow--next',
-            prevArrow: '.cs-slider__arrow--prev',
-            dots: true,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true
-        });
-
-        $('.js-cs-slider--card').slick({
-            arrows: true,
-            nextArrow: '.cs-slider__arrow--next',
-            prevArrow: '.cs-slider__arrow--prev',
-            dots: true,
-            autoplay: false,
-            autoplaySpeed: 3000,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true
-        });
-
+    if ($('.js-cs-slider--news').length > 0) {
         const $slider = $('.js-cs-slider--news');
         if ($(window).width() > 480) {
             $slider.on('init', () => {
@@ -91,11 +63,11 @@ $(document).ready(function() {
             }
         }
 
-        $('.js-cs-slider--news')
+        $slider
             .find('.slick-slide')
             .first()
             .addClass('is-checked');
-        $('.js-cs-slider--news')
+        $slider
             .find('.slick-slide')
             .on('click', function() {
                 $('.js-cs-slider--news')
@@ -103,15 +75,45 @@ $(document).ready(function() {
                     .removeClass('is-checked');
                 $(this).addClass('is-checked');
             });
-
-        if ($(window).width() > 480) {
-            $('.zoom')
-                .wrap('<span style="display:inline-block"></span>')
-                .css('display', 'block')
-                .parent()
-                .zoom();
-        }
     }
+        
+    if($('.js-cs-slider').length > 0) {
+        $('.js-cs-slider').slick({
+            arrows: true,
+            nextArrow: '.cs-slider__arrow--next',
+            prevArrow: '.cs-slider__arrow--prev',
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true
+        });
+    }
+
+    if($('.js-cs-slider--card').length > 0) {
+        $('.js-cs-slider--card').slick({
+            arrows: true,
+            nextArrow: '.cs-slider__arrow--next',
+            prevArrow: '.cs-slider__arrow--prev',
+            dots: true,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true
+        });
+    }
+
+
+    if ($(window).width() > 480) {
+        $('.zoom')
+            .wrap('<span style="display:inline-block"></span>')
+            .css('display', 'block')
+            .parent()
+            .zoom();
+    }
+
 
     if ($('.js-filter-sticky').length > 0 && $(window).width() > 768) {
         var sidebar = new StickySidebar('.js-filter-sticky', {
