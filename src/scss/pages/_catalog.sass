@@ -214,15 +214,21 @@
 
 	//range__from
 	&__from, &__to
-		width: 90px
-		height: 35px
-		line-height: 35px
-		text-align: center
-		font-family: $f-black
-		font-size: 14px
-		font-weight: 700
-		border: 1px solid $color-border--light
 		position: relative
+		input
+			width: 100px
+			height: 35px
+			padding-right: 20px
+			line-height: 35px
+			text-align: center
+			font-family: $f-black
+			font-size: 14px
+			font-weight: 700
+			border: 1px solid $color-border--light
+			border-radius: $border-radius
+		.fa
+			+vy
+			right: 5px
 
 	//range__to
 	&__to
@@ -234,7 +240,7 @@
 			width: 18px
 			background-color: $gray
 			+vy
-			left: -29px
+			left: -23px
 			+r(768)
 				left: -45px
 

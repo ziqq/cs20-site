@@ -5,10 +5,14 @@ $('.js-sorting-btn').on('click', function() {
 });
 
 $('.js-sorting-btn--list').on('click', function() {
-    $('.js-products').find('.product-item').addClass('product-item--wide');
+    $('.js-products')
+        .find('.product-item')
+        .addClass('product-item--wide');
 });
 $('.js-sorting--btn--tile').on('click', function() {
-    $('.js-products').find('.product-item').removeClass('product-item--wide');
+    $('.js-products')
+        .find('.product-item')
+        .removeClass('product-item--wide');
 });
 
 //Filter Open Btn
@@ -26,9 +30,9 @@ $('.js-filter--close').on('click', function() {
 
 //Filter Select All
 $(document).on('click', '.js-cs-checkbox--pseudo', function() {
-    if($(this).hasClass('is-checked')) {
+    if ($(this).hasClass('is-checked')) {
         $(this).removeClass('is-checked');
-    }else{
+    } else {
         $('.js-cs-checkbox--pseudo').removeClass('is-checked');
         $(this).addClass('is-checked');
     }
@@ -36,14 +40,22 @@ $(document).on('click', '.js-cs-checkbox--pseudo', function() {
 });
 
 $('.js-select-all').on('click', function() {
-    $(this).closest('.js-filter-content').find('.cs-checkbox').addClass('is-checked');
-    $(this).closest('.js-filter-content').find('.cs-checkbox').find('input').prop('checked', true);
+    $(this)
+        .closest('.js-filter-content')
+        .find('.cs-checkbox')
+        .addClass('is-checked');
+    $(this)
+        .closest('.js-filter-content')
+        .find('.cs-checkbox')
+        .find('input')
+        .prop('checked', true);
     return false;
 });
 
 //По клику в не блока скрываем его
 $(document).click(function(event) {
-    if ($(event.target).closest('.js-filter-sticky, .js-filter--open').length) return;
+    if ($(event.target).closest('.js-filter-sticky, .js-filter--open').length)
+        return;
     event.stopPropagation();
     $('.js-filter-sticky').removeClass('is-open');
     $('html').removeAttr('style');
@@ -51,7 +63,6 @@ $(document).click(function(event) {
 });
 
 if ($('#js-filter-slider').length > 0) {
-
     var slider = document.getElementById('js-filter-slider');
     var allPriceStart = $('#js-filter-slider').data('start');
     var allPriceEnd = $('#js-filter-slider').data('end');
@@ -61,29 +72,48 @@ if ($('#js-filter-slider').length > 0) {
     var arrParams;
     var sUrl;
 
-    if (spans[0].text() == '') {
+    if (spans[0].val() == '') {
         startPrice = allPriceStart;
     } else {
-        startPrice = parseInt(spans[0].text());
+        startPrice = parseInt(spans[0].val());
     }
 
-    if (spans[1].text() == '') {
+    if (spans[1].val() == '') {
         endPrice = allPriceEnd;
     } else {
-        endPrice = parseInt(spans[1].text());
+        endPrice = parseInt(spans[1].val());
     }
-
-
     noUiSlider.create(slider, {
         start: [startPrice, endPrice],
         connect: true,
         range: {
-            'min': allPriceStart,
-            'max': allPriceEnd
+            min: allPriceStart,
+            max: allPriceEnd
         }
     });
+
     slider.noUiSlider.on('update', function(values, handle) {
-        spans[handle].text(parseInt(values[handle]));
+        spans[handle].val(parseInt(values[handle]));
+    });
+
+    slider.noUiSlider.on('update', function(values, handle) {
+        if (handle == 0) {
+            spans[handle].val(parseInt(values[handle]));
+        } else if (handle == 1) {
+            spans[handle].val(parseInt(values[handle]));
+        }
+        // console.log('--- hendle', handle);
+        // console.log('--- value 0', values[0]);
+        // console.log('--- value 1', values[1]);
+    });
+
+    $('#jsPriceStart').on('change', function() {
+        slider.noUiSlider.set([this.value, null]);
+        console.log('---', this.value);
+    });
+
+    $('#jsPriceEnd').on('change', function() {
+        slider.noUiSlider.set([this.value, null]);
+        console.log('---', this.value);
     });
 }
-
