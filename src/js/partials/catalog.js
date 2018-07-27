@@ -69,8 +69,6 @@ if ($('#js-filter-slider').length > 0) {
     var spans = [$('#jsPriceStart'), $('#jsPriceEnd')];
     var startPrice;
     var endPrice;
-    var arrParams;
-    var sUrl;
 
     if (spans[0].val() == '') {
         startPrice = allPriceStart;
@@ -83,6 +81,7 @@ if ($('#js-filter-slider').length > 0) {
     } else {
         endPrice = parseInt(spans[1].val());
     }
+
     noUiSlider.create(slider, {
         start: [startPrice, endPrice],
         connect: true,
@@ -96,24 +95,11 @@ if ($('#js-filter-slider').length > 0) {
         spans[handle].val(parseInt(values[handle]));
     });
 
-    slider.noUiSlider.on('update', function(values, handle) {
-        if (handle == 0) {
-            spans[handle].val(parseInt(values[handle]));
-        } else if (handle == 1) {
-            spans[handle].val(parseInt(values[handle]));
-        }
-        // console.log('--- hendle', handle);
-        // console.log('--- value 0', values[0]);
-        // console.log('--- value 1', values[1]);
-    });
-
     $('#jsPriceStart').on('change', function() {
         slider.noUiSlider.set([this.value, null]);
-        console.log('---', this.value);
     });
 
     $('#jsPriceEnd').on('change', function() {
-        slider.noUiSlider.set([this.value, null]);
-        console.log('---', this.value);
+        slider.noUiSlider.set([null, this.value]);
     });
 }

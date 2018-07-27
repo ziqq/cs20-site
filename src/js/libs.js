@@ -6,6 +6,7 @@
 
 //=include ../../bower_components/inputmask/dist/jquery.inputmask.bundle.js
 //=include ../../bower_components/nouislider/distribute/nouislider.js
+//=include ../libs/touch-pounch.js
 
 //=include ../libs/slick/slick.js
 //=include ../libs/datepicker/datepicker.js
