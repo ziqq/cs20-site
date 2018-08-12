@@ -1,0 +1,69 @@
+---
+title: Вход
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper">
+
+	<!-- begin breadcrumbs -->
+	<div class="container">
+		<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+			<ul class="breadcrumbs__list">
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link" itemprop="url">
+						<span class="breadcrumbs__title" itemprop="title">Главная</span>
+					</a>
+				</li>
+				<li class="breadcrumbs__item">
+					<span class="breadcrumbs__title" itemprop="title">Личный кабинет</span>
+				</li>
+			</ul>
+		</div>
+
+		<h1 class="h1 page-title" itemprop="headline">Личные данные</h1>
+
+	</div>
+	<!-- end breadcrumbs -->
+
+	<div class="container">
+		<form class="form form__enter">
+
+			<div class="pedit__item">
+				<div class="pedit__title">Логин:<i>*</i></div>
+				<div class="pedit__field">
+					{{item.input('text')}}
+				</div>
+			</div>
+			<div class="pedit__item">
+				<div class="pedit__title">Пароль:<i>*</i></div>
+				<div class="pedit__field">
+					<div class="cs-input is-invalid">
+						<input type="password" class="cs-input__field">
+						<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="button-box">
+					{{item.checkbox('Запомнить меня', 'form__checkbox')}}
+				<a class="password-recovery pedit__item" href="#" data-fancybox>Забыли свой пароль?</a>
+			</div>
+
+			<button type="submit" class="button button--gray form__btn pedit__item">Войти</button>
+
+				<div class="form__text pedit__item">Если у Вас нет учетной записи, &nbsp;<a class="password-recovery" href="#register" data-fancybox>Зарегистрируйтесь</a></div>
+
+
+			<div class="success">
+				<div class="success__text">Добро пожаловать!</div>
+			</div>
+		</form>
+	</div>
+
+</div>
+<!-- end home -->
+
+{% endblock %}

@@ -26,7 +26,7 @@ rules:
   no-url-domains: 2
   no-vendor-prefixes: 1
   nesting-depth:
-    - 2
+    - 4
     - max-depth: 5
 
 # ref: https://github.com/sasstools/sass-lint/blob/master/docs/rules/attribute-quotes.md
