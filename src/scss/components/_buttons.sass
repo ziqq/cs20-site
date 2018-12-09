@@ -1,47 +1,107 @@
-.button
+.btn
 	display: inline-block
-	width: 230px
-	height: 40px
-	line-height: 38px
-	font-family: $f-light
-	font-size: 14px
+	padding: 14px 35px
+	font-family: $f
+	font-size: 15px
+	line-height: 1
 	text-align: center
-	text-decoration: none	
+	text-decoration: none
 	border: 0
 	border-radius: $border-radius
 	position: relative
 	+tr(.35s)
 
 	&:hover
-		box-shadow: $bxs-hover
 		color: #fff
 
-	//button--accent
-	&--accent
+	@each $theme, $color in $button-colors
+		&-#{$theme}
+			color: #fff
+			background-color: $color
+
+			&:hover
+				color: #fff
+				background-color: darken($color, 5%)
+
+			&:active
+				background-color: darken($color, 7%)
+				box-shadow: none
+
+		&-outline-#{$theme}
+			color: $color
+			border: 1px solid $color
+			background-color: transparent
+
+			&:hover
+				color: #fff
+				background-color: $color
+				box-shadow: none
+
+			&:active
+				background-color: darken($color, 5%)
+				box-shadow: none
+
+	//.btn--white
+	&--white
+		color: $color-text
+		box-shadow: $bxs-box
+		background-color: #fff
+		&:hover
+			color: $color-text
+			box-shadow: $bxs-box--hover
+
+	//.btn--apply
+	&--apply
+		width: 126px
+		height: 36px
+		padding: 0
+		font-family: $f-light
 		color: #fff
 		background-color: $color-accent
+		border-radius: 0 4px 4px 0
+		box-shadow: $bxs-box
+		outline: none
+		+centre('y')
+		right: -145px
+		z-index: z(dropdown)
+		&::before
+			content: ''
+			+tr
+			+arr(20, 36, $color-accent, l)
+			+centre('y')
+			left: -20px
 		&:hover
-			background-color: lighten($color-accent, 10%)
+			box-shadow: $bxs-box--hover
+			transform: translate(10px, -50%)
 
-	//button--gray
-	&--gray
-		color: #000
-		background-color: #D5D1D1
-		&:hover
-			color: #000
+		+r(768)
+			font-size: 16px
+			font-family: $f
+			border-radius: $border-radius
+			box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2)
+			height: 40px
+			line-height: 40px
+			width: 80%
+			position: fixed
+			top: auto
+			left: 50%
+			bottom: 20px
+			transform: translate(-50%, 0)
+			&::before
+				display: none
 
-	//button--transparent
+	//.btn-transparent
 	&--transparent
 		color: #000
 		border: 1px solid $color-border--light
 		background-color: transparent
 		&:hover
 			color: #000
-			border: 1px solid #e0e0e0
-			background-color: #e0e0e0
+			border: 1px solid #8C8C8C
+			background-color: #fff
 			box-shadow: 0 3px 3px 0 rgba(0,0,0,0.05), 0 1px 7px 0 rgba(0,0,0,0.1), 0 3px 1px -1px rgba(0,0,0,0.05)
 
-	//button--back
+	//.btn-back
 	&--back
 		&::before
 			content: '\f177'
@@ -49,30 +109,20 @@
 			+vy
 			left: 20px
 
-	//button--filter
+	//.btn-filter
 	&--filter
-		width: 55px
-		height: 55px
-		line-height: 55px
 		text-align: center
-		padding: 0
+		font-size: 14px
+		color: #fff
 		background-color: $color-accent
-		border-radius: 50%
-		box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12)
+		border-radius: 20px
+		box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15)
 		outline: none
-		position: fixed
-		bottom: 10px
-		right: 10px
+		+centre('x')
+		bottom: -18px
 		z-index: z(fixed)
-		+rmin(769)
-			display: none
-		.icon
-			fill: #fff
-			width: 25px
-			height: 25px
-			+vcenter
 
-	//button-link
+	//.btnlink
 	&-link
 		font-size: 14px
 		color: $color-accent
@@ -102,7 +152,131 @@
 				span
 					border-bottom: none
 
-//button
+		//.btnlink--icon
+		&--icon
+			padding: 0
+			text-decoration: none
+			border: 0
+			+flexCenter
+
+			.btn-link
+				&__icon
+					width: 35px
+					height: 35px
+					margin-right: 10px
+
+	//.btn--small
+	&--small
+		padding: 4px 25px 5px
+		font-size: 14px
+
+	&--gr
+		width: 110px
+		height: 50px
+		color: #fff
+		letter-spacing: .3px
+		border: 0
+		border-radius: $border-radius
+		background: linear-gradient(275.07deg, #FE6CB8 -36.19%, #A40C95 99.51%)
+		position: relative
+		z-index: 3
+
+		&::after
+			content: ''
+			display: block
+			+coverdiv
+			z-index: -100
+			opacity: 0
+			border-radius: inherit
+			background: linear-gradient(275.07deg, #A40C95 -35.44%, #A40C95 99.51%)
+			+tr
+
+		&_icon
+			margin: auto
+			fill: $color-text--light
+
+		&:hover
+			&::after
+				opacity: 1
+//.btn end
+
+//..button-box
+.button-box
+	display: flex
+	justify-content: center
+
+	&--right
+		justify-content: flex-end
+
+//..btn-icon
+.btn-icon
+	width: 50px
+	height: 50px
+	background-color: #fff
+	border: 1px solid $gray--lighten
+	border-radius: 50%
+	outline: none
+	position: relative
+	+flexCenter
+	justify-content: center
+
+	//. &::after
+	//. 	content: ''
+	//. 	display: block
+	//. 	width: 0
+	//. 	height: 0
+	//. 	border-radius: 50%
+	//. 	+cover
+
+	//..btn-icon__ico
+	&__ico
+		fill: $gray
+
+		&--plus, &--check
+			display: none
+
+		&--plus
+			width: 13px
+			height: 13px
+			+rotate(45)
+
+	//..btn-icon--addInCar
+	&--addInCart
+		&:hover
+			color: #fff
+			border-color: $color-accent
+			background-color: $color-accent
+
+			//. &::after
+			//. 	width: 100%
+			//. 	height: 100%
+			//. 	background-color: $color-accent
+
+			.btn-icon__ico
+				fill: #fff
+				&--cart
+					display: none
+				&--plus
+					display: block
+
+		&.is-checked
+			border-color: $gray--lighten
+			background-color: #fff
+			&:hover
+				fill: $color-accent
+				border-color: $color-accent
+				.btn-icon__ico
+					fill: $color-accent
+
+			.btn-icon__ico
+				&:hover
+					fill: $color-accent
+
+				&--cart, &--plus
+					display: none
+				&--check
+					display: block
+//..btn-icon end
 
 .back-to-search
 	&::before
@@ -113,4 +287,4 @@
 	&:hover
 		&::before
 			color: lighten($color-accent, 10%)
-//back-to-search
+//.back-to-search

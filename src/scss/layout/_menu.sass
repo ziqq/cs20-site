@@ -1,29 +1,22 @@
 .nav
-	//nav__list
+	//.nav__list
 	&__list
-		@extend %flexCenter
+		+flexCenter
+		flex: 1
 
-	//nav__item
+	//.nav__item
 	&__item
 		margin-right: 15px
 		position: relative
-		&::before
-			content: ''
-			display: block
-			width: 1px
-			height: 27px
-			background-color: rgba($gray, .9)
-			+vy
-			right: -7.5px
-		& + &
-		&:last-child
-			margin-right: 0
-			&::before
-				display: none
+
+		&--last
+			margin-left: auto
+
 		&.is-active
 			.nav__link
 				&::after
 					width: 100%
+
 		&.cs-dropdown
 			border-radius: $border-radius $border-radius 0 0
 			&:hover
@@ -44,37 +37,41 @@
 					display: inline-block
 					+vy
 					right: 10px
-		
+
 		.cs-dropdown
 			&__link
 				&::after
 					+rmin(481)
 						display: none
-	//nav__link
+
+	//.nav__link
 	&__link
 		display: block
 		padding: 0 10px
-		font-size: 14px
-		line-height: 100px
+		font-size: 12px
+		line-height: 41px
 		border-radius: $border-radius
 		color: #fff
 		position: relative
-		&::after
-			content: ''
-			display: block
-			height: 4px
-			width: 100%
-			background-color: $color-accent
-			position: absolute
-			bottom: 0
-			left: 0
-			width: 0
-			+tr
+
+		// &::after
+		// 	content: ''
+		// 	display: block
+		// 	height: 4px
+		// 	width: 0
+		// 	background-color: $color-accent
+		// 	+centre('x')
+		// 	bottom: -10px
+		// 	height: 2px
+		// 	+tr
+
 		&:hover
-			color: #fff
-			&::after
-				width: 100%
-	//nav--main
+			color: $color-accent
+
+			// &::after
+			// 	width: 100%
+
+	//.nav--main
 	&--main
 		+r(992)
 			display: none
@@ -86,82 +83,110 @@
 					width: 100%
 					.nav__link
 						+text-overflow
-//nav
+//.nav
 
 .mobile-nav
-	display: none
 	padding-top: 70px
 	padding-bottom: 70px
 	background-color: #fff
 	cursor: pointer
 	position: fixed
-	top: -70px
+	top: 0
 	left: 0
 	width: 100%
 	height: 100%
 	z-index: 199
-	transform: translateY(70px)
+	transform: translateX(-100vw)
+	+tr
 	overflow-y: auto
+	overflow-x: hidden
 	+smooth-scroll
 
-	//mobile-menu__list
+	+r-min(xs)
+		max-width: 375px
+		box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.25)
+
+	&.is-open
+		transform: translateX(0)
+		z-index: z(menu)
+
+	//.mobile-menu__list
 	&__list
 		margin: 0 30px 15px 50px
 		padding-bottom: 15px
 		border-bottom: 1px solid $color-border--lighten
 
-	//mobile-menu__item
+	//.mobile-menu__item
 	&__item
+		&::before
+			top: 20px
+
 		&--auth
 			display: none
 
-	//mobile-menu__link
+	//.mobile-menu__link
 	&__link
 		display: block
 		padding: 10px 0 10px 30px
 		font-size: 14px
-		color: $color-secondary
+		color: $color-text
 		position: relative
+
 		&:hover, &:focus
 			color: #000
-		&::after
-			content: '\f105'
-			font-family: fontawesome
-			font-size: 18px
-			+vy
-			right: 0
-		&::before
-			content: ''
-			display: inline-block
-			+vy
-			left: 0
-		@each $m in catalog, company, contacts, delivery, garanty, home, lk, news, partners, pay, contacts
-			&--#{$m}
-				&::before
-					+s(mobile__#{$m})
-		&--lk
-			&::after
-				display: none
 
-		&--back
-			&::after
-				content: '\f104'
-				right: auto
-				left: 0
+		// &::after
+		// 	content: '\f105'
+		// 	font-family: fontawesome
+		// 	font-size: 18px
+		// 	+vy
+		// 	right: 0
 
-		&--not-auth
+		// &::before
+		// 	content: ''
+		// 	display: inline-block
+		// 	+vy
+		// 	left: 0
+		// @each $m in catalog, company, contacts, delivery, garanty, home, lk, news, partners, pay, contacts
+		// 	&--#{$m}
+		// 		&::before
+		// 			+s(mobile__#{$m})
+		// &--lk
+		// 	&::after
+		// 		display: none
 
-		&--auth
-			display: none
+		// &--back
+		// 	&::after
+		// 		content: '\f104'
+		// 		right: auto
+		// 		left: 0
 
-	//mobile-menu__search
+		// &--not-auth
+
+		// &--auth
+		// 	display: none
+
+	//.mobile-menu__search
 	&__search
 		position: fixed
 		right: 22px
 		top: 21px
 		z-index: z(dropdown)
 
-	//mobile-nav--sub
+	//.mobile-menu__close
+	&__close
+		width: 40px
+		height: 40px
+		padding: 10px
+		cursor: pointer
+		fill: $color-text--light
+		+tr
+		position: absolute
+		top: 10px
+		left: 10px
+		&:hover
+			fill: $color-text
+	//.mobile-nav--sub
 	&--sub
 		padding-top: 70px;
 		padding-left: 50px
@@ -195,22 +220,24 @@
 		&.is-active
 			&::before
 				content: '\f107'
+
 		&::before
 			content: '\f105'
 			right: 0
-			top: 3px
-			transform: translateY(0)
+
 		&__list
+			margin-left: 30px
 			position: static
 			border-top: 0
 			box-shadow: none
+
 		&__link
 			padding-left: 25px
 
 	.phone
 		margin-top: 30px
-		margin-bottom: 20px	
-		@extend %flexCenter
+		margin-bottom: 20px
+		+flexCenter
 		&__link
 			margin: auto
 			color: $color-text
@@ -218,67 +245,64 @@
 	.social
 		&__list
 			margin: auto
-//mobile-nav
+//.mobile-nav
 
-.menu-toggle
-	+vy
-	left: 10px
-	z-index: 201
-	+rmin(993)
-		display: none
-			
-	&.is-open
-		.menu-toggle
-			&__boxes
-				transform: rotate(45deg)
-				transition-delay: 0.4s
-		.menu-toggle
-			&__box
-				background-color: $color-text
-				&:first-child
-					transform: scaleX(0)
-					transition: transform 0.2s cubic-bezier(0.694,  0.048, 0.335, 1.000)
-				&:nth-child(3)
-					width: 0
-					transition: width 0.2s cubic-bezier(0.694,  0.048, 0.335, 1.000)
-				&--other
-					height: 30px
-					transition: height 0.2s cubic-bezier(0.694,  0.048, 0.335, 1.000)
-					transition-delay: 0.3s
-					background-color: $color-text
+//.hamburger
+.hamburger
+	line-height: 1
+	border: 0
+	background-color: transparent
+	outline: none
+	&__icon
+		width: 20px
+		height: 20px
+		fill: #fff
 
-	//menu-toggle__boxes
-	&__boxes
-		width: 30px
-		height: 18px
+.toggle
+	display: block
+	width: 23px
+	height: 17px
+	margin-top: 2px
+	pointer-events: none
+
+	span
 		position: relative
-		transition: transform 0.3s cubic-bezier(0.694,  0.048, 0.335, 1.000)
-
-	//menu-toggle__box
-	&__box
 		display: block
 		width: 100%
 		height: 2px
 		background-color: #fff
-		margin-top: 7px
-		&:first-child
-			margin-top: 0;
-			transform: scaleX(1)
-			transition: transform 0.2s cubic-bezier(0.694,  0.048, 0.335, 1.000)
-			transition-delay: 0.4s
-		&:nth-child(3)
-			width: 65%
-			transition: width 0.2s cubic-bezier(0.694,  0.048, 0.335, 1.000)
-			transition-delay: 0.4s
-		//menu-toggle__box--other
-		&--other
-			width: 2px
-			height: 0
-			background-color: #fff
+		transition: all 0.15s
+		backface-visibility: hidden
+		border-radius: 2px
+
+		&:after, &:before
+			content: ' '
 			position: absolute
-			top: -5px
-			left: 50%
-			margin-left: -1px
-			transition: height 0.4s cubic-bezier(0.694,  0.048, 0.335, 1.000)
-			z-index: 10
-//menu-toggle
+			left: 0
+			top: 7px
+
+		&:after
+			top: 14px
+			width: 100%
+			height: 2px
+			background-color: #fff
+			transition: all 0.3s
+			backface-visibility: hidden
+			border-radius: 2px
+
+		&:before
+			width: 100%
+			height: 2px
+			background-color: #fff
+			transition: all 0.3s
+			backface-visibility: hidden
+			border-radius: 2px
+
+	&.is-active
+		pointer-events: auto
+		span
+			background-color: transparent
+			&:before
+				transform: rotate(45deg) translate(-2px, 2px)
+			&:after
+				transform: rotate(-45deg) translate(3px, -7px)

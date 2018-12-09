@@ -1,32 +1,50 @@
 .page-home
-//page-home
-
-.firstscreen
-	min-height: 550px
-	margin-bottom: 35px
-	background-image: url('../img/general/firstscreen-shape.png'), linear-gradient(to right,#090113,#1c0439)
-	&__title
-		margin-top: 35px
+	.firstscreen
+		min-height: 500px
 		margin-bottom: 60px
-		// font-family: $f-light
-		font-weight: 300
-		line-height: 1.3
-		text-align: center
-		color: #fff
-//firstscreen
 
+		+r-max(sm)
+			min-height: auto
+			margin-bottom: 40px
+			.search__wrap
+					margin-bottom: 30px
+
+		+r-max(xs)
+			margin-bottom: 30px
+
+//.login
+.login
+
+	//.login__icon
+	&__icon
+		padding: 5px
+		width: 23px
+		height: 23px
+		+centre('y')
+		right: 20px
+		fill: $color-text--light
+		+tr
+
+	//.login__clear
+	&__clear
+
+	//.login__auth
+	&__auth
+		display: none
+
+//.home-search
 .home-search
 	+r(768)
 		margin-bottom: 30px
 
-	//home-search__icon
+	//.home-search__icon
 	&__in
-		@extend %flex
+		+flex
 		justify-content: center
 		+r(768)
 			flex-wrap: wrap
 
-	//home-search__icon
+	//.home-search__icon
 	&__icon
 		width: 27px
 		height: 27px
@@ -42,16 +60,16 @@
 			width: 24px
 			height: 24px
 
-	//home-search__form
+	//.home-search__form
 	&__form
-		@extend %flexCenter
+		+flexCenter
 		+r(480)
 			display: block
 
-	//home-search__block
+	//.home-search__block
 	&__block
 		flex: 1
-		@extend %flexCenter
+		+flexCenter
 		+r(480)
 			margin-bottom: 15px
 			flex-direction: column
@@ -65,7 +83,7 @@
 				&:last-child
 					margin-bottom: 0
 
-	//home-search__btn
+	//.home-search__btn
 	&__btn
 		text-transform: uppercase
 		letter-spacing: 0.7px
@@ -75,7 +93,7 @@
 		+r(480)
 			width: 100%
 
-	//home-search__list
+	//.home-search__list
 	&__list
 		width: 20%
 		margin: 0 auto
@@ -89,7 +107,7 @@
 			margin-right: 0
 		&--wide
 			width: 100% !important
-			@extend %flexCenter
+			+flexCenter
 			+r(320)
 				flex-direction: column
 				align-items: flex-start
@@ -101,7 +119,7 @@
 			.home-search__link
 				margin-bottom: 0
 
-	//home-search__link
+	//.home-search__link
 	&__link
 		display: inline-block
 		margin-bottom: 10px
@@ -124,7 +142,7 @@
 			&::after
 				border-color: transparent
 
-	//home-search__search
+	//.home-search__search
 	&__search
 		height: 38px
 		line-height: 38px
@@ -143,7 +161,7 @@
 			color: #000
 			border: 0
 
-	//home-search__clear
+	//.home-search__clear
 	&__clear
 		width: 30px
 		font-family: $f
@@ -156,7 +174,7 @@
 		&:hover
 			color: #000
 
-	//home-search .select
+	//.home-search .select
 	.select2-container .select2-selection--single
 		height: 38px
 	.select2-container--default .select2-selection--single .select2-selection__rendered
@@ -168,37 +186,52 @@
 	.select2-dropdown
 		max-height: 100px
 		+cs-scroll
-//home-search
+//.home-search end
 
+//.advert
 .advert
-	+r(768)
-		margin-bottom: $section-indent - 30px
 	.info-block
 		&__item
 			.icon-delivery
 				width: 50px
 				margin-left: 4px
 				margin-right: 26px
-//adv
+//.advert ens
 
 .info-block
-	//info-block__items
+
+	//.info-block__items
 	&__items
 		+row-flex()
 		justify-content: space-between
-		+r(1024)
+		align-items: flex-start
+		+r-max(md)
 			justify-content: center
+		+r-max(xs)
+			justify-content: flex-start
 
-	//info-block__item
+	//.info-block__item
 	&__item
 		+col()
 		+size(4)
-		+size-sm(6)
 		+size-xs(12)
-		@extend %flexCenter
+		+flexCenter
 
-		+r(768)
+		+r-max(sm)
+			text-align: center
+			flex-direction: column
+			justify-content: center
+			align-items: center
+
+		+r-max(xs)
 			margin-bottom: 30px
+			text-align-last: left
+			flex-direction: row
+			align-items: center
+			justify-content: flex-start
+
+			&:last-child
+				margin-bottom: 0
 
 		.icon-delivery
 			margin-right: 26px
@@ -215,71 +248,122 @@
 				margin-left: 3px
 				margin-right: 25px
 
-	//info-block__icon
+	//.info-block__icon
 	&__icon
-		width: 60px
-		height: 40px
+		width: 65px
+		height: 65px
 		margin-right: 20px
 		fill: $color-text
 
-	//info-block__title
+		+r-max(sm)
+			margin-right: 0
+			margin-bottom: 20px
+
+		+r-max(xs)
+			margin-bottom: 0
+			margin-right: 20px
+
+		&--delivery
+			width: 72px
+			height: 65px
+
+		+r-max(xs)
+			width: 65px
+
+	//.info-block__title
 	&__title
-		color: $color-accent
+		display: block
+		margin-bottom: 10px
+		color: $color-text
 		font-size: 18px
 
-	//info-block__text
+		+r-max(sm)
+			margin-top: auto
+
+	//.info-block__text
 	&__text
 		color: #000000
 		font-size: 14px
 
-	//info-block__desc
+	//.info-block__desc
 	&__desc
+		max-width: 230px
 		margin-bottom: 0
-//info-block
+		font-family: $f-light
+		line-height: 1.4
+		+r-max(xs)
+			text-align: left
+//.info-block
 
 .baner
-	//bener__bg
+
+	//.bener__bg
 	&__bg
 		max-height: 390px
 		height: 100%
-		padding: 60px 40px
+		padding: 30px 60px
+		border-radius: $border-radius
+		overflow: hidden
 		+cover
+
 		+r(768)
 			max-height: 280px
 			padding: 40px
+
 		+r(480)
 			max-height: 200px
 			padding: 20px
-	//bener__title
+
+	//.bener__title
 	&__title
 		margin-bottom: 25px
 		color: #000
-		font-family: $f-black
+		font-family: $f
+		font-size: 36px
 		+r(480)
 			font-size: 20px
 			margin-bottom: 10px
-	//bener__desc
+
+	//.bener__desc
 	&__desc
 		max-width: 300px
 		margin-bottom: 30px
 		color: #000
-		font-family: $f-medium
-		font-size: 18px
+		font-family: $f
 		+r(480)
-			font-size: 14px
 			margin-bottom: 10px
-	//bener__phone
+
+	//.bener__phone
 	&__phone
 		color: #000
-		font-family: $f-black
-		font-size: 24px
+		font-family: $f
+		font-size: 36px
 		+r(480)
 			font-size: 18px
 
-	//baner .slick-slide
+	&--overlay
+		.baner
+			&__bg
+				box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.08)
+				position: relative
+
+				& > *
+					color: #fff
+					position: relative
+					z-index: 1
+
+				&::before
+					content: ''
+					display: block
+					+coverdiv
+					background: linear-gradient(170.4deg, #12026D 3.82%, #11022D 35.68%, rgba(84, 0, 113, 0.69) 98.37%)
+					z-index: 0
+
+
+	//.baner .slick-slide
 	.slick-slide
 		margin: 0
-	//baner .slick-dots
+	//.baner .slick-dots
 	.slick-dots
 		padding: 0 44px
 		bottom: 25px
@@ -291,57 +375,19 @@
 					width: 10px
 					height: 10px
 					border-radius: 50%
-//baner
-
-.category
-	margin-bottom: 50px
-	//category__items
-	&__items
-		@extend %flex
-		// flex-wrap: wrap
-	//category__item
-	&__item
-		min-height: 190px
-		min-width: 220px
-		width: 100%
-		margin-bottom: 10px
-		margin-right: 10px
-		background-color: #eee
-		position: relative
-		overflow: hidden
-		filter: grayscale(100%)
-		&:hover
-			filter: grayscale(0)
-			.category__img
-				transform: scale(1.05)
-			.category__title
-				text-decoration: underline
-	//category__title
-	&__title
-		color: #ffffff
-		font-size: 14px
-		position: absolute
-		bottom: 20px
-		left: 15px
-		z-index: 2
-	//category__img
-	&__img
-		transform: scale(1)
-		transition: transform .5s ease-in-out
-		+coverdiv
-//catefoty
+//.baner
 
 .cs-grid
-	@extend %flex
+	+flex
 	+r(480)
 		flex-direction: column
 	&-container
 		margin-right: -10px
-		@extend %flex
+		+flex
 		width: 100%
 		+r(1024)
 			flex-direction: column
-	//category__box--left
+	//.category__box--left
 	&--left
 		width: 40%
 		margin-right: 10px
@@ -368,18 +414,18 @@
 				flex-direction: column
 			.category__item
 				width: 100%
-	//category__box--right
+	//.category__box--right
 	&--right
 		width: 60%
 		+r(1024)
 			width: 100%
-	//category__box--column
+	//.category__box--column
 	&--column
 		flex-direction: column
 		.category__item
-	//catecory__box--wide
+	//.catecory__box--wide
 	&--wide
-		@extend %flex
+		+flex
 		.category__item
 			+r(1024)
 				width: 50%
@@ -391,11 +437,11 @@
 					flex: inherit
 			+r(480)
 				width: 100%
-	//catecory__box--reverse
+	//.catecory__box--reverse
 	&--reverse
 		.category__item
 			&:first-child
 				flex: initial
 			&:last-child
 				flex: 1
-//category
+//.category

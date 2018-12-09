@@ -1,17 +1,31 @@
 .cs-checkbox
+	padding-left: 25px
 	font-size: 14px
 	cursor: pointer
+	position: relative
 	+nosel
 
+	+r(768)
+		padding-left: 40px
+
 	&:hover
-		.cs-checkbox__box
-			border: 1px solid $color-accent
+		.cs-checkbox
+			&__box
+				// border: 1px solid $color-accent
+				box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.5)
+				+r(768)
+					box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.3)
+			&__title
+				color: #525252
 
 	&.is-checked
-		.cs-checkbox__box
-			background-color: transparent
-			&::before
-				display: block
+		.cs-checkbox
+			&__title
+				color: $color-text
+			&__box
+				background-color: transparent
+				&::before
+					display: block
 
 	//cs-checkbox__wrap
 	&__wrap
@@ -19,7 +33,7 @@
 		align-items: center
 		width: 100%
 		text-align: center
-	
+
 	//cs-checkbox__dell
 	&__dell
 		display: none
@@ -32,9 +46,9 @@
 			fill: $color-accent
 			@include vcenter
 
-	input 
+	input
 		display: none;
-		&:checked + .cs-checkbox__box 
+		&:checked + .cs-checkbox__box
 			background-color: transparent
 			&::before
 				display: block
@@ -42,29 +56,34 @@
 	//cs-checkbox__title
 	&__title
 		font-size: 15px
-		color: $color-secondary
+		color: $color-text--light
+		+r(768)
+			padding: 3px 0
 
 	//cs-checkbox__box
 	&__box
 		display: inline-block
 		margin-right: 5px
-		width: 18px
-		height: 18px
-		border: 1px solid $gray
-		border-radius: 2px
-		position: relative
-		top: 4px
+		width: 14px
+		height: 14px
+		// border: 1px solid $gray
+		box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.3)
+		border-radius: 5px
+		+centre('y')
+		left: 0
+
+		+r(768)
+			width: 28px
+			height: 28px
+			box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25)
+
 		&::before
 			content: ''
-			width: 7px
-			height: 11px
-			border: solid $color-accent
-			border-width: 0 2px 2px 0	
-			position: absolute
-			left: 5px
-			top: 1px
-			transform: rotate(45deg)
 			display: none
+			+s('cs-check')
+			+centre()
+			+r(768)
+				+s('cs-check--mobile')
 
 	//cs-checkbox--pseudo
 	&--pseudo
@@ -108,18 +127,18 @@
 			&::before
 				color: #fff
 				left: 4px
-	
+
 	//cs-checkbox--radio
 	&--radio
 		background-color: transparent
 		&:hover
-			input 
+			input
 				&:checked + .cs-checkbox__box
 					border-color: lighten($color-accent, 7%)
 					&::before
 						background-color: lighten($color-accent, 7%)
 
-		input 
+		input
 			&:checked + .cs-checkbox__box
 				border: 2px solid $color-accent
 				background-color: transparent
@@ -151,7 +170,7 @@
 			&:first-child
 				border-radius: $border-radius 0 0 $border-radius
 				border-color: $color-border--lighten
-				border-right-color: transparent				
+				border-right-color: transparent
 			&:last-child
 				border-radius: 0 $border-radius $border-radius 0
 				border-color: $color-border--lighten
@@ -173,10 +192,10 @@
 		position: relative
 		z-index: 20
 		&:first-child
-			border-radius: 4px 0 0 4px		
+			border-radius: 4px 0 0 4px
 		&:last-child
 			border-right: 1px solid $color-border
-			border-radius: 0  4px 4px 0		
+			border-radius: 0  4px 4px 0
 		&:hover
 			border-color: $color-border
 			border-right-color: transparent
@@ -204,17 +223,12 @@
 	//cs-checkbox--transform
 	&--transform
 		.cs-checkbox
-			&__title
-				+r(480)
-					padding: 4px 15px 5px
-					font-family: $f-light
-					border: 1px solid $color-border--lighten
-					border-radius: 50px
 
 			&__box
-				@include max-screen(480)
-					display: none
-		
+				width: 20px
+				height: 20px
+				box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25)
+
 		input
 			@include max-screen(480)
 				&:checked ~ .cs-checkbox__title

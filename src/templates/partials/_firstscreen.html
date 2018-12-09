@@ -1,0 +1,136 @@
+<!-- begin firstscreen -->
+<section class="firstscreen js-firstscreen">
+	<div class="container">
+
+		{% if firstscreenTitle %}
+		<h1 class="h1 page__title firstscreen__title" itemprop="headline">
+			<span class="xs-hide">Интернет-магазин износостойких <br> автокомпонентов CS20 от производителя</span>
+			<span class="xs-only">Интернет-магазин <br> износостойких <br> автозапчастей </span>
+		</h1>
+		{% endif %}
+
+		<div class="firstscreen__line">
+
+			{% if firstscreenTitle %}
+			<div class="c-select__wrap">
+
+				<div class="c-select c-select--product js-c-select firstscreen__c-select w2 c-dropdown js-c-dropdown">
+					<div class="c-select__btn">
+						<div class="toggle c-select__toggle"><span></span></div>
+						<div class="c-select__val">Товары</div>
+					</div>
+					<div class="c-dropdown__list">
+						<div class="c-select__dropdown">
+							{% import "data/data.html" as products %}
+							{% for item in products.productsList %}
+							<li class="c-select__item">
+								<a href="javascript:void(0);" class="c-select__link">
+									{{ item.title }}
+								</a>
+							</li>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+
+				<div class="c-select c-select--avto js-c-select firstscreen__c-select c-dropdown js-c-dropdown">
+					<div class="c-select__btn">
+						<div class="toggle c-select__toggle"><span></span></div>
+						<div class="c-select__val">Авто</div>
+					</div>
+					<div class="c-dropdown__list">
+						<div class="c-select__dropdown">
+							<ul class="c-select__list">
+								{% import "data/data.html" as cars %}
+								{% for car in cars.cars %}
+								<li class="c-select__item">
+									<a href="javascript:void(0);" class="c-select__link">
+										{{ car.title }}
+									</a>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<a href="#" class="btn btn-link btn-link--icon sm-only--flex">
+					{{ mixin.icon('cs-sale', 'btn-link__icon') }}
+					Скидки
+				</a>
+			</div>
+			{% endif %}
+
+			{% include "partials/components/_search.html" %}
+
+			<div class="c-dropdown js-c-dropdown c-dropdown--wide c-dropdown--white ml-30 login sm-hide">
+				{{ mixin.icon('cs-user', 'c-dropdown__icon') }}
+				<span class="c-dropdown__title">Личный кабинет</span>
+
+				<ul class="c-dropdown__list login__clear">
+					<li class="c-dropdown__item">
+						<a href="#modal-auth" class="c-dropdown__link">Вход</a>
+					</li>
+					<li class="c-dropdown__item">
+						<a href="#modal-registr" class="c-dropdown__link">Регистрация</a>
+					</li>
+				</ul>
+
+				<ul class="c-dropdown__list login__auth">
+					<div class="c-dropdown__item">
+						<a href="#modal-registr" class="c-dropdown__link">
+							Ivan Petrov
+							{{ mixin.icon('cs-cog', 'login__icon') }}
+						</a>
+					</div>
+					<li class="c-dropdown__item">
+						<a href="#modal-auth" class="c-dropdown__link">Мои заказы</a>
+					</li>
+					<li class="c-dropdown__item">
+						<a href="#modal-registr" class="c-dropdown__link">Персональные скидки</a>
+					</li>
+					<li class="c-dropdown__item">
+						<a href="#modal-registr" class="c-dropdown__link">Выход</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="c-dropdown js-c-dropdown c-dropdown--white sm-hide" data-dropdown-position="right">
+				<div class="cart-link">
+					{{ mixin.icon('cs-cart', 'c-dropdown__icon') }}
+					<span class="cart-link__badge badge">32</span>
+				</div>
+				<span class="c-dropdown__title">Корзина</span>
+
+				<div class="c-dropdown__list">
+					<div class="cart-info">
+						<div class="cart-info__inner js-scroll">
+							{% for i in range(0, 7) %}
+							<div class="cart-info__item">
+								<div class="cart-info__img">
+									<img src="img/products/1/60x30/1.png" alt="alt">
+								</div>
+								<div class="cart-info__text">
+									<div class="cart-info__title js-text-overflow" data-text-overflow="60">Пыльник заднего амортизатора 2108 (2шт) СИНИЙ</div>
+									<div class="cart-info__price">536 руб.</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+						<div class="cart-info__footer">
+							<div class="cart-info__sum">Итого: <span>2144 руб</span></div>
+							<a href="cart.html" class="btn btn--small btn-outline-gray cart-info__btn">Перейти в корзину</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		{% if btnFilter %}
+			<button class="btn btn--filter js-filter--open sm-only">Открыть фильтр</button>
+		{% endif %}
+
+	</div>
+</section>
+<!-- end firstscreen -->

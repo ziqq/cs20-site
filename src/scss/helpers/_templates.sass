@@ -5,7 +5,7 @@
 	+scrollbar-track
 		width: 4px
 	+scrollbar-thumb
-		background-color: #281241
+		background-color: #c4c4c4
 
 =bdrs
 	border-radius: $border-radius
@@ -14,28 +14,35 @@
 	border: 1px solid $color-border--lighten
 	border-radius: $border-radius
 
-%flex
+=flex
 	display: flex
 
-%flexCenter
+=flexCenter
 	display: flex
 	align-items: center
 
-%flexColumn
+=flexColumn
 	display: flex
 	flex-direction: column
 
 %textLight
 	font-family: $f-light
 	font-weight: 300
-	
+
 %inputStyle
 	display: inline-block
-	padding: 8px 30px 8px 15px
 	background-color: #fff
+	border: 1px solid $gray--light
+	border-radius: $border-radius
 	+placeholder
 		color: $gray--light
 		font-size: 14px
+
+	&:hover
+		border-color: #a0a0a0
+
+	&:focus
+		border-color: $color-border
 
 %responsMobile
 	+r(480)
@@ -54,6 +61,7 @@
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,.1), 0 0 4px 0 rgba(0,0,0,.1)
 
 %box
-	padding: 20px 20px 25px
-	border: 1px solid $gray--lighten
+	background: #fff
+	border: 0.25px solid #C4C4C4
 	border-radius: $border-radius
+	box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.08)

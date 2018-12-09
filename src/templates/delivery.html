@@ -2,14 +2,18 @@
 title: Доставка | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
 
 delivery:
- - img: img/general/delivery/pr.png
-   alt: Почта России
- - img: img/general/delivery/dl.png
-   alt: Деловые линии
- - img: img/general/delivery/pek.png
-   alt: Пек
- - img: img/general/delivery/energy.png
-   alt: Енергия
+ - img: 'pr'
+   title: 'Почта России'
+   text: 'Доставка занимает от 4 до 30 дней, всё зависит от веса посылки и адреса доставки. Подробнее можете узнать на сайте отправителя pochta.ru'
+ - img: 'dl'
+   title: 'Деловые Линии'
+   text: 'Одна из крупнейших российских транспортно-экспедиционных компаний. Доставка занимает от 5 до 35 дней, всё зависит от типа груза и адреса доставки. Подробнее можете узнать на сайте отправителя dellin.ru'
+ - img: 'pek'
+   title: 'ПЭК'
+   text: 'Является одним из крупнейших грузоперевозчиков России. Доставка занимает от 1 до 45 дней, всё зависит от веса груза и адреса доставки. Подробнее можете узнать на сайте отправителя pecom.ru'
+ - img: 'energy'
+   title: 'ТК Энергия'
+   text: 'Международная транспортная компания. Доставка занимает от 1 до 40 дней, всё зависит от веса груза и адреса доставки. Подробнее можете узнать на сайте отправителя nrg-tk.ru'
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -28,12 +32,7 @@ delivery:
 					</a>
 				</li>
 				<li class="breadcrumbs__item">
-					<a href="#" class="breadcrumbs__link" itemprop="url">
-						<span class="breadcrumbs__title" itemprop="title">Каталог</span>
-					</a>
-				</li>
-				<li class="breadcrumbs__item">
-					<span class="breadcrumbs__title" itemprop="title">Патрубки / Шланги</span>
+					<span class="breadcrumbs__title" itemprop="title">Доставка</span>
 				</li>
 			</ul>
 		</div>
@@ -42,30 +41,151 @@ delivery:
 
 	<!-- begin delivery -->
 	<div class="container">
-		<div class="delivery__section">
-			<h1 class="h1 page-title delivery__title" itemprop="headline">Доставка</h1>
-			<div class="delivery__desc">О точном времени доставки Вам сообщит менеджер при уточнении заказа. Если заказанный товар отсутствует на складе интернет-магазина, доставка заказа проводится на следующий рабочий день после оступления товара на склад. О времени поступления заказанного товара на склад Вам сообщит наш менеджер.</div>
-		</div>
-		
-		<div class="delivery__section">
-			<h3 class="h3 delivery__subtitle">Возможные способы доставки</h3>
-			<div class="delivery__items">
-				{% for item in delivery %}
-				<div class="delivery__item">
-					<img src="{{item.img}}" alt="{{item.фде}}" class="delivery__img">
+
+		<div class="cs-card cs-card--center">
+			<div class="cs-card__inner">
+				<div class="cs-card__desc">
+						<h1 class="h1 page-title" itemprop="headline">Доставка</h1>
+						<p class="cs-card__text">О точном времени доставки Вам сообщит менеджер при уточнении заказа. Если заказанный товар отсутствует на складе интернет-магазина, доставка заказа проводится на следующий рабочий день после оступления товара на склад. О времени поступления заказанного товара на склад Вам сообщит наш менеджер.</p>
+					</div>
+					<div class="cs-card__img cs-card__img--fix pos-xs-one">
+						<img src="img/general/delivery.png" alt="Доставка">
+					</div>
 				</div>
-				{% endfor %}
+		</div>
+
+		<div class="cs-card cs-card--center  cs-card--reverse">
+			<h3 class="cs-card__title delivery__subtitle xs-hide">Возможные способы доставки</h3>
+
+			<div class="cs-slider cs-slider--delivery js-cs-slider--hero">
+				<div class="cs-slider__arrow cs-slider__arrow--prev"></div>
+				<div class="cs-slider__arrow cs-slider__arrow--next"></div>
+
+				<div class="cs-slider__slides">
+					{% for item in delivery %}
+					<div class="cs-slider__slide">
+
+						<div class="cs-card__inner">
+							<div class="cs-card__img">
+								<img src="img/general/delivery/{{ item.img }}.png" alt="{{ item.title }}">
+							</div>
+							<div class="cs-card__desc">
+								<h4 class="h4">{{ item.title }}</h4>
+								<p class="cs-card__text">{{ item.text }}</p>
+							</div>
+						</div>
+
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+
+
+		</div>
+
+		<div class="cs-card no-padding">
+
+			<div class="cs-card__inner">
+				<div class="cs-card__desc">
+					<h3 class="cs-card__title delivery__subtitle">Самовывоз со склада</h3>
+					<p class="cs-card__text">Вы можете самостоятельно забрать заказ с нашего склада</p>
+					<ul class="list list--text">
+						<li class="list__item">
+							<span>Адрес:</span>
+							<strong>г. Балаково, ул. Транспортная 6/1</strong>
+						</li>
+						<li class="list__item">
+							<span>Время работы:</span>
+							<strong>Пн-Пт 8:00-17:00</strong>
+						</li>
+						<li class="list__item">
+							<span>Телефон: </span>
+							<strong><a href="tel:88005552540">8-800-555-25-40</a></strong>
+						</li>
+					</ul>
+				</div>
+				<div class="cs-card__img cs-card__map map">
+					<div id="map"></div>
+				</div>
 			</div>
 		</div>
 
-		<div class="delivery__section">
-			<h3 class="h3 delivery__subtitle">Самовывоз со склада</h3>
-			<div class="delivery__desc">Только для города Балаково.Склад находится по адресу: г. Балаково, ул. Транспортная 6/1, время работы: Пн-Пт 8:00-17:00, телефон: 8-800-555-25-40</div>
+		<div class="cs-card">
+			<h3 class="cs-card__title delivery__subtitle">Вопросы и ответы</h3>
+				<div class="cs-card__qustions">
+					<h4 class="h4">Что если я не могу найти нужную мне деталь?</h4>
+					<p class="cs-card__text">Напишите нашему консультанту в диалог на сайте или позвоните на горячую линию по номеру 8 800 555 25 40</p>
+
+					<h4 class="h4">Как отследить статус заказа?</h4>
+					<p class="cs-card__text">После того, как Вы сделаете заказ, на электронную почту, которую указали в личном кабинете, будет отправлено письмо, где указан сайт и трек номер, по которому Вы сможете отследить Вашу посылку.</p>
+
+					<h4 class="h4">Как отменить заказ?</h4>
+					<p class="cs-card__text">Вы можете сделать это несколькими способами. В личном кабинете можно нажать кнопку “отменить заказ”. Позвонить по номеру 8-800-555-25-40, от Вас потребуется номер и дата Вашего заказа. Написать нашему консультанту в диалоге на сайте или в любых социальных сетях.</p>
+				</div>
+
+				<form class="delivery__form pedit">
+					<h4 class="h4">Задать вопрос о доставке:</h4>
+
+					<div class="row">
+						<div class="col-6 col-sm-12">
+							<div class="pedit__item">
+								<div class="pedit__title">Фамилия Имя Отчество:<i>*</i></div>
+								<div class="pedit__field">
+								<div class="cs-input ">
+									<input type="text" class="cs-input__field" placeholder="">
+									<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+								</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-6 col-xs-12">
+								<div class="pedit__item">
+									<div class="pedit__title">Эл. почта:<i>*</i></div>
+									<div class="pedit__field">
+									<div class="cs-input">
+										<input type="email" class="cs-input__field">
+										<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+									</div>
+									</div>
+								</div>
+								</div>
+								<div class="col-6 col-xs-12">
+								<div class="pedit__item">
+									<div class="pedit__title">Телефон:<i>*</i></div>
+									<div class="pedit__field">
+									<div class="cs-input is-invalid">
+										<input type="num" class="cs-input__field js-phone-mask">
+										<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+									</div>
+									</div>
+								</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-6 col-sm-12">
+							<div class="pedit__item pedit__item--text">
+								<div class="pedit__title">Комментарий:<i>*</i></div>
+								<div class="pedit__field">
+								<textarea class="pedit__textarea"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<p class="pedit__info-text">* - поля, отмеченные звёздочкой, обязательны для заполнения</p>
+					<div class="button-box">
+						<button class="btn btn-outline-gray-light pedit__btn">Оставить свой вопрос</button>
+					</div>
+				</form>
 		</div>
 	</div>
 	<!-- end delivery -->
 
-</div>	
+</div>
 <!-- end home -->
 
+{% endblock %}
+
+{% block scripts %}
+<script async defer src ="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnkTBYnYseWFYqDk3wb4-eWn4507c7CSw"></script>
 {% endblock %}

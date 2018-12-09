@@ -33,13 +33,15 @@
 <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
 	<div class="page-wrapper is-auth {{wrapClass}}">
+		{% include "partials/components/_mobile-menu.html" %}
 		{% include "partials/_header.html" %}
 		{% block content %}{% endblock %}
 		{% include "partials/_footer.html" %}
 	</div>
 
-	<div class="overlay"></div>
-	<div class="go-top js-go-top">На верх</div>
+	<div class="overlay js-overlay"></div>
+	<div class="preloader js-preloader"></div>
+	<div class="go-top js-go-top is-hidden">На верх</div>
 	<!-- begin windows -->
 	<div class="windows">
 		{% include "partials/_popup.html" %}

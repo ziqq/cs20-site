@@ -1,6 +1,6 @@
 {% import "partials/assets/_mixins.html" as mixin %}
 
-<!-- 
+<!--
 <div class="cs-dropdown js-cs-dropdown">
 	наведи сюда
 	<div class="cs-dropdown__list">это появится</div>
@@ -62,20 +62,20 @@
 <a href="card.html" class="catalog-item js-catalog-item{{class}}">
 
 	<div class="catalog-item__inner">
-		<div class="catalog-item__img cs-slider js-ss-slider image-wrapper" 
+		<div class="catalog-item__img cs-slider js-ss-slider image-wrapper"
 		data-ss-images="img/examples/user/catalog/catalog-0.jpg;img/examples/user/catalog/catalog-1.jpg;img/examples/user/catalog/catalog-2.jpg;img/examples/user/catalog/catalog-3.jpg;img/examples/user/catalog/catalog-4.jpg"></div>
 
 		<div class="catalog-item__text">
 			<div class="catalog-item__header">
 				<div class="catalog-item__header-text">
-					<h3 class="catalog-item__title">Студия "Слеза дракона"</h3>	
+					<h3 class="catalog-item__title">Студия "Слеза дракона"</h3>
 					<div class="catalog-item__address place-text" itemprop="address" itemtype="http://schema.org/PostalAddress">
 						<div class="place-text__address"  itemprop="addressLocality">
 							<span itemprop="addressLocality">Москва</span>, 	<span itemprop="streetAddress">ул. Гагарина, 28/2</span>
 							<span class="place-text__metro">м. Лубянка</span>
 						</div>
 					</div>
-				</div>				
+				</div>
 			</div>
 
 			<div class="catalog-item__info">
@@ -142,36 +142,6 @@
 </a>
 {% endmacro %}
 
-
-{% macro socialBtn(class) %}
-<!-- begin social -->
-<div class="social {{ class }}">
-	<ul class="social__list">
-		<li class="social__item">
-			<a href="#" class="social__link">
-				{{ mixin.icon('social__instagram', 'social__icon') }}
-			</a>
-		</li>
-		<li class="social__item">
-			<a href="#" class="social__link">
-				{{ mixin.icon('social__youtube', 'social__icon') }}
-			</a>
-		</li>
-		<li class="social__item">
-			<a href="#" class="social__link">
-				{{ mixin.icon('social__telegram', 'social__icon') }}
-			</a>
-		</li>
-		<li class="social__item">
-			<a href="#" class="social__link">
-				{{ mixin.icon('social__vk', 'social__icon') }}
-			</a>
-		</li>
-	</ul>
-</div>
-<!-- end social -->
-{% endmacro %}
-
 {% macro phone(class) %}
 <!-- begin phone -->
 <div class="phone {{ class }}">
@@ -192,4 +162,3 @@
 </nav>
 <!-- end lk-nav -->
 {% endmacro %}
-			

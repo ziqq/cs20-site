@@ -1,11 +1,12 @@
 .breadcrumbs
-	padding: $gutter 0
-	+r(768)
-		padding: 15px 0
+	padding: 20px 0 30px
+
+	+r-max(xs)
+		padding-bottom: 20px
 
 	//breadcrumbs__wrap
 	&__wrap
-		@extend %flexCenter
+		+flexCenter
 		.button-link--exit
 			margin-left: auto
 			text-decoration: none
@@ -15,18 +16,21 @@
 
 	//breadcrumbs__list
 	&__list
-		@extend %flexCenter
+		+flexCenter
 
 	//breadcrumbs__item
 	&__item
 		position: relative
 		& + &
-			margin-left: 15px
+			margin-left: 30px
 		&::after
-			content: '/'
+			content: '\f105'
+			font-family: fontawesome
 			font-size: 14px
-			+vy
-			right: -10px
+			line-height: 1
+			position: absolute
+			top: 6.5px
+			right: -15px
 		&:last-child
 			+r(480)
 				max-width: 335px
@@ -42,14 +46,17 @@
 
 	//breadcrumbs__link
 	&__link
+		font-family: $f
 		font-size: 14px
 		.breadcrumbs__title
-			color: $color-accent
+			color: $color-text--light
+			&:hover
+				color: $color-text
 
 	//breadcrumbs__title
 	&__title
 		font-size: 14px
-		color: #000
+		color: $color-text
 		+r(320)
 			font-size: 13px
 
@@ -57,7 +64,7 @@
 	&--icon
 		.breadcrumbs
 			&__list
-				@extend %flexCenter
+				+flexCenter
 				justify-content: spase-between
 				+r(480)
 					justify-content: center
@@ -65,9 +72,9 @@
 				margin: auto
 				&.is-active, &.is-checked
 					.breadcrumbs__link
-						color: #000
+						color: $color-text
 					.icon
-						fill: #000
+						fill: $color-text
 				&:last-child
 					.breadcrumbs__link
 						&::before

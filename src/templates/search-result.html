@@ -13,18 +13,21 @@ filterType:
  - title: Коврики
 
 filterCar:
- - title: 1118 Калина
- - title: 1119 Калина
- - title: 2101-2107
- - title: 2108-2109
- - title: 2110-2112
+ - title: Largus
+ - title: Renault Logan
+ - title: Vesta
+ - title: X-RAY
+ - title: ВАЗ 2118 Калина
+ - title: ВАЗ 2101-07
+ - title: ВАЗ 2108-99
+ - title: ВАЗ 2110-12
  - title: 2113-2115
 
 filterSeries:
- - title: Comfort
- - title: Drive
- - title: Profi
- - title: Original+
+ - title: Комфорт
+ - title: Профи
+ - title: Драйв
+ - title: Оригинал +
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -53,81 +56,44 @@ filterSeries:
 	<!-- begin search-result -->
 	<div class="search-result">
 		<div class="container">
+
+			<!-- begin catalog__topline -->
 			<div class="catalog__topline">
-				<h1 class="h1 catalog__title page-title" itemprop="headline">Результаты поиска</h1>
+				<h1 class="h1 catalog__title page-title" itemprop="headline">Патрубки / Шланги</h1>
 				<!-- begin sorting -->
 				<div class="sorting catalog__sorting">
 					<div class="sorting__count">
-						<span class="sorting__title">Показывать по:</span>
 						<select class="sorting__select js-select no-search">
-							{% for i in range(0, 11) %}
-							<option value="{{i+1}}">{{i+1}}</option>
-							{% endfor %}﻿		 				
-						</select>	
+							<option value="Сначала популярное">Сначала популярное</option>
+							<option value="Сначала дешевле">Сначала дешевле</option>
+							<option value="Сначала дороже">Сначала дороже</option>
+							<option value="Со скидками">Со скидками</option>
+							<option value="Лучшие оценки">Лучшие оценки</option>
+						</select>
 					</div>
-					<div class="sorting__list">
-						<button class="sorting__btn sorting__btn--list js-sorting-btn js-sorting-btn--list"></button>
-						<button class="sorting__btn sorting__btn--tile js-sorting-btn js-sorting--btn--tile is-active"></button>
+					<div class="sorting__list sm-only--flex">
+						<button class="sorting__btn sorting__btn--list js-sorting-btn is-active" data-sorting="3"></button>
+						<button class="sorting__btn sorting__btn--tile js-sorting-btn" data-sorting="2"></button>
 					</div>
 				</div>
 				<!-- end sorting -->
-			</div>		
-		
+			</div>
+			<!-- end catalog__topline -->
+
 			<div class="product-item__wrap js-products">
-				{% for i in range(0, 10) %}
-				<div class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-					<div class="product-item__img">
-						<img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
-					</div>
-					<div class="product-item__desc">
-						<div class="product-item__desc_in">
-							<h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт) <span>profi синий силикон</span></h4>
-							<div class="product-item__product-info product-info">
-								<ul class="product-info__list">
-									<li class="product-info__item">Артикул: <span>05748</span></li>
-									<li class="product-info__item">Каталожный номер: <span>3105-1203132</span></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="product-item__footer">
-						<div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-							<span class="price__cost">2232 <i class="fa fa-rub"></i></span>
-							<meta itemprop="price" content="2232">
-							<meta itemprop="priceCurrency" content="RUB" />
-							<span class="price__stock">Есть в наличии</span>
-						</div>
-						<div class="product-item__buttons">
-							<button class="button button--accent product-item__btn">Добавить в корзину</button>
-							<button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
-						</div>
-					</div>
-				</div>
-				{% endfor %}﻿
+				{% for i in range(0, 2) %}
+					{% include "partials/_product-item.html" %}
+				{% endfor %}
 			</div>
 
-			<!-- begin pagination -->
-			<div class="search-result__pagination pagination">
-				<ul class="pagination__list">
-					<li class="pagination__item">
-						<a href="#" class="pagination__link"><i class="fa fa-angle-left pagination__icon"></i></a>
-					</li>
-					{% for i in range(1, 8) %}
-					<li class="pagination__item">
-						<a href="#" class="pagination__link">{{i}}</a>
-					</li>
-					{% endfor %}﻿
-					<li class="pagination__item">
-						<a href="#" class="pagination__link"><i class="fa fa-angle-right pagination__icon"></i></a>
-					</li>
-				</ul>
+			<div class="search-result__pagination">
+				{% include "partials/_pagination.html" %}
 			</div>
-			<!-- end pagination -->
 
 		</div>
 	</div><!-- end search-result -->
 
-</div>	
+</div>
 <!-- end home -->
 
 {% endblock %}

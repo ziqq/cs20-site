@@ -1,13 +1,19 @@
 .header
-	height: 100px
-	position: fixed
+	height: 60px
+	border-bottom: 1px solid rgba(#c4c4c4, .2)
+	position: absolute
 	top: 0
 	left: 0
 	right: 0
 	z-index: z(fixed)
 	+tr
-	+r(992)
-		height: 70px
+
+	&.header--fixed
+		position: fixed
+
+	+r-max(md)
+		height: 60px
+		border: 0
 
 	&.is-fixed
 		height: 70px
@@ -21,124 +27,57 @@
 			&__link
 				line-height: 70px
 
-	//header__inner
+	//.header__inner
 	&__inner
-		height: 100px
+		height: 58px
+		+flexCenter
 		+tr
-		@extend %flex
-		+r(992)
-			height: 70px
 
-	//header__left
-	&__left, &__right
-		width: 50%
-		@extend %flexCenter
+	//.header__menu
+	&__menu
+		+flexCenter
+		justify-content: center
+		flex: 1
 
-	&__left
-		+r(1024)
-			width: 60%
-
-	//header__right
-	&__right
-		justify-content: flex-end
-		+r(1024)
-			width: 40%
+		.nav
+			width: 100%
 
 	&__logo, &__cart, &__search
 		margin-right: 30px
 
-	//header__search
-	&__search
-		+r(992)
-			display: none
+	//.header__hamburger
+	&__hamburger
+		+r-max(md)
+			position: absolute
+			top: 18px
+			left: 10px
 
-	//header__phone
-	&__phone
-		+r(1024)
-			display: none
-
-	//header__logo
+	//.header__logo
 	&__logo
 		+r(992)
 			margin-right: 0
 			+vcenter
 
-	//header__cart-link
+	//.header__cart-link
 	&__cart-link
 		margin-right: 40px
-		+r(992)
-			margin-right: 15px
-//header
 
+		+r-max(md)
+			position: absolute
+			top: 17px
+			right: 10px
+
+		+r(992)
+			margin-right: 10px
+//.header
+
+//.logo
 .logo
 	display: inline-block
 	&__img
-		width: 80px
-		height: 70px
+		width: 40px
+		height: 40px
 		+tr
-		+r(992)
-			width: 60px
-			height: 50px
-//logo
-
-.search
-	max-width: 300px
-	width: 100%
-	display: inline-block
-	position: relative
-	height: 32px
-	padding: 0
-	position: relative
-
-	&__field
-		height: 32px
-		padding: 3px
-		padding-right: 45px
-		display: inline-block
-		font-family: $f-light
-		font-size: 15px
-		color: #fff
-		width: 0px
-		border: none
-		outline: none
-		cursor: pointer
-		background: none
-		position: absolute
-		top: 0
-		right: 0
-		z-index: 3
-		transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000)
-		+placeholder
-			color: #fff
-
-		&:focus:hover
-			border-bottom: 1px solid #BBB
-
-		&:focus
-			width: 300px
-			z-index: 1
-			border-bottom: 1px solid #BBB
-			cursor: text
-			+r(320)
-				width: 250px
-
-	&__submit
-		display: inline-block
-		height: 30px
-		width: 26px
-		text-indent: -10000px
-		cursor: pointer
-		border: none
-		background-color: transparent
-		+s('search')
-		position: absolute
-		top: 2px
-		right: 0
-		z-index: 2
-
-	&__icon
-		fill: #fff
-//search
 
 .cart-link
 	cursor: pointer
@@ -148,28 +87,30 @@
 		.cart__icon
 			color: $gray--light
 
-	//cart__icon
+	//.cart-link__icon
 	&__icon
+		width: 25px
+		height: 25px
 		fill: #fff
 
-	//cart__badge
+	//.cart-link__badge
 	&__badge
 		position: absolute
-		top: -11px
+		top: -7px
 		left: 10px
-//cart-link
+//.cart-link-link
 
 .phone
 	position: relative
 
-	//phone__link
+	//.phone__link
 	&__link
 		display: block
 		color: #fff
 		font-size: 20px
 		line-height: 1
 
-	//phone__text
+	//.phone__text
 	&__text
 		color: #fff
 		font-family: $f-light
@@ -178,7 +119,7 @@
 		letter-spacing: 1.43px
 		text-transform: uppercase
 
-	//phone--icon
+	//.phone--icon
 	&--icon
 		.phone__link
 			padding-left: 25px
@@ -190,60 +131,5 @@
 				position: absolute
 				top: 3px
 				left: 0
-//phone
+//.phone
 
-
-
-.search-hint
-	min-height: 143px
-	max-height: 100%
-	width: 100%
-	border: 0
-	border-radius: 0 0 $border-radius $border-radius
-	background-color: #281241
-	position: absolute
-	top: 100%
-	left: 0
-	right: 0
-	z-index: z(dropdown)
-	overflow-y: auto
-	+cs-scroll
-
-	+r(480)
-		border-right-color: transparent
-		border-left-color: transparent
-	    box-shadow: 0 10px 20px rgba(#000, .2)
-	    top: 100%
-
-	//search-hint__item
-	&__item
-		& + &
-			border-top: 1px solid #3d1e61
-
-		&.is-selected
-			background-color: #eee
-
-
-	//search-hint__link
-	&__link
-		padding: 7px 10px
-		@extend %flexCenter
-		transition: initial
-		display: flex
-		color: #bdbdbd
-		font-size: 14px;
-		&:hover
-			color: #bdbdbd
-			background-color: #3d1e61
-	//search-hint__bade
-	&__bade
-		width: 98px
-		margin-right: 5px
-		padding: 1px 5px
-		font-family: $f-medium
-		text-align: center
-		text-transform: uppercase
-		font-size: 10px
-		color: #000;
-		border-radius: $border-radius
-//search-hint

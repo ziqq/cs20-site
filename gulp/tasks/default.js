@@ -5,8 +5,8 @@ var config      = require('../config');
 gulp.task('default', function(cb) {
     runSequence(
         'build:dev',
+        'watch',
         'server',
-        'watch',        
         cb
     );
 });

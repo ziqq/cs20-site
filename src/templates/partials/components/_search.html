@@ -1,0 +1,28 @@
+<!-- begin search -->
+<div class="search__wrap">
+	<form action="" autocomplete="on" class="search js-search">
+		<div class="search__inner">
+			<input class="search__field js-search-input" type="text" placeholder="Я хочу купить..." autocomplete="off">
+			<svg class="icon icon-cs-close search__reset js-search--reset" style="display: none;" title="Сбросить">
+				<use xlink:href="img/sprite.svg#cs-close"></use>
+			</svg>
+			<div class="search__hint">
+				<div class="search-hint">
+					<ul class="search-hint__list">
+						{% for i in range(0, 5) %}
+							<li class="search-hint__item">
+								<span class="search-hint__text">Патрубки радиатора УАЗ 3160, </span>
+								<span class="search-hint__text">ЗМЗ 409, Е-2,3 (3шт)</span>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+		<button class="search__submit">
+			<span class="sm-hide">Найти</span>
+			{{ mixin.icon('cs-search', 'search__submit_icon sm-only') }}
+		</button>
+	</form>
+</div>
+<!-- end search -->

@@ -23,7 +23,7 @@ $('.js-cs-accordeon')
     });
 
 //cs dropdown
-if ($('.js-dropdown').length > 0) {
+if ($('.js-dropdown').length) {
     $(document).on('click', '.js-dropdown', function() {
         if ($(this).hasClass('is-active')) {
             $(this).removeClass('is-active');

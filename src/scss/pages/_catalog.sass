@@ -1,18 +1,24 @@
+//.catalog
 .catalog
 	padding-bottom: 100px
+	background-color: #f7f8fa
+	+r-max(sm)
+		padding-bottom: 60px
 
-	//catalog__topline
+	//.catalog__topline
 	&__topline
 		margin-bottom: 30px
-		@extend %flexCenter
+		+flexCenter
 		justify-content: space-between
-		+r(480)
-			flex-wrap: wrap
+
+		+r(768)
+			flex-direction: column
+			align-items: flex-start
 
 		.page-title
 			margin-bottom: 0
 
-	//catalog__title
+	//.catalog__title
 	&__title
 		+r(1024)
 			margin: 0
@@ -21,47 +27,102 @@
 		+r(480)
 			margin-bottom: $gutter
 
-	//catalog__sorting
+	//.catalog__sorting
 	&__sorting
 		width: auto
 		margin-left: auto
 		display: flex
 		align-items: center
-		+r(480)
-			margin: auto
 
-	//catalog__content
+		+r(768)
+			width: 100%
+			margin: 15px 0 0
+			+flexCenter
+
+			.sorting__list
+				margin-left: auto
+
+	//.catalog__content
 	&__content
-		@extend %flex
+		+flex
 		align-items: end;
 
-	//catalog__filter
+	//.catalog__filter
 	&__filter
 		width: 270px
 		margin-right: 30px
 		+r(480)
 			margin-right: 0
 
-	//catalog__products
+	//.catalog__products
 	&__products
 		width: calc(100% - 270px - 30px)
 		margin-left: auto
+		margin-bottom: 32px
 		position: relative
 		+r(768)
 			width: 100%
+			margin-bottom: 0
 		+r(480)
 			margin-bottom: $gutter
 
-	//catalog__pagination
+	//.catalog__pagination
 	&__pagination
 		margin-left: 300px
 		margin-top: 80px
 		+r(768)
 			margin-left: 0
-//catalog
 
+	//.catalog__info-view
+	&__info-view
+		margin-top: 50px
+		margin-left: 290px
+		+flexColumn
+		align-items: center
+		justify-content: center
+		+r-max(sm)
+			margin-left: 0
+			margin-top: 0
+
+		+r-max(sm)
+			margin-top: 20px
+
+		+r-max(xs)
+			margin-top: 0
+
+		span
+			margin-bottom: 15px
+			font-family: $f-light
+			font-size: 14px
+			color: $color-text--light
+
+	.product-item
+		&__wrap
+			.product-item
+				+size(4)
+
+				+r(480)
+					width: calc(50% - 20px)
+					margin-bottom: 10px
+
+					&:nth-child(odd)
+						margin-right: 5px
+
+					&:nth-child(even)
+						margin-left: 5px
+						margin-right: 10px
+
+			&.layout-two-column
+				.product-item
+					+size(6)
+
+					+r(480)
+						width: 100%
+						margin: 0 auto 20px
+//.catalog end
+
+//.filter
 .filter
-	background-color: #fff
 
 	+r(768)
 		width: 301px
@@ -76,40 +137,54 @@
 		&.is-open
 			transform: translateX(0)
 
-	//filter__inner
+	+r(480)
+		width: 100%
+
+	&.has-apply
+		.filter
+			&__body
+				padding-bottom: 60px
+
+	//.filter__inner
 	&__inner
-		border: 1px solid $color-border--light
-		background-color: #fff
 		position: relative
+		z-index: 1
 		+r(768)
 			border: 0
 			height: 100%
+			background-color: #fff
 
-	//filter__header
+	//.filter__header
 	&__header
 		height: 60px
 		line-height: 60px
 		margin-bottom: 25px
-		padding: 0 20px
+		padding: 0 1px 0 20px
 		background-color: #fff
-		// border-right: 1px solid $color-border--light
+		//. border-right: 1px solid $color-border--light
 		border-bottom: 1px solid $color-border--light
 		position: fixed
 		top: 0
 		left: 0
 		width: 300px
-		@extend %flexCenter
+		+flexCenter
+
+		+r(480)
+			width: 100%
+
 		+rmin(769)
 			display: none
+
 		.filter__title
 			margin: 0
 			padding: 0
 			font-family: $f
 			border-bottom: 0
-			@extend %flexCenter
+			+flexCenter
 
-	//filter__body
+	//.filter__body
 	&__body
+		+tr
 		+r(768)
 			position: absolute
 			top: 60px
@@ -120,64 +195,83 @@
 			+cs-scroll
 			+smooth-scroll
 
-	//filter__footer
+	//.filter__footer
 	&__footer
-		padding: 0 20px 20px
 
-	//filter__item
+	//.filter__item
 	&__item
 		margin-bottom: 20px
-		padding: 0 20px
+		@extend %box
+		+r(768)
+			margin-bottom: 0
+			border: 0
+			box-shadow: none
+
 		&_type
 			padding: 0
-			.filter__title
-				margin: 15px 20px 15px
+
 		&_price
 			.filter__content
 				margin-bottom: 20px
+
 		&_car
-			.filter__content
-				max-height: 250px
-				overflow-y: auto
-				+cs-scroll
-				+smooth-scroll
-		.button-link
+
+		.btn-link
 			font-family: $f-light
 			font-size: 13px
 			color: $gray--light
 			border-color: $gray--light
 
-	//filter__content
+	//.filter__content
 	&__content
+		padding: 0 20px 20px
+		position: relative
+		+r-min(sm)
+			// max-height: 265px
 
-	//filter__icon
+	//.filter__icon
 	&__icon
 		&--filter
 			width: 16px
 			height: 16px
 			margin-right: 8px
-		&--close
-			width: 13px
-			height: 13px
-			margin-left: auto
 
-	//filter__title
+		&--close
+			width: 35px
+			height: 35px
+			margin-left: auto
+			padding: 10px
+			cursor: pointer
+			fill: #8c8c8c
+
+	//.filter__title
 	&__title
 		display: block
-		margin-bottom: 15px
-		padding-bottom: 10px
-		color: #000
-		font-family: $f-bold
-		font-size: 15px
-		border-bottom: 1px solid $color-border--light
+		padding: 15px 20px
+		font-family: $f
+		font-size: 16px
+		color: $color-text
 
-	//filter__checkbox
+		.cs-accordeon__icon
+			right: 15px
+
+	//.filter__checkbox
 	&__checkbox
 		display: block
 		margin-bottom: 10px
-		+text-overflow
 
-	//filter__btn
+		+r(768)
+			margin-bottom: 15px
+
+		.cs-checkbox__title
+			display: block
+			width: 100%
+			+text-overflow
+
+		&:last-child
+			margin-bottom: 0
+
+	//.filter__btn
 	&__btn
 		display: block
 		margin: auto
@@ -195,7 +289,14 @@
 			color: #000
 			background-color: $gray--lighten
 
-	//filter__btn
+		&--reset
+			width: 100%
+			+r(768)
+				box-shadow: none
+				&:hover
+					box-shadow: none
+
+	//.filter__btn
 	&__btn-link
 		padding: 0
 		border-left: none
@@ -203,34 +304,50 @@
 		border-top: none
 		background-color: transparent
 		outline: none
+		+tr
 
-//filter
+		&:hover
+			color: $color-text
+			border-color: $color-text
+//.filter end
 
+//.range
 .range
-	//range__diapazon
+	//.range__diapazon
 	&__diapazon
-		@extend %flexCenter
+		+flexCenter
 		margin-bottom: 25px
 
-	//range__from
+	//.range__from
 	&__from, &__to
 		position: relative
+		&::after
+			content: '\f158'
+			font-size: 13px
+			color: $color-text--light
+			+fa
+			+centre('y')
+			right: 10px
+
 		input
 			width: 100px
 			height: 35px
 			padding-right: 20px
 			line-height: 35px
 			text-align: center
-			font-family: $f-black
+			font-family: $f-medium
+			color: $color-text--light
 			font-size: 14px
-			font-weight: 700
-			border: 1px solid $color-border--light
+			border: 1px solid #8C8C8C
 			border-radius: $border-radius
+			&:focus
+				color: $color-text
+				border-color: $color-accent
 		.fa
 			+vy
 			right: 5px
 
-	//range__to
+	//.range__to
 	&__to
 		margin-left: auto
 		&::before
@@ -244,67 +361,119 @@
 			+r(768)
 				left: -45px
 
-	//range__slider
+	//.range__slider
 	&__slider
-//range
+//.range end
 
+//.sorting
 .sorting
-	@extend %flexCenter
+	+flexCenter
 
-	//sorting__title
+	//.sorting__title
 	&__title
 		margin-right: 5px
 		color: #000
 		font-size: 14px
 
-	//sorting__list
+	//.sorting__list
 	&__list
-		@extend %flexCenter
+		+flexCenter
 		+r(480)
-			display: none
 			margin-left: auto
 
-	//sorting__btn
+	//.sorting__btn
 	&__btn
-		padding: 7px
 		background-color: transparent
 		border: 1px solid transparent
 		cursor: pointer
 		outline: none
-		@extend %flex
-		& + &
-			margin-left: 5px
+		+flex
+		+r(480)
+			padding: 0
+
+		&::before
+			content: ''
+			display: inline-block
+			+s(toggle)
+
 		&.is-active
-			border-color: #d5d1d1
-			background-color: #e9e8e9
-		//sorting__btn--list
+			&::before
+				content: ''
+				display: inline-block
+				+s(toggle--active)
+
 		&--list
-			&::before
-				content: ''
-				display: inline-block
-				+s(sorting--list)
-		//sorting__btn--tile
+			+r(480)
+				width: 44px
+				margin-right: 5px
+
+
 		&--tile
-			&::before
-				content: ''
-				display: inline-block
-				+s(sorting--tile)
+			width: 44px
+			+r(480)
+				width: 100%
+				&::before
+					+s(toggle-mobile)
+				&.is-active
+					&::before
+						+s(toggle-mobile--active)
 
 	&__count
-		margin-right: 15px
-		.select2-container
-			width: 65px !important
-			+r(480)
-				width: auto
+		// margin-right: 15px
+		+flexCenter
+
+
 		.select2-container--default .select2-selection--multiple, .select2-container--default .select2-selection--single, input, select, textarea
 			height: 36px
+
 		.select2-container--default .select2-selection--single .select2-selection__rendered
+			padding: 0 30px
 			line-height: 33px
+			text-align: right
+
+			+r(768)
+				padding-left: 0
+				text-align: left
+
 		.select2-container--default .select2-selection--single .select2-selection__arrow
 			height: 36px
 			top: 4px
-//sorting
 
+		.select2-container .select2-selection--single
+			border: 0
+
+		.select2-container--default .select2-selection--single
+			background-color: transparent
+
+		.select2-dropdown
+			min-width: 197px
+			border: 0
+			background: #fff
+			box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.25)
+			border-radius: 5px
+			overflow: hidden
+
+			+r(768)
+				min-width: auto
+
+		.select2-container
+			min-width: 197px
+
+			+r(768)
+				min-width: auto
+
+		.select2-results__option
+			padding: 6px 15px
+
+	//.sorting .cs-select select
+	.cs-select select
+		+r(768)
+			padding-left: 0
+			border: 0
+			background-color: transparent
+//.sorting end
+
+//.price
 .price
 	font-family: $f-black
 	font-size: 25px
@@ -313,206 +482,48 @@
 		font-family: $f
 		font-size: 14px
 		color: $color-text
-//price
+//.price end
 
-.product-item
-	width: 33.33%
-	padding: 25px
-	margin: 0 -1px -1px 0
-	background-color: #fff
-	border: 1px solid $color-border--light
-	box-shadow: 0 1px 1px transparent
-	z-index: 1
-	+tr
-	+gpu
-	+nosel
-	&:hover
-		border: 1px solid transparent
-		box-shadow: 0 20px 82px -5px rgba(0,0,9,0.25)
-		z-index: 2
-	+r(1024)
-		width: 50%
-	+r(768)
-		width: 50%
-	+r(480)
-		width: 100%
-		margin-bottom: $gutter/2
-		&:last-child
-			margin-bottom: 0
-
-	//product-item__wrap
-	&__wrap
-		@extend %flex
-		justify-content: flex-start
-		flex-wrap: wrap
-
-	//product-item__img
-	&__img
-		margin-bottom: 20px
-
-	//product-item__desc
-	&__desc
-
-	//product-item__numbers
-	&__product-info
-		display: none
-		margin-top: 15px
-
-	//product-item__title
-	&__title
-		height: 66px
-		margin-bottom: 13px
-		font-family: $f-medium
-		font-weight: 500
-		font-size: 16px
-		line-height: 1.4
-		color: #000
-		overflow: hidden
-	    text-overflow: ellipsis;
-	    position: relative
-		span
-			text-transform: uppercase
-
-	//product-item__price
-	&__price
-		margin-bottom: 18px
-		@extend %flexCenter
-		.price__stock
-			margin-left: auto
-
-	//product-item__stock
-	&__stock
-
-	//product-item__buttons
-	&__buttons
-
-	//product-item__btn
-	&__btn
-		display: block
-		width: 100%
-		&:first-child
-			margin-bottom: 7px
-
-	//product-item__dell
-	&__dell
-		display: inline-block
-		padding: 0
-		background-color: transparent
-		border: 0
-		position: absolute
-		top: 10px
-		right: 14px
-		+tr
-		+r(768)
-			top: 5px
-			right: 10px
-		&:hover
-			.icon
-				fill: #000
-		.icon
-			width: 12px
-			height: 12px
-			fill: $gray--light
-
-	//product-item--wide
-	&--wide
-		width: 100%
-		margin: -1px 0 0 -1px
-		position: relative
-		@extend %flexCenter
-		+r(1024)
-			width: 100%
-		+r(768)
-			width: 100%
-		& + &
-			border-top: 1px solid $gray--lighten
-		&:hover
-			border-top: 1px solid transparent
-			border-bottom: 1px solid transparent
-			& + .product-item
-				border-top: 1px solid transparent
-
-		.product-item
-			&__img
-				width: 175px
-				margin-right: 15px
-				margin-bottom: 0
-			&__desc
-				@extend %flexCenter
-				flex: 1
-				+i8-l
-					flex-wrap: wrap
-			&__title
-				height: auto
-				max-width: 365px
-				margin-right: 15px
-				margin-bottom: 0
-				color: #000
-				+r(768)
-					max-width: 300px
-				+i8-l
-					width: 100%
-					max-width: 100%
-					margin-right: 0
-					margin-bottom: 15px
-				span
-					text-transform: uppercase
-			&__price
-				margin: 0 25px 0 auto
-				color: #000
-				font-family: $f-bold
-				font-size: 25px
-				+r(768)
-					margin-right: 20px
-					font-size: 20px
-				+i8-l
-					margin-left: 0
-				.fa
-					font-size: 17px
-			&__product-info
-				display: block
-			&__counter
-				+i8-l
-					margin-left: auto
-
-	//product-item__footer
-	&__footer
-		.price
-			margin-bottom: 15px
-			margin-right: 0
-			&__cost
-				margin-right: 20px
-				.fa
-					font-size: 22px
-//product-item
-
+//.product-info
 .product-info
-	//numbers__list
+	//.numbers__list
 	&__list
-	//numbers__item
+	//.numbers__item
 	&__item
 		margin-bottom: 10px
 		color: $color-text
 		span
 			color: #000
-//numbers
+//.product-info end
 
+//.search-result
 .search-result
 	margin-bottom: $gutter*2.5
 	&__pagination
 		margin-top: $gutter*2
-	.product-item
-		width: 25%
-		+r(1024)
-			width: 33.33%
-		+r(768)
-			width: 50%
-		+r(480)
-			width: 100%
-			margin-bottom: $gutter/2
-			&:last-child
-				margin-bottom: 0
-		&.product-item--wide
-			width: 100% !important
 
-//.search-result
+	.product-item
+		&__wrap
+			.product-item
+				+size(3)
+				+size-sm(4)
+
+				+r(480)
+					width: calc(50% - 20px)
+					margin-bottom: 10px
+
+					&:nth-child(odd)
+						margin-right: 5px
+
+					&:nth-child(even)
+						margin-left: 5px
+						margin-right: 10px
+
+			&.layout-two-column
+				.product-item
+					+size(6)
+
+					+r(480)
+						width: 100%
+						margin: 0 auto 20px
+//.search-result end

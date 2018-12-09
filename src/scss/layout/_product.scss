@@ -1,0 +1,149 @@
+.product-item {
+	max-width: 345px;
+	padding: 25px;
+	background-color: #fff;
+	border: 0.25px solid #c4c4c4;
+	border-radius: $border-radius;
+	box-shadow: $bxs-box;
+	@include tr;
+	@include flexColumn;
+
+	@include r-max(xs) {
+		max-width: 280px;
+		margin: auto;
+		padding: 0px 15px 15px;
+	}
+
+	&:hover {
+		@include trfY(-10px);
+		box-shadow: $bxs-box--hover;
+
+		.product-item {
+			&__dell {
+				display: flex;
+			}
+		}
+	}
+
+	&__wrap {
+		@include row-flex;
+
+		.product-item {
+			margin-bottom: $gutter;
+			@include col;
+			@include size(3);
+		}
+
+		&.loyout-column {
+			margin: 0;
+
+			.product-item {
+				margin-bottom: $gutter;
+				padding: 20px;
+				box-shadow: none;
+				max-width: 100%;
+				width: 100%;
+				margin: 0;
+				position: relative;
+				@include flexCenter;
+				flex-direction: row;
+
+				&:hover {
+					transform: none;
+				}
+
+				&__img {
+					max-width: 190px;
+					margin-right: 30px;
+				}
+
+				&__desc {
+					width: 100%;
+					@include flexCenter;
+				}
+
+				&__title {
+					max-width: 235px;
+					margin-right: 20px;
+					margin-bottom: 0;
+					font-family: $f-medium;
+				}
+
+				&__price {
+					margin-left: auto;
+					font-family: $f-medium;
+					font-size: 20px;
+				}
+			}
+
+		}
+	}//.product-item__wrap
+
+	&__img {
+		flex-basis: 50%;
+	}//.product-item__img
+
+	&__bottom {
+		@include flexCenter;
+		flex-grow: 1;
+	}//.product-item__bottom
+
+	&__title {
+		display: block;
+		margin-bottom: 20px;
+		font-family: $f-light;
+		font-size: 16px;
+	}//.product-item__title
+
+	&__price {
+		font-family: $f-medium;
+		font-size: 24px;
+		color: $color-text;
+
+		span {
+			display: block;
+			width: 100%;
+
+			@include r-max(xs) {
+				font-size: 21px;
+			}
+		}
+	}//.product-item__price
+
+	&__btn {
+		margin-left: auto;
+	}//.product-item__btn
+
+	&__dell {
+		width: 35px;
+		height: 35px;
+		padding: 10px;
+		background-color: transparent;
+		border: 0;
+		position: absolute;
+		top: 0;
+		right: 0;
+		fill: $gray--light;
+		display: none;
+		align-items: center;
+
+		.icon {
+
+		}
+
+		&:hover {
+			fill: $gray;
+		}
+	}
+
+	&.cs-slider__slide {
+		margin: 0;
+	}
+
+}//.product-item
+
+.product-popular {
+	.slick-slide {
+		margin: 0 15px;
+	}//.product-popular .slick-slide
+}//.product-popular

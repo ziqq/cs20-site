@@ -1,9 +1,12 @@
 //base style
-html 
+html
 	height: 100%
 	overflow-x: hidden
 
-body 
+	&.is-fixed
+		overflow: hidden
+
+body
 	position: relative
 	min-width: 320px
 	font-family: $font-family-base
@@ -16,11 +19,14 @@ body
 	scroll-behavior: smooth
 	+smooth-scroll
 	+smooth-font
-	+cs-scroll
+
+	&.is-loading
+		.preloader
+			display: none
 
 header,footer,main,div,section,ul,ol
 	+clr
-		
+
 b, strong
 	font-family: $f-bold
 
@@ -31,17 +37,84 @@ input, textarea, select
 		font-size: 14px
 		color: $color-placeholder
 
-textarea, select
+input, select
 	min-height: 40px
+	padding: 8px 30px 8px 15px
+
+textarea, select
 	width: 100%
-	border: 1px solid $gray--light
-	border-radius: $border-radius
-	resize: none
 	+cs-scroll
+
+textarea
+	min-height: 100px
+	padding: 8px 15px
+	border-radius: $border-radius
+	%inputStyle
+	resize: none
+
+	+placeholder
+		color: $gray--light
+		font-size: 14px
+
+	&:hover
+		border-color: #a0a0a0
+
+	&:focus
+		border-color: $color-border
 
 img
 	display: block
 	width: 100%
+
+.icon
+	display: inline-block
+	width: 22px
+	height: 22px
+
+.overlay
+	display: none
+	background-color: rgba(#000, .5)
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: z(fixed)
+
+	&.is-active
+		display: block
+
+.preloader
+	display: block
+	background-color: #fff
+	position: fixed
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	z-index: 99999
+
+.windows
+	display: none
+
+.container
+	max-width: 1200px
+	width: 100%
+	margin-left: auto
+	margin-right: auto
+	+r(1200)
+		padding: 0 20px
+	+r(480)
+		padding: 0 10px
+
+.text-upercase
+	text-transform: uppercase
+
+.clearfix
+	+clr
+
+.js-scroll
+	+smooth-scroll
 
 a
 	color: $color-accent
@@ -54,88 +127,106 @@ a
 h1,.h1, h2,.h2, h3,.h3, h4,.h4, h5,.h5, h6,.h6
 	margin-top: 0
 	font-family: $f
-	color: #000
+	color: $color-text
 
 h1,.h1
 	font-family: $f-bold
 	font-weight: 600
 	font-size: 36px
-	line-height: 1.05em
 	+r(1024)
 		font-size: 34px
-		line-height: 1.125em
 	+r(768)
-		font-size: 28px	
+		font-size: 28px
 
 h2,.h2
 	font-family: $f-bold
 	font-weight: 600
 	font-size: 36px
-	line-height: 1.25em
 	+r(1024)
 		font-size: 32px
-		line-height: 1.25em
 	+r(768)
 		font-size: 25px
-		line-height: 1.15384615em
 
 h3,.h3
 	font-size: 28px
 	font-family: $f-medium
 	font-weight: 500
-	line-height: 1.25em
 	+r(1024)
 		font-size: 24px
 	+r(768)
 		font-size: 22px
-		line-height: 1.13636364em
 
 h4,.h4, h5,.h5, h6,.h6
 	font-size: 18px
 	font-weight: 400
-	line-height: 1.22222222em
 	margin-bottom: $half-indent
-	+r(768)
-		line-height: 1.11111111em
 
 p
 	margin-bottom: 20px
 	color: #000
 	font-size: 15px
 	line-height: 1.7
+	+r(480)
+		font-size: 17px
 
 //HELPER CLASSES
+
+.text-center
+	text-align: center
+
 .is-hidden
 	display: none !important
+
 .hidden
 	display: none
-.lg-only, .md-only, .sm-only, .xs-only 
-	display: none
-+r(1200)
-	.lg-only 
-		display: block
-	.lg-hide 
-		display: none
-+r(1024)
-	.md-only
-		display: block
-	.md-hide 
-		display: none
-+r(768)
-	.sm-only
-		isplay: block
-	.sm-hide
-		display: none
-+r(480)
-	.xs-only
-		display: block
-	.xs-hide
-		display: none !important
 
-.row
-	+row-flex()
+.lg-only, .md-only, .sm-only, .xs-only
+	display: none !important
 
-.col-2
-	+col()
-	+size(6)
-	+size-sm(12)
+@each $screen in lg, md, sm, xs
+    .#{$screen}-show
+        display: none !important
+
+        @include r-max(#{$screen})
+            display: block !important
+
+    .#{$screen}-only
+        display: none !important
+
+        &--flex
+            display: none !important
+
+    @include r-max(#{$screen})
+
+        .#{$screen}-only
+            display: block !important
+
+            &--flex
+                display: flex !important
+
+        .#{$screen}-hide
+            display: none !important
+
+
+@for $i from 1 through 10
+    .pos-#{$i}
+        order: $i
+
+    @include r-max(md)
+
+        .pos-md-#{$i}
+            order: $i
+
+    @include r-max(sm)
+
+        .pos-sm-#{$i}
+            order: $i
+
+    @include r-max(xs)
+
+        .pos-xs-#{$i}
+            order: $i
+
+.pos-xs-one
+	@include r-max(xs)
+		order: -1

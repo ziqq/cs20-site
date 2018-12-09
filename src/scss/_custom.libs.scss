@@ -3,7 +3,7 @@
 
 //noUiSlider
 .noUi-horizontal{
-	height: 5px;
+	height: 3px;
 	border-radius: 50%;
 	.noUi-handle{
 		width: 8px;
@@ -26,11 +26,10 @@
 	cursor: pointer;
 	outline: none;
 	&::after{
-		width: 20px;
-		height: 20px;
+		width: 15px;
+		height: 15px;
 		border-radius: 50%;
-		border: 1px solid $gray;
-		background-color: #fff;
+		background-color: #C4C4C4;
 		@include vcenter;
 		@include tr(.5s);
 	}
@@ -40,11 +39,11 @@
 }
 
 .noUi-base, .noUi-handle{
-	background-color: #d5d1d1;
+	background-color: #C4C4C4;
 }
 
 .noUi-connect, .noUi-target{
-	background: $gray;
+	background: #525252;
 	border: none;
 	border-radius: 0;
 	box-shadow: none;
@@ -74,7 +73,27 @@
 }
 .select2-container--classic .select2-selection--single .select2-selection__arrow b, .select2-container--default .select2-selection--single .select2-selection__arrow b{display: none;}
 .select2-container--default .select2-selection--multiple, .select2-container--default .select2-selection--single{outline: none;border-radius: $border-radius;}
-.select2-container--default .select2-results__option--highlighted[aria-selected]{background-color: $color-accent}
+.select2-container--default .select2-results__option--highlighted[aria-selected]{
+	background-color: $color-bg--light;
+	color: $color-text;
+}
+
+.select2-container--default .select2-results__option[aria-selected=true] {
+	background-color: transparent;
+	position: relative;
+
+	&::after {
+		content: '\f00c';
+		@include fa('light');
+		color: $color-text;
+		@include centre('y');
+		right: 15px;
+	}
+
+	&:hover {
+		background-color: $color-bg--light;
+	}
+}
 
 .select2-selection__arrow{
 	position: relative;
@@ -82,6 +101,9 @@
 		content: '';
 		display: inline-block;
 		@include sprite(arrow--down);
+		position: absolute;
+		top: 10px;
+		right: 0;
 	}
 }
 

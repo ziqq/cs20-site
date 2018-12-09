@@ -1,0 +1,80 @@
+---
+title: О компании
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper news">
+
+	<!-- begin breadcrumbs -->
+	<div class="container">
+		<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+			<ul class="breadcrumbs__list">
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link" itemprop="url">
+						<span class="breadcrumbs__title" itemprop="title">Главная</span>
+					</a>
+				</li>
+				<li class="breadcrumbs__item">
+					<span class="breadcrumbs__title" itemprop="title">{{ title }}</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- end breadcrumbs -->
+
+	<!-- begin news -->
+	<div class="container">
+
+		<h1 class="h1 page-title">{{ title }}</h1>
+
+		<div class="cs-card px2">
+
+			<div class="video-player">
+				<div class="video-player__bg">
+					<img src="img/general/video/about.jpg" alt="О нас">
+				</div>
+				<a class="video-player__btn" data-fancybox href="https://youtu.be/K3aQx8-tpCc?t=195"></a>
+			</div>
+
+			<p class="cs-card__text js-text-overflow">CS20 - молодой Российский бренд, который производит износостойкие автозапчасти из полиуретана и резины, неподвержанные разрушению и старению. На все запчасти CS20 действует расширенная гарантия в течение 2-ух лет, независимо от пробега и условий эксплуатации. Основано компанией Михельсон в 2011 году в городе Балаково. Автозапчасти из полиуретана CS20 </p>
+
+			<h3 class="cs-card__subtitle">Публикации в СМИ</h3>
+
+			<ul class="list list--img">
+				<li class="list__item">
+					<a href="#" class="list__link">
+						<div class="list__img">
+							<img src="img/general/rbk.png" alt="rbk">
+						</div>
+						<p class="list__text">Тест-драйв российского бренда износостойких автозапчасти из полиуретана </p>
+					</a>
+				</li>
+				<li class="list__item">
+					<a href="#" class="list__link">
+						<div class="list__img">
+							<img src="img/general/avtomail.png" alt="avtomail">
+						</div>
+						<p class="list__text">Тест-драйв российского бренда износостойких автозапчасти из полиуретана </p>
+					</a>
+				</li>
+				<li class="list__item">
+					<a href="#" class="list__link">
+						<div class="list__img">
+							<img src="img/general/avtomail.png" alt="avtomail">
+						</div>
+						<p class="list__text">Тест-драйв российского бренда износостойких автозапчасти из полиуретана</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+	<!-- end news -->
+
+</div>
+<!-- end home -->
+
+{% endblock %}

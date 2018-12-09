@@ -1,47 +1,30 @@
-var gulp        = require('gulp');
+var gulp = require('gulp');
 var runSequence = require('run-sequence');
-var config      = require('../config');
+var config = require('../config');
 
 function build(cb) {
-    runSequence(
-        'clean',
-        'clean:temp',
-        'sprite:svg',
-        // 'sprite:svg:build',
-        'sprite:png',
-        'sass',
-        // 'sass:libs',
-        'nunjucks',
-        'js:all',
-        'copy',
-        'list-pages',
-        cb
-    );
-}
-
-function buildDev(cb) {
-    runSequence(
-        'clean',
-        'sprite:svg',
-        // 'sprite:svg:build',
-        'sprite:png',
-        'sass',
-        'nunjucks',
-        'js:build',
-        'copy',
-        'list-pages',
-        cb
-    );
+	runSequence(
+		'clean',
+		'sprite:svg:build',
+		'sprite:png',
+		'svgo',
+		'sass',
+		'nunjucks',
+		'js:all',
+		'copy',
+		'list-pages',
+		cb
+	);
 }
 
 gulp.task('build', function(cb) {
-    config.setEnv('production');
-    config.logEnv();
-    buildDev(cb);
+	config.setEnv('production');
+	config.logEnv();
+	build(cb);
 });
 
 gulp.task('build:dev', function(cb) {
-    config.setEnv('development');
-    config.logEnv();
-    build(cb);
+	config.setEnv('development');
+	config.logEnv();
+	build(cb);
 });

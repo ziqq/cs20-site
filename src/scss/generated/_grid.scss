@@ -1,0 +1,66 @@
+.row {
+    @include row-flex;
+}
+
+@for $i from 1 through 12 {
+
+    .col-#{$i} {
+        @include col;
+        @include size($i);
+    }
+
+    @include r-max(lg) {
+
+        .col-lg-#{$i} {
+            @include size-lg($i);
+        }
+    }
+
+    @include r-max(md) {
+
+        .col-md-#{$i} {
+            @include size-md($i);
+        }
+    }
+
+    @include r-max(sm) {
+
+        .col-sm-#{$i} {
+            @include size-sm($i);
+        }
+    }
+
+    @include r-max(xs) {
+
+        .col-xs-#{$i} {
+            @include size-xs($i);
+        }
+    }
+}
+
+@for $i from 1 through 30 {
+
+    .mb-#{$i} {
+        margin-bottom: $i + px;
+    }
+
+    .mt-#{$i} {
+        margin-top: $i + px;
+    }
+
+    .ml-#{$i} {
+        margin-left: $i + px;
+    }
+
+    .mr-#{$i} {
+        margin-right: $i + px;
+    }
+
+    .pb-#{$i} {
+        padding-bottom: $i + px;
+    }
+
+    .pt-#{$i} {
+        padding-top: $i + px;
+    }
+}

@@ -1,0 +1,89 @@
+<div class="cart__wrap">
+	<div class="cart__title">Информация о получателе</div>
+
+	<form class="cart__form pedit">
+		<div class="row">
+			<div class="col-2">
+				<div class="pedit__item">
+					<div class="pedit__title">Фамилия Имя Отчество:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input('text', 'Например Петров Иван Петрович')}}
+					</div>
+				</div>
+				<div class="pedit__item">
+					<div class="pedit__title">Эл. почта:<i>*</i></div>
+					<div class="pedit__field">
+						<div class="cs-input">
+							<input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="cs-input__field" placeholder="exampel@mail.ru">
+							<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+						</div>
+					</div>
+				</div>
+				<div class="pedit__item">
+					<div class="pedit__title">Телефон:<i>*</i></div>
+					<div class="pedit__field">
+						<div class="cs-input is-invalid">
+							<input type="num" class="cs-input__field js-phone-mask" placeholder="+7 (927) 000-00-00">
+							<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+						</div>
+					</div>
+				</div>
+				<div class="pedit__item">
+					<div class="pedit__title">Индекс:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input('num', 'Например 413800')}}
+					</div>
+				</div>
+				<div class="pedit__item">
+					<div class="pedit__title">Город доставки:<i>*</i></div>
+					<div class="pedit__field">
+						<div class="cs-input cs-input--select is-invalid">
+							<select class="js-select">
+								<option value="Выберите город..." disabled selected>Выберите город...</option>
+								{% for i in range(0, 11) %}
+								<option value="Балаково">Балаково</option>
+								{% endfor %}﻿
+							</select>
+							<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+						</div>
+					</div>
+				</div>
+				<div class="pedit__item">
+					<div class="pedit__title">Адрес доставки:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input('num', 'Например Набережная Леонова д.2 оф.15')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-2">
+				<div class="pedit__item">
+					<div class="pedit__title">Серия паспорта:</div>
+					<div class="pedit__field">
+						{{item.input('num')}}
+					</div>
+				</div>
+				<div class="pedit__item">
+					<div class="pedit__title">Номер паспорта:</div>
+					<div class="pedit__field">
+						{{item.input('num')}}
+					</div>
+				</div>
+				<div class="pedit__item">
+					<div class="pedit__title">Дата выдачи:</div>
+					<div class="pedit__field">
+						{{item.input('num')}}
+					</div>
+				</div>
+				<div class="pedit__item">
+					{{item.checkbox('Я юридическое лицо', 'pedit__checkbox')}}
+				</div>
+			</div>
+		</div>
+
+		<div class="button-box cart__button-box">
+			<a href="#" class="button button--transparent button--back">Вернуться назад</a>
+			<a href="#" class="button button--accent">Далее</a>
+		</div>
+	</form>
+</div>

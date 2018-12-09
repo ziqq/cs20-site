@@ -57,16 +57,16 @@ menuMobileBottom = [
 		icon: 'garanty'
 	},
 	{
+		title: 'О компании',
+		icon: 'company'
+	},
+	{
 		title: 'Новости',
 		icon: 'news'
 	},
 	{
 		title: 'Стать партнером',
 		icon: 'partners'
-	},
-	{
-		title: 'О компании',
-		icon: 'company'
 	},
 	{
 		title: 'Контакты',
@@ -76,28 +76,179 @@ menuMobileBottom = [
 %}
 
 {% set
-footerMenu = [
+productsList = [
 	{
-		link1: 'garanty',
-		link2: 'payment',
-		link3: 'delivery',
-		text1: 'Гарантия и возврат',
-		text2: 'Оплата',
-		text3: 'Доставка'
+		title: 'Аксессуары / инструменты'
 	},
 	{
-		link1: 'catalog',
-		link2: 'lk-user',
-		link3: 'news',
-		text1: 'Каталог',
-		text2: 'Личный кабинет',
-		text3: 'Новости' 
+		title: 'Брызговики'
 	},
 	{
-		link3: 'contacts',
-		text1: 'Стать партнером',
-		text2: 'О компании',
-		text3: 'Контакты'
+		title: 'Коврики салона'
+	},
+	{
+		title: 'Прокладки / ремкомлекты'
+	},
+	{
+		title: 'Чехлы защитные / пыльники'
+	},
+	{
+		title: 'Крепление глушителя'
+	},
+	{
+		title: 'Крепления двигателя / КПП'
+	},
+	{
+		title: 'Патрубки / шланги'
+	},
+	{
+		title: 'Элементы подвески / ходовой части'
 	}
 ]
 %}
+
+{% set
+cars = [
+	{
+		title: 'Largus'
+	},
+	{
+		title: 'Renault Logan'
+	},
+	{
+		title: 'Vesta'
+	},
+	{
+		title: 'X-RAY'
+	},
+	{
+		title: 'ВАЗ 2118 Калина'
+	},
+	{
+		title: 'ВАЗ 2101-07'
+	},
+	{
+		title: 'ВАЗ 2108-99'
+	},
+	{
+		title: 'ВАЗ 2110-12'
+	},
+	{
+		title: 'ВАЗ 2113-15'
+	},
+	{
+		title: 'ВАЗ 2121 НИВА'
+	},
+	{
+		title: 'ВАЗ 2123 Chevrolet Niva'
+	},
+	{
+		title: 'ВАЗ 2170 Прирора'
+	},
+	{
+		title: 'ВАЗ 2190 Гранта'
+	},
+	{
+		title: 'Волга'
+	},
+	{
+		title: 'ГАЗ'
+	},
+	{
+		title: 'ГАЗель'
+	},
+	{
+		title: 'УАЗ'
+	}
+]
+%}
+
+{% set
+footerListOne = [
+	{
+		link: 'garanty',
+		text: 'Гарантия и возврат'
+	}
+	,{
+		link: 'policy',
+		text: 'Политика конфиденциальности',
+		class: 'not-hide'
+	}
+	,{
+		link: 'payment',
+		text: 'Оплата'
+	}
+	,{
+		link: 'delivery',
+		text: 'Доставка'
+	}
+	,{
+		link: 'lk',
+		text: 'Личный кабинет'
+	}
+]
+%}
+
+{% set
+footerListTwo = [
+	{
+		link: 'about',
+		text: 'О компании'
+	}
+	,{
+		link: 'contacts',
+		text: 'Контакты'
+	}
+	,{
+		link: 'news',
+		text: 'Новости'
+	}
+	,{
+		link: 'partners',
+		text: 'Стать партнером'
+	}
+]
+%}
+
+{% set
+category = [
+	{
+		icon: '1',
+		title: 'Элементы подвески'
+	}
+	,{
+		icon: '2',
+		title: 'Подушки двигателя'
+	}
+	,{
+		icon: '3',
+		title: 'Ремкомплекты'
+	}
+	,{
+		icon: '4',
+		title: 'Коврики салона'
+	}
+	,{
+		icon: '5',
+		title: 'Брызговики'
+	}
+	,{
+		icon: '6',
+		title: 'Чехлы / пыльники'
+	}
+	,{
+		icon: '7',
+		title: 'Крепления глушителя'
+	}
+	,{
+		icon: '8',
+		title: 'Патрубки / шланги'
+	}
+	,{
+		icon: '9',
+		title: 'Прокладки'
+	}
+]
+%}
+
+

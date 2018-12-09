@@ -1,1395 +1,1108 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Каталог | Интернет-магазин износостойких автокомпонентов с доставкой по РФ</title>
-        <meta name="keywords" content="">
-        <meta name="description" content="">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
-
-        <meta name="theme-color" content="#a40c95">
-        <meta name="msapplication-navbutton-color" content="#a40c95">
-        <meta name="apple-mobile-web-app-status-bar-style" content="#a40c95">
-
-        <link rel="shortcut icon" type="image/png" href="img/general/favicon/favicon-32x32.png" sizes="32x32">
-        <link rel="shortcut icon" type="image/png" href="img/general/favicon/favicon-96x96.png" sizes="96x96">
-        <link rel="shortcut icon" type="image/x-icon" href="img/general/favicon/favicon.ico" sizes="16x16">
-        <link rel="apple-touch-icon" sizes="57x57" href="img/general/favicon/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="img/general/favicon/apple-touch-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="img/general/favicon/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="img/general/favicon/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="img/general/favicon/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="img/general/favicon/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="img/general/favicon/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="img/general/favicon/apple-touch-icon-152x152.png">
-
-        <link rel="stylesheet" media="all" href="css/app.css">
-    </head>
-    <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
-
-        <div class="page-wrapper is-auth ">
-            <!-- begin header -->
-            <header class="header " itemscope itemtype="http://schema.org/WPHeader">
-                <div class="container">
-                    <div class="header__inner">
-                        <div class="header__left">
-                            <!-- begin logo -->
-                            <div class="logo header__logo" itemscope itemprop="logo" itemtype="http://schema.org/Organization">
-                                <a href="/" class="logo__link" itemprop="url">
-                                    <img src="img/general/logo.png" alt="CS20" class="logo__img">
-                                </a>
-                            </div>
-                            <!-- end logo -->
-
-                            <!-- begin nav -->
-                            <nav class="nav nav--main is-auth">
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="catalog.html" class="nav__link">Каталог</a>
-                                    </li>
-                                    <li class="nav__item is-active">
-                                        <a href="payment.html" class="nav__link">Оплата</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="delivery.html" class="nav__link">Доставка</a>
-                                    </li>
-                                    <li class="nav__item nav__item--not-auth cs-dropdown cs-dropdown--hover">
-                                        <a href="#" class="nav__link">Личный кабинет</a>
-                                        <ul class="cs-dropdown__list">
-                                            <li class="cs-dropdown__item">
-                                                <a href="#enter" class="cs-dropdown__link" data-fancybox>Вход</a>
-                                            </li>
-                                            <li class="cs-dropdown__item">
-                                                <a href="#register" class="cs-dropdown__link" data-fancybox>Регистрация</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav__item nav__item--auth cs-dropdown cs-dropdown--hover">
-                                        <a href="#" class="nav__link">VeronikaSam</a>
-                                        <ul class="cs-dropdown__list">
-                                            <li class="cs-dropdown__item">
-                                                <a href="lk-user.html" class="cs-dropdown__link">Личные данные</a>
-                                            </li>
-                                            <li class="cs-dropdown__item">
-                                                <a href="lk-order.html" class="cs-dropdown__link">Мои заказы</a>
-                                            </li>
-                                            <li class="cs-dropdown__item">
-                                                <a href="lk-sale.html" class="cs-dropdown__link">Персональные скидки</a>
-                                            </li>
-                                            <li class="cs-dropdown__item">
-                                                <a href="#" class="cs-dropdown__link">Выход</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <!-- end nav -->
-
-                        </div>
-                        <div class="header__right">
-                            <!-- begin search -->
-                            <div class="search header__search js-search">
-                                <form action="" autocomplete="on">
-                                    <input class="search__field js-search-input" type="text" placeholder="Что вы ищите ?" autocomplete="off">
-                                    <input class="search__submit" type="submit">
-                                    <div class="search__hint" style="display: none;">
-                                        <div class="search-hint search-hint--cyties">
-                                            <ul class="search-hint__list">
-
-                                                <li class="search-hint__item">
-                                                    <a href="#" class="search-hint__link">
-                                                        <span class="search-hint__text">Комплект патрубков</span>
-                                                    </a>
-                                                </li>
-
-                                                <li class="search-hint__item">
-                                                    <a href="#" class="search-hint__link">
-                                                        <span class="search-hint__text">Комплект патрубков</span>
-                                                    </a>
-                                                </li>
-
-                                                <li class="search-hint__item">
-                                                    <a href="#" class="search-hint__link">
-                                                        <span class="search-hint__text">Комплект патрубков</span>
-                                                    </a>
-                                                </li>
-
-                                                <li class="search-hint__item">
-                                                    <a href="#" class="search-hint__link">
-                                                        <span class="search-hint__text">Комплект патрубков</span>
-                                                    </a>
-                                                </li>
-
-                                                <li class="search-hint__item">
-                                                    <a href="#" class="search-hint__link">
-                                                        <span class="search-hint__text">Комплект патрубков</span>
-                                                    </a>
-                                                </li>
-                                            
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- end search -->
-                            <!-- begin cart-link -->
-                            <a href="cart.html" class="cart-link header__cart-link">
-
-                                <svg class="icon icon-cart cart-link__icon">
-                                    <use xlink:href="img/sprite.svg#cart"></use>
-                                </svg>
-
-                                <span class="cart-link__badge badge">32</span>
-                            </a>
-                            <!-- end cart-link -->
-                            <!-- begin phone -->
-                            <div class="phone header__phone js-header-phone">
-                                <a href="#" class="phone__link" itemprop="telephone">8 800 555 25 40</a>
-                                <span class="phone__text">звонок бесплатный</span>
-                            </div>
-                            <!-- end phone -->
-                        </div>
-                    </div>
-
-                    <!-- begin mobile-toggle-btn -->
-                    <div class="js-nav-toggle menu-toggle">
-                        <div class="menu-toggle__boxes">
-                            <span class="menu-toggle__box"></span>
-                            <span class="menu-toggle__box"></span>
-                            <span class="menu-toggle__box"></span>
-                            <div class="menu-toggle__box--other"></div>
-                        </div>
-                    </div>
-                    <!-- end mobile-toggle-btn -->
-
-                    <!-- begin mobile-nave -->
-                    <nav class="mobile-nav js-nav">
-                        <!-- begin search -->
-                        <div class="search mobile-nav__search js-search">
-                            <form action="" autocomplete="on">
-                                <input class="search__field js-search-input" type="text" placeholder="Что вы ищите ?">
-                                <input class="search__submit" type="submit">
-                                <div class="search__hint" style="display: none;">
-                                    <div class="search-hint search-hint--cyties">
-                                        <ul class="search-hint__list">
-
-                                            <li class="search-hint__item">
-                                                <a href="#" class="search-hint__link">
-                                                    <span class="search-hint__text">Комплект патрубков</span>
-                                                </a>
-                                            </li>
-
-                                            <li class="search-hint__item">
-                                                <a href="#" class="search-hint__link">
-                                                    <span class="search-hint__text">Комплект патрубков</span>
-                                                </a>
-                                            </li>
-
-                                            <li class="search-hint__item">
-                                                <a href="#" class="search-hint__link">
-                                                    <span class="search-hint__text">Комплект патрубков</span>
-                                                </a>
-                                            </li>
-
-                                            <li class="search-hint__item">
-                                                <a href="#" class="search-hint__link">
-                                                    <span class="search-hint__text">Комплект патрубков</span>
-                                                </a>
-                                            </li>
-
-                                            <li class="search-hint__item">
-                                                <a href="#" class="search-hint__link">
-                                                    <span class="search-hint__text">Комплект патрубков</span>
-                                                </a>
-                                            </li>
-                                        
-                                        </ul>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- end search -->
-                        <ul class="mobile-nav__list">
-                            <li class="mobile-nav__item">
-                                <a href="#" class="mobile-nav__link mobile-nav__link--home">Главная</a>
-                            </li>
-                            <li class="mobile-nav__item">
-                                <a href="#" class="mobile-nav__link mobile-nav__link--catalog js-mobile-nav-sub--open">Каталог</a>
-                                <ul class="mobile-nav--sub">
-                                    <li class="mobile-nav__item">
-                                        <a href="#" class="mobile-nav__link mobile-nav__link--back js-mobile-nav-sub--close">Назад</a>
-                                    </li>
-
-                                    <li class="mobile-nav__item">
-                                        <a href="#" class="mobile-nav__link">Все категории</a>
-                                    </li>
-
-                                    <li class="mobile-nav__item">
-                                        <a href="#" class="mobile-nav__link">Элементы подвески</a>
-                                    </li>
-
-                                    <li class="mobile-nav__item">
-                                        <a href="#" class="mobile-nav__link">Прокладки / Ремкомплекты</a>
-                                    </li>
-
-                                    <li class="mobile-nav__item">
-                                        <a href="#" class="mobile-nav__link">Патрубки / Шланги</a>
-                                    </li>
-
-                                    <li class="mobile-nav__item">
-                                        <a href="#" class="mobile-nav__link">Крепления глушителя</a>
-                                    </li>
-
-                                    <li class="mobile-nav__item">
-                                        <a href="#" class="mobile-nav__link">Подушки двигателя</a>
-                                    </li>
-
-                                    <li class="mobile-nav__item">
-                                        <a href="#" class="mobile-nav__link">Брызговики</a>
-                                    </li>
-
-                                    <li class="mobile-nav__item">
-                                        <a href="#" class="mobile-nav__link">Коврики</a>
-                                    </li>
-
-                                </ul>
-                            </li>
-                            <li class="mobile-nav__item">
-                                <a href="#" class="mobile-nav__link mobile-nav__link--pay">Оплата</a>
-                            </li>
-                            <li class="mobile-nav__item">
-                                <a href="#" class="mobile-nav__link mobile-nav__link--delivery">Доставка</a>
-                            </li>
-                            <li class="mobile-nav__item mobile-nav__item--not-auth cs-dropdown js-dropdown">
-                                <span class="mobile-nav__link mobile-nav__link--lk">Личный кабинет</span>
-                                <ul class="cs-dropdown__list">
-                                    <li class="mobile-nav__item">
-                                        <a href="#enter" class="mobile-nav__link" data-fancybox>Вход</a>
-                                    </li>
-                                    <li class="mobile-nav__item">
-                                        <a href="#register" class="mobile-nav__link" data-fancybox>Регистрация</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="mobile-nav__item mobile-nav__item--auth cs-dropdown js-dropdown">
-                                <a href="#" class="mobile-nav__link mobile-nav__link--lk">VeronikaSam</a>
-                                <ul class="cs-dropdown__list">
-                                    <li class="mobile-nav__item">
-                                        <a href="lk-user.html" class="mobile-nav__link">Личные данные</a>
-                                    </li>
-                                    <li class="mobile-nav__item">
-                                        <a href="lk-order.html" class="mobile-nav__link">Мои заказы</a>
-                                    </li>
-                                    <li class="mobile-nav__item">
-                                        <a href="lk-sale.html" class="mobile-nav__link">Персональные скидки</a>
-                                    </li>
-                                    <li class="mobile-nav__item">
-                                        <a href="#" class="mobile-nav__link">Выход</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul class="mobile-nav__list">
-
-                            <li class="mobile-nav__item ">
-                                <a href="#" class="mobile-nav__link mobile-nav__link--garanty">Гарантия и возврат</a>
-                            </li>
-
-                            <li class="mobile-nav__item ">
-                                <a href="#" class="mobile-nav__link mobile-nav__link--news">Новости</a>
-                            </li>
-
-                            <li class="mobile-nav__item ">
-                                <a href="#" class="mobile-nav__link mobile-nav__link--partners">Стать партнером</a>
-                            </li>
-
-                            <li class="mobile-nav__item ">
-                                <a href="#" class="mobile-nav__link mobile-nav__link--company">О компании</a>
-                            </li>
-
-                            <li class="mobile-nav__item ">
-                                <a href="#" class="mobile-nav__link mobile-nav__link--contacts">Контакты</a>
-                            </li>
-
-                        </ul>
-
-                        <!-- begin phone -->
-                        <div class="phone phone--icon">
-                            <a href="#" class="phone__link" itemprop="telephone">8 800 555 25 40</a>
-                        </div>
-                        <!-- end phone -->
-
-                        <!-- begin social -->
-                        <div class="social ">
-                            <ul class="social__list">
-                                <li class="social__item">
-                                    <a href="#" class="social__link">
-
-                                        <svg class="icon icon-social__instagram social__icon">
-                                            <use xlink:href="img/sprite.svg#social__instagram"></use>
-                                        </svg>
-
-                                    </a>
-                                </li>
-                                <li class="social__item">
-                                    <a href="#" class="social__link">
-
-                                        <svg class="icon icon-social__youtube social__icon">
-                                            <use xlink:href="img/sprite.svg#social__youtube"></use>
-                                        </svg>
-
-                                    </a>
-                                </li>
-                                <li class="social__item">
-                                    <a href="#" class="social__link">
-
-                                        <svg class="icon icon-social__telegram social__icon">
-                                            <use xlink:href="img/sprite.svg#social__telegram"></use>
-                                        </svg>
-
-                                    </a>
-                                </li>
-                                <li class="social__item">
-                                    <a href="#" class="social__link">
-
-                                        <svg class="icon icon-social__vk social__icon">
-                                            <use xlink:href="img/sprite.svg#social__vk"></use>
-                                        </svg>
-
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- end social -->
-
-                    </nav>
-                    <!-- end mobile-nav -->
-
-                </div>
-            </header>
-            <!-- end header
-
-		
-
-<!-- begin home -->
-            <div class="content-wrapper catalog">
-
-                <!-- begin breadcrumbs -->
-                <div class="container">
-                    <div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
-                        <ul class="breadcrumbs__list">
-                            <li class="breadcrumbs__item">
-                                <a href="#" class="breadcrumbs__link" itemprop="url">
-                                    <span class="breadcrumbs__title" itemprop="title">Главная</span>
-                                </a>
-                            </li>
-                            <li class="breadcrumbs__item">
-                                <a href="#" class="breadcrumbs__link" itemprop="url">
-                                    <span class="breadcrumbs__title" itemprop="title">Каталог</span>
-                                </a>
-                            </li>
-                            <li class="breadcrumbs__item">
-                                <span class="breadcrumbs__title" itemprop="title">Патрубки / Шланги</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- end breadcrumbs -->
-
-                <!-- begin catalog__topline -->
-                <div class="container">
-                    <div class="catalog__topline">
-                        <h1 class="h1 catalog__title page-title" itemprop="headline">Патрубки / Шланги</h1>
-                        <!-- begin sorting -->
-                        <div class="sorting catalog__sorting">
-                            <div class="sorting__count">
-                                <span class="sorting__title">Показывать по:</span>
-                                <select class="sorting__select js-select no-search">
-
-                                    <option value="1">1</option>
-
-                                    <option value="2">2</option>
-
-                                    <option value="3">3</option>
-
-                                    <option value="4">4</option>
-
-                                    <option value="5">5</option>
-
-                                    <option value="6">6</option>
-
-                                    <option value="7">7</option>
-
-                                    <option value="8">8</option>
-
-                                    <option value="9">9</option>
-
-                                    <option value="10">10</option>
-
-                                    <option value="11">11</option>
-                                
-                                </select>
-                            </div>
-                            <div class="sorting__list">
-                                <button class="sorting__btn sorting__btn--list js-sorting-btn js-sorting-btn--list"></button>
-                                <button class="sorting__btn sorting__btn--tile js-sorting-btn js-sorting--btn--tile is-active"></button>
-                            </div>
-                        </div>
-                        <!-- end sorting -->
-                    </div>
-                </div>
-                <!-- end catalog__topline -->
-
-                <!-- begin catalog__content -->
-                <div class="container">
-                    <div class="catalog__inner">
-
-                        <div class="catalog__content">
-                            <!-- begin catalog__filter -->
-                            <form class="filter catalog__filter js-filter-sticky">
-                                <div class="filter__inner">
-                                    <div class="filter__header">
-                                        <span class="filter__title">
-
-                                            <svg class="icon icon-filter filter__icon filter__icon--filter">
-                                                <use xlink:href="img/sprite.svg#filter"></use>
-                                            </svg>
-
-                                            Фильтры
-                                        </span>
-
-                                        <svg class="icon icon-close filter__icon filter__icon--close js-filter--close">
-                                            <use xlink:href="img/sprite.svg#close"></use>
-                                        </svg>
-
-                                    </div>
-                                    <div class="filter__body js-cs-accordeon cs-accordeon cs-accordeon--other">
-
-                                        <div class="filter__item filter__item_type">
-                                            <span class="filter__title">Категории</span>
-                                            <div class="filter__content">
-
-                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo is-checked">Все категории</a>
-
-                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo ">Элементы подвески</a>
-
-                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo ">Прокладки / Ремкомплекты</a>
-
-                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo ">Патрубки / Шланги</a>
-
-                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo ">Крепления глушителя</a>
-
-                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo ">Подушки двигателя</a>
-
-                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo ">Брызговики</a>
-
-                                                <a href="javascript:void(0)" class="filter__btn js-cs-checkbox--pseudo ">Коврики</a>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="filter__item filter__item_price cs-accordeon__item is-open">
-                                            <span class="filter__title cs-accordeon__title">
-                                                Цена
-                                                <i class="cs-accordeon__icon"></i>
-                                            </span>
-                                            <div class="filter__content cs-accordeon__content js-filter-content">
-                                                <div class="range__diapazon">
-                                                    <div class="range__from">
-                                                        <input type="num" id="jsPriceStart">
-                                                        <i class="fa fa-rub"></i>
-                                                    </div>
-                                                    <div class="range__to">
-                                                        <input type="num" id="jsPriceEnd">
-                                                        <i class="fa fa-rub"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="filter__range range">
-                                                    <div class="range__slider" id="js-filter-slider" data-start="500" data-end="15000"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="filter__item filter__item_car cs-accordeon__item">
-                                            <span class="filter__title cs-accordeon__title">
-                                                Модель авто
-                                                <i class="cs-accordeon__icon"></i>
-                                            </span>
-                                            <div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
-
-                                                <label class="cs-checkbox filter__checkbox js-cs-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="cs-checkbox__box"></span>
-                                                    <span class="cs-checkbox__title">1118 Калина</span>
-                                                </label>
-
-                                                <label class="cs-checkbox filter__checkbox js-cs-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="cs-checkbox__box"></span>
-                                                    <span class="cs-checkbox__title">1119 Калина</span>
-                                                </label>
-
-                                                <label class="cs-checkbox filter__checkbox js-cs-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="cs-checkbox__box"></span>
-                                                    <span class="cs-checkbox__title">2101-2107</span>
-                                                </label>
-
-                                                <label class="cs-checkbox filter__checkbox js-cs-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="cs-checkbox__box"></span>
-                                                    <span class="cs-checkbox__title">2108-2109</span>
-                                                </label>
-
-                                                <label class="cs-checkbox filter__checkbox js-cs-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="cs-checkbox__box"></span>
-                                                    <span class="cs-checkbox__title">2110-2112</span>
-                                                </label>
-
-                                                <label class="cs-checkbox filter__checkbox js-cs-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="cs-checkbox__box"></span>
-                                                    <span class="cs-checkbox__title">2113-2115</span>
-                                                </label>
-
-                                                <button class="button-link filter__btn-link js-select-all">Выбрать все</button>
-                                            </div>
-                                        </div>
-
-                                        <div class="filter__item filter__item_series cs-accordeon__item">
-                                            <span class="filter__title cs-accordeon__title">
-                                                Серия
-                                                <i class="cs-accordeon__icon"></i>
-                                            </span>
-                                            <div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
-
-                                                <label class="cs-checkbox filter__checkbox js-cs-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="cs-checkbox__box"></span>
-                                                    <span class="cs-checkbox__title">Comfort</span>
-                                                </label>
-
-                                                <label class="cs-checkbox filter__checkbox js-cs-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="cs-checkbox__box"></span>
-                                                    <span class="cs-checkbox__title">Drive</span>
-                                                </label>
-
-                                                <label class="cs-checkbox filter__checkbox js-cs-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="cs-checkbox__box"></span>
-                                                    <span class="cs-checkbox__title">Profi</span>
-                                                </label>
-
-                                                <label class="cs-checkbox filter__checkbox js-cs-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="cs-checkbox__box"></span>
-                                                    <span class="cs-checkbox__title">Original+</span>
-                                                </label>
-
-                                                <button class="button-link filter__btn-link js-select-all">Выбрать все</button>
-                                            </div>
-                                        </div>
-
-                                        <div class="filter__footer">
-                                            <button class="button button--gray">Очистить все</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- end catalog__filter -->
-
-                            <!-- begin catalog__products -->
-                            <div class="catalog__products">
-                                <div class="product-item__wrap js-products">
-
-                                    <div class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                                        <div class="product-item__img">
-                                            <img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
-                                        </div>
-                                        <div class="product-item__desc">
-                                            <div class="product-item__desc_in">
-                                                <h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт)
-                                                    <span>profi синий силикон</span>
-                                                </h4>
-                                                <div class="product-item__product-info product-info">
-                                                    <ul class="product-info__list">
-                                                        <li class="product-info__item">Артикул:
-                                                            <span>05748</span>
-                                                        </li>
-                                                        <li class="product-info__item">Каталожный номер:
-                                                            <span>3105-1203132</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item__footer">
-                                            <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                                <span class="price__cost">2232
-                                                    <i class="fa fa-rub"></i>
-                                                </span>
-                                                <meta itemprop="price" content="2232">
-                                                <meta itemprop="priceCurrency" content="RUB" />
-                                                <span class="price__stock">Есть в наличии</span>
-                                            </div>
-                                            <div class="product-item__buttons">
-                                                <button class="button button--accent product-item__btn">Добавить в корзину</button>
-                                                <button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                                        <div class="product-item__img">
-                                            <img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
-                                        </div>
-                                        <div class="product-item__desc">
-                                            <div class="product-item__desc_in">
-                                                <h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт)
-                                                    <span>profi синий силикон</span>
-                                                </h4>
-                                                <div class="product-item__product-info product-info">
-                                                    <ul class="product-info__list">
-                                                        <li class="product-info__item">Артикул:
-                                                            <span>05748</span>
-                                                        </li>
-                                                        <li class="product-info__item">Каталожный номер:
-                                                            <span>3105-1203132</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item__footer">
-                                            <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                                <span class="price__cost">2232
-                                                    <i class="fa fa-rub"></i>
-                                                </span>
-                                                <meta itemprop="price" content="2232">
-                                                <meta itemprop="priceCurrency" content="RUB" />
-                                                <span class="price__stock">Есть в наличии</span>
-                                            </div>
-                                            <div class="product-item__buttons">
-                                                <button class="button button--accent product-item__btn">Добавить в корзину</button>
-                                                <button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                                        <div class="product-item__img">
-                                            <img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
-                                        </div>
-                                        <div class="product-item__desc">
-                                            <div class="product-item__desc_in">
-                                                <h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт)
-                                                    <span>profi синий силикон</span>
-                                                </h4>
-                                                <div class="product-item__product-info product-info">
-                                                    <ul class="product-info__list">
-                                                        <li class="product-info__item">Артикул:
-                                                            <span>05748</span>
-                                                        </li>
-                                                        <li class="product-info__item">Каталожный номер:
-                                                            <span>3105-1203132</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item__footer">
-                                            <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                                <span class="price__cost">2232
-                                                    <i class="fa fa-rub"></i>
-                                                </span>
-                                                <meta itemprop="price" content="2232">
-                                                <meta itemprop="priceCurrency" content="RUB" />
-                                                <span class="price__stock">Есть в наличии</span>
-                                            </div>
-                                            <div class="product-item__buttons">
-                                                <button class="button button--accent product-item__btn">Добавить в корзину</button>
-                                                <button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                                        <div class="product-item__img">
-                                            <img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
-                                        </div>
-                                        <div class="product-item__desc">
-                                            <div class="product-item__desc_in">
-                                                <h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт)
-                                                    <span>profi синий силикон</span>
-                                                </h4>
-                                                <div class="product-item__product-info product-info">
-                                                    <ul class="product-info__list">
-                                                        <li class="product-info__item">Артикул:
-                                                            <span>05748</span>
-                                                        </li>
-                                                        <li class="product-info__item">Каталожный номер:
-                                                            <span>3105-1203132</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item__footer">
-                                            <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                                <span class="price__cost">2232
-                                                    <i class="fa fa-rub"></i>
-                                                </span>
-                                                <meta itemprop="price" content="2232">
-                                                <meta itemprop="priceCurrency" content="RUB" />
-                                                <span class="price__stock">Есть в наличии</span>
-                                            </div>
-                                            <div class="product-item__buttons">
-                                                <button class="button button--accent product-item__btn">Добавить в корзину</button>
-                                                <button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                                        <div class="product-item__img">
-                                            <img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
-                                        </div>
-                                        <div class="product-item__desc">
-                                            <div class="product-item__desc_in">
-                                                <h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт)
-                                                    <span>profi синий силикон</span>
-                                                </h4>
-                                                <div class="product-item__product-info product-info">
-                                                    <ul class="product-info__list">
-                                                        <li class="product-info__item">Артикул:
-                                                            <span>05748</span>
-                                                        </li>
-                                                        <li class="product-info__item">Каталожный номер:
-                                                            <span>3105-1203132</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item__footer">
-                                            <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                                <span class="price__cost">2232
-                                                    <i class="fa fa-rub"></i>
-                                                </span>
-                                                <meta itemprop="price" content="2232">
-                                                <meta itemprop="priceCurrency" content="RUB" />
-                                                <span class="price__stock">Есть в наличии</span>
-                                            </div>
-                                            <div class="product-item__buttons">
-                                                <button class="button button--accent product-item__btn">Добавить в корзину</button>
-                                                <button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                                        <div class="product-item__img">
-                                            <img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
-                                        </div>
-                                        <div class="product-item__desc">
-                                            <div class="product-item__desc_in">
-                                                <h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт)
-                                                    <span>profi синий силикон</span>
-                                                </h4>
-                                                <div class="product-item__product-info product-info">
-                                                    <ul class="product-info__list">
-                                                        <li class="product-info__item">Артикул:
-                                                            <span>05748</span>
-                                                        </li>
-                                                        <li class="product-info__item">Каталожный номер:
-                                                            <span>3105-1203132</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item__footer">
-                                            <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                                <span class="price__cost">2232
-                                                    <i class="fa fa-rub"></i>
-                                                </span>
-                                                <meta itemprop="price" content="2232">
-                                                <meta itemprop="priceCurrency" content="RUB" />
-                                                <span class="price__stock">Есть в наличии</span>
-                                            </div>
-                                            <div class="product-item__buttons">
-                                                <button class="button button--accent product-item__btn">Добавить в корзину</button>
-                                                <button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                                        <div class="product-item__img">
-                                            <img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
-                                        </div>
-                                        <div class="product-item__desc">
-                                            <div class="product-item__desc_in">
-                                                <h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт)
-                                                    <span>profi синий силикон</span>
-                                                </h4>
-                                                <div class="product-item__product-info product-info">
-                                                    <ul class="product-info__list">
-                                                        <li class="product-info__item">Артикул:
-                                                            <span>05748</span>
-                                                        </li>
-                                                        <li class="product-info__item">Каталожный номер:
-                                                            <span>3105-1203132</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item__footer">
-                                            <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                                <span class="price__cost">2232
-                                                    <i class="fa fa-rub"></i>
-                                                </span>
-                                                <meta itemprop="price" content="2232">
-                                                <meta itemprop="priceCurrency" content="RUB" />
-                                                <span class="price__stock">Есть в наличии</span>
-                                            </div>
-                                            <div class="product-item__buttons">
-                                                <button class="button button--accent product-item__btn">Добавить в корзину</button>
-                                                <button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                                        <div class="product-item__img">
-                                            <img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
-                                        </div>
-                                        <div class="product-item__desc">
-                                            <div class="product-item__desc_in">
-                                                <h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт)
-                                                    <span>profi синий силикон</span>
-                                                </h4>
-                                                <div class="product-item__product-info product-info">
-                                                    <ul class="product-info__list">
-                                                        <li class="product-info__item">Артикул:
-                                                            <span>05748</span>
-                                                        </li>
-                                                        <li class="product-info__item">Каталожный номер:
-                                                            <span>3105-1203132</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item__footer">
-                                            <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                                <span class="price__cost">2232
-                                                    <i class="fa fa-rub"></i>
-                                                </span>
-                                                <meta itemprop="price" content="2232">
-                                                <meta itemprop="priceCurrency" content="RUB" />
-                                                <span class="price__stock">Есть в наличии</span>
-                                            </div>
-                                            <div class="product-item__buttons">
-                                                <button class="button button--accent product-item__btn">Добавить в корзину</button>
-                                                <button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                                        <div class="product-item__img">
-                                            <img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
-                                        </div>
-                                        <div class="product-item__desc">
-                                            <div class="product-item__desc_in">
-                                                <h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт)
-                                                    <span>profi синий силикон</span>
-                                                </h4>
-                                                <div class="product-item__product-info product-info">
-                                                    <ul class="product-info__list">
-                                                        <li class="product-info__item">Артикул:
-                                                            <span>05748</span>
-                                                        </li>
-                                                        <li class="product-info__item">Каталожный номер:
-                                                            <span>3105-1203132</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item__footer">
-                                            <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                                <span class="price__cost">2232
-                                                    <i class="fa fa-rub"></i>
-                                                </span>
-                                                <meta itemprop="price" content="2232">
-                                                <meta itemprop="priceCurrency" content="RUB" />
-                                                <span class="price__stock">Есть в наличии</span>
-                                            </div>
-                                            <div class="product-item__buttons">
-                                                <button class="button button--accent product-item__btn">Добавить в корзину</button>
-                                                <button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                                        <div class="product-item__img">
-                                            <img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
-                                        </div>
-                                        <div class="product-item__desc">
-                                            <div class="product-item__desc_in">
-                                                <h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт)
-                                                    <span>profi синий силикон</span>
-                                                </h4>
-                                                <div class="product-item__product-info product-info">
-                                                    <ul class="product-info__list">
-                                                        <li class="product-info__item">Артикул:
-                                                            <span>05748</span>
-                                                        </li>
-                                                        <li class="product-info__item">Каталожный номер:
-                                                            <span>3105-1203132</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item__footer">
-                                            <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                                <span class="price__cost">2232
-                                                    <i class="fa fa-rub"></i>
-                                                </span>
-                                                <meta itemprop="price" content="2232">
-                                                <meta itemprop="priceCurrency" content="RUB" />
-                                                <span class="price__stock">Есть в наличии</span>
-                                            </div>
-                                            <div class="product-item__buttons">
-                                                <button class="button button--accent product-item__btn">Добавить в корзину</button>
-                                                <button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="catalog__empty is-hidden">К сожалению, на ваш поисковый запрос ничего не найдено.</div>
-                            </div>
-                            <!-- end catalog__products -->
-
-                            <button class="button button--filter js-filter--open">
-                                <svg class="icon icon-filter ">
-                                    <use xlink:href="img/sprite.svg#filter"></use>
-                                </svg>
-                            </button>
-                        </div>
-
-                        <!-- begin pagination -->
-                        <div class="catalog__pagination pagination">
-                            <ul class="pagination__list">
-                                <li class="pagination__item">
-                                    <a href="#" class="pagination__link">
-                                        <i class="fa fa-angle-left pagination__icon"></i>
-                                    </a>
-                                </li>
-                                <li class="pagination__item is-active">
-                                    <a href="#" class="pagination__link">1</a>
-                                </li>
-
-                                <li class="pagination__item">
-                                    <a href="#" class="pagination__link">2</a>
-                                </li>
-
-                                <li class="pagination__item">
-                                    <a href="#" class="pagination__link">3</a>
-                                </li>
-
-                                <li class="pagination__item">
-                                    <a href="#" class="pagination__link">4</a>
-                                </li>
-
-                                <li class="pagination__item">
-                                    <a href="#" class="pagination__link">5</a>
-                                </li>
-
-                                <li class="pagination__item">
-                                    <a href="#" class="pagination__link">6</a>
-                                </li>
-
-                                <li class="pagination__item">
-                                    <a href="#" class="pagination__link">
-                                        <i class="fa fa-angle-right pagination__icon"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- end pagination -->
-
-                    </div>
-                </div>
-                <!-- end catalog__content -->
-
-            </div>
-            <!-- end home -->
-
-            <!-- begin footer -->
-            <footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
-                <div class="container">
-                    <!-- begin footer__top -->
-                    <div class="footer__top">
-                        <div class="footer__item">
-                            <!-- begin logo -->
-                            <div class="logo footer__logo" itemscope itemprop="logo" itemtype="http://schema.org/Organization">
-                                <a href="home.html" class="logo__link" itemprop="url">
-                                    <img src="img/general/logo.png" alt="CS20" class="logo__img">
-                                </a>
-                            </div>
-                            <!-- end logo -->
-                        </div>
-
-                        <div class="footer__item sm-hide">
-                            <ul class="footer__list">
-                                <li>
-                                    <a href="garanty.html">Гарантия и возврат</a>
-                                </li>
-                                <li>
-                                    <a href="payment.html">Оплата</a>
-                                </li>
-                                <li>
-                                    <a href="delivery.html">Доставка</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="footer__item sm-hide">
-                            <ul class="footer__list">
-                                <li>
-                                    <a href="catalog.html">Каталог</a>
-                                </li>
-                                <li>
-                                    <a href="lk-user.html">Личный кабинет</a>
-                                </li>
-                                <li>
-                                    <a href="news.html">Новости</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="footer__item sm-hide">
-                            <ul class="footer__list">
-                                <li>
-                                    <a href=".html">Стать партнером</a>
-                                </li>
-                                <li>
-                                    <a href=".html">О компании</a>
-                                </li>
-                                <li>
-                                    <a href="contacts.html">Контакты</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="footer__item sm-hide">
-                            <!-- begin phone -->
-                            <div class="phone footer__phone">
-                                <a href="#" class="phone__link" itemprop="telephone">8 800 555 25 40</a>
-                                <span class="phone__text">звонок бесплатный</span>
-                            </div>
-                            <!-- end phone -->
-                            <!-- begin block-pay -->
-                            <div class="block-pay">
-                                <ul class="block-pay__list">
-                                    <li class="block-pay__item">
-                                        <svg class="icon icon-visa block-pay__icon">
-                                            <use xlink:href="img/sprite.svg#visa"></use>
-                                        </svg>
-                                    </li>
-                                    <li class="block-pay__item">
-                                        <svg class="icon icon-mastercard block-pay__icon">
-                                            <use xlink:href="img/sprite.svg#mastercard"></use>
-                                        </svg>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- end block-pay -->
-                        </div>
-                    </div>
-                    <!-- end footer__top -->
-                    <!-- begin footer__bottom -->
-                    <div class="footer__bottom">
-                        <div class="footer__item">
-                            <div class="copyright">
-                                <span itemprop="copyrightYear">&copy; 2018</span> Control Shift
-                            </div>
-                            <a href="policy.html" class="policy">Политика конфиденциальности</a>
-                        </div>
-                        <div class="footer__item footer__item_social">
-                            <!-- begin social -->
-                            <div class="social">
-                                <ul class="social__list">
-                                    <li class="social__item">
-                                        <a href="#" class="social__link">
-
-                                            <svg class="icon icon-social__instagram social__icon">
-                                                <use xlink:href="img/sprite.svg#social__instagram"></use>
-                                            </svg>
-
-                                        </a>
-                                    </li>
-                                    <li class="social__item">
-                                        <a href="#" class="social__link">
-
-                                            <svg class="icon icon-social__youtube social__icon">
-                                                <use xlink:href="img/sprite.svg#social__youtube"></use>
-                                            </svg>
-
-                                        </a>
-                                    </li>
-                                    <li class="social__item">
-                                        <a href="#" class="social__link">
-
-                                            <svg class="icon icon-social__telegram social__icon">
-                                                <use xlink:href="img/sprite.svg#social__telegram"></use>
-                                            </svg>
-
-                                        </a>
-                                    </li>
-                                    <li class="social__item">
-                                        <a href="#" class="social__link">
-
-                                            <svg class="icon icon-social__vk social__icon">
-                                                <use xlink:href="img/sprite.svg#social__vk"></use>
-                                            </svg>
-
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- end social -->
-                        </div>
-                        <div class="footer__item footer__item_dev">
-                            <div class="dev">Сайт разработан
-                                <span>компанией
-                                    <a href="https://www.dudim.ru">DUDIM</a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end footer__bottom -->
-                </div>
-            </footer>
-            <!-- end footer -->
-
+  <head>
+    <meta charset="utf-8">
+    <title>Каталог | Интернет-магазин износостойких автокомпонентов с доставкой по РФ</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta name="theme-color" content="#a40c95">
+    <meta name="msapplication-navbutton-color" content="#a40c95">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#a40c95">
+    <link rel="shortcut icon" type="image/png" href="img/general/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" type="image/png" href="img/general/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="shortcut icon" type="image/x-icon" href="img/general/favicon/favicon.ico" sizes="16x16">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/general/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/general/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/general/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/general/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/general/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/general/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/general/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/general/favicon/apple-touch-icon-152x152.png">
+    <link rel="stylesheet" media="all" href="css/app.css">
+  </head>
+  <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
+    <div class="page-wrapper is-auth ">
+      <!-- begin mobile-nave -->
+      <nav class="mobile-nav js-mobile-nav md-only">
+        <svg class="icon icon-cs-close mobile-nav__close js-mobile-nav--close">
+          <use xlink:href="img/sprite.svg#cs-close"></use>
+        </svg>
+        <!-- end search -->
+        <ul class="mobile-nav__list">
+          <li class="mobile-nav__item">
+            <a href="#" class="mobile-nav__link mobile-nav__link--home">Главная</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="#" class="mobile-nav__link mobile-nav__link--catalog js-mobile-nav-sub--open">Каталог</a>
+            <ul class="mobile-nav--sub">
+              <li class="mobile-nav__item">
+                <a href="#" class="mobile-nav__link mobile-nav__link--back js-mobile-nav-sub--close">Назад</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="#" class="mobile-nav__link">Все категории</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="#" class="mobile-nav__link">Элементы подвески</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="#" class="mobile-nav__link">Прокладки / Ремкомплекты</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="#" class="mobile-nav__link">Патрубки / Шланги</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="#" class="mobile-nav__link">Крепления глушителя</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="#" class="mobile-nav__link">Подушки двигателя</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="#" class="mobile-nav__link">Брызговики</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="#" class="mobile-nav__link">Коврики</a>
+              </li>
+            </ul>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="#" class="mobile-nav__link mobile-nav__link--pay">Оплата</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="#" class="mobile-nav__link mobile-nav__link--delivery">Доставка</a>
+          </li>
+          <li class="mobile-nav__item mobile-nav__item--not-auth cs-dropdown js-dropdown">
+            <span class="mobile-nav__link mobile-nav__link--lk">Личный кабинет</span>
+            <ul class="cs-dropdown__list">
+              <li class="mobile-nav__item">
+                <a href="#enter" class="mobile-nav__link" data-fancybox>Вход</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="#register" class="mobile-nav__link" data-fancybox>Регистрация</a>
+              </li>
+            </ul>
+          </li>
+          <li class="mobile-nav__item mobile-nav__item--auth cs-dropdown js-dropdown">
+            <a href="#" class="mobile-nav__link mobile-nav__link--lk">Валерий Иванов</a>
+            <ul class="cs-dropdown__list">
+              <li class="mobile-nav__item">
+                <a href="lk-user.html" class="mobile-nav__link">Мои заказы</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="lk-order.html" class="mobile-nav__link">Пресональные скидки</a>
+              </li>
+              <li class="mobile-nav__item">
+                <a href="lk-sale.html" class="mobile-nav__link">Выход</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="mobile-nav__list">
+          <li class="mobile-nav__item ">
+            <a href="#" class="mobile-nav__link mobile-nav__link--garanty">Гарантия и возврат</a>
+          </li>
+          <li class="mobile-nav__item ">
+            <a href="#" class="mobile-nav__link mobile-nav__link--company">О компании</a>
+          </li>
+          <li class="mobile-nav__item ">
+            <a href="#" class="mobile-nav__link mobile-nav__link--news">Новости</a>
+          </li>
+          <li class="mobile-nav__item ">
+            <a href="#" class="mobile-nav__link mobile-nav__link--partners">Стать партнером</a>
+          </li>
+          <li class="mobile-nav__item ">
+            <a href="#" class="mobile-nav__link mobile-nav__link--contacts">Контакты</a>
+          </li>
+        </ul>
+        <!-- begin phone -->
+        <div class="phone phone--icon">
+          <a href="#" class="phone__link" itemprop="telephone">8 800 555 25 40</a>
         </div>
-
-        <div class="overlay"></div>
-        <div class="go-top js-go-top">На верх</div>
-        <!-- begin windows -->
-        <div class="windows">
-            <!-- begin register -->
-            <div class="modal-window modal-window--mobile register" id="register">
-                <div class="modal-window__header">
-                    <h4 class="modal-window__title">Регистрация</h4>
-                </div>
-                <div class="modal-window__body">
-                    <form class="form form__register">
-
-                        <div class="cs-input form__input is-invalid">
-                            <input type="text" class="cs-input__field" placeholder="Логин">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                        </div>
-
-                        <div class="cs-input form__input is-invalid">
-                            <input type="text" class="cs-input__field" placeholder="Ваше имя">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                        </div>
-
-                        <div class="cs-input form__input is-invalid">
-                            <input type="email" class="cs-input__field" placeholder="Email">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                        </div>
-
-                        <div class="cs-input form__input is-invalid">
-                            <input type="password" class="cs-input__field" placeholder="Пароль">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                        </div>
-
-                        <button type="submit" class="button button--accent form__btn">Зарегистрироваться</button>
-                        <div class="success">
-                            <div class="success__text">Спасибо за регистрацию!</div>
-                        </div>
-                    </form>
-                    <div class="info-text">Нажимая кнопку «Зарегистрироваться», я подтверждаю свою дееспособность, согласие на получение информации об оформлении и получении заказа, согласие на обработку персональных данных в соответствии с указанным
-                        <a href="#">здесь</a> текстом.</div>
-                </div>
+        <!-- end phone -->
+        <!-- begin social -->
+        <div class="social ">
+          <ul class="social__list">
+            <li class="social__item">
+              <a href="#" class="social__link">
+                <svg class="icon icon-cs-vk social__icon">
+                  <use xlink:href="img/sprite.svg#cs-vk"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a href="#" class="social__link">
+                <svg class="icon icon-cs-youtube social__icon">
+                  <use xlink:href="img/sprite.svg#cs-youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a href="#" class="social__link">
+                <svg class="icon icon-cs-instagram social__icon">
+                  <use xlink:href="img/sprite.svg#cs-instagram"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div><!-- end social -->
+      </nav>
+      <!-- end mobile-nav -->
+      <!-- begin header -->
+      <header class="header " itemscope itemtype="http://schema.org/WPHeader">
+        <div class="container">
+          <div class="header__inner">
+            <!-- begin hamburger -->
+            <button class="hamburger header__hamburger js-hamburger md-only">
+              <svg class="icon icon-cs-hamburger hamburger__icon">
+                <use xlink:href="img/sprite.svg#cs-hamburger"></use>
+              </svg>
+            </button>
+            <!-- end hamburger -->
+            <!-- begin logo -->
+            <div class="logo header__logo" itemscope itemprop="logo" itemtype="http://schema.org/Organization">
+              <a class="logo__link" href="/" itemprop="url">
+                <img class="logo__img" src="img/general/logo.png" alt="CS20">
+              </a>
             </div>
-            <!-- end register -->
-
-            <!-- begin review-add -->
-            <div class="modal-window modal-window--mobile review-add" id="review-add">
-                <div class="modal-window__header">
-                    <h4 class="modal-window__title">Написать отзыв</h4>
-                </div>
-                <div class="modal-window__body">
-                    <form class="form form__review-add">
-                        <div class="cs-input">
-                            <span class="cs-input__title">Ваше имя</span>
-                            <input type="text" class="cs-input__field">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                        </div>
-                        <div class="cs-input cs-input--select form__input">
-                            <span class="cs-input__title">Город</span>
-                            <select class="js-select">
-                                <option value="Выберите город..." disabled selected>Выберите город...</option>
-
-                                <option value="Балаково">Балаково</option>
-
-                                <option value="Балаково">Балаково</option>
-
-                                <option value="Балаково">Балаково</option>
-
-                                <option value="Балаково">Балаково</option>
-
-                                <option value="Балаково">Балаково</option>
-
-                                <option value="Балаково">Балаково</option>
-
-                                <option value="Балаково">Балаково</option>
-
-                                <option value="Балаково">Балаково</option>
-
-                                <option value="Балаково">Балаково</option>
-
-                                <option value="Балаково">Балаково</option>
-
-                                <option value="Балаково">Балаково</option>
-                            
-                            </select>
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                        </div>
-
-                        <div class="cs-input cs-input--rating">
-                            <span class="cs-input__title">Оценка</span>
-
-                            <div class="star-rating">
-                                <div class="star-rating__wrap">
-                                    <input class="star-rating__input" id="star-rating-5" type="radio" name="rating" value="5">
-                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-5" title="5 из 5"></label>
-                                    <input class="star-rating__input" id="star-rating-4" type="radio" name="rating" value="4">
-                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-4" title="4 из 5"></label>
-                                    <input class="star-rating__input" id="star-rating-3" type="radio" name="rating" value="3" checked>
-                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-3" title="3 из 5"></label>
-                                    <input class="star-rating__input" id="star-rating-2" type="radio" name="rating" value="2">
-                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-2" title="2 из 5"></label>
-                                    <input class="star-rating__input" id="star-rating-1" type="radio" name="rating" value="1">
-                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-1" title="1 из 5"></label>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="cs-input cs-input--text">
-                            <div class="cs-input__title">Отзыв</div>
-                            <textarea></textarea>
-                        </div>
-
-                        <div class="pedit__item">
-                            <label class="pedit__file">
-                                <span>Прикрепить файл</span>(не более 6 МВ)
-                                <input type="file">
-                            </label>
-                        </div>
-
-                        <button type="submit" class="button button--accent form__btn">Отправить</button>
-                        <div class="success">
-                            <div class="success__text">Спасибо за отзыв!</div>
-                        </div>
-                    </form>
-                </div>
+            <!-- end logo -->
+            <!-- begin header__menu -->
+            <div class="header__menu">
+              <!-- begin nav -->
+              <nav class="nav nav--main is-auth">
+                <ul class="nav__list">
+                  <li class="nav__item">
+                    <a href="payment.html" class="nav__link">Удобная оплата</a>
+                  </li>
+                  <li class="nav__item is-active">
+                    <a href="delivery.html" class="nav__link">Бесплатная доставка</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="#" class="nav__link">Легкий возврат</a>
+                  </li>
+                  <li class="nav__item nav__item--last">
+                    <a href="getsale.html" class="nav__link">Получить скидку</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="shops.html" class="nav__link">Магазины</a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- end nav -->
+            </div><!-- end header__menu -->
+            <!-- begin cart-link -->
+            <a class="cart-link header__cart-link sm-only" href="cart.html">
+              <svg class="icon icon-cs-cart cart-link__icon">
+                <use xlink:href="img/sprite.svg#cs-cart"></use>
+              </svg>
+              <span class="cart-link__badge badge">32</span>
+            </a>
+            <!-- end cart-link -->
+            <!-- begin phone -->
+            <div class="phone header__phone js-header-phone sm-hide">
+              <a class="phone__link" href="#" itemprop="telephone">8 800 555 25 40</a>
             </div>
-            <!-- end review-add -->
-
-            <!-- begin enter -->
-            <div class="modal-window modal-window--mobile enter" id="enter">
-                <div class="modal-window__header">
-                    <h4 class="modal-window__title">Авторизация</h4>
-                </div>
-                <div class="modal-window__body">
-                    <form class="form form__register">
-
-                        <div class="cs-input form__input is-invalid">
-                            <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                        </div>
-
-                        <div class="cs-input form__input is-invalid">
-                            <input type="password" class="cs-input__field" placeholder="Пароль">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                        </div>
-
-                        <div class="form__box">
-
-                            <label class="cs-checkbox form__checkbox">
-                                <input type="checkbox">
-                                <span class="cs-checkbox__box"></span>
-                                <span class="cs-checkbox__title">Запомнить меня</span>
-                            </label>
-
-                            <a class="password-recovery" href="#" data-fancybox>Забыли пароль?</a>
-                        </div>
-                        <button type="submit" class="button button--accent form__btn">Вход</button>
-                        <div class="success">
-                            <div class="success__text">Добро пожаловать!</div>
-                        </div>
-                    </form>
-                    <div class="info-text">если у Вас еще нет учетной записи,
-                        <a href="#register" data-fancybox>зарегистрируйтесь</a>
-                    </div>
-                </div>
-            </div>
-            <!-- end enter -->
-
-            <!-- begin buy-one-click -->
-            <div class="modal-window modal-window--mobile buy-one-click" id="buy-one-click">
-                <div class="modal-window__header">
-                    <h4 class="modal-window__title">Купить в 1 клик</h4>
-                    <span class="modal-window__subtitle">Наши менеджеры свяжутся с Вами в течении 15 мин.</span>
-                </div>
-                <div class="modal-window__body">
-                    <form class="form form__request">
-
-                        <div class="cs-input form__input is-invalid">
-                            <input type="text" class="cs-input__field" placeholder="Ваше имя">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                        </div>
-
-                        <div class="cs-input form__input">
-                            <input type="tel" class="cs-input__field js-input js-phone-mask" placeholder="Ваш телефон">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                        </div>
-                        <button type="submit" class="button button--accent form__btn">Купить</button>
-                        <div class="success">
-                            <div class="success__text">
-                                Спасибо за заказ!
-                                <div class="success__text--small">Наши менеджеры свяжутся с Вами в ближайшее время.</div>
-                            </div>
-
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- end buy-one-click -->
+            <!-- end phone -->
+          </div>
         </div>
-        <!-- end windows -->
-        <!-- begin scripts -->
-        <script type="text/javascript" src="js/libs.min.js"></script>
-
-        <script type="text/javascript" src="js/app.js"></script>
-        <!-- end scripts -->
-    </body>
+      </header>
+      <!-- end header -->
+      <!-- begin firstscreen -->
+      <section class="firstscreen js-firstscreen">
+        <div class="container">
+          <div class="firstscreen__line">
+            <!-- begin search -->
+            <div class="search__wrap">
+              <form action="" autocomplete="on" class="search js-search">
+                <div class="search__inner">
+                  <input class="search__field js-search-input" type="text" placeholder="Я хочу купить..." autocomplete="off">
+                  <svg class="icon icon-cs-close search__reset js-search--reset" style="display: none;" title="Сбросить">
+                    <use xlink:href="img/sprite.svg#cs-close"></use>
+                  </svg>
+                  <div class="search__hint">
+                    <div class="search-hint">
+                      <ul class="search-hint__list">
+                        <li class="search-hint__item">
+                          <span class="search-hint__text">Патрубки радиатора УАЗ 3160, </span>
+                          <span class="search-hint__text">ЗМЗ 409, Е-2,3 (3шт)</span>
+                        </li>
+                        <li class="search-hint__item">
+                          <span class="search-hint__text">Патрубки радиатора УАЗ 3160, </span>
+                          <span class="search-hint__text">ЗМЗ 409, Е-2,3 (3шт)</span>
+                        </li>
+                        <li class="search-hint__item">
+                          <span class="search-hint__text">Патрубки радиатора УАЗ 3160, </span>
+                          <span class="search-hint__text">ЗМЗ 409, Е-2,3 (3шт)</span>
+                        </li>
+                        <li class="search-hint__item">
+                          <span class="search-hint__text">Патрубки радиатора УАЗ 3160, </span>
+                          <span class="search-hint__text">ЗМЗ 409, Е-2,3 (3шт)</span>
+                        </li>
+                        <li class="search-hint__item">
+                          <span class="search-hint__text">Патрубки радиатора УАЗ 3160, </span>
+                          <span class="search-hint__text">ЗМЗ 409, Е-2,3 (3шт)</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <button class="search__submit">
+                  <span class="sm-hide">Найти</span>
+                  <svg class="icon icon-cs-search search__submit_icon sm-only">
+                    <use xlink:href="img/sprite.svg#cs-search"></use>
+                  </svg>
+                </button>
+              </form>
+            </div>
+            <!-- end search -->
+            <div class="c-dropdown js-c-dropdown c-dropdown--wide c-dropdown--white ml-30 login sm-hide">
+              <svg class="icon icon-cs-user c-dropdown__icon">
+                <use xlink:href="img/sprite.svg#cs-user"></use>
+              </svg>
+              <span class="c-dropdown__title">Личный кабинет</span>
+              <ul class="c-dropdown__list login__clear">
+                <li class="c-dropdown__item">
+                  <a href="#modal-auth" class="c-dropdown__link">Вход</a>
+                </li>
+                <li class="c-dropdown__item">
+                  <a href="#modal-registr" class="c-dropdown__link">Регистрация</a>
+                </li>
+              </ul>
+              <ul class="c-dropdown__list login__auth">
+                <div class="c-dropdown__item">
+                  <a href="#modal-registr" class="c-dropdown__link"> Ivan Petrov <svg class="icon icon-cs-cog login__icon">
+                      <use xlink:href="img/sprite.svg#cs-cog"></use>
+                    </svg>
+                  </a>
+                </div>
+                <li class="c-dropdown__item">
+                  <a href="#modal-auth" class="c-dropdown__link">Мои заказы</a>
+                </li>
+                <li class="c-dropdown__item">
+                  <a href="#modal-registr" class="c-dropdown__link">Персональные скидки</a>
+                </li>
+                <li class="c-dropdown__item">
+                  <a href="#modal-registr" class="c-dropdown__link">Выход</a>
+                </li>
+              </ul>
+            </div>
+            <div class="c-dropdown js-c-dropdown c-dropdown--white sm-hide" data-dropdown-position="right">
+              <div class="cart-link">
+                <svg class="icon icon-cs-cart c-dropdown__icon">
+                  <use xlink:href="img/sprite.svg#cs-cart"></use>
+                </svg>
+                <span class="cart-link__badge badge">32</span>
+              </div>
+              <span class="c-dropdown__title">Корзина</span>
+              <div class="c-dropdown__list">
+                <div class="cart-info">
+                  <div class="cart-info__inner js-scroll">
+                    <div class="cart-info__item">
+                      <div class="cart-info__img">
+                        <img src="img/products/1/60x30/1.png" alt="alt">
+                      </div>
+                      <div class="cart-info__text">
+                        <div class="cart-info__title js-text-overflow" data-text-overflow="60">Пыльник заднего амортизатора 2108 (2шт) СИНИЙ</div>
+                        <div class="cart-info__price">536 руб.</div>
+                      </div>
+                    </div>
+                    <div class="cart-info__item">
+                      <div class="cart-info__img">
+                        <img src="img/products/1/60x30/1.png" alt="alt">
+                      </div>
+                      <div class="cart-info__text">
+                        <div class="cart-info__title js-text-overflow" data-text-overflow="60">Пыльник заднего амортизатора 2108 (2шт) СИНИЙ</div>
+                        <div class="cart-info__price">536 руб.</div>
+                      </div>
+                    </div>
+                    <div class="cart-info__item">
+                      <div class="cart-info__img">
+                        <img src="img/products/1/60x30/1.png" alt="alt">
+                      </div>
+                      <div class="cart-info__text">
+                        <div class="cart-info__title js-text-overflow" data-text-overflow="60">Пыльник заднего амортизатора 2108 (2шт) СИНИЙ</div>
+                        <div class="cart-info__price">536 руб.</div>
+                      </div>
+                    </div>
+                    <div class="cart-info__item">
+                      <div class="cart-info__img">
+                        <img src="img/products/1/60x30/1.png" alt="alt">
+                      </div>
+                      <div class="cart-info__text">
+                        <div class="cart-info__title js-text-overflow" data-text-overflow="60">Пыльник заднего амортизатора 2108 (2шт) СИНИЙ</div>
+                        <div class="cart-info__price">536 руб.</div>
+                      </div>
+                    </div>
+                    <div class="cart-info__item">
+                      <div class="cart-info__img">
+                        <img src="img/products/1/60x30/1.png" alt="alt">
+                      </div>
+                      <div class="cart-info__text">
+                        <div class="cart-info__title js-text-overflow" data-text-overflow="60">Пыльник заднего амортизатора 2108 (2шт) СИНИЙ</div>
+                        <div class="cart-info__price">536 руб.</div>
+                      </div>
+                    </div>
+                    <div class="cart-info__item">
+                      <div class="cart-info__img">
+                        <img src="img/products/1/60x30/1.png" alt="alt">
+                      </div>
+                      <div class="cart-info__text">
+                        <div class="cart-info__title js-text-overflow" data-text-overflow="60">Пыльник заднего амортизатора 2108 (2шт) СИНИЙ</div>
+                        <div class="cart-info__price">536 руб.</div>
+                      </div>
+                    </div>
+                    <div class="cart-info__item">
+                      <div class="cart-info__img">
+                        <img src="img/products/1/60x30/1.png" alt="alt">
+                      </div>
+                      <div class="cart-info__text">
+                        <div class="cart-info__title js-text-overflow" data-text-overflow="60">Пыльник заднего амортизатора 2108 (2шт) СИНИЙ</div>
+                        <div class="cart-info__price">536 руб.</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart-info__footer">
+                    <div class="cart-info__sum">Итого: <span>2144 руб</span></div>
+                    <a href="cart.html" class="btn btn--small btn-outline-gray cart-info__btn">Перейти в корзину</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn--filter js-filter--open sm-only">Открыть фильтр</button>
+        </div>
+      </section>
+      <!-- end firstscreen -->
+      <!-- begin home -->
+      <div class="content-wrapper catalog">
+        <!-- begin breadcrumbs -->
+        <div class="container">
+          <div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item">
+                <a href="#" class="breadcrumbs__link" itemprop="url">
+                  <span class="breadcrumbs__title" itemprop="title">Главная</span>
+                </a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a href="#" class="breadcrumbs__link" itemprop="url">
+                  <span class="breadcrumbs__title" itemprop="title">Каталог</span>
+                </a>
+              </li>
+              <li class="breadcrumbs__item">
+                <span class="breadcrumbs__title" itemprop="title">Патрубки / Шланги</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- end breadcrumbs -->
+        <!-- begin catalog__topline -->
+        <div class="container">
+          <div class="catalog__topline">
+            <h1 class="h1 catalog__title page-title" itemprop="headline">Патрубки / Шланги</h1>
+            <!-- begin sorting -->
+            <div class="sorting catalog__sorting">
+              <div class="sorting__count">
+                <select class="sorting__select js-select no-search">
+                  <option value="Сначала популярное">Сначала популярное</option>
+                  <option value="Сначала дешевле">Сначала дешевле</option>
+                  <option value="Сначала дороже">Сначала дороже</option>
+                  <option value="Со скидками">Со скидками</option>
+                  <option value="Лучшие оценки">Лучшие оценки</option>
+                </select>
+              </div>
+              <div class="sorting__list sm-only--flex">
+                <button class="sorting__btn sorting__btn--list js-sorting-btn is-active" data-sorting="3"></button>
+                <button class="sorting__btn sorting__btn--tile js-sorting-btn" data-sorting="2"></button>
+              </div>
+            </div>
+            <!-- end sorting -->
+          </div>
+        </div>
+        <!-- end catalog__topline -->
+        <!-- begin catalog__content -->
+        <div class="container">
+          <div class="catalog__inner">
+            <div class="catalog__content">
+              <!-- begin catalog__filter -->
+              <form class="filter catalog__filter js-filter js-filter-sticky">
+                <div class="filter__inner">
+                  <div class="filter__header">
+                    <span class="filter__title"> Фильтры </span>
+                    <svg class="icon icon-cs-close filter__icon filter__icon--close js-filter--close">
+                      <use xlink:href="img/sprite.svg#cs-close"></use>
+                    </svg>
+                  </div>
+                  <div class="filter__body js-cs-accordeon cs-accordeon cs-accordeon--other">
+                    <div class="filter__item filter__item_type cs-accordeon__item is-open">
+                      <div class="filter__title cs-accordeon__title"> Категории <span class="cs-accordeon__icon"></span>
+                      </div>
+                      <div class="filter__content cs-accordeon__content js-filter-content">
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox is-checked">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">Все категории</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox ">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">Элементы подвески</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox ">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">Прокладки / Ремкомплекты</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox ">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">Патрубки / Шланги</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox ">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">Крепления глушителя</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox ">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">Подушки двигателя</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox ">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">Брызговики</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox ">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">Коврики</span>
+                        </label>
+                        <button class="btn-link filter__btn-link js-select-all">Выбрать все</button>
+                      </div>
+                    </div>
+                    <div class="filter__item filter__item_price cs-accordeon__item is-open">
+                      <div class="filter__title cs-accordeon__title"> Цена <span class="cs-accordeon__icon"></span>
+                      </div>
+                      <div class="filter__content cs-accordeon__content js-filter-content">
+                        <div class="range__diapazon">
+                          <div class="range__from">
+                            <input type="num" id="jsPriceStart">
+                            <i class="fa fa-rub"></i>
+                          </div>
+                          <div class="range__to">
+                            <input type="num" id="jsPriceEnd">
+                            <i class="fa fa-rub"></i>
+                          </div>
+                        </div>
+                        <div class="filter__range range">
+                          <div class="range__slider" id="js-filter-slider" data-start="500" data-end="15000"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter__item filter__item_car cs-accordeon__item">
+                      <div class="filter__title cs-accordeon__title"> Модель авто <span class="cs-accordeon__icon"></span>
+                      </div>
+                      <div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">Largus</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">Renault Logan</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">Vesta</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">X-RAY</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">ВАЗ 2118 Калина</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">ВАЗ 2101-07</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">ВАЗ 2108-99</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">ВАЗ 2110-12</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">2113-2115</span>
+                        </label>
+                        <button class="btn-link filter__btn-link js-select-all">Выбрать все</button>
+                      </div>
+                    </div>
+                    <div class="filter__item filter__item_series cs-accordeon__item">
+                      <div class="filter__title cs-accordeon__title"> Серия <span class="cs-accordeon__icon"></span>
+                      </div>
+                      <div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">Комфорт</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">Профи</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">Драйв</span>
+                        </label>
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
+                          <input type="checkbox">
+                          <span class="cs-checkbox__box"></span>
+                          <span class="cs-checkbox__title">Оригинал +</span>
+                        </label>
+                        <button class="btn-link filter__btn-link js-select-all">Выбрать все</button>
+                      </div>
+                    </div>
+                    <div class="filter__footer">
+                      <button class="btn btn--white btn--shadow filter__btn--reset js-filter-btn--reset">Сбросить фильтр</button>
+                    </div>
+                  </div>
+                </div>
+              </form><!-- end catalog__filter -->
+              <!-- begin catalog__products -->
+              <div class="catalog__products">
+                <div class="product-item__wrap js-products">
+                  <!-- begin product-item -->
+                  <a href="#" class="product-item" itemscope itemtype="http://schema.org/Product">
+                    <div class="product-item__img" itemprop="image" href="img/products/1/190x190/1.png">
+                      <img src="img/products/1/190x190/1.png" alt="Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ" />
+                    </div>
+                    <h3 class="product-item__title js-product-title-equalheight">Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ</h3>
+                    <div class="product-item__bottom" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="product-item__price">
+                        <meta itemprop="price" content="536 руб.">
+                        <meta itemprop="priceCurrency" content="RUB">
+                        <span>536 руб.</span>
+                      </span>
+                      <button class="btn-icon btn-icon--addInCart product-item__btn js-add-in-cart">
+                        <svg class="icon icon-cs-cart btn-icon__ico btn-icon__ico--cart">
+                          <use xlink:href="img/sprite.svg#cs-cart"></use>
+                        </svg>
+                        <svg class="icon icon-cs-close btn-icon__ico btn-icon__ico--plus">
+                          <use xlink:href="img/sprite.svg#cs-close"></use>
+                        </svg>
+                        <svg class="icon icon-cs-check btn-icon__ico btn-icon__ico--check">
+                          <use xlink:href="img/sprite.svg#cs-check"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </a><!-- end product-item -->
+                  <!-- begin product-item -->
+                  <a href="#" class="product-item" itemscope itemtype="http://schema.org/Product">
+                    <div class="product-item__img" itemprop="image" href="img/products/1/190x190/2.png">
+                      <img src="img/products/1/190x190/2.png" alt="Стойка стабилизатора 1118/2170 (2шт) ЖЕЛТЫЙ" />
+                    </div>
+                    <h3 class="product-item__title js-product-title-equalheight">Стойка стабилизатора 1118/2170 (2шт) ЖЕЛТЫЙ</h3>
+                    <div class="product-item__bottom" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="product-item__price">
+                        <meta itemprop="price" content="452 руб.">
+                        <meta itemprop="priceCurrency" content="RUB">
+                        <span>452 руб.</span>
+                      </span>
+                      <button class="btn-icon btn-icon--addInCart product-item__btn js-add-in-cart">
+                        <svg class="icon icon-cs-cart btn-icon__ico btn-icon__ico--cart">
+                          <use xlink:href="img/sprite.svg#cs-cart"></use>
+                        </svg>
+                        <svg class="icon icon-cs-close btn-icon__ico btn-icon__ico--plus">
+                          <use xlink:href="img/sprite.svg#cs-close"></use>
+                        </svg>
+                        <svg class="icon icon-cs-check btn-icon__ico btn-icon__ico--check">
+                          <use xlink:href="img/sprite.svg#cs-check"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </a><!-- end product-item -->
+                  <!-- begin product-item -->
+                  <a href="#" class="product-item" itemscope itemtype="http://schema.org/Product">
+                    <div class="product-item__img" itemprop="image" href="img/products/1/190x190/3.png">
+                      <img src="img/products/1/190x190/3.png" alt="Пыльник заднего амортизатора 2108 (2шт) СИНИЙ" />
+                    </div>
+                    <h3 class="product-item__title js-product-title-equalheight">Пыльник заднего амортизатора 2108 (2шт) СИНИЙ</h3>
+                    <div class="product-item__bottom" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="product-item__price">
+                        <meta itemprop="price" content="536 руб.">
+                        <meta itemprop="priceCurrency" content="RUB">
+                        <span>536 руб.</span>
+                      </span>
+                      <button class="btn-icon btn-icon--addInCart product-item__btn js-add-in-cart">
+                        <svg class="icon icon-cs-cart btn-icon__ico btn-icon__ico--cart">
+                          <use xlink:href="img/sprite.svg#cs-cart"></use>
+                        </svg>
+                        <svg class="icon icon-cs-close btn-icon__ico btn-icon__ico--plus">
+                          <use xlink:href="img/sprite.svg#cs-close"></use>
+                        </svg>
+                        <svg class="icon icon-cs-check btn-icon__ico btn-icon__ico--check">
+                          <use xlink:href="img/sprite.svg#cs-check"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </a><!-- end product-item -->
+                  <!-- begin product-item -->
+                  <a href="#" class="product-item" itemscope itemtype="http://schema.org/Product">
+                    <div class="product-item__img" itemprop="image" href="img/products/1/190x190/4.png">
+                      <img src="img/products/1/190x190/4.png" alt="Подушка двигателя задняя Logan/Largus DRIVE" />
+                    </div>
+                    <h3 class="product-item__title js-product-title-equalheight">Подушка двигателя задняя Logan/Largus DRIVE</h3>
+                    <div class="product-item__bottom" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="product-item__price">
+                        <meta itemprop="price" content="536 руб.">
+                        <meta itemprop="priceCurrency" content="RUB">
+                        <span>536 руб.</span>
+                      </span>
+                      <button class="btn-icon btn-icon--addInCart product-item__btn js-add-in-cart">
+                        <svg class="icon icon-cs-cart btn-icon__ico btn-icon__ico--cart">
+                          <use xlink:href="img/sprite.svg#cs-cart"></use>
+                        </svg>
+                        <svg class="icon icon-cs-close btn-icon__ico btn-icon__ico--plus">
+                          <use xlink:href="img/sprite.svg#cs-close"></use>
+                        </svg>
+                        <svg class="icon icon-cs-check btn-icon__ico btn-icon__ico--check">
+                          <use xlink:href="img/sprite.svg#cs-check"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </a><!-- end product-item -->
+                  <!-- begin product-item -->
+                  <a href="#" class="product-item" itemscope itemtype="http://schema.org/Product">
+                    <div class="product-item__img" itemprop="image" href="img/products/1/190x190/1.png">
+                      <img src="img/products/1/190x190/1.png" alt="Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ" />
+                    </div>
+                    <h3 class="product-item__title js-product-title-equalheight">Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ</h3>
+                    <div class="product-item__bottom" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="product-item__price">
+                        <meta itemprop="price" content="536 руб.">
+                        <meta itemprop="priceCurrency" content="RUB">
+                        <span>536 руб.</span>
+                      </span>
+                      <button class="btn-icon btn-icon--addInCart product-item__btn js-add-in-cart">
+                        <svg class="icon icon-cs-cart btn-icon__ico btn-icon__ico--cart">
+                          <use xlink:href="img/sprite.svg#cs-cart"></use>
+                        </svg>
+                        <svg class="icon icon-cs-close btn-icon__ico btn-icon__ico--plus">
+                          <use xlink:href="img/sprite.svg#cs-close"></use>
+                        </svg>
+                        <svg class="icon icon-cs-check btn-icon__ico btn-icon__ico--check">
+                          <use xlink:href="img/sprite.svg#cs-check"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </a><!-- end product-item -->
+                  <!-- begin product-item -->
+                  <a href="#" class="product-item" itemscope itemtype="http://schema.org/Product">
+                    <div class="product-item__img" itemprop="image" href="img/products/1/190x190/2.png">
+                      <img src="img/products/1/190x190/2.png" alt="Стойка стабилизатора 1118/2170 (2шт) ЖЕЛТЫЙ" />
+                    </div>
+                    <h3 class="product-item__title js-product-title-equalheight">Стойка стабилизатора 1118/2170 (2шт) ЖЕЛТЫЙ</h3>
+                    <div class="product-item__bottom" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="product-item__price">
+                        <meta itemprop="price" content="452 руб.">
+                        <meta itemprop="priceCurrency" content="RUB">
+                        <span>452 руб.</span>
+                      </span>
+                      <button class="btn-icon btn-icon--addInCart product-item__btn js-add-in-cart">
+                        <svg class="icon icon-cs-cart btn-icon__ico btn-icon__ico--cart">
+                          <use xlink:href="img/sprite.svg#cs-cart"></use>
+                        </svg>
+                        <svg class="icon icon-cs-close btn-icon__ico btn-icon__ico--plus">
+                          <use xlink:href="img/sprite.svg#cs-close"></use>
+                        </svg>
+                        <svg class="icon icon-cs-check btn-icon__ico btn-icon__ico--check">
+                          <use xlink:href="img/sprite.svg#cs-check"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </a><!-- end product-item -->
+                  <!-- begin product-item -->
+                  <a href="#" class="product-item" itemscope itemtype="http://schema.org/Product">
+                    <div class="product-item__img" itemprop="image" href="img/products/1/190x190/3.png">
+                      <img src="img/products/1/190x190/3.png" alt="Пыльник заднего амортизатора 2108 (2шт) СИНИЙ" />
+                    </div>
+                    <h3 class="product-item__title js-product-title-equalheight">Пыльник заднего амортизатора 2108 (2шт) СИНИЙ</h3>
+                    <div class="product-item__bottom" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="product-item__price">
+                        <meta itemprop="price" content="536 руб.">
+                        <meta itemprop="priceCurrency" content="RUB">
+                        <span>536 руб.</span>
+                      </span>
+                      <button class="btn-icon btn-icon--addInCart product-item__btn js-add-in-cart">
+                        <svg class="icon icon-cs-cart btn-icon__ico btn-icon__ico--cart">
+                          <use xlink:href="img/sprite.svg#cs-cart"></use>
+                        </svg>
+                        <svg class="icon icon-cs-close btn-icon__ico btn-icon__ico--plus">
+                          <use xlink:href="img/sprite.svg#cs-close"></use>
+                        </svg>
+                        <svg class="icon icon-cs-check btn-icon__ico btn-icon__ico--check">
+                          <use xlink:href="img/sprite.svg#cs-check"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </a><!-- end product-item -->
+                  <!-- begin product-item -->
+                  <a href="#" class="product-item" itemscope itemtype="http://schema.org/Product">
+                    <div class="product-item__img" itemprop="image" href="img/products/1/190x190/4.png">
+                      <img src="img/products/1/190x190/4.png" alt="Подушка двигателя задняя Logan/Largus DRIVE" />
+                    </div>
+                    <h3 class="product-item__title js-product-title-equalheight">Подушка двигателя задняя Logan/Largus DRIVE</h3>
+                    <div class="product-item__bottom" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="product-item__price">
+                        <meta itemprop="price" content="536 руб.">
+                        <meta itemprop="priceCurrency" content="RUB">
+                        <span>536 руб.</span>
+                      </span>
+                      <button class="btn-icon btn-icon--addInCart product-item__btn js-add-in-cart">
+                        <svg class="icon icon-cs-cart btn-icon__ico btn-icon__ico--cart">
+                          <use xlink:href="img/sprite.svg#cs-cart"></use>
+                        </svg>
+                        <svg class="icon icon-cs-close btn-icon__ico btn-icon__ico--plus">
+                          <use xlink:href="img/sprite.svg#cs-close"></use>
+                        </svg>
+                        <svg class="icon icon-cs-check btn-icon__ico btn-icon__ico--check">
+                          <use xlink:href="img/sprite.svg#cs-check"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </a><!-- end product-item -->
+                </div>
+                <div class="catalog__empty text-center mt-30" style="display: none;">
+                  <p class="mb-30">К сожалению, на ваш поисковый запрос ничего не найдено. Попробуйте изменить параметры поиска в фильтре.</p>
+                  <button class="btn btn-outline-gray">Сбросить фильтр</button>
+                </div>
+              </div><!-- end catalog__products -->
+            </div>
+            <div class="catalog__info-view">
+              <span>Вы просмотрели 72 из 254 товаров</span>
+              <a href="#" class="btn btn--transparent">Показать ещё</a>
+            </div>
+          </div>
+        </div><!-- end catalog__content -->
+      </div><!-- end home -->
+      <!-- begin footer -->
+      <footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+        <div class="container">
+          <!-- begin footer__inner -->
+          <div class="footer__inner">
+            <div class="footer__item">
+              <!-- begin logo -->
+              <div class="logo footer__logo" itemscope itemprop="logo" itemtype="http://schema.org/Organization">
+                <a class="logo__link" href="home.html" itemprop="url">
+                  <img class="logo__img" src="img/general/logo.png" alt="CS20">
+                </a>
+              </div>
+              <!-- end logo -->
+              <div class="copyright">
+                <span itemprop="copyrightYear">© 2018 ООО “СS-20”</span>
+              </div>
+            </div>
+            <div class="footer__item">
+              <ul class="footer__list">
+                <li>
+                  <a href="garanty.html">Гарантия и возврат</a>
+                </li>
+                <li class="not-hide">
+                  <a href="policy.html">Политика конфиденциальности</a>
+                </li>
+                <li>
+                  <a href="payment.html">Оплата</a>
+                </li>
+                <li>
+                  <a href="delivery.html">Доставка</a>
+                </li>
+                <li>
+                  <a href="lk.html">Личный кабинет</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__item sm-hide">
+              <ul class="footer__list">
+                <li>
+                  <a href="about.html">О компании</a>
+                </li>
+                <li>
+                  <a href="contacts.html">Контакты</a>
+                </li>
+                <li>
+                  <a href="news.html">Новости</a>
+                </li>
+                <li>
+                  <a href="partners.html">Стать партнером</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__item last">
+              <!-- begin phone -->
+              <div class="phone footer__phone mb-20">
+                <a class="phone__link" href="tel:88005552540" itemprop="telephone">8 800 555 25 40</a>
+              </div>
+              <!-- end phone -->
+              <!-- begin social -->
+              <div class="social ">
+                <ul class="social__list">
+                  <li class="social__item">
+                    <a href="#" class="social__link">
+                      <svg class="icon icon-cs-vk social__icon">
+                        <use xlink:href="img/sprite.svg#cs-vk"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a href="#" class="social__link">
+                      <svg class="icon icon-cs-youtube social__icon">
+                        <use xlink:href="img/sprite.svg#cs-youtube"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a href="#" class="social__link">
+                      <svg class="icon icon-cs-instagram social__icon">
+                        <use xlink:href="img/sprite.svg#cs-instagram"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div><!-- end social -->
+            </div>
+            <div class="footer__item sm-hide">
+              <!-- begin block-pay -->
+              <div class="block-pay">
+                <ul class="block-pay__list">
+                  <li class="block-pay__item">
+                    <svg class="icon icon-visa block-pay__icon">
+                      <use xlink:href="img/sprite.svg#visa"></use>
+                    </svg>
+                  </li>
+                  <li class="block-pay__item">
+                    <svg class="icon icon-mastercard block-pay__icon">
+                      <use xlink:href="img/sprite.svg#mastercard"></use>
+                    </svg>
+                  </li>
+                </ul>
+              </div>
+              <!-- end block-pay -->
+            </div>
+          </div>
+          <!-- end footer__inner -->
+        </div>
+      </footer>
+      <!-- end footer -->
+    </div>
+    <div class="overlay js-overlay"></div>
+    <div class="preloader js-preloader"></div>
+    <div class="go-top js-go-top is-hidden">На верх</div>
+    <!-- begin windows -->
+    <div class="windows">
+      <!-- begin register -->
+      <div class="modal-window modal-window--mobile register" id="register">
+        <div class="modal-window__header">
+          <h4 class="modal-window__title">Регистрация</h4>
+        </div>
+        <div class="modal-window__body">
+          <form class="form form__register">
+            <div class="cs-input cs-input--light form__input">
+              <input type="text" class="cs-input__field" placeholder="Логин">
+              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+            </div>
+            <div class="cs-input cs-input--light form__input is-invalid">
+              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+            </div>
+            <div class="cs-input cs-input--light form__input">
+              <input type="email" class="cs-input__field" placeholder="Email">
+              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+            </div>
+            <div class="cs-input cs-input--light form__input">
+              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+            </div>
+            <div class="success">
+              <div class="success__text">Спасибо за регистрацию!</div>
+            </div>
+          </form>
+          <div class="policy-agriment">
+            <label class="cs-checkbox cs-checkbox--transform policy__checkbox">
+              <input type="checkbox">
+              <span class="cs-checkbox__box"></span>
+              <span class="cs-checkbox__title">Я принимаю</span>
+            </label>
+            <a href="privacy.html" target="_blank">Условия использования</a> и соглашаюсь с <a href="privacy.html" target="_blank">политикой конфиденциальности</a>
+          </div>
+          <button class="btn btn--gr form__btn mt-30" type="submit">Зарегистрироваться</button>
+          <a class="form__link js-popup-close" data-fancybox-close href="#enter">Уже есть аккаунт</a>
+        </div>
+      </div>
+      <!-- end register -->
+      <!-- begin enter -->
+      <div class="modal-window modal-window--mobile enter" id="enter">
+        <div class="modal-window__header">
+          <h4 class="modal-window__title">Вход в личный кабинет</h4>
+        </div>
+        <div class="modal-window__body">
+          <form class="form form__register">
+            <div class="cs-input cs-input--light form__input">
+              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+            </div>
+            <div class="cs-input cs-input--light form__input is-invalid">
+              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+            </div>
+            <div class="form__box mt-30">
+              <label class="cs-checkbox cs-checkbox--transform policy__checkbox">
+                <input type="checkbox">
+                <span class="cs-checkbox__box"></span>
+                <span class="cs-checkbox__title">Запомнить меня</span>
+              </label>
+            </div>
+            <button class="btn btn--gr form__btn" type="submit">Войти</button>
+            <div class="success">
+              <div class="success__text">Добро пожаловать!</div>
+            </div>
+          </form>
+          <a class="form__link js-popup-close mb-10" data-fancybox-close href="#password-recovery">Не могу войти</a>
+          <a class="form__link js-popup-close" data-fancybox-close href="#register">Регистрация</a>
+        </div>
+      </div>
+      <!-- end enter -->
+      <!-- begin enter -->
+      <div class="modal-window modal-window--mobile password-recovery" id="password-recovery">
+        <div class="modal-window__header">
+          <h4 class="modal-window__title">Восстановление пароля</h4>
+        </div>
+        <div class="modal-window__body">
+          <form class="form form__register">
+            <div class="cs-input cs-input--light form__input is-invalid">
+              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+            </div>
+            <button class="btn btn--gr form__btn mt-30" type="submit">Вход</button>
+            <div class="success">
+              <div class="success__text">Вам на почту отправленно сообщение с дальнейшими инструкциями.</div>
+            </div>
+          </form>
+          <a class="form__link js-popup-close" data-fancybox-close href="#register">Регистрация</a>
+        </div>
+      </div>
+      <!-- end enter -->
+      <!-- begin review-add -->
+      <div class="modal-window modal-window--mobile review-add" id="review-add">
+        <div class="modal-window__header">
+          <h4 class="modal-window__title">Написать отзыв</h4>
+        </div>
+        <div class="modal-window__body">
+          <form class="form form__review-add">
+            <div class="cs-input">
+              <span class="cs-input__title">Ваше имя</span>
+              <input class="cs-input__field" type="text">
+              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+            </div>
+            <div class="cs-input cs-input--select form__input">
+              <span class="cs-input__title">Город</span>
+              <select class="js-select">
+                <option value="Выберите город..." disabled selected>Выберите город...</option>
+                <option value="Балаково">Балаково</option>
+                <option value="Балаково">Балаково</option>
+                <option value="Балаково">Балаково</option>
+                <option value="Балаково">Балаково</option>
+                <option value="Балаково">Балаково</option>
+                <option value="Балаково">Балаково</option>
+                <option value="Балаково">Балаково</option>
+                <option value="Балаково">Балаково</option>
+                <option value="Балаково">Балаково</option>
+                <option value="Балаково">Балаково</option>
+                <option value="Балаково">Балаково</option> ﻿
+              </select>
+              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+            </div>
+            <div class="cs-input cs-input--rating">
+              <span class="cs-input__title">Оценка</span>
+              <div class="star-rating">
+                <div class="star-rating__wrap">
+                  <input class="star-rating__input" id="star-rating-5" type="radio" name="rating" value="5">
+                  <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-5" title="5 из 5"></label>
+                  <input class="star-rating__input" id="star-rating-4" type="radio" name="rating" value="4">
+                  <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-4" title="4 из 5"></label>
+                  <input class="star-rating__input" id="star-rating-3" type="radio" name="rating" value="3" checked>
+                  <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-3" title="3 из 5"></label>
+                  <input class="star-rating__input" id="star-rating-2" type="radio" name="rating" value="2">
+                  <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-2" title="2 из 5"></label>
+                  <input class="star-rating__input" id="star-rating-1" type="radio" name="rating" value="1">
+                  <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-1" title="1 из 5"></label>
+                </div>
+              </div>
+            </div>
+            <div class="cs-input cs-input--text">
+              <div class="cs-input__title">Отзыв</div>
+              <textarea></textarea>
+            </div>
+            <div class="pedit__item">
+              <label class="pedit__file">
+                <span>Прикрепить файл</span>(не более 6 МВ) <input type="file">
+              </label>
+            </div>
+            <button class="button button--accent form__btn" type="submit">Отправить</button>
+            <div class="success">
+              <div class="success__text">Спасибо за отзыв!</div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- end review-add -->
+      <!-- begin buy-one-click -->
+      <div class="modal-window modal-window--mobile buy-one-click" id="buy-one-click">
+        <div class="modal-window__header">
+          <h4 class="modal-window__title">Купить в 1 клик</h4>
+          <span class="modal-window__subtitle">Наши менеджеры свяжутся с Вами в течении 15 мин.</span>
+        </div>
+        <div class="modal-window__body">
+          <form class="form form__request">
+            <div class="cs-input form__input is-invalid">
+              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+            </div>
+            <div class="cs-input form__input">
+              <input class="cs-input__field js-input js-phone-mask" type="tel" placeholder="Ваш телефон">
+              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+            </div>
+            <button class="button button--accent form__btn" type="submit">Купить</button>
+            <div class="success">
+              <div class="success__text"> Спасибо за заказ! <div class="success__text--small">Наши менеджеры свяжутся с Вами в ближайшее время.</div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- end buy-one-click -->
+    </div>
+    <!-- end windows -->
+    <!-- begin scripts -->
+    <script type="text/javascript" src="js/libs.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- end scripts -->
+  </body>
 </html>

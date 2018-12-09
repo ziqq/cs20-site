@@ -1,0 +1,41 @@
+<div class="cart__wrap">
+	<div class="cart__title">Выберите способ оплаты</div>
+
+	<div class="delivery-item">
+		<div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
+			{{ mixin.icon('pay') }}
+			<span class="cs-checkbox__box"></span>
+			</div>
+			<div class="delivery-item__text">
+				<span class="delivery-item__title">Оплата на складе при получении</span>
+				<div class="delivery-item__desc">При оплате на складе Вы лично или Ваше доверенное лицо забираете товар с нашего склада и оплачиваете его на месте. Склад находится по адресу: г. Балаково, ул. Транспортная 6/1, время работы: Пн-Пт 8:00-17:00, телефон: 8-800-555-25-40</div>
+			</div>
+	</div>
+	<div class="delivery-item">
+		<div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
+			<img class="delivery-item__img" src="img/general/robokassa.png" alt="Оплата банковской картой">
+			<span class="cs-checkbox__box"></span>
+			</div>
+			<div class="delivery-item__text">
+				<span class="delivery-item__title">Оплата банковской картой</span>
+				<div class="delivery-item__desc">Оплата происходит через систему Робокасса. Данный вид оплаты является самым простым и распространенным, ведь система Робокасса включает в себя более 40 способов оплаты.</div>
+			</div>
+	</div>
+	<div class="delivery-item">
+		<div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
+			{{ mixin.icon('pay-bank') }}
+			<span class="cs-checkbox__box"></span>
+			</div>
+			<div class="delivery-item__text">
+				<span class="delivery-item__title">Безналичный платеж через банк</span>
+				<div class="delivery-item__desc">Этот способ предназначен только для Юридических лиц. Ваши реквизиты для выставления счета Вы можете указать в комментариях к данному заказу или выслать на нашу эл. почту <a href="mailto:info@cs-20.ru">info@cs-20.ru</a> с указанием номера заказа. Во время отгрузки вместе с товаром будут высланы все необходимые отчетные документы.</div>
+			</div>
+	</div>
+
+	<textarea class="cart__textarea" placeholder="Комментарии к заказу..."></textarea>
+
+	<div class="button-box cart__button-box">
+		<a href="#" class="button button--transparent button--back">Вернуться назад</a>
+		<a href="#" class="button button--accent">Далее</a>
+	</div>
+</div>

@@ -1,47 +1,59 @@
 .contacts
-	margin-bottom: $gutter
-	//contacts__inner
+	padding-bottom: $gutter
+	background-color: $color-bg
+	+cover
+
+	+r-max(sm)
+		background-color: #fff
+
+	//.contacts__inner
 	&__inner
 		margin-bottom: 5px
-		@extend %flex
-		+r(768)
-			align-items: flex-start
-			flex-wrap: wrap
-	//contacts__left
+
+		&.cs-card:not(.cs-card--transform)
+			+r-max(sm)
+				padding: 0
+				border: 0
+				box-shadow: none
+				background: none !important
+
+	//.contacts__form
+	&__form
+		.h4
+			margin-bottom: 20px
+
+	//.contacts__left
 	&__left
 		width: 50%
 		padding-right: 30px
 		+r(480)
 			width: 100%
 			padding-right: 0
-	//contacts__right
+	//.contacts__right
 	&__right
 		width: 50%
 		+r(480)
 			width: 100%
-	//contacts__map
+	//.contacts__map
 	&__map
 		min-height: 280px
 		height: 100%
+		margin-top: 40px
 		position: relative
 		+r(768)
 			margin-bottom: $gutter
 		+r(480)
 			margin-top: 15px
 			margin-bottom: 0
-
-
-//contacts
-
-#contacts-map
-	+coverdiv
-//#contacts-map
+//.contacts
 
 .contacts-item
 	margin-bottom: 20px
 	//.contacts-item__title
 	&__title
 		margin-bottom: 10px
+		font-family: $f-medium
+		color: $color-text--light
 	//.contacts-item__list
 	&__list
 		li
@@ -49,9 +61,8 @@
 			margin-bottom: 7px
 			font-size: 15px
 			font-family: $f-medium
-			color: #000
 		a
-			color: #000
+			color: $color-text
 			&:hover
 				text-decoration: underline
 
@@ -61,27 +72,27 @@
 //.contacts-item
 
 .contacts-owner
+	margin-bottom: 65px
+	+r(480)
+		margin-bottom: $gutter
+
 	//.contacts-owner__inner
 	&__inner
-		@extend %flex
+		+flex
 		flex-wrap: wrap
 	//.contacts-owner__item
 	&__item
 		margin-bottom: 30px
-		width: 50%
-		&:first-child
-			width: 100%
 		+r(768)
-			width: 100%
 			margin-bottom: 10px
 	//.contacts-owner__list
 	&__list
 		li
 			display: block
 			margin-bottom: 5px
-			color: #000
+			font-family: $f-medium
 		a
-			color: $color-text
+			color: $color-text--light
 			&:hover
 				text-decoration: underline
 //.contacts-owner

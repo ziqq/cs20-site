@@ -1,37 +1,68 @@
 .error
-	//error__wrap
+
+	//.error__wrap
 	&__wrap
-		padding: 100px 0 50px
-		@extend %flexCenter
+		padding: 100px 0
+		position: relative
+		+flexCenter
+		+r(768)
+			flex-direction: column
 		+i8-l
 			padding-top: 35px
 		+r(480)
 			padding: 35px 0
-	//error__content
+
+	//.error__left
+	&__left, &__right
+		width: 50%
+		+r(768)
+			width: 100%
+
+	//.error__img
+	&__img
+		max-width: 450px
+		margin: auto
+		margin-bottom: $section-indent
+		position: relative
+		z-index: 10
+		+r(480)
+			max-width: 300px
+			margin-bottom: 40px
+
+	//.error__content
 	&__content
 		max-width: 860px
 		margin: auto
 		text-align: center
-	//error__title
+
+	//.error__title
 	&__title
-		margin-bottom: 50px
+		margin-bottom: 0
 		font-family: $f-light
+		font-weight: 300
 		font-size: 200px
-		background: -webkit-linear-gradient(#af3186, #632483)
+		text-align: center
+		background: linear-gradient(#110241, #7F4794)
 		-webkit-background-clip: text
 		-webkit-text-fill-color: transparent
 		+r(1024)
-			font-size: 150px
+			// font-size: 150px
 		+r(768)
-			font-size: 120px
+			// font-size: 120px
+			position: absolute
+			top: 20px
+			right: 20%
+		+r(480)
+			+centre('x')
+			right: auto
 
-	//error__text
+	//.error__text
 	&__text
-		font-size: 24px
-		line-height: 36px
-		+r(1024)
-			font-size: 20px
-			line-height: 30px
-		+r(768)
-			font-size: 18px
-			line-height: 25px
+		margin-bottom: 0
+		text-align: left
+		p
+			display: block
+			font-size: 16px
+			line-height: 21px
+			+r(480)
+				margin-bottom: 15px

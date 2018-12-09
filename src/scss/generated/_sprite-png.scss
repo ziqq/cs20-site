@@ -1,0 +1,389 @@
+$icons: (0:0);
+$icons: map-merge($icons,(angel--left: (X: 0px, Y:-303px, W: 8px, H: 15px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(angel--right: (X: -18px, Y:-303px, W: 8px, H: 14px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(arrow--down: (X: -306px, Y:-265px, W: 11px, H: 6px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(clip: (X: -83px, Y:-265px, W: 16px, H: 18px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-1--w: (X: -180px, Y:-60px, W: 50px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-1: (X: 0px, Y:-60px, W: 50px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-10--w: (X: -60px, Y:-60px, W: 50px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-10: (X: -120px, Y:0px, W: 50px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-2--w: (X: -296px, Y:0px, W: 35px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-2: (X: -240px, Y:-120px, W: 35px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-3--w: (X: -60px, Y:-120px, W: 50px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-3: (X: -120px, Y:-120px, W: 50px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-4--w: (X: -180px, Y:0px, W: 50px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-4: (X: 0px, Y:0px, W: 50px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-5--w: (X: -180px, Y:-120px, W: 50px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-5: (X: 0px, Y:-120px, W: 50px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-6--w: (X: -120px, Y:-180px, W: 50px, H: 46px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-6: (X: -180px, Y:-180px, W: 50px, H: 46px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-7--w: (X: 0px, Y:-180px, W: 50px, H: 49px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-7: (X: -60px, Y:-180px, W: 50px, H: 49px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-8--w: (X: -240px, Y:0px, W: 46px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-8: (X: -240px, Y:-60px, W: 46px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-9--w: (X: -60px, Y:0px, W: 50px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-category-9: (X: -120px, Y:-60px, W: 50px, H: 50px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-check--mobile: (X: -215px, Y:-239px, W: 18px, H: 15px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(cs-check: (X: -36px, Y:-303px, W: 9px, H: 7px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(dot: (X: -274px, Y:-239px, W: 19px, H: 4px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(logout: (X: -237px, Y:-265px, W: 13px, H: 14px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(mobile__catalog: (X: -188px, Y:-239px, W: 17px, H: 16px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(mobile__company: (X: -109px, Y:-265px, W: 16px, H: 16px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(mobile__contacts: (X: -213px, Y:-265px, W: 14px, H: 14px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(mobile__delivery: (X: -243px, Y:-239px, W: 21px, H: 12px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(mobile__garanty: (X: -283px, Y:-265px, W: 13px, H: 13px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(mobile__home: (X: -265px, Y:-218px, W: 14px, H: 11px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(mobile__lk: (X: -135px, Y:-265px, W: 16px, H: 16px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(mobile__news: (X: -260px, Y:-265px, W: 13px, H: 13px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(mobile__partners: (X: -187px, Y:-265px, W: 16px, H: 14px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(mobile__pay: (X: -240px, Y:-218px, W: 15px, H: 11px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(rating--gray: (X: -94px, Y:-239px, W: 84px, H: 16px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(rating: (X: 0px, Y:-239px, W: 84px, H: 16px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(search--mobile: (X: -296px, Y:-168px, W: 22px, H: 22px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(search: (X: -296px, Y:-136px, W: 22px, H: 22px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(sorting--list: (X: -296px, Y:-200px, W: 22px, H: 20px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(sorting--tile: (X: -53px, Y:-265px, W: 20px, H: 20px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(telephone: (X: -161px, Y:-265px, W: 16px, H: 16px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(toggle--active: (X: -240px, Y:-180px, W: 43px, H: 28px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(toggle-mobile--active: (X: -296px, Y:-98px, W: 28px, H: 28px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(toggle-mobile: (X: -296px, Y:-60px, W: 28px, H: 28px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+$icons: map-merge($icons,(toggle: (X: 0px, Y:-265px, W: 43px, H: 28px, TW: 331px, TH: 318px, IMG: '../img/icons.png')));
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr){
+	$icon: map-get($icons, $icon);
+	@return map-get($icon, $attr);
+}
+
+
+@mixin sprite($iconName){
+	background-image: url(icon-attr($iconName, IMG));
+	width: icon-attr($iconName, W);
+	height: icon-attr($iconName, H);
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y);
+}
+
+@mixin sprite-position($iconName){
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y);
+}
+@mixin sprite-retina($iconName){
+	background-image: url(icon-attr($iconName, IMG));
+	$width: icon-attr($iconName, W);
+	$height: icon-attr($iconName, H);
+	width: $width/2;
+	height: $height/2;
+	$x: icon-attr($iconName, X);
+	$y: icon-attr($iconName, Y);
+	background-position: $x/2 $y/2;
+	$tw: icon-attr($iconName, TW);
+	$th: icon-attr($iconName, TH);
+	background-size: $tw/2 $th/2;
+}
+
+
+
+@mixin s($i){
+	@include sprite($i);
+}
+@mixin sp($i){
+	@include sprite-position($i);
+}
+@mixin sr($i){
+	@include sprite-retina($i);
+}
+
+.ico-angel--left{
+width: 8px;
+height: 15px;
+background-image: url('../img/icons.png');
+background-position: 0px -303px;
+}
+.ico-angel--right{
+width: 8px;
+height: 14px;
+background-image: url('../img/icons.png');
+background-position: -18px -303px;
+}
+.ico-arrow--down{
+width: 11px;
+height: 6px;
+background-image: url('../img/icons.png');
+background-position: -306px -265px;
+}
+.ico-clip{
+width: 16px;
+height: 18px;
+background-image: url('../img/icons.png');
+background-position: -83px -265px;
+}
+.ico-cs-category-1--w{
+width: 50px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: -180px -60px;
+}
+.ico-cs-category-1{
+width: 50px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: 0px -60px;
+}
+.ico-cs-category-10--w{
+width: 50px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: -60px -60px;
+}
+.ico-cs-category-10{
+width: 50px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: -120px 0px;
+}
+.ico-cs-category-2--w{
+width: 35px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: -296px 0px;
+}
+.ico-cs-category-2{
+width: 35px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: -240px -120px;
+}
+.ico-cs-category-3--w{
+width: 50px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: -60px -120px;
+}
+.ico-cs-category-3{
+width: 50px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: -120px -120px;
+}
+.ico-cs-category-4--w{
+width: 50px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: -180px 0px;
+}
+.ico-cs-category-4{
+width: 50px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: 0px 0px;
+}
+.ico-cs-category-5--w{
+width: 50px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: -180px -120px;
+}
+.ico-cs-category-5{
+width: 50px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: 0px -120px;
+}
+.ico-cs-category-6--w{
+width: 50px;
+height: 46px;
+background-image: url('../img/icons.png');
+background-position: -120px -180px;
+}
+.ico-cs-category-6{
+width: 50px;
+height: 46px;
+background-image: url('../img/icons.png');
+background-position: -180px -180px;
+}
+.ico-cs-category-7--w{
+width: 50px;
+height: 49px;
+background-image: url('../img/icons.png');
+background-position: 0px -180px;
+}
+.ico-cs-category-7{
+width: 50px;
+height: 49px;
+background-image: url('../img/icons.png');
+background-position: -60px -180px;
+}
+.ico-cs-category-8--w{
+width: 46px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: -240px 0px;
+}
+.ico-cs-category-8{
+width: 46px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: -240px -60px;
+}
+.ico-cs-category-9--w{
+width: 50px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: -60px 0px;
+}
+.ico-cs-category-9{
+width: 50px;
+height: 50px;
+background-image: url('../img/icons.png');
+background-position: -120px -60px;
+}
+.ico-cs-check--mobile{
+width: 18px;
+height: 15px;
+background-image: url('../img/icons.png');
+background-position: -215px -239px;
+}
+.ico-cs-check{
+width: 9px;
+height: 7px;
+background-image: url('../img/icons.png');
+background-position: -36px -303px;
+}
+.ico-dot{
+width: 19px;
+height: 4px;
+background-image: url('../img/icons.png');
+background-position: -274px -239px;
+}
+.ico-logout{
+width: 13px;
+height: 14px;
+background-image: url('../img/icons.png');
+background-position: -237px -265px;
+}
+.ico-mobile__catalog{
+width: 17px;
+height: 16px;
+background-image: url('../img/icons.png');
+background-position: -188px -239px;
+}
+.ico-mobile__company{
+width: 16px;
+height: 16px;
+background-image: url('../img/icons.png');
+background-position: -109px -265px;
+}
+.ico-mobile__contacts{
+width: 14px;
+height: 14px;
+background-image: url('../img/icons.png');
+background-position: -213px -265px;
+}
+.ico-mobile__delivery{
+width: 21px;
+height: 12px;
+background-image: url('../img/icons.png');
+background-position: -243px -239px;
+}
+.ico-mobile__garanty{
+width: 13px;
+height: 13px;
+background-image: url('../img/icons.png');
+background-position: -283px -265px;
+}
+.ico-mobile__home{
+width: 14px;
+height: 11px;
+background-image: url('../img/icons.png');
+background-position: -265px -218px;
+}
+.ico-mobile__lk{
+width: 16px;
+height: 16px;
+background-image: url('../img/icons.png');
+background-position: -135px -265px;
+}
+.ico-mobile__news{
+width: 13px;
+height: 13px;
+background-image: url('../img/icons.png');
+background-position: -260px -265px;
+}
+.ico-mobile__partners{
+width: 16px;
+height: 14px;
+background-image: url('../img/icons.png');
+background-position: -187px -265px;
+}
+.ico-mobile__pay{
+width: 15px;
+height: 11px;
+background-image: url('../img/icons.png');
+background-position: -240px -218px;
+}
+.ico-rating--gray{
+width: 84px;
+height: 16px;
+background-image: url('../img/icons.png');
+background-position: -94px -239px;
+}
+.ico-rating{
+width: 84px;
+height: 16px;
+background-image: url('../img/icons.png');
+background-position: 0px -239px;
+}
+.ico-search--mobile{
+width: 22px;
+height: 22px;
+background-image: url('../img/icons.png');
+background-position: -296px -168px;
+}
+.ico-search{
+width: 22px;
+height: 22px;
+background-image: url('../img/icons.png');
+background-position: -296px -136px;
+}
+.ico-sorting--list{
+width: 22px;
+height: 20px;
+background-image: url('../img/icons.png');
+background-position: -296px -200px;
+}
+.ico-sorting--tile{
+width: 20px;
+height: 20px;
+background-image: url('../img/icons.png');
+background-position: -53px -265px;
+}
+.ico-telephone{
+width: 16px;
+height: 16px;
+background-image: url('../img/icons.png');
+background-position: -161px -265px;
+}
+.ico-toggle--active{
+width: 43px;
+height: 28px;
+background-image: url('../img/icons.png');
+background-position: -240px -180px;
+}
+.ico-toggle-mobile--active{
+width: 28px;
+height: 28px;
+background-image: url('../img/icons.png');
+background-position: -296px -98px;
+}
+.ico-toggle-mobile{
+width: 28px;
+height: 28px;
+background-image: url('../img/icons.png');
+background-position: -296px -60px;
+}
+.ico-toggle{
+width: 43px;
+height: 28px;
+background-image: url('../img/icons.png');
+background-position: 0px -265px;
+}

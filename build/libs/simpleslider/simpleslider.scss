@@ -1,0 +1,78 @@
+@import "../../scss/_helpers/mixins";
+@import "../../scss/_helpers/media";
+@import "_generated/sprite-png";
+
+.simple-slider-container{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	&.auto-hide{
+		&:hover{
+			.ss-next-slide{
+				right: 0;
+			}
+			.ss-prev-slide{
+				left: 0;
+			}
+		}
+		.ss-next-slide,
+		.ss-prev-slide{
+			-webkit-transition: all .2s;
+			transition: all .2s;
+		}
+
+		.ss-next-slide{
+			right: -44px;
+			@include max-screen(1024) {
+				right: 0;
+			}
+		}
+		.ss-prev-slide{
+			left: -44px;
+			@include max-screen(1024) {
+				left: 0;
+			}
+		}
+	}
+}
+.ss-next-slide,
+.ss-prev-slide{
+	position: absolute;
+	top: 0;
+	width: 44px;
+	height: 100%;
+	z-index: 1;
+	cursor: pointer;
+	background-color: rgba(0,0,0, 0);
+	transition: all .2s ease;
+	&:hover{
+		background-color: rgba(0,0,0, .3);
+	}
+}
+.ss-prev-slide{
+	left: 0;
+	&::before{
+		content: '';
+		@include vcenter;
+		@include sprite('ss-angle--left');
+	}    
+}
+.ss-next-slide{
+	right: 0;
+	&::before{
+		content: '';
+		@include vcenter;
+		@include sprite('ss-angle--right'); 
+   }    
+}
+.ak-slider {
+	.h-full{
+		width: 100%;
+		height: 100%;
+	}
+	.w-full{
+		width: 100%;
+		height: auto;
+	}
+}

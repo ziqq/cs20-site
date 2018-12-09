@@ -1,5 +1,5 @@
 ---
-title: Контакты | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
+title: Контакты
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -8,6 +8,7 @@ title: Контакты | Интернет-магазин износостойк
 <!-- begin home -->
 <div class="content-wrapper">
 
+	<div class="contacts">
 	<!-- begin breadcrumbs -->
 	<div class="container">
 		<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
@@ -18,7 +19,7 @@ title: Контакты | Интернет-магазин износостойк
 					</a>
 				</li>
 				<li class="breadcrumbs__item">
-					<span class="breadcrumbs__title" itemprop="title">Новости</span>
+					<span class="breadcrumbs__title" itemprop="title">Контакты</span>
 				</li>
 			</ul>
 		</div>
@@ -26,28 +27,29 @@ title: Контакты | Интернет-магазин износостойк
 	<!-- end breadcrumbs -->
 
 	<!-- begin contacts -->
-	<section class="contacts js-contacts">
-		<div class="container">
+	<div class="container">
+		<div class="contacts__inner cs-card" style="background-image: url('img/general/contacts-bg.png');">
 
-			<h1 class="h1 page-title" itemprop="headline">Контакты</h1>
+			<h1 class="h1 page-title" itemprop="headline">{{ title }}</h1>
 
-			<div class="contacts__inner">
+			<div class="row">
 
-				<div class="contacts__left">
-					<div class="contacts-item">
+				<div class="col-6 col-xs-12">
+					<div class="contacts-item js-contacts-map--place">
 						<div class="contacts-item__title">Адрес:</div>
 						<ul class="contacts-item__list">
-							<li>413800, Россия, Саратовская область, г.Балаково, Транспортная, 6/1</li>
+							<li>413800, Россия, Саратовская область, <br>
+								г.Балаково, Транспортная, 6/1</li>
 						</ul>
 					</div>
 					<div class="contacts-item">
 						<div class="contacts-item__title">Телефоны:</div>
 						<ul class="contacts-item__list">
-							<li>8 800 555 25 40 (Звонок бесплатный)</li>
-							<li>+7 (8453) 63 10 67</li>
-							<li>+7 (8453) 68 32 88</li>
-							<li>+7 996 201 00 00</li>
-							<li>+7 927 225 32 88</li>
+							<li><a href="tel:8800555254">8 800 555 25 40</a> (Звонок бесплатный)</li>
+							<li><a href="tel:+78453631067">+7 (8453) 63 10 67</a></li>
+							<li><a href="tel:+78453683288">+7 (8453) 68 32 88</a></li>
+							<li><a href="tel:+79962010000">+7 996 201 00 00</a></li>
+							<li><a href="tel:+7 9272253288">+7 927 225 32 88</a></li>
 						</ul>
 					</div>
 					<div class="contacts-item">
@@ -63,90 +65,72 @@ title: Контакты | Интернет-магазин износостойк
 							<li>вс: выходной</li>
 						</ul>
 					</div>
-					<div class="contacts-item">
-						<div class="contacts-item__title">Мы в социальных сетях:</div>
-						<div class="social">
-							<ul class="social__list">
-								<li class="social__item">
-									<a href="#" class="social__link">
-										{{ mixin.icon('social__instagram', 'social__icon') }}
-									</a>
-								</li>
-								<li class="social__item">
-									<a href="#" class="social__link">
-										{{ mixin.icon('social__youtube', 'social__icon') }}
-									</a>
-								</li>
-								<li class="social__item">
-									<a href="#" class="social__link">
-										{{ mixin.icon('social__telegram', 'social__icon') }}
-									</a>
-								</li>
-								<li class="social__item">
-									<a href="#" class="social__link">
-										{{ mixin.icon('social__vk', 'social__icon') }}
-									</a>
-								</li>
+				</div>
+
+				<div class="col-6 col-xs-12">
+					<div class="contacts-owner">
+						<div class="contacts-owner__item">
+							<ul class="contacts-owner__list">
+								<li>Индивидуальный предприниматель</li>
+								<li class="text-upercase">Михельсон Ирина Александровна</li>
+							</ul>
+						</div>
+						<div class="contacts-owner__item">
+							<ul class="contacts-owner__list">
+								<li>СВ№: 18270 от 24.11.2000г</li>
+								<li>ИНН: 643900621640</li>
+								<li>ОГРН: 3046433910500216</li>
+							</ul>
+						</div>
+						<div class="contacts-owner__item">
+							<ul class="contacts-owner__list">
+								<li><a href="img/general/docs/Svidetelstvo_uchet.jpg" data-fancybox="images">Свидетельство о постановке на учёт</a></li>
+								<li><a href="img/general/docs/Svidetelstvo_registr.jpg" data-fancybox="images">Свидетельство о государственной регистрации</a></li>
+								<li><a href="img/general/docs/CS-20.zip">Сертификция соответствия продукции</a></li>
 							</ul>
 						</div>
 					</div>
+
+					<form class="contacts__form pedit">
+						<h4 class="h4 mb-20">Напишите нам:</h4>
+
+							<div class="cs-input ">
+								<input type="text" class="cs-input__field" placeholder="Имя">
+								<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+							</div>
+
+							<div class="cs-input">
+								<input type="email" class="cs-input__field" placeholder="Эл. почта">
+								<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+							</div>
+
+							<textarea placeholder="Сообщение..."></textarea>
+
+							<div class="button-box button-box--right mt-30">
+								<button class="btn btn-outline-gray-light pedit__btn">Отправить сообщение</button>
+							</div>
+					</form>
+
 				</div>
 
-				<div class="contacts__right">
-					<div class="contacts__map">
-						<div id="contacts-map"></div>
-					</div>
-				</div>
 			</div>
 
-			<div class="contacts-owner">
-				<div class="contacts-owner__inner">
-					<div class="contacts-owner__item">
-						<ul class="contacts-owner__list">
-							<li>Индивидуальный предприниматель</li>
-							<li class="text-upercase">Михельсон Ирина Александровна</li>
-						</ul>
-					</div>
-					<div class="contacts-owner__item">
-						<ul class="contacts-owner__list">
-							<li>СВ№: 18270 от 24.11.2000г</li>
-							<li>ИНН: 643900621640</li>
-							<li>ОГРН: 3046433910500216</li>
-						</ul>
-					</div>
-					<div class="contacts-owner__item">
-						<ul class="contacts-owner__list">
-							<li><a href="img/general/docs/Svidetelstvo_uchet.jpg" data-fancybox="images">Свидетельство о постановке на учёт</a></li>
-							<li><a href="img/general/docs/Svidetelstvo_registr.jpg" data-fancybox="images">Свидетельство о государственной регистрации</a></li>
-							<li><a href="img/general/docs/CS-20.zip">Сертификция соответствия продукции</a></li>
-						</ul>
-					</div>
-				</div>
+			<div class="contacts__map map js-contacts-map">
+				<div id="map"></div>
 			</div>
-			
+
 		</div>
-	</section>
+	</div>
 	<!-- end contacts -->
 
-</div>	
+
+	</div>
+
+</div>
 <!-- end home -->
 
 {% endblock %}
 
 {% block scripts %}
-<script async defer src ="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnkTBYnYseWFYqDk3wb4-eWn4507c7CSw&callback=initMap"></script>
-
-<script>
-	function initMap() {
-		var uluru = {lat: 51.9958, lng: 47.8191};
-		var map = new google.maps.Map(document.getElementById('contacts-map'), {
-			zoom: 17,
-			center: uluru
-		});
-		var marker = new google.maps.Marker({
-			position: uluru,
-			map: map
-		});
-	}
-</script>
+<script async defer src ="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnkTBYnYseWFYqDk3wb4-eWn4507c7CSw"></script>
 {% endblock %}

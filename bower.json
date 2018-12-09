@@ -31,7 +31,8 @@
     "inputmask": "^3.3.11",
     "select2": "^4.0.5",
     "magnific-popup": "^1.1.0",
-    "sticky-sidebar": "^3.3.3"
+    "sticky-sidebar": "^3.3.3",
+    "masonry-layout": "masonry#^4.2.2"
   },
   "devDependencies": {
     "star-rating-svg": "^1.2.1"

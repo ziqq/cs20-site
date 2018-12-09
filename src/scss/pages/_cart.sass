@@ -1,4 +1,5 @@
 .cart
+	background-color: #eee
 
 	//cart__wrap
 	&__wrap
@@ -16,8 +17,9 @@
 	//cart__inner
 	&__inner
 		margin-bottom: 60px
-		border: 1px solid $gray--lighten
-		@extend %flex
+		padding: 30px
+		@extend %box
+		+flex
 		+r(1024)
 			flex-wrap: wrap
 			border: 0
@@ -25,6 +27,8 @@
 	//cart__left
 	&__left
 		width: calc(100% - 300px)
+		margin-right: $gutter
+
 		+r(1024)
 			width: 100%
 			margin-bottom: $gutter
@@ -42,7 +46,7 @@
 
 	//cart__items
 	&__items
-		@extend %flexColumn
+		+flexColumn
 
 	//cart__sum
 	&__sum
@@ -113,10 +117,13 @@
 				margin-right: 0
 
 	.product-item
+		border: 0
+		border-bottom: 1px solid $color-border--lighten
+		border-radius: 0
+
 		&:last-child
-			border-bottom-color: transparent
-			+r(1024)
-				border-bottom-color: $gray--lighten
+			border-bottom: 0
+
 		+r(480)
 			&__desc
 				display: flex
@@ -138,10 +145,9 @@
 //cart
 
 .cart-tab
-
 	&__list
 		margin: $gutter 0
-		@extend %flexCenter
+		+flexCenter
 		justify-content: spase-between
 		+r(480)
 			justify-content: center
@@ -204,114 +210,6 @@
 			&-check
 				width: 18px
 //.cart-tab
-
-.pedit
-
-	//pedit__wrap
-	&__wrap
-		@extend %flexCenter
-
-	//pedit__item
-	&__item
-		margin-bottom: 25px
-		position: relative
-		@extend %flexCenter
-		flex-wrap: wrap
-		&--text
-			align-items: flex-start
-			.pedit__title
-				text-align: right
-				+r(768)
-					text-align: left
-		.cs-input
-			margin-bottom: 0
-
-	//pedit__icon
-	&__icon
-		color: $gray
-		+vy
-		right: 10px
-		cursor: pointer
-
-	//pedit__title
-	&__title
-		min-width: 185px
-		margin-right: 30px
-		font-size: 14px
-		+r(480)
-			width: 100%
-			margin-bottom: 15px
-
-	//pedit__field
-	&__field
-		flex: 1
-
-	//pedit__date
-	&__date
-		@extend %flexCenter
-		.pedit__title
-			min-width: 260px
-			margin-right: 60px
-		.pedit__item
-			margin-right: 15px
-			&:last-child
-				margin-right: 0
-
-	//pedit__select
-	&__select
-
-	//pedit__checkbox
-	&__checkbox
-		& + &
-			margin-left: 30px
-		.cs-checkbox__title
-			font-size: 14px
-
-	//pedit__checkbox
-	&__textarea
-		min-height: 132px
-		width: 100%
-		border-radius: $border-radius
-		border-color: $gray--light
-		resize: none
-		&:focus
-			border-color: $color-border
-
-	//pedit__btn
-	&__btn
-		width: auto
-		padding: 0 45px
-		+r(480)
-			width: 100%
-
-	//pedit__file
-	&__file
-		margin-left: auto
-		padding-left: 25px
-		@extend %textLight
-		font-size: 14px
-		color: $color-text
-		cursor: pointer
-		position: relative
-		+r(480)
-			margin-left: 0
-		&::before
-			content: ''
-			display: inline-block
-			margin-right: 5px
-			+s(clip)
-			+vy
-			left: 0
-		span
-			margin-right: 7px
-			font-family: $f
-			font-weight: 400
-			font-size: 15px
-			color: #000
-			border-bottom: 1px dashed $color-border
-		input
-			display: none
-//pedit
 
 .cart-success
 
@@ -416,3 +314,72 @@
 			margin: auto
 			fill: $gray--light
 //delivery-item
+
+//.cart-info
+.cart-info
+	max-width: 300px
+	max-height: 400px
+	overflow-y: hidden
+	position: relative
+	display: flex
+	flex-direction: column
+
+	//.cart-info__inner
+	&__inner
+		max-height: 400px
+		margin: 10px 5px 10px 0
+		overflow-y: auto
+
+	//.cart-info__item
+	&__item
+		padding: 10px 25px 10px
+		+flex
+		align-items: center
+		justify-content: center
+
+		&:hover
+			background-color: $color-bg--light
+
+	//.cart-info__img
+	&__img
+		width: 60px
+		margin-right: 20px
+		flex-shrink: 0
+	//.cart-info__text
+	&__text
+
+	//.cart-info__title
+	&__title
+		font-family: $f-light
+		font-size: 13px
+
+	//.cart-info__price
+	&__price
+		font-family: $f-bold
+		font-size: 14px
+		color: $color-text
+
+	//.cart-info__footer
+	&__footer
+		padding: 15px
+		background-color: $color-bg--lighten
+		border-top: 1px solid #c4c4c4
+		border-radius: 0 0 $border-radius $border-radius
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		flex-shrink: 0
+
+	//.cart-info__sum
+	&__sum
+		margin-bottom: 10px
+		font-size: 14px
+		span
+			font-family: $f-bold
+
+	//.cart-info__btn
+	&__btn
+		// padding: 5px 25px
+		// font-size: 14px
+//.cart-info end

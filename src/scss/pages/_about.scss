@@ -1,0 +1,10 @@
+.video-player {
+	width: 100%;
+	margin-bottom: 50px;
+
+	&__bg {} //.video-player__bg
+
+	&__btn {
+		@include centre();
+	} //.video-player__btn
+} //.video-player

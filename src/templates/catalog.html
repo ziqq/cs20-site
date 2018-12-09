@@ -1,5 +1,6 @@
 ---
 title: Каталог | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
+btnFilter: true
 
 filterType:
  - title: Все категории
@@ -13,18 +14,21 @@ filterType:
  - title: Коврики
 
 filterCar:
- - title: 1118 Калина
- - title: 1119 Калина
- - title: 2101-2107
- - title: 2108-2109
- - title: 2110-2112
+ - title: Largus
+ - title: Renault Logan
+ - title: Vesta
+ - title: X-RAY
+ - title: ВАЗ 2118 Калина
+ - title: ВАЗ 2101-07
+ - title: ВАЗ 2108-99
+ - title: ВАЗ 2110-12
  - title: 2113-2115
 
 filterSeries:
- - title: Comfort
- - title: Drive
- - title: Profi
- - title: Original+
+ - title: Комфорт
+ - title: Профи
+ - title: Драйв
+ - title: Оригинал +
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -62,16 +66,17 @@ filterSeries:
 			<!-- begin sorting -->
 			<div class="sorting catalog__sorting">
 				<div class="sorting__count">
-					<span class="sorting__title">Показывать по:</span>
 					<select class="sorting__select js-select no-search">
-						{% for i in range(0, 11) %}
-						<option value="{{i+1}}">{{i+1}}</option>
-						{% endfor %}﻿
+						<option value="Сначала популярное">Сначала популярное</option>
+						<option value="Сначала дешевле">Сначала дешевле</option>
+						<option value="Сначала дороже">Сначала дороже</option>
+						<option value="Со скидками">Со скидками</option>
+						<option value="Лучшие оценки">Лучшие оценки</option>
 					</select>
 				</div>
-				<div class="sorting__list">
-					<button class="sorting__btn sorting__btn--list js-sorting-btn js-sorting-btn--list"></button>
-					<button class="sorting__btn sorting__btn--tile js-sorting-btn js-sorting--btn--tile is-active"></button>
+				<div class="sorting__list sm-only--flex">
+					<button class="sorting__btn sorting__btn--list js-sorting-btn is-active" data-sorting="3"></button>
+					<button class="sorting__btn sorting__btn--tile js-sorting-btn" data-sorting="2"></button>
 				</div>
 			</div>
 			<!-- end sorting -->
@@ -85,31 +90,38 @@ filterSeries:
 
 			<div class="catalog__content">
 				<!-- begin catalog__filter -->
-				<form class="filter catalog__filter js-filter-sticky">
+				<form class="filter catalog__filter js-filter js-filter-sticky">
 					<div class="filter__inner">
 						<div class="filter__header">
 							<span class="filter__title">
-								{{mixin.icon('filter', 'filter__icon filter__icon--filter')}}
 								Фильтры
 							</span>
-							{{mixin.icon('close', 'filter__icon filter__icon--close js-filter--close')}}
+							{{mixin.icon('cs-close', 'filter__icon filter__icon--close js-filter--close')}}
 						</div>
 						<div class="filter__body js-cs-accordeon cs-accordeon cs-accordeon--other">
 
-							<div class="filter__item filter__item_type">
-								<span class="filter__title">Категории</span>
-								<div class="filter__content">
+							<div class="filter__item filter__item_type cs-accordeon__item is-open">
+								<div class="filter__title cs-accordeon__title">
+									Категории
+									<span class="cs-accordeon__icon"></span>
+								</div>
+								<div class="filter__content cs-accordeon__content js-filter-content">
 									{% for item in filterType %}
-									<a href = "javascript:void(0)" class = "filter__btn js-cs-checkbox--pseudo {{item.class}}">{{item.title}}</a>
+									<label class="cs-checkbox filter__checkbox js-cs-checkbox {{ item.class }}">
+										<input type="checkbox">
+										<span class="cs-checkbox__box"></span>
+										<span class="cs-checkbox__title">{{ item.title }}</span>
+									</label>
 									{% endfor %}
+									<button class="btn-link filter__btn-link js-select-all">Выбрать все</button>
 								</div>
 							</div>
 
 							<div class="filter__item filter__item_price cs-accordeon__item is-open">
-								<span class="filter__title cs-accordeon__title">
+								<div class="filter__title cs-accordeon__title">
 									Цена
-									<i class="cs-accordeon__icon"></i>
-								</span>
+									<span class="cs-accordeon__icon"></span>
+								</div>
 								<div class="filter__content cs-accordeon__content js-filter-content">
 									<div class="range__diapazon">
 										<div class="range__from">
@@ -132,10 +144,10 @@ filterSeries:
 							</div>
 
 							<div class="filter__item filter__item_car cs-accordeon__item">
-								<span class="filter__title cs-accordeon__title">
+								<div class="filter__title cs-accordeon__title">
 									Модель авто
-									<i class="cs-accordeon__icon"></i>
-								</span>
+									<span class="cs-accordeon__icon"></span>
+								</div>
 								<div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
 									{% for item in filterCar %}
 									<label class="cs-checkbox filter__checkbox js-cs-checkbox">
@@ -144,29 +156,29 @@ filterSeries:
 										<span class="cs-checkbox__title">{{item.title}}</span>
 									</label>
 									{% endfor %}
-									<button class="button-link filter__btn-link js-select-all">Выбрать все</button>
+									<button class="btn-link filter__btn-link js-select-all">Выбрать все</button>
 								</div>
 							</div>
 
 							<div class="filter__item filter__item_series cs-accordeon__item">
-								<span class="filter__title cs-accordeon__title">
+								<div class="filter__title cs-accordeon__title">
 									Серия
-									<i class="cs-accordeon__icon"></i>
-								</span>
+									<span class="cs-accordeon__icon"></span>
+								</div>
 								<div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
 									{% for item in filterSeries %}
 									<label class="cs-checkbox filter__checkbox js-cs-checkbox">
 										<input type="checkbox">
 										<span class="cs-checkbox__box"></span>
-										<span class="cs-checkbox__title">{{item.title}}</span>
+										<span class="cs-checkbox__title">{{ item.title }}</span>
 									</label>
 									{% endfor %}
-									<button class="button-link filter__btn-link js-select-all">Выбрать все</button>
+									<button class="btn-link filter__btn-link js-select-all">Выбрать все</button>
 								</div>
 							</div>
 
 							<div class="filter__footer">
-								<button class="button button--gray">Очистить все</button>
+								<button class="btn btn--white btn--shadow filter__btn--reset js-filter-btn--reset">Сбросить фильтр</button>
 							</div>
 						</div>
 					</div>
@@ -175,67 +187,25 @@ filterSeries:
 				<!-- begin catalog__products -->
 				<div class="catalog__products">
 					<div class="product-item__wrap js-products">
-						{% for i in range(0, 10) %}
-						<div class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-							<div class="product-item__img">
-								<img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
-							</div>
-							<div class="product-item__desc">
-								<div class="product-item__desc_in">
-									<h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт) <span>profi синий силикон</span></h4>
-									<div class="product-item__product-info product-info">
-										<ul class="product-info__list">
-											<li class="product-info__item">Артикул: <span>05748</span></li>
-											<li class="product-info__item">Каталожный номер: <span>3105-1203132</span></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="product-item__footer">
-								<div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-									<span class="price__cost">2232 <i class="fa fa-rub"></i></span>
-									<meta itemprop="price" content="2232">
-									<meta itemprop="priceCurrency" content="RUB" />
-									<span class="price__stock">Есть в наличии</span>
-								</div>
-								<div class="product-item__buttons">
-									<button class="button button--accent product-item__btn">Добавить в корзину</button>
-									<button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
-								</div>
-							</div>
-						</div>
+						{% for i in range(0, 2) %}
+							{% include "partials/_product-item.html" %}
 						{% endfor %}
 					</div>
 
-					<div class="catalog__empty is-hidden">К сожалению, на ваш поисковый запрос ничего не найдено.</div>
+					<div class="catalog__empty text-center mt-30" style="display: none;">
+						<p class="mb-30">К сожалению, на ваш поисковый запрос ничего не найдено. Попробуйте изменить параметры поиска в фильтре.</p>
+						<button class="btn btn-outline-gray">Сбросить фильтр</button>
+					</div>
 				</div><!-- end catalog__products -->
-
-				<button class="button button--filter js-filter--open">{{mixin.icon('filter')}}</button>
 			</div>
 
-			<!-- begin pagination -->
-			<div class="catalog__pagination pagination">
-				<ul class="pagination__list">
-					<li class="pagination__item">
-						<a href="#" class="pagination__link"><i class="fa fa-angle-left pagination__icon"></i></a>
-					</li>
-					<li class="pagination__item is-active">
-						<a href="#" class="pagination__link">1</a>
-					</li>
-					{% for i in range(2, 7) %}
-					<li class="pagination__item">
-						<a href="#" class="pagination__link">{{i}}</a>
-					</li>
-					{% endfor %}
-					<li class="pagination__item">
-						<a href="#" class="pagination__link"><i class="fa fa-angle-right pagination__icon"></i></a>
-					</li>
-				</ul>
-			</div><!-- end pagination -->
+			<div class="catalog__info-view">
+				<span>Вы просмотрели 72 из 254 товаров</span>
+				<a href="#" class="btn btn--transparent">Показать ещё</a>
+			</div>
 
 		</div>
 	</div><!-- end catalog__content -->
-
 </div><!-- end home -->
 
 {% endblock %}

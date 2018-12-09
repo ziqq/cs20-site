@@ -1,9 +1,6 @@
 =gradient
 	+gp(to right, $bg-gradient--from, $bg-gradient--to)
 
-.text-upercase
-	text-transform: uppercase
-
 .list-style
 	&--circle
 		li
@@ -15,27 +12,13 @@
 			position: relative
 			&::before
 				content: '—'
-				+vy
+				position: absolute
+				top: 2px
 				left: 0
-
-.windows
-	display: none
 
 .page-wrapper
 	min-height: 100vh
-	@extend %flexColumn
-	&.is-auth
-		.nav--main
-			.nav__item
-				&--auth
-					display: block
-				&--not-auth
-					display: none
-		.mobile-nav__item
-			&--auth
-				display: block
-			&--not-auth
-				display: none
+	+flexColumn
 
 	&__inner
 		background-color: #fff
@@ -43,29 +26,25 @@
 		position: relative
 		z-index: 2
 
-.container
-	max-width: 1200px
-	margin-left: auto
-	margin-right: auto
-	+r(1200)
-		padding: 0 10px
+	&.is-auth
+		.login
+			&__clear
+				display: none
+			&__auth
+				display: block
 
 .content-wrapper
+	+flexColumn
 	flex: 1
 
-.header
-	background-image: url('../img/general/header-decor.png'), linear-gradient(to right,#090113,#1c0439)
-	background-repeat: no-repeat
-	background-position: 50% 110%
-	+r(768)
-		background-image: url('../img/general/header-decor--tablet.png'), linear-gradient(to right,#090113,#1c0439)
-		background-position: 80% 100%
-
-.footer
-	background-color: $color-bg--dark
-
+//.cs-section
 .cs-section
 	margin-bottom: $section-indent
+
+	// +r-max(sm)
+	// 	margin-bottom: 30px
+
+	//.cs-section__title
 	&__title
 		display: block
 		margin-bottom: 30px
@@ -78,8 +57,55 @@
 		+r(768)
 			text-align: center
 
+	&--slider-hero
+		margin-top: -230px
+		+r-max(sm)
+			margin-top: 0
+
+	&--category
+		+r-max(sm)
+			order: -1
+		+r-max(xs)
+			margin-bottom: 30px
+
+	&--info, &--advert, &--baner
+		+r-max(xs)
+			margin-bottom: 30px
+
+		.slick-slide
+			.category-item--info
+				margin: 0
+
+	&--news
+		+r-max(sm)
+			margin-bottom: $section-indent
+//.cs-section end
+
+//.title
+.title
+	margin-bottom: 35px
+	font-family: $f-light
+	font-weight: 400
+	font-size: 30px
+	color: $color-text
+
+	+r-max(xs)
+		text-align: center
+
+	&--low
+		+r-max(xs)
+			margin-bottom: 20px
+
+	&--slider
+		margin-bottom: 20px
+
+//.page-title
 .page-title
 	margin-bottom: 40px
+	font-family: $f-light
+	font-weight: 300
+	font-size: 30px
+	color: $color-text
 
 .section-title
 	margin-bottom: 35px
@@ -88,118 +114,20 @@
 	font-size: 36px
 	font-weight: 500
 
-.icon
-	display: inline-block
-	width: 22px
-	height: 22px
-
-.clearfix
-	+clr
-
-.js-scroll
-	+smooth-scroll
-
-.text
-	&--right
-		text-align: right
-
-.overlay
-	display: none
-	background-color: rgba(#000, .5)
-	+coverdiv
-	z-index: 300
-
-.page-title
-	font-family: $f-medium
-	font-weight: 500
-	+r(768)
-		margin-bottom: 30px
-		font-size: 24px
-	+r(480)
-		margin-bottom: 25px
-//page-title
-
 .badge
 	min-width: 20px
-	height: 19px
-	padding: 1px 5px 2px
+	height: 18px
+	padding: 1px 4px 2px
 	text-align: center
 	font-family: $f
-	font-size: 12px
+	font-size: 11px
 	line-height: 12px
 	color: #fff
 	background-color: $color-accent
-	border: 2px solid #1c0439
+	border: 2px solid #110159
 	border-radius: 500px
 	overflow: hidden
 //badge
-
-.social
-	@extend %flexCenter
-	//social__list
-	&__list
-		@extend %flexCenter
-	//social__item
-	&__item
-		& + &
-			margin-left: 30px
-	//social__link
-	&__link
-		&:hover
-			.social__icon
-				fill: #fff
-	//social__icon
-	&__icon
-		fill: $color-text
-//social
-
-.pagination
-	//pagination__list
-	&__list
-		@extend %flexCenter
-		justify-content: center
-	//pagination__item
-	&__item
-		&.is-active
-			.pagination__link
-				color: #fff
-				background-color: $gray
-				border-color: $gray
-				&:hover
-					background-color: darken($gray, 10%)
-					border-color: darken($gray, 10%)
-
-		& + &
-			margin-left: 5px
-		&:first-child, &:last-child
-			.pagination__link
-				font-size: 20px
-				color: $gray--light
-				border: 0
-				&:hover
-					color: $color-text
-					background-color: transparent
-	//pagination__link
-	&__link
-		display: inline-block
-		width: 30px
-		height: 30px
-		line-height: 28px
-		text-align: center
-		font-size: 14px
-		color: #000
-		border: 1px solid $color-border--light
-		transition: initial
-		&:hover
-			color: #fff
-			background-color: $gray
-			border-color: $gray
-	//pagination__icon
-	&__icon
-		line-height: 1
-		position: relative
-		top: -1px
-//pagination
 
 .counter
 	//counter__field
@@ -224,12 +152,71 @@
 		+nosel
 //counter
 
+//.list
+.list
+	//.list__item
+	&__item
+		@include flexCenter;
+
+		& + &
+			margin-top: 20px
+
+	//.list__link
+	&__link
+
+	//.list__img
+	&__img
+		width: 80px
+		margin-right: 30px
+
+	//.list__text
+	&__text
+		margin-bottom: 0
+
+	&--img
+
+		.list
+			&__link
+				@include flexCenter
+
+	//.list--text
+	&--text
+		.list
+			&__item
+				& + .list__item
+					margin-top: 10px
+				span
+					min-width: 130px
+				strong
+					font-family: $f-medium
+					font-weight: 500
+				a
+					color: $color-text
+//.list end
+
+//.privacy
 .privacy
 	font-size: 11px
 	text-align-last: auto
 	a
 		color: $color-accent
-//privacy
+//.privacy end
+
+//.policy-agriment
+.policy-agriment
+	font-family: $f-light
+	font-size: 14px
+	color: $color-text
+
+	a
+		color: $color-text
+		&:hover
+			text-decoration: underline
+
+	.cs-checkbox__title
+		font-size: 14px
+		color: $color-text
+//.policy-agriment end
 
 .go-top
 	padding: 0 30px

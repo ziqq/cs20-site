@@ -2,53 +2,33 @@
 	@include nosel;
 
 	&__item{
+		transition: box-shadow .35s ease;
+
+		@include r-min(sm) {
+			&:hover {
+				box-shadow: $bxs-box--hover;
+			}
+		}
 		&.is-open{
 			.cs-accordeon{
 				&__icon{
 					&::before{
-						content: '';
-						transform: rotate(90deg);
-					}
-					&::after{
-						transform: rotate(90deg);
-						opacity: 0;
+						transform: rotate(180deg);
 					}
 				}
 			}
 		}
 	}
-	
-	&__icon{
-		display: inline-block;
-		width: 20px;
-		height: 20px;
-		background-color: $gray;
-		border-radius: 50%;
-		position: absolute;
-		top: 1px;
-		right: 0;
-		&::after, &::before{
-			content: '';
-			display: block;
-			position: absolute;
-			background-color: #fff;
-			transform-origin: 50% 50%;
-			will-change: transform;
-			@include tr;
 
-		}
-		&::after{
-			top: 9.5px;
-			right: 4.5px;
-			width: 11px;
-			height: 1px;
-		}
+	&__icon{
+		@include centre('y');
+		right: 0;
+
 		&::before{
-			top: 4.5px;
-			right: 9.5px;
-			width: 1px;
-			height: 11px;
-		}				
+			content: '\f107';
+			@include fa('light');
+			display: block;
+		}
 	}
 
 	&__content{width: 100%;}
@@ -110,7 +90,7 @@
 		left: 0;
 		width: 100%;
 	}//cs-dropdown__list
-	
+
 	&__link{
 		display: block;
 		padding: 5px 10px 6px;

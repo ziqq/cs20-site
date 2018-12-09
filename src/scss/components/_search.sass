@@ -1,0 +1,162 @@
+//.search
+.search
+	position: relative
+	+flexCenter
+
+	&.is-active
+		.search
+			&__field
+				background-color: #fff
+				position: relative
+				z-index: 100
+
+			&__submit
+				z-index: 100
+				+r-max(sm)
+					z-index: 1
+
+			&__reset
+				z-index: 100
+
+		.search-hint
+			display: block
+
+	//.search__wrap
+	&__wrap
+		flex: 1
+
+	//.search__inner
+	&__inner
+		border: 0
+		background-color: #fff
+		border-radius: $border-radius 0 0 $border-radius
+		position: relative
+		flex: 1
+
+		+r-max(sm)
+			border-radius: $border-radius
+
+	//.search__fiels
+	&__field
+		width: 100%
+		padding: 14px 10px 15px 30px
+		border: 0
+		border-radius: $border-radius 0 0 $border-radius
+		background-color: transparent
+
+		+r-max(sm)
+			border-radius: $border-radius
+
+	//.search__reset
+	&__reset
+		padding: 18px
+		width: 50px
+		height: 50px
+		cursor: pointer
+		+tr
+		+centre('y')
+		right: 0
+		z-index: 3
+		fill: $gray--light
+
+		+r-max(sm)
+			width: 70px
+
+		&:hover
+			fill: $gray
+
+	//.search__submit
+	&__submit
+		width: 110px
+		height: 50px
+		color: #fff
+		letter-spacing: .3px
+		border: 0
+		border-radius: 0 $border-radius $border-radius 0
+		background: linear-gradient(275.07deg, #FE6CB8 -36.19%, #A40C95 99.51%)
+		position: relative
+		z-index: 3
+
+		+r-max(sm)
+			width: 70px
+			background: #fff
+			text-align: center
+			position: absolute
+			right: 0
+			top: 0
+
+		&::after
+			content: ''
+			display: block
+			+coverdiv
+			z-index: -100
+			opacity: 0
+			border-radius: inherit
+			background: linear-gradient(275.07deg, #A40C95 -35.44%, #A40C95 99.51%)
+			+tr
+			+r-max(sm)
+				display: none
+
+		&_icon
+			margin: auto
+			fill: $color-text--light
+
+		&:hover
+			&::after
+				opacity: 1
+//.search end
+
+//.search-hint
+.search-hint
+	display: none
+	min-height: 400px
+	max-height: 100%
+	width: 100%
+	border: 0
+	border-radius: 0 0 $border-radius $border-radius
+	background-color: #fff
+	box-shadow: $bxs-header
+	position: absolute
+	top: 92%
+	left: 0
+	right: 0
+	z-index: z(dropdown)
+	overflow-y: auto
+	+cs-scroll
+
+	+r(480)
+		border-right-color: transparent
+		border-left-color: transparent
+	    box-shadow: 0 10px 20px rgba(#000, .2)
+	    top: 100%
+
+	//.search-hint__item
+	&__item
+		display: block
+		padding: 8px 30px
+		color: $color-text--light
+		transition: initial
+		color: #bdbdbd
+		font-size: 14px;
+		cursor: pointer
+
+		&:hover
+			color: $color-text
+			background-color: $color-bg--light
+
+	//.search-hint__text
+	&__text
+		display: block
+
+	//.search-hint__bade
+	&__bade
+		width: 98px
+		margin-right: 5px
+		padding: 1px 5px
+		font-family: $f-medium
+		text-align: center
+		text-transform: uppercase
+		font-size: 10px
+		color: #000;
+		border-radius: $border-radius
+//.search-hint end

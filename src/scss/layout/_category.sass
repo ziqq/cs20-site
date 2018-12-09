@@ -1,0 +1,120 @@
+.category
+	//.category__wrap
+	&__wrap
+	//.category__items
+	&__items
+	//.category__item
+	&__item
+	//.category__title
+	&__title
+	//.category__img
+	&__img
+
+	.slick-slide
+		margin: 0 10px
+
+	.slick-list
+		+r(768)
+			margin: 0 6px
+//.catefoty
+
+//.category-item
+.category-item
+	max-width: 140px
+	padding: 30px 20px
+	text-align: center
+	background-color: #fff
+	box-shadow: $bxs-box
+	border-radius: $border-radius
+	display: flex !important
+	flex-direction: column
+	align-items: center
+
+	+r-max(xs)
+		padding: 25px 10px 0
+
+	&:hover
+		background-color: $color-accent
+		.category-item
+			&__title
+				color: #fff
+			&__icon
+				@for $i from 1 through 10
+					&--#{$i}
+						+s('cs-category-#{$i}--w')
+
+
+	& + &
+		margin-left: 30px
+
+	//.category-item__wrap
+	&__wrap
+		display: flex
+		justify-content: center
+
+		+r-max(xs)
+			margin: 0 -10px
+			flex-wrap: wrap
+
+		.category-item
+			width: 12.5%
+
+			+r-max(xs)
+				width: calc(33.33% - 15px)
+				max-width: 100%
+				margin: 0 5px 10px
+
+			&--info
+				+r-max(xs)
+					max-width: 130px
+					width: calc(40% - 15px)
+
+	//.category-item__icon
+	&__icon
+		display: block
+		margin: 0 auto 25px
+		@for $i from 1 through 10
+			&--#{$i}
+				+s('cs-category-#{$i}')
+
+		+r-max(xs)
+			margin-bottom: 5px
+
+		img
+			width: 40px
+			height: 40px
+			margin: auto
+
+	//.category-item__tltle
+	&__title
+		margin-bottom: 0
+		font-family: $f-light
+		font-size: 14px
+		text-align: center
+		+flexCenter
+		justify-content: center
+
+	//.category-item--white
+	&--white
+		.category-item
+			&__title
+				color: #fff
+
+	//.category-item--info
+	&--info
+		min-height: 200px
+		+cover
+		+flexColumn
+		+size-xs(6)
+
+		+r(480)
+			padding: 10px
+
+		.category-item
+			&__title
+				margin-top: auto
+				text-align: left
+			&:nth-child(odd)
+				.category-item__title
+					color: #fff
+

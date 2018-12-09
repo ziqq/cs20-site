@@ -1,7 +1,10 @@
 .modal-window
 	padding: 30px
 	border-radius: $border-radius
-	
+
+	//modal-window__wrap
+	&__wrap
+
 	//modal-window--mobile
 	&--mobile
 		max-width: 460px
@@ -9,19 +12,16 @@
 		@extend %responsMobile
 
 	//modal-window__header
-	&__header		
+	&__header
+		text-align: center
 		margin-bottom: 25px
-
-	//modal-window__wrap
-	&__wrap
 
 	//modal-window__title
 	&__title
 		margin-bottom: 0
-		color: #000
-		font-family: $f-medium
-		font-weight: 500
-		font-size: 24px
+		font-family: $f
+		font-weight: 400
+		font-size: 20px
 
 	.fancybox-close-small
 		padding: 0
@@ -37,7 +37,6 @@
 
 	.info-text
 		margin-top: 20px
-
 //modal-window
 
 .info-text
@@ -46,15 +45,15 @@
 	line-height: 1.2
 
 .review-add
-	.pedit__file 
+	.pedit__file
 		margin-left: 0
 	.star-rating
-		&__ico		
+		&__ico
 			width: 20%
 			height: 38px
 			border: 1px solid $gray--light
 			border-left: 0
-			@extend %flexCenter
+			+flexCenter
 			justify-content: center
 			&::before
 				margin: auto

@@ -1,0 +1,25 @@
+{% import "data/data-product.html" as productItem %}
+{% for product in productItem.productSimilar %}
+<!-- begin product-item -->
+<a href="#" class="product-item" itemscope itemtype="http://schema.org/Product">
+
+	<div class="product-item__img" itemprop="image" href="img/products/1/190x190/{{ product.img }}.png">
+			<img src="img/products/1/190x190/{{ product.img }}.png"  alt="{{ product.title }}" />
+	</div>
+
+	<h3 class="product-item__title js-product-title-equalheight">{{ product.title }}</h3>
+
+	<div class="product-item__bottom" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+		<span class="product-item__price">
+				<meta itemprop="price" content="{{ product.price }}">
+				<meta itemprop="priceCurrency" content="RUB">
+				<span>{{ product.price }}</span>
+		</span>
+		<button class="btn-icon btn-icon--addInCart product-item__btn js-add-in-cart">
+			{{ mixin.icon('cs-cart', 'btn-icon__ico btn-icon__ico--cart') }}
+			{{ mixin.icon('cs-close', 'btn-icon__ico btn-icon__ico--plus') }}
+			{{ mixin.icon('cs-check', 'btn-icon__ico btn-icon__ico--check') }}
+		</button>
+	</div>
+</a><!-- end product-item -->
+{% endfor %}

@@ -1,6 +1,7 @@
 ---
 title: Интернет-магазин износостойких автокомпонентов с доставкой по РФ
 wrapClass: page-home
+firstscreenTitle: true
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -9,236 +10,183 @@ wrapClass: page-home
 <!-- begin home -->
 <div class="content-wrapper home">
 
-	<!-- begin firstscreen -->
-	<section class="firstscreen js-firstscreen">
+	<!-- begin cs-section slider -->
+	 <section class="cs-section cs-section--slider-hero xs-hide">
 		<div class="container">
 
-			<h1 class="h1 page__title firstscreen__title" itemprop="headline">Интернет-магазин износостойких <br> автокомпонентов с доставкой по РФ</h1>
-
-			<!-- begin home-search -->
-			<div class="home-search">
-				<div class="tab tab--transform js-tab--transform">
-					<div class="tab__wrap">
-						<div class="tab__titles js-tab">
-							<div class="tab__title is-active" data-tab="0">
-								{{ mixin.icon('home-search__car', 'home-search__icon home-search__icon--car') }}
-								Поиск по автомобилю
-							</div>
-							<div class="tab__title" data-tab="1">
-								{{ mixin.icon('home-search__product', 'home-search__icon home-search__icon--product') }}
-								Поиск по продукции
-							</div>
-							<div class="tab__title" data-tab="2">
-								{{ mixin.icon('home-search__series', 'home-search__icon home-search__icon--series') }}
-								Поиск по сериям
-							</div>
-							<div class="tab__title" data-tab="3">
-								{{ mixin.icon('home-search__articul', 'home-search__icon home-search__icon--articul') }}
-								Поиск по артикулу
-							</div>
-						</div>
-						<div class="tab__contentes">
-							<div class="tab__content tab__content--car" style="display: block;" data-tab-content="0">
-								<form class="home-search__form">
-									<div class="home-search__block">
-										<select class="home-search__select js-select no-search">
-											<option value="Марка автомобиля" selected disabled>Марка автомобиля</option>	
-											<option value="ВАЗ">ВАЗ</option>			
-											<option value="ГАЗ">ГАЗ</option>			
-											<option value="УАЗ">УАЗ</option>			
-											<option value="RENAULT">RENAULT</option>			
-										</select>	
-										<select class="home-search__select js-select no-search">
-											<option value="Модель автомобиля" selected disabled>Модель автомобиля</option>	
-											<option value="1118 Калина">1118 Калина</option>			
-											<option value="1119 Калина">1119 Калина</option>			
-											<option value="2101-2107">2101-2107</option>			
-											<option value="2108-2109">2108-2109</option>				
-										</select>
-									</div>
-									<button class="button button--accent home-search__btn" type="submit">Поиск</button>
-								</form>
-							</div>
-
-							<div class="tab__content tab__content--product" data-tab-content="1">
-								<div class="home-search__in">
-									<ul class="home-search__list">
-										<li class="home-search__item">
-											<a href="#" class="home-search__link">Элементы подвески</a>
-										</li>
-										<li class="home-search__item">
-											<a href="#" class="home-search__link">Прокладки / Ремкомплекты</a>
-										</li>
-									</ul>
-									<ul class="home-search__list">
-										<li class="home-search__item">
-											<a href="#" class="home-search__link">Патрубки / Шлаги</a>
-										</li>
-										<li class="home-search__item">
-											<a href="#" class="home-search__link">Крепления глушителя</a>
-										</li>
-									</ul>
-									<ul class="home-search__list">
-										<li class="home-search__item">
-											<a href="#" class="home-search__link">Подушки двигателя</a>
-										</li>
-										<li class="home-search__item">
-											<a href="#" class="home-search__link">Брызговики</a>
-										</li>
-									</ul>
-									<ul class="home-search__list">
-										<li class="home-search__item">
-											<a href="#" class="home-search__link">Коврики</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="tab__content tab__content--series" data-tab-content="2">
-								<div class="home-search__in">
-									<ul class="home-search__list home-search__list--wide">
-										<li class="home-search__item">
-											<a href="#" class="home-search__link">Comfort</a>
-										</li>
-										<li class="home-search__item">
-											<a href="#" class="home-search__link">Drive</a>
-										</li>
-										<li class="home-search__item">
-											<a href="#" class="home-search__link">Profi</a>
-										</li>
-										<li class="home-search__item">
-											<a href="#" class="home-search__link">Original+</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="tab__content tab__content--articul" data-tab-content="3">
-								<form class="home-search__form">
-									<div class="home-search__search">
-										<input type="text" placeholder="Например, 10498">
-										<i class="home-search__clear js-home-search-clear">X</i>
-									</div>
-									<button type="submit" class="button button--accent home-search__btn">Поиск</button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- end home-search -->
-
-		</div>
-	</section>
-	<!-- end firstscreen -->
-
-	<!-- begin cs-section -->
-	<section class="cs-section category">
-		<div class="container">
-
-			<h2 class="section-title">Категории товаров</h2>
-			<div class="category__items">
-				<div class="cs-grid-container">
-					<div class="cs-grid cs-grid--left">
-						<a href="#" class="category__item">
-							<span class="category__title">Элементы подвески</span>
-							{{item.categoryImg(1)}}
-						</a>
-						<div class="cs-grid cs-grid--column">
-							<a href="#" class="category__item">
-								<span class="category__title">Патрубки / Шлаги</span>
-								{{item.categoryImg(2)}}
-							</a>
-							<a href="#" class="category__item js-category-item-moveto">
-								<span class="category__title">Подушки двигателя</span>
-								{{item.categoryImg(3)}}
-							</a>
-						</div>
-					</div>
-					<div class="cs-grid cs-grid--right cs-grid--column">
-						<div class="cs-grid cs-grid--wide js-category-moveto">
-							<a href="#" class="category__item">
-								<span class="category__title">Крепления глушителя</span>
-								{{item.categoryImg(4)}}
-							</a>
-							<a href="#" class="category__item">
-								<span class="category__title">Коврики</span>
-								{{item.categoryImg(5)}}
-							</a>
-						</div>
-						<div class="cs-grid cs-grid--wide cs-grid--reverse">
-							<a href="#" class="category__item">
-								<span class="category__title">Прокладки / Ремкомплекты</span>
-								{{item.categoryImg(6)}}
-							</a>
-							<a href="#" class="category__item">
-								<span class="category__title">Брызговики</span>
-								{{item.categoryImg(7)}}
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</section>
-	<!-- end cs-section -->
-
-	<!-- begin cs-section -->
-	<section class="cs-section advert">
-		<div class="container">
-
-			<div class="info-block">
-				<div class="info-block__items">
-					<div class="info-block__item">
-						{{mixin.icon('delivery', 'info-block__icon')}}
-						<div class="info-block__text">
-							<span class="info-block__title">Бесплатная доставка</span>
-							<p class="info-block__desc">При заказе в интернет-магазине <br> от 1000 рублей. По России.</p>
-						</div>
-					</div>
-					<div class="info-block__item">
-						{{mixin.icon('garanty', 'info-block__icon')}}
-						<div class="info-block__text">
-							<span class="info-block__title">Расширенная гарантия</span>
-							<p class="info-block__desc">Обмен товара на аналогичный <br> в течении 2 лет</p>
-						</div>
-					</div>
-					<div class="info-block__item">
-						{{mixin.icon('giftbox', 'info-block__icon')}}
-						<div class="info-block__text">
-							<span class="info-block__title">Подарок каждому</span>
-							<p class="info-block__desc">Прочные перчатки в подарок <br> к каждому заказу</p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>			
-	</section>
-	<!-- end cs-section -->
-
-	<!-- begin cs-section -->
-	<section class="cs-section baner">
-		<div class="container">
-			<div class="cs-slider">
+			<div class="cs-slider cs-slider--hero js-cs-slider--hero">
 				<div class="cs-slider__arrow cs-slider__arrow--prev"></div>
 				<div class="cs-slider__arrow cs-slider__arrow--next"></div>
-				<div class="cs-slider__slides js-cs-slider">
-					{% for i in range(0, 2) %}
-					<div class="cs-slider__slide baner__bg" style="background-image: url(img/general/baner-home.png);">
-						<h2 class="baner__title">Не нашли?</h2>
-						<div class="baner__desc">Эксперты бесплатно подберут детали для Вашей машины по телефону. Звонок бесплатный!</div>
-						<a href="#" class="baner__phone">8 800 555 25 40</a>
+
+				<div class="cs-slider__slides">
+					<div class="cs-slider__slide">
+						<div class="cs-slider__slide_inner">
+							<div class="cs-slider__text">
+								<h4 class="cs-slider__title">Мы во Вконтакте</h4>
+								<p class="cs-slider__desc">Анонсы мероприятий, новости компании, конкурсы, уникальный контент и многое другое только в сообществе вконтакте </p>
+								<a href="#" class="btn btn-gray--dark cs-slider__btn">Открыть сообщество</a>
+							</div>
+							<div class="cs-slider__img">
+								<img src="img/general/vk-info.png" alt="Мы во Вконтакте">
+							</div>
+						</div>
 					</div>
-					{% endfor %}﻿
+				</div>
+			</div>
+
+		</div>
+	</section><!-- end cs-section slider -->
+
+	<!-- begin cs-section advert -->
+	<section class="cs-section cs-section--category">
+			<div class="container">
+				<h2 class="h2 title title--slider">Категории товаров</h2>
+
+				<div class="cs-slider cs-slider--home js-cs-slider--category">
+					<div class="cs-slider__arrow cs-slider__arrow--prev"></div>
+					<div class="cs-slider__arrow cs-slider__arrow--next"></div>
+
+					<div class="category-item__wrap cs-slider__slides">
+						{% import "data/data.html" as categoryItem %}
+						{% for category in categoryItem.category %}
+						<a href="#" class="category-item cs-slider__slide">
+
+							<i class="category-item__icon category-item__icon--{{ category.icon }}">
+							</i>
+
+							<h5 class="category-item__title js-category-title-equalheight">{{ category.title }}</h5>
+						</a>
+						{% endfor %}
+					</div>
+				</div>
+
+			</div>
+	</section>
+	<!-- end cs-section advert -->
+
+	<!-- begin cs-section  -->
+	 <section class="cs-section cs-section--info xs-only">
+		<div class="container">
+
+			<div class="cs-slider cs-slider--home js-cs-slider--info">
+				<div class="cs-slider__arrow cs-slider__arrow--prev"></div>
+				<div class="cs-slider__arrow cs-slider__arrow--next"></div>
+
+				<div class="category-item__wrap cs-slider__slides">
+					<a href="#" class="category-item category-item--info category-item--white cs-slider__slide" style="background-image: url('img/general/info/1.png');">
+
+						<h5 class="category-item__title js-category-title-equalheight">5 поводов подписаться на нас в вконтакте </h5>
+					</a>
+					<a href="#" class="category-item category-item--info cs-slider__slide" style="background-image: url('img/general/info/2.png');">
+
+						<h5 class="category-item__title js-category-title-equalheight">Как сэкономить на доставке запчастей?</h5>
+					</a>
+				</div>
+			</div>
+
+		</div>
+	</section><!-- end cs-section  -->
+
+	<!-- begin cs-section advert -->
+	<section class="cs-section cs-section--product-popular">
+		<div class="container">
+			<h2 class="h2 title title--low">Популярные товары</h2>
+
+			<div class="cs-slider cs-slider--home  js-cs-slider" data-slide-count="4">
+				<div class="cs-slider__arrow cs-slider__arrow--prev"></div>
+				<div class="cs-slider__arrow cs-slider__arrow--next"></div>
+
+				<div class="product-item__wrap cs-slider__slides">
+					{% import "data/data-product.html" as productItem %}
+					{% for product in productItem.productSimilar %}
+					<a href="#" class="product-item cs-slider__slide" itemscope itemtype="http://schema.org/Product">
+
+						<div class="product-item__img" itemprop="image" href="img/products/1/190x190/{{ product.img }}.png">
+								<img src="img/products/1/190x190/{{ product.img }}.png"  alt="{{ product.title }}" />
+						</div>
+
+						<h3 class="product-item__title js-product-title-equalheight">{{ product.title }}</h3>
+
+						<div class="product-item__bottom" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+							<span class="product-item__price">
+									<meta itemprop="price" content="{{ product.price }}">
+									<meta itemprop="priceCurrency" content="RUB">
+									<span>{{ product.price }}</span>
+							</span>
+							<button class="btn-icon btn-icon--addInCart product-item__btn js-add-in-cart">
+								{{ mixin.icon('cs-cart', 'btn-icon__ico btn-icon__ico--cart') }}
+								{{ mixin.icon('cs-close', 'btn-icon__ico btn-icon__ico--plus') }}
+								{{ mixin.icon('cs-check', 'btn-icon__ico btn-icon__ico--check') }}
+							</button>
+						</div>
+					</a>
+					{% endfor %}
+				</div>
+			</div>
+
+		</div>
+	</section>
+	<!-- end cs-section advert -->
+
+	<!-- begin cs-section baner -->
+	<section class="cs-section cs-section--baner">
+		<div class="container">
+			<div class="baner baner--overlay">
+				<div class="baner__bg" style="background-image: url(img/general/baner-home.png);">
+					<h2 class="baner__title">Не нашли?</h2>
+					<div class="baner__desc">Эксперты бесплатно подберут детали для Вашей машины по телефону. Звонок бесплатный!</div>
+					<a class="baner__phone" href="#">8 800 555 25 40</a>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- end cs-section -->
+	<!-- end cs-section baner -->
 
-</div>	
+	<!-- begin cs-section advert -->
+	<section class="cs-section cs-section--advert">
+		<div class="container">
+
+			{% include "partials/_info-block.html" %}
+
+		</div>
+	</section>
+	<!-- end cs-section advert -->
+
+	<!-- begin cs-section news -->
+	 <section class="cs-section cs-section--news">
+		<div class="container">
+			<h2 class="h2 title title--low">Новости</h2>
+
+			<div class="news-slider cs-slider cs-slider--home js-cs-slider" data-slide-count="4">
+				<div class="cs-slider__arrow cs-slider__arrow--prev"></div>
+				<div class="cs-slider__arrow cs-slider__arrow--next"></div>
+				<div class="news__inner cs-slider__slides">
+
+					{% for i in range(0, 4) %}
+					<div class="news__item cs-card cs-card--transform cs-card--shadow cs-slider__slide">
+						<div class="cs-card__in">
+							<h5 class="cs-card__title">7 ноября 2018</h5>
+							<p class="cs-card__text js-text-overflow" data-text-overflow="155" data-text-media="true">Деталь, которую почти никто никогда не видел, но она есть и мы ее доработали. Речь о чехлах пальцев тормозного суппорта. Теперь они из полиуретана. Несмотря на размер, чехлы прошли все испытания на прочность и уже в продаже во всех официальных магазинах CS20.</p>
+						</div>
+						<a class="btn btn-outline-gray-light cs-card__btn" href="news-item.html">Читать продолжение</a>
+					</div>
+					{% endfor %}
+					<a href="news.html" class="news__item cs-card news__item--link cs-slider__slide cs-slider__slide--link xs-only">
+						<div>
+							<span>Смотреть все <br> новости</span>
+							<i>{{ mixin.icon('cs-close') }}</i>
+						</div>
+					</a>
+
+				</div>
+			</div>
+			<div class="button-box">
+				<a class="btn btn-outline-gray news__btn sm-hide" href="news.html">Показать все новости</a>
+			</div>
+		</div>
+	</section><!-- end cs-section news -->
+
+</div>
 <!-- end home -->
 
 {% endblock %}

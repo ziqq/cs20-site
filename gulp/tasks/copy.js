@@ -1,4 +1,7 @@
-var gulp   = require('gulp');
+var gulp = require('gulp');
+var imagemin = require('gulp-imagemin');
+var newer = require('gulp-newer');
+var runSequence = require('run-sequence');
 var config = require('../config.js');
 
 gulp.task('copy:fonts', function() {
@@ -15,10 +18,7 @@ gulp.task('copy:libs', function() {
 
 gulp.task('copy:rootfiles', function() {
 	return gulp
-		.src([
-			config.src.root + '/*.*',
-			'!' + config.src.assets + '/**/*.*'
-			])
+		.src([config.src.root + '/*.*', '!' + config.src.assets + '/**/*.*'])
 		.pipe(gulp.dest(config.dest.root));
 });
 
@@ -28,15 +28,43 @@ gulp.task('copy:img', function() {
 			config.src.img + '/**/*.{jpg,png,jpeg,svg,gif}',
 			'!' + config.src.img + '/svgo/**/*.*'
 		])
+		.pipe(newer(config.src.img + '/**/*.{jpg,png,jpeg,svg,gif}'))
+		.pipe(
+			imagemin({
+				optimizationLevel: 3
+			})
+		)
 		.pipe(gulp.dest(config.dest.img));
 });
 
-gulp.task('copy', [
-	'copy:img',
-	'copy:rootfiles',
-	// 'copy:libs',
-	'copy:fonts'
-]);
+gulp.task('copy:img:production', function() {
+	return gulp
+		.src([
+			config.src.img + '/**/*.{jpg,png,jpeg,svg,gif}',
+			'!' + config.src.img + '/svgo/**/*.*'
+		])
+		.pipe(
+			imagemin({
+				optimizationLevel: 3
+			})
+		)
+		.pipe(gulp.dest(config.dest.img));
+});
+
+gulp.task('copy', function(cp) {
+	runSequence('copy:img', 'copy:rootfiles', 'copy:fonts', cp);
+});
+
+gulp.task('copy:production', function(cp) {
+	runSequence(
+		'copy:img:production',
+		'copy:rootfiles',
+		'copy:fonts',
+		// 'copy:libs',
+		cp
+	);
+});
+
 gulp.task('copy:watch', function() {
-	gulp.watch(config.src.img+'/*', ['copy']);
+	gulp.watch(config.src.img + '/**/*.{jpg,png,jpeg,svg,gif}', ['copy:img']);
 });

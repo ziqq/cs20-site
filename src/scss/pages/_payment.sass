@@ -1,31 +1,74 @@
 .payment
-	padding-bottom: 50px
-	
-	//payment__title
-	&__title
-		margin-bottom: 20px
-		color: #000
-		font-size: 24px
-		+r(480)
-			font-size: 20px
+	padding-bottom: $section-indent
+	background-color: #f7f8fa
+	+r(480)
+		padding-bottom: $section-indent / 2
+		background-color: #fff
 
-	//payment__text
-	&__text
-		color: #000
-		font-size: 16px
+	&__items
 		+r(480)
-			font-size: 15px
-	//payment__items
+			padding-top: 30px
 
-	//payment__item
+	//.payment__item
 	&__item
-		margin-bottom: $gutter/2
+		margin-bottom: $gutter
 		@extend %box
 
-	//payment__icons
+		&:last-child
+			margin-bottom: 0
+
+		+r(480)
+			box-shadow: none
+
+		&__in
+			padding: 70px 90px 80px
+			+row-flex
+			align-items: center
+			+r(768)
+				padding: 40px 30px 50px
+			+r(480)
+				padding: 0
+				flex-direction: column
+
+	//.payment__title
+	&__text
+		+col
+		+size(7)
+		+size-xs(12)
+
+	//.payment__title
+	&__img
+		text-align: center
+		+col
+		+size(5)
+		+size-xs(12)
+		+r(480)
+			margin-bottom: 30px
+			order: -1
+
+		img
+			max-width: 225px
+			margin: auto
+
+	//.payment__title
+	&__title
+		margin-bottom: 30px
+		font-size: 30px
+		font-family: $f-light
+		font-weight: 300
+		+r(768)
+			margin-bottom: 10px
+			font-size: 20px
+
+	//.payment__desc
+	&__desc
+		color: $color-text--light
+		font-family: $f-light
+
+	//.payment__icons
 	&__icons
 		margin-top: $gutter/2
-		@extend %flexCenter
+		+flexCenter
 		+r(480)
 			flex-wrap: wrap
 		&--robokassa
@@ -43,5 +86,4 @@
 				width: 70%
 			+r(480)
 				width: 100%
-
-//payment
+//.payment

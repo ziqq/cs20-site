@@ -10,11 +10,3 @@ gulp.task('clean', function(cb) {
         util.log('Deleted:', util.colors.magenta(paths.join('\n')));
     });
 });
-
-gulp.task('clean:temp', function(cb) {
-    return del([
-        config.src.jsTemp
-    ]).then(function(paths) {
-        util.log('Deleted:', util.colors.magenta(paths.join('\n')));
-    });
-});

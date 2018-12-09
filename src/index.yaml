@@ -52,25 +52,31 @@ PageList:
   ready: 50
   desc : персональные скидки
 
-  #garanty
-- file: garanty.html
-  ready: 50
-  desc : Гарантия и возврат
 
   #news
 - file: news.html
   ready: 50
   desc : Новости
 
+  #news item
+- file: news-item.html
+  ready: 50
+  desc : Новость
+
+  #about
+- file: about.html
+  ready: 50
+  desc : О компании
+
+  #garanty
+- file: garanty.html
+  ready: 50
+  desc : Гарантия и возврат
+
   #Согласие на обработку персональных данных
 - file: privacy.html
   ready: 50
   desc : Согласие на обработку персональных данных
-
-  #Политика обработки данных
-- file: policy.html
-  ready: 50
-  desc : Политика обработки данных
 
   #404
 - file: 404.html

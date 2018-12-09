@@ -1,14 +1,121 @@
+//.privacy
 .privacy
-	margin-bottom: $gutter*2
-	font-size: 15px
-	color: #000
+	font-family: $f-light
+	background-color: $color-bg
+
+	+r-max(xs)
+		background-color: #fff
+
+	&__in
+		max-width: 730px
+		margin: 60px auto 0
+
+		.privacy__subtitle
+			margin-bottom: 10px
+			& + p
+				font-size: 16px
+				font-family: $f-light
+
+		.pedit
+			max-width: 650px
+			margin: auto
+
+			&__item
+				&--text
+					margin-bottom: 10px
+
+	&__wrap
+		margin-bottom: $gutter*2
+		padding: 45px 85px
+		@extend %box
+		border-radius: $border-radius
+		+r(768)
+			padding: 0
+			border: 0
+			border-radius: 0
+			box-shadow: none
+		+r(480)
+			margin-bottom: 30px
+
+	&__inner
+		display: flex
+		align-items: flex-start
+		+r(480)
+			flex-wrap: wrap
+
+	&__left
+		width: 50%
+		margin-right: 60px
+		+r(768)
+			margin-right: 30px
+		+r(480)
+			width: 100%
+			margin-right: 0
+			margin-bottom: 40px
+
+	&__right
+		width: 50%
+		margin-left: 60px
+		+r(768)
+			margin-left: 30px
+		+r(480)
+			width: 100%
+			margin-left: 0
+
+	//.privacy__title
+	&__title
+		display: block
+		margin-bottom: 30px
+		font-size: 30px
+		font-family: $f
+		font-weight: 400
+		+r(480)
+			font-size: 24px
+		+r(375)
+			font-size: 22px
+
+	//.privacy__subtitle
+	&__subtitle
+		display: block
+		margin-bottom: 30px
+		font-size: 22px
+		line-height: 1.5
+		font-family: $f
+		font-weight: 400
+		+r(480)
+			font-size: 20px
+		+r(375)
+			font-size: 18px
+
+		&:not(:first-child)
+			margin-top: 60px
+			+r(480)
+				margin-top: 40px
+
+
+	//.privacy__form
+	&__form
+		.button-box
+			display: flex
+			justify-content: flex-end
+
+	p
+		font-family: $f-light
 
 	span
 		display: block
 		margin-bottom: 5px
+		font-size: 15px
 
-	ul
+	ul:not(.breadcrumbs__list)
 		margin-bottom: 15px
 		li
 			margin-bottom: 5px
-//privacy
+			font-size: 15px
+//.privacy end
+
+.garanty
+	background-color: $color-bg
+
+	+r-max(xs)
+		background-color: #fff

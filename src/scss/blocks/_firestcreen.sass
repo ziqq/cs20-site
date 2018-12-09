@@ -1,0 +1,71 @@
+//.firstscreen
+.firstscreen
+	background-image: $gradient
+	position: relative
+
+	+r-max(sm)
+		min-height: auto
+
+	+r-max(xs)
+		min-height: 100%
+
+	//.firstscreen__title
+	&__title
+		margin-top: 40px
+		margin-bottom: 50px
+		font-family: $f-light
+		font-size: 30px
+		font-weight: 300
+		line-height: 1.3
+		text-align: center
+		color: #fff
+
+	//.firstscreen__line
+	&__line
+		margin: 40px 0 45px
+		+flexCenter
+
+		+r-max(sm)
+			flex-wrap: wrap
+			flex-direction: column
+
+	//.firstscreen__c-select
+	&__c-select
+		margin-right: $gutter
+		color: $color-secondary
+		box-shadow: $bxs-header
+
+		+r-max(sm)
+			margin-right: 35px
+			color: #fff
+			box-shadow: none
+			background-color: transparent
+
+		+r-max(xs)
+			margin-right: 15px
+
+		.toggle
+			span
+				background-color: $color-secondary
+				+r-max(sm)
+					background-color: #fff
+
+				&::before , &::after
+					background-color: $color-secondary
+					+r-max(sm)
+						background-color: #fff
+			&.is-active
+				span
+					background-color: transparent
+
+
+	//.firstscreen__c-select
+	.search
+		width: 100%
+		flex: 1
+
+		&__wrap
+			+r-max(sm)
+				width: 100%
+				order: -1
+				flex: 1

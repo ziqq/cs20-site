@@ -5,19 +5,68 @@
 	</div>
 	<div class="modal-window__body">
 		<form class="form form__register">
-			{{item.input('text', 'Логин', 'form__input is-invalid')}}
-			{{item.input('text', 'Ваше имя', 'form__input is-invalid')}}
-			{{item.input('email', 'Email', 'form__input is-invalid')}}
-			{{item.input('password', 'Пароль', 'form__input is-invalid')}}
-			<button type="submit" class="button button--accent form__btn">Зарегистрироваться</button>
+			{{item.input('text', 'Логин', 'cs-input--light form__input')}}
+			{{item.input('text', 'Ваше имя', 'cs-input--light form__input is-invalid')}}
+			{{item.input('email', 'Email', 'cs-input--light form__input')}}
+			{{item.input('password', 'Пароль', 'cs-input--light form__input')}}
 			<div class="success">
 				<div class="success__text">Спасибо за регистрацию!</div>
 			</div>
 		</form>
-		<div class="info-text">Нажимая кнопку «Зарегистрироваться», я подтверждаю свою дееспособность, согласие на получение информации об оформлении и получении заказа, согласие на обработку персональных данных в соответствии с указанным <a href="#">здесь</a> текстом.</div>
+		<div class="policy-agriment">
+			{{ item.checkbox('Я принимаю', 'cs-checkbox--transform policy__checkbox') }}
+				<a href="privacy.html" target="_blank">Условия использования</a>
+				и соглашаюсь с
+				<a href="privacy.html" target="_blank">политикой конфиденциальности</a>
+		</div>
+		<button class="btn btn--gr form__btn mt-30" type="submit">Зарегистрироваться</button>
+		<a class="form__link js-popup-close" data-fancybox-close href="#enter">Уже есть аккаунт</a>
 	</div>
 </div>
 <!-- end register -->
+
+<!-- begin enter -->
+<div class="modal-window modal-window--mobile enter" id="enter">
+	<div class="modal-window__header">
+		<h4 class="modal-window__title">Вход в личный кабинет</h4>
+	</div>
+	<div class="modal-window__body">
+		<form class="form form__register">
+			{{item.input('text', 'Логин или e-mail', 'cs-input--light form__input')}}
+			{{item.input('password', 'Пароль', 'cs-input--light form__input is-invalid')}}
+
+			<div class="form__box mt-30">
+				{{ item.checkbox('Запомнить меня', 'cs-checkbox--transform policy__checkbox') }}
+			</div>
+
+			<button class="btn btn--gr form__btn" type="submit">Войти</button>
+			<div class="success">
+				<div class="success__text">Добро пожаловать!</div>
+			</div>
+		</form>
+		<a class="form__link js-popup-close mb-10" data-fancybox-close href="#password-recovery">Не могу войти</a>
+		<a class="form__link js-popup-close" data-fancybox-close href="#register">Регистрация</a>
+	</div>
+</div>
+<!-- end enter -->
+
+<!-- begin enter -->
+<div class="modal-window modal-window--mobile password-recovery" id="password-recovery">
+	<div class="modal-window__header">
+		<h4 class="modal-window__title">Восстановление пароля</h4>
+	</div>
+	<div class="modal-window__body">
+		<form class="form form__register">
+			{{item.input('text', 'Логин или e-mail', 'cs-input--light form__input is-invalid')}}
+			<button class="btn btn--gr form__btn mt-30" type="submit">Вход</button>
+			<div class="success">
+				<div class="success__text">Вам на почту отправленно сообщение с дальнейшими инструкциями.</div>
+			</div>
+		</form>
+		<a class="form__link js-popup-close" data-fancybox-close href="#register">Регистрация</a>
+	</div>
+</div>
+<!-- end enter -->
 
 <!-- begin review-add -->
 <div class="modal-window modal-window--mobile review-add" id="review-add">
@@ -28,7 +77,7 @@
 		<form class="form form__review-add">
 			<div class="cs-input">
 				<span class="cs-input__title">Ваше имя</span>
-				<input type="text" class="cs-input__field">
+				<input class="cs-input__field" type="text">
 				<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
 			</div>
 			<div class="cs-input cs-input--select form__input">
@@ -37,7 +86,7 @@
 					<option value="Выберите город..." disabled selected>Выберите город...</option>
 					{% for i in range(0, 11) %}
 					<option value="Балаково">Балаково</option>
-					{% endfor %}﻿		 				
+					{% endfor %}﻿
 				</select>
 				<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
 			</div>
@@ -59,7 +108,7 @@
 				</label>
 			</div>
 
-			<button type="submit" class="button button--accent form__btn">Отправить</button>
+			<button class="button button--accent form__btn" type="submit">Отправить</button>
 			<div class="success">
 				<div class="success__text">Спасибо за отзыв!</div>
 			</div>
@@ -68,28 +117,6 @@
 </div>
 <!-- end review-add -->
 
-<!-- begin enter -->
-<div class="modal-window modal-window--mobile enter" id="enter">
-	<div class="modal-window__header">
-		<h4 class="modal-window__title">Авторизация</h4>
-	</div>
-	<div class="modal-window__body">
-		<form class="form form__register">
-			{{item.input('text', 'Логин или e-mail', 'form__input is-invalid')}}
-			{{item.input('password', 'Пароль', 'form__input is-invalid')}}
-			<div class="form__box">
-				{{item.checkbox('Запомнить меня', 'form__checkbox')}}
-				<a class="password-recovery" href="#" data-fancybox>Забыли пароль?</a>
-			</div>
-			<button type="submit" class="button button--accent form__btn">Вход</button>
-			<div class="success">
-				<div class="success__text">Добро пожаловать!</div>
-			</div>
-		</form>
-		<div class="info-text">если у Вас еще нет учетной записи, <a href="#register" data-fancybox>зарегистрируйтесь</a></div>
-	</div>
-</div>
-<!-- end enter -->
 
 <!-- begin buy-one-click -->
 <div class="modal-window modal-window--mobile buy-one-click" id="buy-one-click">
@@ -101,16 +128,16 @@
 		<form class="form form__request">
 			{{item.input('text', 'Ваше имя', 'form__input is-invalid')}}
 			<div class="cs-input form__input">
-				<input type="tel" class="cs-input__field js-input js-phone-mask" placeholder="Ваш телефон">
+				<input class="cs-input__field js-input js-phone-mask" type="tel" placeholder="Ваш телефон">
 				<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
 			</div>
-			<button type="submit" class="button button--accent form__btn">Купить</button>
+			<button class="button button--accent form__btn" type="submit">Купить</button>
 			<div class="success">
 				<div class="success__text">
 					Спасибо за заказ!
 					<div class="success__text--small">Наши менеджеры свяжутся с Вами в ближайшее время.</div>
 				</div>
-				
+
 			</div>
 		</form>
 	</div>
