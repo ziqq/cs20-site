@@ -527,7 +527,7 @@
             </div>
           </form>
           <div class="policy-agriment">
-            <label class="cs-checkbox cs-checkbox--transform policy__checkbox">
+            <label class="cs-checkbox policy__checkbox">
               <input type="checkbox">
               <span class="cs-checkbox__box"></span>
               <span class="cs-checkbox__title">Я принимаю</span>
@@ -555,7 +555,7 @@
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="form__box mt-30">
-              <label class="cs-checkbox cs-checkbox--transform policy__checkbox">
+              <label class="cs-checkbox policy__checkbox">
                 <input type="checkbox">
                 <span class="cs-checkbox__box"></span>
                 <span class="cs-checkbox__title">Запомнить меня</span>
@@ -686,5 +686,11 @@
     <script type="text/javascript" src="js/libs.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <!-- end scripts -->
+    <div id="elements-placeholder" style="border: 0; clip: rect(0 0 0 0); overflow: hidden; margin: -1px; padding: 0; position: absolute; width: 1px; height: 1px;">
+      <script>
+        document.getElementById("elements-placeholder").innerHTML = SVG_SPRITE;
+
+      </script>
+    </div>
   </body>
 </html>

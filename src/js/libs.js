@@ -18,5 +18,5 @@
 //=include ../libs/sticky-sidebar-resize.js
 //=include ../libs/sticky-sidebar.js
 
-//=include assets/svg-sprite.js
 //=include ../../bower_components/svg4everybody/dist/svg4everybody.js
+//=include assets/svg-sprite.js

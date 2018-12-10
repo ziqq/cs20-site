@@ -15,8 +15,11 @@
 	}
 
 	&:hover {
-		@include trfY(-10px);
-		box-shadow: $bxs-box--hover;
+		@include r-min(sm) {
+			@include trfY(-10px);
+			box-shadow: $bxs-box--hover;
+		}
+
 
 		.product-item {
 			&__dell {

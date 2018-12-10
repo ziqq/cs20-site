@@ -11,6 +11,7 @@ const Base = {
 		this.popups();
 		this.setHeight();
 		this.map();
+		this.upsateResize();
 
 		//First Screen Padding-Top
 		$('.js-firstscreen').css('padding-top', $('.header').outerHeight(true));
@@ -110,6 +111,11 @@ const Base = {
 			// 	icon: 'img/general/pin.png'
 			// });
 		}
+	},
+	upsateResize: function() {
+		$(window).resize(function() {
+			Base.setHeight();
+		});
 	}
 };
 
@@ -147,7 +153,6 @@ $(function() {
 	textOverflow();
 
 	$window.resize(function() {
-		heightses();
 		textOverflow();
 	});
 

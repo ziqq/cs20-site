@@ -13,6 +13,7 @@ var Base = {
 		this.popups();
 		this.setHeight();
 		this.map();
+		this.upsateResize();
 
 		//First Screen Padding-Top
 		$('.js-firstscreen').css('padding-top', $('.header').outerHeight(true));
@@ -110,6 +111,11 @@ var Base = {
 			// 	icon: 'img/general/pin.png'
 			// });
 		}
+	},
+	upsateResize: function upsateResize() {
+		$(window).resize(function () {
+			Base.setHeight();
+		});
 	}
 };
 
@@ -147,7 +153,6 @@ $(function () {
 	textOverflow();
 
 	$window.resize(function () {
-		heightses();
 		textOverflow();
 	});
 
@@ -599,10 +604,7 @@ $(function () {
 				$('.js-dropdown').removeClass('is-active');
 				$(this).addClass('is-active');
 			}
-		});
-		$(document).on('click', function (e) {
-			if ($(e.target).closest('.js-dropdown').length) return;
-			$('.js-dropdown').removeClass('is-active');
+		}).on('click', '.js-dropdown a', function (e) {
 			e.stopPropagation();
 		});
 	}

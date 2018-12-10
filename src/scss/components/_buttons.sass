@@ -11,6 +11,9 @@
 	position: relative
 	+tr(.35s)
 
+	+r(480)
+		font-size: 16px
+
 	&:hover
 		color: #fff
 
@@ -111,16 +114,26 @@
 
 	//.btn-filter
 	&--filter
+		width: 55px
+		height: 55px
+		padding: 0
 		text-align: center
 		font-size: 14px
 		color: #fff
 		background-color: $color-accent
-		border-radius: 20px
-		box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15)
+		border-radius: 50%
+		box-shadow: $bxs-box
 		outline: none
-		+centre('x')
-		bottom: -18px
+		position: fixed
+		right: 20px
+		bottom: 20px
 		z-index: z(fixed)
+		&::before
+			content: '\f0b0'
+			+fa('solid')
+			font-size: 25px
+			display: block
+			+centre
 
 	//.btnlink
 	&-link

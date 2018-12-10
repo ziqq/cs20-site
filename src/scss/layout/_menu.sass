@@ -127,10 +127,13 @@
 	//.mobile-menu__link
 	&__link
 		display: block
-		padding: 10px 0 10px 30px
+		padding: 10px 0 10px 10px
 		font-size: 14px
 		color: $color-text
 		position: relative
+
+		+r(480)
+			font-size: 16px
 
 		&:hover, &:focus
 			color: #000
