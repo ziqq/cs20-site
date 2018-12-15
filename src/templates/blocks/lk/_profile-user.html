@@ -1,0 +1,101 @@
+<!-- begin lk-order -->
+<div class="lk__top-line">
+	<div class="lk__title">Профили</div>
+</div>
+
+<div class="lk__box">
+	<form class="form pedit">
+		<div class="form__title">Добавление профиля частного лица</div>
+		<div class="row row--end">
+			<div class="col-4">
+				<div class="pedit__item">
+					<div class="pedit__title">Укажите ваше имя:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='text', placeholder='Имя')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4">
+				<div class="pedit__item">
+					<div class="pedit__field">
+						{{item.input(type='text', placeholder='Фамилия')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4">
+				<div class="pedit__item">
+					<div class="pedit__field">
+						{{item.input(type='text', placeholder='Отчество (если есть)')}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-4">
+				<div class="pedit__item">
+					<div class="pedit__title">Укажите номер телефона:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='tel', inputClass='js-phone-mask')}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row row--end">
+			<div class="col-4">
+				<div class="pedit__item">
+					<div class="pedit__title">Укажите ваш адрес:<i>*</i></div>
+					<div class="pedit__field">
+						<select class="js-select js-select--country" data-placeholder="Выбор страны">
+							<option></option>
+							{% for i in range(0, 5) %}
+							<option value="{{ i+1 }}">{{ i+1 }}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4">
+				<div class="pedit__item">
+					<div class="pedit__field">
+						<select class="js-select js-select--region" data-placeholder="Выбор региона" disabled>
+							<option></option>
+							{% for i in range(0, 5) %}
+							<option value="{{ i+1 }}">{{ i+1 }}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4">
+				<div class="pedit__item">
+					<div class="pedit__field">
+						<select class="js-select js-select--city" data-placeholder="Выбор  города" disabled>
+							<option></option>
+							{% for i in range(0, 5) %}
+							<option value="{{ i+1 }}">{{ i+1 }}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<p class="pedit__info-text">* - поля, отмеченные звёздочкой, обязательны для заполнения</p>
+
+		<div class="form__box mb-30">
+			Получать уведомления:
+			{{ item.checkbox('По e-mail', 'ml-20') }}
+		</div>
+
+		<div class="button-box">
+			<p>Нажимая на кнопку "Сохранить настройки профиля", <br> я даю <strong>согласие на обработку персональных данных</strong></p>
+			<button class="btn btn-accent pedit__btn">Сохранить настройки профиля</button>
+		</div>
+	</form>
+</div>

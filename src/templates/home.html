@@ -39,51 +39,45 @@ firstscreenTitle: true
 
 	<!-- begin cs-section advert -->
 	<section class="cs-section cs-section--category">
-			<div class="container">
-				<h2 class="h2 title title--slider">Категории товаров</h2>
-
-				<div class="cs-slider cs-slider--home js-cs-slider--category">
-					<div class="cs-slider__arrow cs-slider__arrow--prev"></div>
-					<div class="cs-slider__arrow cs-slider__arrow--next"></div>
-
-					<div class="category-item__wrap cs-slider__slides">
-						{% import "data/data.html" as categoryItem %}
-						{% for category in categoryItem.category %}
-						<a href="#" class="category-item cs-slider__slide">
-
-							<i class="category-item__icon category-item__icon--{{ category.icon }}">
-							</i>
-
-							<h5 class="category-item__title js-category-title-equalheight">{{ category.title }}</h5>
-						</a>
-						{% endfor %}
-					</div>
-				</div>
-
-			</div>
-	</section>
-	<!-- end cs-section advert -->
-
-	<!-- begin cs-section  -->
-	 <section class="cs-section cs-section--info xs-only">
 		<div class="container">
+			<h2 class="h2 title title--slider">Категории товаров</h2>
 
-			<div class="cs-slider cs-slider--home js-cs-slider--info">
+			<div class="cs-slider cs-slider--home js-cs-slider--category">
 				<div class="cs-slider__arrow cs-slider__arrow--prev"></div>
 				<div class="cs-slider__arrow cs-slider__arrow--next"></div>
 
 				<div class="category-item__wrap cs-slider__slides">
-					<a href="#" class="category-item category-item--info category-item--white cs-slider__slide" style="background-image: url('img/general/info/1.png');">
+					{% import "data/data.html" as categoryItem %}
+					{% for category in categoryItem.category %}
+					<a href="#" class="category-item cs-slider__slide">
 
-						<h5 class="category-item__title js-category-title-equalheight">5 поводов подписаться на нас в вконтакте </h5>
-					</a>
-					<a href="#" class="category-item category-item--info cs-slider__slide" style="background-image: url('img/general/info/2.png');">
+						<i class="category-item__icon category-item__icon--{{ category.icon }}">
+						</i>
 
-						<h5 class="category-item__title js-category-title-equalheight">Как сэкономить на доставке запчастей?</h5>
+						<h5 class="category-item__title js-category-title-equalheight">{{ category.title }}</h5>
 					</a>
+					{% endfor %}
 				</div>
 			</div>
 
+		</div>
+	</section>
+	<!-- end cs-section advert -->
+
+	<!-- begin cs-section  -->
+	 <section class="cs-section cs-section--storis xs-only">
+
+		<div class="storis">
+			<div class="storis__inner">
+				{% import "data/data.html" as storis %}
+				{% for item in storis.storis %}
+				<a href="{{ item.link }}" class="storis__item" style="background-image: url('img/general/info/{{ item.img }}.png');">
+					<h5 class="storis__title">
+						{{ item.title }}
+					</h5>
+				</a>
+				{% endfor %}
+			</div>
 		</div>
 	</section><!-- end cs-section  -->
 

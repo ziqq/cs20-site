@@ -223,6 +223,9 @@
                   <div class="c-select__val">Товары</div>
                 </div>
                 <div class="c-dropdown__list">
+                  <svg class="icon icon-cs-close c-dropdown__icon c-dropdown__icon--close js-cs-dropdown--close">
+                    <use xlink:href="img/sprite.svg#cs-close"></use>
+                  </svg>
                   <div class="c-select__dropdown">
                     <li class="c-select__item">
                       <a href="javascript:void(0);" class="c-select__link"> Аксессуары / инструменты </a>
@@ -260,6 +263,9 @@
                   <div class="c-select__val">Авто</div>
                 </div>
                 <div class="c-dropdown__list">
+                  <svg class="icon icon-cs-close c-dropdown__icon c-dropdown__icon--close js-cs-dropdown--close">
+                    <use xlink:href="img/sprite.svg#cs-close"></use>
+                  </svg>
                   <div class="c-select__dropdown">
                     <ul class="c-select__list">
                       <li class="c-select__item">
@@ -567,19 +573,27 @@
         </section>
         <!-- end cs-section advert -->
         <!-- begin cs-section  -->
-        <section class="cs-section cs-section--info xs-only">
-          <div class="container">
-            <div class="cs-slider cs-slider--home js-cs-slider--info">
-              <div class="cs-slider__arrow cs-slider__arrow--prev"></div>
-              <div class="cs-slider__arrow cs-slider__arrow--next"></div>
-              <div class="category-item__wrap cs-slider__slides">
-                <a href="#" class="category-item category-item--info category-item--white cs-slider__slide" style="background-image: url('img/general/info/1.png');">
-                  <h5 class="category-item__title js-category-title-equalheight">5 поводов подписаться на нас в вконтакте </h5>
-                </a>
-                <a href="#" class="category-item category-item--info cs-slider__slide" style="background-image: url('img/general/info/2.png');">
-                  <h5 class="category-item__title js-category-title-equalheight">Как сэкономить на доставке запчастей?</h5>
-                </a>
-              </div>
+        <section class="cs-section cs-section--storis xs-only">
+          <div class="storis">
+            <div class="storis__inner">
+              <a href="#" class="storis__item" style="background-image: url('img/general/info/1.png');">
+                <h5 class="storis__title"> 5 поводов подписаться на нас в вконтакте </h5>
+              </a>
+              <a href="#" class="storis__item" style="background-image: url('img/general/info/2.png');">
+                <h5 class="storis__title"> Как сэкономить на доставке запчастей? </h5>
+              </a>
+              <a href="#" class="storis__item" style="background-image: url('img/general/info/1.png');">
+                <h5 class="storis__title"> 5 поводов подписаться на нас в вконтакте </h5>
+              </a>
+              <a href="#" class="storis__item" style="background-image: url('img/general/info/2.png');">
+                <h5 class="storis__title"> Как сэкономить на доставке запчастей? </h5>
+              </a>
+              <a href="#" class="storis__item" style="background-image: url('img/general/info/1.png');">
+                <h5 class="storis__title"> 5 поводов подписаться на нас в вконтакте </h5>
+              </a>
+              <a href="#" class="storis__item" style="background-image: url('img/general/info/2.png');">
+                <h5 class="storis__title"> Как сэкономить на доставке запчастей? </h5>
+              </a>
             </div>
           </div>
         </section><!-- end cs-section  -->
@@ -907,6 +921,23 @@
     <!-- begin windows -->
     <div class="windows">
       <!-- begin register -->
+      <div class="modal-window modal-window--medium new-profile" id="new-profile">
+        <div class="modal-window__body">
+          <div class="new-profile__title">Добавление нового профиля</div>
+          <div class="button-box button-box--center">
+            <button class="btn btn-accent btn--icon js-change-profile" data-profile="add-profile-user" data-tab-index="2">
+              <svg class="icon icon-cs-user btn__icon">
+                <use xlink:href="img/sprite.svg#cs-user"></use>
+              </svg> Частное лицо </button>
+            <button class="btn btn--white btn--icon js-change-profile" data-profile="add-profile-company" data-tab-index="3">
+              <svg class="icon icon-cs-tower btn__icon">
+                <use xlink:href="img/sprite.svg#cs-tower"></use>
+              </svg> Компания </button>
+          </div>
+        </div>
+      </div>
+      <!-- end register -->
+      <!-- begin register -->
       <div class="modal-window modal-window--mobile register" id="register">
         <div class="modal-window__header">
           <h4 class="modal-window__title">Регистрация</h4>
@@ -914,19 +945,19 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input">
-              <input type="text" class="cs-input__field" placeholder="Логин">
+              <input type="text" class="cs-input__field " placeholder="Логин">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <input type="text" class="cs-input__field " placeholder="Ваше имя">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input">
-              <input type="email" class="cs-input__field" placeholder="Email">
+              <input type="email" class="cs-input__field " placeholder="Email">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input">
-              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <input type="password" class="cs-input__field " placeholder="Пароль">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="success">
@@ -954,11 +985,11 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input">
-              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <input type="password" class="cs-input__field " placeholder="Пароль">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="form__box mt-30">
@@ -986,7 +1017,7 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <button class="btn btn--gr form__btn mt-30" type="submit">Вход</button>
@@ -1071,7 +1102,7 @@
         <div class="modal-window__body">
           <form class="form form__request">
             <div class="cs-input form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <input type="text" class="cs-input__field " placeholder="Ваше имя">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input form__input">

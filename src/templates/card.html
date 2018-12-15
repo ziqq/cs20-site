@@ -1,5 +1,5 @@
 ---
-title: Комплект патрубков 2170 PROFI СИНИЙ СИЛИКОН 
+title: Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -16,58 +16,54 @@ title: Комплект патрубков 2170 PROFI СИНИЙ СИЛИКОН
 			<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
 				<ul class="breadcrumbs__list">
 					<li class="breadcrumbs__item">
-						<a href="#" class="breadcrumbs__link" itemprop="url">
+						<a href="/" class="breadcrumbs__link" itemprop="url">
 							<span class="breadcrumbs__title" itemprop="title">Главная</span>
 						</a>
 					</li>
 					<li class="breadcrumbs__item">
-						<a href="#" class="breadcrumbs__link" itemprop="url">
+						<a href="catalog.html" class="breadcrumbs__link" itemprop="url">
 							<span class="breadcrumbs__title" itemprop="title">Каталог</span>
 						</a>
 					</li>
 					<li class="breadcrumbs__item">
-						<a href="#" class="breadcrumbs__link" itemprop="url">
-							<span class="breadcrumbs__title" itemprop="title">Патрубки / Шланги</span>
-						</a>
-					</li>
-					<li class="breadcrumbs__item">
-						<span class="breadcrumbs__title" itemprop="title">10843</span>
+						<span class="breadcrumbs__title" itemprop="title">{{ title }}</span>
 					</li>
 				</ul>
 			</div>
 			<!-- end breadcrumbs -->
-
-			<a href="#" class="back-to-search button-link">Вернуться к поиску</a>
-
 		</div>
 	</div>
 	<!-- end card__top-line -->
 
-	<!-- begin card__content -->
+	<!-- begin card__inner -->
 	<div class="container">
-		<div class="card__content">
+		<div class="card__inner">
 			<!-- begin card__img -->
 			<div class="card__img">
-				<!-- <img src="img/cart/product.png" al	t="Комплект патрубков 2170 PROFI СИНИЙ СИЛИКОН "> -->
-				<div class="cs-slider cs-slider--expanded card__slider">
+
+				<div class="cs-slider cs-slider--card js-cs-slider--card">
 					<div class="cs-slider__arrow cs-slider__arrow--prev"></div>
 					<div class="cs-slider__arrow cs-slider__arrow--next"></div>
-					<div class="cs-slider__slides js-cs-slider--card">
-						{% for i in range(0, 2) %}
-						<div class="cs-slider__slided">
-							<img class="cs-slider__img zoom" src="img/products/nipples/product.png" alt="Комплект патрубков 2170 PROFI СИНИЙ СИЛИКОН ">
+
+					<div class="cs-slider__slides">
+						<div class="cs-slider__slide">
+							<div class="cs-slider__img">
+								<img src="img/products/1/325x325/1.png" alt="Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ">
+							</div>
 						</div>
-						{% endfor %}﻿
 					</div>
 				</div>
+
 			</div>
 			<!-- end card__img -->
+
 			<!-- begin card__desc -->
 			<div class="card__desc">
-				<h1 class="card__title">Комплект патрубков 2170 (7 шт) <span>profi синий силикон</span> Состав: код 8811/6535/8049/10098/10102</h1>
+				<h1 class="card__title">{{ title }}</h1>
+
 				<div class="card__sum">
 					<div class="card__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-						<span class="price__cost">2232 <i class="fa fa-rub"></i></span>
+						<span class="price__cost">536 руб.</span>
 						<meta itemprop="price" content="2232">
 						<meta itemprop="priceCurrency" content="RUB" />
 					</div>
@@ -76,39 +72,109 @@ title: Комплект патрубков 2170 PROFI СИНИЙ СИЛИКОН
 						<input type="text" class="counter__field" value="1">
 						<span class="counter__control counter__control--plus js-counter--plus">+</span>
 					</div>
-				</div>
-				<div class="button-box">
-					<button class="button button--accent card__btn">Добавить в корзину</button>
-					<button class="button button--transparent card__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
-				</div>
-
-				<span class="price__stock">Есть в наличии</span>	
-
-				<div class="card__info-block">
-					<div class="info-block__items">
-						<div class="info-block__item">
-							{{mixin.icon('delivery', 'info-block__icon')}}
-							<div class="info-block__text">
-								<span class="info-block__title">Бесплатная доставка</span>
-								<p class="info-block__desc">При заказе в интернет-магазине от 1000 рублей. По России.</p>
-							</div>
-						</div>
-						<div class="info-block__item">
-							{{mixin.icon('garanty', 'info-block__icon')}}
-							<div class="info-block__text">
-								<span class="info-block__title">Расширенная гарантия</span>
-								<p class="info-block__desc">Обмен товара на аналогичный в течении 2 лет</p>
-							</div>
-						</div>
-						<div class="info-block__item">
-							{{mixin.icon('giftbox', 'info-block__icon')}}
-							<div class="info-block__text">
-								<span class="info-block__title">Подарок каждому</span>
-								<p class="info-block__desc">Прочные перчатки в подарок к каждому заказу</p>
-							</div>
+					<div class="card__rating">
+						<div class="rating rating--big">
+							<div class="rating__inner" style="width: 80%"></div>
 						</div>
 					</div>
 				</div>
+
+				<div class="button-box">
+					<button class="btn btn-accent card__btn">Добавить в корзину</button>
+					<div class="card__shops">
+						Официальные магазины
+						<a href="#" class="btn btn-link btn-link-gray--dark ml-5" data-src="#shop-in-city" data-fancybox>в вашем городе</a>
+					</div>
+				</div>
+
+				<!-- begin card-info -->
+					<div class="card-info">
+
+					<div class="tab">
+						<div class="tab__wrap js-tabs">
+							<ul class="tab__titles">
+								<li class="tab__title is-active">
+									<a href="#tab-1">О товаре</a>
+								</li>
+								<li class="tab__title">
+									<a href="#tab-2">Характеристики</a>
+								</li>
+								<li class="tab__title">
+									<a href="#tab-3">Где применяется</a>
+								</li>
+								<li class="tab__title">
+									<a href="#tab-4">Рекомендации</a>
+								</li>
+							</ul>
+							<div class="tab__contentes">
+								<div class="tab__content" id="tab-1">
+									<p>Патрубки и шланги являются неотъемлемый частью системы охлаждения двигателя и отопления автомобиля. Они обеспечивают циркуляцию охлаждающей жидкости (тосол, антифриз).</p>
+								</div>
+
+								<div class="tab__content" id="tab-2">
+									<div class="product-info">
+										<ul class="product-info__list">
+											<li class="product-info__item">
+												Код:
+												<span>09421</span>
+											</li>
+											<li class="product-info__item">
+												Серия:
+												<span>Drive</span>
+											</li>
+											<li class="product-info__item">
+												Артикул:
+												<span>6001547138 ИУ</span>
+											</li>
+											<li class="product-info__item">
+												Номер по автокаталогу:
+												<span>6001547138</span>
+											</li>
+											<li class="product-info__item">
+												Материал:
+												<span>Полиуретан</span>
+											</li>
+											<li class="product-info__item">
+												ШтрихКод:
+												<span>4627130161683</span>
+											</li>
+											<li class="product-info__item">
+												Колличество деталей:
+												<span>2 шт</span>
+											</li>
+											<li class="product-info__item">
+												Гарантия:
+												<span>2 года</span>
+											</li>
+											<li class="product-info__item">
+												Вес:
+												<span>0.082 кг.</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="tab__content" id="tab-3">
+									<div class="product-info">
+										<ul class="product-info__list w3">
+											{% import "data/data.html" as cars %}
+											{% for item in cars.cars %}
+											<li class="product-info__item">
+												{{ item.title }}
+											</li>
+											{% endfor %}
+										</ul>
+									</div>
+								</div>
+
+								<div class="tab__content" id="tab-4">
+									<p>Стойка стабилизатора поперечной устойчивости служит для соединения стабилизатора с элементами подвески автомобиля  и необходима для максимального контроля управляемости и исключения возможности сильного бокового крена, который может возникнуть при повороте.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div><!-- end card-info -->
 			</div>
 			<!-- end card__desc -->
 		</div>
@@ -117,200 +183,64 @@ title: Комплект патрубков 2170 PROFI СИНИЙ СИЛИКОН
 
 	<!-- begin card-info -->
 	<section class="card-info card__card-info">
-		<div class="container">	
+		<div class="container">
 
-			<div class="tab tab--transform js-tab--transform">
-				<div class="tab__wrap">
-					<div class="tab__titles js-tab">
-						<div class="tab__title is-active" data-tab="0">
-							О товаре
-						</div>
-						<div class="tab__title" data-tab="1">
-							Характеристики
-						</div>
-						<div class="tab__title" data-tab="2">
-							Где применяется
-						</div>
-						<div class="tab__title" data-tab="3">
-							Сертификаты
-						</div>
-						<div class="tab__title" data-tab="4">
-							Отзывы
-						</div>
-						<div class="tab__title" data-tab="5">
-							Обзоры
-						</div>
-					</div>
-					<div class="tab__contentes">
-						<div class="tab__content" style="display: block;" data-tab-content="0">
-							<p>Патрубки и шланги являются неотъемлемый частью системы охлаждения двигателя и отопления автомобиля. Они обеспечивают циркуляцию охлаждающей жидкости (тосол, антифриз).</p>
-						</div>
+		</div>
+	</section>
+	<!-- end card-info -->
 
-						<div class="tab__content" data-tab-content="1">					
-							<div class="product-info">
-								<ul class="product-info__list">
-									<li class="product-info__item">Артикул:
-										<span>05748</span>
-									</li>
-									<li class="product-info__item">Модель Авто:
-										<span>2170 Приора</span>
-									</li>
-									<li class="product-info__item">Каталожный номер:
-										<span>3105-1203132</span>
-									</li>
-									<li class="product-info__item">Состав комплекта:
-										<span>8811/6535/8049/10098/10102</span>
-									</li>
-									<li class="product-info__item">Упаковка:
-										<span>Пакет</span>
-									</li>
-									<li class="product-info__item">Пакет:
-										<span>4627131277727</span>
-									</li>
-								</ul>
-							</div>
+	<!-- begin cs-section advert -->
+	<section class="cs-section cs-section--advert">
+		<div class="container">
+
+			{% include "partials/_info-block.html" %}
+
+		</div>
+	</section>
+	<!-- end cs-section advert -->
+
+	<!-- begin cs-section advert -->
+	<section class="cs-section cs-section--product-popular">
+		<div class="container">
+			<h2 class="h2 title title--low">Вместе с этим товаром покупают</h2>
+
+			<div class="cs-slider cs-slider--home  js-cs-slider" data-slide-count="4">
+				<div class="cs-slider__arrow cs-slider__arrow--prev"></div>
+				<div class="cs-slider__arrow cs-slider__arrow--next"></div>
+
+				<div class="product-item__wrap cs-slider__slides">
+					{% import "data/data-product.html" as productItem %}
+					{% for product in productItem.productSimilar %}
+					<a href="#" class="product-item cs-slider__slide" itemscope itemtype="http://schema.org/Product">
+
+						<div class="product-item__img" itemprop="image" href="img/products/1/190x190/{{ product.img }}.png">
+								<img src="img/products/1/190x190/{{ product.img }}.png"  alt="{{ product.title }}" />
 						</div>
 
-						<div class="tab__content" data-tab-content="2">
-							<p>Модель Авто 2170 Приора</p>
-						</div>
+						<h3 class="product-item__title js-product-title-equalheight">{{ product.title }}</h3>
 
-						<div class="tab__content" data-tab-content="3">
-							<div class="sertificate">
-								<div class="sertificate__items">
-									<div class="sertificate__item">
-										<div class="sertificate__download">
-											{{ mixin.icon('pdf') }}
-											<a href="img/general/docs/CS-20.zip" download><span>Скачать сертификаты соответствия	</span>	(4,45 МВ)
-											</a>
-										</div>
-									</div>
-									<div class="sertificate__item">
-										<img src="img/general/sertificate/1.png" alt="Сертифика соответствия">
-									</div>
-									<div class="sertificate__item">
-										<img src="img/general/sertificate/2.png" alt="Сертифика соответствия">
-									</div>
-									<div class="sertificate__item">
-										<img src="img/general/sertificate/3.png" alt="Сертифика соответствия">
-									</div>
-								</div>
-							</div>
+						<div class="product-item__bottom" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+							<span class="product-item__price">
+									<meta itemprop="price" content="{{ product.price }}">
+									<meta itemprop="priceCurrency" content="RUB">
+									<span>{{ product.price }}</span>
+							</span>
+							<button class="btn-icon btn-icon--addInCart product-item__btn js-add-in-cart">
+								{{ mixin.icon('cs-cart', 'btn-icon__ico btn-icon__ico--cart') }}
+								{{ mixin.icon('cs-close', 'btn-icon__ico btn-icon__ico--plus') }}
+								{{ mixin.icon('cs-check', 'btn-icon__ico btn-icon__ico--check') }}
+							</button>
 						</div>
-
-						<div class="tab__content" data-tab-content="4">
-							<!-- begin reviers -->
-							<div class="reviers">
-								<div class="reviers__items">
-									{% for i in range(0, 2) %}
-									<div class="reviers__item">
-										<div class="reviers__inner">
-											<div class="reviers__user">
-												<strong>Александр</strong>
-												<span>Москва</span>
-												<span>01.05.2018</span>
-												<span>11:59:31</span>
-											</div>
-											<div class="reviers__text">
-												<div class="reviers__rating">
-													
-													<div class="rating" itemprop="aggregateRating" itemtype="http://schema.org/AggregateRating">
-														<meta itemprop="reviewCount" content="Отзывов: 88">
-														<meta itemprop="ratingValue" content="4.9">
-														<meta itemprop="bestRating" content="5">
-														<div class="rating__inner" style="width: 80%"></div>
-													</div>
-												
-												</div>
-												<div class="reviers__desc">
-													Отличный комплект!
-													Не понимаю, какой смысл покупать дороже, если эти патрубки справляются со своей задачей на 5+
-													К покупке рекомендую, я не пожалел ни капли, оправдывают каждую копейку своей цены
-												</div>
-												<ul class="reviers__list">
-													<li>
-														<a href="img/products/nipples/product.png" data-fancybox="gallery">
-															<img src="img/products/nipples/reviews-upload/1.png" alt="">
-														</a>
-													</li>
-													<li>
-														<a href="img/products/nipples/product.png" data-fancybox="gallery">
-															<img src="img/products/nipples/1.png" alt="">
-														</a>
-													</li>
-													<li>
-														<a href="img/products/nipples/product.png" data-fancybox="gallery">
-															<img src="img/products/nipples/reviews-upload/1.png" alt="">
-														</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									{% endfor %}﻿
-									<a href="#review-add" class="button button--transparent reviers__btn" data-fancybox>Написать отзыв</a>
-								</div>
-								<div class="reviers__empty" style="display: none;">
-									<p>Еще нет отзывов по данному товару. Оставьте свой отзыв Первым!</p>
-									<a href="#review-add" class="button button--transparent card-info__btn reviers__btn" data-fancybox>Написать отзыв</a>
-								</div>
-							</div>
-							<!-- end reviers -->
-						</div>
-
-						<div class="tab__content" data-tab-content="5">
-							<!-- begin overview -->
-							<div class="overview">
-								<div class="card-info__empty">
-									<p>Рекомендации по установке комплекта патрубков на автомобиль ВАЗ 2170</p>
-									<a href="https://youtu.be/ki01LoQ_XRA?t=106" class="button-link card-info__link" data-fancybox>Смотреть видео</a>
-								</div>							
-							</div>
-							<!-- end overview -->
-						</div>
-					</div>
+					</a>
+					{% endfor %}
 				</div>
 			</div>
 
 		</div>
 	</section>
-	<!-- end card-info -->
-	
-	<!-- begin card__recomended -->
-	<section class="card__recomended">
-		<div class="container">
+	<!-- end cs-section advert -->
 
-			<h2 class="h2 cs-section__title">Вместе с этим товаром покупают</h2>
-
-			<div class="product-item__wrap">
-				{% for i in range(0, 4) %}
-				<a href="#" class="product-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-					<div class="product-item__img">
-						<img src="img/catalog/nipples/1.png" alt="Комплект патрубков ВАЗ-2101-2107 (7 шт) profi синий силикон" itemprop="image">
-					</div>
-					<div class="product-item__desc">
-						<h4 class="product-item__title" itemprop="name">Комплект патрубков ВАЗ-2101-2107 (7 шт) <span>profi синий силикон</span></h4>
-					</div>
-					<div class="product-item__footer">
-						<div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-							<span class="price__cost">2232 <i class="fa fa-rub"></i></span>
-							<meta itemprop="price" content="2232">
-							<meta itemprop="priceCurrency" content="RUB" />
-							<span class="price__stock">Есть в наличии</span>
-						</div>
-						<div class="product-item__buttons">
-							<button class="button button--accent product-item__btn">Добавить в корзину</button>
-						</div>
-					</div>
-				</a>
-				{% endfor %}﻿
-			</div>
-
-		</div>		
-	</section>
-	<!-- end card__recomended -->
-
-</div>	
+</div>
 <!-- end home -->
 
 {% endblock %}

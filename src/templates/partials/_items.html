@@ -25,9 +25,11 @@
 {% endmacro %}
 <!-- item.checkbox('мужской', 'cs-checkbox--radio, profile-editor__checkbox') -->
 
-{% macro input(type, title, class) %}
+{% macro input(type, placeholder, class, inputClass) %}
 <div class="cs-input {{class}}">
-	<input type="{{type}}" class="cs-input__field" placeholder="{{title}}">
+	<input
+		type="{{type}}"
+		class="cs-input__field {% if inputClass %} {{ inputClass }} {% endif %}" {% if placeholder %} placeholder="{{placeholder}}" {% endif %}>
 	<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
 </div>
 {% endmacro %}
@@ -149,16 +151,4 @@
 	<span class="phone__text">звонок бесплатный</span>
 </div>
 <!-- end phone -->
-{% endmacro %}
-
-{% macro lkNav(class) %}
-<!-- begin lk-nav -->
-<nav class="lk__nav lk-nav js-lk-nav">
-	<ul class="lk-nav__list">
-		<li class="lk-nav__item is-active"><a href="lk-user.html" class="lk-nav__link">Личные данные</a></li>
-		<li class="lk-nav__item"><a href="lk-order.html" class="lk-nav__link">Мои заказы</a></li>
-		<li class="lk-nav__item"><a href="lk-sale.html" class="lk-nav__link">Персональные скидки</a></li>
-	</ul>
-</nav>
-<!-- end lk-nav -->
 {% endmacro %}

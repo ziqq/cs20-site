@@ -1,0 +1,66 @@
+---
+title: Восстановление пароля
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper">
+
+	<div class="auth">
+		<!-- begin breadcrumbs -->
+		<div class="container">
+			<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+				<ul class="breadcrumbs__list">
+					<li class="breadcrumbs__item">
+						<a href="#" class="breadcrumbs__link" itemprop="url">
+							<span class="breadcrumbs__title" itemprop="title">Главная</span>
+						</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<span class="breadcrumbs__title" itemprop="title">Личный кабинет</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- end breadcrumbs -->
+
+	<!-- begin contacts -->
+	<div class="container">
+		<div class="cs-card">
+
+			<div class="auth__inner auth__inner--start">
+				<div class="auth__left">
+
+					<h1 class="h1 page-title page-title--big" itemprop="headline">{{ title }}</h1>
+
+					<form class="form form__register">
+						{{item.input('text', 'Логин или e-mail', 'cs-input--light form__input')}}
+
+						<button class="btn btn--gr form__btn" type="submit">Восстановить пароль</button>
+
+						<div class="success">
+							<div class="success__text">Добро пожаловать!</div>
+						</div>
+
+						<div class="button-box button-box--column">
+							<a class="form__link mb-10" href="registration.html">Регистрация</a>
+							<a class="form__link" href="enter.html">Есть аккаунт? Вход</a>
+						</div>
+					</form>
+				</div>
+				<div class="auth__right">
+					<img src="img/general/enter.png" alt="alt">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end contacts -->
+
+	</div>
+
+</div>
+<!-- end home -->
+
+{% endblock %}

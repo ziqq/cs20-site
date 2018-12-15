@@ -10,6 +10,7 @@ const Base = {
 		this.select();
 		this.popups();
 		this.setHeight();
+		this.plusMinus();
 		this.map();
 		this.upsateResize();
 
@@ -36,28 +37,28 @@ const Base = {
 			});
 		}
 	},
-	select: function() {
-		let $select = $('.js-select');
+	// select: function() {
+	// 	let $select = $('.js-select');
 
-		if ($(window).width() > 768) {
-			$select.each(function() {
-				let $parent = $(this).parent();
+	// 	if ($(window).width() > 768) {
+	// 		$select.each(function() {
+	// 			let $parent = $(this).parent();
 
-				if ($(this).hasClass('no-search')) {
-					$(this).select2({
-						dropdownParent: $parent,
-						minimumResultsForSearch: -1
-					});
-				} else {
-					$(this).select2({
-						dropdownParent: $parent
-					});
-				}
-			});
-		} else {
-			$select.wrap('<label class="cs-select">');
-		}
-	},
+	// 			if ($(this).hasClass('no-search')) {
+	// 				$(this).select2({
+	// 					dropdownParent: $parent,
+	// 					minimumResultsForSearch: -1
+	// 				});
+	// 			} else {
+	// 				$(this).select2({
+	// 					dropdownParent: $parent
+	// 				});
+	// 			}
+	// 		});
+	// 	} else {
+	// 		$select.wrap('<label class="cs-select">');
+	// 	}
+	// },
 	setHeight: function() {
 		//Product title equalheight
 		_heightses($('.js-product-title-equalheight'));
@@ -66,6 +67,26 @@ const Base = {
 		function _heightses(selector) {
 			selector.equalHeights();
 		}
+	},
+	plusMinus: function() {
+		$('.js-counter--minus').click(function() {
+			var $input = $(this)
+				.parent()
+				.find('input');
+			var count = parseInt($input.val()) - 1;
+			count = count < 1 ? 1 : count;
+			$input.val(count);
+			$input.change();
+			return false;
+		});
+		$('.js-counter--plus').click(function() {
+			var $input = $(this)
+				.parent()
+				.find('input');
+			$input.val(parseInt($input.val()) + 1);
+			$input.change();
+			return false;
+		});
 	},
 	popups: function() {
 		//Modal FancyBox 3 https://fancyapps.com/fancybox/3/
@@ -92,8 +113,44 @@ const Base = {
 			}, 100);
 		});
 	},
+	// select: function() {
+	// 	let $select = $('.js-select');
+	// 	$select.each(function() {
+	// 		let placeholder = $(this).attr('placeholder');
+
+	// 		$(this).selectize({
+	// 			create: true,
+	// 			sortField: 'text',
+	// 			maxItems: 1,
+	// 			singleOverride: true,
+	// 			placeholder: placeholder
+	// 		});
+	// 	});
+	// },
+	select: function() {
+		let $select = $('.js-select');
+
+		if ($(window).width() > 768) {
+			$select.each(function() {
+				let $parent = $(this).parent();
+
+				if ($(this).hasClass('no-search')) {
+					$(this).select2({
+						dropdownParent: $parent,
+						minimumResultsForSearch: -1
+					});
+				} else {
+					$(this).select2({
+						dropdownParent: $parent
+					});
+				}
+			});
+		} else {
+			$select.wrap('<label class="cs-select">');
+		}
+	},
 	map: function() {
-		let $map = $('#map');
+		let $map = $('.js-map');
 
 		if ($map.length) {
 			_initMap();
@@ -101,10 +158,32 @@ const Base = {
 
 		function _initMap() {
 			var uluru = { lat: 51.9958, lng: 47.8191 };
-			var map = new google.maps.Map(document.getElementById('map'), {
+			var map = new google.maps.Map(document.querySelector('.js-map'), {
 				zoom: 17,
 				center: uluru
 			});
+			// var marker = new google.maps.Marker({
+			// 	position: { lat: 51.99577, lng: 47.81935 },
+			// 	map: map,
+			// 	icon: 'img/general/pin.png'
+			// });
+		}
+
+		let $mapShops = $('.js-map-shops');
+
+		if ($mapShops.length) {
+			_initMapShops();
+		}
+
+		function _initMapShops() {
+			var uluru = { lat: 51.9958, lng: 47.8191 };
+			var map = new google.maps.Map(
+				document.querySelector('.js-map-shops'),
+				{
+					zoom: 17,
+					center: uluru
+				}
+			);
 			// var marker = new google.maps.Marker({
 			// 	position: { lat: 51.99577, lng: 47.81935 },
 			// 	map: map,
@@ -174,8 +253,6 @@ $(function() {
 	//=include components/Slider.js
 	//=include modules/Menu.js
 	//=include partials/cs-scripts.js
-	//=include partials/catalog.js
-	//=include partials/cart.js
 
 	//Add in card
 	$('.js-add-in-cart').on('click', function(e) {
@@ -196,10 +273,7 @@ $(function() {
 	// }
 	// contentPadding();
 
-	//Табы в поиске на главной
-	// if ($('.js-tab').length > 0 && $(window).width() > 768) {
-	// 	document.querySelector('.js-tab').addEventListener('click', tabs);
-	// }
+	$('.js-tabs').tabs();
 
 	//Mobile menu subnav toggle
 	// $('.js-mobile-nav-sub--open').on('click', function() {
@@ -307,15 +381,6 @@ $(function() {
 	// 	});
 	// }
 
-	// if ($('.js-cart-sticky').length > 0 && $(window).width() > 1024) {
-	// 	var sidebar = new StickySidebar('.js-cart-sticky', {
-	// 		topSpacing: 80,
-	// 		bottomSpacing: 10,
-	// 		containerSelector: '.cart__inner',
-	// 		innerWrapperSelector: '.cart__sum'
-	// 	});
-	// }
-
 	//Datepicker http://t1m0n.name/air-datepicker/docs/index-ru.html
 	// if ('.js-date'.length > 0) {
 	// 	$('.js-date').datepicker({
@@ -410,3 +475,8 @@ $(function() {
 	// 	tabTransform();
 	// }
 });
+
+//=include partials/catalog.js
+//=include partials/cart.js
+//=include partials/lk.js
+//=include partials/functions.js

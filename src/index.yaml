@@ -13,9 +13,13 @@ PageList:
   ready: 50
   desc : Результаты поиска
 
-# - file: card.html
-#   ready: 50
-#   desc : Подробная карточа
+- file: card.html
+  ready: 50
+  desc : Подробная карточа
+
+- file: cart.html
+  ready: 50
+  desc : Корзина
 
 - file: payment.html
   ready: 50
@@ -25,33 +29,43 @@ PageList:
   ready: 50
   desc : Доставка
 
-# - file: cart.html
-#   ready: 50
-#   desc : Корзина
-
   #contacts
 - file: contacts.html
   ready: 50
   desc : Контакты
 
   #contacts
-# - file: enter.html
-#   ready: 50
-#   desc : Вход
+- file: map.html
+  ready: 50
+  desc : Карта
+
+  #enter
+- file: enter.html
+  ready: 50
+  desc : Вход
+
+  #registration
+- file: registration.html
+  ready: 50
+  desc : Регистрация
+
+  #password-recowery
+- file: password-recowery.html
+  ready: 50
+  desc : Регистрация
 
   #LK
-# - file: lk-user.html
-#   ready: 50
-#   desc : личные данные
+- file: lk-user.html
+  ready: 50
+  desc : личные данные
 
-# - file: lk-order.html
-#   ready: 50
-#   desc : мои заказы
+- file: lk-order.html
+  ready: 50
+  desc : мои заказы
 
-# - file: lk-sale.html
-#   ready: 50
-#   desc : персональные скидки
-
+- file: lk-sale.html
+  ready: 50
+  desc : персональные скидки
 
   #news
 - file: news.html
@@ -84,6 +98,6 @@ PageList:
   desc : Error Page
 
   #Попап окна
-# - file: popups.html
-#   ready: 50
-#   desc : Попап окна
+- file: popups.html
+  ready: 50
+  desc : Попап окна

@@ -1,0 +1,60 @@
+<!-- begin lk-order -->
+<div class="lk__top-line">
+	<div class="lk__title">Настройки аккаунта</div>
+</div>
+
+<div class="lk__box">
+	<form class="pedit">
+		<div class="row">
+			<div class="col-6">
+				<div class="pedit__item">
+					<div class="pedit__title">Login:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='text')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-6">
+				<div class="pedit__item">
+					<div class="pedit__title">E-mail:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='email')}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-6">
+				<div class="pedit__item">
+					<div class="pedit__title">Пароль:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='password')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-6">
+				<div class="pedit__item">
+					<div class="pedit__title">Подтверждение пароля:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='password')}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<p class="pedit__info-text">* - поля, отмеченные звёздочкой, обязательны для заполнения</p>
+
+		<div class="form__box mb-30">
+			Получать уведомления:
+			{{ item.checkbox('По e-mail', 'ml-20') }}
+		</div>
+
+		<div class="button-box">
+			<p>Нажимая на кнопку "Сохранить настройки профиля", <br> я даю <strong>согласие на обработку персональных данных</strong></p>
+			<button class="btn btn-accent pedit__btn">Сохранить настройки профиля</button>
+		</div>
+	</form>
+</div>

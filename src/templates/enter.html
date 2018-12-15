@@ -1,5 +1,5 @@
 ---
-title: Вход
+title: Вход в личный кабинет
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -8,63 +8,62 @@ title: Вход
 <!-- begin home -->
 <div class="content-wrapper">
 
-	<!-- begin breadcrumbs -->
-	<div class="container">
-		<div class="breadcrumbs__wrap">
-				<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
-					<ul class="breadcrumbs__list">
-						<li class="breadcrumbs__item">
-							<a href="#" class="breadcrumbs__link" itemprop="url">
-								<span class="breadcrumbs__title" itemprop="title">Главная</span>
-							</a>
-						</li>
-						<li class="breadcrumbs__item">
-							<span class="breadcrumbs__title" itemprop="title">Личный кабинет</span>
-						</li>
-					</ul>
-				</div>
-
-				<a href="#" class="button-link button-link--exit"><span>Выход</span></a>
+	<div class="auth">
+		<!-- begin breadcrumbs -->
+		<div class="container">
+			<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+				<ul class="breadcrumbs__list">
+					<li class="breadcrumbs__item">
+						<a href="#" class="breadcrumbs__link" itemprop="url">
+							<span class="breadcrumbs__title" itemprop="title">Главная</span>
+						</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<span class="breadcrumbs__title" itemprop="title">Личный кабинет</span>
+					</li>
+				</ul>
+			</div>
 		</div>
+		<!-- end breadcrumbs -->
 
-		<h1 class="h1 page-title" itemprop="headline">Пожалуйста, авторизируйтесь:</h1>
-
-	</div>
-	<!-- end breadcrumbs -->
-
+	<!-- begin contacts -->
 	<div class="container">
-		<form class="form form__enter">
+		<div class="cs-card">
 
-			<div class="pedit__item">
-				<div class="pedit__title">Логин:<i>*</i></div>
-				<div class="pedit__field">
-					{{item.input('text')}}
+			<div class="auth__inner">
+				<div class="auth__left">
+
+					<h1 class="h1 page-title" itemprop="headline">{{ title }}</h1>
+
+					<form class="form form__register">
+						{{item.input('text', 'Логин или e-mail', 'cs-input--light form__input')}}
+						{{item.input('password', 'Пароль', 'cs-input--light form__input is-invalid')}}
+
+						<div class="form__box mt-30">
+							{{ item.checkbox('Запомнить меня', 'policy__checkbox') }}
+						</div>
+
+						<button class="btn btn--gr form__btn" type="submit">Войти</button>
+
+						<div class="success">
+							<div class="success__text">Добро пожаловать!</div>
+						</div>
+
+						<div class="button-box button-box--column">
+							<a class="form__link mb-10" href="registration.html">Регистрация</a>
+							<a class="form__link" href="pasword-recowery.html">Забыли пароль?</a>
+						</div>
+					</form>
+				</div>
+				<div class="auth__right">
+					<img src="img/general/enter.png" alt="alt">
 				</div>
 			</div>
-			<div class="pedit__item">
-				<div class="pedit__title">Пароль:<i>*</i></div>
-				<div class="pedit__field">
-					<div class="cs-input is-invalid">
-						<input type="password" class="cs-input__field">
-						<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="button-box">
-					{{item.checkbox('Запомнить меня', 'form__checkbox')}}
-				<a class="password-recovery pedit__item" href="#" data-fancybox>Забыли свой пароль?</a>
-			</div>
-
-			<button type="submit" class="button button--gray form__btn pedit__item">Войти</button>
-
-				<div class="form__text pedit__item">Если у Вас нет учетной записи, &nbsp;<a class="password-recovery" href="#register" data-fancybox>Зарегистрируйтесь</a></div>
+		</div>
+	</div>
+	<!-- end contacts -->
 
 
-			<div class="success">
-				<div class="success__text">Добро пожаловать!</div>
-			</div>
-		</form>
 	</div>
 
 </div>

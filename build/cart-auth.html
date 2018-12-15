@@ -424,7 +424,7 @@
                     <div class="pedit__title">Фамилия Имя Отчество:<i>*</i></div>
                     <div class="pedit__field">
                       <div class="cs-input ">
-                        <input type="text" class="cs-input__field" placeholder="Например Петров Иван Петрович">
+                        <input type="text" class="cs-input__field " placeholder="Например Петров Иван Петрович">
                         <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
                       </div>
                     </div>
@@ -451,7 +451,7 @@
                     <div class="pedit__title">Индекс:<i>*</i></div>
                     <div class="pedit__field">
                       <div class="cs-input ">
-                        <input type="num" class="cs-input__field" placeholder="Например 413800">
+                        <input type="num" class="cs-input__field " placeholder="Например 413800">
                         <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
                       </div>
                     </div>
@@ -482,7 +482,7 @@
                     <div class="pedit__title">Адрес доставки:<i>*</i></div>
                     <div class="pedit__field">
                       <div class="cs-input ">
-                        <input type="num" class="cs-input__field" placeholder="Например Набережная Леонова д.2 оф.15">
+                        <input type="num" class="cs-input__field " placeholder="Например Набережная Леонова д.2 оф.15">
                         <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
                       </div>
                     </div>
@@ -493,7 +493,7 @@
                     <div class="pedit__title">Серия паспорта:</div>
                     <div class="pedit__field">
                       <div class="cs-input ">
-                        <input type="num" class="cs-input__field" placeholder="">
+                        <input type="num" class="cs-input__field ">
                         <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
                       </div>
                     </div>
@@ -502,7 +502,7 @@
                     <div class="pedit__title">Номер паспорта:</div>
                     <div class="pedit__field">
                       <div class="cs-input ">
-                        <input type="num" class="cs-input__field" placeholder="">
+                        <input type="num" class="cs-input__field ">
                         <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
                       </div>
                     </div>
@@ -511,7 +511,7 @@
                     <div class="pedit__title">Дата выдачи:</div>
                     <div class="pedit__field">
                       <div class="cs-input ">
-                        <input type="num" class="cs-input__field" placeholder="">
+                        <input type="num" class="cs-input__field ">
                         <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
                       </div>
                     </div>
@@ -650,6 +650,23 @@
     <!-- begin windows -->
     <div class="windows">
       <!-- begin register -->
+      <div class="modal-window modal-window--medium new-profile" id="new-profile">
+        <div class="modal-window__body">
+          <div class="new-profile__title">Добавление нового профиля</div>
+          <div class="button-box button-box--center">
+            <button class="btn btn-accent btn--icon js-change-profile" data-profile="add-profile-user" data-tab-index="2">
+              <svg class="icon icon-cs-user btn__icon">
+                <use xlink:href="img/sprite.svg#cs-user"></use>
+              </svg> Частное лицо </button>
+            <button class="btn btn--white btn--icon js-change-profile" data-profile="add-profile-company" data-tab-index="3">
+              <svg class="icon icon-cs-tower btn__icon">
+                <use xlink:href="img/sprite.svg#cs-tower"></use>
+              </svg> Компания </button>
+          </div>
+        </div>
+      </div>
+      <!-- end register -->
+      <!-- begin register -->
       <div class="modal-window modal-window--mobile register" id="register">
         <div class="modal-window__header">
           <h4 class="modal-window__title">Регистрация</h4>
@@ -657,19 +674,19 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input">
-              <input type="text" class="cs-input__field" placeholder="Логин">
+              <input type="text" class="cs-input__field " placeholder="Логин">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <input type="text" class="cs-input__field " placeholder="Ваше имя">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input">
-              <input type="email" class="cs-input__field" placeholder="Email">
+              <input type="email" class="cs-input__field " placeholder="Email">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input">
-              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <input type="password" class="cs-input__field " placeholder="Пароль">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="success">
@@ -697,11 +714,11 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input">
-              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <input type="password" class="cs-input__field " placeholder="Пароль">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="form__box mt-30">
@@ -729,7 +746,7 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <button class="btn btn--gr form__btn mt-30" type="submit">Вход</button>
@@ -814,7 +831,7 @@
         <div class="modal-window__body">
           <form class="form form__request">
             <div class="cs-input form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <input type="text" class="cs-input__field " placeholder="Ваше имя">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input form__input">

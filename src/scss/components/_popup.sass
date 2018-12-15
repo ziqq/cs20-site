@@ -5,6 +5,13 @@
 	//modal-window__wrap
 	&__wrap
 
+	//modal-window---medium
+	&--medium
+		max-width: 768px
+		width: 100%
+		@extend %responsMobile
+
+
 	//modal-window--mobile
 	&--mobile
 		max-width: 460px
@@ -63,3 +70,20 @@
 			&[for='star-rating-5']
 				border-radius: 0 $border-radius $border-radius 0
 //.review-add
+
+//.new-profile
+.new-profile
+	padding: 50px 70px
+	display: flex
+	justify-content: center
+	&__title
+		margin-bottom: 40px
+		font-size: 18px
+
+	.button-box
+		.btn
+			min-width: 180px
+			padding: 14px 25px
+			outline: none
+			& + .btn
+				margin-left: 30px

@@ -9,10 +9,11 @@
 
 //=include ../../bower_components/inputmask/dist/jquery.inputmask.bundle.js
 //=include ../../bower_components/nouislider/distribute/nouislider.js
+//=include ../../bower_components/selectize/dist/js/standalone/selectize.js
+//=include ../../bower_components/select2/dist/js/select2.full.js
 
 //=include ../libs/slick/slick.js
 //=include ../libs/datepicker/datepicker.js
-//=include ../libs/select2/select2.js
 //=include ../libs/jquery.zoom.js
 
 //=include ../libs/sticky-sidebar-resize.js

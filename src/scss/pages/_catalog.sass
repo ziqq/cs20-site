@@ -17,6 +17,11 @@
 
 		.page-title
 			margin-bottom: 0
+			+r(480)
+				margin-top: 30px
+				font-family: $f-medium
+				font-weight: 500
+				font-size: 20px
 
 	//.catalog__title
 	&__title
@@ -169,8 +174,9 @@
 		width: 300px
 		+flexCenter
 
-		+r(480)
+		+r-max(xs)
 			width: 100%
+			padding: 0 1px 0 30px
 
 		+rmin(769)
 			display: none
@@ -200,7 +206,7 @@
 
 	//.filter__item
 	&__item
-		margin-bottom: 20px
+		margin-bottom: 10px
 		@extend %box
 		+r(768)
 			margin-bottom: 0
@@ -212,7 +218,7 @@
 
 		&_price
 			.filter__content
-				margin-bottom: 20px
+				margin: 20px 0
 
 		&_car
 
@@ -226,7 +232,9 @@
 	&__content
 		padding: 0 20px 20px
 		position: relative
-		+r-min(sm)
+
+		+r-max(xs)
+			padding: 0 30px 20px
 			// max-height: 265px
 
 	//.filter__icon
@@ -237,8 +245,9 @@
 			margin-right: 8px
 
 		&--close
-			width: 35px
-			height: 35px
+			width: 40px
+			height: 40px
+			margin-right: -1px
 			margin-left: auto
 			padding: 10px
 			cursor: pointer
@@ -251,6 +260,9 @@
 		font-family: $f
 		font-size: 16px
 		color: $color-text
+
+		+r-max(xs)
+			padding: 15px 30px
 
 		.cs-accordeon__icon
 			right: 15px
@@ -313,13 +325,21 @@
 
 //.range
 .range
+	max-width: 94%
+	margin: auto auto auto 5px
+
 	//.range__diapazon
 	&__diapazon
 		+flexCenter
 		margin-bottom: 25px
 
+		+r(480)
+			max-width: 260px
+			margin: 0 auto 25px
+
 	//.range__from
 	&__from, &__to
+
 		position: relative
 		&::after
 			content: '\f158'
@@ -358,8 +378,9 @@
 			background-color: $gray
 			+vy
 			left: -23px
+
 			+r(768)
-				left: -45px
+				left: -40px
 
 	//.range__slider
 	&__slider
@@ -404,16 +425,20 @@
 
 		&--list
 			+r(480)
-				width: 44px
-				margin-right: 5px
-
+				width: 30px
+				margin-right: 8px
 
 		&--tile
 			width: 44px
+			&::before
+				+s(toggle-mobile)
+				transform: rotate(90deg)
+
 			+r(480)
 				width: 100%
 				&::before
 					+s(toggle-mobile)
+					transform: rotate(0)
 				&.is-active
 					&::before
 						+s(toggle-mobile--active)
@@ -422,12 +447,53 @@
 		// margin-right: 15px
 		+flexCenter
 
+		input
+			display: none !important
+
+		.selectize-input
+			font-size: 14px
+			border: 0
+			& > *
+				cursor: pointer
+
+		.selectize-control.single .selectize-input
+			padding: 8px 30px 8px 0
+			background-color: transparent
+			cursor: pointer
+
+		.selectize-dropdown.single
+			border: 0
+			box-shadow: 0 5px 30px rgba(0, 0, 0, 0.25)
+			border-radius: $border-radius
+			width: 100% !important
+			min-width: 180px
+			left: auto !important
+			right: 0
+
+		.selectize-dropdown .option
+			padding: 5px 25px 5px 15px
+			font-size: 14px
+			position: relative
+
+			&:first-child
+				padding-top: 15px
+
+			&:last-child
+				padding-bottom: 15px
+
+		.selectize-dropdown-content .option.selected
+			&::after
+				content: '✔'
+				+centre('y')
+				right: 7px
+				color: $color-text
+
 
 		.select2-container--default .select2-selection--multiple, .select2-container--default .select2-selection--single, input, select, textarea
 			height: 36px
 
 		.select2-container--default .select2-selection--single .select2-selection__rendered
-			padding: 0 30px
+			padding: 0 20px 0 30px
 			line-height: 33px
 			text-align: right
 
@@ -436,11 +502,15 @@
 				text-align: left
 
 		.select2-container--default .select2-selection--single .select2-selection__arrow
-			height: 36px
-			top: 4px
+			right: 0
+			&::before
+				top: 0
 
 		.select2-container .select2-selection--single
 			border: 0
+
+		.select2-selection__arrow::before
+			right: 0
 
 		.select2-container--default .select2-selection--single
 			background-color: transparent
@@ -451,7 +521,15 @@
 			background: #fff
 			box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.25)
 			border-radius: 5px
-			overflow: hidden
+			// overflow: hidden
+			position: relative
+			&::before
+				content: ''
+				display: block
+				+arr(17, 8, #fff, t)
+				position: absolute
+				top: -8px
+				right: 30px
 
 			+r(768)
 				min-width: auto
@@ -475,9 +553,9 @@
 
 //.price
 .price
-	font-family: $f-black
+	font-family: $f-medium
+	font-weight: 500
 	font-size: 25px
-	color: #000
 	&__stock
 		font-family: $f
 		font-size: 14px

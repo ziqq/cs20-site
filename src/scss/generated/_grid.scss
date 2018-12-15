@@ -1,5 +1,17 @@
 .row {
-    @include row-flex;
+	@include row-flex;
+
+	&--full {
+		width: 100%;
+	}
+
+	&--center {
+		align-items: center;
+	}
+
+	&--end {
+		align-items: flex-end;
+	}
 }
 
 @for $i from 1 through 12 {

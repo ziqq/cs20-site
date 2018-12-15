@@ -25,52 +25,90 @@ breadcrumbs:
 <!-- begin home -->
 <div class="content-wrapper cart">
 
-	<!-- begin cart -->
-
-
-	<!-- begin tabs -->
+	<!-- begin breadcrumbs -->
 	<div class="container">
-		<div id="cart-tab" class="cart-tab">
-			<ul class="cart-tab__list">
-				{% for item in breadcrumbs %}
-				<li class="cart-tab__item">
-					<a class="cart-tab__link" href="#{{ item.tabTitleCount }}">
-						<svg class="icon icon-{{ item.icon }}">
-							<use xlink:href="img/sprite.svg#{{ item.icon }}"></use>
-						</svg>
-						<span class="cart-tab__text">{{ item.title }}</span>
+		<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+			<ul class="breadcrumbs__list">
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link" itemprop="url">
+						<span class="breadcrumbs__title" itemprop="title">Главная</span>
 					</a>
 				</li>
-				{% endfor %}
+				<li class="breadcrumbs__item">
+					<span class="breadcrumbs__title" itemprop="title">Корзина</span>
+				</li>
 			</ul>
-
-			<!-- begin tabs-1 -->
-			<div id="tabs-1">
-				{% include "blocks/cart/_cart.html" %}
-			</div><!-- end tabs-1 -->
-
-			<!-- begin tabs-2 -->
-			<div id="tabs-2">
-				{% include "blocks/cart/_auth.html" %}
-			</div><!-- end tabs-2 -->
-
-			<!-- begin tabs-3 -->
-			<div id="tabs-3">
-				{% include "blocks/cart/_delivery.html" %}
-			</div><!-- end tabs-3 -->
-
-			<!-- begin tabs-4 -->
-			<div id="tabs-4">
-				{% include "blocks/cart/_pay.html" %}
-			</div><!-- end tabs-4 -->
-
-			<!-- begin tabs-5 -->
-			<div id="tabs-5">
-				{% include "blocks/cart/_confirm.html" %}
-			</div><!-- end tabs-5 -->
 		</div>
 	</div>
-	<!-- end cart -->
+	<!-- end breadcrumbs -->
+
+	<div class="container">
+		<div class="cart__inner">
+			<!-- begin cart__left -->
+			<div class="cart__left">
+				<div class="product-item__wrap loyout-column cart__items js-cart-items">
+					{% import "data/data-product.html" as productItem %}
+					{% for i in range(0, 3) %}
+					{% for product in productItem.productSimilar %}
+					<a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+
+						<div class="product-item__img" itemprop="image" href="img/products/1/190x95/{{ product.img }}.png">
+							<img src="img/products/1/190x95/{{ product.img }}.png"  alt="{{ product.title }}" />
+						</div>
+
+						<div class="product-item__desc">
+							<h4 class="product-item__title" itemprop="name">{{ product.title }}</h4>
+
+							<div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<span class="price__cost">{{ product.price }}<i class="fa fa-rub"></i></span>
+								<meta itemprop="price" content="{{ product.price }}">
+								<meta itemprop="priceCurrency" content="RUB" />
+							</div>
+
+							<div class="product-item__counter counter">
+								<span class="counter__control counter__control--minus js-counter--minus">—</span>
+								<input type="text" class="counter__field" value="1">
+								<span class="counter__control counter__control--plus js-counter--plus">+</span>
+							</div>
+						</div>
+						<button class="product-item__dell" title="Убрать из корзины">{{mixin.icon('cs-close')}}</button>
+					</a>
+					{% endfor %}
+					{% endfor %}
+				</div>
+			</div>
+			<!-- end cart__left -->
+			<!-- begin cart__right -->
+			<div class="cart__right js-cart-sticky">
+				<div class="cart__sum">
+					<ul class="list list--dot">
+						<li class="list__item">
+							<span>Сумма заказа: </span>
+							<span>4 567 р.</span>
+						</li>
+						<li class="list__item list__item--light">
+							<span>Скидка: </span>
+							<span>229 р.</span>
+						</li>
+						<li class="list__item list__item--bold">
+							<span>Итого: </span>
+							<span>4 338 р.</span>
+						</li>
+					</ul>
+					<div class="button-box button-box--column">
+						<div class="input-group">
+							<span class="input-group__info">Персональные скидки с купонами <br> не суммируются</span>
+							<div class="input-group__field">
+								<input type="text" placeholder="Купон">
+								<button class="btn btn-gray-light input-group__btn">Применить</button>
+							</div>
+						</div>
+						<button class="btn btn-accent">Оформить заказ</button>
+					</div>
+				</div>
+			</div><!-- end cart__right -->
+		</div>
+	</div>
 
 </div>
 <!-- end home -->

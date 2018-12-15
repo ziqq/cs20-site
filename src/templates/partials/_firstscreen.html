@@ -20,6 +20,7 @@
 						<div class="c-select__val">Товары</div>
 					</div>
 					<div class="c-dropdown__list">
+						{{ mixin.icon('cs-close', 'c-dropdown__icon c-dropdown__icon--close js-cs-dropdown--close') }}
 						<div class="c-select__dropdown">
 							{% import "data/data.html" as products %}
 							{% for item in products.productsList %}
@@ -39,6 +40,7 @@
 						<div class="c-select__val">Авто</div>
 					</div>
 					<div class="c-dropdown__list">
+						{{ mixin.icon('cs-close', 'c-dropdown__icon c-dropdown__icon--close js-cs-dropdown--close') }}
 						<div class="c-select__dropdown">
 							<ul class="c-select__list">
 								{% import "data/data.html" as cars %}
@@ -126,6 +128,10 @@
 			</div>
 
 		</div>
+
+		{% if btnFilter %}
+		<button class="btn btn--filter js-filter--open sm-only--flex">Открыть фильтр</button>
+		{% endif %}
 
 	</div>
 </section>

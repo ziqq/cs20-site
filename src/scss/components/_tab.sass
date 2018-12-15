@@ -13,9 +13,23 @@
 		background-color: $color-secondary
 		border-radius: $border-radius $border-radius 0 0
 		cursor: pointer
+		+nosel
 		+flexCenter
+
 		& + &
 			margin-left: 1px
+
+		&.ui-tabs-active, &:hover
+			a
+				color: $color-text
+
+		&.ui-tabs-active
+			a
+				border-bottom: 1px solid $color-border--darken
+
+		a
+			color: $color-text--light
+			border-bottom: 1px solid transparent
 
 	&__contentes
 		border-radius: 0 0 $border-radius $border-radius

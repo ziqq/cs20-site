@@ -1,0 +1,54 @@
+//.auth
+.auth
+	padding-bottom: $section-indent
+	background-color: $color-bg
+	+r(480)
+		background-color: #fff
+
+	&__inner
+		width: 100%
+		+row-flex
+		align-items: center
+		+r(480)
+			margin: auto
+			text-align: center
+
+		&--start
+			align-items: flex-start
+
+	&__left
+		+col
+		+size(5)
+		+size-md(6)
+		+size-xs(12)
+
+	&__right
+		+col
+		+size(7)
+		+size-md(6)
+		+r(480)
+			display: none
+
+	//.auth .form
+	.form
+		max-width: 320px
+		+r(480)
+			max-width: 100%
+		&__link
+			font-family: $f
+			color: #13599a
+
+	.cs-card
+		+r(480)
+			box-shadow: none
+			border: 0
+
+	.page-title
+		+r(1024)
+			font-size: 32px
+		+r(768)
+			font-size: 27px
+		&--big
+			margin-bottom: 70px
+			+r(1024)
+				margin-bottom: 30px

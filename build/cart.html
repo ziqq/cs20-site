@@ -375,416 +375,337 @@
       <!-- end firstscreen -->
       <!-- begin home -->
       <div class="content-wrapper cart">
-        <!-- begin cart -->
-        <!-- begin tabs -->
+        <!-- begin breadcrumbs -->
         <div class="container">
-          <div id="cart-tab" class="cart-tab">
-            <ul class="cart-tab__list">
-              <li class="cart-tab__item">
-                <a class="cart-tab__link" href="#tabs-1">
-                  <svg class="icon icon-cart">
-                    <use xlink:href="img/sprite.svg#cart"></use>
-                  </svg>
-                  <span class="cart-tab__text">Корзина</span>
+          <div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item">
+                <a href="#" class="breadcrumbs__link" itemprop="url">
+                  <span class="breadcrumbs__title" itemprop="title">Главная</span>
                 </a>
               </li>
-              <li class="cart-tab__item">
-                <a class="cart-tab__link" href="#tabs-2">
-                  <svg class="icon icon-cart__user">
-                    <use xlink:href="img/sprite.svg#cart__user"></use>
-                  </svg>
-                  <span class="cart-tab__text">Авторизация</span>
-                </a>
-              </li>
-              <li class="cart-tab__item">
-                <a class="cart-tab__link" href="#tabs-3">
-                  <svg class="icon icon-delivery--transparent">
-                    <use xlink:href="img/sprite.svg#delivery--transparent"></use>
-                  </svg>
-                  <span class="cart-tab__text">Способ доставки</span>
-                </a>
-              </li>
-              <li class="cart-tab__item">
-                <a class="cart-tab__link" href="#tabs-4">
-                  <svg class="icon icon-pay">
-                    <use xlink:href="img/sprite.svg#pay"></use>
-                  </svg>
-                  <span class="cart-tab__text">Способ оплаты</span>
-                </a>
-              </li>
-              <li class="cart-tab__item">
-                <a class="cart-tab__link" href="#tabs-5">
-                  <svg class="icon icon-cart__check">
-                    <use xlink:href="img/sprite.svg#cart__check"></use>
-                  </svg>
-                  <span class="cart-tab__text">Подтверждение заказа</span>
-                </a>
+              <li class="breadcrumbs__item">
+                <span class="breadcrumbs__title" itemprop="title">Корзина</span>
               </li>
             </ul>
-            <!-- begin tabs-1 -->
-            <div id="tabs-1">
-              <div class="cart__inner">
-                <!-- begin cart__left -->
-                <div class="cart__left">
-                  <div class="product-item__wrap loyout-column cart__items js-cart-items">
-                    <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                      <div class="product-item__img" itemprop="image" href="img/products/1/190x95/1.png">
-                        <img src="img/products/1/190x95/1.png" alt="Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ" />
-                      </div>
-                      <div class="product-item__desc">
-                        <h4 class="product-item__title" itemprop="name">Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ</h4>
-                        <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                          <span class="price__cost">536 руб.<i class="fa fa-rub"></i></span>
-                          <meta itemprop="price" content="536 руб.">
-                          <meta itemprop="priceCurrency" content="RUB" />
-                        </div>
-                        <div class="product-item__counter counter">
-                          <span class="counter__control counter__control--minus js-counter--minus">—</span>
-                          <input type="text" class="counter__field" value="1">
-                          <span class="counter__control counter__control--plus js-counter--plus">+</span>
-                        </div>
-                      </div>
-                      <button class="product-item__dell" title="Убрать из корзины">
-                        <svg class="icon icon-cs-close ">
-                          <use xlink:href="img/sprite.svg#cs-close"></use>
-                        </svg>
-                      </button>
-                    </a>
-                    <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                      <div class="product-item__img" itemprop="image" href="img/products/1/190x95/2.png">
-                        <img src="img/products/1/190x95/2.png" alt="Стойка стабилизатора 1118/2170 (2шт) ЖЕЛТЫЙ" />
-                      </div>
-                      <div class="product-item__desc">
-                        <h4 class="product-item__title" itemprop="name">Стойка стабилизатора 1118/2170 (2шт) ЖЕЛТЫЙ</h4>
-                        <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                          <span class="price__cost">452 руб.<i class="fa fa-rub"></i></span>
-                          <meta itemprop="price" content="452 руб.">
-                          <meta itemprop="priceCurrency" content="RUB" />
-                        </div>
-                        <div class="product-item__counter counter">
-                          <span class="counter__control counter__control--minus js-counter--minus">—</span>
-                          <input type="text" class="counter__field" value="1">
-                          <span class="counter__control counter__control--plus js-counter--plus">+</span>
-                        </div>
-                      </div>
-                      <button class="product-item__dell" title="Убрать из корзины">
-                        <svg class="icon icon-cs-close ">
-                          <use xlink:href="img/sprite.svg#cs-close"></use>
-                        </svg>
-                      </button>
-                    </a>
-                    <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                      <div class="product-item__img" itemprop="image" href="img/products/1/190x95/3.png">
-                        <img src="img/products/1/190x95/3.png" alt="Пыльник заднего амортизатора 2108 (2шт) СИНИЙ" />
-                      </div>
-                      <div class="product-item__desc">
-                        <h4 class="product-item__title" itemprop="name">Пыльник заднего амортизатора 2108 (2шт) СИНИЙ</h4>
-                        <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                          <span class="price__cost">536 руб.<i class="fa fa-rub"></i></span>
-                          <meta itemprop="price" content="536 руб.">
-                          <meta itemprop="priceCurrency" content="RUB" />
-                        </div>
-                        <div class="product-item__counter counter">
-                          <span class="counter__control counter__control--minus js-counter--minus">—</span>
-                          <input type="text" class="counter__field" value="1">
-                          <span class="counter__control counter__control--plus js-counter--plus">+</span>
-                        </div>
-                      </div>
-                      <button class="product-item__dell" title="Убрать из корзины">
-                        <svg class="icon icon-cs-close ">
-                          <use xlink:href="img/sprite.svg#cs-close"></use>
-                        </svg>
-                      </button>
-                    </a>
-                    <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                      <div class="product-item__img" itemprop="image" href="img/products/1/190x95/4.png">
-                        <img src="img/products/1/190x95/4.png" alt="Подушка двигателя задняя Logan/Largus DRIVE" />
-                      </div>
-                      <div class="product-item__desc">
-                        <h4 class="product-item__title" itemprop="name">Подушка двигателя задняя Logan/Largus DRIVE</h4>
-                        <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                          <span class="price__cost">536 руб.<i class="fa fa-rub"></i></span>
-                          <meta itemprop="price" content="536 руб.">
-                          <meta itemprop="priceCurrency" content="RUB" />
-                        </div>
-                        <div class="product-item__counter counter">
-                          <span class="counter__control counter__control--minus js-counter--minus">—</span>
-                          <input type="text" class="counter__field" value="1">
-                          <span class="counter__control counter__control--plus js-counter--plus">+</span>
-                        </div>
-                      </div>
-                      <button class="product-item__dell" title="Убрать из корзины">
-                        <svg class="icon icon-cs-close ">
-                          <use xlink:href="img/sprite.svg#cs-close"></use>
-                        </svg>
-                      </button>
-                    </a>
-                  </div>
-                </div>
-                <!-- end cart__left -->
-                <!-- begin cart__right -->
-                <div class="cart__right js-cart-sticky">
-                  <div class="cart__sum">
-                    <span class="cart__sum-title">Итого: 300 <i class="fa fa-rub"></i></span>
-                    <div class="button-box">
-                      <button class="button button--accent product-item__btn">Оформить заказ</button>
-                      <button class="button button--transparent product-item__btn" data-src="#buy-one-click" data-fancybox>Купить в 1 клик</button>
-                    </div>
-                  </div>
-                </div><!-- end cart__right -->
-              </div>
-            </div><!-- end tabs-1 -->
-            <!-- begin tabs-2 -->
-            <div id="tabs-2">
-              <div class="cart__wrap">
-                <div class="cart__title">Информация о получателе</div>
-                <form class="cart__form pedit">
-                  <div class="row">
-                    <div class="col-2">
-                      <div class="pedit__item">
-                        <div class="pedit__title">Фамилия Имя Отчество:<i>*</i></div>
-                        <div class="pedit__field">
-                          <div class="cs-input ">
-                            <input type="text" class="cs-input__field" placeholder="Например Петров Иван Петрович">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pedit__item">
-                        <div class="pedit__title">Эл. почта:<i>*</i></div>
-                        <div class="pedit__field">
-                          <div class="cs-input">
-                            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="cs-input__field" placeholder="exampel@mail.ru">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pedit__item">
-                        <div class="pedit__title">Телефон:<i>*</i></div>
-                        <div class="pedit__field">
-                          <div class="cs-input is-invalid">
-                            <input type="num" class="cs-input__field js-phone-mask" placeholder="+7 (927) 000-00-00">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pedit__item">
-                        <div class="pedit__title">Индекс:<i>*</i></div>
-                        <div class="pedit__field">
-                          <div class="cs-input ">
-                            <input type="num" class="cs-input__field" placeholder="Например 413800">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pedit__item">
-                        <div class="pedit__title">Город доставки:<i>*</i></div>
-                        <div class="pedit__field">
-                          <div class="cs-input cs-input--select is-invalid">
-                            <select class="js-select">
-                              <option value="Выберите город..." disabled selected>Выберите город...</option>
-                              <option value="Балаково">Балаково</option>
-                              <option value="Балаково">Балаково</option>
-                              <option value="Балаково">Балаково</option>
-                              <option value="Балаково">Балаково</option>
-                              <option value="Балаково">Балаково</option>
-                              <option value="Балаково">Балаково</option>
-                              <option value="Балаково">Балаково</option>
-                              <option value="Балаково">Балаково</option>
-                              <option value="Балаково">Балаково</option>
-                              <option value="Балаково">Балаково</option>
-                              <option value="Балаково">Балаково</option> ﻿
-                            </select>
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pedit__item">
-                        <div class="pedit__title">Адрес доставки:<i>*</i></div>
-                        <div class="pedit__field">
-                          <div class="cs-input ">
-                            <input type="num" class="cs-input__field" placeholder="Например Набережная Леонова д.2 оф.15">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="pedit__item">
-                        <div class="pedit__title">Серия паспорта:</div>
-                        <div class="pedit__field">
-                          <div class="cs-input ">
-                            <input type="num" class="cs-input__field" placeholder="">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pedit__item">
-                        <div class="pedit__title">Номер паспорта:</div>
-                        <div class="pedit__field">
-                          <div class="cs-input ">
-                            <input type="num" class="cs-input__field" placeholder="">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pedit__item">
-                        <div class="pedit__title">Дата выдачи:</div>
-                        <div class="pedit__field">
-                          <div class="cs-input ">
-                            <input type="num" class="cs-input__field" placeholder="">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pedit__item">
-                        <label class="cs-checkbox pedit__checkbox">
-                          <input type="checkbox">
-                          <span class="cs-checkbox__box"></span>
-                          <span class="cs-checkbox__title">Я юридическое лицо</span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="button-box cart__button-box">
-                    <a href="#" class="button button--transparent button--back">Вернуться назад</a>
-                    <a href="#" class="button button--accent">Далее</a>
-                  </div>
-                </form>
-              </div>
-            </div><!-- end tabs-2 -->
-            <!-- begin tabs-3 -->
-            <div id="tabs-3">
-              <div class="cart__wrap">
-                <div class="cart__title">Выберите способ доставки</div>
-                <div class="row">
-                  <div class="col-2">
-                    <div class="delivery-item">
-                      <div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-                        <svg class="icon icon-delivery ">
-                          <use xlink:href="img/sprite.svg#delivery"></use>
-                        </svg>
-                        <span class="cs-checkbox__box"></span>
-                      </div>
-                      <div class="delivery-item__text">
-                        <span class="delivery-item__title">Самовывоз</span>
-                        <div class="delivery-item__desc">Вы можете самостоятельно забрать заказ с нашего склада по адресу: г. Балаково, ул. Транспортная 6/1.</div>
-                      </div>
-                    </div>
-                    <div class="delivery-item">
-                      <div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-                        <img class="delivery-item__img" src="img/general/delivery/pr.png" alt="Почта России">
-                        <span class="cs-checkbox__box"></span>
-                      </div>
-                      <div class="delivery-item__text">
-                        <span class="delivery-item__title">Почта России</span>
-                        <div class="delivery-item__desc">При сумме заказа от 1000 рублей доставка почтой России за счёт продавца. Если сумма заказа менее 1000 рублей, то получатель самостоятельно оплачивает доставку в отделении почтовой связи при получении.</div>
-                      </div>
-                    </div>
-                    <div class="delivery-item">
-                      <div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-                        <img class="delivery-item__img" src="img/general/delivery/dl.png" alt="Транспортная компания Деловые Линии">
-                        <span class="cs-checkbox__box"></span>
-                      </div>
-                      <div class="delivery-item__text">
-                        <span class="delivery-item__title">Деловые линии</span>
-                        <div class="delivery-item__desc">После оформления заказа с Вами свяжется наш менеджер для уточнения паспортных данных. Доставка оплачивается при получении заказа на терминале транспортной компании.</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-2">
-                    <div class="delivery-item">
-                      <div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-                        <img class="delivery-item__img" src="img/general/delivery/energy.png" alt="Транспортная компания Энергия">
-                        <span class="cs-checkbox__box"></span>
-                      </div>
-                      <div class="delivery-item__text">
-                        <span class="delivery-item__title">Энергия</span>
-                        <div class="delivery-item__desc">После оформления заказа с Вами свяжется наш менеджер для уточнения паспортных данных. Доставка оплачивается при получении заказа на терминале транспортной компании.</div>
-                      </div>
-                    </div>
-                    <div class="delivery-item">
-                      <div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-                        <img class="delivery-item__img" src="img/general/delivery/pek.png" alt="Транспортная компания ПЭК">
-                        <span class="cs-checkbox__box"></span>
-                      </div>
-                      <div class="delivery-item__text">
-                        <span class="delivery-item__title">ПЭК</span>
-                        <div class="delivery-item__desc">После оформления заказа с Вами свяжется наш менеджер для уточнения паспортных данных. Доставка оплачивается при получении заказа на терминале транспортной компании.</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="button-box cart__button-box">
-                  <a href="#" class="button button--transparent button--back">Вернуться назад</a>
-                  <a href="#" class="button button--accent">Далее</a>
-                </div>
-              </div>
-            </div><!-- end tabs-3 -->
-            <!-- begin tabs-4 -->
-            <div id="tabs-4">
-              <div class="cart__wrap">
-                <div class="cart__title">Выберите способ оплаты</div>
-                <div class="delivery-item">
-                  <div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-                    <svg class="icon icon-pay ">
-                      <use xlink:href="img/sprite.svg#pay"></use>
-                    </svg>
-                    <span class="cs-checkbox__box"></span>
-                  </div>
-                  <div class="delivery-item__text">
-                    <span class="delivery-item__title">Оплата на складе при получении</span>
-                    <div class="delivery-item__desc">При оплате на складе Вы лично или Ваше доверенное лицо забираете товар с нашего склада и оплачиваете его на месте. Склад находится по адресу: г. Балаково, ул. Транспортная 6/1, время работы: Пн-Пт 8:00-17:00, телефон: 8-800-555-25-40</div>
-                  </div>
-                </div>
-                <div class="delivery-item">
-                  <div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-                    <img class="delivery-item__img" src="img/general/robokassa.png" alt="Оплата банковской картой">
-                    <span class="cs-checkbox__box"></span>
-                  </div>
-                  <div class="delivery-item__text">
-                    <span class="delivery-item__title">Оплата банковской картой</span>
-                    <div class="delivery-item__desc">Оплата происходит через систему Робокасса. Данный вид оплаты является самым простым и распространенным, ведь система Робокасса включает в себя более 40 способов оплаты.</div>
-                  </div>
-                </div>
-                <div class="delivery-item">
-                  <div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-                    <svg class="icon icon-pay-bank ">
-                      <use xlink:href="img/sprite.svg#pay-bank"></use>
-                    </svg>
-                    <span class="cs-checkbox__box"></span>
-                  </div>
-                  <div class="delivery-item__text">
-                    <span class="delivery-item__title">Безналичный платеж через банк</span>
-                    <div class="delivery-item__desc">Этот способ предназначен только для Юридических лиц. Ваши реквизиты для выставления счета Вы можете указать в комментариях к данному заказу или выслать на нашу эл. почту <a href="mailto:info@cs-20.ru">info@cs-20.ru</a> с указанием номера заказа. Во время отгрузки вместе с товаром будут высланы все необходимые отчетные документы.</div>
-                  </div>
-                </div>
-                <textarea class="cart__textarea" placeholder="Комментарии к заказу..."></textarea>
-                <div class="button-box cart__button-box">
-                  <a href="#" class="button button--transparent button--back">Вернуться назад</a>
-                  <a href="#" class="button button--accent">Далее</a>
-                </div>
-              </div>
-            </div><!-- end tabs-4 -->
-            <!-- begin tabs-5 -->
-            <div id="tabs-5">
-              <div class="cart-success__wrap">
-                <div class="cart-success__title">Заказ успешно оформлен. Спасибо!</div>
-                <div class="cart-success__inner">
-                  <span class="cart-success__subtitle">Ваш заказ: №490 от 01.05.2018 14:58</span>
-                  <div class="cart-success__text"> В ближайшее время с Вами свяжется наш менеджер для подтверждения заказа. <br> Вы можете следить за выполнением своего заказа в <a href="#">Личном кабинете</a>. <br> Отправка заказа производится только после платы. <br> Товар бронируется на складе в течении трех рабочих дней. </div>
-                  <span class="cart-success__subtitle mb-10">Счет: <span>№492</span> от 01.05.2018 14:58</span>
-                  <span class="cart-success__subtitle">Сумма к оплате по счету: <span>3254</span> <i class="fa fa-rub"></i></span>
-                </div>
-                <div class="button-box">
-                  <a href="#" class="button button--transparent button--back">Вернуться в магазин</a>
-                  <a href="#" class="button button--accent">Оплатить</a>
-                </div>
-              </div>
-            </div><!-- end tabs-5 -->
           </div>
         </div>
-        <!-- end cart -->
+        <!-- end breadcrumbs -->
+        <div class="container">
+          <div class="cart__inner">
+            <!-- begin cart__left -->
+            <div class="cart__left">
+              <div class="product-item__wrap loyout-column cart__items js-cart-items">
+                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/1.png">
+                    <img src="img/products/1/190x95/1.png" alt="Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ" />
+                  </div>
+                  <div class="product-item__desc">
+                    <h4 class="product-item__title" itemprop="name">Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ</h4>
+                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="price__cost">536 руб.<i class="fa fa-rub"></i></span>
+                      <meta itemprop="price" content="536 руб.">
+                      <meta itemprop="priceCurrency" content="RUB" />
+                    </div>
+                    <div class="product-item__counter counter">
+                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
+                      <input type="text" class="counter__field" value="1">
+                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
+                    </div>
+                  </div>
+                  <button class="product-item__dell" title="Убрать из корзины">
+                    <svg class="icon icon-cs-close ">
+                      <use xlink:href="img/sprite.svg#cs-close"></use>
+                    </svg>
+                  </button>
+                </a>
+                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/2.png">
+                    <img src="img/products/1/190x95/2.png" alt="Стойка стабилизатора 1118/2170 (2шт) ЖЕЛТЫЙ" />
+                  </div>
+                  <div class="product-item__desc">
+                    <h4 class="product-item__title" itemprop="name">Стойка стабилизатора 1118/2170 (2шт) ЖЕЛТЫЙ</h4>
+                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="price__cost">452 руб.<i class="fa fa-rub"></i></span>
+                      <meta itemprop="price" content="452 руб.">
+                      <meta itemprop="priceCurrency" content="RUB" />
+                    </div>
+                    <div class="product-item__counter counter">
+                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
+                      <input type="text" class="counter__field" value="1">
+                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
+                    </div>
+                  </div>
+                  <button class="product-item__dell" title="Убрать из корзины">
+                    <svg class="icon icon-cs-close ">
+                      <use xlink:href="img/sprite.svg#cs-close"></use>
+                    </svg>
+                  </button>
+                </a>
+                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/3.png">
+                    <img src="img/products/1/190x95/3.png" alt="Пыльник заднего амортизатора 2108 (2шт) СИНИЙ" />
+                  </div>
+                  <div class="product-item__desc">
+                    <h4 class="product-item__title" itemprop="name">Пыльник заднего амортизатора 2108 (2шт) СИНИЙ</h4>
+                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="price__cost">536 руб.<i class="fa fa-rub"></i></span>
+                      <meta itemprop="price" content="536 руб.">
+                      <meta itemprop="priceCurrency" content="RUB" />
+                    </div>
+                    <div class="product-item__counter counter">
+                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
+                      <input type="text" class="counter__field" value="1">
+                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
+                    </div>
+                  </div>
+                  <button class="product-item__dell" title="Убрать из корзины">
+                    <svg class="icon icon-cs-close ">
+                      <use xlink:href="img/sprite.svg#cs-close"></use>
+                    </svg>
+                  </button>
+                </a>
+                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/4.png">
+                    <img src="img/products/1/190x95/4.png" alt="Подушка двигателя задняя Logan/Largus DRIVE" />
+                  </div>
+                  <div class="product-item__desc">
+                    <h4 class="product-item__title" itemprop="name">Подушка двигателя задняя Logan/Largus DRIVE</h4>
+                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="price__cost">536 руб.<i class="fa fa-rub"></i></span>
+                      <meta itemprop="price" content="536 руб.">
+                      <meta itemprop="priceCurrency" content="RUB" />
+                    </div>
+                    <div class="product-item__counter counter">
+                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
+                      <input type="text" class="counter__field" value="1">
+                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
+                    </div>
+                  </div>
+                  <button class="product-item__dell" title="Убрать из корзины">
+                    <svg class="icon icon-cs-close ">
+                      <use xlink:href="img/sprite.svg#cs-close"></use>
+                    </svg>
+                  </button>
+                </a>
+                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/1.png">
+                    <img src="img/products/1/190x95/1.png" alt="Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ" />
+                  </div>
+                  <div class="product-item__desc">
+                    <h4 class="product-item__title" itemprop="name">Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ</h4>
+                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="price__cost">536 руб.<i class="fa fa-rub"></i></span>
+                      <meta itemprop="price" content="536 руб.">
+                      <meta itemprop="priceCurrency" content="RUB" />
+                    </div>
+                    <div class="product-item__counter counter">
+                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
+                      <input type="text" class="counter__field" value="1">
+                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
+                    </div>
+                  </div>
+                  <button class="product-item__dell" title="Убрать из корзины">
+                    <svg class="icon icon-cs-close ">
+                      <use xlink:href="img/sprite.svg#cs-close"></use>
+                    </svg>
+                  </button>
+                </a>
+                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/2.png">
+                    <img src="img/products/1/190x95/2.png" alt="Стойка стабилизатора 1118/2170 (2шт) ЖЕЛТЫЙ" />
+                  </div>
+                  <div class="product-item__desc">
+                    <h4 class="product-item__title" itemprop="name">Стойка стабилизатора 1118/2170 (2шт) ЖЕЛТЫЙ</h4>
+                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="price__cost">452 руб.<i class="fa fa-rub"></i></span>
+                      <meta itemprop="price" content="452 руб.">
+                      <meta itemprop="priceCurrency" content="RUB" />
+                    </div>
+                    <div class="product-item__counter counter">
+                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
+                      <input type="text" class="counter__field" value="1">
+                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
+                    </div>
+                  </div>
+                  <button class="product-item__dell" title="Убрать из корзины">
+                    <svg class="icon icon-cs-close ">
+                      <use xlink:href="img/sprite.svg#cs-close"></use>
+                    </svg>
+                  </button>
+                </a>
+                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/3.png">
+                    <img src="img/products/1/190x95/3.png" alt="Пыльник заднего амортизатора 2108 (2шт) СИНИЙ" />
+                  </div>
+                  <div class="product-item__desc">
+                    <h4 class="product-item__title" itemprop="name">Пыльник заднего амортизатора 2108 (2шт) СИНИЙ</h4>
+                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="price__cost">536 руб.<i class="fa fa-rub"></i></span>
+                      <meta itemprop="price" content="536 руб.">
+                      <meta itemprop="priceCurrency" content="RUB" />
+                    </div>
+                    <div class="product-item__counter counter">
+                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
+                      <input type="text" class="counter__field" value="1">
+                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
+                    </div>
+                  </div>
+                  <button class="product-item__dell" title="Убрать из корзины">
+                    <svg class="icon icon-cs-close ">
+                      <use xlink:href="img/sprite.svg#cs-close"></use>
+                    </svg>
+                  </button>
+                </a>
+                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/4.png">
+                    <img src="img/products/1/190x95/4.png" alt="Подушка двигателя задняя Logan/Largus DRIVE" />
+                  </div>
+                  <div class="product-item__desc">
+                    <h4 class="product-item__title" itemprop="name">Подушка двигателя задняя Logan/Largus DRIVE</h4>
+                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="price__cost">536 руб.<i class="fa fa-rub"></i></span>
+                      <meta itemprop="price" content="536 руб.">
+                      <meta itemprop="priceCurrency" content="RUB" />
+                    </div>
+                    <div class="product-item__counter counter">
+                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
+                      <input type="text" class="counter__field" value="1">
+                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
+                    </div>
+                  </div>
+                  <button class="product-item__dell" title="Убрать из корзины">
+                    <svg class="icon icon-cs-close ">
+                      <use xlink:href="img/sprite.svg#cs-close"></use>
+                    </svg>
+                  </button>
+                </a>
+                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/1.png">
+                    <img src="img/products/1/190x95/1.png" alt="Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ" />
+                  </div>
+                  <div class="product-item__desc">
+                    <h4 class="product-item__title" itemprop="name">Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ</h4>
+                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="price__cost">536 руб.<i class="fa fa-rub"></i></span>
+                      <meta itemprop="price" content="536 руб.">
+                      <meta itemprop="priceCurrency" content="RUB" />
+                    </div>
+                    <div class="product-item__counter counter">
+                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
+                      <input type="text" class="counter__field" value="1">
+                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
+                    </div>
+                  </div>
+                  <button class="product-item__dell" title="Убрать из корзины">
+                    <svg class="icon icon-cs-close ">
+                      <use xlink:href="img/sprite.svg#cs-close"></use>
+                    </svg>
+                  </button>
+                </a>
+                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/2.png">
+                    <img src="img/products/1/190x95/2.png" alt="Стойка стабилизатора 1118/2170 (2шт) ЖЕЛТЫЙ" />
+                  </div>
+                  <div class="product-item__desc">
+                    <h4 class="product-item__title" itemprop="name">Стойка стабилизатора 1118/2170 (2шт) ЖЕЛТЫЙ</h4>
+                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="price__cost">452 руб.<i class="fa fa-rub"></i></span>
+                      <meta itemprop="price" content="452 руб.">
+                      <meta itemprop="priceCurrency" content="RUB" />
+                    </div>
+                    <div class="product-item__counter counter">
+                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
+                      <input type="text" class="counter__field" value="1">
+                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
+                    </div>
+                  </div>
+                  <button class="product-item__dell" title="Убрать из корзины">
+                    <svg class="icon icon-cs-close ">
+                      <use xlink:href="img/sprite.svg#cs-close"></use>
+                    </svg>
+                  </button>
+                </a>
+                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/3.png">
+                    <img src="img/products/1/190x95/3.png" alt="Пыльник заднего амортизатора 2108 (2шт) СИНИЙ" />
+                  </div>
+                  <div class="product-item__desc">
+                    <h4 class="product-item__title" itemprop="name">Пыльник заднего амортизатора 2108 (2шт) СИНИЙ</h4>
+                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="price__cost">536 руб.<i class="fa fa-rub"></i></span>
+                      <meta itemprop="price" content="536 руб.">
+                      <meta itemprop="priceCurrency" content="RUB" />
+                    </div>
+                    <div class="product-item__counter counter">
+                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
+                      <input type="text" class="counter__field" value="1">
+                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
+                    </div>
+                  </div>
+                  <button class="product-item__dell" title="Убрать из корзины">
+                    <svg class="icon icon-cs-close ">
+                      <use xlink:href="img/sprite.svg#cs-close"></use>
+                    </svg>
+                  </button>
+                </a>
+                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/4.png">
+                    <img src="img/products/1/190x95/4.png" alt="Подушка двигателя задняя Logan/Largus DRIVE" />
+                  </div>
+                  <div class="product-item__desc">
+                    <h4 class="product-item__title" itemprop="name">Подушка двигателя задняя Logan/Largus DRIVE</h4>
+                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="price__cost">536 руб.<i class="fa fa-rub"></i></span>
+                      <meta itemprop="price" content="536 руб.">
+                      <meta itemprop="priceCurrency" content="RUB" />
+                    </div>
+                    <div class="product-item__counter counter">
+                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
+                      <input type="text" class="counter__field" value="1">
+                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
+                    </div>
+                  </div>
+                  <button class="product-item__dell" title="Убрать из корзины">
+                    <svg class="icon icon-cs-close ">
+                      <use xlink:href="img/sprite.svg#cs-close"></use>
+                    </svg>
+                  </button>
+                </a>
+              </div>
+            </div>
+            <!-- end cart__left -->
+            <!-- begin cart__right -->
+            <div class="cart__right js-cart-sticky">
+              <div class="cart__sum">
+                <ul class="list list--dot">
+                  <li class="list__item">
+                    <span>Сумма заказа: </span>
+                    <span>4 567 р.</span>
+                  </li>
+                  <li class="list__item list__item--light">
+                    <span>Скидка: </span>
+                    <span>229 р.</span>
+                  </li>
+                  <li class="list__item list__item--bold">
+                    <span>Итого: </span>
+                    <span>4 338 р.</span>
+                  </li>
+                </ul>
+                <div class="button-box button-box--column">
+                  <div class="input-group">
+                    <span class="input-group__info">Персональные скидки с купонами <br> не суммируются</span>
+                    <div class="input-group__field">
+                      <input type="text" placeholder="Купон">
+                      <button class="btn btn-gray-light input-group__btn">Применить</button>
+                    </div>
+                  </div>
+                  <button class="btn btn-accent">Оформить заказ</button>
+                </div>
+              </div>
+            </div><!-- end cart__right -->
+          </div>
+        </div>
       </div>
       <!-- end home -->
       <!-- begin footer -->
@@ -902,6 +823,23 @@
     <!-- begin windows -->
     <div class="windows">
       <!-- begin register -->
+      <div class="modal-window modal-window--medium new-profile" id="new-profile">
+        <div class="modal-window__body">
+          <div class="new-profile__title">Добавление нового профиля</div>
+          <div class="button-box button-box--center">
+            <button class="btn btn-accent btn--icon js-change-profile" data-profile="add-profile-user" data-tab-index="2">
+              <svg class="icon icon-cs-user btn__icon">
+                <use xlink:href="img/sprite.svg#cs-user"></use>
+              </svg> Частное лицо </button>
+            <button class="btn btn--white btn--icon js-change-profile" data-profile="add-profile-company" data-tab-index="3">
+              <svg class="icon icon-cs-tower btn__icon">
+                <use xlink:href="img/sprite.svg#cs-tower"></use>
+              </svg> Компания </button>
+          </div>
+        </div>
+      </div>
+      <!-- end register -->
+      <!-- begin register -->
       <div class="modal-window modal-window--mobile register" id="register">
         <div class="modal-window__header">
           <h4 class="modal-window__title">Регистрация</h4>
@@ -909,19 +847,19 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input">
-              <input type="text" class="cs-input__field" placeholder="Логин">
+              <input type="text" class="cs-input__field " placeholder="Логин">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <input type="text" class="cs-input__field " placeholder="Ваше имя">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input">
-              <input type="email" class="cs-input__field" placeholder="Email">
+              <input type="email" class="cs-input__field " placeholder="Email">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input">
-              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <input type="password" class="cs-input__field " placeholder="Пароль">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="success">
@@ -949,11 +887,11 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input">
-              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <input type="password" class="cs-input__field " placeholder="Пароль">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="form__box mt-30">
@@ -981,7 +919,7 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <button class="btn btn--gr form__btn mt-30" type="submit">Вход</button>
@@ -1066,7 +1004,7 @@
         <div class="modal-window__body">
           <form class="form form__request">
             <div class="cs-input form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <input type="text" class="cs-input__field " placeholder="Ваше имя">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input form__input">

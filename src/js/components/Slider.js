@@ -25,7 +25,7 @@
 				$slides.not('.slick-initialized').slick({
 					prevArrow: $arrowPrev,
 					nextArrow: $arrowNext,
-					speed: 1000,
+					speed: 300,
 					slidesToShow: 4,
 					slidesToScroll: 1,
 					infinite: false,
@@ -72,7 +72,7 @@
 				$slides.not('.slick-initialized').slick({
 					prevArrow: $arrowPrev,
 					nextArrow: $arrowNext,
-					speed: 1000,
+					speed: 400,
 					slidesToShow: 7,
 					slidesToScroll: 1,
 					infinite: false,
@@ -151,6 +151,35 @@
 					dots: true,
 					fade: true,
 					adaptiveHeight: true
+				});
+			}
+		});
+	}
+
+	let $sliderCard = $('.js-cs-slider--card');
+	if ($sliderCard.length) {
+		$sliderCard.each(function() {
+			let $slides = $(this).find('.cs-slider__slides');
+			let $slide = $(this).find('.cs-slider__slide');
+			let $arrowPrev = $(this)
+				.find('.cs-slider__arrow--prev')
+				.hide();
+			let $arrowNext = $(this)
+				.find('.cs-slider__arrow--next')
+				.hide();
+
+			if ($slide.length > 1) {
+				$arrowPrev.show();
+				$arrowNext.show();
+				$slides.not('.slick-initialized').slick({
+					prevArrow: $arrowPrev,
+					nextArrow: $arrowNext,
+					speed: 400,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					infinite: false,
+					arrows: true,
+					dots: true
 				});
 			}
 		});

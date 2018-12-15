@@ -1,0 +1,78 @@
+---
+title: Корзины
+
+breadcrumbs:
+ - title: Корзина
+   icon: cart
+   tabTitleCount: tabs-1
+ - title: Авторизация
+   icon: cart__user
+   tabTitleCount: tabs-2
+ - title: Способ доставки
+   icon: delivery--transparent
+   tabTitleCount: tabs-3
+ - title: Способ оплаты
+   icon: pay
+   tabTitleCount: tabs-4
+ - title: Подтверждение заказа
+   icon: cart__check
+   tabTitleCount: tabs-5
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper cart">
+
+	<!-- begin cart -->
+
+
+	<!-- begin tabs -->
+	<div class="container">
+		<div id="cart-tab" class="cart-tab">
+			<ul class="cart-tab__list">
+				{% for item in breadcrumbs %}
+				<li class="cart-tab__item">
+					<a class="cart-tab__link" href="#{{ item.tabTitleCount }}">
+						<svg class="icon icon-{{ item.icon }}">
+							<use xlink:href="img/sprite.svg#{{ item.icon }}"></use>
+						</svg>
+						<span class="cart-tab__text">{{ item.title }}</span>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+
+			<!-- begin tabs-1 -->
+			<div id="tabs-1">
+				{% include "blocks/cart/_cart.html" %}
+			</div><!-- end tabs-1 -->
+
+			<!-- begin tabs-2 -->
+			<div id="tabs-2">
+				{% include "blocks/cart/_auth.html" %}
+			</div><!-- end tabs-2 -->
+
+			<!-- begin tabs-3 -->
+			<div id="tabs-3">
+				{% include "blocks/cart/_delivery.html" %}
+			</div><!-- end tabs-3 -->
+
+			<!-- begin tabs-4 -->
+			<div id="tabs-4">
+				{% include "blocks/cart/_pay.html" %}
+			</div><!-- end tabs-4 -->
+
+			<!-- begin tabs-5 -->
+			<div id="tabs-5">
+				{% include "blocks/cart/_confirm.html" %}
+			</div><!-- end tabs-5 -->
+		</div>
+	</div>
+	<!-- end cart -->
+
+</div>
+<!-- end home -->
+
+{% endblock %}

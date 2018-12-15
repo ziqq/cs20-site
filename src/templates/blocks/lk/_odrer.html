@@ -1,0 +1,116 @@
+<!-- begin lk-order -->
+<div class="lk__top-line">
+	<div class="sorting__count">
+		<select class="sorting__select js-select no-search">
+			<option value="Все заказы">Все заказы</option>
+			<option value="Текущие">Текущие</option>
+			<option value="Завершенные">Завершенные</option>
+		</select>
+	</div>
+</div>
+
+<div class="cs-accorderon js-cs-accordeon">
+	<div class="cs-accordeon__item order-item is-success">
+		<div class="cs-accordeon__title order-item__title">
+			<span>Заказ №87 от 27.11.2018 на 2023 рублей</span>
+			<span class="order-item__status">Статус: <span>оплачен</span></span>
+		</div>
+		<div class="cs-accordeon__content order-item__content js-scroll" style="display: none;">
+			<ul class="order-item__list">
+				{% for i in range(0, 2) %}
+				<li class="order-item__product">
+					<a href="#" class="product-item product-item--wide">
+						<div class="product-item__desc">
+							<h4 class="product-item__title">
+								Патрубок соединит термостата ВАЗ 2123 СИНИЙ PROF
+							</h4>
+							<div class="product-item__counter counter">1 шт.</div>
+							<div class="product-item__price price">
+								282 руб.
+							</div>
+						</div>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+			<div class="order-item__info">
+				<ul>
+					<li>Оплачен: <span>Нет</span></li>
+					<li>Способ оплаты: <span>RoboKassa</span></li>
+					<li>Способ доставки: <span>Почта России (стандарт)</span></li>
+				</ul>
+			</div>
+				<button class="btn btn-outline-gray-light product-item__btn">Повторить заказ</button>
+		</div>
+	</div>
+	<div class="cs-accordeon__item order-item is-abort">
+		<div class="cs-accordeon__title order-item__title">
+			<span>Заказ №87 от 27.11.2018 на 2023 рублей</span>
+			<span class="order-item__status">Статус: <span>ожидается оплата</span></span>
+		</div>
+		<div class="cs-accordeon__content order-item__content js-scroll" style="display: none;">
+			<ul class="order-item__list">
+				{% for i in range(0, 2) %}
+				<li class="order-item__product">
+					<a href="#" class="product-item product-item--wide">
+						<div class="product-item__desc">
+							<h4 class="product-item__title">
+								Патрубок соединит термостата ВАЗ 2123 СИНИЙ PROF
+							</h4>
+							<div class="product-item__counter counter">1 шт.</div>
+							<div class="product-item__price price">
+								282 руб.
+							</div>
+						</div>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+			<div class="order-item__info">
+				<ul>
+					<li>Оплачен: <span>Нет</span></li>
+					<li>Способ оплаты: <span>RoboKassa</span></li>
+					<li>Способ доставки: <span>Почта России (стандарт)</span></li>
+				</ul>
+			</div>
+			<div class="button-box">
+				<button class="btn btn-outline-gray-light product-item__btn">Повторить заказ</button>
+				<button class="btn btn-outline-gray-light product-item__btn">Отменить заказ</button>
+				<button class="btn btn-accent product-item__btn">Оплатить</button>
+			</div>
+		</div>
+	</div>
+	<div class="cs-accordeon__item order-item">
+		<div class="cs-accordeon__title order-item__title">
+			<span>Заказ №87 от 27.11.2018 на 2023 рублей</span>
+			<span class="order-item__status">Статус: <span>отпрален</span></span>
+		</div>
+		<div class="cs-accordeon__content order-item__content js-scroll" style="display: none;">
+			<ul class="order-item__list">
+				{% for i in range(0, 2) %}
+				<li class="order-item__product">
+					<a href="#" class="product-item product-item--wide">
+						<div class="product-item__desc">
+							<h4 class="product-item__title">
+								Патрубок соединит термостата ВАЗ 2123 СИНИЙ PROF
+							</h4>
+							<div class="product-item__counter counter">1 шт.</div>
+							<div class="product-item__price price">
+								282 руб.
+							</div>
+						</div>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+			<div class="order-item__info">
+				<ul>
+					<li>Оплачен: <span>Нет</span></li>
+					<li>Способ оплаты: <span>RoboKassa</span></li>
+					<li>Способ доставки: <span>Почта России (стандарт)</span></li>
+				</ul>
+			</div>
+				<button class="btn btn-outline-gray-light product-item__btn">Повторить заказ</button>
+		</div>
+	</div>
+</div><!-- end lk-order -->

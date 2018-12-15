@@ -9,13 +9,17 @@ PageList:
   ready: 50
   desc : Каталог
 
+- file: search-result.html
+  ready: 50
+  desc : Результаты поиска
+
 - file: card.html
   ready: 50
   desc : Подробная карточа
 
-- file: search-result.html
+- file: cart.html
   ready: 50
-  desc : Результаты поиска
+  desc : Корзина
 
 - file: payment.html
   ready: 50
@@ -25,9 +29,6 @@ PageList:
   ready: 50
   desc : Доставка
 
-- file: cart.html
-  ready: 50
-  desc : Корзина
 
   #contacts
 - file: contacts.html
@@ -35,22 +36,27 @@ PageList:
   desc : Контакты
 
   #contacts
-- file: enter.html
+- file: map.html
   ready: 50
-  desc : Вход
+  desc : Карта
+
+  #contacts
+# - file: enter.html
+#   ready: 50
+#   desc : Вход
 
   #LK
-- file: lk-user.html
-  ready: 50
-  desc : личные данные
+# - file: lk-user.html
+#   ready: 50
+#   desc : личные данные
 
-- file: lk-order.html
-  ready: 50
-  desc : мои заказы
+# - file: lk-order.html
+#   ready: 50
+#   desc : мои заказы
 
-- file: lk-sale.html
-  ready: 50
-  desc : персональные скидки
+# - file: lk-sale.html
+#   ready: 50
+#   desc : персональные скидки
 
 
   #news
@@ -84,6 +90,6 @@ PageList:
   desc : Error Page
 
   #Попап окна
-- file: popups.html
-  ready: 50
-  desc : Попап окна
+# - file: popups.html
+#   ready: 50
+#   desc : Попап окна

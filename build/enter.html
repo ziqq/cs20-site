@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Вход</title>
+    <title>Вход в личный кабинет</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -375,9 +375,9 @@
       <!-- end firstscreen -->
       <!-- begin home -->
       <div class="content-wrapper">
-        <!-- begin breadcrumbs -->
-        <div class="container">
-          <div class="breadcrumbs__wrap">
+        <div class="auth">
+          <!-- begin breadcrumbs -->
+          <div class="container">
             <div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
               <ul class="breadcrumbs__list">
                 <li class="breadcrumbs__item">
@@ -390,45 +390,47 @@
                 </li>
               </ul>
             </div>
-            <a href="#" class="button-link button-link--exit"><span>Выход</span></a>
           </div>
-          <h1 class="h1 page-title" itemprop="headline">Пожалуйста, авторизируйтесь:</h1>
-        </div>
-        <!-- end breadcrumbs -->
-        <div class="container">
-          <form class="form form__enter">
-            <div class="pedit__item">
-              <div class="pedit__title">Логин:<i>*</i></div>
-              <div class="pedit__field">
-                <div class="cs-input ">
-                  <input type="text" class="cs-input__field" placeholder="">
-                  <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+          <!-- end breadcrumbs -->
+          <!-- begin contacts -->
+          <div class="container">
+            <div class="cs-card">
+              <div class="auth__inner">
+                <div class="auth__left">
+                  <h1 class="h1 page-title" itemprop="headline">Вход в личный кабинет</h1>
+                  <form class="form form__register">
+                    <div class="cs-input cs-input--light form__input">
+                      <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
+                      <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                    </div>
+                    <div class="cs-input cs-input--light form__input is-invalid">
+                      <input type="password" class="cs-input__field " placeholder="Пароль">
+                      <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                    </div>
+                    <div class="form__box mt-30">
+                      <label class="cs-checkbox policy__checkbox">
+                        <input type="checkbox">
+                        <span class="cs-checkbox__box"></span>
+                        <span class="cs-checkbox__title">Запомнить меня</span>
+                      </label>
+                    </div>
+                    <button class="btn btn--gr form__btn" type="submit">Войти</button>
+                    <div class="success">
+                      <div class="success__text">Добро пожаловать!</div>
+                    </div>
+                    <div class="button-box button-box--column">
+                      <a class="form__link mb-10" href="registration.html">Регистрация</a>
+                      <a class="form__link" href="pasword-recowery.html">Забыли пароль?</a>
+                    </div>
+                  </form>
+                </div>
+                <div class="auth__right">
+                  <img src="img/general/enter.png" alt="alt">
                 </div>
               </div>
             </div>
-            <div class="pedit__item">
-              <div class="pedit__title">Пароль:<i>*</i></div>
-              <div class="pedit__field">
-                <div class="cs-input is-invalid">
-                  <input type="password" class="cs-input__field">
-                  <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                </div>
-              </div>
-            </div>
-            <div class="button-box">
-              <label class="cs-checkbox form__checkbox">
-                <input type="checkbox">
-                <span class="cs-checkbox__box"></span>
-                <span class="cs-checkbox__title">Запомнить меня</span>
-              </label>
-              <a class="password-recovery pedit__item" href="#" data-fancybox>Забыли свой пароль?</a>
-            </div>
-            <button type="submit" class="button button--gray form__btn pedit__item">Войти</button>
-            <div class="form__text pedit__item">Если у Вас нет учетной записи, &nbsp;<a class="password-recovery" href="#register" data-fancybox>Зарегистрируйтесь</a></div>
-            <div class="success">
-              <div class="success__text">Добро пожаловать!</div>
-            </div>
-          </form>
+          </div>
+          <!-- end contacts -->
         </div>
       </div>
       <!-- end home -->
@@ -547,6 +549,23 @@
     <!-- begin windows -->
     <div class="windows">
       <!-- begin register -->
+      <div class="modal-window modal-window--medium new-profile" id="new-profile">
+        <div class="modal-window__body">
+          <div class="new-profile__title">Добавление нового профиля</div>
+          <div class="button-box button-box--center">
+            <button class="btn btn-accent btn--icon js-change-profile" data-profile="add-profile-user" data-tab-index="2">
+              <svg class="icon icon-cs-user btn__icon">
+                <use xlink:href="img/sprite.svg#cs-user"></use>
+              </svg> Частное лицо </button>
+            <button class="btn btn--white btn--icon js-change-profile" data-profile="add-profile-company" data-tab-index="3">
+              <svg class="icon icon-cs-tower btn__icon">
+                <use xlink:href="img/sprite.svg#cs-tower"></use>
+              </svg> Компания </button>
+          </div>
+        </div>
+      </div>
+      <!-- end register -->
+      <!-- begin register -->
       <div class="modal-window modal-window--mobile register" id="register">
         <div class="modal-window__header">
           <h4 class="modal-window__title">Регистрация</h4>
@@ -554,19 +573,19 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input">
-              <input type="text" class="cs-input__field" placeholder="Логин">
+              <input type="text" class="cs-input__field " placeholder="Логин">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <input type="text" class="cs-input__field " placeholder="Ваше имя">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input">
-              <input type="email" class="cs-input__field" placeholder="Email">
+              <input type="email" class="cs-input__field " placeholder="Email">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input">
-              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <input type="password" class="cs-input__field " placeholder="Пароль">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="success">
@@ -594,11 +613,11 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input">
-              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <input type="password" class="cs-input__field " placeholder="Пароль">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="form__box mt-30">
@@ -626,7 +645,7 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <button class="btn btn--gr form__btn mt-30" type="submit">Вход</button>
@@ -711,7 +730,7 @@
         <div class="modal-window__body">
           <form class="form form__request">
             <div class="cs-input form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <input type="text" class="cs-input__field " placeholder="Ваше имя">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input form__input">

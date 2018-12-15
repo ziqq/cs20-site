@@ -31,9 +31,7 @@
 			let render = true;
 
 			$item.on('click', function(e) {
-				if (render) {
-					_renderBtn($(this));
-				}
+				_renderBtn($(this));
 
 				if ($(window).width() >= 768) {
 					$(this)
@@ -68,7 +66,9 @@
 
 			function _renderBtn(el) {
 				render = false;
-				$filter.find('.btn--apply js-btn--apply').remove();
+				$(document)
+					.find('.btn--apply')
+					.remove();
 				let $btn = $('<button>');
 
 				$btn.addClass('btn btn--default btn--apply js-btn--apply').text(
@@ -128,6 +128,7 @@
 			let $overlay = $('.js-overlay');
 			let $filterSticky = $('.js-filter-sticky');
 			let $btnOpen = $('.js-filter--open');
+			let btnOpenOffset = $btnOpen.offset().top;
 			let $btnClose = $('.js-filter--close');
 
 			$btnOpen.on('click', _open);
@@ -135,6 +136,20 @@
 			$btnClose.on('click', _close);
 
 			$(document).on('click', '.overlay--filter', _close);
+
+			$(window).on('scroll', function() {
+				let scroll = $(this).scrollTop();
+				if (scroll > btnOpenOffset - 10) {
+					$btnOpen.css({
+						position: 'fixed',
+						top: 10,
+						bottom: 'auto',
+						boxShadow: '0 5px 25px rgba(0,0,0,.2)'
+					});
+				} else {
+					$btnOpen.removeAttr('style');
+				}
+			});
 
 			function _open() {
 				$filterSticky.addClass('is-open');
@@ -164,44 +179,22 @@
 		}
 	};
 	Filter.init();
+
+	//Catalog Item View Toggle
+	$('.js-sorting-btn').on('click', function(e) {
+		let sorting = $(this).data('sorting');
+
+		$('.js-sorting-btn').removeClass('is-active');
+		$(this).addClass('is-active');
+
+		if (sorting == '2') {
+			$('.js-products').addClass('layout-two-column');
+		} else {
+			$('.js-products').removeClass('layout-two-column');
+		}
+
+		setTimeout(() => {
+			Base.setHeight();
+		}, 300);
+	});
 })();
-
-//Catalog Item View Toggle
-$('.js-sorting-btn').on('click', function(e) {
-	let sorting = $(this).data('sorting');
-
-	$('.js-sorting-btn').removeClass('is-active');
-	$(this).addClass('is-active');
-
-	if (sorting == '2') {
-		$('.js-products').addClass('layout-two-column');
-	} else {
-		$('.js-products').removeClass('layout-two-column');
-	}
-
-	setTimeout(() => {
-		Base.setHeight();
-	}, 300);
-});
-
-// $('.js-sorting-btn--list').on('click', function() {
-//     $('.js-products')
-//         .find('.product-item')
-//         .addClass('product-item--wide');
-// });
-// $('.js-sorting--btn--tile').on('click', function() {
-//     $('.js-products')
-//         .find('.product-item')
-//         .removeClass('product-item--wide');
-// });
-
-//Filter Select All
-// $(document).on('click', '.js-cs-checkbox--pseudo', function() {
-//     if ($(this).hasClass('is-checked')) {
-//         $(this).removeClass('is-checked');
-//     } else {
-//         $('.js-cs-checkbox--pseudo').removeClass('is-checked');
-//         $(this).addClass('is-checked');
-//     }
-//     return false;
-// });

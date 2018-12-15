@@ -3,17 +3,31 @@
 
 //noUiSlider
 .noUi-horizontal{
-	height: 3px;
+	height: 2px;
 	border-radius: 50%;
+
 	.noUi-handle{
-		width: 8px;
-		height: 8px;
-		top: -2px;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		top: -5px;
 		left: -5px;
 		background-color: #d5d1d1;
-		@include max-screen(480) {
-			width: 10px;
-			height: 10px;
+
+		&::before {
+			width: 12px;
+			height: 12px;
+		}
+
+		@include r-max(xs) {
+			width: 18px;
+			height: 18px;
+			top: -8px;
+
+			&::before {
+				width: 18px;
+				height: 18px;
+			}
 		}
 	}
 }
@@ -98,11 +112,12 @@
 .select2-selection__arrow{
 	position: relative;
 	&::before{
-		content: '';
-		display: inline-block;
-		@include sprite(arrow--down);
+		content: '\f107';
+		@include fa;
+		font-size: 15px;
+		color: #8c8c8c;
 		position: absolute;
-		top: 10px;
+		top: 3px;
 		right: 0;
 	}
 }
@@ -121,17 +136,63 @@
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow{
 	top: 6px;
-	right: 5px;
+	right: 8px;
 }
 
 .fancybox-container{
 	z-index: z(modal);
 }
 
-//Mas Gray
-// [class*="ymaps-2"][class*="-ground-pane"] {
-// 	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
-//     /* Firefox 3.5+ */
-//     -webkit-filter: grayscale(100%);
-//     /* Chrome 19+ & Safari 6+ */
-// }
+//Selectize
+.selectize-control.single .selectize-input {
+	background-color: #fff;
+	border-color: #d2d2d2;
+	border-radius: $border-radius;
+	box-shadow: none;
+	background-image: none;
+
+	&.dropdown-active {
+		&::after {
+			content: '\f106';
+			margin-top: 0;
+			border: 0;
+		}
+	}
+}
+
+.selectize-control.single .selectize-input:after {
+	content: '\f107';
+	@include fa('light');
+	font-size: 18px;
+	color: $color-text--light;
+	margin: 0;
+	border: 0;
+	position: absolute;
+	top: 8px;
+	right: 17px;
+}
+
+.selectize-dropdown.single {
+	border-top: 1px solid #d2d2d2;
+	border-radius: 0 0 $border-radius $border-radius;
+	border-color: #d2d2d2;
+	// box-shadow: $bxs-box;
+	box-shadow: none;
+	top: 34px !important;
+}
+
+.selectize-control .selectize-input.disabled,
+select:disabled {
+	color: $color-text;
+	background: #e5e5e5;
+}
+
+.selectize-dropdown-content {
+	.option {
+		cursor: pointer;
+
+		&.active {
+			background-color: $color-bg--light;
+		}
+	}
+}

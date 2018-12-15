@@ -90,61 +90,6 @@
 	&__text
 		margin-top: 30px
 
-	//.cs-slider__home
-	&--home
-		.cs-slider__slide
-			+r-min(xs)
-				&:not(.news__item--link)
-					display: block !important
-					margin: auto
-
-		.slick-track
-			padding: 15px 0
-			+r-max(sm)
-				padding: 15px 0
-
-		.slick-list
-			+r(1200)
-				margin: 0 15px
-
-		.slick-slide
-
-			+r-max(sm)
-				margin: 0 10px
-
-			& > div
-				+r-max(xs)
-					display: flex
-					justify-content: center
-
-		+r-max(xs)
-			.cs-slider
-				&__arrow
-					&--prev
-						left: 0
-					&--next
-						right: 0
-
-	//.cs-slider--expanded
-	&--expanded
-		.cs-slider__arrow
-			&--next
-				right: -150%
-			&--prev
-				left: -150%
-		&:hover
-			.cs-slider__arrow
-				&--next
-					right: 0
-				&--prev
-					left: 0
-
-		.slick-dots
-			left: 15px
-			bottom: 10px
-		.slick-list, .slick-slider
-			position: static
-
 	//.cs-slider .slick-dots
 	.slick-dots
 		text-align: center
@@ -178,6 +123,60 @@
 		+s('angel--right')
 		right: -10px
 
+	//.cs-slider--expanded
+	&--expanded
+		.cs-slider__arrow
+			&--next
+				right: -150%
+			&--prev
+				left: -150%
+		&:hover
+			.cs-slider__arrow
+				&--next
+					right: 0
+				&--prev
+					left: 0
+
+		.slick-dots
+			left: 15px
+			bottom: 10px
+		.slick-list, .slick-slider
+			position: static
+
+	//.cs-slider--home
+	&--home
+		.cs-slider__slide
+			+r-min(xs)
+				&:not(.news__item--link)
+					display: block !important
+					margin: auto
+
+		.slick-track
+			padding: 15px 0
+			+r-max(sm)
+				padding: 15px 0
+
+		.slick-list
+			+r(1200)
+				margin: 0 15px
+
+		.slick-slide
+
+			+r-max(sm)
+				margin: 0 10px
+
+			& > div
+				+r-max(xs)
+					display: flex
+					justify-content: center
+
+		+r-max(xs)
+			.cs-slider
+				&__arrow
+					&--prev
+						left: 0
+					&--next
+						right: 0
 
 	//.cs-slider--hero
 	&--hero
@@ -270,6 +269,44 @@
 				&--next
 					right: 20px
 
+	//.cs-slider--card
+	&--card
+		.cs-slider
+			&__arrow
+				background-color: transparent
+				&--next
+					right: 10px
+				&--prev
+					left: 10px
+			&__slides
+				max-width: 340px
+				margin: auto
+
+		.slick-dots
+			bottom: 15px
+			li
+				button
+					padding: 0
+					margin: 0 5px
+					width: 5px
+					height: 5px
+					border-radius: 50%
+					&::before
+						width: 5px
+						height: 5px
+						border-radius: 50%
+						background: #c4c4c4
+						transition: initial
+				&.slick-active
+					button
+						width: 9px
+						height: 9px
+						&::before
+							width: 9px
+							height: 9px
+							box-shadow: 0px 1px 8px rgba(255, 255, 255, 0.3)
+							background-color: #828282
+
 	//.cs-slider--delivery
 	&--delivery
 		width: 100%
@@ -277,6 +314,8 @@
 		.cs-card__img
 			+r(768)
 				width: 50%
+			+r(480)
+				width: 70%
 
 		.cs-slider
 			&__arrow
@@ -305,7 +344,7 @@
 					&.slick-initialized
 						.cs-card__inner
 							+r(480)
-								margin: 0 20px
+								// margin: 0 20px
 
 		.slick-slide
 			margin: 0 2px

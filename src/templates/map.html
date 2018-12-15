@@ -1,0 +1,82 @@
+---
+title: Карта
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper map">
+
+	<!-- begin breadcrumbs -->
+	<div class="container">
+		<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+			<ul class="breadcrumbs__list">
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link" itemprop="url">
+						<span class="breadcrumbs__title" itemprop="title">Главная</span>
+					</a>
+				</li>
+				<li class="breadcrumbs__item">
+					<span class="breadcrumbs__title" itemprop="title">Магазины</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- end breadcrumbs -->
+
+	<div class="container">
+
+		<div class="map__inner">
+			<div class="map__left">
+				<div class="map__title">Найти ближайший магазин</div>
+
+				<div class="map__select-line">
+
+					<div class="map__select">
+						<select class="js-select js-select--country" data-placeholder="Выбор страны">
+							<option></option>
+							{% for i in range(0, 5) %}
+							<option value="{{ i+1 }}">{{ i+1 }}</option>
+							{% endfor %}
+						</select>
+					</div>
+
+					<div class="map__select">
+						<select class="js-select js-select--region" data-placeholder="Выбор региона" disabled>
+							<option></option>
+							{% for i in range(0, 5) %}
+							<option value="{{ i+1 }}">{{ i+1 }}</option>
+							{% endfor %}
+						</select>
+					</div>
+
+					<div class="map__select">
+						<select class="js-select js-select--city" data-placeholder="Выбор  города" disabled>
+							<option></option>
+							{% for i in range(0, 5) %}
+							<option value="{{ i+1 }}">{{ i+1 }}</option>
+							{% endfor %}
+						</select>
+					</div>
+
+				</div>
+
+				<div class="map__desc">Если вы не нашли нужный товар в магазинах вашего города, закажите его через наш сайт. Мы доставляем детали по всему миру и бесплатно по России при заказе от 3000 руб.</div>
+			</div>
+
+			<div class="map__right map-box">
+				<div class="map-box__inner js-map-shops"></div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+<!-- end home -->
+
+{% endblock %}
+
+{% block scripts %}
+<script async defer src ="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnkTBYnYseWFYqDk3wb4-eWn4507c7CSw"></script>
+{% endblock %}

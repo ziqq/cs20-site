@@ -370,6 +370,7 @@
               </div>
             </div>
           </div>
+          <button class="btn btn--filter js-filter--open sm-only--flex">Открыть фильтр</button>
         </div>
       </section>
       <!-- end firstscreen -->
@@ -434,46 +435,46 @@
                     </svg>
                   </div>
                   <div class="filter__body js-cs-accordeon cs-accordeon cs-accordeon--other">
-                    <div class="filter__item filter__item_type cs-accordeon__item is-open">
+                    <div class="filter__item filter__item_type cs-accordeon__item">
                       <div class="filter__title cs-accordeon__title"> Категории <span class="cs-accordeon__icon"></span>
                       </div>
-                      <div class="filter__content cs-accordeon__content js-filter-content">
-                        <label class="cs-checkbox filter__checkbox js-cs-checkbox is-checked">
+                      <div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
                           <input type="checkbox">
                           <span class="cs-checkbox__box"></span>
                           <span class="cs-checkbox__title">Все категории</span>
                         </label>
-                        <label class="cs-checkbox filter__checkbox js-cs-checkbox ">
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
                           <input type="checkbox">
                           <span class="cs-checkbox__box"></span>
                           <span class="cs-checkbox__title">Элементы подвески</span>
                         </label>
-                        <label class="cs-checkbox filter__checkbox js-cs-checkbox ">
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
                           <input type="checkbox">
                           <span class="cs-checkbox__box"></span>
                           <span class="cs-checkbox__title">Прокладки / Ремкомплекты</span>
                         </label>
-                        <label class="cs-checkbox filter__checkbox js-cs-checkbox ">
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
                           <input type="checkbox">
                           <span class="cs-checkbox__box"></span>
                           <span class="cs-checkbox__title">Патрубки / Шланги</span>
                         </label>
-                        <label class="cs-checkbox filter__checkbox js-cs-checkbox ">
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
                           <input type="checkbox">
                           <span class="cs-checkbox__box"></span>
                           <span class="cs-checkbox__title">Крепления глушителя</span>
                         </label>
-                        <label class="cs-checkbox filter__checkbox js-cs-checkbox ">
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
                           <input type="checkbox">
                           <span class="cs-checkbox__box"></span>
                           <span class="cs-checkbox__title">Подушки двигателя</span>
                         </label>
-                        <label class="cs-checkbox filter__checkbox js-cs-checkbox ">
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
                           <input type="checkbox">
                           <span class="cs-checkbox__box"></span>
                           <span class="cs-checkbox__title">Брызговики</span>
                         </label>
-                        <label class="cs-checkbox filter__checkbox js-cs-checkbox ">
+                        <label class="cs-checkbox filter__checkbox js-cs-checkbox">
                           <input type="checkbox">
                           <span class="cs-checkbox__box"></span>
                           <span class="cs-checkbox__title">Коврики</span>
@@ -481,27 +482,8 @@
                         <button class="btn-link filter__btn-link js-select-all">Выбрать все</button>
                       </div>
                     </div>
-                    <div class="filter__item filter__item_price cs-accordeon__item is-open">
-                      <div class="filter__title cs-accordeon__title"> Цена <span class="cs-accordeon__icon"></span>
-                      </div>
-                      <div class="filter__content cs-accordeon__content js-filter-content">
-                        <div class="range__diapazon">
-                          <div class="range__from">
-                            <input type="num" id="jsPriceStart">
-                            <i class="fa fa-rub"></i>
-                          </div>
-                          <div class="range__to">
-                            <input type="num" id="jsPriceEnd">
-                            <i class="fa fa-rub"></i>
-                          </div>
-                        </div>
-                        <div class="filter__range range">
-                          <div class="range__slider" id="js-filter-slider" data-start="500" data-end="15000"></div>
-                        </div>
-                      </div>
-                    </div>
                     <div class="filter__item filter__item_car cs-accordeon__item">
-                      <div class="filter__title cs-accordeon__title"> Модель авто <span class="cs-accordeon__icon"></span>
+                      <div class="filter__title cs-accordeon__title"> Поиск по авто <span class="cs-accordeon__icon"></span>
                       </div>
                       <div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
                         <label class="cs-checkbox filter__checkbox js-cs-checkbox">
@@ -577,6 +559,25 @@
                           <span class="cs-checkbox__title">Оригинал +</span>
                         </label>
                         <button class="btn-link filter__btn-link js-select-all">Выбрать все</button>
+                      </div>
+                    </div>
+                    <div class="filter__item filter__item_price cs-accordeon__item">
+                      <div class="filter__title cs-accordeon__title"> Цена <span class="cs-accordeon__icon"></span>
+                      </div>
+                      <div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
+                        <div class="range__diapazon">
+                          <div class="range__from">
+                            <input type="num" id="jsPriceStart">
+                            <i class="fa fa-rub"></i>
+                          </div>
+                          <div class="range__to">
+                            <input type="num" id="jsPriceEnd">
+                            <i class="fa fa-rub"></i>
+                          </div>
+                        </div>
+                        <div class="filter__range range">
+                          <div class="range__slider" id="js-filter-slider" data-start="500" data-end="15000"></div>
+                        </div>
                       </div>
                     </div>
                     <div class="filter__footer">
@@ -799,7 +800,6 @@
               <span>Вы просмотрели 72 из 254 товаров</span>
               <a href="#" class="btn btn--transparent">Показать ещё</a>
             </div>
-            <button class="btn btn--filter js-filter--open sm-only--flex"></button>
           </div>
         </div><!-- end catalog__content -->
       </div><!-- end home -->
@@ -918,6 +918,23 @@
     <!-- begin windows -->
     <div class="windows">
       <!-- begin register -->
+      <div class="modal-window modal-window--medium new-profile" id="new-profile">
+        <div class="modal-window__body">
+          <div class="new-profile__title">Добавление нового профиля</div>
+          <div class="button-box button-box--center">
+            <button class="btn btn-accent btn--icon js-change-profile" data-profile="add-profile-user" data-tab-index="2">
+              <svg class="icon icon-cs-user btn__icon">
+                <use xlink:href="img/sprite.svg#cs-user"></use>
+              </svg> Частное лицо </button>
+            <button class="btn btn--white btn--icon js-change-profile" data-profile="add-profile-company" data-tab-index="3">
+              <svg class="icon icon-cs-tower btn__icon">
+                <use xlink:href="img/sprite.svg#cs-tower"></use>
+              </svg> Компания </button>
+          </div>
+        </div>
+      </div>
+      <!-- end register -->
+      <!-- begin register -->
       <div class="modal-window modal-window--mobile register" id="register">
         <div class="modal-window__header">
           <h4 class="modal-window__title">Регистрация</h4>
@@ -925,19 +942,19 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input">
-              <input type="text" class="cs-input__field" placeholder="Логин">
+              <input type="text" class="cs-input__field " placeholder="Логин">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <input type="text" class="cs-input__field " placeholder="Ваше имя">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input">
-              <input type="email" class="cs-input__field" placeholder="Email">
+              <input type="email" class="cs-input__field " placeholder="Email">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input">
-              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <input type="password" class="cs-input__field " placeholder="Пароль">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="success">
@@ -965,11 +982,11 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input">
-              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <input type="password" class="cs-input__field " placeholder="Пароль">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="form__box mt-30">
@@ -997,7 +1014,7 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <button class="btn btn--gr form__btn mt-30" type="submit">Вход</button>
@@ -1082,7 +1099,7 @@
         <div class="modal-window__body">
           <form class="form form__request">
             <div class="cs-input form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <input type="text" class="cs-input__field " placeholder="Ваше имя">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input form__input">

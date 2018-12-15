@@ -100,14 +100,14 @@ filterSeries:
 						</div>
 						<div class="filter__body js-cs-accordeon cs-accordeon cs-accordeon--other">
 
-							<div class="filter__item filter__item_type cs-accordeon__item is-open">
+							<div class="filter__item filter__item_type cs-accordeon__item">
 								<div class="filter__title cs-accordeon__title">
 									Категории
 									<span class="cs-accordeon__icon"></span>
 								</div>
-								<div class="filter__content cs-accordeon__content js-filter-content">
+								<div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
 									{% for item in filterType %}
-									<label class="cs-checkbox filter__checkbox js-cs-checkbox {{ item.class }}">
+									<label class="cs-checkbox filter__checkbox js-cs-checkbox">
 										<input type="checkbox">
 										<span class="cs-checkbox__box"></span>
 										<span class="cs-checkbox__title">{{ item.title }}</span>
@@ -117,35 +117,9 @@ filterSeries:
 								</div>
 							</div>
 
-							<div class="filter__item filter__item_price cs-accordeon__item is-open">
-								<div class="filter__title cs-accordeon__title">
-									Цена
-									<span class="cs-accordeon__icon"></span>
-								</div>
-								<div class="filter__content cs-accordeon__content js-filter-content">
-									<div class="range__diapazon">
-										<div class="range__from">
-											<input type="num" id="jsPriceStart">
-											<i class="fa fa-rub"></i>
-										</div>
-										<div class="range__to">
-											<input type="num" id="jsPriceEnd">
-											<i class="fa fa-rub"></i>
-										</div>
-									</div>
-									<div class="filter__range range">
-										<div
-										class="range__slider"
-										id="js-filter-slider"
-										data-start="500"
-										data-end="15000"></div>
-									</div>
-								</div>
-							</div>
-
 							<div class="filter__item filter__item_car cs-accordeon__item">
 								<div class="filter__title cs-accordeon__title">
-									Модель авто
+									Поиск по авто
 									<span class="cs-accordeon__icon"></span>
 								</div>
 								<div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
@@ -177,6 +151,32 @@ filterSeries:
 								</div>
 							</div>
 
+							<div class="filter__item filter__item_price cs-accordeon__item">
+								<div class="filter__title cs-accordeon__title">
+									Цена
+									<span class="cs-accordeon__icon"></span>
+								</div>
+								<div class="filter__content cs-accordeon__content js-filter-content" style="display: none;">
+									<div class="range__diapazon">
+										<div class="range__from">
+											<input type="num" id="jsPriceStart">
+											<i class="fa fa-rub"></i>
+										</div>
+										<div class="range__to">
+											<input type="num" id="jsPriceEnd">
+											<i class="fa fa-rub"></i>
+										</div>
+									</div>
+									<div class="filter__range range">
+										<div
+										class="range__slider"
+										id="js-filter-slider"
+										data-start="500"
+										data-end="15000"></div>
+									</div>
+								</div>
+							</div>
+
 							<div class="filter__footer">
 								<button class="btn btn--white btn--shadow filter__btn--reset js-filter-btn--reset">Сбросить фильтр</button>
 							</div>
@@ -203,8 +203,6 @@ filterSeries:
 				<span>Вы просмотрели 72 из 254 товаров</span>
 				<a href="#" class="btn btn--transparent">Показать ещё</a>
 			</div>
-
-			<button class="btn btn--filter js-filter--open sm-only--flex"></button>
 
 		</div>
 	</div><!-- end catalog__content -->

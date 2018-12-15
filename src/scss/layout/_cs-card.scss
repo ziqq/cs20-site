@@ -360,12 +360,18 @@
 				margin-bottom: 0;
 			}
 
-			&__desc {
-				margin-right: 0;
+			&__img {
+				margin-left: 0;
+				width: 50%;
+
+				@include r-max(xs) {
+					width: 100%;
+				}
 			}
 
 			&__desc{
-				width: 100%;
+				width: 50%;
+				margin-right: 0;
 				padding: 50px 90px;
 
 				@include r-max(sm) {
@@ -373,6 +379,7 @@
 				}
 
 				@include r-max(xs) {
+					width: 100%;
 					margin-bottom: 30px;
 					padding: 0;
 				}
@@ -386,14 +393,3 @@
 		}
 	}
 }//.cs-card
-
-.map {
-	display: block;
-	width: 100%;
-	height: 370px;
-	position: relative;
-
-	#map {
-		@include coverdiv;
-	}
-}

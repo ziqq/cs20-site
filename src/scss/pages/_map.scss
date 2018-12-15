@@ -1,0 +1,63 @@
+.map {
+	padding-bottom: $section-indent;
+	background-color: $color-bg;
+
+	&__inner {
+		@extend %box;
+		display: flex;
+	}//.map__inner
+
+	&__left {
+		padding: 25px 30px;
+		width: 50%;
+		@include flexColumn;
+	}//.map__left
+
+	&__right {
+		width: 50%;
+	}//.map__right
+
+	&__title {
+		margin-bottom: 20px;
+		font-size: 18px;
+		font-family: $f-medium;
+		font-weight: 500;
+	}//.map__title
+
+	&__select-line {
+		@include row-flex;
+
+		.map__select {
+			@include col;
+			@include size(4);
+		}
+	}//.map__select-line
+
+	&__select {
+
+		select, .selectize-control {
+			width: 100%;
+			margin-left: 0;
+		}
+	}//.map__select
+
+	&__desc {
+		margin-top: auto;
+		font-family: $f-light;
+		font-size: 12px;
+		line-height: 1.4;
+		color: $color-text--light;
+	}//.map__desc
+}//.map
+
+.map-box {
+	min-height: 370px;
+	border-radius: $border-radius;
+	overflow: hidden;
+	position: relative;
+
+	&__inner {
+		@include coverdiv;
+	}
+}
+

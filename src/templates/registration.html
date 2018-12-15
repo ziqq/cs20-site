@@ -1,0 +1,79 @@
+---
+title: Регистрация
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper">
+
+	<div class="auth">
+		<!-- begin breadcrumbs -->
+		<div class="container">
+			<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+				<ul class="breadcrumbs__list">
+					<li class="breadcrumbs__item">
+						<a href="#" class="breadcrumbs__link" itemprop="url">
+							<span class="breadcrumbs__title" itemprop="title">Главная</span>
+						</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<span class="breadcrumbs__title" itemprop="title">Личный кабинет</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- end breadcrumbs -->
+
+	<!-- begin contacts -->
+	<div class="container">
+		<div class="cs-card">
+
+			<div class="auth__inner">
+				<div class="auth__left">
+
+					<h1 class="h1 page-title" itemprop="headline">{{ title }}</h1>
+
+					<form class="form form__register">
+						{{item.input('text', 'Логин', 'cs-input--light form__input')}}
+
+						{{item.input('email', 'Email', 'cs-input--light form__input')}}
+
+						{{item.input('password', 'Пароль', 'cs-input--light form__input')}}
+
+						{{item.input('password', 'Подтверждение пароля', 'cs-input--light form__input')}}
+
+						<div class="policy-agriment mb-30">
+							{{ item.checkbox('Я принимаю', 'policy__checkbox') }}
+								<a href="privacy.html" target="_blank">Условия использования</a>
+								и соглашаюсь с
+								<a href="privacy.html" target="_blank">политикой конфиденциальности</a>
+						</div>
+
+						<button class="btn btn--gr form__btn" type="submit">Зарегистрироваться</button>
+
+						<div class="button-box button-box--column">
+							<a class="form__link" href="enter.html">Есть аккаунт? Вход</a>
+						</div>
+
+						<div class="success">
+							<div class="success__text">Спасибо за регистрацию!</div>
+						</div>
+					</form>
+				</div>
+				<div class="auth__right">
+					<img src="img/general/enter.png" alt="alt">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end contacts -->
+
+
+	</div>
+
+</div>
+<!-- end home -->
+
+{% endblock %}

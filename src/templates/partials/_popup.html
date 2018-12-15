@@ -1,4 +1,22 @@
 <!-- begin register -->
+<div class="modal-window modal-window--medium new-profile" id="new-profile">
+	<div class="modal-window__body">
+		<div class="new-profile__title">Добавление нового профиля</div>
+		<div class="button-box button-box--center">
+			<button class="btn btn-accent btn--icon js-change-profile" data-profile="add-profile-user" data-tab-index="2">
+				{{ mixin.icon('cs-user', 'btn__icon') }}
+				Частное лицо
+			</button>
+			<button class="btn btn--white btn--icon js-change-profile" data-profile="add-profile-company" data-tab-index="3">
+				{{ mixin.icon('cs-tower', 'btn__icon') }}
+				Компания
+			</button>
+		</div>
+	</div>
+</div>
+<!-- end register -->
+
+<!-- begin register -->
 <div class="modal-window modal-window--mobile register" id="register">
 	<div class="modal-window__header">
 		<h4 class="modal-window__title">Регистрация</h4>

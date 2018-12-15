@@ -17,26 +17,38 @@
 	//cart__inner
 	&__inner
 		margin-bottom: 60px
-		padding: 30px
-		@extend %box
 		+flex
+		align-items: flex-start
+
 		+r(1024)
 			flex-wrap: wrap
 			border: 0
 
 	//cart__left
 	&__left
-		width: calc(100% - 300px)
+		width: calc(100% - 350px)
 		margin-right: $gutter
+		@extend %box
+		overflow: hidden
 
 		+r(1024)
 			width: 100%
 			margin-bottom: $gutter
 
+		.product-item
+			padding: 30px 0 !important
+			&__wrap
+				padding: 0 30px;
+			&__desc
+				justify-content: space-between
+			&__price
+				margin-left: 0 !important
+
 	//cart__right
 	&__right
-		width: 300px
+		width: 350px
 		margin-left: auto
+
 		+r(1024)
 			width: 100%
 			border: 0
@@ -44,14 +56,27 @@
 			justify-content: center
 			align-items: center
 
+		.list
+			margin-bottom: 30px
+
+		.button-box
+			.btn-accent
+				width: 100%
+
+			.input-group
+				margin-bottom: 20px
+
+
 	//cart__items
 	&__items
 		+flexColumn
 
 	//cart__sum
 	&__sum
-		width: 300px
-		padding: 5px 25px 11px
+		width: 100%
+		@extend %box
+		overflow: hidden
+		padding: 40px 30px
 		+r(1024)
 			width: 100%
 			text-align: center
