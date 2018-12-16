@@ -76,14 +76,31 @@
 	padding: 50px 70px
 	display: flex
 	justify-content: center
+
+	+r(768)
+		max-width: 414px
+
 	&__title
 		margin-bottom: 40px
 		font-size: 18px
 
 	.button-box
+		+r(768)
+			flex-direction: column
+
 		.btn
-			min-width: 180px
-			padding: 14px 25px
+			min-width: 200px
+			padding: 20px 35px
 			outline: none
+			box-shadow: $bxs-box
+
+
+			&:hover
+				box-shadow: 0 5px 25px rgba(0,0,0,.15)
+
 			& + .btn
 				margin-left: 30px
+
+				+r(768)
+					margin-left: 0
+					margin-top: 20px

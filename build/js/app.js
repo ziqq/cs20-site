@@ -10,18 +10,30 @@ var Base = {
 	init: function init() {
 		this.scrollBar();
 		this.select();
+		this.inputMask();
 		this.popups();
 		this.setHeight();
 		this.plusMinus();
 		this.map();
 		this.upsateResize();
+		this.goTop();
+
+		$('body').removeClass('loading');
 
 		//First Screen Padding-Top
 		$('.js-firstscreen').css('padding-top', $('.header').outerHeight(true));
+
+		//Init tabs
+		$('.js-tabs').tabs();
+
+		//Stop drag
+		$('img').on('dragstart', function (event) {
+			event.preventDefault();
+		});
 	},
 	scrollBar: function scrollBar() {
 		var scrollBar = $('.js-scroll');
-		if (scrollBar.length) {
+		if (scrollBar.length && $(window).width() > 768) {
 			scrollBar.niceScroll({
 				cursorcolor: '#c4c4c4',
 				// horizrailenabled: false,
@@ -37,28 +49,6 @@ var Base = {
 			});
 		}
 	},
-	// select: function() {
-	// 	let $select = $('.js-select');
-
-	// 	if ($(window).width() > 768) {
-	// 		$select.each(function() {
-	// 			let $parent = $(this).parent();
-
-	// 			if ($(this).hasClass('no-search')) {
-	// 				$(this).select2({
-	// 					dropdownParent: $parent,
-	// 					minimumResultsForSearch: -1
-	// 				});
-	// 			} else {
-	// 				$(this).select2({
-	// 					dropdownParent: $parent
-	// 				});
-	// 			}
-	// 		});
-	// 	} else {
-	// 		$select.wrap('<label class="cs-select">');
-	// 	}
-	// },
 	setHeight: function setHeight() {
 		//Product title equalheight
 		_heightses($('.js-product-title-equalheight'));
@@ -83,6 +73,15 @@ var Base = {
 			$input.change();
 			return false;
 		});
+	},
+	inputMask: function inputMask() {
+		//Masked inputmask https://github.com/RobinHerbots/Inputmask
+		if ($('.js-phone-mask').length > 0) {
+			$('.js-phone-mask').inputmask({
+				mask: '+7 (999) 999-99-99',
+				showMaskOnHover: false
+			});
+		}
 	},
 	popups: function popups() {
 		//Modal FancyBox 3 https://fancyapps.com/fancybox/3/
@@ -109,20 +108,6 @@ var Base = {
 			}, 100);
 		});
 	},
-	// select: function() {
-	// 	let $select = $('.js-select');
-	// 	$select.each(function() {
-	// 		let placeholder = $(this).attr('placeholder');
-
-	// 		$(this).selectize({
-	// 			create: true,
-	// 			sortField: 'text',
-	// 			maxItems: 1,
-	// 			singleOverride: true,
-	// 			placeholder: placeholder
-	// 		});
-	// 	});
-	// },
 	select: function select() {
 		var $select = $('.js-select');
 
@@ -188,16 +173,35 @@ var Base = {
 		$(window).resize(function () {
 			Base.setHeight();
 		});
+	},
+	goTop: function goTop() {
+		//Click event to scroll to top
+		$('.js-go-top').on('click', function (e) {
+			e.preventDefault();
+			$('html, body').animate({ scrollTop: 0 }, 800);
+		});
+
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > $(this).height()) {
+				$('.js-go-top').addClass('is-visible');
+			} else {
+				$('.js-go-top').removeClass('is-visible');
+			}
+		});
+	},
+	goTo: function goTo() {
+		//Click event to scroll to section whith id like href
+		$('.js-goto').click(function () {
+			var elementClick = $(this).attr('href');
+			var destination = $(elementClick).offset().top;
+			$('html, body').animate({ scrollTop: destination - 60 + 'px' }, 300);
+			return false;
+		});
 	}
 };
 
 $(function () {
 	Base.init();
-
-	var $window = $(window);
-	var $body = $('body');
-
-	$body.addClass('is-loading');
 
 	function textOverflow(s) {
 		$('.js-text-overflow').each(function () {
@@ -206,7 +210,7 @@ $(function () {
 			var sizeNow = void 0;
 
 			if (media) {
-				if ($window.width() > 480 && $window.width() < 1200) {
+				if ($(window).width() > 480 && $(window).width() < 1200) {
 					sizeNow = size;
 				} else {
 					sizeNow = 'auto';
@@ -224,7 +228,7 @@ $(function () {
 	}
 	textOverflow();
 
-	$window.resize(function () {
+	$(window).resize(function () {
 		textOverflow();
 	});
 
@@ -315,99 +319,26 @@ $(function () {
 		});
 	})();
 
-	// const Select = (function() {
-	// 	let select = {};
-	// 	let $select = $('.js-c-select');
-	// 	let $overlay = $('.js-overlay');
-	// 	let overlayActiveClass = '.overlay--select';
-	// 	let activeClass = 'is-active';
-	// 	let click = true;
-	// 	let open = false;
-	// 	let selected = false;
-	// 	let $toggle, $val, $dropdown, $item, $btnReset, title;
+	(function () {
+		$('.js-select--box').each(function () {
+			var $selectCountry = $(this).find('.js-select--country');
+			var $selectRegion = $(this).find('.js-select--region');
+			var $selectCity = $(this).find('.js-select--city');
 
-	// 	select.init = function() {
-	// 		this.events();
-	// 	};
+			$selectCountry.on('select2:select', function () {
+				_enabled($selectRegion);
+			});
+			$selectRegion.on('select2:select', function () {
+				_enabled($selectCity);
+			});
 
-	// 	select.events = function() {
-	// 		$select.on('click', function() {
-	// 			$toggle = $(this).find('.c-select__toggle');
-	// 			$val = $(this).find('.c-select__val');
-	// 			$dropdown = $(this).find('.c-select__dropdown');
-	// 			$item = $(this).find('.c-select__item');
-	// 			let _this = $(this);
+			function _enabled(el) {
+				el.removeAttr('disabled');
+			}
+		});
 
-	// 			if (click) {
-	// 				title = $val.text();
-	// 				click = false;
-	// 			}
-
-	// 			if (!open) {
-	// 				select._open($(this));
-	// 			} else {
-	// 				select._close();
-	// 				if (!$item.hasClass('is-checked')) {
-	// 					$toggle.removeClass(activeClass);
-	// 				} else {
-	// 					$toggle.on('click', function(e) {
-	// 						select._toggle();
-
-	// 						e.stopPropagation();
-	// 					});
-	// 				}
-	// 			}
-
-	// 			$item.on('click', function(e) {
-	// 				let val = $(this).text();
-
-	// 				$val.text(val);
-
-	// 				$item.removeClass('is-checked');
-	// 				$(this).addClass('is-checked');
-
-	// 				e.stopPropagation();
-	// 			});
-
-	// 			$toggle.on('click', function() {
-	// 				$val.text(title);
-	// 			});
-	// 		});
-
-	// 		$(document).on('click', overlayActiveClass, function() {
-	// 			select._close();
-	// 			if (!$item.hasClass('is-checked')) {
-	// 				select._toggle();
-	// 			}
-	// 		});
-	// 	};
-
-	// 	select.changeValue = function() {
-	// 		console.log('---', 'YAAPPPP');
-	// 	};
-
-	// 	select._toggle = function() {
-	// 		$item.removeClass('is-checked');
-	// 		$toggle.removeClass(activeClass);
-	// 		select._close();
-	// 	};
-
-	// 	select._open = function(el) {
-	// 		$select.removeClass(activeClass);
-	// 		el.addClass(activeClass);
-	// 		$toggle.addClass(activeClass);
-	// 		$overlay.addClass(activeClass).addClass('overlay--select');
-	// 		open = true;
-	// 	};
-
-	// 	select._close = function() {
-	// 		$select.removeClass(activeClass);
-	// 		$overlay.removeClass(activeClass).removeClass('overlay--select');
-	// 		open = false;
-	// 	};
-
-	// 	return select;
-	// })();
+		$('.js-select--country, .js-select--region, .js-select--city').select2();
+	})();
 
 	(function () {
 		var $html = $('html');
@@ -722,15 +653,27 @@ $(function () {
 	}
 
 	//cs checkbox
-	$(document).on('click', '.js-cs-checkbox', function () {
+	$('.js-cs-checkbox').on('click', function () {
 		var _this = $(this);
 		var input = _this.find('input');
+		var $leftTitle = $(this).prev('.cs-checkbox__title');
+		var $rightTitle = $(this).next('.cs-checkbox__title');
+		var $notIpItem = $('.js-not-ip');
+		var $input = $('.js-checkbox--box').find('.pedit__field');
+		var $item = $('.js-checkbox--box').find('.pedit__item');
+
 		if (input.is(':checked')) {
 			_this.removeClass('is-checked');
 			input.prop('checked', false);
+			$leftTitle.addClass('is-checked');
+			$rightTitle.removeClass('is-checked');
+			$notIpItem.show();
 		} else {
 			_this.addClass('is-checked');
 			input.prop('checked', true);
+			$rightTitle.addClass('is-checked');
+			$leftTitle.removeClass('is-checked');
+			$notIpItem.hide();
 		}
 	});
 
@@ -761,8 +704,6 @@ $(function () {
 	// 		.css('padding-top', $('.header').outerHeight(true));
 	// }
 	// contentPadding();
-
-	$('.js-tabs').tabs();
 
 	//Mobile menu subnav toggle
 	// $('.js-mobile-nav-sub--open').on('click', function() {
@@ -908,40 +849,6 @@ $(function () {
 	// 		e.stopPropagation();
 	// 	});
 	// }
-
-	//Masked inputmask https://github.com/RobinHerbots/Inputmask
-	if ($('.js-phone-mask').length > 0) {
-		$('.js-phone-mask').inputmask({
-			mask: '+7 (999) 999-99-99',
-			showMaskOnHover: false
-		});
-	}
-
-	//Click event to scroll to top
-	$('.js-go-top').on('click', function (e) {
-		e.preventDefault();
-		$('html, body').animate({ scrollTop: 0 }, 800);
-	});
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > $(this).height()) {
-			$('.js-go-top').addClass('is-visible');
-		} else {
-			$('.js-go-top').removeClass('is-visible');
-		}
-	});
-
-	//Click event to scroll to section whith id like href
-	$('.js-goto').click(function () {
-		var elementClick = $(this).attr('href');
-		var destination = $(elementClick).offset().top;
-		$('html, body').animate({ scrollTop: destination - 60 + 'px' }, 300);
-		return false;
-	});
-
-	//Stop drag
-	$('img').on('dragstart', function (event) {
-		event.preventDefault();
-	});
 
 	// $('.js-garanty-item--more').on('click', function() {
 	// 	$(this)
@@ -1176,9 +1083,12 @@ $(function () {
 (function () {
 	var lk = {
 		init: function init() {
-			this.tabs();
 			this.stickyBlock();
-			this.changePfofile();
+			this.orderSetHeight();
+
+			if ($(window).width() <= 480) {
+				this.toggleContent();
+			}
 		},
 		stickyBlock: function stickyBlock() {
 			//Sticky Block
@@ -1187,32 +1097,80 @@ $(function () {
 					topSpacing: 10,
 					bottomSpacing: 10,
 					containerSelector: '.lk__inner',
-					innerWrapperSelector: '.lk-nav__list'
+					innerWrapperSelector: '.lk-nav'
 				});
 			}
 		},
-		changePfofile: function changePfofile() {
-			$('.js-change-profile').on('click', function () {
-				var profile = $(this).attr('data-profile');
-				var tab = $('a[data-src="#new-profile"]');
-				var index = $(this).data('tab-index');
+		toggleContent: function toggleContent() {
+			var $wrapper = $('.content-wrapper.lk');
+			var $btnClose = $('.js-lk-content--close');
+			var $lkContent = $('.js-lk-content');
+			var $lkBox = $('.js-lk-box');
+			var boxHeight = $lkBox.outerHeight(true);
+			var $lkNav = $('.js-lk-nav');
+			var $lkNavLink = $lkNav.find('.lk-nav__link');
+			var timeOut = 200;
+			var offset = 20;
+			var thisPage = true;
 
-				// tab.attr('href', '#' + profile)
-				// 	.parent()
-				// 	.trigger('click');
+			$wrapper.addClass('content-is-visible').css('min-height', boxHeight);
+			setTimeout(function () {
+				$lkContent.addClass('has-animation');
+			}, timeOut);
 
-				// $('.tab__content').removeAttr('style');
-				// $('#' + profile).css('display', 'block');
+			$lkNavLink.each(function () {
+				if ($lkBox.data('page') === $(this).data('page-target')) {
+					$(this).on('click', function (e) {
+						$lkContent.addClass('has-animation');
 
-				$('.js-lk-tabs').tabs('option', 'active', index);
+						setTimeout(function () {
+							$wrapper.addClass('content-is-visible').css('min-height', boxHeight);
+						}, timeOut);
 
-				$('a[href=#' + profile + ']').parent().removeClass('is-hidden');
+						e.preventDefault();
+					});
+				}
+			});
 
-				$.fancybox.close();
+			$btnClose.on('click', function () {
+				$wrapper.removeClass('content-is-visible').removeAttr('style');
+
+				setTimeout(function () {
+					$lkContent.removeClass('has-animation');
+				}, timeOut);
 			});
 		},
-		tabs: function tabs() {
-			$('.js-lk-tabs').tabs();
+		orderSetHeight: function orderSetHeight() {
+			var $wrapper = $('.content-wrapper.lk');
+			var wrapperHeight = void 0;
+
+			$('.js-order-item').each(function () {
+				var $title = $(this).find('.cs-accordeon__title');
+				var $content = $(this).find('.cs-accordeon__content');
+				var height = void 0;
+
+				$(this).on('click', function () {
+					var _this2 = this;
+
+					if ($(this).hasClass('is-open')) {
+						wrapperHeight = $wrapper.outerHeight(true);
+						console.log('--- wrapperHeight', wrapperHeight);
+						setTimeout(function () {
+							height = $(_this2).outerHeight(true);
+							console.log('--- height', height);
+							$wrapper.animate({ 'min-height': wrapperHeight + height }, 300);
+						}, 300);
+					} else {
+						wrapperHeight = $wrapper.outerHeight(true);
+						height = $(this).outerHeight(true);
+						console.log('--- wrapperHeight', wrapperHeight);
+						console.log('--- height', height);
+						setTimeout(function () {
+							$wrapper.animate({ 'min-height': wrapperHeight - height }, 300);
+						}, 300);
+					}
+				});
+			});
 		}
 	};
 	lk.init();

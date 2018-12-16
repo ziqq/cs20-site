@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Персональные скидки | Интернет-магазин износостойких автокомпонентов с доставкой по РФ</title>
+    <title>Личный кабинет</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -23,7 +23,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="img/general/favicon/apple-touch-icon-152x152.png">
     <link rel="stylesheet" media="all" href="css/app.css">
   </head>
-  <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
+  <body class="loading" itemscope="itemscope" itemtype="http://schema.org/WebPage">
     <div class="page-wrapper is-auth ">
       <!-- begin mobile-nave -->
       <nav class="mobile-nav js-mobile-nav md-only">
@@ -373,73 +373,50 @@
         </div>
       </section>
       <!-- end firstscreen -->
-      <!-- begin home -->
-      <div class="content-wrapper">
-        <!-- begin breadcrumbs -->
-        <div class="container">
-          <div class="breadcrumbs__wrap">
-            <div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
-              <ul class="breadcrumbs__list">
-                <li class="breadcrumbs__item">
-                  <a href="#" class="breadcrumbs__link" itemprop="url">
-                    <span class="breadcrumbs__title" itemprop="title">Главная</span>
-                  </a>
-                </li>
-                <li class="breadcrumbs__item">
-                  <a href="#" class="breadcrumbs__link" itemprop="url">
-                    <span class="breadcrumbs__title" itemprop="title">Личный кабинет</span>
-                  </a>
-                </li>
-                <li class="breadcrumbs__item">
-                  <span class="breadcrumbs__title" itemprop="title">Персональные скидки</span>
-                </li>
-              </ul>
-            </div>
-            <a href="#" class="button-link button-link--exit"><span>Выход</span></a>
-          </div>
-        </div>
-        <!-- end breadcrumbs -->
-        <!-- begin lk -->
-        <div class="lk lk-sale">
-          <div class="container">
-            <h1 class="h1 page-title" itemprop="headline">Персональные скидки</h1>
-            <div class="lk__top-line">
-              <div class="lk-user">
-                <div class="lk-user__login">VeronikaSam</div>
-                <div class="lk-user__name">Самсонова Вероника Павловна</div>
-              </div>
-            </div>
-            <div class="lk__inner">
-              <!-- begin lk__content -->
-              <div class="lk__content">
-                <h4 class="h4 lk-sale__title">Персональная скидка 5%</h4>
-                <p>Вы приобрели товары на сумму 269541 рублей (в том числе сумма неоплаченных заказов составляет 10254 рублей)</p>
-                <p>Сейчас Ваша персональная скидка составляет 5%.Для получения скидки 10% вам необходимо закупить товар не сумму не менее 230439 рублей</p>
-                <div class="lk-sale__inner">
-                  <div class="lk-sale__text">
-                    <h4 class="h4 lk-sale__title">Условия предоставления скидок</h4>
-                    <p>Здесь должен быть какой-то текст, например такой. Персональная скидка - это скидка, размер которой индивидуален для каждого покупателя. Максимальная скидка - скидка, которую компания может предоставить клиенту (при данном объеме продаж валовая прибыль от сделки со скидкой будет равна валовой прибыли от сделки без скидкой, с вилу меньшего объема закупаемой продукции). Определение макмимальной скидки - это ответ на вопрос при какой скидке увеличеный объем продажи товаров (в силу более выгодной цены - объем продажи возрастает) принесет точно такую же (не меньшую) прибыль, чем продажа пусть и меньшей партии товара но без скидки.</p>
-                  </div>
-                  <div class="lk-sale__data">
-                    <ul class="lk-sale__list">
-                      <li>Объем покупки, &nbsp;<i class="fa fa-rub"></i> <span>Скидка</span></li>
-                      <li>до 200000 <span>0%</span></li>
-                      <li>200000 - 500000 <span>5%</span></li>
-                      <li>500000 - 800000 <span>10%</span></li>
-                      <li>800000 - 1000000 <span>15%</span></li>
-                      <li>1000000 - 1500000 <span>20%</span></li>
-                      <li>более 1500000 <span>25%</span></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!-- end lk__content -->
-            </div>
-          </div>
-        </div>
-        <!-- end ;l -->
+      <!-- begin lk-order -->
+      <div class="lk__top-line">
+        <div class="lk__title">Персональная скидка</div>
       </div>
-      <!-- end home -->
+      <div class="lk__box js-lk-box" data-page="sale">
+        <div class="lk__box_inner">
+          <ul class="list">
+            <li class="list__item lk__box_title">
+              <span> Персональная скидка*</span>
+              <span class="color-text--accent">5%</span></li>
+            <li class="list__item">
+              <span> Товаров приобретено на сумму</span>
+              <span class="color-text--accent">269 541 руб.</span></li>
+            <li class="list__item">
+              <span> До скидки <strong>10%</strong> осталось</span>
+              <span class="color-text--accent">230 439 руб.</span></li>
+          </ul>
+          <div class="lk__box_title">Условия предоставления скидок</div>
+          <ul class="list">
+            <li class="list__item list__item--medium color-text--gray-light">
+              <span>Объем покупки, руб </span>
+              <span>Скидка</span></li>
+            <li class="list__item list__item--medium">
+              <span>до 200 000 </span>
+              <span>0%</span></li>
+            <li class="list__item list__item--medium">
+              <span>200 000 - 500 000 </span>
+              <span>5%</span></li>
+            <li class="list__item list__item--medium">
+              <span>500 000 - 800 000 </span>
+              <span>10%</span></li>
+            <li class="list__item list__item--medium">
+              <span>800 000 - 1 000 000 </span>
+              <span>15%</span></li>
+            <li class="list__item list__item--medium">
+              <span>1 000 000 - 1 500 000 </span>
+              <span>20%</span></li>
+            <li class="list__item list__item--medium">
+              <span>более 1 500 000 </span>
+              <span>25%</span></li>
+          </ul>
+          <p class="lk__box_desc">*Персональная скидка - это скидка, размер которой индивидуален для каждого покупателя. Максимальная скидка - скидка, которую компания может предоставить клиенту (при данном объеме продаж валовая прибыль от сделки со скидкой будет равна валовой прибыли от сделки без скидкой, с вилу меньшего объема закупаемой продукции). Определение макмимальной скидки - это ответ на вопрос при какой скидке увеличеный объем продажи товаров (в силу более выгодной цены - объем продажи возрастает) принесет точно такую же (не меньшую) прибыль, чем продажа пусть и меньшей партии товара но без скидки. </p>
+        </div>
+      </div>
       <!-- begin footer -->
       <footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
         <div class="container">
@@ -551,7 +528,7 @@
     </div>
     <div class="overlay js-overlay"></div>
     <div class="preloader js-preloader"></div>
-    <div class="go-top js-go-top is-hidden">На верх</div>
+    <div class="go-top js-go-top"><i class="fal fa-triangle"></i></div>
     <!-- begin windows -->
     <div class="windows">
       <!-- begin register -->
@@ -559,14 +536,14 @@
         <div class="modal-window__body">
           <div class="new-profile__title">Добавление нового профиля</div>
           <div class="button-box button-box--center">
-            <button class="btn btn-accent btn--icon js-change-profile" data-profile="add-profile-user" data-tab-index="2">
+            <a href="lk-person.html" class="btn btn-accent btn--icon">
               <svg class="icon icon-cs-user btn__icon">
                 <use xlink:href="img/sprite.svg#cs-user"></use>
-              </svg> Частное лицо </button>
-            <button class="btn btn--white btn--icon js-change-profile" data-profile="add-profile-company" data-tab-index="3">
+              </svg> Частное лицо </a>
+            <a href="lk-company.html" class="btn btn--white btn--icon">
               <svg class="icon icon-cs-tower btn__icon">
                 <use xlink:href="img/sprite.svg#cs-tower"></use>
-              </svg> Компания </button>
+              </svg> Компания </a>
           </div>
         </div>
       </div>

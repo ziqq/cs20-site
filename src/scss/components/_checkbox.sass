@@ -69,10 +69,17 @@
 
 	//cs-checkbox__title
 	&__title
+		font-family: $f
 		font-size: 15px
 		color: $color-text--light
 		+r(768)
 			padding: 3px 0
+
+		&.is-checked
+			color: $color-text
+
+		&--left, &--right
+			font-family: $f-medium !important
 
 	//cs-checkbox__box
 	&__box
@@ -285,36 +292,41 @@
 				font-size: 13px
 				line-height: 24px
 
+	//cs-checkbox--reverse
+	&--reverse
+		padding-left: 0
+		padding-right: 27px
+		.cs-checkbox
+			&__box
+				margin-right: 0
+				margin-left: 5px
+				left: auto
+				right: 0
+
 	//cs-checkbox--slide
 	&--slide
+		padding-left: 0
 		position: relative
-		left: 3px
 		& + .cs-checkbox--small
 			border-left-color: transparent
 
 		&:hover
 			.cs-checkbox__box
-				border: 0
+				border: 1px solid $color-border
 
 		&.is-checked
 			.cs-checkbox__box
-				background-color: lighten($color-accent, 17%)
-				border-color: transparent
 				&::after
 					left: auto
-					right: -3px
-					background-color: $color-accent
+					right: 2px
 				&::before
 					display: none
 
 		input
 			&:checked + .cs-checkbox__box
-				background-color: lighten($color-accent, 17%)
-				border-color: transparent
 				&::after
 					left: auto
-					right: -3px
-					background-color: $color-accent
+					right: 2px
 				&::before
 					display: none
 
@@ -324,20 +336,33 @@
 				line-height: 24px
 			&__box
 				margin-right: 0
-				width: 45px
-				height: 16px
-				background-color: $gray--light
+				width: 50px
+				height: 26px
 				border: 0
 				border-radius: 35px
-				top: 4px
+				border: 1px solid $gray--dark
+				position: relative
+				top: auto
+				left: auto
+				transform: none
 				&::after
 					content: ''
 					display: block
-					width: 23px
-					height: 23px
+					width: 20px
+					height: 20px
 					border-radius: 50%
+					background-color: $gray--dark
 					+vy
-					left: -3px
+					left: 2px
 				&::before
 					display: none
-//cs-checkbox
+//cs-checkbox end
+
+ //.cs-checkbox-slide
+.cs-checkbox-slide
+	+flexCenter
+
+	.cs-checkbox
+		&__box
+			margin: 7px 17px 0 15px
+ //.cs-checkbox-slide end

@@ -55,17 +55,25 @@ PageList:
   desc : Регистрация
 
   #LK
-- file: lk-user.html
+- file: lk-settings.html
   ready: 50
-  desc : личные данные
+  desc : Настройки аккаунта
+
+- file: lk-person.html
+  ready: 50
+  desc : Добавление профиля частного лица
+
+- file: lk-company.html
+  ready: 50
+  desc : Добавление профиля юридического лица
 
 - file: lk-order.html
   ready: 50
-  desc : мои заказы
+  desc : Заказы
 
 - file: lk-sale.html
   ready: 50
-  desc : персональные скидки
+  desc : Персональные скидки
 
   #news
 - file: news.html

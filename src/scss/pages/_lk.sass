@@ -1,11 +1,70 @@
+//.lk
 .lk
 	padding-bottom: $section-indent
 	background-color: $color-bg
+	position: relative
+	overflow: hidden
+
+	+r(480)
+		padding: 20px 0
+
+	&.content-is-visible
+		min-height: 100vh
+		.lk
+			&__content
+				+trfY(0)
 
 	//.lk__box
 	&__box
 		padding: 40px
 		@extend %box
+		+nosel
+
+		+r(768)
+			padding: 30px 20px
+
+		+r(480)
+			padding: 30px 10px
+			border-radius: 0
+			box-shadow: none
+
+		&_inner
+			+flexColumn
+
+		&_title
+			margin-bottom: 30px
+			font-size: 15px
+			font-family: $f-medium
+			font-weight: 500
+			+r(480)
+				font-size: 17px
+
+		&_desc
+			margin-top: auto
+			font-size: 13px
+			line-height: 1.4
+			color: $color-text--light
+
+		.list
+			margin-bottom: 60px
+
+			&__item
+				font-size: 15px
+				+flexCenter
+
+				span
+
+					&:first-child
+						min-width: 300px
+
+					&:last-child
+						min-width: 100px
+						text-align: center
+
+		.pedit
+			.button-box
+				+r(768)
+					flex-direction: column
 
 		.button-box
 			p
@@ -14,6 +73,10 @@
 				color: $color-text--light
 				line-height: 1.3
 				flex-grow: 1
+
+				+r(768)
+					margin-bottom: 20px
+
 				strong
 					font-family: $f-medium
 					font-weight: 500
@@ -21,61 +84,147 @@
 			button
 				flex-shrink: 0
 
+	//.lk__order
+	&__order
+		+r(480)
+			height: 100%
+			padding: 30px 10px
+			background-color: $color-bg
+			.lk
+				&__top-line
+					margin-bottom: 10px
+					+flexCenter
+
+					.sorting__count
+						margin-left: auto
+						margin-right: 25px
+
+						.cs-select
+							&::before
+								right: 0
+
+				&__box_title
+					margin-bottom: 0
+					margin-top: -2px
+
 	//.lk__top-line
 	&__top-line
-		margin-bottom: 10px
+		margin-bottom: 20px
 
-		.sorting__count
-			display: inline-flex
+		+r(768)
+			margin-bottom: 10px
 
-			.select2-container
-				min-width: auto
+		+r(480)
+			display: none
 
-			.select2-dropdown
-				&::before
-					right: auto
-					left: 30px
+		.sorting
+			&__count
+				display: inline-flex
 
-			.select2-container--default .select2-selection--single .select2-selection__rendered
-				padding-left: 0
-				text-align: left
+				.select2-container
+					min-width: auto
+
+				.select2-dropdown
+					&::before
+						right: auto
+						left: 30px
+
+				.select2-container--default .select2-selection--single .select2-selection__rendered
+					padding-left: 0
+					text-align: left
+
+			&__select
+				padding: 0 10px 0 0
+				border: 0
+				background-color: transparent
 
 	//.lk__inner
 	&__inner
 		display: flex
 		align-items: flex-start
 
+		+r(480)
+			flex-wrap: wrap
+
 	//.lk__nav
 	&__nav
+		+r(480)
+			width: 100%
 
 	//.lk__content
 	&__content
-		width: calc(100% - 270px - 30px)
+		width: calc(100% - 250px - 30px)
 		margin-left: auto
 		padding: 0
 
-	//.lk__form
-	&__form
-//.lk
+		+r(768)
+			width: calc(100% - 250px - 15px)
+
+		+r(480)
+			width: 100%
+			margin-left: 0
+			background-color: #fff
+			border-radius: 0
+			+coverdiv
+			+trfY(100vh)
+
+		&.has-animation
+			// overflow-y: auto
+			+tr
+
+		&_close
+			width: 20px
+			height: 20px
+			position: absolute
+			top: 10px
+			right: 10px
+			fill: $color-text--light
+
+	//.lk .form
+	.form
+		+r(480)
+			display: flex
+			flex-direction: column
+//.lk end
 
 //.lk-nav
 .lk-nav
+	display: block
+	width: 250px
+	margin-right: 30px
+	padding: 20px 0
+	@extend %box
+
+	+r(768)
+		margin-right: 15px
+
+	+r(480)
+		width: 100%
+		padding: 0
+		margin-right: 0
+		box-shadow: none
+		background-color: transparent
+
+	& + &
+		padding-top: 20px
+		border-top: 1px solid $color-border--light
 
 	//.lk-nav__list
 	&__list
-		display: block
-		width: 270px
-		margin-right: 30px
-		padding: 20px 0
-		@extend %box
+		&:first-child
+			+r(480)
+				padding: 20px 0
+				background: #fff
+				border-radius: $border-radius
+				box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.08)
+				border-radius: $border-radius
+				overflow: hidden
 
-		& + &
-			padding-top: 20px
-			border-top: 1px solid $color-border--light
+				& + .lk-nav__list
+					margin-top: 10px
 
 	//.lk-nav__item
 	&__item
-		padding: 8px 30px 10px
 		background-color: #fff
 		border: 0
 		border-radius: 0
@@ -91,15 +240,17 @@
 			left: 0
 			background-image: $gradientTwo
 
-		&:hover, &.is-active, &.ui-tabs-active
-			background-color: $color-bg--lighten
-			.lk-nav__link
-				color: $color-text--light
-				border: 0
+		+r-min(xs)
+			&:hover, &.is-active, &.ui-tabs-active
+				background-color: $color-bg--lighten
+				.lk-nav__link
+					color: $color-text--light
+					border: 0
 
-		&.is-active, &.ui-tabs-active
-			&::before
-				display: block
+			&.is-active, &.ui-tabs-active
+				&::before
+					display: block
+
 
 		& + &
 			margin-top: 8px
@@ -108,15 +259,43 @@
 			.lk-nav__icon
 				color: $color-accent
 
-		&--devider
-			display: block
-			height: 3px
-			margin: 10px 30px 7px !important
-			padding: 0
-			border-bottom: 1px solid $color-border--lighten
+		//.lk-nav__item--alone
+		&--alone
+			+r(480)
+				padding: 10px 0
+				background: #fff
+				border-radius: $border-radius
+				box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.08)
+				border-radius: $border-radius
+				overflow: hidden
+				position: relative
+				&::after
+					content: '\f105'
+					+fa('light')
+					font-size: 18px
+					color: $color-text--light
+					+centre('y')
+					right: 33px
 
-			&:hover, &.is-active, &.ui-tabs-active
-				background-color: transparent
+		//.lk-nav__item--alone
+		&--exit
+			+r(480)
+				&::after
+					content: '\f08b'
+					right: 25px
+
+		&--devider
+			+r-min(xs)
+				margin-top: 20px !important
+				position: relative
+				&::after
+					content: ''
+					display: block
+					height: 1px
+					width: 78%
+					background-color: $color-border--lighten
+					+centre('x')
+					top: -10px
 
 		a
 			border: 0
@@ -124,10 +303,14 @@
 	//.lk-nav__link
 	&__link
 		width: 100%
+		padding: 8px 30px 10px
 		color: $color-text--light
 		border: 0
 		outline: none
 		+flexCenter
+
+		&:hover, &:focus
+			color: $color-text--light
 
 	//.lk-nav__text
 	&__text
@@ -143,7 +326,7 @@
 	//.lk-nav__icon
 	&__icon
 		color: #bdbdbd
-
+//.lk-nav end
 
 .lk-user
 	margin-bottom: 30px
@@ -161,12 +344,6 @@
 		font-size: 16px
 //.lk-user
 
-.lk-order
-	.lk-user
-		+r(480)
-			display: none
-//.lk-order
-
 //order-item
 .order-item
 	margin-bottom: 10px
@@ -174,12 +351,21 @@
 	background-color: #fff
 	border-radius: $border-radius
 	box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.08)
+
+	+r(1024)
+		padding: 15px 50px 15px 30px
+
+	+r(768)
+		padding: 15px 35px 15px 20px
+
 	+r(480)
-		border-right-color: transparent
-		border-left-color: transparent
-		margin: 0 -10px
+		padding: 0 30px 0 5px
+		border-left: 0
+		border-right: 0
+		margin: 0
+
 		& + .order-item
-			border-top-color: transparent
+			margin-top: 10px
 
 	&.is-open
 		.order-item__title
@@ -192,9 +378,24 @@
 				color: $color-success
 
 	&.is-abort
-		.order-item__status
-			span
-				color: $color-error
+		.order-item
+			&__status
+				span
+					color: $color-error
+
+			//.order-item.is-abort .order-item__info
+			&__info
+				//.order-item.is-abort .order-item__info ul
+				ul
+					display: block
+					columns: auto 2
+					+r(768)
+						columns: auto
+				//.order-item.is-abort .order-item__info li
+				li
+					margin-top: 5px
+					+r(768)
+						margin-top: 10px
 
 	//order-item__title
 	&__title
@@ -225,8 +426,11 @@
 				font-weight: 500
 
 			&.order-item__status
+				margin-left: 15px
 				font-size: 14px
 				flex-shrink: 0
+				+r(480)
+					margin-left: 0
 				span
 					font-family: $f
 					font-size: 14px
@@ -243,15 +447,18 @@
 
 	//order-item__content
 	&__content
-		max-height: 400px
 		padding: 20px 0
 		+r(480)
 			padding: 0 10px 25px
 
 	//order-item__list
 	&__list
+		max-height: 400px
 		margin-bottom: 30px
 		+counter(li)
+		+r(768)
+			max-height: 380px
+			overflow-y: auto
 
 	//order-item__product
 	&__product
@@ -286,14 +493,13 @@
 		+r(480)
 			flex-direction: column
 		ul
-			margin-bottom: 30px
-			+flexCenter
-			justify-content: space-between
-			flex: 1
+			display: block
+			columns: auto 2
+			margin-bottom: 40px
 			+r(480)
 				margin-bottom: 20px
 			li
-				margin-bottom: 5px
+				margin-top: 5px
 				font-size: 14px
 				font-family: $f
 				color: $color-text--light
@@ -302,13 +508,37 @@
 					margin-left: auto
 
 				span
-					color: $color-text
+					font-family: $f-medium
 
 		.button-box
 			max-width: 220px
 			width: 100%
 			+r(480)
 				max-width: 100%
+
+	//order-item__name
+	&__name
+		margin-left: auto
+		font-size: 14px
+		color: $color-text--light
+
+	.button-box
+		+r(480)
+			flex-direction: column
+		.btn
+			min-width: auto
+			padding: 10px 15px
+
+			&:not(:first-child)
+				margin-left: auto
+
+		.btn-accent
+			padding: 10px 17px
+
+			+r(480)
+				margin-left: 0
+				& + .btn
+					margin-top: 10px
 
 	.product-item
 		max-width: 100%
@@ -321,12 +551,18 @@
 			transform: none
 			cursor: default
 
+		+r(768)
+			padding: 10px 0 10px 20px
+
 		&__title
+			max-width: 380px
 			margin-bottom: 0
 			font-size: 14px
 			font-family: $f-medium
 			font-weight: 500
 			color: $color-text--light
+			flex-grow: 1
+
 			+r(480)
 				max-width: 100%
 				width: 100%
@@ -337,9 +573,14 @@
 			+flexCenter
 
 		&__counter
-			margin-left: auto
+			margin-left: 30px
 			font-size: 14px
 			color: $color-text--light
+			flex-shrink: 0
+
+			+r(1024)
+				margin-left: 15px
+
 			+r(480)
 				margin-left: 0
 
@@ -348,6 +589,14 @@
 			margin-left: 100px
 			font-size: 14px
 			color: $color-text--light
+			flex-shrink: 0
+
+			+r(1024)
+				margin-left: auto
+
+			+r(768)
+				margin-left: 15px
+
 			+r(480)
 				margin-right: 0
 			.fa
@@ -368,6 +617,9 @@
 
 			& + .product-item__btn
 				margin-left: 30px
+				+r(768)
+					&:not(:first-child)
+						margin-left: auto
 
 			&.btn-accent
 				margin-left: auto

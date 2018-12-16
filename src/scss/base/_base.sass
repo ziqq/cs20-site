@@ -20,9 +20,9 @@ body
 	+smooth-scroll
 	+smooth-font
 
-	&.is-loading
+	&.loading
 		.preloader
-			display: none
+			display: block
 
 header,footer,main,div,section,ul,ol
 	+clr
@@ -32,6 +32,7 @@ b, strong
 
 input, textarea, select
 	outline: none
+
 	+placeholder
 		font-family: $f-light
 		font-size: 14px
@@ -40,6 +41,11 @@ input, textarea, select
 input, select
 	min-height: 40px
 	padding: 8px 30px 8px 15px
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+	-webkit-appearance: none
+	margin: 0
 
 textarea, select
 	width: 100%
@@ -85,7 +91,7 @@ img
 		display: block
 
 .preloader
-	display: block
+	display: none
 	background-color: #fff
 	position: fixed
 	top: 0
@@ -103,9 +109,14 @@ img
 	margin-left: auto
 	margin-right: auto
 	+r(1200)
-		padding: 0 20px
+		padding: 0 10px
 	+r(480)
 		padding: 0 10px
+
+.color-text
+	@each $theme, $color in $button-colors
+		&--#{$theme}
+			color: $color
 
 .text-upercase
 	text-transform: uppercase
@@ -172,6 +183,12 @@ p
 
 .text-center
 	text-align: center
+
+.text-left
+	text-align: left
+
+.text-right
+	text-align: right
 
 .is-hidden
 	display: none !important

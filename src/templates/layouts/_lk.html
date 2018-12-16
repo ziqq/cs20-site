@@ -35,7 +35,27 @@
 	<div class="page-wrapper is-auth {{wrapClass}}">
 		{% include "partials/components/_mobile-menu.html" %}
 		{% include "partials/_header.html" %}
-		{% block content %}{% endblock %}
+		<!-- begin lk -->
+		<div class="content-wrapper lk">
+
+			{% include "../blocks/lk/_breadcrumbs.html" %}
+
+			<div class="container">
+				<!-- begin lk__inner -->
+				<div class="lk__inner">
+
+					{% include "../blocks/lk/_nav.html" %}
+
+					<div class="lk__content js-lk-content">
+						{{ mixin.icon('cs-close', 'lk__content_close js-lk-content--close xs-only') }}
+						{% block content %}{% endblock %}
+					</div>
+
+				</div><!-- end lk__inner -->
+			</div>
+
+		</div>
+		<!-- end lk -->
 		{% include "partials/_footer.html" %}
 	</div>
 

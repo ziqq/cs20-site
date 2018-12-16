@@ -1,0 +1,54 @@
+{% set
+	navLkItems = [
+		{
+			title: 'Petrov_1977',
+			icon: 'fas fa-cog',
+			link: 'lk-settings.html',
+			textDark: true
+		}
+		,{
+			title: 'Частное лицо',
+			icon: 'fas fa-pencil',
+			link: 'lk-person.html'
+		}
+		,{
+			title: 'Компания',
+			class: 'is-active',
+			icon: 'fas fa-pencil',
+			link: 'lk-company.html'
+		}
+		,{
+			title: 'Добавить профиль',
+			icon: 'fas fa-plus-circle',
+			link: '#new-profile',
+			liClass: 'lk-nav__item--add',
+			popup: true
+		}
+		,{
+			title: 'Мои заказы',
+			link: 'lk-order.html',
+			liClass: 'lk-nav__item--alone lk-nav__item--devider'
+		}
+		,{
+			title: 'Пресональные скидки',
+			link: 'lk-nav__item--alone lk-sale.html'
+		}
+	]
+%}
+
+{% set
+	orderItem = [
+		{
+			status: 'оплачен',
+			statusClass: 'is-success'
+		}
+		,{
+			status: 'Частное лицо',
+			statusClass: 'отпрален'
+		}
+		,{
+			status: 'is-abort',
+			statusClass: 'ожидается оплата'
+		}
+	]
+%}

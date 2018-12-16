@@ -23,7 +23,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="img/general/favicon/apple-touch-icon-152x152.png">
     <link rel="stylesheet" media="all" href="css/app.css">
   </head>
-  <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
+  <body class="loading" itemscope="itemscope" itemtype="http://schema.org/WebPage">
     <div class="page-wrapper is-auth ">
       <!-- begin mobile-nave -->
       <nav class="mobile-nav js-mobile-nav md-only">
@@ -631,7 +631,7 @@
     </div>
     <div class="overlay js-overlay"></div>
     <div class="preloader js-preloader"></div>
-    <div class="go-top js-go-top is-hidden">На верх</div>
+    <div class="go-top js-go-top"><i class="fal fa-triangle"></i></div>
     <!-- begin windows -->
     <div class="windows">
       <!-- begin register -->
@@ -639,14 +639,14 @@
         <div class="modal-window__body">
           <div class="new-profile__title">Добавление нового профиля</div>
           <div class="button-box button-box--center">
-            <button class="btn btn-accent btn--icon js-change-profile" data-profile="add-profile-user" data-tab-index="2">
+            <a href="lk-person.html" class="btn btn-accent btn--icon">
               <svg class="icon icon-cs-user btn__icon">
                 <use xlink:href="img/sprite.svg#cs-user"></use>
-              </svg> Частное лицо </button>
-            <button class="btn btn--white btn--icon js-change-profile" data-profile="add-profile-company" data-tab-index="3">
+              </svg> Частное лицо </a>
+            <a href="lk-company.html" class="btn btn--white btn--icon">
               <svg class="icon icon-cs-tower btn__icon">
                 <use xlink:href="img/sprite.svg#cs-tower"></use>
-              </svg> Компания </button>
+              </svg> Компания </a>
           </div>
         </div>
       </div>

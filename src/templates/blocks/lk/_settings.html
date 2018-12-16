@@ -3,10 +3,12 @@
 	<div class="lk__title">Настройки аккаунта</div>
 </div>
 
-<div class="lk__box">
+<div class="lk__box js-lk-box" data-page="settings">
+	<div class="lk__box_title xs-only">Petrov_1977</div>
+
 	<form class="pedit">
 		<div class="row">
-			<div class="col-6">
+			<div class="col-6 col-xs-12">
 				<div class="pedit__item">
 					<div class="pedit__title">Login:<i>*</i></div>
 					<div class="pedit__field">
@@ -15,7 +17,7 @@
 				</div>
 			</div>
 
-			<div class="col-6">
+			<div class="col-6 col-xs-12">
 				<div class="pedit__item">
 					<div class="pedit__title">E-mail:<i>*</i></div>
 					<div class="pedit__field">
@@ -26,7 +28,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col-6">
+			<div class="col-6 col-xs-12">
 				<div class="pedit__item">
 					<div class="pedit__title">Пароль:<i>*</i></div>
 					<div class="pedit__field">
@@ -35,7 +37,7 @@
 				</div>
 			</div>
 
-			<div class="col-6">
+			<div class="col-6 col-xs-12">
 				<div class="pedit__item">
 					<div class="pedit__title">Подтверждение пароля:<i>*</i></div>
 					<div class="pedit__field">
@@ -52,8 +54,8 @@
 			{{ item.checkbox('По e-mail', 'ml-20') }}
 		</div>
 
-		<div class="button-box">
-			<p>Нажимая на кнопку "Сохранить настройки профиля", <br> я даю <strong>согласие на обработку персональных данных</strong></p>
+		<div class="button-box pt-30">
+			<p>Нажимая на кнопку "Сохранить настройки профиля", я даю <strong>согласие на обработку персональных данных</strong></p>
 			<button class="btn btn-accent pedit__btn">Сохранить настройки профиля</button>
 		</div>
 	</form>

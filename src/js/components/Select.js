@@ -73,96 +73,23 @@
 	});
 })();
 
-// const Select = (function() {
-// 	let select = {};
-// 	let $select = $('.js-c-select');
-// 	let $overlay = $('.js-overlay');
-// 	let overlayActiveClass = '.overlay--select';
-// 	let activeClass = 'is-active';
-// 	let click = true;
-// 	let open = false;
-// 	let selected = false;
-// 	let $toggle, $val, $dropdown, $item, $btnReset, title;
+(function() {
+	$('.js-select--box').each(function() {
+		let $selectCountry = $(this).find('.js-select--country');
+		let $selectRegion = $(this).find('.js-select--region');
+		let $selectCity = $(this).find('.js-select--city');
 
-// 	select.init = function() {
-// 		this.events();
-// 	};
+		$selectCountry.on('select2:select', function() {
+			_enabled($selectRegion);
+		});
+		$selectRegion.on('select2:select', function() {
+			_enabled($selectCity);
+		});
 
-// 	select.events = function() {
-// 		$select.on('click', function() {
-// 			$toggle = $(this).find('.c-select__toggle');
-// 			$val = $(this).find('.c-select__val');
-// 			$dropdown = $(this).find('.c-select__dropdown');
-// 			$item = $(this).find('.c-select__item');
-// 			let _this = $(this);
+		function _enabled(el) {
+			el.removeAttr('disabled');
+		}
+	});
 
-// 			if (click) {
-// 				title = $val.text();
-// 				click = false;
-// 			}
-
-// 			if (!open) {
-// 				select._open($(this));
-// 			} else {
-// 				select._close();
-// 				if (!$item.hasClass('is-checked')) {
-// 					$toggle.removeClass(activeClass);
-// 				} else {
-// 					$toggle.on('click', function(e) {
-// 						select._toggle();
-
-// 						e.stopPropagation();
-// 					});
-// 				}
-// 			}
-
-// 			$item.on('click', function(e) {
-// 				let val = $(this).text();
-
-// 				$val.text(val);
-
-// 				$item.removeClass('is-checked');
-// 				$(this).addClass('is-checked');
-
-// 				e.stopPropagation();
-// 			});
-
-// 			$toggle.on('click', function() {
-// 				$val.text(title);
-// 			});
-// 		});
-
-// 		$(document).on('click', overlayActiveClass, function() {
-// 			select._close();
-// 			if (!$item.hasClass('is-checked')) {
-// 				select._toggle();
-// 			}
-// 		});
-// 	};
-
-// 	select.changeValue = function() {
-// 		console.log('---', 'YAAPPPP');
-// 	};
-
-// 	select._toggle = function() {
-// 		$item.removeClass('is-checked');
-// 		$toggle.removeClass(activeClass);
-// 		select._close();
-// 	};
-
-// 	select._open = function(el) {
-// 		$select.removeClass(activeClass);
-// 		el.addClass(activeClass);
-// 		$toggle.addClass(activeClass);
-// 		$overlay.addClass(activeClass).addClass('overlay--select');
-// 		open = true;
-// 	};
-
-// 	select._close = function() {
-// 		$select.removeClass(activeClass);
-// 		$overlay.removeClass(activeClass).removeClass('overlay--select');
-// 		open = false;
-// 	};
-
-// 	return select;
-// })();
+	$('.js-select--country, .js-select--region, .js-select--city').select2();
+})();

@@ -23,7 +23,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="img/general/favicon/apple-touch-icon-152x152.png">
     <link rel="stylesheet" media="all" href="css/app.css">
   </head>
-  <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
+  <body class="loading" itemscope="itemscope" itemtype="http://schema.org/WebPage">
     <div class="page-wrapper is-auth ">
       <!-- begin mobile-nave -->
       <nav class="mobile-nav js-mobile-nav md-only">
@@ -768,9 +768,26 @@
     </div>
     <div class="overlay js-overlay"></div>
     <div class="preloader js-preloader"></div>
-    <div class="go-top js-go-top is-hidden">На верх</div>
+    <div class="go-top js-go-top"><i class="fal fa-triangle"></i></div>
     <!-- begin windows -->
     <div class="windows">
+      <!-- begin register -->
+      <div class="modal-window modal-window--medium new-profile" id="new-profile">
+        <div class="modal-window__body">
+          <div class="new-profile__title">Добавление нового профиля</div>
+          <div class="button-box button-box--center">
+            <a href="lk-person.html" class="btn btn-accent btn--icon">
+              <svg class="icon icon-cs-user btn__icon">
+                <use xlink:href="img/sprite.svg#cs-user"></use>
+              </svg> Частное лицо </a>
+            <a href="lk-company.html" class="btn btn--white btn--icon">
+              <svg class="icon icon-cs-tower btn__icon">
+                <use xlink:href="img/sprite.svg#cs-tower"></use>
+              </svg> Компания </a>
+          </div>
+        </div>
+      </div>
+      <!-- end register -->
       <!-- begin register -->
       <div class="modal-window modal-window--mobile register" id="register">
         <div class="modal-window__header">
@@ -779,19 +796,19 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input">
-              <input type="text" class="cs-input__field" placeholder="Логин">
+              <input type="text" class="cs-input__field " placeholder="Логин">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <input type="text" class="cs-input__field " placeholder="Ваше имя">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input">
-              <input type="email" class="cs-input__field" placeholder="Email">
+              <input type="email" class="cs-input__field " placeholder="Email">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input">
-              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <input type="password" class="cs-input__field " placeholder="Пароль">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="success">
@@ -819,11 +836,11 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input">
-              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <input type="password" class="cs-input__field " placeholder="Пароль">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="form__box mt-30">
@@ -851,7 +868,7 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <button class="btn btn--gr form__btn mt-30" type="submit">Вход</button>
@@ -936,7 +953,7 @@
         <div class="modal-window__body">
           <form class="form form__request">
             <div class="cs-input form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <input type="text" class="cs-input__field " placeholder="Ваше имя">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input form__input">

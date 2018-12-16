@@ -1,0 +1,265 @@
+<!-- begin lk-order -->
+<div class="lk__top-line">
+	<div class="lk__title">Профили</div>
+</div>
+
+<div class="lk__box js-lk-box" data-page="company">
+	<form class="form pedit">
+		<div class="form__title pos-xs-top">Добавление профиля юридического лица</div>
+
+		<div class="cs-checkbox-slide pedit__item pos-xs-top">
+			<span class="cs-checkbox__title cs-checkbox__title--left is-checked">Компания</span>
+			<label class="cs-checkbox cs-checkbox--slide js-cs-checkbox js-studio-system-btn">
+				<input type="checkbox">
+				<span class="cs-checkbox__box"></span>
+			</label>
+			<span class="cs-checkbox__title cs-checkbox__title--right">ИП</span>
+		</div>
+
+		<!-- begin Name of organization -->
+		<div class="row pos-xs-top">
+			<div class="col-6 col-sm-12">
+				<div class="pedit__item">
+					<div class="pedit__title">Название организации:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='text', placeholder='Например "ООО Азбука"')}}
+					</div>
+				</div>
+			</div>
+			<div class="col-6 col-sm-12">
+				<div class="pedit__item">
+					<div class="pedit__title">Телефон организации:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='tel', placeholder='Например 88007008000')}}
+					</div>
+				</div>
+			</div>
+		</div><!-- end Name of organization -->
+
+		<!-- begin actual addres -->
+		<div class="row row--end js-select--box">
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__title no-wrap">Укажите ваш фактический адрес:<i>*</i></div>
+					<div class="pedit__field">
+						<select class="js-select js-select--country" data-placeholder="Выбор страны">
+							<option></option>
+							{% for i in range(0, 5) %}
+							<option value="{{ i+1 }}">{{ i+1 }}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__field">
+						<select class="js-select js-select--region" data-placeholder="Выбор региона" disabled>
+							<option></option>
+							{% for i in range(0, 5) %}
+							<option value="{{ i+1 }}">{{ i+1 }}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__field">
+						<select class="js-select js-select--city" data-placeholder="Выбор  города" disabled>
+							<option></option>
+							{% for i in range(0, 5) %}
+							<option value="{{ i+1 }}">{{ i+1 }}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__field">
+						{{item.input(type='number', placeholder='Индекс')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-8 col-sm-12">
+				<div class="pedit__item">
+					<div class="pedit__field">
+						{{item.input(type='text', placeholder='Улица, дом, офис, кв.')}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- begin legal addres -->
+		<div class="row row--end row--pos js-select--box js-checkbox--box">
+			<label class="cs-checkbox cs-checkbox--reverse row__checkbox js-cs-checkbox">
+				<input type="checkbox">
+				<span class="cs-checkbox__box"></span>
+				<span class="cs-checkbox__title">совпадает с фактическим</span>
+			</label>
+
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__title no-wrap">
+						Укажите ваш юридический адрес:<i>*</i>
+					</div>
+					<div class="pedit__field">
+						<select class="js-select js-select--country" data-placeholder="Выбор страны">
+							<option></option>
+							{% for i in range(0, 5) %}
+							<option value="{{ i+1 }}">{{ i+1 }}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__field">
+						<select class="js-select js-select--region" data-placeholder="Выбор региона" disabled>
+							<option></option>
+							{% for i in range(0, 5) %}
+							<option value="{{ i+1 }}">{{ i+1 }}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__field">
+						<select class="js-select js-select--city" data-placeholder="Выбор  города" disabled>
+							<option></option>
+							{% for i in range(0, 5) %}
+							<option value="{{ i+1 }}">{{ i+1 }}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__field">
+						{{item.input(type='number', placeholder='Индекс')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-8 col-sm-12">
+				<div class="pedit__item">
+					<div class="pedit__field">
+						{{item.input(type='text', placeholder='Улица, дом, офис, кв.')}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row pos-xs-top">
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__title">ИНН:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='text')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__title">ОГРН:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='text')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4 col-sm-6 col-xs-12 js-not-ip">
+				<div class="pedit__item">
+					<div class="pedit__title">КПП:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='text')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__title ">Расчетный счет:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='text')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__title">Банк:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='text')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__title">БИК:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='text')}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<p class="pedit__info-text">* - поля, отмеченные звёздочкой, обязательны для заполнения</p>
+
+		<div class="row row--end">
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__title no-wrap">Информация об автомобиле:</div>
+					<div class="pedit__field">
+						{{item.input(type='text', placeholder='Марка')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__field">
+						{{item.input(type='number', placeholder='Год выпуска')}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row row--end">
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__field">
+						{{item.input(type='text', placeholder='Модель')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4 col-sm-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__field">
+						{{item.input(type='text', placeholder='VIN')}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="button-box mt-30">
+			<p>Нажимая на кнопку "Сохранить настройки профиля", я даю <strong>согласие на обработку персональных данных</strong></p>
+			<button class="btn btn-accent pedit__btn">Сохранить настройки профиля</button>
+		</div>
+	</form>
+</div>

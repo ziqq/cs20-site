@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Восстановление пароля</title>
+    <title>Личный кабинет</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -23,7 +23,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="img/general/favicon/apple-touch-icon-152x152.png">
     <link rel="stylesheet" media="all" href="css/app.css">
   </head>
-  <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
+  <body class="loading" itemscope="itemscope" itemtype="http://schema.org/WebPage">
     <div class="page-wrapper is-auth ">
       <!-- begin mobile-nave -->
       <nav class="mobile-nav js-mobile-nav md-only">
@@ -373,11 +373,11 @@
         </div>
       </section>
       <!-- end firstscreen -->
-      <!-- begin home -->
-      <div class="content-wrapper">
-        <div class="auth">
-          <!-- begin breadcrumbs -->
-          <div class="container">
+      <!-- begin lk -->
+      <div class="content-wrapper lk">
+        <!-- begin breadcrumbs -->
+        <div class="container">
+          <div class="breadcrumbs__wrap">
             <div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
               <ul class="breadcrumbs__list">
                 <li class="breadcrumbs__item">
@@ -390,39 +390,274 @@
                 </li>
               </ul>
             </div>
+            <a href="#" class="btn-link btn-link--exit"><span>Выход</span></a>
           </div>
-          <!-- end breadcrumbs -->
-          <!-- begin contacts -->
-          <div class="container">
-            <div class="cs-card">
-              <div class="auth__inner auth__inner--start">
-                <div class="auth__left">
-                  <h1 class="h1 page-title page-title--big" itemprop="headline">Восстановление пароля</h1>
-                  <form class="form form__register">
-                    <div class="cs-input cs-input--light form__input">
-                      <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
-                      <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+        </div>
+        <!-- end breadcrumbs -->
+        <div class="container">
+          <!-- begin lk__inner -->
+          <div class="lk__inner">
+            <!-- begin lk__nav -->
+            <aside class="lk__nav js-lk-sticky">
+              <div class="lk-nav js-lk-nav">
+                <ul class="lk-nav__list">
+                  <li class="lk-nav__item is-active">
+                    <a class="lk-nav__link" href="lk-settings.html" data-page-target="settings">
+                      <span class="lk-nav__text  lk-nav__text--dark ">Petrov_1977</span>
+                      <i class="fas fa-cog lk-nav__icon"></i>
+                    </a>
+                  </li>
+                  <li class="lk-nav__item">
+                    <a class="lk-nav__link" href="lk-person.html" data-page-target="person">
+                      <span class="lk-nav__text ">Частное лицо</span>
+                      <i class="fas fa-pencil lk-nav__icon" title="редактировать"></i>
+                    </a>
+                  </li>
+                  <li class="lk-nav__item">
+                    <a class="lk-nav__link" href="lk-company.html" data-page-target="company">
+                      <span class="lk-nav__text ">Компания</span>
+                      <i class="fas fa-pencil lk-nav__icon" title="редактировать"></i>
+                    </a>
+                  </li>
+                  <li class="lk-nav__item  lk-nav__item--add">
+                    <a class="lk-nav__link" href="#new-profile" data-fancybox>
+                      <span class="lk-nav__text ">Добавить профиль</span>
+                      <i class="fas fa-plus-circle lk-nav__icon"></i>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="lk-nav__list">
+                  <li class="lk-nav__item  lk-nav__item--alone lk-nav__item--devider">
+                    <a class="lk-nav__link" href="lk-order.html" data-page-target="order">
+                      <span class="lk-nav__text ">Мои заказы</span>
+                    </a>
+                  </li>
+                  <li class="lk-nav__item  lk-nav__item--alone">
+                    <a class="lk-nav__link" href="lk-sale.html" data-page-target="sale">
+                      <span class="lk-nav__text ">Пресональные скидки</span>
+                    </a>
+                  </li>
+                  <li class="lk-nav__item  lk-nav__item--alone lk-nav__item--exit xs-only">
+                    <a class="lk-nav__link" href="#" data-page-target="exit">
+                      <span class="lk-nav__text ">Выход</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+            <!-- end lk__nav -->
+            <div class="lk__content js-lk-content">
+              <svg class="icon icon-cs-close lk__content_close js-lk-content--close xs-only">
+                <use xlink:href="img/sprite.svg#cs-close"></use>
+              </svg>
+              <!-- begin lk-order -->
+              <div class="lk__top-line">
+                <div class="lk__title">Профили</div>
+              </div>
+              <div class="lk__box js-lk-box js-lk-box" data-page="person">
+                <form class="form pedit">
+                  <div class="form__title">Добавление профиля частного лица</div>
+                  <div class="row row--end">
+                    <div class="col-4 col-sm-6 col-xs-12">
+                      <div class="pedit__item">
+                        <div class="pedit__title no-wrap">Укажите ваше имя <span class="xs-only">и номер телефона</span>:<i>*</i></div>
+                        <div class="pedit__field">
+                          <div class="cs-input ">
+                            <input type="text" class="cs-input__field " placeholder="Имя">
+                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <button class="btn btn--gr form__btn" type="submit">Восстановить пароль</button>
-                    <div class="success">
-                      <div class="success__text">Добро пожаловать!</div>
+                    <div class="col-4 col-sm-6 col-xs-12">
+                      <div class="pedit__item">
+                        <div class="pedit__field">
+                          <div class="cs-input ">
+                            <input type="text" class="cs-input__field " placeholder="Фамилия">
+                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="button-box button-box--column">
-                      <a class="form__link mb-10" href="registration.html">Регистрация</a>
-                      <a class="form__link" href="enter.html">Есть аккаунт? Вход</a>
+                    <div class="col-4 col-sm-6 col-xs-12">
+                      <div class="pedit__item">
+                        <div class="pedit__field">
+                          <div class="cs-input ">
+                            <input type="text" class="cs-input__field " placeholder="Отчество (если есть)">
+                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </form>
-                </div>
-                <div class="auth__right">
-                  <img src="img/general/recowery.png" alt="alt">
-                </div>
+                    <div class="col-4 col-sm-6 col-xs-12">
+                      <div class="pedit__item">
+                        <div class="pedit__title sm-hide">Укажите номер телефона:<i>*</i></div>
+                        <div class="pedit__field">
+                          <div class="cs-input ">
+                            <input type="tel" class="cs-input__field  js-phone-mask " placeholder="+7 (927) 107-11-39 ">
+                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row row--end js-select--box">
+                    <div class="col-4 col-sm-6 col-xs-12">
+                      <div class="pedit__item">
+                        <div class="pedit__title">Укажите адрес доставки:<i>*</i></div>
+                        <div class="pedit__field">
+                          <select class="js-select js-select--country" data-placeholder="Выбор страны">
+                            <option></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-xs-12">
+                      <div class="pedit__item">
+                        <div class="pedit__field">
+                          <select class="js-select js-select--region" data-placeholder="Выбор региона" disabled>
+                            <option></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-xs-12">
+                      <div class="pedit__item">
+                        <div class="pedit__field">
+                          <select class="js-select js-select--city" data-placeholder="Выбор  города" disabled>
+                            <option></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-xs-12">
+                      <div class="pedit__item">
+                        <div class="pedit__field">
+                          <div class="cs-input ">
+                            <input type="number" class="cs-input__field " placeholder="Индекс">
+                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-8 col-sm-12">
+                      <div class="pedit__item">
+                        <div class="pedit__field">
+                          <div class="cs-input ">
+                            <input type="text" class="cs-input__field " placeholder="Улица, дом, офис, кв.">
+                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="pedit__info-text">* - поля, отмеченные звёздочкой, обязательны для заполнения</p>
+                  <div class="row row--end">
+                    <div class="col-4 col-sm-6 col-xs-12">
+                      <div class="pedit__item">
+                        <div class="pedit__title no-wrap">Укажите ваши паспортные данные: <span class="sm-hide">(для посылок, отправляемых транспортными компаниями)</span>
+                        </div>
+                        <div class="pedit__field">
+                          <div class="cs-input ">
+                            <input type="text" class="cs-input__field " placeholder="Серия">
+                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-xs-12">
+                      <div class="pedit__item">
+                        <div class="pedit__field">
+                          <div class="cs-input ">
+                            <input type="text" class="cs-input__field " placeholder="Номер">
+                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-xs-12">
+                      <div class="pedit__item">
+                        <div class="pedit__field">
+                          <div class="cs-input ">
+                            <input type="number" class="cs-input__field " placeholder="Дата выдачи">
+                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="pedit__info-text sm-only">(для посылок, отправляемых транспортными компаниями)</p>
+                  <div class="row row--end">
+                    <div class="col-4 col-sm-6 col-xs-12">
+                      <div class="pedit__item">
+                        <div class="pedit__title no-wrap">Информация об автомобиле:</div>
+                        <div class="pedit__field">
+                          <div class="cs-input ">
+                            <input type="text" class="cs-input__field " placeholder="Марка">
+                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-xs-12">
+                      <div class="pedit__item">
+                        <div class="pedit__field">
+                          <div class="cs-input ">
+                            <input type="number" class="cs-input__field " placeholder="Год выпуска">
+                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4 col-sm-6 col-xs-12">
+                      <div class="pedit__item">
+                        <div class="pedit__field">
+                          <div class="cs-input ">
+                            <input type="text" class="cs-input__field " placeholder="Модель">
+                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-xs-12">
+                      <div class="pedit__item">
+                        <div class="pedit__field">
+                          <div class="cs-input ">
+                            <input type="text" class="cs-input__field " placeholder="VIN">
+                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="button-box mt-30">
+                    <p>Нажимая на кнопку "Сохранить настройки профиля", я даю <strong>согласие на обработку персональных данных</strong></p>
+                    <button class="btn btn-accent pedit__btn">Сохранить настройки профиля</button>
+                  </div>
+                </form>
               </div>
             </div>
-          </div>
-          <!-- end contacts -->
+          </div><!-- end lk__inner -->
         </div>
       </div>
-      <!-- end home -->
+      <!-- end lk -->
       <!-- begin footer -->
       <footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
         <div class="container">
@@ -534,7 +769,7 @@
     </div>
     <div class="overlay js-overlay"></div>
     <div class="preloader js-preloader"></div>
-    <div class="go-top js-go-top is-hidden">На верх</div>
+    <div class="go-top js-go-top"><i class="fal fa-triangle"></i></div>
     <!-- begin windows -->
     <div class="windows">
       <!-- begin register -->

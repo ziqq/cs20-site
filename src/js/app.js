@@ -8,18 +8,30 @@ const Base = {
 	init: function() {
 		this.scrollBar();
 		this.select();
+		this.inputMask();
 		this.popups();
 		this.setHeight();
 		this.plusMinus();
 		this.map();
 		this.upsateResize();
+		this.goTop();
+
+		$('body').removeClass('loading');
 
 		//First Screen Padding-Top
 		$('.js-firstscreen').css('padding-top', $('.header').outerHeight(true));
+
+		//Init tabs
+		$('.js-tabs').tabs();
+
+		//Stop drag
+		$('img').on('dragstart', function(event) {
+			event.preventDefault();
+		});
 	},
 	scrollBar: function() {
 		let scrollBar = $('.js-scroll');
-		if (scrollBar.length) {
+		if (scrollBar.length && $(window).width() > 768) {
 			scrollBar.niceScroll({
 				cursorcolor: '#c4c4c4',
 				// horizrailenabled: false,
@@ -37,28 +49,6 @@ const Base = {
 			});
 		}
 	},
-	// select: function() {
-	// 	let $select = $('.js-select');
-
-	// 	if ($(window).width() > 768) {
-	// 		$select.each(function() {
-	// 			let $parent = $(this).parent();
-
-	// 			if ($(this).hasClass('no-search')) {
-	// 				$(this).select2({
-	// 					dropdownParent: $parent,
-	// 					minimumResultsForSearch: -1
-	// 				});
-	// 			} else {
-	// 				$(this).select2({
-	// 					dropdownParent: $parent
-	// 				});
-	// 			}
-	// 		});
-	// 	} else {
-	// 		$select.wrap('<label class="cs-select">');
-	// 	}
-	// },
 	setHeight: function() {
 		//Product title equalheight
 		_heightses($('.js-product-title-equalheight'));
@@ -88,6 +78,15 @@ const Base = {
 			return false;
 		});
 	},
+	inputMask: function() {
+		//Masked inputmask https://github.com/RobinHerbots/Inputmask
+		if ($('.js-phone-mask').length > 0) {
+			$('.js-phone-mask').inputmask({
+				mask: '+7 (999) 999-99-99',
+				showMaskOnHover: false
+			});
+		}
+	},
 	popups: function() {
 		//Modal FancyBox 3 https://fancyapps.com/fancybox/3/
 		if ($('[data-fancybox]').length) {
@@ -113,20 +112,6 @@ const Base = {
 			}, 100);
 		});
 	},
-	// select: function() {
-	// 	let $select = $('.js-select');
-	// 	$select.each(function() {
-	// 		let placeholder = $(this).attr('placeholder');
-
-	// 		$(this).selectize({
-	// 			create: true,
-	// 			sortField: 'text',
-	// 			maxItems: 1,
-	// 			singleOverride: true,
-	// 			placeholder: placeholder
-	// 		});
-	// 	});
-	// },
 	select: function() {
 		let $select = $('.js-select');
 
@@ -195,16 +180,38 @@ const Base = {
 		$(window).resize(function() {
 			Base.setHeight();
 		});
+	},
+	goTop: function() {
+		//Click event to scroll to top
+		$('.js-go-top').on('click', function(e) {
+			e.preventDefault();
+			$('html, body').animate({ scrollTop: 0 }, 800);
+		});
+
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > $(this).height()) {
+				$('.js-go-top').addClass('is-visible');
+			} else {
+				$('.js-go-top').removeClass('is-visible');
+			}
+		});
+	},
+	goTo: function() {
+		//Click event to scroll to section whith id like href
+		$('.js-goto').click(function() {
+			var elementClick = $(this).attr('href');
+			var destination = $(elementClick).offset().top;
+			$('html, body').animate(
+				{ scrollTop: destination - 60 + 'px' },
+				300
+			);
+			return false;
+		});
 	}
 };
 
 $(function() {
 	Base.init();
-
-	let $window = $(window);
-	let $body = $('body');
-
-	$body.addClass('is-loading');
 
 	function textOverflow(s) {
 		$('.js-text-overflow').each(function() {
@@ -213,7 +220,7 @@ $(function() {
 			let sizeNow;
 
 			if (media) {
-				if ($window.width() > 480 && $window.width() < 1200) {
+				if ($(window).width() > 480 && $(window).width() < 1200) {
 					sizeNow = size;
 				} else {
 					sizeNow = 'auto';
@@ -231,7 +238,7 @@ $(function() {
 	}
 	textOverflow();
 
-	$window.resize(function() {
+	$(window).resize(function() {
 		textOverflow();
 	});
 
@@ -272,8 +279,6 @@ $(function() {
 	// 		.css('padding-top', $('.header').outerHeight(true));
 	// }
 	// contentPadding();
-
-	$('.js-tabs').tabs();
 
 	//Mobile menu subnav toggle
 	// $('.js-mobile-nav-sub--open').on('click', function() {
@@ -419,40 +424,6 @@ $(function() {
 	// 		e.stopPropagation();
 	// 	});
 	// }
-
-	//Masked inputmask https://github.com/RobinHerbots/Inputmask
-	if ($('.js-phone-mask').length > 0) {
-		$('.js-phone-mask').inputmask({
-			mask: '+7 (999) 999-99-99',
-			showMaskOnHover: false
-		});
-	}
-
-	//Click event to scroll to top
-	$('.js-go-top').on('click', function(e) {
-		e.preventDefault();
-		$('html, body').animate({ scrollTop: 0 }, 800);
-	});
-	$(window).scroll(function() {
-		if ($(this).scrollTop() > $(this).height()) {
-			$('.js-go-top').addClass('is-visible');
-		} else {
-			$('.js-go-top').removeClass('is-visible');
-		}
-	});
-
-	//Click event to scroll to section whith id like href
-	$('.js-goto').click(function() {
-		var elementClick = $(this).attr('href');
-		var destination = $(elementClick).offset().top;
-		$('html, body').animate({ scrollTop: destination - 60 + 'px' }, 300);
-		return false;
-	});
-
-	//Stop drag
-	$('img').on('dragstart', function(event) {
-		event.preventDefault();
-	});
 
 	// $('.js-garanty-item--more').on('click', function() {
 	// 	$(this)

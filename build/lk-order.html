@@ -23,7 +23,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="img/general/favicon/apple-touch-icon-152x152.png">
     <link rel="stylesheet" media="all" href="css/app.css">
   </head>
-  <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
+  <body class="loading" itemscope="itemscope" itemtype="http://schema.org/WebPage">
     <div class="page-wrapper is-auth ">
       <!-- begin mobile-nave -->
       <nav class="mobile-nav js-mobile-nav md-only">
@@ -373,7 +373,7 @@
         </div>
       </section>
       <!-- end firstscreen -->
-      <!-- begin home -->
+      <!-- begin lk -->
       <div class="content-wrapper lk">
         <!-- begin breadcrumbs -->
         <div class="container">
@@ -396,239 +396,203 @@
         <!-- end breadcrumbs -->
         <div class="container">
           <!-- begin lk__inner -->
-          <div class="lk__inner tab js-tabs">
+          <div class="lk__inner">
             <!-- begin lk__nav -->
-            <aside class="lk__nav tab__titles js-lk-sticky">
-              <ul class="lk-nav__list">
-                <li class="lk-nav__item tab__title">
-                  <a href="#lk-user" class="lk-nav__link">
-                    <span class="lk-nav__text lk-nav__text--dark">Petrov_1977</span>
-                    <i class="fas fa-cog lk-nav__icon"></i>
-                  </a>
-                </li>
-                <li class="lk-nav__item tab__title">
-                  <a href="#" class="lk-nav__link">
-                    <span class="lk-nav__text">ООО “Азбука”</span>
-                    <i class="fas fa-pencil lk-nav__icon"></i>
-                  </a>
-                </li>
-                <li class="lk-nav__item lk-nav__item--add tab__title">
-                  <a href="#lk-add-profile" class="lk-nav__link">
-                    <span class="lk-nav__text">Добавить профиль</span>
-                    <i class="fas fa-plus-circle lk-nav__icon" title="редактировать"></i>
-                  </a>
-                </li>
-              </ul>
-              <ul class="lk-nav__list">
-                <li class="lk-nav__item tab__title">
-                  <a href="#lk-order" class="lk-nav__link">Мои заказы</a>
-                </li>
-                <li class="lk-nav__item tab__title">
-                  <a href="#" class="lk-nav__link">Пресональные скидки</a>
-                </li>
-              </ul>
-            </aside><!-- end lk__nav -->
-            <div class="tab__content lk__content" id="lk-user">
+            <aside class="lk__nav js-lk-sticky">
+              <div class="lk-nav js-lk-nav">
+                <ul class="lk-nav__list">
+                  <li class="lk-nav__item is-active">
+                    <a class="lk-nav__link" href="lk-settings.html" data-page-target="settings">
+                      <span class="lk-nav__text  lk-nav__text--dark ">Petrov_1977</span>
+                      <i class="fas fa-cog lk-nav__icon"></i>
+                    </a>
+                  </li>
+                  <li class="lk-nav__item">
+                    <a class="lk-nav__link" href="lk-person.html" data-page-target="person">
+                      <span class="lk-nav__text ">Частное лицо</span>
+                      <i class="fas fa-pencil lk-nav__icon" title="редактировать"></i>
+                    </a>
+                  </li>
+                  <li class="lk-nav__item">
+                    <a class="lk-nav__link" href="lk-company.html" data-page-target="company">
+                      <span class="lk-nav__text ">Компания</span>
+                      <i class="fas fa-pencil lk-nav__icon" title="редактировать"></i>
+                    </a>
+                  </li>
+                  <li class="lk-nav__item  lk-nav__item--add">
+                    <a class="lk-nav__link" href="#new-profile" data-fancybox>
+                      <span class="lk-nav__text ">Добавить профиль</span>
+                      <i class="fas fa-plus-circle lk-nav__icon"></i>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="lk-nav__list">
+                  <li class="lk-nav__item  lk-nav__item--alone lk-nav__item--devider">
+                    <a class="lk-nav__link" href="lk-order.html" data-page-target="order">
+                      <span class="lk-nav__text ">Мои заказы</span>
+                    </a>
+                  </li>
+                  <li class="lk-nav__item  lk-nav__item--alone">
+                    <a class="lk-nav__link" href="lk-sale.html" data-page-target="sale">
+                      <span class="lk-nav__text ">Пресональные скидки</span>
+                    </a>
+                  </li>
+                  <li class="lk-nav__item  lk-nav__item--alone lk-nav__item--exit xs-only">
+                    <a class="lk-nav__link" href="#" data-page-target="exit">
+                      <span class="lk-nav__text ">Выход</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+            <!-- end lk__nav -->
+            <div class="lk__content js-lk-content">
+              <svg class="icon icon-cs-close lk__content_close js-lk-content--close xs-only">
+                <use xlink:href="img/sprite.svg#cs-close"></use>
+              </svg>
               <!-- begin lk-order -->
-              <div class="lk__top-line">
-                <div class="lk__title">Настройки аккаунта</div>
-              </div>
-              <div class="lk__box">
-                <form class="pedit">
-                  <div class="row">
-                    <div class="col-6">
-                      <div class="pedit__item">
-                        <div class="pedit__title">Login:<i>*</i></div>
-                        <div class="pedit__field">
-                          <div class="cs-input ">
-                            <input type="text" class="cs-input__field">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="pedit__item">
-                        <div class="pedit__title">E-mail:<i>*</i></div>
-                        <div class="pedit__field">
-                          <div class="cs-input ">
-                            <input type="email" class="cs-input__field">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+              <div class="lk__order js-lk-box" data-page="order">
+                <div class="lk__top-line">
+                  <div class="lk__box_title xs-only">Мои заказы</div>
+                  <div class="sorting__count">
+                    <select class="sorting__select js-select no-search">
+                      <option value="Все заказы">Все заказы</option>
+                      <option value="Текущие">Текущие</option>
+                      <option value="Завершенные">Завершенные</option>
+                    </select>
                   </div>
-                  <div class="row">
-                    <div class="col-6">
-                      <div class="pedit__item">
-                        <div class="pedit__title">Пароль:<i>*</i></div>
-                        <div class="pedit__field">
-                          <div class="cs-input ">
-                            <input type="password" class="cs-input__field">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="pedit__item">
-                        <div class="pedit__title">Подтверждение пароля:<i>*</i></div>
-                        <div class="pedit__field">
-                          <div class="cs-input ">
-                            <input type="password" class="cs-input__field">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="pedit__info-text">* - поля, отмеченные звёздочкой, обязательны для заполнения</p>
-                  <div class="form__box mb-30"> Получать уведомления: <label class="cs-checkbox ml-20">
-                      <input type="checkbox">
-                      <span class="cs-checkbox__box"></span>
-                      <span class="cs-checkbox__title">По e-mail</span>
-                    </label>
-                  </div>
-                  <div class="button-box">
-                    <p>Нажимая на кнопку "Сохранить настройки профиля", <br> я даю <strong>согласие на обработку персональных данных</strong></p>
-                    <button class="btn btn-accent pedit__btn">Сохранить настройки профиля</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <div class="tab__content lk__content" id="lk-order">
-              <!-- begin lk-order -->
-              <div class="lk__top-line">
-                <div class="sorting__count">
-                  <select class="sorting__select js-select no-search">
-                    <option value="Все заказы">Все заказы</option>
-                    <option value="Текущие">Текущие</option>
-                    <option value="Завершенные">Завершенные</option>
-                  </select>
                 </div>
-              </div>
-              <div class="cs-accorderon js-cs-accordeon">
-                <div class="cs-accordeon__item order-item is-success">
-                  <div class="cs-accordeon__title order-item__title">
-                    <span>Заказ №87 от 27.11.2018 на 2023 рублей</span>
-                    <span class="order-item__status">Статус: <span>оплачен</span></span>
-                  </div>
-                  <div class="cs-accordeon__content order-item__content js-scroll" style="display: none;">
-                    <ul class="order-item__list">
-                      <li class="order-item__product">
-                        <a href="#" class="product-item product-item--wide">
-                          <div class="product-item__desc">
-                            <h4 class="product-item__title"> Патрубок соединит термостата ВАЗ 2123 СИНИЙ PROF </h4>
-                            <div class="product-item__counter counter">1 шт.</div>
-                            <div class="product-item__price price"> 282 руб. </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="order-item__product">
-                        <a href="#" class="product-item product-item--wide">
-                          <div class="product-item__desc">
-                            <h4 class="product-item__title"> Патрубок соединит термостата ВАЗ 2123 СИНИЙ PROF </h4>
-                            <div class="product-item__counter counter">1 шт.</div>
-                            <div class="product-item__price price"> 282 руб. </div>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                    <div class="order-item__info">
-                      <ul>
-                        <li>Оплачен: <span>Нет</span></li>
-                        <li>Способ оплаты: <span>RoboKassa</span></li>
-                        <li>Способ доставки: <span>Почта России (стандарт)</span></li>
+                <div class="cs-accorderon js-cs-accordeon">
+                  <div class="cs-accordeon__item order-item js-order-item is-success">
+                    <div class="cs-accordeon__title order-item__title">
+                      <span>Заказ №87 от 27.11.2018 на 2023 рублей</span>
+                      <span class="order-item__status">Статус: <span>оплачен</span></span>
+                    </div>
+                    <div class="cs-accordeon__content order-item__content " style="display: none;">
+                      <ul class="order-item__list js-scroll">
+                        <li class="order-item__product">
+                          <a href="#" class="product-item product-item--wide">
+                            <div class="product-item__desc">
+                              <h4 class="product-item__title"> Патрубок соединит термостата ВАЗ 2123 СИНИЙ PROF </h4>
+                              <div class="product-item__counter counter">1 шт.</div>
+                              <div class="product-item__price price"> 282 руб. </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="order-item__product">
+                          <a href="#" class="product-item product-item--wide">
+                            <div class="product-item__desc">
+                              <h4 class="product-item__title"> Патрубок соединит термостата ВАЗ 2123 СИНИЙ PROF </h4>
+                              <div class="product-item__counter counter">1 шт.</div>
+                              <div class="product-item__price price"> 282 руб. </div>
+                            </div>
+                          </a>
+                        </li>
                       </ul>
+                      <div class="order-item__info">
+                        <ul>
+                          <li>Оплачен: <span>Нет</span></li>
+                          <li>Способ оплаты: <span>RoboKassa</span></li>
+                          <li>Способ доставки: <span>Почта России (стандарт)</span></li>
+                          <li>Стоимость доставки: <span>450 руб.</span></li>
+                        </ul>
+                      </div>
+                      <div class="button-box">
+                        <button class="btn btn-outline-gray-light product-item__btn">Повторить заказ</button>
+                        <div class="order-item__name">ООО “Азбука”</div>
+                      </div>
                     </div>
-                    <button class="btn btn-outline-gray-light product-item__btn">Повторить заказ</button>
                   </div>
-                </div>
-                <div class="cs-accordeon__item order-item is-abort">
-                  <div class="cs-accordeon__title order-item__title">
-                    <span>Заказ №87 от 27.11.2018 на 2023 рублей</span>
-                    <span class="order-item__status">Статус: <span>ожидается оплата</span></span>
-                  </div>
-                  <div class="cs-accordeon__content order-item__content js-scroll" style="display: none;">
-                    <ul class="order-item__list">
-                      <li class="order-item__product">
-                        <a href="#" class="product-item product-item--wide">
-                          <div class="product-item__desc">
-                            <h4 class="product-item__title"> Патрубок соединит термостата ВАЗ 2123 СИНИЙ PROF </h4>
-                            <div class="product-item__counter counter">1 шт.</div>
-                            <div class="product-item__price price"> 282 руб. </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="order-item__product">
-                        <a href="#" class="product-item product-item--wide">
-                          <div class="product-item__desc">
-                            <h4 class="product-item__title"> Патрубок соединит термостата ВАЗ 2123 СИНИЙ PROF </h4>
-                            <div class="product-item__counter counter">1 шт.</div>
-                            <div class="product-item__price price"> 282 руб. </div>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                    <div class="order-item__info">
-                      <ul>
-                        <li>Оплачен: <span>Нет</span></li>
-                        <li>Способ оплаты: <span>RoboKassa</span></li>
-                        <li>Способ доставки: <span>Почта России (стандарт)</span></li>
+                  <div class="cs-accordeon__item order-item js-order-item is-abort">
+                    <div class="cs-accordeon__title order-item__title">
+                      <span>Заказ №87 от 27.11.2018 на 2023 рублей</span>
+                      <span class="order-item__status">Статус: <span>ожидается оплата</span></span>
+                    </div>
+                    <div class="cs-accordeon__content order-item__content" style="display: none;">
+                      <ul class="order-item__list js-scroll">
+                        <li class="order-item__product">
+                          <a href="#" class="product-item product-item--wide">
+                            <div class="product-item__desc">
+                              <h4 class="product-item__title"> Патрубок соединит термостата ВАЗ 2123 СИНИЙ PROF </h4>
+                              <div class="product-item__counter counter">1 шт.</div>
+                              <div class="product-item__price price"> 282 руб. </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="order-item__product">
+                          <a href="#" class="product-item product-item--wide">
+                            <div class="product-item__desc">
+                              <h4 class="product-item__title"> Патрубок соединит термостата ВАЗ 2123 СИНИЙ PROF </h4>
+                              <div class="product-item__counter counter">1 шт.</div>
+                              <div class="product-item__price price"> 282 руб. </div>
+                            </div>
+                          </a>
+                        </li>
                       </ul>
-                    </div>
-                    <div class="button-box">
-                      <button class="btn btn-outline-gray-light product-item__btn">Повторить заказ</button>
-                      <button class="btn btn-outline-gray-light product-item__btn">Отменить заказ</button>
-                      <button class="btn btn-accent product-item__btn">Оплатить</button>
+                      <div class="order-item__info">
+                        <ul>
+                          <li>Оплачен: <span>Нет</span></li>
+                          <li>Способ оплаты: <span>RoboKassa</span></li>
+                          <li>Способ доставки: <span>Почта России (стандарт)</span></li>
+                          <li>Стоимость доставки: <span>450 руб.</span></li>
+                        </ul>
+                      </div>
+                      <!-- <div class="order-item__name mb-30 text-right">ООО “Азбука”</div> -->
+                      <div class="button-box">
+                        <button class="btn btn-outline-gray-light product-item__btn">Повторить заказ</button>
+                        <button class="btn btn-outline-gray-light product-item__btn">Отменить заказ</button>
+                        <button class="btn btn-accent product-item__btn">Оплатить</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="cs-accordeon__item order-item">
-                  <div class="cs-accordeon__title order-item__title">
-                    <span>Заказ №87 от 27.11.2018 на 2023 рублей</span>
-                    <span class="order-item__status">Статус: <span>отпрален</span></span>
-                  </div>
-                  <div class="cs-accordeon__content order-item__content js-scroll" style="display: none;">
-                    <ul class="order-item__list">
-                      <li class="order-item__product">
-                        <a href="#" class="product-item product-item--wide">
-                          <div class="product-item__desc">
-                            <h4 class="product-item__title"> Патрубок соединит термостата ВАЗ 2123 СИНИЙ PROF </h4>
-                            <div class="product-item__counter counter">1 шт.</div>
-                            <div class="product-item__price price"> 282 руб. </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="order-item__product">
-                        <a href="#" class="product-item product-item--wide">
-                          <div class="product-item__desc">
-                            <h4 class="product-item__title"> Патрубок соединит термостата ВАЗ 2123 СИНИЙ PROF </h4>
-                            <div class="product-item__counter counter">1 шт.</div>
-                            <div class="product-item__price price"> 282 руб. </div>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                    <div class="order-item__info">
-                      <ul>
-                        <li>Оплачен: <span>Нет</span></li>
-                        <li>Способ оплаты: <span>RoboKassa</span></li>
-                        <li>Способ доставки: <span>Почта России (стандарт)</span></li>
+                  <div class="cs-accordeon__item order-item js-order-item">
+                    <div class="order-item__name sm-only xs-hide">ООО “Азбука”</div>
+                    <div class="cs-accordeon__title order-item__title">
+                      <span>Заказ №87 от 27.11.2018 на 2023 рублей</span>
+                      <span class="order-item__status">Статус: <span>отпрален</span></span>
+                    </div>
+                    <div class="cs-accordeon__content order-item__content" style="display: none;">
+                      <ul class="order-item__list js-scroll">
+                        <li class="order-item__product">
+                          <a href="#" class="product-item product-item--wide">
+                            <div class="product-item__desc">
+                              <h4 class="product-item__title"> Патрубок соединит термостата ВАЗ 2123 СИНИЙ PROF </h4>
+                              <div class="product-item__counter counter">1 шт.</div>
+                              <div class="product-item__price price"> 282 руб. </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="order-item__product">
+                          <a href="#" class="product-item product-item--wide">
+                            <div class="product-item__desc">
+                              <h4 class="product-item__title"> Патрубок соединит термостата ВАЗ 2123 СИНИЙ PROF </h4>
+                              <div class="product-item__counter counter">1 шт.</div>
+                              <div class="product-item__price price"> 282 руб. </div>
+                            </div>
+                          </a>
+                        </li>
                       </ul>
+                      <div class="order-item__info">
+                        <ul>
+                          <li>Оплачен: <span>Нет</span></li>
+                          <li>Способ оплаты: <span>RoboKassa</span></li>
+                          <li>Способ доставки: <span>Почта России (стандарт)</span></li>
+                          <li>Стоимость доставки: <span>450 руб.</span></li>
+                        </ul>
+                      </div>
+                      <div class="button-box">
+                        <button class="btn btn-outline-gray-light product-item__btn">Повторить заказ</button>
+                        <div class="order-item__name sm-hide xs-only">ООО “Азбука”</div>
+                      </div>
                     </div>
-                    <button class="btn btn-outline-gray-light product-item__btn">Повторить заказ</button>
                   </div>
-                </div>
-              </div><!-- end lk-order -->
-            </div>
-            <div class="tab__content lk__content" id="lk-add-profile">
+                </div><!-- end lk-order -->
+              </div>
             </div>
           </div><!-- end lk__inner -->
         </div>
       </div>
-      <!-- end home -->
+      <!-- end lk -->
       <!-- begin footer -->
       <footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
         <div class="container">
@@ -740,9 +704,26 @@
     </div>
     <div class="overlay js-overlay"></div>
     <div class="preloader js-preloader"></div>
-    <div class="go-top js-go-top is-hidden">На верх</div>
+    <div class="go-top js-go-top"><i class="fal fa-triangle"></i></div>
     <!-- begin windows -->
     <div class="windows">
+      <!-- begin register -->
+      <div class="modal-window modal-window--medium new-profile" id="new-profile">
+        <div class="modal-window__body">
+          <div class="new-profile__title">Добавление нового профиля</div>
+          <div class="button-box button-box--center">
+            <a href="lk-person.html" class="btn btn-accent btn--icon">
+              <svg class="icon icon-cs-user btn__icon">
+                <use xlink:href="img/sprite.svg#cs-user"></use>
+              </svg> Частное лицо </a>
+            <a href="lk-company.html" class="btn btn--white btn--icon">
+              <svg class="icon icon-cs-tower btn__icon">
+                <use xlink:href="img/sprite.svg#cs-tower"></use>
+              </svg> Компания </a>
+          </div>
+        </div>
+      </div>
+      <!-- end register -->
       <!-- begin register -->
       <div class="modal-window modal-window--mobile register" id="register">
         <div class="modal-window__header">
@@ -751,19 +732,19 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input">
-              <input type="text" class="cs-input__field" placeholder="Логин">
+              <input type="text" class="cs-input__field " placeholder="Логин">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <input type="text" class="cs-input__field " placeholder="Ваше имя">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input">
-              <input type="email" class="cs-input__field" placeholder="Email">
+              <input type="email" class="cs-input__field " placeholder="Email">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input">
-              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <input type="password" class="cs-input__field " placeholder="Пароль">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="success">
@@ -791,11 +772,11 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input">
-              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="password" class="cs-input__field" placeholder="Пароль">
+              <input type="password" class="cs-input__field " placeholder="Пароль">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="form__box mt-30">
@@ -823,7 +804,7 @@
         <div class="modal-window__body">
           <form class="form form__register">
             <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Логин или e-mail">
+              <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <button class="btn btn--gr form__btn mt-30" type="submit">Вход</button>
@@ -908,7 +889,7 @@
         <div class="modal-window__body">
           <form class="form form__request">
             <div class="cs-input form__input is-invalid">
-              <input type="text" class="cs-input__field" placeholder="Ваше имя">
+              <input type="text" class="cs-input__field " placeholder="Ваше имя">
               <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
             </div>
             <div class="cs-input form__input">

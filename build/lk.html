@@ -396,46 +396,43 @@
         <!-- end breadcrumbs -->
         <div class="container">
           <!-- begin lk__inner -->
-          <div class="lk__inner tab js-lk-tabs">
+          <div class="lk__inner">
             <!-- begin lk__nav -->
-            <aside class="lk__nav tab__titles js-lk-sticky">
+            <aside class="lk__nav js-lk-sticky">
               <ul class="lk-nav__list">
-                <li class="lk-nav__item tab__title">
-                  <a href="#lk-user" class="lk-nav__link">
-                    <span class="lk-nav__text lk-nav__text--dark">Petrov_1977</span>
+                <li class="lk-nav__item is-active ">
+                  <a class="lk-nav__link" href="lk-settings.html">
+                    <span class="lk-nav__text  lk-nav__text--dark ">Petrov_1977</span>
                     <i class="fas fa-cog lk-nav__icon"></i>
                   </a>
                 </li>
-                <li class="lk-nav__item tab__title">
-                  <a href="#lk-order" class="lk-nav__link">
-                    <span class="lk-nav__text">ООО “Азбука”</span>
+                <li class="lk-nav__item  ">
+                  <a class="lk-nav__link" href="lk-add-person.html">
+                    <span class="lk-nav__text ">Частное лицо</span>
                     <i class="fas fa-pencil lk-nav__icon" title="редактировать"></i>
                   </a>
                 </li>
-                <li class="lk-nav__item tab__title is-hidden">
-                  <a href="#add-profile-user" class="lk-nav__link">
-                    <span class="lk-nav__text">Частное лицо</span>
+                <li class="lk-nav__item  ">
+                  <a class="lk-nav__link" href="lk-add-company.html">
+                    <span class="lk-nav__text ">Компания</span>
                     <i class="fas fa-pencil lk-nav__icon" title="редактировать"></i>
                   </a>
                 </li>
-                <li class="lk-nav__item tab__title is-hidden">
-                  <a href="#add-profile-company" class="lk-nav__link">
-                    <span class="lk-nav__text">Компания</span>
-                    <i class="fas fa-pencil lk-nav__icon" title="редактировать"></i>
-                  </a>
-                </li>
-                <li class="lk-nav__item lk-nav__item--add">
-                  <a data-src="#new-profile" class="lk-nav__link" data-fancybox>
-                    <span class="lk-nav__text">Добавить профиль</span>
+                <li class="lk-nav__item  lk-nav__item--add">
+                  <a class="lk-nav__link" href="#new-profile" data-fancybox>
+                    <span class="lk-nav__text ">Добавить профиль</span>
                     <i class="fas fa-plus-circle lk-nav__icon"></i>
                   </a>
                 </li>
-                <li class="lk-nav__item lk-nav__item--devider"></li>
-                <li class="lk-nav__item tab__title">
-                  <a href="#lk-order" class="lk-nav__link">Мои заказы</a>
+                <li class="lk-nav__item  lk-nav__item--devider">
+                  <a class="lk-nav__link" href="lk-order.html">
+                    <span class="lk-nav__text ">Мои заказы</span>
+                  </a>
                 </li>
-                <li class="lk-nav__item tab__title">
-                  <a href="#" class="lk-nav__link">Пресональные скидки</a>
+                <li class="lk-nav__item  ">
+                  <a class="lk-nav__link" href="lk-sale.html">
+                    <span class="lk-nav__text ">Пресональные скидки</span>
+                  </a>
                 </li>
               </ul>
             </aside><!-- end lk__nav -->
@@ -872,14 +869,14 @@
         <div class="modal-window__body">
           <div class="new-profile__title">Добавление нового профиля</div>
           <div class="button-box button-box--center">
-            <button class="btn btn-accent btn--icon js-change-profile" data-profile="add-profile-user" data-tab-index="2">
+            <a href="lk-add-person.html" class="btn btn-accent btn--icon">
               <svg class="icon icon-cs-user btn__icon">
                 <use xlink:href="img/sprite.svg#cs-user"></use>
-              </svg> Частное лицо </button>
-            <button class="btn btn--white btn--icon js-change-profile" data-profile="add-profile-company" data-tab-index="3">
+              </svg> Частное лицо </a>
+            <a href="lk-add-company.html" class="btn btn--white btn--icon">
               <svg class="icon icon-cs-tower btn__icon">
                 <use xlink:href="img/sprite.svg#cs-tower"></use>
-              </svg> Компания </button>
+              </svg> Компания </a>
           </div>
         </div>
       </div>

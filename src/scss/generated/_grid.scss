@@ -12,6 +12,28 @@
 	&--end {
 		align-items: flex-end;
 	}
+
+	&--pos {
+		position: relative;
+
+		.pedit__title {
+			&.no-wrap {
+				padding-bottom: 25px;
+			}
+		}
+	}
+
+	&__checkbox {
+		position: absolute !important;
+		top: 0;
+		right: 15px;
+
+		@include max-screen(480) {
+			right: auto;
+			left: 15px;
+			top: 25px;
+		}
+	}
 }
 
 @for $i from 1 through 12 {
@@ -75,4 +97,12 @@
     .pt-#{$i} {
         padding-top: $i + px;
     }
+}
+
+.ml-a {
+	margin-left: auto;
+}
+
+.pos-xs-top {
+	order: -1;
 }

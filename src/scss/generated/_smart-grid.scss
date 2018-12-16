@@ -10,6 +10,14 @@ $break_i7: 375px;
 $break_i5: 320px;
 
 $offset: 30px;
+
+$fields: 30px;
+
+@include max-screen(768) {
+	$offset: 20px;
+	$fields: 20px;
+}
+
 $offset_lg: $offset;
 $offset_md: $offset;
 $offset_sm: $offset;
@@ -26,8 +34,6 @@ $offset_xs_one_side: ($offset_xs / 2);
 $offset_i8_one_side: ($offset_i8 / 2);
 $offset_i7_one_side: ($offset_i7 / 2);
 $offset_i5_one_side: ($offset_i5 / 2);
-
-$fields: 30px;
 
 @mixin wrapper-full(){
     padding-left: $fields;
@@ -554,15 +560,15 @@ $fields: 30px;
     height: 100vh;
     position: fixed;
     width: 100%;
-    
+
     > div{
         height: inherit;
         @include wrapper();
-        
+
         > div{
             height: inherit;
             @include row-flex();
-            
+
             > div{
                 @include col();
                 @include size(1);
