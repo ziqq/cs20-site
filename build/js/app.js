@@ -600,56 +600,84 @@ $(function () {
 				}
 			});
 		}
+	})();
 
-		var $sliderStories = $('.js-cs-slider--stories');
-		if ($sliderStories.length) {
-			$sliderStories.each(function () {
-				var $slides = $(this).find('.cs-slider__slides');
-				var $slide = $(this).find('.cs-slider__slide');
-				var $dot = $(this).find('.slick-dots li');
-				var $arrowPrev = $(this).find('.cs-slider__arrow--prev').hide();
-				var $arrowNext = $(this).find('.cs-slider__arrow--next').hide();
+	(function () {
+		var $stories = $('.js-stories');
 
-				if ($slide.length > 1) {
-					var _$slides$not$slick;
+		if ($stories.length) {
+			$stories.each(function () {
+				var $item = $(this).find('.storis__item');
+				var $storiesSlider = $(this).find('.stories-slider');
+				var _this = $(this);
 
-					$arrowPrev.show();
-					$arrowNext.show();
+				$item.on('click', function () {
+					var id = $(this).data('stories-target');
 
-					$dot.addClass('is-empty');
+					_this.find('[data-stories-slide=' + id + ']').addClass('is-visible');
 
-					$(this).on('init', function () {
-						var _this2 = this;
+					checkInit(id);
+				});
 
-						$(this).find('.slick-dots li').addClass('is-empty');
+				function checkInit(id) {
+					if ($(this).find('.stories-slider[data-stories-slide=' + id + ']').hasClass('is-visible')) {
+						console.log('---', 'Slider INIT');
+					}
+				}
 
-						setTimeout(function () {
-							$(_this2).find('.slick-dots li').first().removeClass('is-empty');
-						}, 300);
-					});
+				function initSlider() {
+					var $sliderStories = $('.js-cs-slider--stories');
+					if ($sliderStories.length) {
+						$sliderStories.each(function () {
+							var $slides = $(this).find('.cs-slider__slides');
+							var $slide = $(this).find('.cs-slider__slide');
+							var $dot = $(this).find('.slick-dots li');
+							var $arrowPrev = $(this).find('.cs-slider__arrow--prev').hide();
+							var $arrowNext = $(this).find('.cs-slider__arrow--next').hide();
 
-					$slides.not('.slick-initialized').slick((_$slides$not$slick = {
-						prevArrow: $arrowPrev,
-						nextArrow: $arrowNext,
-						arrows: true,
-						infinite: false,
-						dots: true,
-						speed: 400,
-						autoplay: false
-					}, _defineProperty(_$slides$not$slick, 'autoplay', true), _defineProperty(_$slides$not$slick, 'autoplaySpeed', 5000), _defineProperty(_$slides$not$slick, 'slidesToShow', 1), _defineProperty(_$slides$not$slick, 'slidesToScroll', 1), _$slides$not$slick)).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-						$(this).find('.slick-dots li').eq(nextSlide).removeClass('is-empty');
-						$(this).find('.slick-dots li').eq(currentSlide).removeClass('is-empty');
-					}).on('afterChange', function (event, slick, currentSlide, nextSlide) {
-						console.log('--- currentSlide', currentSlide);
-						console.log('--- lenght', $slide.length);
+							if ($slide.length > 1) {
+								var _$slides$not$slick;
 
-						if (currentSlide == $slide.length - 1) {
-							console.log('---', 'DONE');
-							setTimeout(function () {
-								$sliderStories.closest('.stories-container').css('display', 'none');
-							}, 5000);
-						}
-					});
+								$arrowPrev.show();
+								$arrowNext.show();
+
+								$dot.addClass('is-empty');
+
+								$(this).on('init', function () {
+									var _this2 = this;
+
+									$(this).find('.slick-dots li').addClass('is-empty');
+
+									setTimeout(function () {
+										$(_this2).find('.slick-dots li').first().removeClass('is-empty');
+									}, 300);
+								});
+
+								$slides.not('.slick-initialized').slick((_$slides$not$slick = {
+									prevArrow: $arrowPrev,
+									nextArrow: $arrowNext,
+									arrows: true,
+									infinite: false,
+									dots: true,
+									speed: 400,
+									autoplay: false
+								}, _defineProperty(_$slides$not$slick, 'autoplay', true), _defineProperty(_$slides$not$slick, 'autoplaySpeed', 5000), _defineProperty(_$slides$not$slick, 'slidesToShow', 1), _defineProperty(_$slides$not$slick, 'slidesToScroll', 1), _$slides$not$slick)).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+									$(this).find('.slick-dots li').eq(nextSlide).removeClass('is-empty');
+									$(this).find('.slick-dots li').eq(currentSlide).removeClass('is-empty');
+								}).on('afterChange', function (event, slick, currentSlide, nextSlide) {
+									console.log('--- currentSlide', currentSlide);
+									console.log('--- lenght', $slide.length);
+
+									if (currentSlide == $slide.length - 1) {
+										console.log('---', 'DONE');
+										setTimeout(function () {
+											$sliderStories.closest('.stories-container').css('display', 'none');
+										}, 5000);
+									}
+								});
+							}
+						});
+					}
 				}
 			});
 		}

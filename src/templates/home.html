@@ -67,22 +67,20 @@ firstscreenTitle: true
 	<!-- begin cs-section  -->
 	 <section class="cs-section cs-section--storis xs-only">
 
-		<div class="storis">
-			<div class="storis__inner">
+		<div class="storis js-stories">
+			<ul class="storis__list">
 				{% import "data/data.html" as storis %}
 				{% for item in storis.storis %}
-				<a href="{{ item.link }}" class="storis__item" style="background-image: url('img/general/info/{{ item.img }}.png');">
+				<li class="storis__item" style="background-image: url('img/general/info/{{ item.img }}.png');" data-stories-target="1">
 					<h5 class="storis__title">
 						{{ item.title }}
 					</h5>
-				</a>
+				</li>
 				{% endfor %}
-			</div>
-		</div>
+			</ul>
 
-		<div class="stories-container">
-			<div class="stories-content">
-				<div class="stories-slider">
+			<div class="stories-container">
+				<div class="stories-slider" data-stories-slide="1">
 
 					<div class="cs-slider cs-slider--stories js-cs-slider--stories">
 						<div class="cs-slider__arrow cs-slider__arrow--prev"></div>

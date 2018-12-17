@@ -258,6 +258,7 @@ $(function() {
 	//=include components/Dropdown.js
 	//=include components/Search.js
 	//=include components/Slider.js
+	//=include components/Stories.js
 	//=include modules/Menu.js
 	//=include partials/cs-scripts.js
 

@@ -11,7 +11,6 @@
 //=include ../../bower_components/select2/dist/js/select2.full.js
 
 //=include ../libs/slick/slick.js
-//=include ../libs/instagramSlider/zuck.js
 
 //=include ../libs/sticky-sidebar-resize.js
 //=include ../libs/sticky-sidebar.js

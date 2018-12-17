@@ -1,189 +1,121 @@
 (function() {
-	const stories = [
-		{
-			title: 'Story 1',
-			description: 'description 1',
-			image: 'https://picsum.photos/500/750',
-			time: 3500
-		},
-		{
-			title: 'Story 2',
-			description: 'description 2',
-			image: 'https://picsum.photos/500/751',
-			time: 4000
-		},
-		{
-			title: 'Story 3',
-			description: 'description 3',
-			image: 'https://picsum.photos/500/752',
-			time: 2500
-		},
-		{
-			title: 'Story 4',
-			description: 'description 4',
-			image: 'https://picsum.photos/500/753',
-			time: 7500
-		}
-	];
+	let $stories = $('.js-stories');
 
-	const container = document.querySelector('#stories');
-	const nextButton = document.querySelector('#next');
-	const backButton = document.querySelector('#back');
+	if ($stories.length) {
+		$stories.each(function() {
+			let $item = $(this).find('.storis__item');
+			let $storiesSlider = $(this).find('.stories-slider');
+			let _this = $(this);
 
-	function Storyfier(storiesArray, rootEl) {
-		this.stories = storiesArray;
-		this.root = rootEl;
-		this.times = rootEl.querySelector('#times');
-		this.currentTime = 0;
-		this.currentIndex = 0;
+			$item.on('click', function() {
+				let id = $(this).data('stories-target');
 
-		// create breakpoints for when the slides should change
-		this.intervals = this.stories.map((story, index) => {
-			// TODO change so that it just uses the previous value + current time
-			let sum = 0;
-			for (let i = 0; i < index; i++) {
-				sum += this.stories[i].time;
-			}
-			return sum;
-		});
+				_this
+					.find('[data-stories-slide=' + id + ']')
+					.addClass('is-visible');
 
-		// necessary to make sure the last slide plays to completion
-		this.maxTime =
-			this.intervals[this.intervals.length - 1] +
-			this.stories[this.stories.length - 1].time;
-
-		// render progress bars
-		this.progressBars = this.stories.map(() => {
-			const el = document.createElement('div');
-			el.classList.add('time-item');
-			el.innerHTML = '<div style="width: 0%"></div>';
-			return el;
-		});
-
-		this.progressBars.forEach(el => {
-			this.times.appendChild(el);
-		});
-
-		// methods
-		this.render = () => {
-			const story = this.stories[this.currentIndex];
-			this.root.style.background = `url('${story.image}')`;
-			this.root.querySelector('#title').innerHTML = story.title;
-			this.root.querySelector('#description').innerHTML =
-				story.description;
-		};
-
-		this.updateProgress = () => {
-			this.progressBars.map((bar, index) => {
-				// Fill already passed bars
-				if (this.currentIndex > index) {
-					bar.querySelector('div').style.width = '100%';
-					return;
-				}
-
-				if (this.currentIndex < index) {
-					bar.querySelector('div').style.width = '0%';
-					return;
-				}
-
-				// update progress of current bar
-				if (this.currentIndex == index) {
-					const timeStart = this.intervals[this.currentIndex];
-
-					let timeEnd;
-					if (this.currentIndex == this.stories.length - 1) {
-						timeEnd = this.maxTime;
-					} else {
-						timeEnd = this.intervals[this.currentIndex + 1];
-					}
-
-					const animatable = bar.querySelector('div');
-					animatable.style.width = `${((this.currentTime -
-						timeStart) /
-						(timeEnd - timeStart)) *
-						100}%`;
-				}
+				checkInit(id);
 			});
-		};
+
+			function checkInit(id) {
+				if (
+					$(this)
+						.find('.stories-slider[data-stories-slide=' + id + ']')
+						.hasClass('is-visible')
+				) {
+					console.log('---', 'Slider INIT');
+				}
+			}
+
+			function initSlider() {
+				let $sliderStories = $('.js-cs-slider--stories');
+				if ($sliderStories.length) {
+					$sliderStories.each(function() {
+						let $slides = $(this).find('.cs-slider__slides');
+						let $slide = $(this).find('.cs-slider__slide');
+						let $dot = $(this).find('.slick-dots li');
+						let $arrowPrev = $(this)
+							.find('.cs-slider__arrow--prev')
+							.hide();
+						let $arrowNext = $(this)
+							.find('.cs-slider__arrow--next')
+							.hide();
+
+						if ($slide.length > 1) {
+							$arrowPrev.show();
+							$arrowNext.show();
+
+							$dot.addClass('is-empty');
+
+							$(this).on('init', function() {
+								$(this)
+									.find('.slick-dots li')
+									.addClass('is-empty');
+
+								setTimeout(() => {
+									$(this)
+										.find('.slick-dots li')
+										.first()
+										.removeClass('is-empty');
+								}, 300);
+							});
+
+							$slides
+								.not('.slick-initialized')
+								.slick({
+									prevArrow: $arrowPrev,
+									nextArrow: $arrowNext,
+									arrows: true,
+									infinite: false,
+									dots: true,
+									speed: 400,
+									autoplay: false,
+									autoplay: true,
+									autoplaySpeed: 5000,
+									slidesToShow: 1,
+									slidesToScroll: 1
+								})
+
+								.on('beforeChange', function(
+									event,
+									slick,
+									currentSlide,
+									nextSlide
+								) {
+									$(this)
+										.find('.slick-dots li')
+										.eq(nextSlide)
+										.removeClass('is-empty');
+									$(this)
+										.find('.slick-dots li')
+										.eq(currentSlide)
+										.removeClass('is-empty');
+								})
+								.on('afterChange', function(
+									event,
+									slick,
+									currentSlide,
+									nextSlide
+								) {
+									console.log(
+										'--- currentSlide',
+										currentSlide
+									);
+									console.log('--- lenght', $slide.length);
+
+									if (currentSlide == $slide.length - 1) {
+										console.log('---', 'DONE');
+										setTimeout(() => {
+											$sliderStories
+												.closest('.stories-container')
+												.css('display', 'none');
+										}, 5000);
+									}
+								});
+						}
+					});
+				}
+			}
+		});
 	}
-
-	Storyfier.prototype.start = function() {
-		// Render initial state
-		this.render();
-
-		// START INTERVAL
-		const test = setInterval(() => {
-			this.currentTime += 10;
-			this.updateProgress();
-
-			if (
-				this.currentIndex >= this.stories.length - 1 &&
-				this.currentTime > this.maxTime
-			) {
-				clearInterval(test);
-				return;
-			}
-
-			const lastIndex = this.currentIndex;
-			if (this.currentTime >= this.intervals[this.currentIndex + 1]) {
-				this.currentIndex += 1;
-			}
-
-			if (this.currentIndex != lastIndex) {
-				this.render();
-			}
-		}, 10);
-	};
-
-	Storyfier.prototype.next = function() {
-		const next = this.currentIndex + 1;
-		if (next > this.stories.length - 1) {
-			return;
-		}
-
-		this.currentIndex = next;
-		this.currentTime = this.intervals[this.currentIndex];
-		this.render();
-	};
-
-	Storyfier.prototype.back = function() {
-		if (
-			this.currentTime > this.intervals[this.currentIndex] + 350 ||
-			this.currentIndex === 0
-		) {
-			this.currentTime = this.intervals[this.currentIndex];
-			return;
-		}
-
-		this.currentIndex -= 1;
-		this.currentTime = this.intervals[this.currentIndex];
-		this.render();
-	};
-
-	const setup = async () => {
-		const loadImages = stories.map(({ image }) => {
-			return new Promise((resolve, reject) => {
-				let img = new Image();
-				img.onload = () => {
-					resolve(image);
-				};
-				img.src = image;
-			});
-		});
-
-		await Promise.all(loadImages);
-
-		const s = new Storyfier(stories, container);
-		s.start();
-
-		nextButton.addEventListener('click', () => {
-			s.next();
-		});
-
-		backButton.addEventListener('click', () => {
-			s.back();
-		});
-	};
-
-	setup();
 })();
