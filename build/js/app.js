@@ -1,5 +1,7 @@
 'use strict';
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 /**
  * App.js
  *
@@ -598,6 +600,59 @@ $(function () {
 				}
 			});
 		}
+
+		var $sliderStories = $('.js-cs-slider--stories');
+		if ($sliderStories.length) {
+			$sliderStories.each(function () {
+				var $slides = $(this).find('.cs-slider__slides');
+				var $slide = $(this).find('.cs-slider__slide');
+				var $dot = $(this).find('.slick-dots li');
+				var $arrowPrev = $(this).find('.cs-slider__arrow--prev').hide();
+				var $arrowNext = $(this).find('.cs-slider__arrow--next').hide();
+
+				if ($slide.length > 1) {
+					var _$slides$not$slick;
+
+					$arrowPrev.show();
+					$arrowNext.show();
+
+					$dot.addClass('is-empty');
+
+					$(this).on('init', function () {
+						var _this2 = this;
+
+						$(this).find('.slick-dots li').addClass('is-empty');
+
+						setTimeout(function () {
+							$(_this2).find('.slick-dots li').first().removeClass('is-empty');
+						}, 300);
+					});
+
+					$slides.not('.slick-initialized').slick((_$slides$not$slick = {
+						prevArrow: $arrowPrev,
+						nextArrow: $arrowNext,
+						arrows: true,
+						infinite: false,
+						dots: true,
+						speed: 400,
+						autoplay: false
+					}, _defineProperty(_$slides$not$slick, 'autoplay', true), _defineProperty(_$slides$not$slick, 'autoplaySpeed', 5000), _defineProperty(_$slides$not$slick, 'slidesToShow', 1), _defineProperty(_$slides$not$slick, 'slidesToScroll', 1), _$slides$not$slick)).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+						$(this).find('.slick-dots li').eq(nextSlide).removeClass('is-empty');
+						$(this).find('.slick-dots li').eq(currentSlide).removeClass('is-empty');
+					}).on('afterChange', function (event, slick, currentSlide, nextSlide) {
+						console.log('--- currentSlide', currentSlide);
+						console.log('--- lenght', $slide.length);
+
+						if (currentSlide == $slide.length - 1) {
+							console.log('---', 'DONE');
+							setTimeout(function () {
+								$sliderStories.closest('.stories-container').css('display', 'none');
+							}, 5000);
+						}
+					});
+				}
+			});
+		}
 	})();
 
 	(function () {
@@ -1150,13 +1205,13 @@ $(function () {
 				var height = void 0;
 
 				$(this).on('click', function () {
-					var _this2 = this;
+					var _this3 = this;
 
 					if ($(this).hasClass('is-open')) {
 						wrapperHeight = $wrapper.outerHeight(true);
 						console.log('--- wrapperHeight', wrapperHeight);
 						setTimeout(function () {
-							height = $(_this2).outerHeight(true);
+							height = $(_this3).outerHeight(true);
 							console.log('--- height', height);
 							$wrapper.animate({ 'min-height': wrapperHeight + height }, 300);
 						}, 300);

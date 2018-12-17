@@ -29,7 +29,6 @@ PageList:
   ready: 50
   desc : Доставка
 
-
   #contacts
 - file: contacts.html
   ready: 50
@@ -40,24 +39,41 @@ PageList:
   ready: 50
   desc : Карта
 
-  #contacts
-# - file: enter.html
-#   ready: 50
-#   desc : Вход
+  #enter
+- file: enter.html
+  ready: 50
+  desc : Вход
+
+  #registration
+- file: registration.html
+  ready: 50
+  desc : Регистрация
+
+  #password-recowery
+- file: password-recowery.html
+  ready: 50
+  desc : Регистрация
 
   #LK
-# - file: lk-user.html
-#   ready: 50
-#   desc : личные данные
+- file: lk-settings.html
+  ready: 50
+  desc : Настройки аккаунта
 
-# - file: lk-order.html
-#   ready: 50
-#   desc : мои заказы
+- file: lk-person.html
+  ready: 50
+  desc : Добавление профиля частного лица
 
-# - file: lk-sale.html
-#   ready: 50
-#   desc : персональные скидки
+- file: lk-company.html
+  ready: 50
+  desc : Добавление профиля юридического лица
 
+- file: lk-order.html
+  ready: 50
+  desc : Заказы
+
+- file: lk-sale.html
+  ready: 50
+  desc : Персональные скидки
 
   #news
 - file: news.html
@@ -90,6 +106,6 @@ PageList:
   desc : Error Page
 
   #Попап окна
-# - file: popups.html
-#   ready: 50
-#   desc : Попап окна
+- file: popups.html
+  ready: 50
+  desc : Попап окна
