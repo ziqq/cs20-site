@@ -21,13 +21,16 @@
 		&-#{$theme}
 			color: #fff
 			background-color: $color
+			border: 1px solid $color
 
 			&:hover
 				color: #fff
 				background-color: lighten($color, 5%)
+				border-color: lighten($color, 5%)
 
 			&:active
 				background-color: darken($color, 7%)
+				border-color: darken($color, 7%)
 				box-shadow: none
 
 		&-outline-#{$theme}
@@ -342,15 +345,17 @@
 
 //.go-top
 .go-top
-	width: 50px
-	height: 50px
+	width: 65px
+	height: 65px
 	line-height: 38px
 	border-radius: 50%
-	color: $color-text
-	background-color: $gray--dark
+	color: #fff
+	font-size: 30px
+	background-color: $gray--light
+	box-shadow: $bxs-box
 	cursor: pointer
 	position: fixed
-	right: 10px
+	left: 20px
 	bottom: -200%
 	+tr
 	z-index: z(dropdown)
@@ -361,5 +366,5 @@
 		display: none
 
 	&.is-visible
-		bottom: 10px
+		bottom: 20px
 //.go-top
