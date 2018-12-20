@@ -1,20 +1,8 @@
 ---
-title: Доставка | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
-
-breadcrumbs:
- - title: Корзина
-   icon: cart
-   class: is-checked
- - title: Авторизация
-   icon: cart__user
-   class: is-checked
- - title: Способ доставки
-   icon: delivery--transparent
-   class: is-active
- - title: Способ оплаты
-   icon: pay
- - title: Подтверждение заказа
-   icon: cart__check
+wrapClass: page-cart
+title: Корзина
+cartTitle: Доставка
+firstCheckBox: true
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -23,99 +11,88 @@ breadcrumbs:
 <!-- begin home -->
 <div class="content-wrapper cart">
 
-	<!-- begin breadcrumbs -->
-	<div class="container">
-		<div class="breadcrumbs breadcrumbs--icon">
-			<ul class="breadcrumbs__list">
-				{% for item in breadcrumbs %}
-				<li class="breadcrumbs__item {{item.class}}">
-					<a href="#" class="breadcrumbs__link">
-						<svg class="icon icon-{{item.icon}} ">
-							<use xlink:href="img/sprite.svg#{{item.icon}}"></use>
-						</svg>
-						{{item.title}}
-					</a>
-				</li>
-				{% endfor %}
-			</ul>
-		</div>
-	</div>
-	<!-- end breadcrumbs -->
-
 	<!-- begin cart -->
 	<div class="container">
-
-		<div class="cart__wrap">
-			<h1 class="cart__title">Выберите способ доставки</h1>
-			
-			<div class="row">
-				<div class="col-2">
-					<div class="delivery-item">
-						<div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-	                        {{ mixin.icon('delivery') }} 
-	                        <span class="cs-checkbox__box"></span>
-	                  	</div>
-	                  	<div class="delivery-item__text">
-	                  		<span class="delivery-item__title">Самовывоз</span>
-	                  		<div class="delivery-item__desc">Вы можете самостоятельно забрать заказ с нашего склада по адресу:  г. Балаково, ул. Транспортная 6/1.</div>
-	                  	</div>
-					</div>
-					<div class="delivery-item">
-						<div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-	                        <img class="delivery-item__img" src="img/general/delivery/pr.png" alt="Почта России">
-	                        <span class="cs-checkbox__box"></span>
-	                  	</div>
-	                  	<div class="delivery-item__text">
-	                  		<span class="delivery-item__title">Почта России</span>
-	                  		<div class="delivery-item__desc">При сумме заказа от 1000 рублей доставка почтой России за счёт продавца. Если сумма заказа менее 1000 рублей, то получатель самостоятельно оплачивает доставку в отделении почтовой связи при получении.</div>
-	                  	</div>
-					</div>
-					<div class="delivery-item">
-						<div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-	                        <img class="delivery-item__img" src="img/general/delivery/dl.png" alt="Транспортная компания Деловые Линии">
-	                        <span class="cs-checkbox__box"></span>
-	                  	</div>
-	                  	<div class="delivery-item__text">
-	                  		<span class="delivery-item__title">Деловые линии</span>
-	                  		<div class="delivery-item__desc">После оформления заказа с Вами свяжется наш менеджер для уточнения паспортных данных. Доставка оплачивается при получении заказа на терминале транспортной компании.</div>
-	                  	</div>
-					</div>
-				</div>
-			
-				<div class="col-2">
-					<div class="delivery-item">
-						<div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-	                        <img class="delivery-item__img" src="img/general/delivery/energy.png" alt="Транспортная компания Энергия">
-	                        <span class="cs-checkbox__box"></span>
-	                  	</div>
-	                  	<div class="delivery-item__text">
-	                  		<span class="delivery-item__title">Энергия</span>
-	                  		<div class="delivery-item__desc">После оформления заказа с Вами свяжется наш менеджер для уточнения паспортных данных. Доставка оплачивается при получении заказа на терминале транспортной компании.</div>
-	                  	</div>
-					</div>
-					<div class="delivery-item">
-						<div class="cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox">
-	                        <img class="delivery-item__img" src="img/general/delivery/pek.png" alt="Транспортная компания ПЭК">
-	                        <span class="cs-checkbox__box"></span>
-	                  	</div>
-	                  	<div class="delivery-item__text">
-	                  		<span class="delivery-item__title">ПЭК</span>
-	                  		<div class="delivery-item__desc">После оформления заказа с Вами свяжется наш менеджер для уточнения паспортных данных. Доставка оплачивается при получении заказа на терминале транспортной компании.</div>
-	                  	</div>
-					</div>
-				</div>
+		<div class="cart-box">
+			<div class="cart-box__header">
+				<h1 class="h1 cart-box__title">{{ cartTitle }}</h1>
+				{% include "blocks/cart/_breadcrumbs.html" %}
 			</div>
-			
-			<div class="button-box cart__button-box">
-				<a href="#" class="button button--transparent button--back">Вернуться назад</a>
-				<a href="#" class="button button--accent">Далее</a>
+			<div class="cart-box__content">
+
+				<div class="cart-box__inner">
+					<div class="row row--end js-select--box">
+						<div class="col-4 col-sm-6 col-xs-12">
+							<div class="pedit__item">
+								<div class="pedit__title">Укажите ваш адрес::<i>*</i></div>
+								<div class="pedit__field">
+									<select class="js-select js-select--country" data-placeholder="Выбор страны">
+										<option></option>
+										{% for i in range(0, 5) %}
+										<option value="{{ i+1 }}">{{ i+1 }}</option>
+										{% endfor %}
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-4 col-sm-6 col-xs-12">
+							<div class="pedit__item">
+								<div class="pedit__field">
+									<select class="js-select js-select--region" data-placeholder="Выбор региона" disabled>
+										<option></option>
+										{% for i in range(0, 5) %}
+										<option value="{{ i+1 }}">{{ i+1 }}</option>
+										{% endfor %}
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-4 col-sm-6 col-xs-12">
+							<div class="pedit__item">
+								<div class="pedit__field">
+									<select class="js-select js-select--city" data-placeholder="Выбор  города" disabled>
+										<option></option>
+										{% for i in range(0, 5) %}
+										<option value="{{ i+1 }}">{{ i+1 }}</option>
+										{% endfor %}
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-4 col-sm-6 col-xs-12">
+							<div class="pedit__item">
+								<div class="pedit__field">
+									{{item.input(type='number', placeholder='Индекс')}}
+								</div>
+							</div>
+						</div>
+
+						<div class="col-8 col-sm-12">
+							<div class="pedit__item">
+								<div class="pedit__field">
+									{{item.input(type='text', placeholder='Улица, дом, офис, кв.')}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="cart-box__bottom">
+				<div class="button-box button-box--end">
+					<p>Нажимая на кнопку "Далее", я даю <strong>согласие на обработку персональных данных</strong></p>
+					<a href="#" class="btn btn-outline-gray-light cart-box__btn">Назад</a>
+					<a href="#" class="btn btn-accent cart-box__btn">Далее</a>
+				</div>
 			</div>
 		</div>
-
 	</div>
 	<!-- end cart -->
 
-</div>	
+</div>
 <!-- end home -->
 
 {% endblock %}

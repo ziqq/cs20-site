@@ -11,6 +11,9 @@
 		width: 100%
 		@extend %responsMobile
 
+	//modal-window--offset
+	&--offset
+		padding: 40px 70px
 
 	//modal-window--mobile
 	&--mobile
@@ -22,6 +25,9 @@
 	&__header
 		text-align: center
 		margin-bottom: 25px
+
+		&.text-left
+			text-align: left
 
 	//modal-window__title
 	&__title
@@ -104,3 +110,51 @@
 				+r(768)
 					margin-left: 0
 					margin-top: 20px
+
+.enter
+	padding: 30px 70px 50px
+	+r(480)
+		padding: 30px 20px
+
+	.form
+		margin-bottom: 30px
+		+r(480)
+			margin-bottom: 10px
+		&__inner
+			+row-flex
+			align-items: flex-end
+			+r(480)
+				flex-direction: column
+		&__box
+			+col
+			+size(4)
+			+size-xs(12)
+			margin-bottom: 0
+			+r(480)
+				margin-bottom: 20px
+		&__input
+			+r(480)
+				width: 100%
+		.btn.w100
+			+r(480)
+				margin-top: 10px
+
+	.button-box
+		margin-bottom: 50px
+
+		.form__link
+			font-family: $f
+			color: #13599a
+			& + .form__link
+				margin-left: 20px
+
+	.fancybox-close-small
+		top: 30px
+		right: 20px
+
+	.modal-window
+		&__header
+			margin-bottom: 40px
+			text-align: left
+			+r(480)
+				margin-bottom: 20px

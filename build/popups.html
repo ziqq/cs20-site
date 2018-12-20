@@ -25,7 +25,7 @@
   </head>
   <body class="loading" itemscope="itemscope" itemtype="http://schema.org/WebPage">
     <div class="page-wrapper is-auth ">
-      <!-- begin mobile-nave -->
+      <!-- begin mobile-nav -->
       <nav class="mobile-nav js-mobile-nav md-only">
         <svg class="icon icon-cs-close mobile-nav__close js-mobile-nav--close">
           <use xlink:href="img/sprite.svg#cs-close"></use>
@@ -516,6 +516,71 @@
         </div>
       </div>
       <!-- end register -->
+      <!-- begin enter -->
+      <div class="modal-window modal-window--medium enter" id="enter">
+        <div class="modal-window__header">
+          <h4 class="modal-window__title">Вход в аккаунт</h4>
+        </div>
+        <div class="modal-window__body">
+          <form class="form form__register">
+            <div class="form__inner">
+              <div class="form__box">
+                <div class="pedit__item form__input">
+                  <div class="pedit__title no-wrap">Логин:<i>*</i></div>
+                  <div class="pedit__field">
+                    <div class="cs-input ">
+                      <input type="text" class="cs-input__field ">
+                      <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form__box">
+                <div class="pedit__item form__input is-invalid">
+                  <div class="pedit__title no-wrap">Пароль:<i>*</i></div>
+                  <div class="pedit__field">
+                    <div class="cs-input ">
+                      <input type="password" class="cs-input__field ">
+                      <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form__box">
+                <button class="btn btn--gr w100" type="submit">Войти</button>
+              </div>
+            </div>
+            <div class="success">
+              <div class="success__text">Добро пожаловать!</div>
+            </div>
+          </form>
+          <div class="button-box button-box--center">
+            <a class="form__link" href="password-recovery.html">Забыли пароль?</a>
+            <a class="form__link" href="registration.html">Регистрация</a>
+          </div>
+          <div class="item-icon__wrap xs-hide">
+            <div class="item-icon">
+              <svg class="icon icon-cs-address item-icon__ico">
+                <use xlink:href="img/sprite.svg#cs-address"></use>
+              </svg>
+              <div class="item-icon__text">Запомним адрес, чтобы не указывать снова</div>
+            </div>
+            <div class="item-icon">
+              <svg class="icon icon-cs-coupon item-icon__ico">
+                <use xlink:href="img/sprite.svg#cs-coupon"></use>
+              </svg>
+              <div class="item-icon__text">Откроем доступ к системе скидок</div>
+            </div>
+            <div class="item-icon">
+              <svg class="icon icon-cs-box item-icon__ico">
+                <use xlink:href="img/sprite.svg#cs-box"></use>
+              </svg>
+              <div class="item-icon__text">Детальное управление заказами</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end enter -->
       <!-- begin register -->
       <div class="modal-window modal-window--mobile register" id="register">
         <div class="modal-window__header">
@@ -556,38 +621,6 @@
         </div>
       </div>
       <!-- end register -->
-      <!-- begin enter -->
-      <div class="modal-window modal-window--mobile enter" id="enter">
-        <div class="modal-window__header">
-          <h4 class="modal-window__title">Вход в личный кабинет</h4>
-        </div>
-        <div class="modal-window__body">
-          <form class="form form__register">
-            <div class="cs-input cs-input--light form__input">
-              <input type="text" class="cs-input__field " placeholder="Логин или e-mail">
-              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-            </div>
-            <div class="cs-input cs-input--light form__input is-invalid">
-              <input type="password" class="cs-input__field " placeholder="Пароль">
-              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-            </div>
-            <div class="form__box mt-30">
-              <label class="cs-checkbox policy__checkbox">
-                <input type="checkbox">
-                <span class="cs-checkbox__box"></span>
-                <span class="cs-checkbox__title">Запомнить меня</span>
-              </label>
-            </div>
-            <button class="btn btn--gr form__btn" type="submit">Войти</button>
-            <div class="success">
-              <div class="success__text">Добро пожаловать!</div>
-            </div>
-          </form>
-          <a class="form__link js-popup-close mb-10" data-fancybox-close href="#password-recovery">Не могу войти</a>
-          <a class="form__link js-popup-close" data-fancybox-close href="#register">Регистрация</a>
-        </div>
-      </div>
-      <!-- end enter -->
       <!-- begin enter -->
       <div class="modal-window modal-window--mobile password-recovery" id="password-recovery">
         <div class="modal-window__header">

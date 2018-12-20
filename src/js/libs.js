@@ -4,6 +4,7 @@
 
 //=include ../../bower_components/jquery.nicescroll/jquery.nicescroll.min.js
 //=include _lib/equalheights.js
+//=include ../libs/tooltip/tooltipster.bundle.min.js
 
 //=include ../../bower_components/fancybox/dist/jquery.fancybox.js
 //=include ../../bower_components/inputmask/dist/jquery.inputmask.bundle.js

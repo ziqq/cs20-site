@@ -63,6 +63,57 @@
 			</div>
 			{% endif %}
 
+			{% if firstCheckBox %}
+			<div class="c-select__wrap">
+				<div class="c-select c-select--product js-c-select firstscreen__c-select w2 c-dropdown js-c-dropdown">
+					<div class="c-select__btn">
+						<div class="toggle c-select__toggle"><span></span></div>
+						<div class="c-select__val">Товары</div>
+					</div>
+					<div class="c-dropdown__list">
+						{{ mixin.icon('cs-close', 'c-dropdown__icon c-dropdown__icon--close js-cs-dropdown--close') }}
+						<div class="c-select__dropdown">
+							{% import "data/data.html" as products %}
+							{% for item in products.productsList %}
+							<li class="c-select__item">
+								<a href="javascript:void(0);" class="c-select__link">
+									{{ item.title }}
+								</a>
+							</li>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+
+				<div class="c-select c-select--avto js-c-select firstscreen__c-select c-dropdown js-c-dropdown">
+					<div class="c-select__btn">
+						<div class="toggle c-select__toggle"><span></span></div>
+						<div class="c-select__val">Авто</div>
+					</div>
+					<div class="c-dropdown__list">
+						{{ mixin.icon('cs-close', 'c-dropdown__icon c-dropdown__icon--close js-cs-dropdown--close') }}
+						<div class="c-select__dropdown">
+							<ul class="c-select__list">
+								{% import "data/data.html" as cars %}
+								{% for car in cars.cars %}
+								<li class="c-select__item">
+									<a href="javascript:void(0);" class="c-select__link">
+										{{ car.title }}
+									</a>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<a href="#" class="btn btn-link btn-link--icon sm-only--flex">
+					{{ mixin.icon('cs-sale', 'btn-link__icon') }}
+					Скидки
+				</a>
+			</div>
+			{% endif %}
+
 			{% include "partials/components/_search.html" %}
 
 			<div class="c-dropdown js-c-dropdown c-dropdown--wide c-dropdown--white ml-30 login sm-hide">

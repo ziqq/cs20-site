@@ -1,22 +1,6 @@
 ---
-title: Корзины
-
-breadcrumbs:
- - title: Корзина
-   icon: cart
-   tabTitleCount: tabs-1
- - title: Авторизация
-   icon: cart__user
-   tabTitleCount: tabs-2
- - title: Способ доставки
-   icon: delivery--transparent
-   tabTitleCount: tabs-3
- - title: Способ оплаты
-   icon: pay
-   tabTitleCount: tabs-4
- - title: Подтверждение заказа
-   icon: cart__check
-   tabTitleCount: tabs-5
+wrapClass: page-cart
+title: Корзина
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -48,7 +32,6 @@ breadcrumbs:
 			<div class="cart__left">
 				<div class="product-item__wrap loyout-column cart__items js-cart-items">
 					{% import "data/data-product.html" as productItem %}
-					{% for i in range(0, 3) %}
 					{% for product in productItem.productSimilar %}
 					<a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
 
@@ -71,16 +54,18 @@ breadcrumbs:
 								<span class="counter__control counter__control--plus js-counter--plus">+</span>
 							</div>
 						</div>
-						<button class="product-item__dell" title="Убрать из корзины">{{mixin.icon('cs-close')}}</button>
+						<button class="product-item__dell" title="Убрать из корзины">
+							{{mixin.icon('cs-close', 'xs-hide')}}
+							{{mixin.icon('cs-basket', 'xs-only')}}
+						</button>
 					</a>
-					{% endfor %}
 					{% endfor %}
 				</div>
 			</div>
 			<!-- end cart__left -->
 			<!-- begin cart__right -->
 			<div class="cart__right js-cart-sticky">
-				<div class="cart__sum">
+				<div class="cart__sum js-cart-sum">
 					<ul class="list list--dot">
 						<li class="list__item">
 							<span>Сумма заказа: </span>
@@ -97,7 +82,7 @@ breadcrumbs:
 					</ul>
 					<div class="button-box button-box--column">
 						<div class="input-group">
-							<span class="input-group__info">Персональные скидки с купонами <br> не суммируются</span>
+							<span class="input-group__info">Персональные скидки с купонами не суммируются</span>
 							<div class="input-group__field">
 								<input type="text" placeholder="Купон">
 								<button class="btn btn-gray-light input-group__btn">Применить</button>

@@ -21,6 +21,46 @@ PageList:
   ready: 50
   desc : Корзина
 
+- file: cart-profile.html
+  ready: 50
+  desc : Корзина выбор профиля
+
+- file: cart-delivery-place.html
+  ready: 50
+  desc : Корзина место доставки
+
+- file: cart-delivery.html
+  ready: 50
+  desc : Корзина доставка
+
+- file: cart-delivery-pickup.html
+  ready: 50
+  desc : Самовывоз
+
+- file: cart-delivery-choice.html
+  ready: 50
+  desc : Выбор способа доставки
+
+- file: cart-delivery-pay.html
+  ready: 50
+  desc : Выбор способа оплаты
+
+- file: cart-profile-add.html
+  ready: 50
+  desc : Добавление нового профиля
+
+- file: cart-profile-add-1.html
+  ready: 50
+  desc : Добавление нового профиля
+
+- file: cart-profile-add-2.html
+  ready: 50
+  desc : Добавление нового профиля компании
+
+- file: cart-success.html
+  ready: 50
+  desc : Корзина триумф
+
 - file: payment.html
   ready: 50
   desc : Способы оплаты

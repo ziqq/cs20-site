@@ -10,7 +10,7 @@
 		+i8-l
 			padding-top: 35px
 		+r(480)
-			padding: 35px 0
+			padding: 80px 0 35px
 
 	//.error__left
 	&__left, &__right
@@ -49,20 +49,31 @@
 			// font-size: 150px
 		+r(768)
 			// font-size: 120px
+			font-family: $f-bold
+			color: #fff
+			text-shadow: 0px 10px 15px rgba(0, 0, 0, 0.08)
+			background: none
+			-webkit-text-fill-color: initial
 			position: absolute
 			top: -30px
 			right: 20%
 		+r(480)
 			+centre('x')
 			right: auto
+			top: -80px
 
 	//.error__text
 	&__text
 		margin-bottom: 0
 		text-align: left
+		+r(768)
+			text-align: center
 		p
 			display: block
 			font-size: 16px
 			line-height: 21px
 			+r(480)
 				margin-bottom: 15px
+
+	&__btn
+		width: 80%

@@ -62,17 +62,19 @@
 
 	//breadcrumbs--icon
 	&--icon
+		margin-left: auto
+		padding: 0
+
 		.breadcrumbs
 			&__list
 				+flexCenter
-				justify-content: spase-between
-				+r(480)
-					justify-content: center
 			&__item
-				margin: auto
+				// margin: auto
 				&.is-active, &.is-checked
-					.breadcrumbs__link
-						color: $color-text
+					.breadcrumbs
+						&__link
+							font-family: $f
+							color: $color-text
 					.icon
 						fill: $color-text
 				&:last-child
@@ -92,34 +94,41 @@
 					.breadcrumbs__link
 						font-size: 16px
 			&__link
-				padding: 0 35px 0 45px
-				color: $color-text
-				font-size: 18px
+				padding: 0 20px
+				color: $color-text--light
+				font-family: $f-light
+				font-size: 14px
 				line-height: 1
 				position: relative
+				+flexColumn
+				align-items: center
+				justify-content: center
+
 				+r(768)
-					padding: 0 22px 0 30px
-					font-size: 15px
+					padding: 0 10px
+					font-size: 12px
+
 				&::before
-					content: '\f105'
-					font-family: fontawesome
-					font-size: 18px
+					content: ''
+					display: block
+					width: 30px
+					height: 1px
+					background-color: $gray--light
 					+vy
-					right: 0
-					+r(768)
-						display: none
-				.icon
-					fill: $gray--light
-					+vy
-					left: 0
-					&-cart
-						width: 21px
-					&-user
-						width: 20px
-					&-delivery--transparent
-						width: 27px
-					&-pay
-						width: 23px
-					&-check
-						width: 18px
+					right: -30px
+
+		.icon
+			margin-bottom: 5px
+			fill: $gray--light
+
+			&-cs-cart
+				width: 21px
+			&-cs-user
+				width: 18px
+			&-cs-delivery
+				width: 31px
+			&-cs-pay
+				width: 22px
+			&-cs-check
+				width: 18px
 //breadcrumbs

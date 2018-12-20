@@ -1,22 +1,8 @@
 ---
-title: Доставка | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
-
-breadcrumbs:
- - title: Корзина
-   icon: cart
-   class: is-checked
- - title: Авторизация
-   icon: cart__user
-   class: is-checked
- - title: Способ доставки
-   icon: delivery--transparent
-   class: is-checked
- - title: Способ оплаты
-   icon: pay
-   class: is-checked
- - title: Подтверждение заказа
-   icon: cart__check
-   class: is-active
+wrapClass: page-cart
+title: Корзина
+cartTitle: Заказ №87 успешно оформлен!
+firstCheckBox: true
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -25,57 +11,52 @@ breadcrumbs:
 <!-- begin home -->
 <div class="content-wrapper cart">
 
-	<!-- begin breadcrumbs -->
-	<div class="container">
-		<div class="breadcrumbs breadcrumbs--icon">
-			<ul class="breadcrumbs__list">
-				{% for item in breadcrumbs %}
-				<li class="breadcrumbs__item {{item.class}}">
-					<a href="#" class="breadcrumbs__link">
-						<svg class="icon icon-{{item.icon}} ">
-							<use xlink:href="img/sprite.svg#{{item.icon}}"></use>
-						</svg>
-						{{item.title}}
-					</a>
-				</li>
-				{% endfor %}
-			</ul>
-		</div>
-	</div>
-	<!-- end breadcrumbs -->
-
 	<!-- begin cart -->
 	<div class="container">
-
-		<div class="cart-success__wrap">
-
-			<h1 class="cart-success__title">Заказ успешно оформлен. Спасибо!</h1>
-
-			<div class="cart-success__inner">
-				<span class="cart-success__subtitle">Ваш заказ: №490 от 01.05.2018 14:58</span>
-				
-				<div class="cart-success__text">
-					В ближайшее время с Вами свяжется наш менеджер для подтверждения заказа. <br>
-					Вы можете следить за выполнением своего заказа в <a href="#">Личном кабинете</a>. <br>
-					Отправка заказа производится только после платы. <br>
-					Товар бронируется на складе в течении трех рабочих дней.
-				</div>
-				
-				<span class="cart-success__subtitle mb-10">Счет: <span>№492</span> от 01.05.2018 14:58</span>
-				
-				<span class="cart-success__subtitle">Сумма к оплате по счету: <span>3254</span> <i class="fa fa-rub"></i></span>
+		<div class="cart-box">
+			<div class="cart-box__header">
+				<h1 class="h1 cart-box__title">{{ cartTitle }}</h1>
+				{% include "blocks/cart/_breadcrumbs.html" %}
 			</div>
-			
-			<div class="button-box">
-				<a href="#" class="button button--transparent button--back">Вернуться в магазин</a>
-				<a href="#" class="button button--accent">Оплатить</a>
+			<div class="cart-box__content">
+				<div class="row row--center">
+					<div class="col-5 col-xs-12">
+						<ul class="list list--dot">
+							<li class="list__item list__item--light">
+								<span>Сумма заказа: </span>
+								<span>4 567 р.</span>
+							</li>
+							<li class="list__item list__item--light">
+								<span>Скидка: </span>
+								<span>229 р.</span>
+							</li>
+							<li class="list__item list__item--light">
+								<span>Стоимость доставки:: </span>
+								<span>450 руб.</span>
+							</li>
+							<li class="list__item list__item--bold">
+								<span>Итого: </span>
+								<span>4 338 р.</span>
+							</li>
+						</ul>
+					</div>
+					<div class="col-7 col-sm-12">
+						<button class="btn btn-link btn-link-gray mt-30 js-text--show">Дополнительная информация</button>
+						<div class="cart-box__text cart-box__text--offset js-text"><p>В ближайшее время с Вами свяжется наш менеджер для подтверждения заказа.</p> <p>Вы можете следить за выполнением своего заказа в Личном кабинете.</p> <p>Отправка заказа производится только после платы. Товар бронируется на складе в течении двух рабочих дней.</p></div>
+					</div>
+				</div>
+			</div>
+			<div class="cart-box__bottom cart-box__bottom--column">
+				<div class="button-box button-box--end">
+					<a href="catalog.html" class="btn btn-outline-gray-light cart-box__btn pos-xs-2">Вернуться в магазин</a>
+					<button class="btn btn-accent cart-box__btn pos-xs-1">Оплатить</button>
+				</div>
 			</div>
 		</div>
-
 	</div>
 	<!-- end cart -->
 
-</div>	
+</div>
 <!-- end home -->
 
 {% endblock %}

@@ -63,11 +63,14 @@ $('.js-cs-checkbox').on('click', function() {
 	}
 });
 
-$(document).on('click', '.js-cs-radio--pseudo', function() {
-	if ($(this).hasClass('is-checked')) {
-		$(this).removeClass('is-checked');
-	} else {
-		$('.js-cs-radio--pseudo').removeClass('is-checked');
-		$(this).addClass('is-checked');
-	}
+$('.js-cs-radio--pseudo').on('click', function() {
+	let id = $(this).data('info-delivery');
+
+	$('.js-cs-radio--pseudo')
+		.not($(this))
+		.removeClass('is-checked');
+	$(this).addClass('is-checked');
+
+	$('[data-info-delivery-text]').hide();
+	$('[data-info-delivery-text=' + id + ']').show();
 });

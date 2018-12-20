@@ -1,0 +1,55 @@
+---
+wrapClass: page-cart
+title: Корзина
+cartTitle: Выбор профиля
+firstCheckBox: true
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper cart">
+
+
+
+	<!-- begin cart -->
+	<div class="container">
+		<div class="cart-box">
+			<div class="cart-box__header">
+				<h1 class="h1 cart-box__title">{{ cartTitle }}</h1>
+				{% include "blocks/cart/_breadcrumbs.html" %}
+			</div>
+			<div class="cart-box__content">
+				<!-- begin chose-profile -->
+				<div class="chose-profile">
+					<div class="chose-profile__inner">
+						<div class="chose-profile__item">
+							<div class="chose-profile__title">ООО “Азбука”</div>
+							<div class="chose-profile__text">420080, Республика Татарстан, Пестречинский р-н, пос. Пестрецы, ул. Декабристов, 102, офис 301</div>
+						</div>
+						<div class="chose-profile__item">
+							<div class="chose-profile__title">Иван Петров</div>
+							<div class="chose-profile__text">420080, Республика Татарстан, гор. Казань, ул. Декабристов, 102, кв. 17</div>
+						</div>
+						<a href="cart-profile-add.html" class="chose-profile__item chose-profile__item--add">
+							{{ mixin.icon('cs-plus--round', 'chose-profile__icon') }}
+							<span>Добавить профиль</span>
+						</a>
+					</div>
+				</div><!-- end chose-profile -->
+			</div>
+			<div class="cart-box__bottom">
+				<div class="button-box button-box--end">
+					<a href="#" class="btn btn-outline-gray-light cart-box__btn">Назад</a>
+					<a href="#" class="btn btn-accent cart-box__btn">Далее</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end cart -->
+
+</div>
+<!-- end home -->
+
+{% endblock %}

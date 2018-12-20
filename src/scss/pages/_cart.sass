@@ -1,11 +1,21 @@
+.page-cart
+	.firstscreen__line
+		.c-select__wrap
+			+r(480)
+				display: none
+
+//.cart
 .cart
 	background-color: #eee
 
-	//cart__wrap
+	+r(768)
+		background-color: #fff
+
+	//.cart__wrap
 	&__wrap
 		padding-bottom: 50px
 
-	//cart__title
+	//.cart__title
 	&__title
 		margin-bottom: 40px
 		font-family: $f-medium
@@ -14,7 +24,7 @@
 		+r(480)
 			text-align: center
 
-	//cart__inner
+	//.cart__inner
 	&__inner
 		margin-bottom: 60px
 		+flex
@@ -24,32 +34,80 @@
 			flex-wrap: wrap
 			border: 0
 
-	//cart__left
+		+r(480)
+			margin-bottom: 0
+
+	//.cart__left
 	&__left
 		width: calc(100% - 350px)
 		margin-right: $gutter
 		@extend %box
 		overflow: hidden
 
-		+r(1024)
+		+r(768)
 			width: 100%
 			margin-bottom: $gutter
+			margin-right: 0
+			box-shadow: none
 
 		.product-item
-			padding: 30px 0 !important
 			&__wrap
-				padding: 0 30px;
+				padding: 0 30px
+				+r(1024)
+					padding: 0 15px
+				+r(768)
+					padding: 0
+
+				.product-item
+					padding: 30px 0
+					+r(480)
+						padding: 15px 0
+					&__img
+						+r(1024)
+							max-width: 125px
+							margin-right: 15px
+						+r(480)
+							max-width: 75px
+					&__price
+						+r(1024)
+							font-size: 18px
+					&__title
+						+r(480)
+							max-width: 100%
+							margin-right: 0
+							margin-bottom: 5px
+							font-family: $f
+							font-size: 17px
+							line-height: 1.4
+						+r(375)
+							font-size: 15px
+
 			&__desc
 				justify-content: space-between
 			&__price
 				margin-left: 0 !important
 
-	//cart__right
+			&__counter
+				+r(480)
+					margin-right: 30px
+			&__dell
+				+r(480)
+					display: block
+					padding: 0
+					fill: $color-text
+					top: auto
+					bottom: 20px
+					right: -5px
+
+	//.cart__right
 	&__right
 		width: 350px
 		margin-left: auto
 
 		+r(1024)
+			width: 320px
+
+		+r(768)
 			width: 100%
 			border: 0
 			display: flex
@@ -66,12 +124,14 @@
 			.input-group
 				margin-bottom: 20px
 
+	//.cart__bottom
+	&__bottom
 
-	//cart__items
+	//.cart__items
 	&__items
 		+flexColumn
 
-	//cart__sum
+	//.cart__sum
 	&__sum
 		width: 100%
 		@extend %box
@@ -85,11 +145,70 @@
 				margin: auto
 				display: flex
 				align-items: center
-		+r(480)
-			padding: 5px 0 11px
+
+		+r(768)
+			box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15)
+			display: flex
+			align-items: flex-end
+			position: fixed
+			bottom: 10px
+			left: 10px
+			right: 10px
+			width: auto
+			z-index: z(fixed)
+			+tr
+			+trfY(150%)
+
+			&.is-visible
+				+trfY(0)
+
+
+
+			.list
+				margin: 0 15px 0 0
+				flex-shrink: 0
+				flex-basis: calc(50% - 15px)
+
+				&__item
+					& + .list__item
+						margin-top: 18px
+
 			.button-box
-				max-width: 100%
-				flex-direction: column
+				margin: 0 0 0 15px
+				flex-basis: calc(50% - 15px)
+
+			.input-group
+				&__info
+					white-space: nowrap
+
+		+r(480)
+			padding: 15px
+			flex-direction: column
+
+			.list
+				width: 100%
+				flex-basis: 100%
+				margin-right: 0
+				margin-bottom: 15px
+
+				&__item
+					& + .list__item
+						margin-top: 10px
+
+			.button-box
+				width: 100%
+				flex-basis: 100%
+				margin-left: 0
+
+			.input-group
+				width: 100%
+				&__btn
+					padding: 11px 20px
+
+				&__info
+					+r(375)
+						white-space: normal
+
 		&-title
 			display: block
 			margin-bottom: 10px
@@ -115,13 +234,13 @@
 				&:last-child
 					margin-bottom: 0
 
-	//cartbutton-box
+	//.cartbutton-box
 	&__button-box
 		text-align: right
 		+r(480)
 			text-align: center
 
-	//cart__textarea
+	//.cart__textarea
 	&__textarea
 		width: 100%
 		max-height: 200px
@@ -132,6 +251,16 @@
 		resize: none
 		+cs-scroll
 
+	&__offset-top
+		margin-top: 63px
+		+r(768)
+			margin-top: 0
+
+		textarea
+			min-height: 232px
+			+r(480)
+				min-height: 180px
+
 	.button
 		+r(480)
 			width: 100%
@@ -140,6 +269,17 @@
 			+r(480)
 				margin-bottom: 15px
 				margin-right: 0
+
+	//.cart .info-text
+	.info-text
+		margin-bottom: 60px
+		font-size: 16px
+		color: $color-text--light
+
+		+r(480)
+			margin-bottom: 30px
+		span
+			font-family: $f-light
 
 	.product-item
 		border: 0
@@ -164,10 +304,210 @@
 			padding: 20px 50px 20px 20px
 			+r(768)
 				padding: 20px
+//.cart end
 
-	.row
-		margin-bottom: 25px
-//cart
+//.cart-box
+.cart-box
+	margin: 40px 0 60px
+	padding: 40px 50px
+	@extend %box
+
+	+r(768)
+		box-shadow: none
+		padding: 0
+
+	+r(480)
+		margin: 20px 0 50px
+
+	&__inner
+		max-width: 768px
+
+	//.cart-box__title
+	&__title
+		font-family: $f-light
+		font-weight: 300
+		font-size: 30px
+		color: $color-text
+		flex-shrink: 0
+
+		+r(1024)
+			font-size: 24px
+
+		+r(768)
+			font-size: 18px
+			font-family: $f
+
+	//.cart-box__subtitle
+	&__subtitle
+		margin-bottom: 30px
+		font-family: $f-light
+		font-size: 14px
+		strong
+			font-family: $f-medium
+			font-weight: 500
+
+	//.cart-box__header
+	&__header
+		margin-bottom: 60px
+		+flexCenter
+
+		+r(1024)
+			margin-bottom: 30px
+
+		+r(480)
+			margin-bottom: 20px
+
+	//.cart-box__content
+	&__content
+		margin-bottom: 60px
+
+		+r(1024)
+			margin-bottom: 30px
+
+		.button-box
+			+r(768)
+				margin-bottom: 30px
+			+r(480)
+				flex-direction: column
+				.btn
+					width: 100%
+					margin-top: 10px
+					padding: 25px 50px
+					& + .btn
+						margin-left: 0
+
+	//.cart-box__bottom
+	&__bottom
+		background-color: #fff
+
+		&--column
+			+r(480)
+				.button-box
+					flex-direction: column
+					.btn
+						width: 100%
+						margin: 10px 0 0
+
+		.info-text
+			+r(480)
+				margin-bottom: 20px
+				text-align: center
+
+	//.cart-box__btn
+	&__btn
+		min-width: 200px
+
+		+r(480)
+			min-width: 150px
+			margin: 0
+			padding: 11px 35px
+
+		& + .cart-box__btn
+			margin-left: 0
+
+	//.cart-box__text
+	&__text
+		margin-bottom: 0
+		font-family: $f-light
+		font-size: 14px
+		line-height: 1.4
+		color: $color-text--light
+
+		+r(480)
+			margin-bottom: 20px
+
+		&--offset
+			padding: 0 30px
+			p
+				margin-bottom: 5px
+				line-height: 1.4
+			+r(768)
+				padding-left: 0
+				padding-right: 0
+				margin-top: 30px
+
+				p
+					margin-bottom: 10px
+
+	.button-box--end
+		+r(480)
+			justify-content: center
+			flex-wrap: wrap
+
+			p
+				font-family: $f-light
+				font-size: 12px
+				text-align: center
+//.cart-box end
+
+//.chose-profile
+.chose-profile
+	//.chose-profile__inner
+	&__inner
+		display: flex
+		+r(480)
+			flex-direction: column
+
+		.chose-profile__item
+			max-width: 300px
+			width: 100%
+
+			+r(480)
+				max-width: 100%
+				margin: 0 auto 20px
+
+				&:last-child
+					margin-bottom: 0
+
+			& + .chose-profile__item
+				margin-left: 20px
+				+r(480)
+					margin-left: auto
+
+	//.chose-profile__item
+	&__item
+		padding: 20px
+		font-family: $f-medium
+		cursor: pointer
+		@extend %box
+
+		&:hover
+			background-color: $color-accent
+			.chose-profile
+				&__title, &__text
+					color: #fff
+				&__icon
+					fill: #fff
+
+		//.chose-profile__item--add
+		&--add
+			color: $color-text
+			border: 0
+			transition: transform .35s ease
+			+flexCenter
+			justify-content: center
+			&:hover
+				background-color: $color-accent
+				color: #fff
+				+trfY(-5px)
+
+	//.chose-profile__title
+	&__title
+		margin-bottom: 10px
+
+	//.chose-profile__text
+	&__text
+		font-family: $f-light
+		font-size: 13px
+		line-height: 1.4
+		color: $color-text--light
+
+	//.chose-profile__icon
+	&__icon
+		width: 32px
+		height: 32px
+		margin-right: 15px
+//.chose-profile end
 
 .cart-tab
 	&__list
@@ -277,68 +617,99 @@
 			margin-bottom: 10px
 		span
 			font-size: 28px
-//cart-success
+//.cart-success
 
 .delivery-item
-	margin-bottom: 25px
+	width: 100%
+	margin-right: 25px
+	margin-bottom: 20px
+	padding: 20px
+	text-align: center
+	@extend %box
+	overflow: hidden
+	position: relative
+	+tr
 	display: flex
-	+r(480)
-		margin-bottom: $gutter*2
-		text-align: center
-		align-items: center
-		flex-direction: column
+	flex-direction: column
+	align-items: center
 
-	//delivery-item__checkbox
-	&__checkbox
-		width: 200px
-		height: 135px
-		margin-right: 25px
-		padding: 20px
-		text-align: center
-		+bd
-		background-color: #fff
-		position: relative
-		display: flex
-		flex-direction: column
-		+r(480)
-			margin-bottom: 10px
-			margin-right: 0
+	&::after
+		display: block
+		content: ''
+		width: 100%
+		height: 6px
+		background-color: $color-accent
+		position: absolute
+		bottom: 0
+		left: 0
+		+trfY(150%)
+		+tr
+
+	+r(480)
+		margin-bottom: 10px
+		margin-right: 0
+
+	+r-min(481)
+		&:hover
+			+trfY(-5px)
+
+	&.is-checked
+		&::after
+			display: block
+			+trfY(0)
+
+	//.delivery-item__checkbox
+	&__wrap
+		+row-flex
+		.delivery-item
+			+col
+			+size(2)
+			+size-md(3)
+			+size-xs(6)
 
 	&__img
 		width: 120px
-		margin: auto
+		margin: 25px auto
 
-	//delivery-item__text
-	&__text
-		flex: 1
-
-	//delivery-item__title
+	//.delivery-item__title
 	&__title
 		display: block
 		margin-bottom: 5px
 		font-family: $f-medium
-		font-size: 18px
+		font-size: 16px
 		color: #000
 
-	//delivery-item__desc
+	//.delivery-item__info
+	&__info
+		cursor: help
+		position: absolute
+		top: 10px
+		right: 10px
+		z-index: 10
+		i
+			font-size: 18px
+			&:hover
+				color: $color-accent
+
+	//.delivery-item__desc
 	&__desc
 		font-size: 14px
 		color: #000
 
-	.cs-checkbox
-		&__box
-			border-color: $color-border--lighten
-			position: absolute
-			top: 10px
-			left: 10px
-		&__title
-			margin: 0 auto
-		.icon
-			width: 50px
-			height: 50px
-			margin: auto
-			fill: $gray--light
-//delivery-item
+	&--pickup
+		.delivery-item
+			&__img
+				width: fit-content
+//.delivery-item
+
+.tooltipster-content
+	padding: 15px 20px
+	font-family: $f-light
+	font-size: 14px
+	color: $color-text--light
+	line-height: 1.4
+	.tooltipster-arrow
+		display: none !important
 
 //.cart-info
 .cart-info
@@ -408,3 +779,51 @@
 		// padding: 5px 25px
 		// font-size: 14px
 //.cart-info end
+
+//.block-validate
+.block-validate
+	position: relative
+
+	&.is-invalid
+		+r(480)
+			margin-bottom: 30px
+
+		.block-validate__message
+			display: block
+
+	&__message
+		display: none
+		font-family: $f-light
+		font-size: 14px
+		line-height: 1.2
+		color: $color-text--light
+		+centre('y')
+		left: 100%
+		white-space: nowrap
+
+		+r(768)
+			left: 15px
+			top: auto
+			bottom: -10px
+			transform: translate(0)
+
+		+r(480)
+			max-width: 385px
+			white-space: normal
+
+		a
+			font-family: $f
+			color: $color-link
+
+
+.js-fix-block
+	+tr
+
+	&.is-fixed
+		position: fixed
+		bottom: 0
+		left: 0
+		z-index: 10
+		width: 100%
+		padding: 20px 10px
+		box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.13)

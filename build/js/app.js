@@ -12,9 +12,11 @@ var Base = {
 	init: function init() {
 		this.scrollBar();
 		this.select();
+		this.tooltip();
 		this.inputMask();
 		this.popups();
 		this.setHeight();
+		this.showHideText();
 		this.plusMinus();
 		this.map();
 		this.upsateResize();
@@ -32,6 +34,14 @@ var Base = {
 		$('img').on('dragstart', function (event) {
 			event.preventDefault();
 		});
+
+		if ($(window).width() <= 768) {
+			this.stopScroll();
+		}
+
+		if ($(window).width() <= 480) {
+			this.setFixedBlcok();
+		}
 	},
 	scrollBar: function scrollBar() {
 		var scrollBar = $('.js-scroll');
@@ -78,7 +88,7 @@ var Base = {
 	},
 	inputMask: function inputMask() {
 		//Masked inputmask https://github.com/RobinHerbots/Inputmask
-		if ($('.js-phone-mask').length > 0) {
+		if ($('.js-phone-mask').length) {
 			$('.js-phone-mask').inputmask({
 				mask: '+7 (999) 999-99-99',
 				showMaskOnHover: false
@@ -132,6 +142,58 @@ var Base = {
 			$select.wrap('<label class="cs-select">');
 		}
 	},
+	tooltip: function tooltip() {
+		var $tooltip = $('.js-tooltip');
+		var trigger = void 0;
+
+		if ($(window).width() >= 1024) {
+			trigger = 'hover';
+		} else {
+			trigger = 'click';
+		}
+
+		if ($tooltip.length) {
+			$('.js-tooltip').tooltipster({
+				theme: 'tooltipster-shadow',
+				maxWidth: 270,
+				side: 'right',
+				trigger: trigger
+			});
+		}
+	},
+	setFixedBlcok: function setFixedBlcok() {
+		var $fixBlock = $('.js-fix-block');
+		var fixBlockHeight = $fixBlock.outerHeight(true);
+		var blockOffsetTop = $fixBlock.offset().top;
+		var wHeight = $(window).height();
+
+		$(window).scroll(function () {
+			var scroll = $(this).scrollTop();
+
+			if (scroll + wHeight - fixBlockHeight <= blockOffsetTop) {
+				$fixBlock.addClass('is-fixed');
+			} else {
+				$fixBlock.removeClass('is-fixed');
+			}
+		});
+	},
+	showHideText: function showHideText() {
+		var $textBlock = $('.js-text');
+		var $textBtn = $('.js-text--show');
+		var open = false;
+		if ($(window).width() <= 480) {
+			$textBlock.hide();
+			$textBtn.on('click', function () {
+				if (!open) {
+					$textBlock.slideDown();
+					open = true;
+				} else {
+					$textBlock.slideUp();
+					open = false;
+				}
+			});
+		}
+	},
 	map: function map() {
 		var $map = $('.js-map');
 
@@ -174,6 +236,30 @@ var Base = {
 	upsateResize: function upsateResize() {
 		$(window).resize(function () {
 			Base.setHeight();
+		});
+	},
+	stopScroll: function stopScroll() {
+		var $cartSum = $('.js-cart-sum');
+
+		$cartSum.addClass('is-visible');
+
+		function onScrollStopped(domElement, callback) {
+			var timeout = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 250;
+
+			domElement.addEventListener('scroll', function () {
+				clearTimeout(callback.timeout);
+				callback.timeout = setTimeout(callback, timeout);
+			});
+		}
+
+		onScrollStopped(window, function () {
+			setTimeout(function () {
+				$cartSum.addClass('is-visible');
+			}, 500);
+		});
+
+		$(window).on('scroll', function () {
+			$cartSum.removeClass('is-visible');
 		});
 	},
 	goTop: function goTop() {
@@ -760,13 +846,14 @@ $(function () {
 		}
 	});
 
-	$(document).on('click', '.js-cs-radio--pseudo', function () {
-		if ($(this).hasClass('is-checked')) {
-			$(this).removeClass('is-checked');
-		} else {
-			$('.js-cs-radio--pseudo').removeClass('is-checked');
-			$(this).addClass('is-checked');
-		}
+	$('.js-cs-radio--pseudo').on('click', function () {
+		var id = $(this).data('info-delivery');
+
+		$('.js-cs-radio--pseudo').not($(this)).removeClass('is-checked');
+		$(this).addClass('is-checked');
+
+		$('[data-info-delivery-text]').hide();
+		$('[data-info-delivery-text=' + id + ']').show();
 	});
 
 	//Add in card
@@ -1148,7 +1235,7 @@ $(function () {
  */
 (function () {
 	//Sticky Block
-	if ($('.js-cart-sticky').length && $(window).width() > 1024) {
+	if ($('.js-cart-sticky').length && $(window).width() >= 1024) {
 		var sidebar = new StickySidebar('.js-cart-sticky', {
 			topSpacing: 10,
 			bottomSpacing: 10,

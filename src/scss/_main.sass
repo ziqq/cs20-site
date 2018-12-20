@@ -232,7 +232,59 @@
 					font-weight: 500
 				a
 					color: $color-text
+
+	//.list--light
+	&--light
+		.list
+			&__item
+				font-size: 14px
+				color: $color-text--light
+				& + .list__item
+					margin-top: 5px
+				span
+					min-width: 130px
+				strong
+					font-family: $f-medium
+					font-weight: 500
+					color: $color-text
+				a
+					color: $color-text
 //.list end
+
+//.item-icon
+.item-icon
+	//.item-icon__wrap
+	&__wrap
+		+row-flex
+
+		.item-icon
+			+col
+			+size(4)
+			+size-xs(12)
+			+flexColumn
+			align-items: center
+			justify-content: center
+			text-align: center
+
+			+r(480)
+				margin-bottom: 15px
+				display: flex
+				flex-direction: row
+				justify-content: flex-start
+
+	//.item-icon__ico
+	&__ico
+		width: 32px
+		height: 32px
+		margin-bottom: 10px
+		+r(480)
+			margin-bottom: 0
+			margin-right: 10px
+
+	//.item-icon__text
+	&__text
+		font-size: 14px
+		color: $color-text--light
 
 //.privacy
 .privacy

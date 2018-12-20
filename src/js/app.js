@@ -8,9 +8,11 @@ const Base = {
 	init: function() {
 		this.scrollBar();
 		this.select();
+		this.tooltip();
 		this.inputMask();
 		this.popups();
 		this.setHeight();
+		this.showHideText();
 		this.plusMinus();
 		this.map();
 		this.upsateResize();
@@ -28,6 +30,14 @@ const Base = {
 		$('img').on('dragstart', function(event) {
 			event.preventDefault();
 		});
+
+		if ($(window).width() <= 768) {
+			this.stopScroll();
+		}
+
+		if ($(window).width() <= 480) {
+			this.setFixedBlcok();
+		}
 	},
 	scrollBar: function() {
 		let scrollBar = $('.js-scroll');
@@ -80,7 +90,7 @@ const Base = {
 	},
 	inputMask: function() {
 		//Masked inputmask https://github.com/RobinHerbots/Inputmask
-		if ($('.js-phone-mask').length > 0) {
+		if ($('.js-phone-mask').length) {
 			$('.js-phone-mask').inputmask({
 				mask: '+7 (999) 999-99-99',
 				showMaskOnHover: false
@@ -134,6 +144,58 @@ const Base = {
 			$select.wrap('<label class="cs-select">');
 		}
 	},
+	tooltip: function() {
+		let $tooltip = $('.js-tooltip');
+		let trigger;
+
+		if ($(window).width() >= 1024) {
+			trigger = 'hover';
+		} else {
+			trigger = 'click';
+		}
+
+		if ($tooltip.length) {
+			$('.js-tooltip').tooltipster({
+				theme: 'tooltipster-shadow',
+				maxWidth: 270,
+				side: 'right',
+				trigger: trigger
+			});
+		}
+	},
+	setFixedBlcok: function() {
+		let $fixBlock = $('.js-fix-block');
+		let fixBlockHeight = $fixBlock.outerHeight(true);
+		let blockOffsetTop = $fixBlock.offset().top;
+		let wHeight = $(window).height();
+
+		$(window).scroll(function() {
+			let scroll = $(this).scrollTop();
+
+			if (scroll + wHeight - fixBlockHeight <= blockOffsetTop) {
+				$fixBlock.addClass('is-fixed');
+			} else {
+				$fixBlock.removeClass('is-fixed');
+			}
+		});
+	},
+	showHideText: function() {
+		let $textBlock = $('.js-text');
+		let $textBtn = $('.js-text--show');
+		let open = false;
+		if ($(window).width() <= 480) {
+			$textBlock.hide();
+			$textBtn.on('click', function() {
+				if (!open) {
+					$textBlock.slideDown();
+					open = true;
+				} else {
+					$textBlock.slideUp();
+					open = false;
+				}
+			});
+		}
+	},
 	map: function() {
 		let $map = $('.js-map');
 
@@ -179,6 +241,28 @@ const Base = {
 	upsateResize: function() {
 		$(window).resize(function() {
 			Base.setHeight();
+		});
+	},
+	stopScroll: function() {
+		let $cartSum = $('.js-cart-sum');
+
+		$cartSum.addClass('is-visible');
+
+		function onScrollStopped(domElement, callback, timeout = 250) {
+			domElement.addEventListener('scroll', () => {
+				clearTimeout(callback.timeout);
+				callback.timeout = setTimeout(callback, timeout);
+			});
+		}
+
+		onScrollStopped(window, () => {
+			setTimeout(() => {
+				$cartSum.addClass('is-visible');
+			}, 500);
+		});
+
+		$(window).on('scroll', function() {
+			$cartSum.removeClass('is-visible');
 		});
 	},
 	goTop: function() {

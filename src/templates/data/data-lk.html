@@ -52,3 +52,53 @@
 		}
 	]
 %}
+
+{% set
+	deliveryItem = [
+		{
+			icon: 'pr',
+			title: 'Почта России (стандарт)',
+			data: 'mail'
+		}
+		,{
+			icon: 'pr',
+			title: 'Почта России (экспресс)',
+			data: 'mail'
+		}
+		,{
+			icon: 'pek',
+			title: 'ПЭК',
+			data: 'auto'
+		}
+		,{
+			icon: 'energy',
+			title: 'ЭНЕРГИЯ',
+			data: 'auto'
+		}
+		,{
+			icon: 'dl',
+			title: 'Деловые линии',
+			data: 'auto'
+		}
+		,{
+			class: 'pickup',
+			icon: 'delivery',
+			title: 'Самовывоз',
+			data: 'auto'
+		}
+	]
+%}
+
+{% set
+	payItem = [
+		{
+			icon: 'robokassa',
+			title: 'Робокасса'
+		}
+		,{
+			class: 'pickup',
+			icon: 'accounting',
+			title: 'Выставить счет'
+		}
+	]
+%}
