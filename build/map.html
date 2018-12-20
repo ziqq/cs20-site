@@ -370,6 +370,7 @@
               </div>
             </div>
           </div>
+          <button class="btn btn--filter js-map--open sm-only--flex">Найти магазин</button>
         </div>
       </section>
       <!-- end firstscreen -->
@@ -380,7 +381,7 @@
           <div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
             <ul class="breadcrumbs__list">
               <li class="breadcrumbs__item">
-                <a href="#" class="breadcrumbs__link" itemprop="url">
+                <a class="breadcrumbs__link" href="#" itemprop="url">
                   <span class="breadcrumbs__title" itemprop="title">Главная</span>
                 </a>
               </li>
@@ -393,41 +394,165 @@
         <!-- end breadcrumbs -->
         <div class="container">
           <div class="map__inner">
-            <div class="map__left">
+            <div class="map__left js-map-filter">
               <div class="map__title">Найти ближайший магазин</div>
-              <div class="map__select-line">
-                <div class="map__select">
-                  <select class="js-select js-select--country" data-placeholder="Выбор страны">
-                    <option></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
+              <svg class="icon icon-cs-close map__close js-map--close xs-only">
+                <use xlink:href="img/sprite.svg#cs-close"></use>
+              </svg>
+              <div class="row js-select--box">
+                <div class="col-4 col-md-12">
+                  <div class="pedit__item">
+                    <div class="pedit__field">
+                      <select class="js-select js-select--country" data-placeholder="Выбор страны">
+                        <option></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
-                <div class="map__select">
-                  <select class="js-select js-select--region" data-placeholder="Выбор региона" disabled>
-                    <option></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
+                <div class="col-4 col-md-12">
+                  <div class="pedit__item">
+                    <div class="pedit__field">
+                      <select class="js-select js-select--region" data-placeholder="Выбор региона" disabled>
+                        <option></option>
+                        <option value="Архангельская область">Архангельская область</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
-                <div class="map__select">
-                  <select class="js-select js-select--city" data-placeholder="Выбор  города" disabled>
-                    <option></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
+                <div class="col-4 col-md-12">
+                  <div class="pedit__item">
+                    <div class="pedit__field">
+                      <select class="js-select js-select--city" data-placeholder="Выбор  города" disabled>
+                        <option></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="map__desc">Если вы не нашли нужный товар в магазинах вашего города, закажите его через наш сайт. Мы доставляем детали по всему миру и бесплатно по России при заказе от 3000 руб.</div>
+              <div class="map-address__wrap js-map-address js-scroll">
+                <div class="map-address__back js-map-address--back xs-only">
+                  <i class="fal fa-angle-left"></i> Изменить город </div>
+                <div class="map-address">
+                  <div class="map-address__item">
+                    <div class="map-address__title">Ижевск, ул. Марата, 3</div>
+                    <div class="map-address__inner">
+                      <div class="map-address__left">
+                        <div class="map-address__desc sm-hide">Кортик. Точка продаж CS20. Lada Racing Удмуртская 163 магазин Lada Racing</div>
+                        <div class="map-address__phone">
+                          <a class="phone__link" href="tel:+73412658080">+7 (3412) 65-80-80</a>
+                        </div>
+                        <div class="map-address__time is-open xs-only">
+                          <ul class="list list--text">
+                            <li class="list__item">
+                              <strong>Открыто</strong>
+                              <span>Закроется в 20:00</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="map-address__right">
+                        <ul class="list list--text sm-hide">
+                          <li class="list__item">
+                            <strong>пн</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>вт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>ср</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>чт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>пт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>сб</strong>
+                            <span>9:00 - 15:00</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>вс</strong>
+                            <span>выходной</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="map-address__item">
+                    <div class="map-address__title">Ижевск, ул. Марата, 3</div>
+                    <div class="map-address__inner">
+                      <div class="map-address__left">
+                        <div class="map-address__desc sm-hide">Кортик. Точка продаж CS20. Lada Racing Удмуртская 163 магазин Lada Racing</div>
+                        <div class="map-address__phone">
+                          <a class="phone__link" href="tel:+73412658080">+7 (3412) 65-80-80</a>
+                        </div>
+                        <div class="map-address__time is-close xs-only">
+                          <ul class="list list--text">
+                            <li class="list__item">
+                              <strong>Закрыто</strong>
+                              <span>Откроется в понедельник</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="map-address__right">
+                        <ul class="list list--text sm-hide">
+                          <li class="list__item">
+                            <strong>пн</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>вт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>ср</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>чт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>пт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>сб</strong>
+                            <span>9:00 - 15:00</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>вс</strong>
+                            <span>выходной</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="map__desc xs-hide">Если вы не нашли нужный товар в магазинах вашего города, закажите его через наш сайт. Мы доставляем детали по всему миру и бесплатно по России при заказе от 3000 руб.</div>
             </div>
             <div class="map__right map-box">
               <div class="map-box__inner js-map-shops"></div>
@@ -785,7 +910,40 @@
     <!-- end windows -->
     <!-- begin scripts -->
     <script type="text/javascript" src="js/libs.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnkTBYnYseWFYqDk3wb4-eWn4507c7CSw"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnkTBYnYseWFYqDk3wb4-eWn4507c7CSw" async defer></script>
+    <script>
+      window.onload = function()
+      {
+        var $mapShops = $('.js-map-shops');
+        if ($mapShops.length)
+        {
+          _initMapShops();
+        }
+
+        function _initMapShops()
+        {
+          var cords = {
+            lat: 51.9958,
+            lng: 47.8191
+          };
+          var map = new google.maps.Map(document.querySelector('.js-map-shops'),
+          {
+            zoom: 17,
+            center: cords,
+            autocloseinfo: true,
+            streetViewControl: false,
+            mapTypeControl: false,
+            scaleControl: false
+          });
+          // var marker = new google.maps.Marker({
+          // 	position: { lat: 51.99577, lng: 47.81935 },
+          // 	map: map,
+          // 	icon: 'img/general/pin.png'
+          // });
+        }
+      }
+
+    </script>
     <script type="text/javascript" src="js/app.js"></script>
     <!-- end scripts -->
     <div id="elements-placeholder" style="border: 0; clip: rect(0 0 0 0); overflow: hidden; margin: -1px; padding: 0; position: absolute; width: 1px; height: 1px;">

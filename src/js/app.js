@@ -14,7 +14,6 @@ const Base = {
 		this.setHeight();
 		this.showHideText();
 		this.plusMinus();
-		this.map();
 		this.upsateResize();
 		this.goTop();
 
@@ -194,48 +193,6 @@ const Base = {
 					open = false;
 				}
 			});
-		}
-	},
-	map: function() {
-		let $map = $('.js-map');
-
-		if ($map.length) {
-			_initMap();
-		}
-
-		function _initMap() {
-			var uluru = { lat: 51.9958, lng: 47.8191 };
-			var map = new google.maps.Map(document.querySelector('.js-map'), {
-				zoom: 17,
-				center: uluru
-			});
-			// var marker = new google.maps.Marker({
-			// 	position: { lat: 51.99577, lng: 47.81935 },
-			// 	map: map,
-			// 	icon: 'img/general/pin.png'
-			// });
-		}
-
-		let $mapShops = $('.js-map-shops');
-
-		if ($mapShops.length) {
-			_initMapShops();
-		}
-
-		function _initMapShops() {
-			var uluru = { lat: 51.9958, lng: 47.8191 };
-			var map = new google.maps.Map(
-				document.querySelector('.js-map-shops'),
-				{
-					zoom: 17,
-					center: uluru
-				}
-			);
-			// var marker = new google.maps.Marker({
-			// 	position: { lat: 51.99577, lng: 47.81935 },
-			// 	map: map,
-			// 	icon: 'img/general/pin.png'
-			// });
 		}
 	},
 	upsateResize: function() {
@@ -532,7 +489,8 @@ $(function() {
 	// }
 });
 
-//=include partials/catalog.js
-//=include partials/cart.js
-//=include partials/lk.js
+//=include pages/catalog.js
+//=include pages/cart.js
+//=include pages/lk.js
+//=include pages/map.js
 //=include partials/functions.js

@@ -18,7 +18,6 @@ var Base = {
 		this.setHeight();
 		this.showHideText();
 		this.plusMinus();
-		this.map();
 		this.upsateResize();
 		this.goTop();
 
@@ -192,45 +191,6 @@ var Base = {
 					open = false;
 				}
 			});
-		}
-	},
-	map: function map() {
-		var $map = $('.js-map');
-
-		if ($map.length) {
-			_initMap();
-		}
-
-		function _initMap() {
-			var uluru = { lat: 51.9958, lng: 47.8191 };
-			var map = new google.maps.Map(document.querySelector('.js-map'), {
-				zoom: 17,
-				center: uluru
-			});
-			// var marker = new google.maps.Marker({
-			// 	position: { lat: 51.99577, lng: 47.81935 },
-			// 	map: map,
-			// 	icon: 'img/general/pin.png'
-			// });
-		}
-
-		var $mapShops = $('.js-map-shops');
-
-		if ($mapShops.length) {
-			_initMapShops();
-		}
-
-		function _initMapShops() {
-			var uluru = { lat: 51.9958, lng: 47.8191 };
-			var map = new google.maps.Map(document.querySelector('.js-map-shops'), {
-				zoom: 17,
-				center: uluru
-			});
-			// var marker = new google.maps.Marker({
-			// 	position: { lat: 51.99577, lng: 47.81935 },
-			// 	map: map,
-			// 	icon: 'img/general/pin.png'
-			// });
 		}
 	},
 	upsateResize: function upsateResize() {
@@ -1344,6 +1304,43 @@ $(function () {
 		}
 	};
 	lk.init();
+})();
+
+/**
+ * Map.js
+ *
+ * @author Anton Ustinoff <a.a.ustinoff@gmail.com>
+ */
+(function () {
+	var $mapFilter = $('.js-map-filter');
+	var $selectCity = $('.js-select--city');
+	var $btnMapOpen = $('.js-map--open');
+	var $btnMapClose = $('.js-map--close');
+	var $address = $('.js-map-address');
+	var $btnBack = $('.js-map-address--back');
+	var $overlay = $('.js-overlay');
+
+	$btnMapOpen.on('click', function () {
+		$mapFilter.addClass('is-visible');
+		$overlay.addClass('is-visible');
+	});
+
+	$btnMapClose.on('click', function () {
+		$mapFilter.removeClass('is-visible');
+		$overlay.removeClass('is-visible').removeClass('overlay--map');
+	});
+
+	$('.overlay--map').on('click', function () {
+		$mapFilter.removeClass('is-visible').removeClass('overlay--map');
+	});
+
+	$selectCity.on('select2:select', function () {
+		$address.addClass('is-open');
+	});
+
+	$btnBack.on('click', function () {
+		$address.removeClass('is-open');
+	});
 })();
 
 //Табы

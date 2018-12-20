@@ -1,5 +1,8 @@
 ---
 title: Карта
+btnFilter: true
+btnFilterTitle: Найти магазин
+btnFilterJs: js-map--open
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -13,7 +16,7 @@ title: Карта
 		<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
 			<ul class="breadcrumbs__list">
 				<li class="breadcrumbs__item">
-					<a href="#" class="breadcrumbs__link" itemprop="url">
+					<a class="breadcrumbs__link" href="#" itemprop="url">
 						<span class="breadcrumbs__title" itemprop="title">Главная</span>
 					</a>
 				</li>
@@ -28,41 +31,129 @@ title: Карта
 	<div class="container">
 
 		<div class="map__inner">
-			<div class="map__left">
+			<div class="map__left js-map-filter">
 				<div class="map__title">Найти ближайший магазин</div>
+				{{ mixin.icon('cs-close', 'map__close js-map--close xs-only') }}
 
-				<div class="map__select-line">
-
-					<div class="map__select">
-						<select class="js-select js-select--country" data-placeholder="Выбор страны">
-							<option></option>
-							{% for i in range(0, 5) %}
-							<option value="{{ i+1 }}">{{ i+1 }}</option>
-							{% endfor %}
-						</select>
+				<div class="row js-select--box">
+					<div class="col-4 col-md-12">
+						<div class="pedit__item">
+							<div class="pedit__field">
+								<select class="js-select js-select--country" data-placeholder="Выбор страны">
+									<option></option>
+									{% for i in range(0, 5) %}
+									<option value="{{ i+1 }}">{{ i+1 }}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
 					</div>
 
-					<div class="map__select">
-						<select class="js-select js-select--region" data-placeholder="Выбор региона" disabled>
-							<option></option>
-							{% for i in range(0, 5) %}
-							<option value="{{ i+1 }}">{{ i+1 }}</option>
-							{% endfor %}
-						</select>
+					<div class="col-4 col-md-12">
+						<div class="pedit__item">
+							<div class="pedit__field">
+								<select class="js-select js-select--region" data-placeholder="Выбор региона" disabled>
+									<option></option>
+									<option value="Архангельская область">Архангельская область</option>
+									{% for i in range(0, 5) %}
+									<option value="{{ i+1 }}">{{ i+1 }}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
 					</div>
 
-					<div class="map__select">
-						<select class="js-select js-select--city" data-placeholder="Выбор  города" disabled>
-							<option></option>
-							{% for i in range(0, 5) %}
-							<option value="{{ i+1 }}">{{ i+1 }}</option>
-							{% endfor %}
-						</select>
+					<div class="col-4 col-md-12">
+						<div class="pedit__item">
+							<div class="pedit__field">
+								<select class="js-select js-select--city" data-placeholder="Выбор  города" disabled>
+									<option></option>
+									{% for i in range(0, 5) %}
+									<option value="{{ i+1 }}">{{ i+1 }}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
 					</div>
-
 				</div>
 
-				<div class="map__desc">Если вы не нашли нужный товар в магазинах вашего города, закажите его через наш сайт. Мы доставляем детали по всему миру и бесплатно по России при заказе от 3000 руб.</div>
+				<div class="map-address__wrap js-map-address js-scroll">
+					<div class="map-address__back js-map-address--back xs-only">
+						<i class="fal fa-angle-left"></i>
+						Изменить город
+					</div>
+					<div class="map-address">
+						<div class="map-address__item">
+							<div class="map-address__title">Ижевск, ул. Марата, 3</div>
+							<div class="map-address__inner">
+
+								<div class="map-address__left">
+									<div class="map-address__desc sm-hide">Кортик.	Точка продаж CS20. Lada Racing Удмуртская 163 магазин Lada Racing</div>
+									<div class="map-address__phone">
+										<a class="phone__link" href="tel:+73412658080">+7 (3412) 65-80-80</a>
+									</div>
+									<div class="map-address__time is-open xs-only">
+										<ul class="list list--text">
+											<li class="list__item">
+												<strong>Открыто</strong>
+												<span>Закроется в 20:00</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="map-address__right">
+									<ul class="list list--text sm-hide">
+										{% import "data/data.html" as week %}
+										{% for item in week.dayTime %}
+										<li class="list__item">
+											<strong>{{ item.day }}</strong>
+											<span>{{ item.time }}</span>
+										</li>
+										{% endfor %}
+									</ul>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="map-address__item">
+							<div class="map-address__title">Ижевск, ул. Марата, 3</div>
+							<div class="map-address__inner">
+
+								<div class="map-address__left">
+									<div class="map-address__desc sm-hide">Кортик.	Точка продаж CS20. Lada Racing Удмуртская 163 магазин Lada Racing</div>
+									<div class="map-address__phone">
+										<a class="phone__link" href="tel:+73412658080">+7 (3412) 65-80-80</a>
+									</div>
+									<div class="map-address__time is-close xs-only">
+										<ul class="list list--text">
+											<li class="list__item">
+												<strong>Закрыто</strong>
+												<span>Откроется в понедельник</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="map-address__right">
+									<ul class="list list--text sm-hide">
+										{% import "data/data.html" as week %}
+										{% for item in week.dayTime %}
+										<li class="list__item">
+											<strong>{{ item.day }}</strong>
+											<span>{{ item.time }}</span>
+										</li>
+										{% endfor %}
+									</ul>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="map__desc xs-hide">Если вы не нашли нужный товар в магазинах вашего города, закажите его через наш сайт. Мы доставляем детали по всему миру и бесплатно по России при заказе от 3000 руб.</div>
 			</div>
 
 			<div class="map__right map-box">
@@ -78,5 +169,35 @@ title: Карта
 {% endblock %}
 
 {% block scripts %}
-<script async defer src ="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnkTBYnYseWFYqDk3wb4-eWn4507c7CSw"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnkTBYnYseWFYqDk3wb4-eWn4507c7CSw" async defer></script>
+
+<script>
+	window.onload = function() {
+		var $mapShops = $('.js-map-shops');
+
+		if ($mapShops.length) {
+			_initMapShops();
+		}
+
+		function _initMapShops() {
+			var cords = { lat: 51.9958, lng: 47.8191 };
+			var map = new google.maps.Map(
+				document.querySelector('.js-map-shops'),
+				{
+					zoom: 17,
+					center: cords,
+					autocloseinfo: true,
+					streetViewControl: false,
+					mapTypeControl: false,
+					scaleControl: false
+				}
+			);
+			// var marker = new google.maps.Marker({
+			// 	position: { lat: 51.99577, lng: 47.81935 },
+			// 	map: map,
+			// 	icon: 'img/general/pin.png'
+			// });
+		}
+	}
+</script>
 {% endblock %}
