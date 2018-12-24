@@ -1,5 +1,29 @@
 <!-- begin lk__nav -->
 <aside class="lk__nav js-lk-sticky">
+	{% if lkOld %}
+	<span class="lk-nav__title xs-hide">
+		User: <span>Илья Петров</span>
+	</span>
+	<div class="lk-nav js-lk-nav">
+		<ul class="lk-nav__list lk-nav__list--old">
+			<li class="lk-nav__item is-active">
+				<a class="lk-nav__link" href="lk-settings-old.html" data-page-target="settings">
+					<span class="lk-nav__text  lk-nav__text--dark ">Личные данные</span>
+				</a>
+			</li>
+			<li class="lk-nav__item">
+				<a class="lk-nav__link" href="lk-order-old.html" data-page-target="order">
+					<span class="lk-nav__text ">Мои заказы</span>
+				</a>
+			</li>
+			<li class="lk-nav__item">
+				<a class="lk-nav__link" href="lk-sale-old.html" data-page-target="sale">
+					<span class="lk-nav__text ">Пресональные скидки</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	{% else%}
 	<div class="lk-nav js-lk-nav">
 		<ul class="lk-nav__list">
 			<li class="lk-nav__item is-active">
@@ -53,5 +77,6 @@
 			</li>
 		</ul>
 	</div>
+	{% endif %}
 </aside>
 <!-- end lk__nav -->

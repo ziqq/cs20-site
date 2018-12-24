@@ -127,8 +127,9 @@
 			let $html = $('html');
 			let $overlay = $('.js-overlay');
 			let $filterSticky = $('.js-filter-sticky');
+			let $btnFixed = $('.js-btn-fixed');
 			let $btnOpen = $('.js-filter--open');
-			let btnOpenOffset = $btnOpen.offset().top;
+			let btnOpenOffset = $btnFixed.offset().top;
 			let $btnClose = $('.js-filter--close');
 
 			$btnOpen.on('click', _open);
@@ -137,17 +138,18 @@
 
 			$(document).on('click', '.overlay--filter', _close);
 
-			$(window).on('scroll', function() {
+			$(window).scroll(function() {
 				let scroll = $(this).scrollTop();
-				if (scroll > btnOpenOffset - 10) {
-					$btnOpen.css({
+
+				if (scroll - 60 > btnOpenOffset) {
+					$btnFixed.css({
 						position: 'fixed',
-						top: 10,
+						top: 0,
 						bottom: 'auto',
 						boxShadow: '0 5px 25px rgba(0,0,0,.2)'
 					});
 				} else {
-					$btnOpen.removeAttr('style');
+					$btnFixed.removeAttr('style');
 				}
 			});
 
@@ -197,4 +199,12 @@
 			Base.setHeight();
 		}, 300);
 	});
+
+	if ($(window).width() < 375) {
+		$('.js-sorting-btn')
+			.removeClass('is-active')
+			.last()
+			.addClass('is-active');
+		$('.js-products').addClass('layout-two-column');
+	}
 })();

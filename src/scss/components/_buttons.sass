@@ -138,20 +138,21 @@
 	&--filter
 		// width: 55px
 		// height: 55px
-		padding: 10px 25px
+		padding: 12px 25px
 		text-align: center
-		font-size: 14px
+		font-size: 16px
 		color: #fff
 		background-color: $color-accent
 		border-radius: 35px
 		box-shadow: $bxs-box
 		outline: none
+		justify-content: center
 		+centre('x')
-		bottom: -17px
+		bottom: -20px
 		z-index: z(fixed)
 
 		+r(480)
-			font-size: 14px
+			width: 75%
 
 		// &::before
 		// 	content: '\f0b0'
@@ -159,6 +160,17 @@
 		// 	font-size: 25px
 		// 	display: block
 		// 	+centre
+
+	//.btn__wrap
+	&__wrap
+		width: 100%
+		height: 30px
+		position: absolute
+		left: 0
+		right: 0
+		bottom: -3px
+		z-index: z(fixed)
+		background-image: linear-gradient(170.49deg,#44275a 3.82%,#603576 35.68%,#9156a6 98.37%)
 
 	//.btnlink
 	&-link
@@ -202,7 +214,7 @@
 				span
 					border-bottom: none
 
-		//.btnlink--icon
+		//.btn--icon
 		&--icon
 			padding: 0
 			text-decoration: none
@@ -235,7 +247,7 @@
 		// height: 40px
 		// line-height: 40px
 		// padding: 0
-		// color: #fff
+		color: #fff
 		// letter-spacing: .3px
 		// border: 0
 		// border-radius: $border-radius
@@ -266,7 +278,7 @@
 		width: 100%
 //.btn end
 
-//..button-box
+//.button-box
 .button-box
 	display: flex
 	align-items: center
@@ -297,12 +309,16 @@
 		+r(768)
 			margin-bottom: 20px
 
+		+r(480)
+			margin-bottom: 15px
+			font-size: 12px
+
 		strong
 			font-family: $f-medium
 			font-weight: 500
 			color: $color-text
 
-//..btn-icon
+//.btn-icon
 .btn-icon
 	width: 50px
 	height: 50px
@@ -322,7 +338,7 @@
 	//. 	border-radius: 50%
 	//. 	+cover
 
-	//..btn-icon__ico
+	//.btn-icon__ico
 	&__ico
 		fill: $gray
 
@@ -334,24 +350,49 @@
 			height: 13px
 			+rotate(45)
 
-	//..btn-icon--addInCar
+	&--arrow
+		&-down
+			border: 0
+			border-style: 0
+			background-color: transparent
+			position: relative
+			&::before
+				content: '\f107'
+				+fa('light')
+				font-size: 22px
+				color: $gray--light
+				+tr
+				+centre('y')
+			&:hover
+				&::before
+					color: $color-text
+			&.is-checked
+				&::before
+					content: '\f106'
+
+	//.btn-icon--addInCar
 	&--addInCart
-		&:hover
-			color: #fff
-			border-color: $color-accent
-			background-color: $color-accent
-
-			//. &::after
-			//. 	width: 100%
-			//. 	height: 100%
-			//. 	background-color: $color-accent
-
-			.btn-icon__ico
-				fill: #fff
-				&--cart
+		.btn-icon__ico
+			&--plus
+				+r(480)
 					display: none
-				&--plus
-					display: block
+		&:hover
+			+rmin(480)
+				color: #fff
+				border-color: $color-accent
+				background-color: $color-accent
+
+				//. &::after
+				//. 	width: 100%
+				//. 	height: 100%
+				//. 	background-color: $color-accent
+
+				.btn-icon__ico
+					fill: #fff
+					&--cart
+						display: none
+					&--plus
+						display: block
 
 		&.is-checked
 			border-color: $gray--lighten
@@ -370,7 +411,7 @@
 					display: none
 				&--check
 					display: block
-//..btn-icon end
+//.btn-icon end
 
 .back-to-search
 	&::before

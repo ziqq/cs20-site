@@ -27,6 +27,46 @@
 			</div>
 		</div>
 
+		{% if lkOld %}
+		<div class="row">
+			<div class="col-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__title">Имя:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='text')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__title">Фамилия:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='text')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__title">Отчество:</div>
+					<div class="pedit__field">
+						{{item.input(type='text')}}
+					</div>
+				</div>
+			</div>
+
+			<div class="col-6 col-xs-12">
+				<div class="pedit__item">
+					<div class="pedit__title">Телефон:<i>*</i></div>
+					<div class="pedit__field">
+						{{item.input(type='tel', inputClass='js-phone-mask')}}
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+
 		<div class="row">
 			<div class="col-6 col-xs-12">
 				<div class="pedit__item">
@@ -49,9 +89,13 @@
 
 		<p class="pedit__info-text">* - поля, отмеченные звёздочкой, обязательны для заполнения</p>
 
-		<div class="form__box mb-30">
+		<div class="form__box form__box--checkbox mb-30">
 			Получать уведомления:
 			{{ item.checkbox('По e-mail', 'ml-20') }}
+
+			{% if lkOld %}
+			{{ item.checkbox('По sms', 'ml-20') }}
+			{% endif %}
 		</div>
 
 		<div class="button-box pt-30">

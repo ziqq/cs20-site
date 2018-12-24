@@ -243,6 +243,7 @@
 	}//.c-select--avto
 
 }//.c-select
+
 .cs-select {
     position: relative;
     padding: 0;
@@ -257,7 +258,13 @@
     }
 
     @include r-max(i5) {
-        width: 132px;
+		width: auto;
+		padding-right: 28px;
+
+		select {
+			width: 100%;
+			padding-right: 0;
+		}
     }
 
     select {

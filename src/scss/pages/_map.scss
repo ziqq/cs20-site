@@ -22,15 +22,13 @@
 	&__left {
 		padding: 25px 30px;
 		width: 50%;
+		overflow-x: hidden;
 		position: relative;
 		@include flexColumn;
 
-		@include max-screen(1024) {
-			width: 40%;
-		}
-
 		@include max-screen(768) {
 			padding: 20px 15px;
+			width: 40%;
 		}
 
 		@include max-screen(480) {
@@ -39,13 +37,18 @@
 			padding-bottom: 0;
 			background-color: #fff;
 			border-radius: $border-radius;
-			position: fixed;
-			bottom: 10px;
-			left: 10px;
-			right: 10px;
-			z-index: 10;
-			@include tr;
-			@include trfY(150%);
+		}
+
+		&--move {
+				@include max-screen(480) {
+				position: fixed;
+				bottom: 10px;
+				left: 10px;
+				right: 10px;
+				z-index: 10;
+				@include tr;
+				@include trfY(150%);
+			}
 		}
 
 		&.is-visible {
@@ -56,7 +59,7 @@
 	&__right {
 		width: 50%;
 
-		@include max-screen(1024) {
+		@include max-screen(768) {
 			width: 60%;
 		}
 
@@ -114,7 +117,7 @@
 	&__inner {
 		@include coverdiv;
 	}
-}
+}//.map-box
 
 .map-address {
 
@@ -143,13 +146,15 @@
 
 	&__item {
 		margin-bottom: 20px;
+		position: relative;
 
-		@include max-screen(1024) {
+		@include max-screen(768) {
 			padding-top: 18px;
 			border-top: 1px solid $color-border--light;
 		}
 
 		@include max-screen(480) {
+			padding-right: 40px;
 			border: 0;
 		}
 
@@ -168,6 +173,15 @@
 		margin-bottom: 10px;
 		font-family: $f-medium;
 		font-size: 14px;
+
+		@include max-screen(480) {
+			margin-bottom: 5px;
+		}
+
+		span {
+			font-family: $f-light;
+			color: $color-text--light;
+		}
 	}//.map-address__title
 
 	&__inner {
@@ -204,6 +218,10 @@
 		margin-bottom: 20px;
 		font-size: 14px;
 		color: $color-text--light;
+
+		@include max-screen(480) {
+			margin-bottom: 10px;
+		}
 	}//.map-address__desc
 
 	&__phone {
@@ -233,6 +251,19 @@
 			font-size: 20px;
 		}
 	}//.map-address__back
+
+	&__btn {
+		background-color: transparent;
+		border: 0;
+		@include centre('y');
+		right: 0;
+
+		.icon {
+			width: 30px;
+			height: 30px;
+			fill: $color-text--light;
+		}
+	}//.map-address__btn
 
 	.list {
 		&__item {

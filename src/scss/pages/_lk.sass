@@ -1,4 +1,4 @@
-//..lk
+//.lk
 .lk
 	padding-bottom: $section-indent
 	background-color: $color-bg
@@ -14,7 +14,7 @@
 			&__content
 				+trfY(0)
 
-	//..lk__box
+	//.lk__box
 	&__box
 		padding: 40px
 		@extend %box
@@ -70,10 +70,11 @@
 			button
 				flex-shrink: 0
 
-	//..lk__order
+	//.lk__order
 	&__order
 		+r(480)
-			height: 100%
+			// height: 100%
+			height: auto
 			padding: 30px 10px
 			background-color: $color-bg
 			.lk
@@ -94,7 +95,7 @@
 					margin-bottom: 0
 					margin-top: -2px
 
-	//..lk__top-line
+	//.lk__top-line
 	&__top-line
 		margin-bottom: 20px
 
@@ -125,7 +126,7 @@
 				border: 0
 				background-color: transparent
 
-	//..lk__inner
+	//.lk__inner
 	&__inner
 		display: flex
 		align-items: flex-start
@@ -133,12 +134,12 @@
 		+r(480)
 			flex-wrap: wrap
 
-	//..lk__nav
+	//.lk__nav
 	&__nav
 		+r(480)
 			width: 100%
 
-	//..lk__content
+	//.lk__content
 	&__content
 		width: calc(100% - 250px - 30px)
 		margin-left: auto
@@ -149,8 +150,9 @@
 
 		+r(480)
 			width: 100%
+			// min-height: 100vh;
 			margin-left: 0
-			background-color: #fff
+			background-color: #eee
 			border-radius: 0
 			+coverdiv
 			+trfY(100vh)
@@ -167,14 +169,14 @@
 			right: 10px
 			fill: $color-text--light
 
-	//..lk .form
+	//.lk .form
 	.form
 		+r(480)
 			display: flex
 			flex-direction: column
-//..lk end
+//.lk end
 
-//..lk-nav
+//.lk-nav
 .lk-nav
 	display: block
 	width: 250px
@@ -196,21 +198,49 @@
 		padding-top: 20px
 		border-top: 1px solid $color-border--light
 
-	//..lk-nav__list
+	//.lk-nav__title
+	&__title
+		display: block
+		margin-bottom: 20px
+		span
+			font-family: $f-medium
+
+	//.lk-nav__list
 	&__list
 		&:first-child
+			&:not(.lk-nav__list--old)
+				+r(480)
+					padding: 20px 0
+					background: #fff
+					border-radius: $border-radius
+					box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.08)
+					border-radius: $border-radius
+					overflow: hidden
+
+					& + .lk-nav__list
+						margin-top: 10px
+
+		&--old
 			+r(480)
-				padding: 20px 0
-				background: #fff
-				border-radius: $border-radius
-				box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.08)
-				border-radius: $border-radius
-				overflow: hidden
+				background-color: transparent
+				box-shadow: none
+				.lk-nav__item
+					padding: 10px 0
+					background: #fff
+					border-radius: $border-radius
+					box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.08)
+					border-radius: $border-radius
+					overflow: hidden
+					position: relative
+					&::after
+						content: '\f105'
+						+fa('light')
+						font-size: 18px
+						color: $color-text--light
+						+centre('y')
+						right: 33px
 
-				& + .lk-nav__list
-					margin-top: 10px
-
-	//..lk-nav__item
+	//.lk-nav__item
 	&__item
 		background-color: #fff
 		border: 0
@@ -246,7 +276,7 @@
 			.lk-nav__icon
 				color: $color-accent
 
-		//..lk-nav__item--alone
+		//.lk-nav__item--alone
 		&--alone
 			+r(480)
 				padding: 10px 0
@@ -264,7 +294,7 @@
 					+centre('y')
 					right: 33px
 
-		//..lk-nav__item--alone
+		//.lk-nav__item--alone
 		&--exit
 			+r(480)
 				&::after
@@ -287,7 +317,7 @@
 		a
 			border: 0
 
-	//..lk-nav__link
+	//.lk-nav__link
 	&__link
 		width: 100%
 		padding: 8px 30px 10px
@@ -299,7 +329,7 @@
 		&:hover, &:focus
 			color: $color-text--light
 
-	//..lk-nav__text
+	//.lk-nav__text
 	&__text
 		display: block
 		width: 100%
@@ -310,26 +340,26 @@
 			font-family: $f-medium
 			color: $color-text
 
-	//..lk-nav__icon
+	//.lk-nav__icon
 	&__icon
 		color: #bdbdbd
-//..lk-nav end
+//.lk-nav end
 
 .lk-user
 	margin-bottom: 30px
 
-	//..lk-user__login
+	//.lk-user__login
 	&__login
 		display: block
 		font-family: $f-medium
 		color: #000
 		font-size: 25px
 
-	//..lk-user__name
+	//.lk-user__name
 	&__name
 		color: #000
 		font-size: 16px
-//..lk-user
+//.lk-user
 
 //.order-item
 .order-item
@@ -371,15 +401,15 @@
 				span
 					color: $color-error
 
-			//..order-item.is-abort .order-item__info
+			//.order-item.is-abort .order-item__info
 			&__info
-				//..order-item.is-abort .order-item__info ul
+				//.order-item.is-abort .order-item__info ul
 				ul
 					display: block
 					columns: auto 2
 					+r(768)
 						columns: auto
-				//..order-item.is-abort .order-item__info li
+				//.order-item.is-abort .order-item__info li
 				li
 					margin-top: 5px
 					+r(768)
@@ -650,16 +680,16 @@
 
 .lk-sale
 	color: #000
-	//..lk-sale__title
+	//.lk-sale__title
 	&__title
 		font-family: $f-medium
 		font-weight: 500
-	//..lk-sale__inner
+	//.lk-sale__inner
 	&__inner
 		+flex
 		+r(480)
 			flex-wrap: wrap
-	//..lk-sale__text
+	//.lk-sale__text
 	&__text
 		width: calc(100% - 33%)
 		margin-right: 60px
@@ -672,14 +702,14 @@
 				margin-bottom: 0
 				+r(480)
 					margin-bottom: 20px
-	//..lk-sale__data
+	//.lk-sale__data
 	&__data
 		width: 33%
 		+r(768)
 			width: 45%
 		+r(480)
 			width: 100%
-	//..lk-sale__list
+	//.lk-sale__list
 	&__list
 		padding: 25px 30px
 		border-radius: $border-radius
@@ -702,4 +732,4 @@
 	.lk-nav, .lk__top-line
 		+r(1024)
 			display: none
-//..lk-sale
+//.lk-sale

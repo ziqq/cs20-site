@@ -158,3 +158,44 @@
 			text-align: left
 			+r(480)
 				margin-bottom: 20px
+
+//.modal-map
+.modal-map
+	max-width: 1100px
+	width: 100%
+	padding: 0
+	+r(1200)
+		max-width: 768px
+	+r(768)
+		max-width: 758px
+	+r(480)
+		max-width: 396px
+	+r(375)
+		max-width: 355px
+	+r(320)
+		max-width: 300px
+
+	.map
+		&__left
+			+r(480)
+				min-height: 400px
+				width: 100%
+		&__desc
+			margin-top: auto
+			padding: 15px 0 0
+			background-color: #fff
+			// position: absolute
+			// bottom: 0
+			// left: 0
+			// width: 100%
+			+r(768)
+				border-top: 1px solid $color-border--lighten
+
+	.map-address
+		overflow-y: auto
+
+		&__wrap
+			// margin-bottom: 65px
+			+flexColumn
+			+r(480)
+				// margin-bottom: 0

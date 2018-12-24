@@ -65,6 +65,10 @@ PageList:
   ready: 50
   desc : Корзина триумф
 
+- file: cart-recipient-info.html
+  ready: 50
+  desc : Информация о получателе
+
 - file: payment.html
   ready: 50
   desc : Способы оплаты
@@ -99,17 +103,22 @@ PageList:
   desc : Регистрация
 
   #LK
+- file: lk-settings-old.html
+  ready: 50
+  desc : Настройки аккаунта старый сайт
+
+- file: lk-order-old.html
+  ready: 50
+  desc : Заказы старый сайт
+
+- file: lk-sale-old.html
+  ready: 50
+  desc : Персональные скидки старый сайт
+
+
 - file: lk-settings.html
   ready: 50
   desc : Настройки аккаунта
-
-- file: lk-person.html
-  ready: 50
-  desc : Добавление профиля частного лица
-
-- file: lk-company.html
-  ready: 50
-  desc : Добавление профиля юридического лица
 
 - file: lk-order.html
   ready: 50
@@ -118,6 +127,14 @@ PageList:
 - file: lk-sale.html
   ready: 50
   desc : Персональные скидки
+
+- file: lk-person.html
+  ready: 50
+  desc : Добавление профиля частного лица
+
+- file: lk-company.html
+  ready: 50
+  desc : Добавление профиля юридического лица
 
   #news
 - file: news.html

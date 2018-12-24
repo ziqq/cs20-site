@@ -2,7 +2,7 @@
 title: Карта
 btnFilter: true
 btnFilterTitle: Найти магазин
-btnFilterJs: js-map--open
+btnFilterJs: xs-only--flex js-map--open
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -31,7 +31,7 @@ btnFilterJs: js-map--open
 	<div class="container">
 
 		<div class="map__inner">
-			<div class="map__left js-map-filter">
+			<div class="map__left map__left--move js-map-filter">
 				<div class="map__title">Найти ближайший магазин</div>
 				{{ mixin.icon('cs-close', 'map__close js-map--close xs-only') }}
 
@@ -78,27 +78,20 @@ btnFilterJs: js-map--open
 				</div>
 
 				<div class="map-address__wrap js-map-address js-scroll">
-					<div class="map-address__back js-map-address--back xs-only">
+					<div class="map-address__back js-map-address--back xs-only--flex">
 						<i class="fal fa-angle-left"></i>
 						Изменить город
 					</div>
 					<div class="map-address">
+						{% for i in range(0, 3) %}
 						<div class="map-address__item">
-							<div class="map-address__title">Ижевск, ул. Марата, 3</div>
+							<div class="map-address__title">AUTOSPORT <span>оф.диллер</span></div>
 							<div class="map-address__inner">
 
 								<div class="map-address__left">
-									<div class="map-address__desc sm-hide">Кортик.	Точка продаж CS20. Lada Racing Удмуртская 163 магазин Lada Racing</div>
+									<div class="map-address__desc">ул. Адмирала Павла Нахимова, 11, офис 713, Ижевск</div>
 									<div class="map-address__phone">
 										<a class="phone__link" href="tel:+73412658080">+7 (3412) 65-80-80</a>
-									</div>
-									<div class="map-address__time is-open xs-only">
-										<ul class="list list--text">
-											<li class="list__item">
-												<strong>Открыто</strong>
-												<span>Закроется в 20:00</span>
-											</li>
-										</ul>
 									</div>
 								</div>
 
@@ -115,41 +108,11 @@ btnFilterJs: js-map--open
 								</div>
 
 							</div>
+							<button class="map-address__btn xs-only">
+								{{ mixin.icon('cs-route') }}
+							</button>
 						</div>
-
-						<div class="map-address__item">
-							<div class="map-address__title">Ижевск, ул. Марата, 3</div>
-							<div class="map-address__inner">
-
-								<div class="map-address__left">
-									<div class="map-address__desc sm-hide">Кортик.	Точка продаж CS20. Lada Racing Удмуртская 163 магазин Lada Racing</div>
-									<div class="map-address__phone">
-										<a class="phone__link" href="tel:+73412658080">+7 (3412) 65-80-80</a>
-									</div>
-									<div class="map-address__time is-close xs-only">
-										<ul class="list list--text">
-											<li class="list__item">
-												<strong>Закрыто</strong>
-												<span>Откроется в понедельник</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-
-								<div class="map-address__right">
-									<ul class="list list--text sm-hide">
-										{% import "data/data.html" as week %}
-										{% for item in week.dayTime %}
-										<li class="list__item">
-											<strong>{{ item.day }}</strong>
-											<span>{{ item.time }}</span>
-										</li>
-										{% endfor %}
-									</ul>
-								</div>
-
-							</div>
-						</div>
+						{% endfor %}
 					</div>
 				</div>
 
@@ -189,7 +152,8 @@ btnFilterJs: js-map--open
 					autocloseinfo: true,
 					streetViewControl: false,
 					mapTypeControl: false,
-					scaleControl: false
+					scaleControl: false,
+					fullscreenControl: false
 				}
 			);
 			// var marker = new google.maps.Marker({

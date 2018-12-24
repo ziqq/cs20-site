@@ -1,8 +1,19 @@
+//.page-card
+.page-card
+	.c-select__wrap
+		display: none
+
 //.card
 .card
 	background-color: $color-bg
 
-	//card__top-line
+	+r(768)
+		background-color: #fff
+
+	+r(480)
+		padding-top: 20px
+
+	//.card__top-line
 	&__top-line
 		+flexCenter
 		+r(480)
@@ -13,14 +24,20 @@
 			+r(480)
 				display: none
 
-	//card__inner
+	//.card__inner
 	&__inner
 		margin-bottom: 70px
 		@extend %box
 		+flex
 		align-items: flex-start
+
 		+r(768)
-			margin-bottom: 20px
+			margin-bottom: 10px
+			border: 0
+			box-shadow: none
+
+		+r(480)
+			margin-bottom: 10px
 			flex-direction: column
 
 		&--center
@@ -33,7 +50,7 @@
 					order: 1
 					width: 100%
 
-	//card__img
+	//.card__img
 	&__img
 		width: calc(40% - 15px)
 		margin-top: 40px
@@ -42,27 +59,56 @@
 		overflow: hidden
 		flex-shrink: 0
 		+flex
+
 		+r(768)
+			// margin-top: 0
+
+		+r(480)
+			width: calc(30% - 15px)
 			width: 100%
 			margin-right: 0
 			margin-bottom: 30px
+
 		+r(375)
 			margin-bottom: 20px
+
 		&--no-border
 			border: 0
 
 		.cs-slider
 			margin: auto
 			width: 100%
-	//card__desc
+
+			&__arrow
+				&--next
+					right: -10px
+				&--prev
+					left: -10px
+
+	//.card__desc
 	&__desc
 		padding: 45px 45px 60px 0
 		flex-grow: 1
 
+		+r(768)
+			padding: 20px 20px 20px 0
+
+		+r(480)
+			width: 100%
+			padding-right: 0
+
+		//.card__desc .button-box
 		.button-box
 			margin-bottom: 50px
+			+r(768)
+				margin-bottom: 0
 
-	//card__info
+			+r(480)
+				width: 100%
+				flex-direction: column
+				justify-content: center
+
+	//.card__info
 	&__info
 		margin-bottom: 20px
 		+r(768)
@@ -82,17 +128,30 @@
 				+r(768)
 					display: none
 
-	//.card__shops
+	//..card__shops
 	&__shops
 		font-family: $f-light
 		font-size: 14px
 		color: $color-text--light
 		+flexCenter
 
+		+r(768)
+			flex-direction: column
+			align-items: flex-start
+
+		+r(480)
+			margin-top: 10px
+			flex-direction: row
+			align-items: center
+
 		.btn
 			color: $color-text--light
+			+r(768)
+				margin-left: 0
+			+r(480)
+				margin-left: 7px
 
-	//card__product-info
+	//.card__product-info
 	&__product-info
 		display: inline-block
 		margin-left: auto
@@ -116,7 +175,7 @@
 			+r(768)
 				margin-bottom: $gutter
 
-	//card__left
+	//.card__left
 	&__left
 		margin-right: 30px
 		flex: 1
@@ -133,44 +192,56 @@
 				+r(480)
 					flex-wrap: wrap
 
-	//card__right
+	//.card__right
 	&__right
 		width: 30%
 
-	//card__title
+	//.card__title
 	&__title
 		margin-bottom: 30px
 		font-family: $f-medium
 		font-weight: 500
 		font-size: 22px
 
-	//card__sum
+		+r(768)
+			margin-bottom: 20px
+			font-size: 20px
+
+	//.card__sum
 	&__sum
 		margin-bottom: 40px
 		+flexCenter
 		+r(768)
-			margin-bottom: $gutter/2
+			margin-bottom: 20px
 
-	//card__price
+	//.card__price
 	&__price
 		.price
+			//.card__price .price__cost
 			&__cost
 				font-family: $f-bold
 				font-size: 36px
-				color: #000
+				color: $color-text
+				+r(768)
+					font-family: $f-medium
+					font-size: 26px
 
-	//card__counter
+	//.card__counter
 	&__counter
 		margin-left: 30px
+		+r(480)
+			margin-left: auto
 
-	//card__rating
+	//.card__rating
 	&__rating
 		margin-left: 30px
 
-	//card__btn
+	//.card__btn
 	&__btn
 		&:first-child
 			margin-right: 30px
+			+r(768)
+				padding: 14px 20px
 
 		+r(480)
 			width: 100%
@@ -198,7 +269,7 @@
 					+r(480)
 						margin-bottom: 15px
 				+size(12)
-				// +size-md(4)
+				//. +size-md(4)
 				+size-sm(6)
 				+size-xs(12)
 				+r(768)
@@ -216,9 +287,9 @@
 
 	&__card-info
 		+r(768)
-			margin: 0 -11px $gutter*2
+			display: none
 
-	//cart__slider
+	//.cart__slider
 	&__slider
 		height: 100%
 		margin: auto
@@ -262,22 +333,43 @@
 							transition: width 2s linear
 
 	.product-item
-		+r(1024)
-			width: 33.33%
+		+size(3)
+		+size-sm(4)
+		+size-xs(6)
+		+size-i5(12)
+
+		+r(768)
 			&:last-child
 				display: none
-		+r(768)
-			width: 50%
+
+		+r(480)
 			&:last-child
 				display: block
-		+r(480)
-			width: 100%
+
+		+r(320)
+			margin: 0 auto 20px
+
+		// +r(1024)
+		// 	width: 33.33%
+		// 	&:last-child
+		// 		display: none
+		// +r(768)
+		// 	width: 50%
+		// 	&:last-child
+		// 		display: block
+		// +r(480)
+		// 	width: 100%
 
 	.product-info
+		//.card .product-info__list
 		&__list
 			columns: 2 auto
+			+r(480)
+				columns: auto
 			&.w3
 				columns: 3 auto
+				+r(480)
+					columns: auto
 
 		&__item
 			color: $color-text--light
@@ -287,10 +379,40 @@
 	.info-block
 		&__item
 			justify-content: center
+			+r(480)
+				justify-content: flex-start
+		&__icon
+			+r(768)
+				width: 50px
+				&--delivery
+					width: 58px
+			+r(480)
+				width: 50px
+
+	.title--low
+		+r(768)
+			margin-bottom: 15px
+		+r(480)
+			margin-bottom: 20px
+			font-size: 23px
+
+	.cs-section
+		&:last-child
+			margin-bottom: 30px
+
+		&--advert
+			+r(480)
+				margin-bottom: 50px
 //.card end
 
 //.card-info
 .card-info
+	+r(768)
+		margin-bottom: 20px
+
+	+r(480)
+		margin-bottom: 40px
+
 	&__link
 		padding: 0
 		color: #000
@@ -311,6 +433,12 @@
 				margin-bottom: 30px
 				flex: auto
 
+	//.card-info__toggle
+	&__toggle
+		position: absolute
+		right: 0
+		bottom: 0
+
 	.tab
 		&__wrap
 			width: 100%
@@ -318,9 +446,16 @@
 			+r(768)
 				border: 0
 
+		//.card-info .tab__titles
 		&__titles
 			justify-content: flex-start
+			+r(768)
+				justify-content: center
+			+r(480)
+				flex-direction: column
+				justify-content: flex-start
 
+		//.card-info .tab__title
 		&__title
 			width: auto
 			padding: 0
@@ -333,10 +468,31 @@
 
 			& + .tab__title
 				margin-left: 50px
+				+r(768)
+					margin-left: 0
 
 			+r(768)
+				margin: auto
 				border-bottom: 0
 				height: auto
+				justify-content: center
+
+				&:first-child
+					margin-left: 0
+
+				&:last-child
+					margin-right: 0
+
+			+r(480)
+				width: 100%
+				margin-bottom: 10px
+				font-size: 16px
+				text-align: left
+				flex-direction: column
+				justify-content: flex-start
+				align-items: flex-start
+				&:last-child
+					margin-right: auto
 
 			&:hover
 				color: #000
@@ -348,16 +504,29 @@
 				+r(768)
 					border-bottom: 0
 
+			//.card-info__title a
+			a
+				+r(480)
+					text-decoration: underline
+
+		//.card-info .tab__content
 		&__content
 			min-width: 100%
 			min-height: 100px
 			padding: 25px 0 0
 			color: $color-text--light
 			font-size: 14px
+			position: relative
 
 			+r(768)
 				min-height: auto
-				padding: 30px
+				padding: 20px 0
+
+			+r(480)
+				padding: 10px 0 0
+
+			p
+				font-size: 14px
 
 		&--transform
 			+r(768)

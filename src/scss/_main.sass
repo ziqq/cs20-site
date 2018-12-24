@@ -1,6 +1,7 @@
 =gradient
 	+gp(to right, $bg-gradient--from, $bg-gradient--to)
 
+//.list-style
 .list-style
 	&--circle
 		li
@@ -15,7 +16,9 @@
 				position: absolute
 				top: 2px
 				left: 0
+//.list-style end
 
+//.page-wrapper
 .page-wrapper
 	min-height: 100vh
 	+flexColumn
@@ -32,10 +35,13 @@
 				display: none
 			&__auth
 				display: block
+//.page-wrapper end
 
+//.content-wrapper
 .content-wrapper
 	+flexColumn
 	flex: 1
+//.content-wrapper end
 
 //.cs-section
 .cs-section
@@ -89,7 +95,7 @@
 	font-size: 30px
 	color: $color-text
 
-	+r-max(xs)
+	+r-max(sm)
 		text-align: center
 
 	&--low
@@ -98,6 +104,7 @@
 
 	&--slider
 		margin-bottom: 20px
+//.title end
 
 //.page-title
 .page-title
@@ -106,14 +113,18 @@
 	font-weight: 300
 	font-size: 30px
 	color: $color-text
+//.page-title end
 
+//.section-title
 .section-title
 	margin-bottom: 35px
 	color: #000
 	font-family: $f-medium
 	font-size: 36px
 	font-weight: 500
+//.section-title end
 
+//.badge
 .badge
 	min-width: 20px
 	height: 18px
@@ -127,7 +138,7 @@
 	border: 2px solid #110159
 	border-radius: 500px
 	overflow: hidden
-//badge
+//.badge
 
 .counter
 	//counter__field
@@ -152,7 +163,7 @@
 		outline: none
 		background-color: transparent
 		+nosel
-//counter
+//.counter
 
 //.list
 .list

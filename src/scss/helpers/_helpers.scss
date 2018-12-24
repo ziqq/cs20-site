@@ -111,7 +111,7 @@
             @content;
         }
     } @else {
-        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpointsMin}`. "
             + "Please make sure it is defined in `$breakpoints` map.";
     }
 }

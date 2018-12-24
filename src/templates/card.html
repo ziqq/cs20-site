@@ -46,11 +46,13 @@ title: Стойка стабилизатора Logan/Largus (2 шт) КРАСН�
 					<div class="cs-slider__arrow cs-slider__arrow--next"></div>
 
 					<div class="cs-slider__slides">
+						{% for i in range(0, 3) %}
 						<div class="cs-slider__slide">
 							<div class="cs-slider__img">
-								<img src="img/products/1/325x325/1.png" alt="Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ">
+								<img src="img/products/1/325x200/1.png" alt="Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ">
 							</div>
 						</div>
+						{% endfor %}
 					</div>
 				</div>
 
@@ -72,18 +74,13 @@ title: Стойка стабилизатора Logan/Largus (2 шт) КРАСН�
 						<input type="text" class="counter__field" value="1">
 						<span class="counter__control counter__control--plus js-counter--plus">+</span>
 					</div>
-					<div class="card__rating">
-						<div class="rating rating--big">
-							<div class="rating__inner" style="width: 80%"></div>
-						</div>
-					</div>
 				</div>
 
 				<div class="button-box">
 					<button class="btn btn-accent card__btn">Добавить в корзину</button>
 					<div class="card__shops">
 						Официальные магазины
-						<a href="#" class="btn btn-link btn-link-gray--dark ml-5" data-src="#shop-in-city" data-fancybox>в вашем городе</a>
+						<a href="#modal-map" class="btn btn-link btn-link-gray--dark ml-5" data-fancybox>в вашем городе</a>
 					</div>
 				</div>
 
@@ -91,7 +88,7 @@ title: Стойка стабилизатора Logan/Largus (2 шт) КРАСН�
 					<div class="card-info">
 
 					<div class="tab">
-						<div class="tab__wrap js-tabs">
+						<div class="tab__wrap js-card-tabs">
 							<ul class="tab__titles">
 								<li class="tab__title is-active">
 									<a href="#tab-1">О товаре</a>
@@ -109,6 +106,8 @@ title: Стойка стабилизатора Logan/Largus (2 шт) КРАСН�
 							<div class="tab__contentes">
 								<div class="tab__content" id="tab-1">
 									<p>Патрубки и шланги являются неотъемлемый частью системы охлаждения двигателя и отопления автомобиля. Они обеспечивают циркуляцию охлаждающей жидкости (тосол, антифриз).</p>
+									<p class="js-text hidden">Патрубки и шланги являются неотъемлемый частью системы охлаждения двигателя и отопления автомобиля. Они обеспечивают циркуляцию охлаждающей жидкости (тосол, антифриз).</p>
+									<button class="btn-icon btn-icon--arrow-down card-info__toggle js-text--show"></button>
 								</div>
 
 								<div class="tab__content" id="tab-2">
@@ -202,16 +201,12 @@ title: Стойка стабилизатора Logan/Largus (2 шт) КРАСН�
 	<!-- begin cs-section advert -->
 	<section class="cs-section cs-section--product-popular">
 		<div class="container">
-			<h2 class="h2 title title--low">Вместе с этим товаром покупают</h2>
+			<h2 class="h2 title">Вместе с этим товаром покупают</h2>
 
-			<div class="cs-slider cs-slider--home  js-cs-slider" data-slide-count="4">
-				<div class="cs-slider__arrow cs-slider__arrow--prev"></div>
-				<div class="cs-slider__arrow cs-slider__arrow--next"></div>
-
-				<div class="product-item__wrap cs-slider__slides">
+				<div class="product-item__wrap">
 					{% import "data/data-product.html" as productItem %}
 					{% for product in productItem.productSimilar %}
-					<a href="#" class="product-item cs-slider__slide" itemscope itemtype="http://schema.org/Product">
+					<a href="#" class="product-item" itemscope itemtype="http://schema.org/Product">
 
 						<div class="product-item__img" itemprop="image" href="img/products/1/190x190/{{ product.img }}.png">
 								<img src="img/products/1/190x190/{{ product.img }}.png"  alt="{{ product.title }}" />
@@ -234,7 +229,6 @@ title: Стойка стабилизатора Logan/Largus (2 шт) КРАСН�
 					</a>
 					{% endfor %}
 				</div>
-			</div>
 
 		</div>
 	</section>
@@ -243,4 +237,39 @@ title: Стойка стабилизатора Logan/Largus (2 шт) КРАСН�
 </div>
 <!-- end home -->
 
+{% endblock %}
+
+{% block scripts %}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnkTBYnYseWFYqDk3wb4-eWn4507c7CSw" async defer></script>
+
+<script>
+	window.onload = function() {
+		var $mapShops = $('.js-map-shops');
+
+		if ($mapShops.length) {
+			_initMapShops();
+		}
+
+		function _initMapShops() {
+			var cords = { lat: 51.9958, lng: 47.8191 };
+			var map = new google.maps.Map(
+				document.querySelector('.js-map-shops'),
+				{
+					zoom: 17,
+					center: cords,
+					autocloseinfo: true,
+					streetViewControl: false,
+					mapTypeControl: false,
+					scaleControl: false,
+					fullscreenControl: false
+				}
+			);
+			// var marker = new google.maps.Marker({
+			// 	position: { lat: 51.99577, lng: 47.81935 },
+			// 	map: map,
+			// 	icon: 'img/general/pin.png'
+			// });
+		}
+	}
+</script>
 {% endblock %}

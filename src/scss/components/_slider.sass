@@ -10,17 +10,24 @@
 		overflow: hidden
 		opacity: .3
 		cursor: pointer
-		// display: flex
-		// align-items: center
-		// justify-content: center
 		+tr
 		+vy
+
+		&[aria-disabled="false"]
+			display: flex !important
 
 		+r-min(sm)
 			background-color: darken($color-bg--light, 5%)
 
 		+r(1200)
 			z-index: z(dropdown)
+
+		+r(768)
+			height: 100%
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
 
 		&.is-disable
 			display: none
@@ -44,24 +51,28 @@
 			line-height: 1
 
 		&--next
-			// +s('angel--right')
 			right: -50px
 			z-index: 1
 
 			+r(1200)
-				right: -20px
+				right: -15px
+
+			+r(768)
+				right: -10px
 
 			&::before
 				content: '\f105'
 				margin-left: 3px
 
 		&--prev
-			// +s('angel--left')
 			left: -50px
 			z-index: 1
 
 			+r(1200)
-				left: -20px
+				left: -15px
+
+			+r(768)
+				left: -10px
 
 			&::before
 				content: '\f104'
@@ -266,8 +277,14 @@
 				background-color: transparent
 				&--prev
 					left: 20px
+
+					+r(768)
+						left: 10px
 				&--next
 					right: 20px
+
+					+r(768)
+						right: 10px
 
 	//.cs-slider--card
 	&--card
@@ -340,11 +357,6 @@
 				margin-top: 15px
 				+r(480)
 					margin-top: 0
-
-					&.slick-initialized
-						.cs-card__inner
-							+r(480)
-								// margin: 0 20px
 
 		.slick-slide
 			margin: 0 2px

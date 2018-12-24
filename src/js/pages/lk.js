@@ -7,10 +7,10 @@
 	const lk = {
 		init: function() {
 			this.stickyBlock();
-			this.orderSetHeight();
 
 			if ($(window).width() <= 480) {
 				this.toggleContent();
+				this.orderSetHeight();
 			}
 		},
 		stickyBlock: function() {
@@ -35,6 +35,8 @@
 			let timeOut = 200;
 			let offset = 20;
 			let thisPage = true;
+
+			console.log('---', boxHeight);
 
 			$wrapper
 				.addClass('content-is-visible')
@@ -72,30 +74,34 @@
 			let wrapperHeight;
 
 			$('.js-order-item').each(function() {
-				let $title = $(this).find('.cs-accordeon__title');
-				let $content = $(this).find('.cs-accordeon__content');
+				let $parent = $(this).closest('.js-lk-box');
 				let height;
 
 				$(this).on('click', function() {
 					if ($(this).hasClass('is-open')) {
 						wrapperHeight = $wrapper.outerHeight(true);
-						console.log('--- wrapperHeight', wrapperHeight);
+
+						console.log('--- wrapperHeight first', wrapperHeight);
+
 						setTimeout(() => {
 							height = $(this).outerHeight(true);
-							console.log('--- height', height);
 							$wrapper.animate(
 								{ 'min-height': wrapperHeight + height },
 								300
 							);
 						}, 300);
 					} else {
-						wrapperHeight = $wrapper.outerHeight(true);
-						height = $(this).outerHeight(true);
-						console.log('--- wrapperHeight', wrapperHeight);
-						console.log('--- height', height);
+						wrapperHeight = $parent.outerHeight(true);
+						height = $(this).height();
+
+						console.log('--- $parent', $parent);
+						console.log('--- wrapperHeight else', wrapperHeight);
+						console.log('--- height else', height);
+						console.log('--- result else', wrapperHeight - height);
+
 						setTimeout(() => {
 							$wrapper.animate(
-								{ 'min-height': wrapperHeight - height },
+								{ 'min-height': wrapperHeight - height / 1.15 },
 								300
 							);
 						}, 300);

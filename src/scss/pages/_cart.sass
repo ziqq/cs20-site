@@ -147,13 +147,15 @@
 				align-items: center
 
 		+r(768)
-			box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15)
+			font-size: 14px
+			box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.15)
+			border-radius: 0
 			display: flex
 			align-items: flex-end
 			position: fixed
-			bottom: 10px
-			left: 10px
-			right: 10px
+			bottom: 0
+			left: 0
+			right: 0
 			width: auto
 			z-index: z(fixed)
 			+tr
@@ -162,8 +164,6 @@
 			&.is-visible
 				+trfY(0)
 
-
-
 			.list
 				margin: 0 15px 0 0
 				flex-shrink: 0
@@ -171,7 +171,7 @@
 
 				&__item
 					& + .list__item
-						margin-top: 18px
+						margin-top: 5px
 
 			.button-box
 				margin: 0 0 0 15px
@@ -179,7 +179,7 @@
 
 			.input-group
 				&__info
-					white-space: nowrap
+					font-size: 12px
 
 		+r(480)
 			padding: 15px
@@ -219,6 +219,7 @@
 				margin-bottom: $gutter
 			.fa
 				font-size: 22px
+
 		.button
 			margin-bottom: 10px
 			&:last-child
@@ -633,6 +634,9 @@
 	flex-direction: column
 	align-items: center
 
+	&:hover
+		+trfY(-5px)
+
 	&::after
 		display: block
 		content: ''
@@ -648,10 +652,8 @@
 	+r(480)
 		margin-bottom: 10px
 		margin-right: 0
-
-	+r-min(481)
 		&:hover
-			+trfY(-5px)
+			+trfY(0)
 
 	&.is-checked
 		&::after
@@ -766,6 +768,9 @@
 		justify-content: center
 		align-items: center
 		flex-shrink: 0
+
+		.btn
+			width: 100%
 
 	//.cart-info__sum
 	&__sum

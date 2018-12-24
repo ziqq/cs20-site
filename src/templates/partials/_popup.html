@@ -119,78 +119,101 @@
 </div>
 <!-- end enter -->
 
-<!-- begin review-add -->
-<div class="modal-window modal-window--mobile review-add" id="review-add">
-	<div class="modal-window__header">
-		<h4 class="modal-window__title">Написать отзыв</h4>
-	</div>
+<!-- begin enter -->
+<div class="modal-window modal-map" id="modal-map">
 	<div class="modal-window__body">
-		<form class="form form__review-add">
-			<div class="cs-input">
-				<span class="cs-input__title">Ваше имя</span>
-				<input class="cs-input__field" type="text">
-				<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-			</div>
-			<div class="cs-input cs-input--select form__input">
-				<span class="cs-input__title">Город</span>
-				<select class="js-select">
-					<option value="Выберите город..." disabled selected>Выберите город...</option>
-					{% for i in range(0, 11) %}
-					<option value="Балаково">Балаково</option>
-					{% endfor %}﻿
-				</select>
-				<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-			</div>
+		<div class="map__inner">
+			<div class="map__left js-map-filter">
+				<div class="map__title">Найти ближайший магазин</div>
 
-			<div class="cs-input cs-input--rating">
-				<span class="cs-input__title">Оценка</span>
-				{{ item.starRating() }}
-			</div>
+				<div class="row js-select--box">
+					<div class="col-12">
+						<div class="pedit__item">
+							<div class="pedit__field">
+								<select class="js-select js-select--country" data-placeholder="Выбор страны">
+									<option></option>
+									{% for i in range(0, 5) %}
+									<option value="{{ i+1 }}">{{ i+1 }}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+					</div>
 
-			<div class="cs-input cs-input--text">
-				<div class="cs-input__title">Отзыв</div>
-				<textarea></textarea>
-			</div>
+					<div class="col-12">
+						<div class="pedit__item">
+							<div class="pedit__field">
+								<select class="js-select js-select--region" data-placeholder="Выбор региона" disabled>
+									<option></option>
+									<option value="Архангельская область">Архангельская область</option>
+									{% for i in range(0, 5) %}
+									<option value="{{ i+1 }}">{{ i+1 }}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+					</div>
 
-			<div class="pedit__item">
-				<label class="pedit__file">
-					<span>Прикрепить файл</span>(не более 6 МВ)
-					<input type="file">
-				</label>
-			</div>
-
-			<button class="button button--accent form__btn" type="submit">Отправить</button>
-			<div class="success">
-				<div class="success__text">Спасибо за отзыв!</div>
-			</div>
-		</form>
-	</div>
-</div>
-<!-- end review-add -->
-
-
-<!-- begin buy-one-click -->
-<div class="modal-window modal-window--mobile buy-one-click" id="buy-one-click">
-	<div class="modal-window__header">
-		<h4 class="modal-window__title">Купить в 1 клик</h4>
-		<span class="modal-window__subtitle">Наши менеджеры свяжутся с Вами в течении 15 мин.</span>
-	</div>
-	<div class="modal-window__body">
-		<form class="form form__request">
-			{{item.input('text', 'Ваше имя', 'form__input is-invalid')}}
-			<div class="cs-input form__input">
-				<input class="cs-input__field js-input js-phone-mask" type="tel" placeholder="Ваш телефон">
-				<span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-			</div>
-			<button class="button button--accent form__btn" type="submit">Купить</button>
-			<div class="success">
-				<div class="success__text">
-					Спасибо за заказ!
-					<div class="success__text--small">Наши менеджеры свяжутся с Вами в ближайшее время.</div>
+					<div class="col-12">
+						<div class="pedit__item">
+							<div class="pedit__field">
+								<select class="js-select js-select--city" data-placeholder="Выбор  города" disabled>
+									<option></option>
+									{% for i in range(0, 5) %}
+									<option value="{{ i+1 }}">{{ i+1 }}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+					</div>
 				</div>
 
+				<div class="map-address__wrap js-map-address">
+					<div class="map-address__back js-map-address--back xs-only--flex">
+						<i class="fal fa-angle-left"></i>
+						Изменить город
+					</div>
+					<div class="map-address js-scroll">
+						{% for i in range(0, 3) %}
+						<div class="map-address__item">
+							<div class="map-address__title">AUTOSPORT <span>оф.диллер</span></div>
+							<div class="map-address__inner">
+
+								<div class="map-address__left">
+									<div class="map-address__desc">ул. Адмирала Павла Нахимова, 11, офис 713, Ижевск</div>
+									<div class="map-address__phone">
+										<a class="phone__link" href="tel:+73412658080">+7 (3412) 65-80-80</a>
+									</div>
+								</div>
+
+								<div class="map-address__right">
+									<ul class="list list--text sm-hide">
+										{% import "data/data.html" as week %}
+										{% for item in week.dayTime %}
+										<li class="list__item">
+											<strong>{{ item.day }}</strong>
+											<span>{{ item.time }}</span>
+										</li>
+										{% endfor %}
+									</ul>
+								</div>
+
+							</div>
+							<button class="map-address__btn xs-only">
+								{{ mixin.icon('cs-route') }}
+							</button>
+						</div>
+						{% endfor %}
+					</div>
+
+					<div class="map__desc">Если вы не нашли нужный товар в магазинах вашего города, закажите его через наш сайт. Мы доставляем детали по всему миру и бесплатно по России при заказе от 3000 руб.</div>
+				</div>
 			</div>
-		</form>
+
+			<div class="map__right map-box xs-hide">
+				<div class="map-box__inner js-map-shops"></div>
+			</div>
+		</div>
 	</div>
 </div>
-<!-- end buy-one-click -->
+<!-- end enter -->

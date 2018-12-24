@@ -5,6 +5,8 @@
 
 	+r-max(sm)
 		min-height: auto
+		.search__wrap
+				margin-bottom: 30px
 
 	+r-max(xs)
 		min-height: 100%
@@ -22,12 +24,15 @@
 
 	//.firstscreen__line
 	&__line
-		margin: 40px 0 45px
+		margin: 40px 0
 		+flexCenter
 
 		+r-max(sm)
 			flex-wrap: wrap
 			flex-direction: column
+
+		+r-max(xs)
+			margin: 20px 0
 
 	//.firstscreen__c-select
 	&__c-select
@@ -43,6 +48,9 @@
 
 		+r-max(xs)
 			margin-right: 15px
+
+		+r-max(i5)
+			margin-right: 0
 
 		.toggle
 			span

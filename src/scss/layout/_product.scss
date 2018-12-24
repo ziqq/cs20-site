@@ -11,7 +11,7 @@
 	@include r-max(xs) {
 		max-width: 280px;
 		margin: auto;
-		padding: 0px 15px 15px;
+		padding: 0px 10px 15px;
 	}
 
 	&:hover {
@@ -96,6 +96,11 @@
 		margin-bottom: 20px;
 		font-family: $f-light;
 		font-size: 16px;
+
+		@include r-max(xs) {
+			margin-bottom: 10px;
+			font-size: 14px;
+		}
 	}//.product-item__title
 
 	&__price {
@@ -106,9 +111,10 @@
 		span {
 			display: block;
 			width: 100%;
+			white-space: nowrap;
 
 			@include r-max(xs) {
-				font-size: 21px;
+				font-size: 18px;
 			}
 		}
 	}//.product-item__price

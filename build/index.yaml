@@ -29,21 +29,25 @@ PageList:
   ready: 50
   desc : Корзина место доставки
 
-- file: cart-delivery.html
+- file: cart-delivery-choice.html
   ready: 50
-  desc : Корзина доставка
+  desc : Выбор способа доставки
 
 - file: cart-delivery-pickup.html
   ready: 50
   desc : Самовывоз
 
-- file: cart-delivery-choice.html
+- file: cart-delivery.html
   ready: 50
-  desc : Выбор способа доставки
+  desc : Корзина доставка
 
 - file: cart-delivery-pay.html
   ready: 50
   desc : Выбор способа оплаты
+
+- file: cart-registration.html
+  ready: 50
+  desc : Добавление нового профиля
 
 - file: cart-profile-add.html
   ready: 50
@@ -60,6 +64,10 @@ PageList:
 - file: cart-success.html
   ready: 50
   desc : Корзина триумф
+
+- file: cart-recipient-info.html
+  ready: 50
+  desc : Информация о получателе
 
 - file: payment.html
   ready: 50
@@ -95,17 +103,22 @@ PageList:
   desc : Регистрация
 
   #LK
+- file: lk-settings-old.html
+  ready: 50
+  desc : Настройки аккаунта старый сайт
+
+- file: lk-order-old.html
+  ready: 50
+  desc : Заказы старый сайт
+
+- file: lk-sale-old.html
+  ready: 50
+  desc : Персональные скидки старый сайт
+
+
 - file: lk-settings.html
   ready: 50
   desc : Настройки аккаунта
-
-- file: lk-person.html
-  ready: 50
-  desc : Добавление профиля частного лица
-
-- file: lk-company.html
-  ready: 50
-  desc : Добавление профиля юридического лица
 
 - file: lk-order.html
   ready: 50
@@ -114,6 +127,14 @@ PageList:
 - file: lk-sale.html
   ready: 50
   desc : Персональные скидки
+
+- file: lk-person.html
+  ready: 50
+  desc : Добавление профиля частного лица
+
+- file: lk-company.html
+  ready: 50
+  desc : Добавление профиля юридического лица
 
   #news
 - file: news.html

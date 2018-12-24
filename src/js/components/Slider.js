@@ -19,9 +19,9 @@
 				$slide = $(this).find('.cs-slider__slide');
 			}
 
-			if ($slide.length > 4 || $(window).width() <= 768) {
-				$arrowPrev.show();
-				$arrowNext.show();
+			if ($slide.length > 4 || $(window).width() <= 1024) {
+				$arrowPrev.css('display', 'flex');
+				$arrowNext.css('display', 'flex');
 				$slides.not('.slick-initialized').slick({
 					prevArrow: $arrowPrev,
 					nextArrow: $arrowNext,
@@ -67,8 +67,8 @@
 				.hide();
 
 			if ($slide.length > 7 && $(window).width() > 480) {
-				$arrowPrev.show();
-				$arrowNext.show();
+				$arrowPrev.css('display', 'flex');
+				$arrowNext.css('display', 'flex');
 				$slides.not('.slick-initialized').slick({
 					prevArrow: $arrowPrev,
 					nextArrow: $arrowNext,
@@ -109,8 +109,8 @@
 				.hide();
 
 			if ($slide.length > 2 && $(window).width() <= 480) {
-				$arrowPrev.show();
-				$arrowNext.show();
+				$arrowPrev.css('display', 'flex');
+				$arrowNext.css('display', 'flex');
 				$slides.not('.slick-initialized').slick({
 					prevArrow: $arrowPrev,
 					nextArrow: $arrowNext,
@@ -138,8 +138,8 @@
 				.hide();
 
 			if ($slide.length > 1) {
-				$arrowPrev.show();
-				$arrowNext.show();
+				$arrowPrev.css('display', 'flex');
+				$arrowNext.css('display', 'flex');
 				$slides.not('.slick-initialized').slick({
 					prevArrow: $arrowPrev,
 					nextArrow: $arrowNext,
@@ -169,8 +169,8 @@
 				.hide();
 
 			if ($slide.length > 1) {
-				$arrowPrev.show();
-				$arrowNext.show();
+				$arrowPrev.css('display', 'flex');
+				$arrowNext.css('display', 'flex');
 				$slides.not('.slick-initialized').slick({
 					prevArrow: $arrowPrev,
 					nextArrow: $arrowNext,

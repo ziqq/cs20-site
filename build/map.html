@@ -364,13 +364,15 @@
                   </div>
                   <div class="cart-info__footer">
                     <div class="cart-info__sum">Итого: <span>2144 руб</span></div>
-                    <a href="cart.html" class="btn btn--small btn-outline-gray cart-info__btn">Перейти в корзину</a>
+                    <a href="cart.html" class="btn btn-outline-gray cart-info__btn">Перейти в корзину</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <button class="btn btn--filter js-map--open sm-only--flex">Найти магазин</button>
+          <div class="btn__wrap js-btn-fixed">
+            <button class="btn btn--filter xs-only--flex js-map--open"> Найти магазин </button>
+          </div>
         </div>
       </section>
       <!-- end firstscreen -->
@@ -394,7 +396,7 @@
         <!-- end breadcrumbs -->
         <div class="container">
           <div class="map__inner">
-            <div class="map__left js-map-filter">
+            <div class="map__left map__left--move js-map-filter">
               <div class="map__title">Найти ближайший магазин</div>
               <svg class="icon icon-cs-close map__close js-map--close xs-only">
                 <use xlink:href="img/sprite.svg#cs-close"></use>
@@ -445,24 +447,16 @@
                 </div>
               </div>
               <div class="map-address__wrap js-map-address js-scroll">
-                <div class="map-address__back js-map-address--back xs-only">
+                <div class="map-address__back js-map-address--back xs-only--flex">
                   <i class="fal fa-angle-left"></i> Изменить город </div>
                 <div class="map-address">
                   <div class="map-address__item">
-                    <div class="map-address__title">Ижевск, ул. Марата, 3</div>
+                    <div class="map-address__title">AUTOSPORT <span>оф.диллер</span></div>
                     <div class="map-address__inner">
                       <div class="map-address__left">
-                        <div class="map-address__desc sm-hide">Кортик. Точка продаж CS20. Lada Racing Удмуртская 163 магазин Lada Racing</div>
+                        <div class="map-address__desc">ул. Адмирала Павла Нахимова, 11, офис 713, Ижевск</div>
                         <div class="map-address__phone">
                           <a class="phone__link" href="tel:+73412658080">+7 (3412) 65-80-80</a>
-                        </div>
-                        <div class="map-address__time is-open xs-only">
-                          <ul class="list list--text">
-                            <li class="list__item">
-                              <strong>Открыто</strong>
-                              <span>Закроется в 20:00</span>
-                            </li>
-                          </ul>
                         </div>
                       </div>
                       <div class="map-address__right">
@@ -498,22 +492,19 @@
                         </ul>
                       </div>
                     </div>
+                    <button class="map-address__btn xs-only">
+                      <svg class="icon icon-cs-route ">
+                        <use xlink:href="img/sprite.svg#cs-route"></use>
+                      </svg>
+                    </button>
                   </div>
                   <div class="map-address__item">
-                    <div class="map-address__title">Ижевск, ул. Марата, 3</div>
+                    <div class="map-address__title">AUTOSPORT <span>оф.диллер</span></div>
                     <div class="map-address__inner">
                       <div class="map-address__left">
-                        <div class="map-address__desc sm-hide">Кортик. Точка продаж CS20. Lada Racing Удмуртская 163 магазин Lada Racing</div>
+                        <div class="map-address__desc">ул. Адмирала Павла Нахимова, 11, офис 713, Ижевск</div>
                         <div class="map-address__phone">
                           <a class="phone__link" href="tel:+73412658080">+7 (3412) 65-80-80</a>
-                        </div>
-                        <div class="map-address__time is-close xs-only">
-                          <ul class="list list--text">
-                            <li class="list__item">
-                              <strong>Закрыто</strong>
-                              <span>Откроется в понедельник</span>
-                            </li>
-                          </ul>
                         </div>
                       </div>
                       <div class="map-address__right">
@@ -549,6 +540,59 @@
                         </ul>
                       </div>
                     </div>
+                    <button class="map-address__btn xs-only">
+                      <svg class="icon icon-cs-route ">
+                        <use xlink:href="img/sprite.svg#cs-route"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="map-address__item">
+                    <div class="map-address__title">AUTOSPORT <span>оф.диллер</span></div>
+                    <div class="map-address__inner">
+                      <div class="map-address__left">
+                        <div class="map-address__desc">ул. Адмирала Павла Нахимова, 11, офис 713, Ижевск</div>
+                        <div class="map-address__phone">
+                          <a class="phone__link" href="tel:+73412658080">+7 (3412) 65-80-80</a>
+                        </div>
+                      </div>
+                      <div class="map-address__right">
+                        <ul class="list list--text sm-hide">
+                          <li class="list__item">
+                            <strong>пн</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>вт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>ср</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>чт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>пт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>сб</strong>
+                            <span>9:00 - 15:00</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>вс</strong>
+                            <span>выходной</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <button class="map-address__btn xs-only">
+                      <svg class="icon icon-cs-route ">
+                        <use xlink:href="img/sprite.svg#cs-route"></use>
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -817,95 +861,216 @@
         </div>
       </div>
       <!-- end enter -->
-      <!-- begin review-add -->
-      <div class="modal-window modal-window--mobile review-add" id="review-add">
-        <div class="modal-window__header">
-          <h4 class="modal-window__title">Написать отзыв</h4>
-        </div>
+      <!-- begin enter -->
+      <div class="modal-window modal-map" id="modal-map">
         <div class="modal-window__body">
-          <form class="form form__review-add">
-            <div class="cs-input">
-              <span class="cs-input__title">Ваше имя</span>
-              <input class="cs-input__field" type="text">
-              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-            </div>
-            <div class="cs-input cs-input--select form__input">
-              <span class="cs-input__title">Город</span>
-              <select class="js-select">
-                <option value="Выберите город..." disabled selected>Выберите город...</option>
-                <option value="Балаково">Балаково</option>
-                <option value="Балаково">Балаково</option>
-                <option value="Балаково">Балаково</option>
-                <option value="Балаково">Балаково</option>
-                <option value="Балаково">Балаково</option>
-                <option value="Балаково">Балаково</option>
-                <option value="Балаково">Балаково</option>
-                <option value="Балаково">Балаково</option>
-                <option value="Балаково">Балаково</option>
-                <option value="Балаково">Балаково</option>
-                <option value="Балаково">Балаково</option> ﻿
-              </select>
-              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-            </div>
-            <div class="cs-input cs-input--rating">
-              <span class="cs-input__title">Оценка</span>
-              <div class="star-rating">
-                <div class="star-rating__wrap">
-                  <input class="star-rating__input" id="star-rating-5" type="radio" name="rating" value="5">
-                  <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-5" title="5 из 5"></label>
-                  <input class="star-rating__input" id="star-rating-4" type="radio" name="rating" value="4">
-                  <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-4" title="4 из 5"></label>
-                  <input class="star-rating__input" id="star-rating-3" type="radio" name="rating" value="3" checked>
-                  <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-3" title="3 из 5"></label>
-                  <input class="star-rating__input" id="star-rating-2" type="radio" name="rating" value="2">
-                  <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-2" title="2 из 5"></label>
-                  <input class="star-rating__input" id="star-rating-1" type="radio" name="rating" value="1">
-                  <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-1" title="1 из 5"></label>
+          <div class="map__inner">
+            <div class="map__left js-map-filter">
+              <div class="map__title">Найти ближайший магазин</div>
+              <div class="row js-select--box">
+                <div class="col-12">
+                  <div class="pedit__item">
+                    <div class="pedit__field">
+                      <select class="js-select js-select--country" data-placeholder="Выбор страны">
+                        <option></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="pedit__item">
+                    <div class="pedit__field">
+                      <select class="js-select js-select--region" data-placeholder="Выбор региона" disabled>
+                        <option></option>
+                        <option value="Архангельская область">Архангельская область</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="pedit__item">
+                    <div class="pedit__field">
+                      <select class="js-select js-select--city" data-placeholder="Выбор  города" disabled>
+                        <option></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="cs-input cs-input--text">
-              <div class="cs-input__title">Отзыв</div>
-              <textarea></textarea>
-            </div>
-            <div class="pedit__item">
-              <label class="pedit__file">
-                <span>Прикрепить файл</span>(не более 6 МВ) <input type="file">
-              </label>
-            </div>
-            <button class="button button--accent form__btn" type="submit">Отправить</button>
-            <div class="success">
-              <div class="success__text">Спасибо за отзыв!</div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <!-- end review-add -->
-      <!-- begin buy-one-click -->
-      <div class="modal-window modal-window--mobile buy-one-click" id="buy-one-click">
-        <div class="modal-window__header">
-          <h4 class="modal-window__title">Купить в 1 клик</h4>
-          <span class="modal-window__subtitle">Наши менеджеры свяжутся с Вами в течении 15 мин.</span>
-        </div>
-        <div class="modal-window__body">
-          <form class="form form__request">
-            <div class="cs-input form__input is-invalid">
-              <input type="text" class="cs-input__field " placeholder="Ваше имя">
-              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-            </div>
-            <div class="cs-input form__input">
-              <input class="cs-input__field js-input js-phone-mask" type="tel" placeholder="Ваш телефон">
-              <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-            </div>
-            <button class="button button--accent form__btn" type="submit">Купить</button>
-            <div class="success">
-              <div class="success__text"> Спасибо за заказ! <div class="success__text--small">Наши менеджеры свяжутся с Вами в ближайшее время.</div>
+              <div class="map-address__wrap js-map-address">
+                <div class="map-address__back js-map-address--back xs-only--flex">
+                  <i class="fal fa-angle-left"></i> Изменить город </div>
+                <div class="map-address js-scroll">
+                  <div class="map-address__item">
+                    <div class="map-address__title">AUTOSPORT <span>оф.диллер</span></div>
+                    <div class="map-address__inner">
+                      <div class="map-address__left">
+                        <div class="map-address__desc">ул. Адмирала Павла Нахимова, 11, офис 713, Ижевск</div>
+                        <div class="map-address__phone">
+                          <a class="phone__link" href="tel:+73412658080">+7 (3412) 65-80-80</a>
+                        </div>
+                      </div>
+                      <div class="map-address__right">
+                        <ul class="list list--text sm-hide">
+                          <li class="list__item">
+                            <strong>пн</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>вт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>ср</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>чт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>пт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>сб</strong>
+                            <span>9:00 - 15:00</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>вс</strong>
+                            <span>выходной</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <button class="map-address__btn xs-only">
+                      <svg class="icon icon-cs-route ">
+                        <use xlink:href="img/sprite.svg#cs-route"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="map-address__item">
+                    <div class="map-address__title">AUTOSPORT <span>оф.диллер</span></div>
+                    <div class="map-address__inner">
+                      <div class="map-address__left">
+                        <div class="map-address__desc">ул. Адмирала Павла Нахимова, 11, офис 713, Ижевск</div>
+                        <div class="map-address__phone">
+                          <a class="phone__link" href="tel:+73412658080">+7 (3412) 65-80-80</a>
+                        </div>
+                      </div>
+                      <div class="map-address__right">
+                        <ul class="list list--text sm-hide">
+                          <li class="list__item">
+                            <strong>пн</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>вт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>ср</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>чт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>пт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>сб</strong>
+                            <span>9:00 - 15:00</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>вс</strong>
+                            <span>выходной</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <button class="map-address__btn xs-only">
+                      <svg class="icon icon-cs-route ">
+                        <use xlink:href="img/sprite.svg#cs-route"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="map-address__item">
+                    <div class="map-address__title">AUTOSPORT <span>оф.диллер</span></div>
+                    <div class="map-address__inner">
+                      <div class="map-address__left">
+                        <div class="map-address__desc">ул. Адмирала Павла Нахимова, 11, офис 713, Ижевск</div>
+                        <div class="map-address__phone">
+                          <a class="phone__link" href="tel:+73412658080">+7 (3412) 65-80-80</a>
+                        </div>
+                      </div>
+                      <div class="map-address__right">
+                        <ul class="list list--text sm-hide">
+                          <li class="list__item">
+                            <strong>пн</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>вт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>ср</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>чт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>пт</strong>
+                            <span>8:15 - 17:15</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>сб</strong>
+                            <span>9:00 - 15:00</span>
+                          </li>
+                          <li class="list__item">
+                            <strong>вс</strong>
+                            <span>выходной</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <button class="map-address__btn xs-only">
+                      <svg class="icon icon-cs-route ">
+                        <use xlink:href="img/sprite.svg#cs-route"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="map__desc">Если вы не нашли нужный товар в магазинах вашего города, закажите его через наш сайт. Мы доставляем детали по всему миру и бесплатно по России при заказе от 3000 руб.</div>
               </div>
             </div>
-          </form>
+            <div class="map__right map-box xs-hide">
+              <div class="map-box__inner js-map-shops"></div>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- end buy-one-click -->
+      <!-- end enter -->
     </div>
     <!-- end windows -->
     <!-- begin scripts -->
@@ -933,7 +1098,8 @@
             autocloseinfo: true,
             streetViewControl: false,
             mapTypeControl: false,
-            scaleControl: false
+            scaleControl: false,
+            fullscreenControl: false
           });
           // var marker = new google.maps.Marker({
           // 	position: { lat: 51.99577, lng: 47.81935 },
