@@ -100,13 +100,14 @@
 			transform: translate(10px, -50%)
 
 		+r(768)
+			max-width: 232px
+			width: 100%
+			height: 42px
+			line-height: 42px
 			font-size: 16px
 			font-family: $f
 			border-radius: $border-radius
 			box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2)
-			height: 40px
-			line-height: 40px
-			width: 80%
 			position: fixed
 			top: auto
 			left: 50%
@@ -137,9 +138,11 @@
 
 	//.btn-filter
 	&--filter
+		max-width: 232px
+		width: 100%
 		// width: 55px
 		// height: 55px
-		padding: 12px 25px
+		padding: 13px 25px
 		text-align: center
 		font-size: 16px
 		color: #fff
@@ -151,9 +154,6 @@
 		+centre('x')
 		bottom: -20px
 		z-index: z(fixed)
-
-		+r(480)
-			width: 75%
 
 		// &::before
 		// 	content: '\f0b0'
@@ -227,6 +227,10 @@
 					width: 35px
 					height: 35px
 					margin-right: 10px
+
+					&.icon-cs-sale
+						width: 27px
+						height: 27px
 
 	//.btn--small
 	&--small
@@ -321,8 +325,8 @@
 
 //.btn-icon
 .btn-icon
-	width: 50px
-	height: 50px
+	width: 60px
+	height: 60px
 	background-color: #fff
 	border: 1px solid $gray--lighten
 	border-radius: 50%
@@ -341,6 +345,8 @@
 
 	//.btn-icon__ico
 	&__ico
+		width: 24px
+		height: 24px
 		fill: $gray
 
 		&--plus, &--check

@@ -307,6 +307,7 @@
 	//.storis__list
 	&__list
 		margin-right: 10px
+		padding: 10px 0
 		overflow-y: hidden
 		overflow-x: auto
 		+flexCenter
@@ -318,6 +319,7 @@
 		height: 170px
 		margin: 0 5px
 		border-radius: $border-radius
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15)
 		cursor: pointer
 		+cover
 		+flexColumn
@@ -344,6 +346,11 @@
 	opacity: 0
 	visibility: hidden
 	transform: translateY(-100vh)
+
+	&.is-visible
+		opacity: 1
+		visibility: visible
+		transform: translateY(0)
 
 //.baner
 .baner

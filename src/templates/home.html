@@ -13,7 +13,7 @@ firstscreenSelect: true
 
 	<!-- begin cs-section slider -->
 	 <section class="cs-section cs-section--slider-hero xs-hide">
-		<div class="container">
+		<div class="container mb-30 is-hidden">
 
 			<div class="cs-slider cs-slider--hero js-cs-slider--hero">
 				<div class="cs-slider__arrow cs-slider__arrow--prev"></div>
@@ -24,9 +24,9 @@ firstscreenSelect: true
 					<div class="cs-slider__slide">
 						<div class="cs-slider__slide_inner">
 							<div class="cs-slider__text">
-								<h4 class="cs-slider__title">Мы во Вконтакте</h4>
+								<h4 class="cs-slider__title">Мы во Вконтакте item{{ i }}</h4>
 								<p class="cs-slider__desc">Анонсы мероприятий, новости компании, конкурсы, уникальный контент и многое другое только в сообществе вконтакте </p>
-								<a href="#" class="btn btn-gray--dark cs-slider__btn">Открыть сообщество</a>
+								<a class="btn btn-gray--dark cs-slider__btn" href="#">Открыть сообщество</a>
 							</div>
 							<div class="cs-slider__img">
 								<img src="img/general/vk-info.png" alt="Мы во Вконтакте">
@@ -35,9 +35,36 @@ firstscreenSelect: true
 					</div>
 					{% endfor %}
 				</div>
+
 			</div>
 
 		</div>
+
+		<div class="container">
+			<div class="hero-slider">
+				<div class="cs-slider__arrow cs-slider__arrow--prev js-hero-slider-btn--prev"></div>
+				<div class="cs-slider__arrow cs-slider__arrow--next js-hero-slider-btn--next"></div>
+
+				<div class="hero-slider__slides">
+
+					{% for i in range(0, 3) %}
+					<div class="hero-slider__slide" data-card="{{i}}" style="background: linear-gradient(90deg,#fdfbfb .73%,#ebedee 100%);">
+						<div class="hero-slider__slide_inner">
+							<div class="hero-slider__text">
+								<h4 class="hero-slider__title">Мы во Вконтакте</h4>
+								<p class="hero-slider__desc">Анонсы мероприятий, новости компании, конкурсы, уникальный контент и многое другое только в сообществе вконтакте </p>
+								<a class="btn btn-gray--dark hero-slider__btn" href="#">Открыть сообщество</a>
+							</div>
+							<div class="hero-slider__img">
+								<img src="img/general/vk-info.png" alt="Мы во Вконтакте">
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
 	</section><!-- end cs-section slider -->
 
 	<!-- begin cs-section advert -->
@@ -52,7 +79,7 @@ firstscreenSelect: true
 				<div class="category-item__wrap cs-slider__slides">
 					{% import "data/data.html" as categoryItem %}
 					{% for category in categoryItem.category %}
-					<a href="#" class="category-item cs-slider__slide">
+					<a class="category-item cs-slider__slide" href="#">
 
 						<i class="category-item__icon category-item__icon--{{ category.icon }}">
 						</i>
@@ -74,7 +101,7 @@ firstscreenSelect: true
 			<ul class="storis__list">
 				{% import "data/data.html" as storis %}
 				{% for item in storis.storis %}
-				<li class="storis__item" style="background-image: url('img/stories/1/{{ item.img }}.png');" data-stories-target="1">
+				<li class="storis__item" data-stories-target="1" style="background-image: url('img/stories/1/{{ item.img }}.png');">
 					<h5 class="storis__title">
 						{{ item.title }}
 					</h5>
@@ -91,11 +118,11 @@ firstscreenSelect: true
 
 						<div class="cs-slider__slides">
 							{% for i in range(0, 3) %}
-							<div class="cs-slider__slide" style="background-image: url('img/general/stories/1/{{ i + 1 }}.png')">
+							<div class="cs-slider__slide" style="background-image: url('img/stories/1/{{ i + 1 }}.png')">
 								<div class="cs-slider__text">
 									<p class="cs-slider__desc">К каждому заказу мы дарим прочные перчатки!</p>
 									<p class="cs-slider__desc">А при покупке от 3 000 руб. доставим заказ бесплатно в любую точку России!</p>
-									<a href="catalog.html" class="btn btn-accent cs-slider__btn">Перейти в каталог</a>
+									<a class="btn btn-accent cs-slider__btn" href="catalog.html">Перейти в каталог</a>
 								</div>
 							</div>
 							{% endfor %}
@@ -117,30 +144,7 @@ firstscreenSelect: true
 				<div class="cs-slider__arrow cs-slider__arrow--next"></div>
 
 				<div class="product-item__wrap cs-slider__slides">
-					{% import "data/data-product.html" as productItem %}
-					{% for product in productItem.productSimilar %}
-					<a href="#" class="product-item cs-slider__slide" itemscope itemtype="http://schema.org/Product">
-
-						<div class="product-item__img" itemprop="image" href="img/products/1/190x190/{{ product.img }}.png">
-								<img src="img/products/1/190x190/{{ product.img }}.png"  alt="{{ product.title }}" />
-						</div>
-
-						<h3 class="product-item__title js-product-title-equalheight">{{ product.title }}</h3>
-
-						<div class="product-item__bottom" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-							<span class="product-item__price">
-									<meta itemprop="price" content="{{ product.price }}">
-									<meta itemprop="priceCurrency" content="RUB">
-									<span>{{ product.price }}</span>
-							</span>
-							<button class="btn-icon btn-icon--addInCart product-item__btn js-add-in-cart">
-								{{ mixin.icon('cs-cart', 'btn-icon__ico btn-icon__ico--cart') }}
-								{{ mixin.icon('cs-close', 'btn-icon__ico btn-icon__ico--plus') }}
-								{{ mixin.icon('cs-check', 'btn-icon__ico btn-icon__ico--check') }}
-							</button>
-						</div>
-					</a>
-					{% endfor %}
+					{% include "partials/_product-item.html" %}
 				</div>
 			</div>
 
@@ -186,12 +190,12 @@ firstscreenSelect: true
 					<div class="news__item cs-card cs-card--transform cs-card--shadow cs-slider__slide">
 						<div class="cs-card__in">
 							<h5 class="cs-card__title">7 ноября 2018</h5>
-							<p class="cs-card__text js-text-overflow" data-text-overflow="155" data-text-media="true">Деталь, которую почти никто никогда не видел, но она есть и мы ее доработали. Речь о чехлах пальцев тормозного суппорта. Теперь они из полиуретана. Несмотря на размер, чехлы прошли все испытания на прочность и уже в продаже во всех официальных магазинах CS20.</p>
+							<p class="cs-card__text js-text-overflow" data-text-media="true" data-text-overflow="155">Деталь, которую почти никто никогда не видел, но она есть и мы ее доработали. Речь о чехлах пальцев тормозного суппорта. Теперь они из полиуретана. Несмотря на размер, чехлы прошли все испытания на прочность и уже в продаже во всех официальных магазинах CS20.</p>
 						</div>
 						<a class="btn btn-outline-gray-light cs-card__btn" href="news-item.html">Читать продолжение</a>
 					</div>
 					{% endfor %}
-					<a href="news.html" class="news__item cs-card news__item--link cs-slider__slide cs-slider__slide--link xs-only">
+					<a class="news__item cs-card news__item--link cs-slider__slide cs-slider__slide--link xs-only" href="news.html">
 						<div>
 							<span>Смотреть все <br> новости</span>
 							<i>{{ mixin.icon('cs-close') }}</i>

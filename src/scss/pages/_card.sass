@@ -28,8 +28,7 @@
 	&__inner
 		margin-bottom: 70px
 		@extend %box
-		+flex
-		align-items: flex-start
+		+flexCenter
 
 		+r(768)
 			margin-bottom: 10px
@@ -53,7 +52,6 @@
 	//.card__img
 	&__img
 		width: calc(40% - 15px)
-		margin-top: 40px
 		margin-right: 30px
 		border-radius: $border-radius 0 0 $border-radius
 		overflow: hidden
@@ -87,7 +85,7 @@
 
 	//.card__desc
 	&__desc
-		padding: 45px 45px 60px 0
+		padding: 40px 45px 60px 0
 		flex-grow: 1
 
 		+r(768)
@@ -343,8 +341,30 @@
 				display: none
 
 		+r(480)
-			&:last-child
-				display: block
+			$o: 10px
+			&__wrap
+				+u-row-flex($o)
+
+				.product-item
+					margin-bottom: $o
+					padding: 0 15px 15px
+					+u-col($o)
+					+u-size(6, 12, $o)
+
+					&:last-child
+						display: block
+
+					&__title
+						margin-bottom: 15px
+						font-size: 12px
+
+					&__btn
+						width: 50px
+						height: 50px
+
+						.icon
+							width: 22px
+							height: 22px
 
 		+r(320)
 			margin: 0 auto 20px
@@ -381,7 +401,9 @@
 			justify-content: center
 			+r(480)
 				justify-content: flex-start
+
 		&__icon
+			width: 45px
 			+r(768)
 				width: 50px
 				&--delivery
@@ -395,6 +417,10 @@
 		+r(480)
 			margin-bottom: 20px
 			font-size: 23px
+
+	.cs-slider--card
+		.slick-dots
+			bottom: 0
 
 	.cs-section
 		&:last-child

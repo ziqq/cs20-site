@@ -118,7 +118,7 @@
 							{% endfor %}
 						</div>
 						<div class="cart-info__footer">
-							<div class="cart-info__sum">Итого: <span>2144 руб</span></div>
+							<div class="cart-info__sum">Итого: <span>2144 руб.</span></div>
 							<a href="cart.html" class="btn btn-outline-gray cart-info__btn">Перейти в корзину</a>
 						</div>
 					</div>
@@ -128,11 +128,9 @@
 		</div>
 
 		{% if btnFilter %}
-		<div class="btn__wrap js-btn-fixed">
-			<button class="btn btn--filter {{ btnFilterJs }}">
-				{{ btnFilterTitle }}
-			</button>
-		</div>
+		<button class="btn btn--filter js-btn-fixed {{ btnFilterJs }}">
+			{{ btnFilterTitle }}
+		</button>
 		{% endif %}
 
 	</div>

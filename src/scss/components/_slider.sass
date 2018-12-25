@@ -23,7 +23,7 @@
 			z-index: z(dropdown)
 
 		+r(768)
-			height: 100%
+			height: 90%
 			display: flex
 			flex-direction: column
 			justify-content: center
@@ -44,11 +44,11 @@
 
 		&::before
 			display: block
-			margin-bottom: 2px
-			margin-top: 3px
-			font-family: fontawesome
+			margin: 0
+			+fa('light')
 			font-size: 22px
 			line-height: 1
+			+centre()
 
 		&--next
 			right: -50px
@@ -62,7 +62,7 @@
 
 			&::before
 				content: '\f105'
-				margin-left: 3px
+				margin-left: 1px
 
 		&--prev
 			left: -50px
@@ -76,7 +76,7 @@
 
 			&::before
 				content: '\f104'
-				margin-right: 2px
+				margin-right: 1px
 
 		&[aria-disabled="true"]
 			display: none !important
@@ -192,6 +192,10 @@
 	//.cs-slider--hero
 	&--hero
 		position: relative
+
+		.slick-slider
+			.slick-track
+				transform: translate3d(0,0,0) !important
 
 		.slick-slide
 			border-radius: $border-radius

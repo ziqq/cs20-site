@@ -102,11 +102,64 @@
 			color: $color-text--light
 
 	.product-item
+		$o: 10px
 		&__wrap
 			.product-item
 				+size(4)
-				+size-xs(6)
-				+size-i5(12)
+
+			&.layout-two-column
+				.product-item
+					+size(6)
+
+					+r(480)
+						width: 100%
+						margin: 0 auto 20px
+
+						&__img
+							max-width: 210px
+
+						&__title
+							font-size: 15px
+
+						&__btn
+							width: 60px
+							height: 60px
+
+							.icon
+								width: 24px
+								height: 24px
+
+			+r(768)
+				+u-row-flex($o)
+
+				.product-item
+					margin-bottom: 10px
+					+u-col($o)
+					+u-size(4, 12, $o)
+
+				&.layout-two-column
+					.product-item
+						+u-size(6, 12, $o)
+
+			+r(480)
+				.product-item
+					padding: 0 15px 15px
+					+u-size(6, 12, $o)
+
+					&__img
+						max-width: 130px
+
+					&__title
+						font-size: 12px
+
+					&__btn
+						width: 50px
+						height: 50px
+
+						.icon
+							width: 22px
+							height: 22px
+
 
 				// +r(480)
 				// 	width: calc(50% - 20px)
@@ -119,13 +172,9 @@
 					// 	margin-left: 5px
 					// 	margin-right: 10px
 
-			&.layout-two-column
-				.product-item
-					+size(6)
-
-					+r(480)
-						width: 100%
-						margin: 0 auto 20px
+		&__title
+			+r(480)
+				margin-bottom: 15px
 //.catalog end
 
 //.filter
@@ -166,10 +215,10 @@
 		height: 60px
 		line-height: 60px
 		margin-bottom: 25px
-		padding: 0 1px 0 20px
+		padding-right: 5px
 		background-color: #fff
 		//. border-right: 1px solid $color-border--light
-		border-bottom: 1px solid $color-border--light
+		// border-bottom: 1px solid $color-border--light
 		position: fixed
 		top: 0
 		left: 0
@@ -178,7 +227,6 @@
 
 		+r-max(xs)
 			width: 100%
-			padding: 0 1px 0 30px
 
 		+rmin(769)
 			display: none
@@ -235,9 +283,11 @@
 		padding: 0 20px 20px
 		position: relative
 
+		+r-max(sm)
+			padding: 0 35px 15px
+
 		+r-max(xs)
-			padding: 0 30px 20px
-			// max-height: 265px
+			padding: 0 40px 15px
 
 	//.filter__icon
 	&__icon
@@ -263,11 +313,15 @@
 		font-size: 16px
 		color: $color-text
 
-		+r-max(xs)
-			padding: 15px 30px
+		+r-max(sm)
+			padding: 15px 35px 15px
 
+		+r-max(xs)
+			padding: 15px 40px
+
+		//.filter__title .cs-accordeon__icon
 		.cs-accordeon__icon
-			right: 15px
+			right: 20px
 
 	//.filter__checkbox
 	&__checkbox
@@ -276,6 +330,21 @@
 
 		+r(768)
 			margin-bottom: 15px
+
+		+r-max(xs)
+			margin-bottom: 10px
+
+		&.is-checked
+			.cs-checkbox
+				&__title
+					color: $color-accent
+				&__box
+					border: 1px solid #c7c7c7
+					&::before
+						color: $color-accent
+
+			input:checked+.cs-checkbox__box
+				border: 1px solid #c7c7c7
 
 		.cs-checkbox__title
 			display: block
@@ -382,7 +451,7 @@
 			left: -23px
 
 			+r(768)
-				left: -40px
+				left: -25px
 
 	//.range__slider
 	&__slider
@@ -430,11 +499,16 @@
 				width: 30px
 				margin-right: 8px
 
+		//.sorting__btn--tile
 		&--tile
 			width: 44px
 			&::before
 				+s(toggle-mobile)
 				transform: rotate(90deg)
+
+			+r(768)
+				width: 30px
+				padding: 0
 
 			+r(480)
 				width: 100%

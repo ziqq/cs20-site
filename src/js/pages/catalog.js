@@ -141,10 +141,10 @@
 			$(window).scroll(function() {
 				let scroll = $(this).scrollTop();
 
-				if (scroll - 60 > btnOpenOffset) {
+				if (scroll - 50 > btnOpenOffset) {
 					$btnFixed.css({
 						position: 'fixed',
-						top: 0,
+						top: 10,
 						bottom: 'auto',
 						boxShadow: '0 5px 25px rgba(0,0,0,.2)'
 					});
@@ -181,6 +181,18 @@
 		}
 	};
 	Filter.init();
+
+	$('.product-item').each(function() {
+		if ($(window).width() <= 480 && $(this).width() < 265) {
+			$(this)
+				.find('.js-text-overflow')
+				.attr('data-text-overflow', 35);
+		} else {
+			$(this)
+				.find('.js-text-overflow')
+				.attr('data-text-overflow', 45);
+		}
+	});
 
 	//Catalog Item View Toggle
 	$('.js-sorting-btn').on('click', function(e) {
