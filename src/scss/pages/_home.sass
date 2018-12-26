@@ -226,11 +226,12 @@
 			align-items: center
 
 		+r-max(xs)
+			width: auto
 			margin-bottom: 30px
 			text-align-last: left
 			flex-direction: row
 			align-items: flex-start
-			// justify-content: flex-start
+			justify-content: flex-start
 
 			&:last-child
 				margin-bottom: 0
@@ -283,11 +284,14 @@
 
 		+r-max(xs)
 			font-size: 16px
+			text-align: left
 
 	//.info-block__text
 	&__text
-		color: #000000
 		font-size: 14px
+
+		+r-max(xs)
+			text-align: left
 
 	//.info-block__desc
 	&__desc
