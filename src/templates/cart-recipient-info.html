@@ -2,7 +2,7 @@
 wrapClass: page-cart
 title: Корзина
 cartTitle: Информация о получателе
-firstCheckBox: true
+firstscreenSelectClass: sm-hide
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -53,7 +53,7 @@ firstCheckBox: true
 						</div>
 
 						<div class="row">
-							<div class="col-4 col-sm-6 col-xs-12">
+							<div class="col-4 col-sm-4 col-xs-12">
 								<div class="pedit__item">
 									<div class="pedit__title">Серия паспорта:</div>
 									<div class="pedit__field">
@@ -62,7 +62,7 @@ firstCheckBox: true
 								</div>
 							</div>
 
-							<div class="col-4 col-sm-6 col-xs-12">
+							<div class="col-4 col-sm-4 col-xs-12">
 								<div class="pedit__item">
 									<div class="pedit__title">Номер паспорта:</div>
 									<div class="pedit__field">
@@ -71,7 +71,7 @@ firstCheckBox: true
 								</div>
 							</div>
 
-							<div class="col-4 col-sm-6 col-xs-12">
+							<div class="col-4 col-sm-4 col-xs-12">
 								<div class="pedit__item">
 									<div class="pedit__title">Дата выдачи:</div>
 									<div class="pedit__field">
@@ -83,7 +83,7 @@ firstCheckBox: true
 
 						<div class="row row--end">
 
-							<div class="col-4 col-sm-6 col-xs-12">
+							<div class="col-4 col-sm4 col-xs-12">
 								<div class="pedit__item">
 									<div class="pedit__title">Адрес доставки:</div>
 									<div class="pedit__field">
@@ -92,7 +92,7 @@ firstCheckBox: true
 								</div>
 							</div>
 
-							<div class="col-4 col-sm-6 col-xs-12">
+							<div class="col-4 col-sm4 col-xs-12">
 								<div class="pedit__item">
 									<div class="pedit__field">
 										<select class="js-select" data-placeholder="Выбор  города">
@@ -105,7 +105,7 @@ firstCheckBox: true
 								</div>
 							</div>
 
-							<div class="col-4 col-sm-12">
+							<div class="col-4 col-sm-4 col-xs-12">
 								<div class="pedit__item">
 									<div class="pedit__field">
 										{{item.input(type='text', placeholder='Улица, дом, офис, кв.')}}

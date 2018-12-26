@@ -657,26 +657,18 @@
 
 //.search-result
 .search-result
-	margin-bottom: $gutter*2.5
+	padding-bottom: 100px
+	+r(768)
+		padding-bottom: 60px
+
 	&__pagination
 		margin-top: $gutter*2
 
 	.product-item
+		$o: 10px
 		&__wrap
 			.product-item
 				+size(3)
-				+size-sm(4)
-
-				+r(480)
-					width: calc(50% - 20px)
-					margin-bottom: 10px
-
-					&:nth-child(odd)
-						margin-right: 5px
-
-					&:nth-child(even)
-						margin-left: 5px
-						margin-right: 10px
 
 			&.layout-two-column
 				.product-item
@@ -685,4 +677,71 @@
 					+r(480)
 						width: 100%
 						margin: 0 auto 20px
+
+						&__img
+							max-width: 210px
+
+						&__title
+							font-size: 15px
+
+						&__btn
+							width: 60px
+							height: 60px
+
+							.icon
+								width: 24px
+								height: 24px
+
+			+r(768)
+				+u-row-flex($o)
+
+				.product-item
+					margin-bottom: 10px
+					+u-col($o)
+					+u-size(4, 12, $o)
+
+				&.layout-two-column
+					.product-item
+						+u-size(6, 12, $o)
+
+			+r(480)
+				.product-item
+					padding: 0 15px 15px
+					+u-size(6, 12, $o)
+
+					&__img
+						max-width: 130px
+
+					&__title
+						font-size: 12px
+
+					&__btn
+						width: 50px
+						height: 50px
+
+						.icon
+							width: 22px
+							height: 22px
+
+
+				// +r(480)
+				// 	width: calc(50% - 20px)
+				// 	margin-bottom: 10px
+
+					// &:nth-child(odd)
+					// 	margin-right: 5px
+
+					// &:nth-child(even)
+					// 	margin-left: 5px
+					// 	margin-right: 10px
+
+		&__title
+			+r(480)
+				margin-bottom: 15px
+
+	.catalog__info-view
+		margin-left: auto
+
+		+r(768)
+			margin-top: 30px
 //.search-result end

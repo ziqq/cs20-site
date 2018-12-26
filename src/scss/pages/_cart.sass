@@ -51,53 +51,78 @@
 			box-shadow: none
 
 		.product-item
+			+r(480)
+				cursor: default
+
 			&__wrap
 				padding: 0 30px
+
 				+r(1024)
 					padding: 0 15px
+
 				+r(768)
 					padding: 0
 
 				.product-item
 					padding: 30px 0
+
 					+r(480)
-						padding: 15px 0
+						padding: 17px 0 20px
+						flex-direction: column
+
 					&__img
 						+r(1024)
 							max-width: 125px
 							margin-right: 15px
 						+r(480)
 							max-width: 75px
+							position: absolute
+							top: 20px
+							left: 0
+
+						+r(320)
+							max-width: 150px
+							margin: 0 auto 10px
+							position: static
+
 					&__price
 						+r(1024)
 							font-size: 18px
+
 					&__title
 						+r(480)
 							max-width: 100%
-							margin-right: 0
-							margin-bottom: 5px
+							margin: 0 0 20px 85px
 							font-family: $f
-							font-size: 17px
-							line-height: 1.4
-						+r(375)
 							font-size: 15px
+							line-height: 1.4
+						+r(320)
+							margin-left: 0
+							text-align: center
 
 			&__desc
 				justify-content: space-between
+
 			&__price
 				margin-left: 0 !important
 
 			&__counter
 				+r(480)
-					margin-right: 30px
+					margin: 0 auto
+					.counter__field
+						min-height: 35px
+
 			&__dell
+				outline: none
 				+r(480)
 					display: block
 					padding: 0
 					fill: $color-text
-					top: auto
-					bottom: 20px
-					right: -5px
+					position: static
+
+				.icon
+					margin: auto
+					fill: $gray--light
 
 	//.cart__right
 	&__right
@@ -136,7 +161,7 @@
 		width: 100%
 		@extend %box
 		overflow: hidden
-		padding: 40px 30px
+		padding: 30px
 		+r(1024)
 			width: 100%
 			text-align: center
@@ -318,7 +343,7 @@
 		padding: 0
 
 	+r(480)
-		margin: 20px 0 50px
+		margin: 20px 0 30px
 
 	&__inner
 		max-width: 768px
@@ -401,7 +426,7 @@
 		+r(480)
 			min-width: 150px
 			margin: 0
-			padding: 11px 35px
+			padding: 13px 35px
 
 		& + .cart-box__btn
 			margin-left: 0

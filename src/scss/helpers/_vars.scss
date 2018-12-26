@@ -35,64 +35,62 @@ $z-index: (
 
 //FONT
 $f          :roboto-400, sans-serif;
-$f-i       :roboto-400i, sans-serif;
+$f-i        :roboto-400i, sans-serif;
 $f-light    :roboto-300, sans-serif;
-$f-light-i    :roboto-300i, sans-serif;
+$f-light-i  :roboto-300i, sans-serif;
 $f-medium   :roboto-500, sans-serif;
 $f-bold     :roboto-600, sans-serif;
 $f-black    :roboto-700, sans-serif;
 
-$font-size-base  : 16px;
-$font-family-base: $f;
-$line-height-base: 1.5;
-$font-weight-base: 400;
+$font-size-base   : 16px;
+$font-family-base : $f;
+$line-height-base : 1.5;
+$font-weight-base : 400;
 
 //Отступы
-$base-indent   : 20px;
-$half-indent   : $base-indent / 2;
-$section-indent: 60px;
-$gutter        : $base-indent;
+$base-indent      : 20px;
+$half-indent      : $base-indent / 2;
+$section-indent   : 60px;
+$gutter           : $base-indent;
 
 //Base Variebles
-$color-accent              :#ffba01;
-$color-secondary           :#40139A;
-$color-error               :#FD0000;
-$color-success             :#27AE60;
-$color-link             :#13599a;
+$color-accent     :#ffba01;
+$color-secondary  :#40139A;
+$color-error      :#FD0000;
+$color-success    :#27AE60;
+$color-link       :#13599a;
 
 $gradient : linear-gradient(170.49deg, #12026D 3.82%, #11022D 35.68%, rgba(84, 0, 113, 0.69) 98.37%);
 $gradientTwo : linear-gradient(275.07deg, #FE6CB8 -36.19%, #A40C95 99.51%);;
 
 //gray
-$gray--lighten      :#e3dede;
-$gray--light          :#bdbdbd;
-$gray                     :#707070;
-$gray--dark           :#8c8c8c;
-$gray--darken       :#272727;
+$gray--lighten       :#e3dede;
+$gray--light         :#bdbdbd;
+$gray                :#707070;
+$gray--dark          :#8c8c8c;
+$gray--darken        :#272727;
 
 //text
-$color-text                :$gray--darken;
-$color-text--light      :#8c8c8c;
+$color-text          :$gray--darken;
+$color-text--light   :#8c8c8c;
 $color-text--header  :#000;
 
 //bg
-$color-bg--dark            :#191919;
-$color-bg                      :#eee;
-$color-bg--light           :#f5f5f5;
-$color-bg--lighten       :#f2f2f2;
+$color-bg--dark      :#191919;
+$color-bg            :#eee;
+$color-bg--light     :#f5f5f5;
+$color-bg--lighten   :#f2f2f2;
 
 //border
 $color-border--darken      :$gray--darken;
-$color-border                    :$gray;
-$color-border--light         :$gray--lighten;
+$color-border              :$gray;
+$color-border--light       :$gray--lighten;
 $color-border--lighten     :#e5e5e5;
 $color-border--lightest    :#d5d1d1;
 
-$border-radius                  : 5px;
+$border-radius             :5px;
 
-
-$color-placeholder            : $gray;
-
+$color-placeholder         :$gray;
 
 $bxs-box: 0 5px 25px rgba(0, 0, 0, 0.08);
 $bxs-box--hover: 0px 5px 25px rgba(0, 0, 0, 0.15);

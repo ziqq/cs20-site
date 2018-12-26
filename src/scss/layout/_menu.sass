@@ -1,3 +1,4 @@
+//.nav
 .nav
 	//.nav__list
 	&__list
@@ -83,8 +84,9 @@
 					width: 100%
 					.nav__link
 						+text-overflow
-//.nav
+//.nav end
 
+//.mobile-nav
 .mobile-nav
 	padding-top: 70px
 	padding-bottom: 70px
@@ -131,6 +133,7 @@
 		font-size: 14px
 		color: $color-text
 		position: relative
+		cursor: pointer
 		// -webkit-tap-highlight-color:  rgba(255, 255, 255, 0)
 
 		+r(480)
@@ -249,7 +252,7 @@
 	.social
 		&__list
 			margin: auto
-//.mobile-nav
+//.mobile-nav end
 
 //.hamburger
 .hamburger
@@ -261,7 +264,9 @@
 		width: 20px
 		height: 20px
 		fill: #fff
+//.hamburger end
 
+//.toggle
 .toggle
 	display: block
 	width: 23px
@@ -310,3 +315,4 @@
 				transform: rotate(45deg) translate(-2px, 2px)
 			&:after
 				transform: rotate(-45deg) translate(3px, -7px)
+//.toggle end

@@ -85,7 +85,7 @@ img
 	left: 0
 	right: 0
 	bottom: 0
-	z-index: z(fixed)
+	z-index: 333
 
 	&.is-active
 		display: block
@@ -223,6 +223,8 @@ p
         .#{$screen}-hide
             display: none !important
 
+        .#{$screen}-hidden
+            display: none
 
 @for $i from 1 through 10
     .pos-#{$i}

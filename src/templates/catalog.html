@@ -1,8 +1,6 @@
 ---
 title: Каталог | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
-btnFilter: true
-btnFilterTitle: Фильтр
-btnFilterJs: sm-only--flex js-filter--open
+firstscreenSelectClass: sm-hide
 
 filterType:
  - title: Все категории
@@ -36,7 +34,7 @@ filterSeries:
 
 {% block content %}
 
-<!-- begin home -->
+<!-- begin catalog -->
 <div class="content-wrapper catalog">
 
 	<!-- begin breadcrumbs -->
@@ -202,6 +200,10 @@ filterSeries:
 
 		</div>
 	</div><!-- end catalog__content -->
-</div><!-- end home -->
+
+	<button class="btn btn--filter sm-only--flex js-filter--open">
+		Фильтр
+	</button>
+</div><!-- end catalog -->
 
 {% endblock %}

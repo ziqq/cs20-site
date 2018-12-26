@@ -6,8 +6,6 @@
 		+r-max(sm)
 			min-height: auto
 			margin-bottom: 40px
-			.search__wrap
-					margin-bottom: 30px
 
 		+r-max(xs)
 			margin-bottom: 30px
@@ -31,6 +29,7 @@
 	//.login__auth
 	&__auth
 		display: none
+//.login end
 
 //.home-search
 .home-search
@@ -211,6 +210,8 @@
 
 		+r-max(xs)
 			// justify-content: flex-start
+			margin-right: 0
+			margin-left: 2px
 
 	//.info-block__item
 	&__item
@@ -271,7 +272,6 @@
 			width: 72px
 			height: 65px
 
-
 	//.info-block__title
 	&__title
 		display: block
@@ -281,9 +281,9 @@
 
 		+r-max(sm)
 			margin-top: auto
+			font-size: 16px
 
 		+r-max(xs)
-			font-size: 16px
 			text-align: left
 
 	//.info-block__text
@@ -300,61 +300,12 @@
 		font-family: $f-light
 		line-height: 1.4
 
+		+r-max(sm)
+			font-size: 15px
+
 		+r-max(xs)
 			text-align: left
-			font-size: 15px
 //.info-block
-
-//.storis
-.storis
-
-	//.storis__list
-	&__list
-		margin-right: 10px
-		padding: 10px 0
-		overflow-y: hidden
-		overflow-x: auto
-		+flexCenter
-
-	//.storis__item
-	&__item
-		max-width: 120px
-		width: 100%
-		height: 170px
-		margin: 0 5px
-		border-radius: $border-radius
-		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15)
-		cursor: pointer
-		+cover
-		+flexColumn
-		flex-shrink: 0
-
-		&:first-child
-			margin-left: 12.5px
-
-		&:last-child
-			margin-right: 12.5px
-
-		&:nth-child(odd)
-			.storis__title
-				color: #fff
-
-	//.storis__title
-	&__title
-		margin: auto 10px 10px
-		font-size: 14px
-		line-height: 1.3
-//.storis end
-
-.stories-slider
-	opacity: 0
-	visibility: hidden
-	transform: translateY(-100vh)
-
-	&.is-visible
-		opacity: 1
-		visibility: visible
-		transform: translateY(0)
 
 //.baner
 .baner
@@ -438,6 +389,58 @@
 					height: 10px
 					border-radius: 50%
 //.baner end
+
+
+// .stories-slider
+// 	opacity: 0
+// 	visibility: hidden
+// 	transform: translateY(-100vh)
+
+// 	&.is-visible
+// 		opacity: 1
+// 		visibility: visible
+// 		transform: translateY(0)
+
+//.storis
+.storis
+
+	//.storis__list
+	&__list
+		margin-right: 10px
+		padding: 10px 0
+		overflow-y: hidden
+		overflow-x: auto
+		+flexCenter
+
+	//.storis__item
+	&__item
+		max-width: 120px
+		width: 100%
+		height: 170px
+		margin: 0 5px
+		border-radius: $border-radius
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15)
+		cursor: pointer
+		+cover
+		+flexColumn
+		flex-shrink: 0
+
+		&:first-child
+			margin-left: 12.5px
+
+		&:last-child
+			margin-right: 12.5px
+
+		&:nth-child(odd)
+			.storis__title
+				color: #fff
+
+	//.storis__title
+	&__title
+		margin: auto 10px 10px
+		font-size: 14px
+		line-height: 1.3
+//.storis end
 
 //.storis-slider
 .stories-slider

@@ -261,6 +261,10 @@
 			background-color: #fff;
 		}
 
+		@include r-max(sm) {
+			max-width: 260px;
+		}
+
 		&:hover {
 			@include r-min(sm) {
 				.cs-card__in {

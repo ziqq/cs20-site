@@ -6,6 +6,7 @@
 //.card
 .card
 	background-color: $color-bg
+	+flexColumn
 
 	+r(768)
 		background-color: #fff
@@ -31,7 +32,7 @@
 		+flexCenter
 
 		+r(768)
-			margin-bottom: 10px
+			margin-bottom: 60px
 			border: 0
 			box-shadow: none
 
@@ -210,6 +211,8 @@
 		margin-bottom: 40px
 		+flexCenter
 		+r(768)
+			margin-bottom: 30px
+		+r(480)
 			margin-bottom: 20px
 
 	//.card__price
@@ -227,6 +230,8 @@
 	//.card__counter
 	&__counter
 		margin-left: 30px
+		+r(768)
+			margin-left: auto
 		+r(480)
 			margin-left: auto
 
@@ -331,6 +336,8 @@
 							transition: width 2s linear
 
 	.product-item
+		$o: 10px
+
 		+size(3)
 		+size-sm(4)
 		+size-xs(6)
@@ -341,7 +348,6 @@
 				display: none
 
 		+r(480)
-			$o: 10px
 			&__wrap
 				+u-row-flex($o)
 
@@ -367,18 +373,12 @@
 							height: 22px
 
 		+r(320)
-			margin: 0 auto 20px
-
-		// +r(1024)
-		// 	width: 33.33%
-		// 	&:last-child
-		// 		display: none
-		// +r(768)
-		// 	width: 50%
-		// 	&:last-child
-		// 		display: block
-		// +r(480)
-		// 	width: 100%
+			&__wrap
+				.product-item
+					margin: 0 auto $o
+					+u-size(12, 12, $o)
+					&__title
+						font-size: 14px
 
 	.product-info
 		//.card .product-info__list
@@ -397,6 +397,10 @@
 				color: $color-text
 
 	.info-block
+		&__items
+			+r(480)
+				justify-content: flex-start
+
 		&__item
 			justify-content: center
 			+r(480)
@@ -410,6 +414,10 @@
 					width: 58px
 			+r(480)
 				width: 50px
+
+	.title
+		+r(768)
+			text-align: left
 
 	.title--low
 		+r(768)
@@ -427,8 +435,17 @@
 			margin-bottom: 30px
 
 		&--advert
+			+r(768)
+				order: 2
 			+r(480)
 				margin-bottom: 50px
+
+		&--similar
+			.cs-section
+				&__inner
+					+r(768)
+						padding-top: 40px
+						border-top: 1px solid $color-border--light
 //.card end
 
 //.card-info

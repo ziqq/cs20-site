@@ -1,14 +1,12 @@
 ---
 title: Карта
-btnFilter: true
-btnFilterTitle: Найти магазин
-btnFilterJs: xs-only--flex js-map--open
+firstscreenSelectClass: sm-hide
 ---
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
 
-<!-- begin home -->
+<!-- begin map -->
 <div class="content-wrapper map">
 
 	<!-- begin breadcrumbs -->
@@ -83,31 +81,15 @@ btnFilterJs: xs-only--flex js-map--open
 						Изменить город
 					</div>
 					<div class="map-address">
-						{% for i in range(0, 3) %}
+						{% for i in range(0, 2) %}
 						<div class="map-address__item">
 							<div class="map-address__title">AUTOSPORT <span>оф.диллер</span></div>
-							<div class="map-address__inner">
 
-								<div class="map-address__left">
-									<div class="map-address__desc">ул. Адмирала Павла Нахимова, 11, офис 713, Ижевск</div>
-									<div class="map-address__phone">
-										<a class="phone__link" href="tel:+73412658080">+7 (3412) 65-80-80</a>
-									</div>
+								<div class="map-address__desc">ул. Адмирала Павла Нахимова, 11, офис 713, Ижевск</div>
+								<div class="map-address__phone">
+									<a class="phone__link" href="tel:+73412658080">+7 (3412) 65-80-80</a>
 								</div>
 
-								<div class="map-address__right">
-									<ul class="list list--text sm-hide">
-										{% import "data/data.html" as week %}
-										{% for item in week.dayTime %}
-										<li class="list__item">
-											<strong>{{ item.day }}</strong>
-											<span>{{ item.time }}</span>
-										</li>
-										{% endfor %}
-									</ul>
-								</div>
-
-							</div>
 							<button class="map-address__btn xs-only">
 								{{ mixin.icon('cs-route') }}
 							</button>
@@ -117,6 +99,8 @@ btnFilterJs: xs-only--flex js-map--open
 				</div>
 
 				<div class="map__desc xs-hide">Если вы не нашли нужный товар в магазинах вашего города, закажите его через наш сайт. Мы доставляем детали по всему миру и бесплатно по России при заказе от 3000 руб.</div>
+
+				<div class="map__empty" style="display: none;">К сожалению, в вашем городе пока нет официальных партнеров CS-20. Воспользуйтесь нашим интернет магазином, мы доставляем детали бесплатно по России при заказе от 3000 руб.</div>
 			</div>
 
 			<div class="map__right map-box">
@@ -126,8 +110,12 @@ btnFilterJs: xs-only--flex js-map--open
 
 	</div>
 
+	<button class="btn btn--filter sm-only--flex js-map--open">
+		Найти магазин
+	</button>
+
 </div>
-<!-- end home -->
+<!-- end map -->
 
 {% endblock %}
 

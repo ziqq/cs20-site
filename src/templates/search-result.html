@@ -1,5 +1,6 @@
 ---
-title: Каталог | Интернет-магазин износостойких автокомпонентов с доставкой по РФ
+title: Результаты поиска
+firstscreenSelectClass: sm-hide
 
 filterType:
  - title: Все категории
@@ -71,23 +72,31 @@ filterSeries:
 							<option value="Лучшие оценки">Лучшие оценки</option>
 						</select>
 					</div>
-					<div class="sorting__list sm-only--flex">
+					<div class="sorting__list xs-only--flex">
 						<button class="sorting__btn sorting__btn--list js-sorting-btn is-active" data-sorting="3"></button>
 						<button class="sorting__btn sorting__btn--tile js-sorting-btn" data-sorting="2"></button>
 					</div>
 				</div>
 				<!-- end sorting -->
 			</div>
-			<!-- end catalog__topline -->
 
-			<div class="product-item__wrap js-products">
-				{% for i in range(0, 2) %}
-					{% include "partials/_product-item.html" %}
-				{% endfor %}
+			<div class="catalog__content">
+				<!-- end catalog__topline -->
+				<div class="product-item__wrap js-products">
+					{% for i in range(0, 2) %}
+						{% include "partials/_product-item.html" %}
+					{% endfor %}
+				</div>
+
+				<div class="catalog__empty text-center mt-30" style="display: none;">
+					<p class="mb-30">К сожалению, на ваш поисковый запрос ничего не найдено. Попробуйте изменить параметры поиска в фильтре.</p>
+					<button class="btn btn-outline-gray">Сбросить фильтр</button>
+				</div>
 			</div>
 
-			<div class="search-result__pagination">
-				{% include "partials/_pagination.html" %}
+			<div class="catalog__info-view">
+				<span>Вы просмотрели 72 из 254 товаров</span>
+				<a href="#" class="btn btn--transparent">Показать ещё</a>
 			</div>
 
 		</div>

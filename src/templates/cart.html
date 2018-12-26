@@ -53,11 +53,12 @@ title: Корзина
 								<input type="text" class="counter__field" value="1">
 								<span class="counter__control counter__control--plus js-counter--plus">+</span>
 							</div>
+
+							<button class="product-item__dell" title="Убрать из корзины">
+								{{mixin.icon('cs-close', 'xs-hide')}}
+								{{mixin.icon('cs-basket', 'xs-only')}}
+							</button>
 						</div>
-						<button class="product-item__dell" title="Убрать из корзины">
-							{{mixin.icon('cs-close', 'xs-hide')}}
-							{{mixin.icon('cs-basket', 'xs-only')}}
-						</button>
 					</a>
 					{% endfor %}
 				</div>
@@ -81,14 +82,15 @@ title: Корзина
 						</li>
 					</ul>
 					<div class="button-box button-box--column">
-						<div class="input-group">
+						<!-- <div class="input-group">
 							<span class="input-group__info">Персональные скидки с купонами не суммируются</span>
 							<div class="input-group__field">
 								<input type="text" placeholder="Купон">
 								<button class="btn btn-gray-light input-group__btn">Применить</button>
 							</div>
-						</div>
-						<button class="btn btn-accent">Оформить заказ</button>
+						</div> -->
+
+						<a href="#enter" class="btn btn-accent" data-fancybox>Оформить заказ</a>
 					</div>
 				</div>
 			</div><!-- end cart__right -->

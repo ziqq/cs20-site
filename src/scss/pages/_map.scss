@@ -45,7 +45,7 @@
 				bottom: 10px;
 				left: 10px;
 				right: 10px;
-				z-index: 10;
+				z-index: 50;
 				@include tr;
 				@include trfY(150%);
 			}
@@ -100,6 +100,13 @@
 		line-height: 1.4;
 		color: $color-text--light;
 	}//.map__desc
+
+	&__empty {
+		font-family: $f-light;
+		font-size: 14px;
+		line-height: 1.4;
+		color: $color-text--light;
+	}//.map__empty
 
 	&__close {
 		position: absolute;
@@ -215,7 +222,7 @@
 	}//.map-address__right
 
 	&__desc {
-		margin-bottom: 20px;
+		margin-bottom: 15px;
 		font-size: 14px;
 		color: $color-text--light;
 

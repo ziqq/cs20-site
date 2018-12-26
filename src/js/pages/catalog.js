@@ -182,17 +182,17 @@
 	};
 	Filter.init();
 
-	$('.product-item').each(function() {
-		if ($(window).width() <= 480 && $(this).width() < 265) {
-			$(this)
-				.find('.js-text-overflow')
-				.attr('data-text-overflow', 35);
-		} else {
-			$(this)
-				.find('.js-text-overflow')
-				.attr('data-text-overflow', 45);
-		}
-	});
+	// $('.product-item').each(function() {
+	// 	if ($(window).width() <= 480 && $(this).width() < 265) {
+	// 		$(this)
+	// 			.find('.js-text-overflow')
+	// 			.attr('data-text-overflow', 35);
+	// 	} else {
+	// 		$(this)
+	// 			.find('.js-text-overflow')
+	// 			.attr('data-text-overflow', 45);
+	// 	}
+	// });
 
 	//Catalog Item View Toggle
 	$('.js-sorting-btn').on('click', function(e) {

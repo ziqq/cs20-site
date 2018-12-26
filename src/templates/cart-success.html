@@ -2,7 +2,7 @@
 wrapClass: page-cart
 title: Корзина
 cartTitle: Заказ №87 успешно оформлен!
-firstCheckBox: true
+firstscreenSelectClass: sm-hide
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -41,8 +41,8 @@ firstCheckBox: true
 						</ul>
 					</div>
 					<div class="col-7 col-sm-12">
-						<button class="btn btn-link btn-link-gray mt-30 js-text--show">Дополнительная информация</button>
-						<div class="cart-box__text cart-box__text--offset js-text xs-hide"><p>В ближайшее время с Вами свяжется наш менеджер для подтверждения заказа.</p> <p>Вы можете следить за выполнением своего заказа в Личном кабинете.</p> <p>Отправка заказа производится только после платы. Товар бронируется на складе в течении двух рабочих дней.</p></div>
+						<button class="btn btn-link btn-link-gray mt-30 js-text--show xs-only">Дополнительная информация</button>
+						<div class="cart-box__text cart-box__text--offset js-text xs-hidden"><p>В ближайшее время с Вами свяжется наш менеджер для подтверждения заказа.</p> <p>Вы можете следить за выполнением своего заказа в Личном кабинете.</p> <p>Отправка заказа производится только после платы. Товар бронируется на складе в течении двух рабочих дней.</p></div>
 					</div>
 				</div>
 			</div>

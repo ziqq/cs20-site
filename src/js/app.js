@@ -12,9 +12,10 @@ const Base = {
 		this.inputMask();
 		this.popups();
 		this.setHeight();
+		this.textOverflow();
 		this.showHideText();
+		this.addInCart();
 		this.plusMinus();
-		this.upsateResize();
 		this.goTop();
 
 		$('body').removeClass('loading');
@@ -36,7 +37,22 @@ const Base = {
 
 		if ($(window).width() <= 480) {
 			this.setFixedBlcok();
+
+			//Contacts move block
+			$('.js-contacts-map').appendTo('.js-contacts-map--place');
+
+			//News image move on xs screen
+			$('.js-cs-card').each(function() {
+				let $img = $(this).find('.cs-card__img');
+				let $date = $(this).find('.cs-card__date');
+				$img.insertAfter($date);
+			});
 		}
+
+		$(window).resize(function() {
+			Base.setHeight();
+			Base.textOverflow();
+		});
 	},
 	scrollBar: function() {
 		let scrollBar = $('.js-scroll');
@@ -66,6 +82,29 @@ const Base = {
 		function _heightses(selector) {
 			selector.equalHeights();
 		}
+	},
+	textOverflow: function() {
+		$('.js-text-overflow').each(function() {
+			let media = $(this).data('text-media');
+			let size = $(this).data('text-overflow');
+			let sizeNow;
+
+			if (media) {
+				if ($(window).width() > 480 && $(window).width() < 1200) {
+					sizeNow = size;
+				} else {
+					sizeNow = 'auto';
+				}
+			} else {
+				sizeNow = size;
+			}
+
+			let text = $(this).text();
+
+			if (text.length > sizeNow) {
+				$(this).text(text.slice(0, sizeNow) + ' ...');
+			}
+		});
 	},
 	plusMinus: function() {
 		$('.js-counter--minus').click(function() {
@@ -180,10 +219,10 @@ const Base = {
 	},
 	showHideText: function() {
 		let $textBlock = $('.js-text');
-		let $textBtn = $('.js-text--show');
+		let $textBtnShow = $('.js-text--show');
 		let open = false;
 
-		$textBtn.on('click', function() {
+		$textBtnShow.on('click', function() {
 			if (!open) {
 				$(this).addClass('is-checked');
 				$textBlock.slideDown();
@@ -195,9 +234,17 @@ const Base = {
 			}
 		});
 	},
-	upsateResize: function() {
-		$(window).resize(function() {
-			Base.setHeight();
+	addInCart: function() {
+		//Add in card
+		$('.js-add-in-cart').on('click', function(e) {
+			if ($(this).hasClass('is-checked')) {
+				$(this).removeClass('is-checked');
+			} else {
+				$(this).addClass('is-checked');
+			}
+
+			e.preventDefault();
+			e.stopPropagation();
 		});
 	},
 	stopScroll: function() {
@@ -253,59 +300,6 @@ const Base = {
 
 $(function() {
 	Base.init();
-
-	function textOverflow(s) {
-		$('.js-text-overflow').each(function() {
-			let media = s || $(this).data('text-media');
-			let size = s || $(this).data('text-overflow');
-			let sizeNow;
-
-			if (media) {
-				if ($(window).width() > 480 && $(window).width() < 1200) {
-					sizeNow = size;
-				} else {
-					sizeNow = 'auto';
-				}
-			} else {
-				sizeNow = size;
-			}
-
-			let text = $(this).text();
-
-			if (text.length > sizeNow) {
-				$(this).text(text.slice(0, sizeNow) + ' ...');
-			}
-		});
-	}
-	textOverflow();
-
-	$(window).resize(function() {
-		textOverflow();
-	});
-
-	if ($(window).width() < 480) {
-		//Contacts move block
-		$('.js-contacts-map').appendTo('.js-contacts-map--place');
-
-		//News image move on xs screen
-		$('.js-cs-card').each(function() {
-			let $img = $(this).find('.cs-card__img');
-			let $date = $(this).find('.cs-card__date');
-			$img.insertAfter($date);
-		});
-	}
-
-	//Add in card
-	$('.js-add-in-cart').on('click', function(e) {
-		if ($(this).hasClass('is-checked')) {
-			$(this).removeClass('is-checked');
-		} else {
-			$(this).addClass('is-checked');
-		}
-
-		e.preventDefault();
-		e.stopPropagation();
-	});
 
 	//=include components/Select.js
 	//=include components/Dropdown.js

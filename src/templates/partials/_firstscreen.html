@@ -10,8 +10,7 @@
 		{% endif %}
 
 		<div class="firstscreen__line">
-			{% if firstscreenSelect %}
-			<div class="c-select__wrap">
+			<div class="c-select__wrap {{ firstscreenSelectClass }}">
 				<div class="c-select c-select--product js-c-select firstscreen__c-select w2 c-dropdown js-c-dropdown">
 					<div class="c-select__btn">
 						<div class="toggle c-select__toggle"><span></span></div>
@@ -59,7 +58,6 @@
 					Скидки
 				</a>
 			</div>
-			{% endif %}
 
 			{% include "partials/components/_search.html" %}
 
@@ -69,28 +67,28 @@
 
 				<ul class="c-dropdown__list login__clear">
 					<li class="c-dropdown__item">
-						<a href="#modal-auth" class="c-dropdown__link">Вход</a>
+						<a href="enter.html" class="c-dropdown__link">Вход</a>
 					</li>
 					<li class="c-dropdown__item">
-						<a href="#modal-registr" class="c-dropdown__link">Регистрация</a>
+						<a href="registration.html" class="c-dropdown__link">Регистрация</a>
 					</li>
 				</ul>
 
 				<ul class="c-dropdown__list login__auth">
 					<div class="c-dropdown__item">
-						<a href="#modal-registr" class="c-dropdown__link">
+						<a href="lk-settings-old.html" class="c-dropdown__link">
 							Ivan Petrov
 							{{ mixin.icon('cs-cog', 'login__icon') }}
 						</a>
 					</div>
 					<li class="c-dropdown__item">
-						<a href="#modal-auth" class="c-dropdown__link">Мои заказы</a>
+						<a href="lk-order-old.html" class="c-dropdown__link">Мои заказы</a>
 					</li>
 					<li class="c-dropdown__item">
-						<a href="#modal-registr" class="c-dropdown__link">Персональные скидки</a>
+						<a href="lk-sale-old.html" class="c-dropdown__link">Скидки</a>
 					</li>
 					<li class="c-dropdown__item">
-						<a href="#modal-registr" class="c-dropdown__link">Выход</a>
+						<a href="#" class="c-dropdown__link">Выход</a>
 					</li>
 				</ul>
 			</div>
@@ -126,13 +124,6 @@
 			</div>
 
 		</div>
-
-		{% if btnFilter %}
-		<button class="btn btn--filter js-btn-fixed {{ btnFilterJs }}">
-			{{ btnFilterTitle }}
-		</button>
-		{% endif %}
-
 	</div>
 </section>
 <!-- end firstscreen -->
