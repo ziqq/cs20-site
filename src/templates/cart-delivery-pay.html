@@ -1,7 +1,6 @@
 ---
 wrapClass: page-cart
-title: Корзина
-cartTitle: Оплата
+title: Оплата
 firstscreenSelectClass: sm-hide
 ---
 {% extends "layouts/_layout.html" %}
@@ -15,7 +14,7 @@ firstscreenSelectClass: sm-hide
 	<div class="container">
 		<div class="cart-box">
 			<div class="cart-box__header">
-				<h1 class="h1 cart-box__title">{{ cartTitle }}</h1>
+				<h1 class="h1 cart-box__title">{{ title }}</h1>
 				{% include "blocks/cart/_breadcrumbs.html" %}
 			</div>
 			<div class="cart-box__content">
@@ -24,7 +23,7 @@ firstscreenSelectClass: sm-hide
 					{% import "data/data-lk.html" as pay %}
 					{% for item in pay.payItem %}
 					<div class="delivery-item {% if item.class %} delivery-item--{{ item.class }} {% endif %} cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox" data-info-delivery="{{ item.data }}">
-						<div class="delivery-item__info js-tooltip" title="Является одним из крупнейших грузоперевозчиков России. Доставка занимает от 1 до 45 дней, всё зависит от веса груза и адреса доставки. Подробнее можете узнать на сайте отправителя pecom.ru">
+						<div class="delivery-item__info js-tooltip" {% if item.desc %} title="{{ item.desc }}" {% endif %}>
 							<i class="fal fa-info-circle"></i>
 						</div>
 						<img class="delivery-item__img" src="img/general/payment/logos/{{ item.icon }}.png" alt="{{ item.title }}">

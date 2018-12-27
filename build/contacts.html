@@ -485,7 +485,7 @@
         </div>
       </section>
       <!-- end firstscreen -->
-      <!-- begin home -->
+      <!-- begin content-wrapper -->
       <div class="content-wrapper">
         <div class="contacts">
           <!-- begin breadcrumbs -->
@@ -581,14 +581,14 @@
                 </div>
               </div>
               <div class="contacts__map map-box js-contacts-map xs-only">
-                <div id="map"></div>
+                <div class="map-box__inner" id="map"></div>
               </div>
             </div>
           </div>
           <!-- end contacts -->
         </div>
       </div>
-      <!-- end home -->
+      <!-- end content-wrapper -->
       <!-- begin footer -->
       <footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
         <div class="container">
@@ -1060,6 +1060,45 @@
     <!-- begin scripts -->
     <script type="text/javascript" src="js/libs.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnkTBYnYseWFYqDk3wb4-eWn4507c7CSw"></script>
+    <script>
+      window.onload = function()
+      {
+        var $map = $('.js-contacts-map');
+        if ($map.length)
+        {
+          _initMap();
+        }
+
+        function _initMap()
+        {
+          var cords = {
+            lat: 51.9958,
+            lng: 47.8191
+          };
+          var map = new google.maps.Map(document.querySelector('.js-contacts-map'),
+          {
+            zoom: 17,
+            center: cords,
+            autocloseinfo: true,
+            streetViewControl: false,
+            mapTypeControl: false,
+            scaleControl: false,
+            fullscreenControl: false
+          });
+          var marker = new google.maps.Marker(
+          {
+            position:
+            {
+              lat: 51.99577,
+              lng: 47.81935
+            },
+            map: map,
+            icon: 'img/general/pin.png'
+          });
+        }
+      }
+
+    </script>
     <script type="text/javascript" src="js/app.js"></script>
     <!-- end scripts -->
     <div id="elements-placeholder" style="border: 0; clip: rect(0 0 0 0); overflow: hidden; margin: -1px; padding: 0; position: absolute; width: 1px; height: 1px;">

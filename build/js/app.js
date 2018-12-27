@@ -21,6 +21,8 @@ var Base = {
 		this.addInCart();
 		this.plusMinus();
 		this.goTop();
+		this.goTo();
+		this.relativeBtn();
 
 		$('body').removeClass('loading');
 
@@ -287,11 +289,40 @@ var Base = {
 	goTo: function goTo() {
 		//Click event to scroll to section whith id like href
 		$('.js-goto').click(function () {
+			var _this = $(this);
 			var elementClick = $(this).attr('href');
 			var destination = $(elementClick).offset().top;
-			$('html, body').animate({ scrollTop: destination - 60 + 'px' }, 300);
+
+			$('html, body').animate({ scrollTop: destination - 60 + 'px' }, 400);
+
+			if (_this.hasClass('btn--filter')) {
+				$('html, body').animate({ scrollTop: destination - 60 + 'px' }, 400, function () {
+					_this.hide();
+				});
+			}
+
 			return false;
 		});
+	},
+	relativeBtn: function relativeBtn() {
+		if ($(window).width() <= 768) {
+			$(window).scroll(function () {
+				var wHeight = $(window).height();
+				var scroll = $(this).scrollTop();
+				var $btn = $('.js-relative-btn');
+				var $block = $('.js-relative-block');
+				var blockOffset = $block.offset().top;
+				var blockHeight = $block.height();
+
+				if (scroll + wHeight < blockOffset + blockHeight) {
+					$btn.css('display', 'block');
+					console.log('---', '1');
+				} else {
+					$btn.css('display', 'none');
+					console.log('---', '2');
+				}
+			});
+		}
 	}
 };
 
@@ -299,45 +330,28 @@ $(function () {
 	Base.init();
 
 	(function () {
-
 		var $select = $('.js-c-select');
-
 		var $overlay = $('.js-overlay');
-
 		var overlayActiveClass = '.overlay--select';
-
 		var activeClass = 'is-active';
-
 		var open = false;
 
 		$select.each(function () {
-
 			var $toggle = $(this).find('.c-select__toggle');
-
 			var $val = $(this).find('.c-select__val');
-
 			var $item = $(this).find('.c-select__link');
-
 			var _this = $(this);
-
 			var title = $val.text();
 
 			_this.on('click', function (e) {
-
 				if (!open) {
-
 					_open($(this));
 				} else {
-
 					_close();
-
 					if (!$item.hasClass('is-checked')) {
-
 						$toggle.removeClass(activeClass);
 					} else {
-
 						$toggle.on('click', function (e) {
-
 							_toggle();
 
 							e.stopPropagation();
@@ -347,68 +361,43 @@ $(function () {
 			});
 
 			// $item.on('click', function(e) {
-
 			// 	// let val = $(this).text();
-
 
 			// 	// $val.text(val);
 
-
 			// 	// $item.removeClass('is-checked');
-
 			// 	// $(this).addClass('is-checked');
-
 			// 	// _close();
-
 			// 	e.stopPropagation();
-
 			// });
-
 
 			// $toggle.on('click', function() {
-
 			// 	$val.text(title);
-
 			// });
 
-
 			function _open(el) {
-
 				$select.removeClass(activeClass);
-
 				el.addClass(activeClass);
-
 				$toggle.addClass(activeClass);
-
 				$overlay.addClass(activeClass).addClass('overlay--select');
-
 				open = true;
 			}
 
 			function _close() {
-
 				$select.removeClass(activeClass);
-
 				$overlay.removeClass(activeClass).removeClass('overlay--select');
-
 				open = false;
 			}
 
 			function _toggle() {
-
 				$item.removeClass('is-checked');
-
 				$toggle.removeClass(activeClass);
-
 				_close();
 			}
 
 			$(document).on('click', overlayActiveClass, function () {
-
 				_close();
-
 				if (!$item.hasClass('is-checked')) {
-
 					_toggle();
 				}
 			});
@@ -416,27 +405,19 @@ $(function () {
 	})();
 
 	(function () {
-
 		$('.js-select--box').each(function () {
-
 			var $selectCountry = $(this).find('.js-select--country');
-
 			var $selectRegion = $(this).find('.js-select--region');
-
 			var $selectCity = $(this).find('.js-select--city');
 
 			$selectCountry.on('select2:select', function () {
-
 				_enabled($selectRegion);
 			});
-
 			$selectRegion.on('select2:select', function () {
-
 				_enabled($selectCity);
 			});
 
 			function _enabled(el) {
-
 				el.removeAttr('disabled');
 			}
 		});
@@ -701,13 +682,20 @@ $(function () {
 						speed: 1000,
 						slidesToShow: 1,
 						slidesToScroll: 1,
-						// infinite: false,
 						arrows: true,
 						dots: true,
+						// infinite: false,
 						// fade: true,
-						vertical: true,
-						adaptiveHeight: true,
-						infinite: true
+						// vertical: true,
+						// adaptiveHeight: true,
+						infinite: true,
+
+						responsive: [{
+							breakpoint: 482,
+							settings: {
+								adaptiveHeight: true
+							}
+						}]
 					});
 				}
 			});
@@ -947,69 +935,42 @@ $(function () {
 });
 
 /**
-
  * Catalog.js
-
  *
-
  * @author Anton Ustinoff <a.a.ustinoff@gmail.com>
-
  */
-
 (function () {
-
 	var Filter = {
-
 		init: function init() {
-
 			this.priceSlider();
-
 			this.filterToggle();
-
 			this.generateBtnApply();
-
 			this.selectAll();
 
 			if ($(window).width() > 768) {
-
 				this.stickyFilter();
 			}
 		},
-
 		stickyFilter: function stickyFilter() {
-
 			if ($('.js-filter-sticky').length) {
-
 				var sidebar = new StickySidebar('.js-filter-sticky', {
-
 					topSpacing: 10,
-
 					bottomSpacing: 0,
-
 					containerSelector: '.catalog__content',
-
 					innerWrapperSelector: '.filter__inner'
-
 				});
 			}
 		},
-
 		generateBtnApply: function generateBtnApply() {
-
 			var $filter = $('.js-filter');
-
 			var $item = $filter.find('.js-cs-checkbox');
-
 			var render = true;
 
 			$item.on('click', function (e) {
-
 				_renderBtn($(this));
 
 				if ($(window).width() >= 768) {
-
 					$(this).parent().parent().on('mouseleave', function () {
-
 						setTimeout(function () {
 							return _hide();
 						}, 3500);
@@ -1022,123 +983,81 @@ $(function () {
 			});
 
 			$(document).on('click', '.js-btn--apply', function (e) {
-
 				_hide();
-
 				e.stopPropagation();
 			});
 
 			$('.js-filter-btn--reset').on('click', function (e) {
-
 				_hide();
-
 				e.stopPropagation();
 			});
 
 			function _hide() {
-
 				$filter.removeClass('has-apply').find('.btn--apply').remove();
 			}
 
 			function _renderBtn(el) {
-
 				render = false;
-
 				$(document).find('.btn--apply').remove();
-
 				var $btn = $('<button>');
 
 				$btn.addClass('btn btn--default btn--apply js-btn--apply').text('Применить');
-
 				$btn.appendTo(el);
 			}
 		},
-
 		priceSlider: function priceSlider() {
-
 			var $filterSlider = $('#js-filter-slider');
-
 			if ($filterSlider.length) {
-
 				var slider = document.getElementById('js-filter-slider');
-
 				var allPriceStart = $filterSlider.data('start');
-
 				var allPriceEnd = $filterSlider.data('end');
-
 				var spans = [$('#jsPriceStart'), $('#jsPriceEnd')];
-
 				var $priceStart = $('#jsPriceStart');
-
 				var $priceEnd = $('#jsPriceEnd');
-
 				var startPrice;
-
 				var endPrice;
 
 				if (spans[0].val() == '') {
-
 					startPrice = allPriceStart;
 				} else {
-
 					startPrice = parseInt(spans[0].val());
 				}
 
 				if (spans[1].val() == '') {
-
 					endPrice = allPriceEnd;
 				} else {
-
 					endPrice = parseInt(spans[1].val());
 				}
 
 				noUiSlider.create(slider, {
-
 					start: [startPrice, endPrice],
-
 					connect: true,
-
 					range: {
-
 						min: allPriceStart,
-
 						max: allPriceEnd
-
 					}
-
 				});
 
 				slider.noUiSlider.on('update', function (values, handle) {
-
 					spans[handle].val(parseInt(values[handle]));
 				});
 
 				$priceStart.on('change', function () {
-
 					slider.noUiSlider.set([this.value, null]);
 				});
 
 				$priceEnd.on('change', function () {
-
 					slider.noUiSlider.set([null, this.value]);
 				});
 			}
 		},
-
 		filterToggle: function filterToggle() {
-
 			var $html = $('html');
-
 			var $overlay = $('.js-overlay');
-
 			var $filterSticky = $('.js-filter-sticky');
-
 			var $btnFixed = $('.js-btn-fixed');
-
 			var $btnOpen = $('.js-filter--open');
-
 			var btnOpenOffset = $btnFixed.offset().top;
-
 			var $btnClose = $('.js-filter--close');
 
 			$btnOpen.on('click', _open);
@@ -1148,114 +1067,74 @@ $(function () {
 			$(document).on('click', '.overlay--filter', _close);
 
 			$(window).scroll(function () {
-
 				var scroll = $(this).scrollTop();
 
 				if (scroll - 50 > btnOpenOffset) {
-
 					$btnFixed.css({
-
 						position: 'fixed',
-
 						top: 10,
-
 						bottom: 'auto',
-
 						boxShadow: '0 5px 25px rgba(0,0,0,.2)'
-
 					});
 				} else {
-
 					$btnFixed.removeAttr('style');
 				}
 			});
 
 			function _open() {
-
 				$filterSticky.addClass('is-open');
-
 				$html.addClass('is-fixed');
-
 				$overlay.addClass('is-active').addClass('overlay--filter');
 			}
 
 			function _close() {
-
 				$filterSticky.removeClass('is-open');
-
 				$html.removeClass('is-fixed');
-
 				$overlay.removeClass('is-active');
 			}
 		},
-
 		selectAll: function selectAll() {
-
 			$('.js-select-all').on('click', function () {
-
 				$(this).closest('.js-filter-content').find('.cs-checkbox').addClass('is-checked');
-
 				$(this).closest('.js-filter-content').find('.cs-checkbox').find('input').prop('checked', true);
-
 				return false;
 			});
 		}
-
 	};
-
 	Filter.init();
 
 	// $('.product-item').each(function() {
-
 	// 	if ($(window).width() <= 480 && $(this).width() < 265) {
-
 	// 		$(this)
-
 	// 			.find('.js-text-overflow')
-
 	// 			.attr('data-text-overflow', 35);
-
 	// 	} else {
-
 	// 		$(this)
-
 	// 			.find('.js-text-overflow')
-
 	// 			.attr('data-text-overflow', 45);
-
 	// 	}
-
 	// });
 
-
 	//Catalog Item View Toggle
-
 	$('.js-sorting-btn').on('click', function (e) {
-
 		var sorting = $(this).data('sorting');
 
 		$('.js-sorting-btn').removeClass('is-active');
-
 		$(this).addClass('is-active');
 
 		if (sorting == '2') {
-
 			$('.js-products').addClass('layout-two-column');
 		} else {
-
 			$('.js-products').removeClass('layout-two-column');
 		}
 
 		setTimeout(function () {
-
 			Base.setHeight();
 		}, 300);
 	});
 
 	if ($(window).width() < 375) {
-
 		$('.js-sorting-btn').removeClass('is-active').last().addClass('is-active');
-
 		$('.js-products').addClass('layout-two-column');
 	}
 })();

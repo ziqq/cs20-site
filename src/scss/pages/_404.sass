@@ -33,7 +33,8 @@
 	&__content
 		max-width: 860px
 		margin: auto
-		text-align: center
+		+r(480)
+			text-align: center
 
 	//.error__title
 	&__title
@@ -66,14 +67,17 @@
 	&__text
 		margin-bottom: 0
 		text-align: left
+		font-family: $f-light
 		+r(768)
 			text-align: center
 		p
 			display: block
+			margin-bottom: 5px
 			font-size: 16px
 			line-height: 21px
 			+r(480)
 				margin-bottom: 15px
 
 	&__btn
-		width: 80%
+		max-width: 300px
+		width: 100%

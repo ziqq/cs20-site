@@ -79,10 +79,12 @@
 			width: 100%
 
 			&__arrow
+				//.card__img .cs-slider__arrow--next
 				&--next
-					right: -10px
+					right: 15px
+				//.card__img .cs-slider__arrow--prev
 				&--prev
-					left: -10px
+					left: 15px
 
 	//.card__desc
 	&__desc
@@ -143,7 +145,13 @@
 			flex-direction: row
 			align-items: center
 
+			.btn
+				font-size: 14px
+				text-decoration: underline
+
 		.btn
+			font-family: $f
+			font-weight: 400
 			color: $color-text--light
 			+r(768)
 				margin-left: 0
@@ -201,6 +209,7 @@
 		font-family: $f-medium
 		font-weight: 500
 		font-size: 22px
+		+nosel
 
 		+r(768)
 			margin-bottom: 20px
@@ -528,7 +537,7 @@
 
 			+r(480)
 				width: 100%
-				margin-bottom: 10px
+				margin-bottom: 15px
 				font-size: 14px
 				text-align: left
 				flex-direction: column

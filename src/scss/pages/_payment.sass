@@ -1,25 +1,32 @@
 .payment
 	padding-bottom: $section-indent
 	background-color: #f7f8fa
-	+r(480)
+
+	+r(768)
 		padding-bottom: $section-indent / 2
 		background-color: #fff
 
 	&__items
 		+r(480)
-			padding-top: 10px
+			padding-top: 50px
 
 	//.payment__item
 	&__item
-		margin-bottom: $gutter
+		margin-bottom: 30px
 		@extend %box
 
 		&:last-child
 			margin-bottom: 0
 
-		+r(480)
+		+r(768)
 			box-shadow: none
 			border: 0
+
+		+r(480)
+			margin-bottom: 70px
+
+			&:last-child
+				margin-bottom: 50px
 
 		&__in
 			padding: 70px 90px 80px
@@ -57,7 +64,10 @@
 		font-size: 30px
 		font-family: $f-light
 		font-weight: 300
+
 		+r(768)
+			font-family: $f-medium
+			font-weight: 500
 			margin-bottom: 10px
 			font-size: 20px
 
@@ -65,6 +75,9 @@
 	&__desc
 		color: $color-text--light
 		font-family: $f-light
+
+		+r(480)
+			font-size: 14px
 
 	//.payment__icons
 	&__icons

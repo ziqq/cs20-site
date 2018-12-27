@@ -195,13 +195,22 @@
 						speed: 1000,
 						slidesToShow: 1,
 						slidesToScroll: 1,
-						// infinite: false,
 						arrows: true,
 						dots: true,
+						// infinite: false,
 						// fade: true,
-						vertical: true,
-						adaptiveHeight: true,
-						infinite: true
+						// vertical: true,
+						// adaptiveHeight: true,
+						infinite: true,
+
+						responsive: [
+							{
+								breakpoint: 482,
+								settings: {
+									adaptiveHeight: true
+								}
+							}
+						]
 					});
 			}
 		});

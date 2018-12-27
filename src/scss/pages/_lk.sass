@@ -5,6 +5,9 @@
 	position: relative
 	overflow: hidden
 
+	+r(768)
+		background-color: #fff
+
 	+r(480)
 		padding: 20px 0
 
@@ -57,10 +60,16 @@
 
 					&:first-child
 						min-width: 300px
+						+r(480)
+							min-width: auto
 
 					&:last-child
 						min-width: 100px
 						text-align: center
+						+r(480)
+							min-width: auto
+							margin-left: auto
+							white-space: nowrap
 
 		.pedit
 			.button-box
@@ -77,16 +86,17 @@
 			// height: 100%
 			height: auto
 			padding: 30px 10px
-			background-color: $color-bg
+			// background-color: $color-bg
 			.lk
 				&__top-line
 					margin-bottom: 10px
-					+flexCenter
+					+flexColumn
+					align-items: flex-start
 
 					//.lk__order .lk__top-line .sorting__count
 					.sorting__count
-						margin-left: auto
-						margin-right: 30px
+						// margin-left: auto
+						// margin-right: 30px
 
 						.cs-select
 							&::before
@@ -117,10 +127,19 @@
 					&::before
 						right: auto
 						left: 30px
+						display: none
 
 				.select2-container--default .select2-selection--single .select2-selection__rendered
 					padding-left: 0
 					text-align: left
+					line-height: 23px
+
+				.select2-container--default .select2-selection--single .select2-selection__arrow
+					top: 1px
+
+				.select2-container--default .select2-selection--single
+					// height: 23px
+					margin-bottom: -15px
 
 			&__select
 				padding: 0 10px 0 0
@@ -153,7 +172,7 @@
 			width: 100%
 			// min-height: 100vh;
 			margin-left: 0
-			background-color: #eee
+			background-color: #fff
 			border-radius: 0
 			+coverdiv
 			+trfY(100vh)
@@ -583,7 +602,8 @@
 			&:last-child
 				+r(480)
 					flex-basis: 100%
-					margin-top: 20px
+					margin: 20px 0
+					order: -1
 
 		.btn-accent
 			padding: 10px 17px

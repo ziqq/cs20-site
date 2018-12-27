@@ -17,6 +17,8 @@ const Base = {
 		this.addInCart();
 		this.plusMinus();
 		this.goTop();
+		this.goTo();
+		this.relativeBtn();
 
 		$('body').removeClass('loading');
 
@@ -287,14 +289,47 @@ const Base = {
 	goTo: function() {
 		//Click event to scroll to section whith id like href
 		$('.js-goto').click(function() {
+			let _this = $(this);
 			var elementClick = $(this).attr('href');
 			var destination = $(elementClick).offset().top;
+
 			$('html, body').animate(
 				{ scrollTop: destination - 60 + 'px' },
-				300
+				400
 			);
+
+			if (_this.hasClass('btn--filter')) {
+				$('html, body').animate(
+					{ scrollTop: destination - 60 + 'px' },
+					400,
+					function() {
+						_this.hide();
+					}
+				);
+			}
+
 			return false;
 		});
+	},
+	relativeBtn: function() {
+		if ($(window).width() <= 768) {
+			$(window).scroll(function() {
+				let wHeight = $(window).height();
+				let scroll = $(this).scrollTop();
+				let $btn = $('.js-relative-btn');
+				let $block = $('.js-relative-block');
+				let blockOffset = $block.offset().top;
+				let blockHeight = $block.height();
+
+				if (scroll + wHeight < blockOffset + blockHeight) {
+					$btn.css('display', 'block');
+					console.log('---', '1');
+				} else {
+					$btn.css('display', 'none');
+					console.log('---', '2');
+				}
+			});
+		}
 	}
 };
 

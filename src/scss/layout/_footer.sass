@@ -36,18 +36,6 @@
 				&.last
 					margin-bottom: 0
 
-	//.footer__bottom
-	//. &__bottom
-	//. 	padding: 35px 0
-	//. 	font-size: 14px
-	//. 	+flex
-	//. 	justify-content: space-between
-	//. 	+r(768)
-	//. 		flex-direction: column
-	//. 		padding: 0 0 35px
-	//. 	.policy
-	//. 		color: $gray
-
 		//.footer__bottom .footer__item
 		//. .footer__item
 		//. 	width: 33.33%
@@ -93,10 +81,12 @@
 
 				&:not(.not-hide)
 					display: none
+
 		a
 			display: block
-			max-width: 180px
+			max-width: 145px
 			font-family: $f-light
+			font-size: 14px
 			color: #fff
 			+text-overflow
 
@@ -119,9 +109,13 @@
 			&:hover
 				fill: $color-accent
 
+	//.footer .phone__link
+	.phone__link
+		font-size: 18px
+
 	//.footer .block-pay
 	.block-pay
-		margin-top: -7px
+		margin-top: -18px
 //.footer end
 
 //.block-pay
@@ -135,8 +129,8 @@
 			margin-left: 15px
 	//.block-pay__icon
 	&__icon
-		width: 70px
-		height: 70px
+		width: 60px
+		height: 60px
 //.block-pay end
 
 //.policy

@@ -3,8 +3,11 @@
 	font-family: $f-light
 	background-color: $color-bg
 
-	+r-max(xs)
+	+r(768)
 		background-color: #fff
+
+	+r(480)
+		padding: 30px 0
 
 	&__in
 		max-width: 730px
@@ -80,10 +83,12 @@
 		margin-bottom: 30px
 		font-size: 22px
 		line-height: 1.5
-		font-family: $f
-		font-weight: 400
-		+r(480)
+		font-family: $f-light
+		font-weight: 300
+
+		+r-max(sm)
 			font-size: 20px
+
 		+r(375)
 			font-size: 18px
 
@@ -91,7 +96,6 @@
 			margin-top: 60px
 			+r(480)
 				margin-top: 40px
-
 
 	//.privacy__form
 	&__form
@@ -110,15 +114,18 @@
 	ul:not(.breadcrumbs__list)
 		margin-bottom: 15px
 		li
-			margin-bottom: 5px
+			margin-bottom: 15px
 			font-size: 15px
 //.privacy end
 
 .garanty
 	background-color: $color-bg
 
-	+r-max(xs)
+	+r-max(sm)
 		background-color: #fff
+
+	+r(480)
+		padding: 30px 0
 
 	p
 		font-family: $f-light
@@ -129,3 +136,32 @@
 
 	.page-title
 		margin-bottom: 20px
+
+	ul:not(.breadcrumbs__list)
+		margin-bottom: 15px
+		li
+			margin-bottom: 10px
+			font-size: 15px
+			font-family: $f-light
+			font-weight: 300
+
+	.btn--filter
+		max-width: 300px
+		display: none
+
+		+r(768)
+			display: block
+
+		+r(375)
+			max-width: 260px
+			padding: 15px
+			font-size: 15px
+
+		+r(320)
+			// bottom: 100px
+			// right: 50%
+			// transform: translate(50%)
+			max-width: 210px
+			padding: 15px 10px
+			right: 10px
+			+text-overflow
