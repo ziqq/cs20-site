@@ -4,11 +4,11 @@
  * @author Anton Ustinoff <a.a.ustinoff@gmail.com>
  */
 (function() {
-	let $cardTitle = $('.card__title');
+	// let $cardTitle = $('.card__title');
 	let $cardInfo = $('.card-info');
 	//Move block in divece
 	if ($(window).width() <= 768) {
-		$cardTitle.insertBefore('.card__inner');
+		// $cardTitle.insertBefore('.card__inner');
 		$cardInfo.insertAfter('.card__inner');
 	}
 
