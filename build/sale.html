@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Корзина</title>
+    <title>Скидки</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -24,7 +24,7 @@
     <link rel="stylesheet" media="all" href="css/app.css">
   </head>
   <body class="loading" itemscope="itemscope" itemtype="http://schema.org/WebPage">
-    <div class="page-wrapper is-auth page-cart">
+    <div class="page-wrapper is-auth ">
       <!-- begin mobile-nav -->
       <nav class="mobile-nav js-mobile-nav md-only">
         <svg class="icon icon-cs-close mobile-nav__close js-mobile-nav--close">
@@ -212,7 +212,7 @@
       <section class="firstscreen js-firstscreen">
         <div class="container">
           <div class="firstscreen__line">
-            <div class="c-select__wrap ">
+            <div class="c-select__wrap sm-hide">
               <div class="c-select c-select--product js-c-select firstscreen__c-select w2 c-dropdown js-c-dropdown">
                 <div class="c-select__btn">
                   <div class="toggle c-select__toggle"><span></span></div>
@@ -485,8 +485,8 @@
         </div>
       </section>
       <!-- end firstscreen -->
-      <!-- begin cart -->
-      <div class="content-wrapper cart">
+      <!-- begin content-wrapper -->
+      <div class="content-wrapper sale">
         <!-- begin breadcrumbs -->
         <div class="container">
           <div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
@@ -497,157 +497,97 @@
                 </a>
               </li>
               <li class="breadcrumbs__item">
-                <span class="breadcrumbs__title" itemprop="title">Корзина</span>
+                <span class="breadcrumbs__title" itemprop="title">Скидки</span>
               </li>
             </ul>
           </div>
         </div>
         <!-- end breadcrumbs -->
+        <!-- begin sale -->
         <div class="container">
-          <div class="cart__inner">
-            <!-- begin cart__left -->
-            <div class="cart__left">
-              <div class="product-item__wrap loyout-column cart__items js-cart-items">
-                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/1.png">
-                    <img src="img/products/1/190x95/1.png" alt="Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ" />
-                  </div>
-                  <div class="product-item__desc">
-                    <h4 class="product-item__title" itemprop="name">Стойка стабилизатора Logan/Largus (2 шт) КРАСНЫЙ</h4>
-                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                      <span class="price__cost">536 руб.<i class="fa fa-rub"></i></span>
-                      <meta itemprop="price" content="536 руб.">
-                      <meta itemprop="priceCurrency" content="RUB" />
-                    </div>
-                    <div class="product-item__counter counter">
-                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
-                      <input type="text" class="counter__field" value="1">
-                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
-                    </div>
-                    <button class="product-item__dell" title="Убрать из корзины">
-                      <svg class="icon icon-cs-close xs-hide">
-                        <use xlink:href="img/sprite.svg#cs-close"></use>
-                      </svg>
-                      <svg class="icon icon-cs-basket xs-only">
-                        <use xlink:href="img/sprite.svg#cs-basket"></use>
-                      </svg>
-                    </button>
-                  </div>
-                </a>
-                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/2.png">
-                    <img src="img/products/1/190x95/2.png" alt="Стойка стабилизатора 1118/2170 (2шт) ЖЕЛТЫЙ" />
-                  </div>
-                  <div class="product-item__desc">
-                    <h4 class="product-item__title" itemprop="name">Стойка стабилизатора 1118/2170 (2шт) ЖЕЛТЫЙ</h4>
-                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                      <span class="price__cost">452 руб.<i class="fa fa-rub"></i></span>
-                      <meta itemprop="price" content="452 руб.">
-                      <meta itemprop="priceCurrency" content="RUB" />
-                    </div>
-                    <div class="product-item__counter counter">
-                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
-                      <input type="text" class="counter__field" value="1">
-                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
-                    </div>
-                    <button class="product-item__dell" title="Убрать из корзины">
-                      <svg class="icon icon-cs-close xs-hide">
-                        <use xlink:href="img/sprite.svg#cs-close"></use>
-                      </svg>
-                      <svg class="icon icon-cs-basket xs-only">
-                        <use xlink:href="img/sprite.svg#cs-basket"></use>
-                      </svg>
-                    </button>
-                  </div>
-                </a>
-                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/3.png">
-                    <img src="img/products/1/190x95/3.png" alt="Пыльник заднего амортизатора 2108 (2шт) СИНИЙ" />
-                  </div>
-                  <div class="product-item__desc">
-                    <h4 class="product-item__title" itemprop="name">Пыльник заднего амортизатора 2108 (2шт) СИНИЙ</h4>
-                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                      <span class="price__cost">536 руб.<i class="fa fa-rub"></i></span>
-                      <meta itemprop="price" content="536 руб.">
-                      <meta itemprop="priceCurrency" content="RUB" />
-                    </div>
-                    <div class="product-item__counter counter">
-                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
-                      <input type="text" class="counter__field" value="1">
-                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
-                    </div>
-                    <button class="product-item__dell" title="Убрать из корзины">
-                      <svg class="icon icon-cs-close xs-hide">
-                        <use xlink:href="img/sprite.svg#cs-close"></use>
-                      </svg>
-                      <svg class="icon icon-cs-basket xs-only">
-                        <use xlink:href="img/sprite.svg#cs-basket"></use>
-                      </svg>
-                    </button>
-                  </div>
-                </a>
-                <a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                  <div class="product-item__img" itemprop="image" href="img/products/1/190x95/4.png">
-                    <img src="img/products/1/190x95/4.png" alt="Подушка двигателя задняя Logan/Largus DRIVE" />
-                  </div>
-                  <div class="product-item__desc">
-                    <h4 class="product-item__title" itemprop="name">Подушка двигателя задняя Logan/Largus DRIVE</h4>
-                    <div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                      <span class="price__cost">536 руб.<i class="fa fa-rub"></i></span>
-                      <meta itemprop="price" content="536 руб.">
-                      <meta itemprop="priceCurrency" content="RUB" />
-                    </div>
-                    <div class="product-item__counter counter">
-                      <span class="counter__control counter__control--minus js-counter--minus">—</span>
-                      <input type="text" class="counter__field" value="1">
-                      <span class="counter__control counter__control--plus js-counter--plus">+</span>
-                    </div>
-                    <button class="product-item__dell" title="Убрать из корзины">
-                      <svg class="icon icon-cs-close xs-hide">
-                        <use xlink:href="img/sprite.svg#cs-close"></use>
-                      </svg>
-                      <svg class="icon icon-cs-basket xs-only">
-                        <use xlink:href="img/sprite.svg#cs-basket"></use>
-                      </svg>
-                    </button>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <!-- end cart__left -->
-            <!-- begin cart__right -->
-            <div class="cart__right js-cart-sticky">
-              <div class="cart__sum js-cart-sum">
-                <ul class="list list--dot">
-                  <li class="list__item">
-                    <span>Сумма заказа: </span>
-                    <span>4 567 р.</span>
+          <div class="l-sale cs-card">
+            <div class="l-sale__inner">
+              <div class="l-sale__right">
+                <h1 class="h1 page-title sale__title" itemprop="headline">Накопительная система скидок</h1>
+                <p class="sale__subtitle">Просто покупайте наши запчасти и увеличивайте размер вашей скидки. Скидка зависит от объема совершенных покупок. </p>
+                <ul class="list">
+                  <li class="list__item list__item--medium color-text--gray-light">
+                    <span>Объем покупки, руб </span>
+                    <span>Скидка</span>
                   </li>
-                  <li class="list__item list__item--light">
-                    <span>Скидка: </span>
-                    <span>229 р.</span>
+                  <li class="list__item list__item--medium">
+                    <span>до 3 000</span>
+                    <span>0%</span>
                   </li>
-                  <li class="list__item list__item--bold">
-                    <span>Итого: </span>
-                    <span>4 338 р.</span>
+                  <li class="list__item list__item--medium">
+                    <span>3 000 - 10 000</span>
+                    <span>2%</span>
+                  </li>
+                  <li class="list__item list__item--medium">
+                    <span>10 000 - 15 000</span>
+                    <span>4%</span>
+                  </li>
+                  <li class="list__item list__item--medium">
+                    <span>15 000 - 25 000</span>
+                    <span>6%</span></li>
+                  <li class="list__item list__item--medium">
+                    <span>25 000 - 50 000</span>
+                    <span>8%</span>
+                  </li>
+                  <li class="list__item list__item--medium">
+                    <span>более 80 000</span>
+                    <span>10%</span>
                   </li>
                 </ul>
-                <div class="button-box button-box--column">
-                  <!-- <div class="input-group">
-							<span class="input-group__info">Персональные скидки с купонами не суммируются</span>
-							<div class="input-group__field">
-								<input type="text" placeholder="Купон">
-								<button class="btn btn-gray-light input-group__btn">Применить</button>
-							</div>
-						</div> -->
-                  <a href="#enter" class="btn btn-accent" data-fancybox>Оформить заказ</a>
-                </div>
               </div>
-            </div><!-- end cart__right -->
+              <div class="l-sale__left">
+                <img src="img/general/sale.png" alt="CS20">
+              </div>
+            </div>
+            <div class="l-sale__buttons">
+              <p>Сделайте первую покупку и начните экономить</p>
+              <button class="btn btn-accent">В каталог</button>
+            </div>
           </div>
         </div>
+        <!-- end sale -->
+        <div class="container">
+          <p class="sale__desc">Независимо от объема покупок каждому покупателю доступны все преимущества при заказе деталей в интернет магазине CS-20</p>
+        </div>
+        <!-- begin cs-section advert -->
+        <section class="cs-section cs-section--advert">
+          <div class="container">
+            <!-- begin info-block -->
+            <div class="info-block">
+              <div class="info-block__items">
+                <div class="info-block__item">
+                  <img class="info-block__icon info-block__icon--delivery" src="img/icons/svg/cs-delivery.svg" alt="Бесплатная доставка">
+                  <div class="info-block__text">
+                    <span class="info-block__title">Бесплатная доставка</span>
+                    <p class="info-block__desc">При заказе в интернет-магазине от 1000 рублей. По России.</p>
+                  </div>
+                </div>
+                <div class="info-block__item">
+                  <img class="info-block__icon" src="img/icons/svg/cs-garanty.svg" alt="Бесплатная доставка">
+                  <div class="info-block__text">
+                    <span class="info-block__title">Расширенная гарантия</span>
+                    <p class="info-block__desc">Обмен товара на аналогичный в течении 2 лет</p>
+                  </div>
+                </div>
+                <div class="info-block__item">
+                  <img class="info-block__icon" src="img/icons/svg/cs-giftbox.svg" alt="Бесплатная доставка">
+                  <div class="info-block__text">
+                    <span class="info-block__title">Подарок каждому</span>
+                    <p class="info-block__desc">Прочные перчатки в подарок к каждому заказу</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- end info-block -->
+          </div>
+        </section>
+        <!-- end cs-section advert -->
       </div>
-      <!-- end cart -->
+      <!-- end content-wrapper -->
       <!-- begin footer -->
       <footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
         <div class="container">

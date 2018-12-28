@@ -69,6 +69,10 @@ PageList:
   ready: 50
   desc : Информация о получателе
 
+- file: sale.html
+  ready: 50
+  desc : Накопительная система скидок
+
 - file: payment.html
   ready: 50
   desc : Способы оплаты

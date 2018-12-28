@@ -1,0 +1,100 @@
+---
+title: Скидки
+firstscreenSelectClass: sm-hide
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin content-wrapper -->
+<div class="content-wrapper sale">
+
+	<!-- begin breadcrumbs -->
+	<div class="container">
+		<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+			<ul class="breadcrumbs__list">
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link" itemprop="url">
+						<span class="breadcrumbs__title" itemprop="title">Главная</span>
+					</a>
+				</li>
+				<li class="breadcrumbs__item">
+					<span class="breadcrumbs__title" itemprop="title">{{ title }}</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- end breadcrumbs -->
+
+	<!-- begin sale -->
+	<div class="container">
+
+		<div class="l-sale cs-card">
+			<div class="l-sale__inner">
+				<div class="l-sale__right">
+
+					<h1 class="h1 page-title sale__title" itemprop="headline">Накопительная система скидок</h1>
+
+					<p class="sale__subtitle">Просто покупайте наши запчасти и увеличивайте размер вашей скидки. Скидка зависит от объема совершенных покупок. </p>
+
+					<ul class="list">
+						<li class="list__item list__item--medium color-text--gray-light">
+							<span>Объем покупки, руб </span>
+							<span>Скидка</span>
+						</li>
+						<li class="list__item list__item--medium">
+							<span>до 3 000</span>
+							<span>0%</span>
+						</li>
+						<li class="list__item list__item--medium">
+							<span>3 000 - 10 000</span>
+							<span>2%</span>
+						</li>
+						<li class="list__item list__item--medium">
+							<span>10 000 - 15 000</span>
+							<span>4%</span>
+						</li>
+						<li class="list__item list__item--medium">
+							<span>15 000 - 25 000</span>
+							<span>6%</span></li>
+						<li class="list__item list__item--medium">
+							<span>25 000 - 50 000</span>
+							<span>8%</span>
+						</li>
+						<li class="list__item list__item--medium">
+							<span>более 80 000</span>
+							<span>10%</span>
+						</li>
+					</ul>
+				</div>
+				<div class="l-sale__left">
+					<img src="img/general/sale.png" alt="CS20">
+				</div>
+			</div>
+			<div class="l-sale__buttons">
+				<p>Сделайте первую покупку и начните экономить</p>
+				<button class="btn btn-accent">В каталог</button>
+			</div>
+		</div>
+
+	</div>
+	<!-- end sale -->
+
+	<div class="container">
+		<p class="sale__desc">Независимо от объема покупок каждому покупателю доступны все преимущества при заказе деталей в интернет магазине CS-20</p>
+	</div>
+
+	<!-- begin cs-section advert -->
+	<section class="cs-section cs-section--advert">
+		<div class="container">
+
+			{% include "partials/_info-block.html" %}
+
+		</div>
+	</section>
+	<!-- end cs-section advert -->
+
+</div>
+<!-- end content-wrapper -->
+
+{% endblock %}
