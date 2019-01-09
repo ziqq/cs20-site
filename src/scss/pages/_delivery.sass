@@ -4,8 +4,6 @@
 
 	+r-max(md)
 		padding-bottom: 30px
-
-	+r-max(xs)
 		background-color: #fff
 
 	//.delivery__title
@@ -24,8 +22,6 @@
 	//.delivery__items
 	&__items
 
-	//.delivery__item
-
 	//.delivery__form
 	&__form
 		width: 100%
@@ -36,14 +32,14 @@
 			margin-bottom: 20px
 
 		.button-box
-			justify-content: center
+			justify-content: flex-end
 
 	.cs-card
-		+r-max(xs)
+		+r-max(md)
 			margin-bottom: 30px
 			padding: 0
-			box-shadow: none
 			background-color: transparent
+			box-shadow: none
 
 			&__inner
 				margin-bottom: 0
@@ -54,18 +50,47 @@
 
 		&__text
 			color: $color-text--light
+			+r-max(xs)
+				font-size: 14px
+
+		&__map
+			+r(480)
+				margin-top: 0
+
+		&--reverse
+			.cs-card
+				&__img
+					margin-bottom: 30px
 
 		&:not(.cs-card--transform)
+			+r-max(xs)
+				margin-bottom: 50px
+				padding: 0
+
 			.cs-card__title
 				font-family: $f-light
 				font-weight: 300
 				font-size: 20px
 
-				+r-max(xs)
+				+r-max(md)
 					margin-bottom: 15px
-					font-size: 18px
+					font-size: 20px
 					font-family: $f-medium
 					font-weight: 500
+
+				+r-max(xs)
+					font-size: 18px
+
+		.page-title
+			+r-max(md)
+				margin-bottom: 20px
+				font-family: $f-medium
+				font-weight: 500
+				font-size: 20px
+
+			+r-max(xs)
+				margin-bottom: 10px
+				font-size: 18px
 
 	.map
 		border-radius: 0 $border-radius $border-radius

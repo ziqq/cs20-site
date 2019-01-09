@@ -33,19 +33,19 @@ title: Корзина
 				<div class="product-item__wrap loyout-column cart__items js-cart-items">
 					{% import "data/data-product.html" as productItem %}
 					{% for product in productItem.productSimilar %}
-					<a href="#" class="product-item product-item--wide" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+					<a href="#" class="product-item product-item--wide">
 
-						<div class="product-item__img" itemprop="image" href="img/products/1/190x95/{{ product.img }}.png">
-							<img src="img/products/1/190x95/{{ product.img }}.png"  alt="{{ product.title }}" />
+						<div class="product-item__img">
+							<img src="img/products/product/{{ product.img }}.jpg"  alt="{{ product.title }}" />
 						</div>
 
 						<div class="product-item__desc">
 							<h4 class="product-item__title" itemprop="name">{{ product.title }}</h4>
 
-							<div class="product-item__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-								<span class="price__cost">{{ product.price }}<i class="fa fa-rub"></i></span>
-								<meta itemprop="price" content="{{ product.price }}">
-								<meta itemprop="priceCurrency" content="RUB" />
+							<div class="product-item__price price">
+								<span class="price__cost">
+									{{ product.price }}<i class="fa fa-rub"></i>
+								</span>
 							</div>
 
 							<div class="product-item__counter counter">

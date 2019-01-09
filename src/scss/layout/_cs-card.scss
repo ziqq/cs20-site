@@ -396,6 +396,12 @@
 		}
 	}
 
+	.pos-xs-1 {
+		@include max-screen(480) {
+			margin-bottom: 0 !important;
+		}
+	}
+
 	&.cs-slider__slide {
 		@include r-max(sm) {
 			margin: 0;
