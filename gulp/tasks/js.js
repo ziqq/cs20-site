@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var config = require('../config');
-var include = require("gulp-include");
+var include = require('gulp-include');
 var uglify = require('gulp-uglify');
 var browserSync = require('browser-sync');
 var rename = require('gulp-rename');
@@ -36,14 +36,14 @@ gulp.task('js:libs', function() {
 		.pipe(reload({ stream: true }));
 });
 
-gulp.task('js:assets', function() {
-	return gulp
-		.src([config.src.jsAssets + '/yandex.map.js'])
-		.pipe(gulp.dest(config.dest.js + '/assets/'));
-});
+// gulp.task('js:assets', function() {
+// 	return gulp
+// 		.src([config.src.jsAssets + '/yandex.map.js'])
+// 		.pipe(gulp.dest(config.dest.js + '/assets/'));
+// });
 
 gulp.task('js:all', function(js) {
-	runSequence('js:libs', 'js:assets', 'js', js);
+	runSequence('js:libs', 'js', js);
 });
 
 gulp.task('js:watch', function() {

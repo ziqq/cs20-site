@@ -4,49 +4,75 @@
  * @author Anton Ustinoff <a.a.ustinoff@gmail.com>
  */
 (function() {
-	// let $cardTitle = $('.card__title');
 	let $cardInfo = $('.card-info');
-	//Move block in divece
+	let $tab = $('.js-card-tabs');
+
 	if ($(window).width() <= 768) {
-		// $cardTitle.insertBefore('.card__inner');
-		$cardInfo.insertAfter('.card__inner');
+		// $cardInfo.insertAfter('.card__inner');
 	}
 
 	if ($(window).width() > 480) {
-		$('.js-card-tabs').tabs();
+		$tab.tabs();
 	} else {
-		let open = false;
+		if ($tab.hasClass('ui-tabs')) {
+			$tab.tabs('destroy');
+		}
+
 		$('.js-card-tabs .tab__title').each(function() {
-			let id = $(this)
+			let titleId = $(this)
 				.find('a')
 				.attr('href')
 				.slice(1);
 
-			$(this)
+			let contentId = $(this)
 				.closest('.js-card-tabs')
 				.find('.tab__content')
-				.filter('#' + id)
-				.appendTo($(this));
+				.attr('id');
+
+			if (contentId === titleId) {
+			}
 		});
 
-		$('.js-card-tabs .tab__title a').on('click', function(e) {
-			let id = $(this)
-				.attr('href')
-				.slice(1);
+		$('.js-card-tabs')
+			.find('.tab__content')
+			.each(function() {
+				let contentId = $(this).attr('id');
+				let titleId;
 
-			$(this)
-				.closest('.js-card-tabs')
-				.find('.tab__content')
-				.not('#' + id)
-				.slideUp();
+				$(this)
+					.closest('.js-card-tabs')
+					.find('.tab__title a')
+					.each(function() {
+						titleId = $(this)
+							.attr('href')
+							.slice(1);
+					});
 
-			$(this)
-				.closest('.js-card-tabs')
-				.find('.tab__content')
-				.filter('#' + id)
-				.slideToggle();
+				console.log('--- contentId', contentId);
+				console.log('--- titleId', titleId);
 
-			e.preventDefault();
-		});
+				if (contentId === titleId) {
+				}
+			});
+
+		// $('.js-card-tabs .tab__title a').on('click', function(e) {
+		// 	let id = $(this)
+		// 		.attr('href')
+		// 		.slice(1);
+
+		// 	$(this)
+		// 		.closest('.js-card-tabs')
+		// 		.find('.tab__content')
+		// 		.not('#' + id)
+		// 		.slideUp();
+
+		// 	$(this)
+		// 		.closest('.js-card-tabs')
+		// 		.find('.tab__content')
+		// 		.filter('#' + id)
+		// 		.slideToggle();
+
+		// 	e.preventDefault();
+		// });
 	}
 })();

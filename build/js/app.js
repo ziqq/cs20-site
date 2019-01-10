@@ -1145,33 +1145,61 @@ $(function () {
  * @author Anton Ustinoff <a.a.ustinoff@gmail.com>
  */
 (function () {
-	// let $cardTitle = $('.card__title');
 	var $cardInfo = $('.card-info');
-	//Move block in divece
+	var $tab = $('.js-card-tabs');
+
 	if ($(window).width() <= 768) {
-		// $cardTitle.insertBefore('.card__inner');
-		$cardInfo.insertAfter('.card__inner');
+		// $cardInfo.insertAfter('.card__inner');
 	}
 
 	if ($(window).width() > 480) {
-		$('.js-card-tabs').tabs();
+		$tab.tabs();
 	} else {
-		var open = false;
+		if ($tab.hasClass('ui-tabs')) {
+			$tab.tabs('destroy');
+		}
+
 		$('.js-card-tabs .tab__title').each(function () {
-			var id = $(this).find('a').attr('href').slice(1);
+			var titleId = $(this).find('a').attr('href').slice(1);
 
-			$(this).closest('.js-card-tabs').find('.tab__content').filter('#' + id).appendTo($(this));
+			var contentId = $(this).closest('.js-card-tabs').find('.tab__content').attr('id');
+
+			if (contentId === titleId) {}
 		});
 
-		$('.js-card-tabs .tab__title a').on('click', function (e) {
-			var id = $(this).attr('href').slice(1);
+		$('.js-card-tabs').find('.tab__content').each(function () {
+			var contentId = $(this).attr('id');
+			var titleId = void 0;
 
-			$(this).closest('.js-card-tabs').find('.tab__content').not('#' + id).slideUp();
+			$(this).closest('.js-card-tabs').find('.tab__title a').each(function () {
+				titleId = $(this).attr('href').slice(1);
+			});
 
-			$(this).closest('.js-card-tabs').find('.tab__content').filter('#' + id).slideToggle();
+			console.log('--- contentId', contentId);
+			console.log('--- titleId', titleId);
 
-			e.preventDefault();
+			if (contentId === titleId) {}
 		});
+
+		// $('.js-card-tabs .tab__title a').on('click', function(e) {
+		// 	let id = $(this)
+		// 		.attr('href')
+		// 		.slice(1);
+
+		// 	$(this)
+		// 		.closest('.js-card-tabs')
+		// 		.find('.tab__content')
+		// 		.not('#' + id)
+		// 		.slideUp();
+
+		// 	$(this)
+		// 		.closest('.js-card-tabs')
+		// 		.find('.tab__content')
+		// 		.filter('#' + id)
+		// 		.slideToggle();
+
+		// 	e.preventDefault();
+		// });
 	}
 })();
 

@@ -139,7 +139,7 @@
 			transform-origin: bottom;
 			transform: scale(0);
 		}
-	&__btn {}//.hero-slider__btn
+
 	}//.hero-slider__slide
 
 	&__text {
@@ -167,12 +167,14 @@
 	}//.hero-slider__img
 
 	.cs-slider__arrow {
+		display: flex;
 		z-index: 20;
 
 		&--prev {
 			background-color: #fdfbfb;
 			left: 20px;
 		}
+
 		&--next {
 			background-color: #ebedee;
 			right: 20px;

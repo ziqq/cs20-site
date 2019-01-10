@@ -37,7 +37,7 @@ firstscreenSelectClass: sm-hide
 	<!-- end card__top-line -->
 
 	<!-- begin card__inner -->
-	<div class="container">
+	<div class="container p-20">
 		<div class="card__inner">
 			<!-- begin card__img -->
 			<div class="card__img">
@@ -63,6 +63,10 @@ firstscreenSelectClass: sm-hide
 			<!-- begin card__desc -->
 			<div class="card__desc">
 				<h1 class="card__title">{{ title }}</h1>
+				<a href="card-info.html" class="card__more-info xs-only js-card-info--show">
+					<i class="fal fa-list-ul"></i>
+					<span>Подробные характеристики</span>
+				</a>
 
 				<div class="card__sum">
 					<div class="card__price price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
@@ -80,13 +84,13 @@ firstscreenSelectClass: sm-hide
 				<div class="button-box">
 					<button class="btn btn-accent card__btn">Добавить в корзину</button>
 					<div class="card__shops">
-						Официальные магазины
+						Магазины
 						<a href="#modal-map" class="btn btn-link btn-link-gray--dark ml-5" data-fancybox>в вашем городе</a>
 					</div>
 				</div>
 
 				<!-- begin card-info -->
-					<div class="card-info">
+				<div class="card-info xs-hide">
 
 					<div class="tab">
 						<div class="tab__wrap js-card-tabs">
@@ -183,15 +187,41 @@ firstscreenSelectClass: sm-hide
 
 	<!-- begin cs-section advert -->
 	<section class="cs-section cs-section--advert">
-		<div class="container">
-
+		<div class="container xs-hide">
 			{% include "partials/_info-block.html" %}
+		</div>
 
+		<div class="container p-20 xs-only--flex">
+			<div class="info-block info-block--mobile">
+				<ul class="info-block__items">
+					<li class="info-block__item">
+						{{ mixin.icon('cs-delivery', 'info-block__icon info-block__icon--delivery') }}
+						<div class="info-block__text">
+							<span>Бесплатная доставка</span>  от 3000 рублей
+						</div>
+					</li>
+					<li class="info-block__item">
+						{{ mixin.icon('cs-garanty', 'info-block__icon') }}
+						<div class="info-block__text">
+							<span>Расширенная гарантия</span> до 2 лет
+						</div>
+					</li>
+					<li class="info-block__item">
+						{{ mixin.icon('cs-giftbox', 'info-block__icon') }}
+						<div class="info-block__text">
+							<span>Подарок каждому</span> прочные перчатки
+						</div>
+					</li>
+					<li class="info-block__item info-block__item--link">
+						Узнать про <a class="info-block__link" href="#"> систему скидок</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</section>
 	<!-- end cs-section advert -->
 
-	<!-- begin cs-section advert -->
+	<!-- begin cs-section similar -->
 	<section class="cs-section cs-section--similar">
 		<div class="container">
 			<div class="cs-section__inner">
@@ -203,7 +233,21 @@ firstscreenSelectClass: sm-hide
 			</div>
 		</div>
 	</section>
-	<!-- end cs-section advert -->
+	<!-- end cs-section similar -->
+
+	<!-- begin cs-section about -->
+	<div class="cs-section cs-section--about xs-only">
+		<div class="container p-20">
+			<div class="card__subtitle">О товаре</div>
+			<p>Стойка стабилизатора поперечной устойчивости служит для соединения стабилизатора с элементами подвески автомобиля  и необходима для максимального контроля управляемости и исключения возможности сильного бокового крена, который может возникнуть при повороте</p>
+
+			<a href="card-info.html" class="card__more-info xs-only js-card-info--show">
+				<i class="fal fa-list-ul"></i>
+				<span>Подробные характеристики</span>
+			</a>
+		</div>
+	</div>
+	<!-- end cs-section about -->
 
 </div>
 <!-- end home -->

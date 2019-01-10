@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Корзина</title>
+    <title>О товаре</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -24,7 +24,7 @@
     <link rel="stylesheet" media="all" href="css/app.css">
   </head>
   <body class="loading" itemscope="itemscope" itemtype="http://schema.org/WebPage">
-    <div class="page-wrapper is-auth page-cart">
+    <div class="page-wrapper is-auth ">
       <!-- begin mobile-nav -->
       <nav class="mobile-nav js-mobile-nav md-only">
         <svg class="icon icon-cs-close mobile-nav__close js-mobile-nav--close">
@@ -486,106 +486,76 @@
       </section>
       <!-- end firstscreen -->
       <!-- begin home -->
-      <div class="content-wrapper cart">
-        <!-- begin cart -->
-        <div class="container">
-          <div class="cart-box">
-            <div class="cart-box__header">
-              <h1 class="h1 cart-box__title">Укажите паспортные данные</h1>
-              <!-- begin breadcrumbs -->
-              <div class="breadcrumbs breadcrumbs--icon xs-hide">
-                <ul class="breadcrumbs__list">
-                  <li class="breadcrumbs__item">
-                    <a href="#" class="breadcrumbs__link">
-                      <svg class="icon icon-cs-cart ">
-                        <use xlink:href="img/sprite.svg#cs-cart"></use>
-                      </svg>
-                      <span>Корзина</span>
-                    </a>
+      <div class="content-wrapper card">
+        <!-- begin card-info -->
+        <div class="card-info">
+          <a href="card.html" class="card-info__back"><i class="fal fa-angle-left"></i></a>
+          <div class="card-info__item">
+            <div class="card-info__title">О товаре</div>
+            <div class="card-info__content">
+              <p>Стойка стабилизатора поперечной устойчивости служит для соединения стабилизатора с элементами подвески автомобиля и необходима для максимального контроля управляемости и исключения возможности сильного бокового крена, который может возникнуть при повороте.</p>
+            </div>
+          </div>
+          <div class="card-info__item">
+            <div class="card-info__title">Характеристики</div>
+            <div class="card-info__content">
+              <div class="product-info">
+                <ul class="product-info__list">
+                  <li class="product-info__item"> Код: <span>09421</span>
                   </li>
-                  <li class="breadcrumbs__item is-active">
-                    <a href="#" class="breadcrumbs__link">
-                      <svg class="icon icon-cs-user ">
-                        <use xlink:href="img/sprite.svg#cs-user"></use>
-                      </svg>
-                      <span>Авторизация</span>
-                    </a>
+                  <li class="product-info__item"> Серия: <span>Drive</span>
                   </li>
-                  <li class="breadcrumbs__item">
-                    <a href="#" class="breadcrumbs__link">
-                      <svg class="icon icon-cs-delivery ">
-                        <use xlink:href="img/sprite.svg#cs-delivery"></use>
-                      </svg>
-                      <span>Доставка</span>
-                    </a>
+                  <li class="product-info__item"> Артикул: <span>6001547138 ИУ</span>
                   </li>
-                  <li class="breadcrumbs__item">
-                    <a href="#" class="breadcrumbs__link">
-                      <svg class="icon icon-cs-wallet ">
-                        <use xlink:href="img/sprite.svg#cs-wallet"></use>
-                      </svg>
-                      <span>Оплата</span>
-                    </a>
+                  <li class="product-info__item"> Номер по автокаталогу: <span>6001547138</span>
+                  </li>
+                  <li class="product-info__item"> Материал: <span>Полиуретан</span>
+                  </li>
+                  <li class="product-info__item"> ШтрихКод: <span>4627130161683</span>
+                  </li>
+                  <li class="product-info__item"> Колличество деталей: <span>2 шт</span>
+                  </li>
+                  <li class="product-info__item"> Гарантия: <span>2 года</span>
+                  </li>
+                  <li class="product-info__item"> Вес: <span>0.082 кг.</span>
                   </li>
                 </ul>
               </div>
-              <!-- end breadcrumbs -->
             </div>
-            <div class="cart-box__content">
-              <div class="cart-box__subtitle">Вы выбрали <strong>ТК Деловые линии</strong>. Для отправки посылки данной службой необходимо указать паспортные данные.</div>
-              <div class="row">
-                <div class="col-7">
-                  <div class="row">
-                    <div class="col-4 col-sm-6 col-xs-12">
-                      <div class="pedit__item">
-                        <div class="pedit__title no-wrap">Серия паспорта:</div>
-                        <div class="pedit__field">
-                          <div class="cs-input ">
-                            <input type="number" class="cs-input__field ">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-4 col-sm-6 col-xs-12">
-                      <div class="pedit__item">
-                        <div class="pedit__title no-wrap">Номер паспорта: </div>
-                        <div class="pedit__field">
-                          <div class="cs-input ">
-                            <input type="number" class="cs-input__field ">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-4 col-sm-6 col-xs-12">
-                      <div class="pedit__item">
-                        <div class="pedit__title no-wrap">Дата выдачи: </div>
-                        <div class="pedit__field">
-                          <div class="cs-input ">
-                            <input type="number" class="cs-input__field ">
-                            <span class="cs-input__error">*Какая-то шибка дожна быть тут</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <p class="pedit__info-text">* - поля, отмеченные звёздочкой, обязательны для заполнения</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="cart-box__bottom">
-              <div class="button-box button-box--end">
-                <p>Нажимая на кнопку "Далее", я даю <strong>согласие на обработку персональных данных</strong></p>
-                <a href="cart-profile.html" class="btn btn-outline-gray-light cart-box__btn">Назад</a>
-                <a href="#" class="btn btn-accent cart-box__btn">Далее</a>
+          </div>
+          <div class="card-info__item">
+            <div class="card-info__title">Где применяется</div>
+            <div class="card-info__content">
+              <div class="product-info">
+                <ul class="product-info__list w3">
+                  <li class="product-info__item"> Largus </li>
+                  <li class="product-info__item"> Renault Logan </li>
+                  <li class="product-info__item"> Vesta </li>
+                  <li class="product-info__item"> X-RAY </li>
+                  <li class="product-info__item"> ВАЗ 2118 Калина </li>
+                  <li class="product-info__item"> ВАЗ 2101-07 </li>
+                  <li class="product-info__item"> ВАЗ 2108-99 </li>
+                  <li class="product-info__item"> ВАЗ 2110-12 </li>
+                  <li class="product-info__item"> ВАЗ 2113-15 </li>
+                  <li class="product-info__item"> ВАЗ 2121 НИВА </li>
+                  <li class="product-info__item"> ВАЗ 2123 Chevrolet Niva </li>
+                  <li class="product-info__item"> ВАЗ 2170 Прирора </li>
+                  <li class="product-info__item"> ВАЗ 2190 Гранта </li>
+                  <li class="product-info__item"> Волга </li>
+                  <li class="product-info__item"> ГАЗ </li>
+                  <li class="product-info__item"> ГАЗель </li>
+                  <li class="product-info__item"> УАЗ </li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
-        <!-- end cart -->
+          <div class="card-info__item">
+            <div class="card-info__title">Рекомендации</div>
+            <div class="card-info__content">
+              <p>Стойка стабилизатора поперечной устойчивости служит для соединения стабилизатора с элементами подвески автомобиля и необходима для максимального контроля управляемости и исключения возможности сильного бокового крена, который может возникнуть при повороте.</p>
+            </div>
+          </div>
+        </div><!-- end card-info -->
       </div>
       <!-- end home -->
       <!-- begin footer -->

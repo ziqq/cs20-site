@@ -1,0 +1,96 @@
+---
+title: О товаре
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin home -->
+<div class="content-wrapper card">
+
+	<!-- begin card-info -->
+	<div class="card-info">
+		<a href="card.html" class="card-info__back"><i class="fal fa-angle-left"></i></a>
+
+		<div class="card-info__item">
+			<div class="card-info__title">О товаре</div>
+			<div class="card-info__content">
+				<p>Стойка стабилизатора поперечной устойчивости служит для соединения стабилизатора с элементами подвески автомобиля  и необходима для максимального контроля управляемости и исключения возможности сильного бокового крена, который может возникнуть при повороте.</p>
+			</div>
+		</div>
+
+		<div class="card-info__item">
+			<div class="card-info__title">Характеристики</div>
+			<div class="card-info__content">
+				<div class="product-info">
+					<ul class="product-info__list">
+						<li class="product-info__item">
+							Код:
+							<span>09421</span>
+						</li>
+						<li class="product-info__item">
+							Серия:
+							<span>Drive</span>
+						</li>
+						<li class="product-info__item">
+							Артикул:
+							<span>6001547138 ИУ</span>
+						</li>
+						<li class="product-info__item">
+							Номер по автокаталогу:
+							<span>6001547138</span>
+						</li>
+						<li class="product-info__item">
+							Материал:
+							<span>Полиуретан</span>
+						</li>
+						<li class="product-info__item">
+							ШтрихКод:
+							<span>4627130161683</span>
+						</li>
+						<li class="product-info__item">
+							Колличество деталей:
+							<span>2 шт</span>
+						</li>
+						<li class="product-info__item">
+							Гарантия:
+							<span>2 года</span>
+						</li>
+						<li class="product-info__item">
+							Вес:
+							<span>0.082 кг.</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="card-info__item">
+			<div class="card-info__title">Где применяется</div>
+			<div class="card-info__content">
+				<div class="product-info">
+					<ul class="product-info__list w3">
+						{% import "data/data.html" as cars %}
+						{% for item in cars.cars %}
+						<li class="product-info__item">
+							{{ item.title }}
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="card-info__item">
+			<div class="card-info__title">Рекомендации</div>
+			<div class="card-info__content">
+				<p>Стойка стабилизатора поперечной устойчивости служит для соединения стабилизатора с элементами подвески автомобиля  и необходима для максимального контроля управляемости и исключения возможности сильного бокового крена, который может возникнуть при повороте.</p>
+			</div>
+		</div>
+
+	</div><!-- end card-info -->
+
+</div>
+<!-- end home -->
+
+{% endblock %}
