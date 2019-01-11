@@ -23,6 +23,7 @@ var Base = {
 		this.goTop();
 		this.goTo();
 		this.relativeBtn();
+		this.moveBlocks();
 
 		$('body').removeClass('loading');
 
@@ -323,6 +324,43 @@ var Base = {
 				}
 			});
 		}
+	},
+	moveBlocks: function moveBlocks() {
+		var $imageBlock = $('.js-block-image');
+
+		function imageBlockMove() {
+			if ($imageBlock.length) {
+				$imageBlock.each(function () {
+					var $image = $(this).find('.block-image__img');
+					var $desc = $(this).find('.block-image__desc');
+					var $title = $(this).find('.block-image__title');
+					var $text = $(this).find('.block-image__text');
+					var $subTitle = $(this).find('.block-image__subtitle');
+					var $subText = $(this).find('.block-image__subtext');
+
+					if ($(window).width() <= 480) {
+						$title.insertBefore($image);
+						$text.insertBefore($image);
+					} else {
+						$title.appendTo($desc);
+						$text.appendTo($desc);
+					}
+
+					if ($(window).width() <= 768) {
+						$subTitle.appendTo($(this));
+						$subText.appendTo($(this));
+					} else {
+						$subTitle.appendTo($desc);
+						$subText.appendTo($desc);
+					}
+				});
+			}
+		}
+		imageBlockMove();
+
+		$(window).on('resize', function () {
+			imageBlockMove();
+		});
 	}
 };
 
@@ -1145,12 +1183,7 @@ $(function () {
  * @author Anton Ustinoff <a.a.ustinoff@gmail.com>
  */
 (function () {
-	var $cardInfo = $('.card-info');
 	var $tab = $('.js-card-tabs');
-
-	if ($(window).width() <= 768) {
-		// $cardInfo.insertAfter('.card__inner');
-	}
 
 	if ($(window).width() > 480) {
 		$tab.tabs();
@@ -1180,26 +1213,6 @@ $(function () {
 
 			if (contentId === titleId) {}
 		});
-
-		// $('.js-card-tabs .tab__title a').on('click', function(e) {
-		// 	let id = $(this)
-		// 		.attr('href')
-		// 		.slice(1);
-
-		// 	$(this)
-		// 		.closest('.js-card-tabs')
-		// 		.find('.tab__content')
-		// 		.not('#' + id)
-		// 		.slideUp();
-
-		// 	$(this)
-		// 		.closest('.js-card-tabs')
-		// 		.find('.tab__content')
-		// 		.filter('#' + id)
-		// 		.slideToggle();
-
-		// 	e.preventDefault();
-		// });
 	}
 })();
 

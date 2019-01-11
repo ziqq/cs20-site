@@ -25,10 +25,10 @@ gulp.task('copy:rootfiles', function() {
 gulp.task('copy:img', function() {
 	return gulp
 		.src([
-			config.src.img + '/**/*.{jpg,png,jpeg,svg,gif}',
+			config.src.img + '/**/*.{jpg,png,jpeg,svg,gif,7z,rar}',
 			'!' + config.src.img + '/svgo/**/*.*'
 		])
-		.pipe(newer(config.src.img + '/**/*.{jpg,png,jpeg,svg,gif}'))
+		.pipe(newer(config.src.img + '/**/*.{jpg,png,jpeg,svg,gif,7z,rar}'))
 		.pipe(
 			imagemin({
 				optimizationLevel: 3

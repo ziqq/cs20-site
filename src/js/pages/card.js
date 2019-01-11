@@ -4,12 +4,7 @@
  * @author Anton Ustinoff <a.a.ustinoff@gmail.com>
  */
 (function() {
-	let $cardInfo = $('.card-info');
 	let $tab = $('.js-card-tabs');
-
-	if ($(window).width() <= 768) {
-		// $cardInfo.insertAfter('.card__inner');
-	}
 
 	if ($(window).width() > 480) {
 		$tab.tabs();
@@ -54,25 +49,5 @@
 				if (contentId === titleId) {
 				}
 			});
-
-		// $('.js-card-tabs .tab__title a').on('click', function(e) {
-		// 	let id = $(this)
-		// 		.attr('href')
-		// 		.slice(1);
-
-		// 	$(this)
-		// 		.closest('.js-card-tabs')
-		// 		.find('.tab__content')
-		// 		.not('#' + id)
-		// 		.slideUp();
-
-		// 	$(this)
-		// 		.closest('.js-card-tabs')
-		// 		.find('.tab__content')
-		// 		.filter('#' + id)
-		// 		.slideToggle();
-
-		// 	e.preventDefault();
-		// });
 	}
 })();

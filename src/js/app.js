@@ -19,6 +19,7 @@ const Base = {
 		this.goTop();
 		this.goTo();
 		this.relativeBtn();
+		this.moveBlocks();
 
 		$('body').removeClass('loading');
 
@@ -330,6 +331,43 @@ const Base = {
 				}
 			});
 		}
+	},
+	moveBlocks: function() {
+		let $imageBlock = $('.js-block-image');
+
+		function imageBlockMove() {
+			if ($imageBlock.length) {
+				$imageBlock.each(function() {
+					let $image = $(this).find('.block-image__img');
+					let $desc = $(this).find('.block-image__desc');
+					let $title = $(this).find('.block-image__title');
+					let $text = $(this).find('.block-image__text');
+					let $subTitle = $(this).find('.block-image__subtitle');
+					let $subText = $(this).find('.block-image__subtext');
+
+					if ($(window).width() <= 480) {
+						$title.insertBefore($image);
+						$text.insertBefore($image);
+					} else {
+						$title.appendTo($desc);
+						$text.appendTo($desc);
+					}
+
+					if ($(window).width() <= 768) {
+						$subTitle.appendTo($(this));
+						$subText.appendTo($(this));
+					} else {
+						$subTitle.appendTo($desc);
+						$subText.appendTo($desc);
+					}
+				});
+			}
+		}
+		imageBlockMove();
+
+		$(window).on('resize', function() {
+			imageBlockMove();
+		});
 	}
 };
 

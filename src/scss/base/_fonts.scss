@@ -1,8 +1,3 @@
-//Fonts
-
-//Font-Family FontAwesome
-@include font(fontawesome, FontAwesome, fontawesome-webfont);
-
 //Font-Family roboto
 @include font(roboto-700, Roboto, robotoblack);
 @include font(roboto-600c, Roboto, robotocondensedbold);
@@ -14,3 +9,6 @@
 @include font(roboto-300, Roboto, robotolight);
 @include font(roboto-300i, Roboto, roboto-lightitalic);
 @include font(roboto-300c, Roboto, robotocondensedlight);
+
+
+@include font(cormorant-400, cormorant, cormorant-regular);

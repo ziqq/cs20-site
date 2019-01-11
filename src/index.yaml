@@ -155,6 +155,11 @@ PageList:
   ready: 50
   desc : О компании
 
+  #about
+- file: tehnology.html
+  ready: 50
+  desc : Технологии
+
   #garanty
 - file: garanty.html
   ready: 50
