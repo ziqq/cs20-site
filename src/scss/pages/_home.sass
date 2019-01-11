@@ -308,8 +308,48 @@
 
 	&--mobile
 		.info-block
+			&__items
+				+r(480)
+					margin: 0
+					padding: 20px 15px
+					margin-left: 0
+					border-radius: $border-radius
+					background-color: #eee
+					justify-content: flex-start
+
+			&__text
+				span
+					font-family: $f-medium
+
+			&__item
+				+r(480)
+					width: 100%
+					margin: 0 0 20px 0
+					font-family: $f-light
+					font-size: 14px
+					color: $color-text
+					justify-content: flex-start
+					align-items: center
+
+					&--link
+						margin-bottom: 0
+						margin-top: 10px
+						font-family: $f
+						color: $color-text--light
+
+			&__link
+				+r(480)
+					margin-left: 5px
+					text-decoration: underline
+					color: $color-text--light
+
 			&__icon
-				width: 32px
+				+r(480)
+					width: 32px
+					height: 32px
+					&--delivery
+						width: 36px
+						margin-right: 16px
 //.info-block
 
 //.baner

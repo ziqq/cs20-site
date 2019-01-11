@@ -86,10 +86,12 @@ firstscreenSelectClass: sm-hide
 
 	<!-- begin cs-section advert -->
 	<section class="cs-section cs-section--advert">
-		<div class="container">
-
+		<div class="container xs-hide">
 			{% include "partials/_info-block.html" %}
+		</div>
 
+		<div class="container xs-only--flex">
+			{% include "partials/_info-block-mobile.html" %}
 		</div>
 	</section>
 	<!-- end cs-section advert -->

@@ -334,6 +334,7 @@ const Base = {
 	},
 	moveBlocks: function() {
 		let $imageBlock = $('.js-block-image');
+		let $quote = $('.js-quote');
 
 		function imageBlockMove() {
 			if ($imageBlock.length) {
@@ -365,8 +366,20 @@ const Base = {
 		}
 		imageBlockMove();
 
+		function removeBr() {
+			if ($(window).width() <= 480 && $quote.length) {
+				$quote.each(function() {
+					$(this)
+						.find('br')
+						.remove();
+				});
+			}
+		}
+		removeBr();
+
 		$(window).on('resize', function() {
 			imageBlockMove();
+			removeBr();
 		});
 	}
 };

@@ -22,7 +22,6 @@
 				padding: 0 30px;
 
 				p {
-					font-size: 14px;
 					color: $color-text--light;
 				}
 			}
@@ -132,6 +131,14 @@
 		@include r-max(xs) {
 			margin-left: 180px;
 			font-size: 14px;
+		}
+
+		@include r-max(i7) {
+			margin-left: 160px;
+		}
+
+		@include r-max(i5) {
+			margin-left: 130px;
 		}
 
 		&::before {
