@@ -4,50 +4,52 @@
 	<!-- end search -->
 	<ul class="mobile-nav__list">
 		<li class="mobile-nav__item">
-			<a href="#" class="mobile-nav__link mobile-nav__link--home">Главная</a>
+			<a class="mobile-nav__link mobile-nav__link--home" href="#">Главная</a>
 		</li>
 		<li class="mobile-nav__item">
-			<a href="#" class="mobile-nav__link mobile-nav__link--catalog js-mobile-nav-sub--open">Каталог</a>
+			<a class="mobile-nav__link mobile-nav__link--catalog js-mobile-nav-sub--open" href="#">Каталог</a>
 			<ul class="mobile-nav--sub">
 				<li class="mobile-nav__item">
-					<a href="#" class="mobile-nav__link mobile-nav__link--back js-mobile-nav-sub--close">Назад</a>
+					<a class="mobile-nav__link mobile-nav__link--back js-mobile-nav-sub--close" href="#">Назад</a>
 				</li>
 				{% import "data/data.html" as submenu %}
 				{% for item in submenu.filterType %}
 				<li class="mobile-nav__item">
-					<a href="#" class="mobile-nav__link">{{ item.title }}</a>
+					<a class="mobile-nav__link" href="#">{{ item.title }}</a>
 				</li>
 				{% endfor %}
 			</ul>
 		</li>
 		<li class="mobile-nav__item">
-			<a href="#" class="mobile-nav__link mobile-nav__link--pay">Оплата</a>
+			<a class="mobile-nav__link mobile-nav__link--pay" href="#">Оплата</a>
 		</li>
 		<li class="mobile-nav__item">
-			<a href="#" class="mobile-nav__link mobile-nav__link--delivery">Доставка</a>
+			<a class="mobile-nav__link mobile-nav__link--delivery" href="#">Доставка</a>
 		</li>
+
 		<li class="mobile-nav__item mobile-nav__item--not-auth cs-dropdown js-dropdown">
 			<span class="mobile-nav__link mobile-nav__link--lk">Личный кабинет</span>
 			<ul class="cs-dropdown__list">
 				<li class="mobile-nav__item">
-					<a href="#enter" class="mobile-nav__link" data-fancybox>Вход</a>
+					<a class="mobile-nav__link" data-fancybox href="#enter">Вход</a>
 				</li>
 				<li class="mobile-nav__item">
-					<a href="#register" class="mobile-nav__link" data-fancybox>Регистрация</a>
+					<a class="mobile-nav__link" data-fancybox href="#register">Регистрация</a>
 				</li>
 			</ul>
 		</li>
+
 		<li class="mobile-nav__item mobile-nav__item--auth cs-dropdown js-dropdown">
-			<a href="#" class="mobile-nav__link mobile-nav__link--lk">Валерий Иванов</a>
+			<a class="mobile-nav__link mobile-nav__link--lk" href="#">Валерий Иванов</a>
 			<ul class="cs-dropdown__list">
 				<li class="mobile-nav__item">
-					<a href="lk-user.html" class="mobile-nav__link">Мои заказы</a>
+					<a class="mobile-nav__link" href="lk-user.html">Мои заказы</a>
 				</li>
 				<li class="mobile-nav__item">
-					<a href="lk-order.html" class="mobile-nav__link">Пресональные скидки</a>
+					<a class="mobile-nav__link" href="lk-order.html">Пресональные скидки</a>
 				</li>
 				<li class="mobile-nav__item">
-					<a href="lk-sale.html" class="mobile-nav__link">Выход</a>
+					<a class="mobile-nav__link" href="lk-sale.html">Выход</a>
 				</li>
 			</ul>
 		</li>
@@ -57,14 +59,21 @@
 		{% import "data/data.html" as manu %}
 		{% for item in manu.menuMobileBottom %}
 		<li class="mobile-nav__item {{ item.class }}">
-			<a href="#" class="mobile-nav__link mobile-nav__link--{{ item.icon }}">{{ item.title }}</a>
+			<a class="mobile-nav__link" href="{{ item.link }}">
+				{{ item.title }}
+			</a>
 		</li>
 		{% endfor %}
+		<li class="mobile-nav__item">
+			<a class="mobile-nav__link" href="img/general/catalog.pdf" target="blank">
+				Каталог PDF
+			</a>
+		</li>
 	</ul>
 
 	<!-- begin phone -->
 	<div class="phone phone--icon">
-		<a href="#" class="phone__link" itemprop="telephone">8 800 555 25 40</a>
+		<a class="phone__link" href="#" itemprop="telephone">8 800 555 25 40</a>
 	</div>
 	<!-- end phone -->
 

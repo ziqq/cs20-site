@@ -32,9 +32,16 @@
 				<ul class="footer__list">
 					{% for item in footerMenu.footerListTwo %}
 						<li>
-							<a href="{{ item.link }}.html">{{ item.text }}</a>
+							<a href="{{ item.link }}">
+								{{ item.text }}
+							</a>
 						</li>
 					{% endfor %}
+					<li>
+						<a href="img/general/catalog.pdf" target="blank">
+							Каталог PDF
+						</a>
+					</li>
 				</ul>
 			</div>
 

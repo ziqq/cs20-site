@@ -1,6 +1,5 @@
 ---
-title: Карта
-firstscreenSelectClass: sm-hide
+title: Магазины
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -19,7 +18,7 @@ firstscreenSelectClass: sm-hide
 					</a>
 				</li>
 				<li class="breadcrumbs__item">
-					<span class="breadcrumbs__title" itemprop="title">Магазины</span>
+					<span class="breadcrumbs__title" itemprop="title">{{ title }}</span>
 				</li>
 			</ul>
 		</div>
@@ -29,9 +28,8 @@ firstscreenSelectClass: sm-hide
 	<div class="container">
 
 		<div class="map__inner">
-			<div class="map__left map__left--move js-map-filter">
+			<div class="map__left js-map-filter">
 				<div class="map__title">Найти ближайший магазин</div>
-				{{ mixin.icon('cs-close', 'map__close js-map--close xs-only') }}
 
 				<div class="row js-select--box">
 					<div class="col-4 col-md-12">
@@ -109,11 +107,6 @@ firstscreenSelectClass: sm-hide
 		</div>
 
 	</div>
-
-	<button class="btn btn--filter sm-only--flex js-map--open">
-		Найти магазин
-	</button>
-
 </div>
 <!-- end map -->
 

@@ -25,10 +25,10 @@ gulp.task('copy:rootfiles', function() {
 gulp.task('copy:img', function() {
 	return gulp
 		.src([
-			config.src.img + '/**/*.{jpg,png,jpeg,svg,gif,7z,rar}',
+			config.src.img + '/**/*.{jpg,png,jpeg,svg,gif,7z,rar,pdf}',
 			'!' + config.src.img + '/svgo/**/*.*'
 		])
-		.pipe(newer(config.src.img + '/**/*.{jpg,png,jpeg,svg,gif,7z,rar}'))
+		.pipe(newer(config.src.img + '/**/*.{jpg,png,jpeg,svg,gif,7z,rar,pdf}'))
 		.pipe(
 			imagemin({
 				optimizationLevel: 3
@@ -40,7 +40,7 @@ gulp.task('copy:img', function() {
 gulp.task('copy:img:production', function() {
 	return gulp
 		.src([
-			config.src.img + '/**/*.{jpg,png,jpeg,svg,gif}',
+			config.src.img + '/**/*.{jpg,png,jpeg,svg,gif,7z,rar,pdf}',
 			'!' + config.src.img + '/svgo/**/*.*'
 		])
 		.pipe(
