@@ -12,7 +12,7 @@
 		top: auto;
 		bottom: 0;
 		left: 0;
-		background: #FFFFFF;
+		background-color: #fff;
 		width: 100%;
 		min-height: 320px;
 		border-radius: 4px;
@@ -20,6 +20,7 @@
 		transform-origin: center;
 		transition: 0.3s cubic-bezier(0.28, 0.55, 0.385, 1.65);
 		overflow: hidden;
+		@include cover;
 
 		&.is-active {
 			.hero-slider {
@@ -49,7 +50,10 @@
 		}
 
 		&:not(:first-child) {
+			background-image: none !important;
+
 			.hero-slider {
+
 				&__slide_inner {
 					opacity: 0;
 				}
