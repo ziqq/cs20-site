@@ -123,6 +123,7 @@
 		&_right {
 			margin-left: auto;
 			@include flexCenter;
+			flex-shrink: 0;
 
 			@include r-max(xs) {
 				width: 100%;
