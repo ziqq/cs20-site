@@ -1,0 +1,66 @@
+<!-- begin cart__left -->
+<div class="cart__left">
+	<div class="product-item__wrap loyout-column cart__items js-cart-items">
+		{% import "data/data-product.html" as productItem %}
+		{% for product in productItem.productSimilar %}
+		<a href="#" class="product-item product-item--wide">
+
+			<div class="product-item__img">
+				<img src="img/products/product/{{ product.img }}.jpg"  alt="{{ product.title }}" />
+			</div>
+
+			<div class="product-item__desc">
+				<h4 class="product-item__title" itemprop="name">{{ product.title }}</h4>
+
+				<div class="product-item__price price">
+					<span class="price__cost">
+						{{ product.price }}<i class="fa fa-rub"></i>
+					</span>
+				</div>
+
+				<div class="product-item__counter counter">
+					<span class="counter__control counter__control--minus js-counter--minus">—</span>
+					<input type="text" class="counter__field" value="1">
+					<span class="counter__control counter__control--plus js-counter--plus">+</span>
+				</div>
+
+				<button class="product-item__dell" title="Убрать из корзины">
+					{{mixin.icon('cs-close', 'xs-hide')}}
+					{{mixin.icon('cs-basket', 'xs-only')}}
+				</button>
+			</div>
+		</a>
+		{% endfor %}
+	</div>
+</div>
+<!-- end cart__left -->
+<!-- begin cart__right -->
+<div class="cart__right js-cart-sticky">
+	<div class="cart__sum js-cart-sum">
+		<ul class="list list--dot">
+			<li class="list__item">
+				<span>Сумма заказа: </span>
+				<span>4 567 р.</span>
+			</li>
+			<li class="list__item list__item--light">
+				<span>Скидка: </span>
+				<span>229 р.</span>
+			</li>
+			<li class="list__item list__item--bold">
+				<span>Итого: </span>
+				<span>4 338 р.</span>
+			</li>
+		</ul>
+		<div class="button-box button-box--column">
+			<!-- <div class="input-group">
+				<span class="input-group__info">Персональные скидки с купонами не суммируются</span>
+				<div class="input-group__field">
+					<input type="text" placeholder="Купон">
+					<button class="btn btn-gray-light input-group__btn">Применить</button>
+				</div>
+			</div> -->
+
+			<a href="#enter" class="btn btn-accent" data-fancybox>Оформить заказ</a>
+		</div>
+	</div>
+</div><!-- end cart__right -->

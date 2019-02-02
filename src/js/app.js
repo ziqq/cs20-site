@@ -4,6 +4,19 @@
  * @author Anton Ustinoff <a.a.ustinoff@gmail.com>
  */
 
+$(function() {
+	Base.init();
+	Cart.init();
+
+	//=include components/Select.js
+	//=include components/Dropdown.js
+	//=include components/Search.js
+	//=include components/Slider.js
+	//=include components/Stories.js
+	//=include modules/Menu.js
+	//=include partials/cs-scripts.js
+});
+
 const Base = {
 	init: function() {
 		this.scrollBar();
@@ -383,18 +396,6 @@ const Base = {
 		});
 	}
 };
-
-$(function() {
-	Base.init();
-
-	//=include components/Select.js
-	//=include components/Dropdown.js
-	//=include components/Search.js
-	//=include components/Slider.js
-	//=include components/Stories.js
-	//=include modules/Menu.js
-	//=include partials/cs-scripts.js
-});
 
 //=include pages/catalog.js
 //=include pages/card.js

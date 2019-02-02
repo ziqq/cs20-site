@@ -1,0 +1,56 @@
+
+<div class="cart-box">
+	<div class="cart-box__header">
+		<h1 class="h1 cart-box__title">Добавление нового профиля</h1>
+	</div>
+	<div class="cart-box__content">
+		<div class="row">
+			<div class="col-7 col-md-12">
+				<div class="row row--end">
+					<div class="col-4 col-sm-6 col-xs-12">
+						<div class="pedit__item">
+							<div class="pedit__title no-wrap">Укажите ваше имя <span class="xs-only">и номер телефона</span>:<i>*</i></div>
+							<div class="pedit__field">
+								{{item.input(type='text', placeholder='Имя')}}
+							</div>
+						</div>
+					</div>
+
+					<div class="col-4 col-sm-6 col-xs-12">
+						<div class="pedit__item">
+							<div class="pedit__field">
+								{{item.input(type='text', placeholder='Фамилия')}}
+							</div>
+						</div>
+					</div>
+
+					<div class="col-4 col-sm-6 col-xs-12">
+						<div class="pedit__item">
+							<div class="pedit__field">
+								{{item.input(type='text', placeholder='Отчество (если есть)')}}
+							</div>
+						</div>
+					</div>
+
+					<div class="col-4 col-sm-6 col-xs-12">
+						<div class="pedit__item">
+							<div class="pedit__title no-wrap">Укажите номер вашего телефона:<i>*</i></div>
+							<div class="pedit__field">
+								{{item.input(type='tel', placeholder='+7 (927) 107-11-39 ', inputClass='js-phone-mask')}}
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<p class="pedit__info-text">* - поля, отмеченные звёздочкой, обязательны для заполнения</p>
+			</div>
+		</div>
+	</div>
+	<div class="cart-box__bottom">
+		<div class="button-box button-box--end">
+			<p>Нажимая на кнопку "Далее", я даю <strong>согласие на обработку персональных данных</strong></p>
+			<button class="btn btn-outline-gray-light cart-box__btn" onclick="Cart.nextPage(0);">Назад</button>
+			<button class="btn btn-accent cart-box__btn" onclick="Cart.nextPage(2);">Далее</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<div class="cart-box">
+	<div class="cart-box__header">
+		<h1 class="h1 cart-box__title">Оплата</h1>
+	</div>
+	<div class="cart-box__content">
+
+		<div class="delivery-item__wrap">
+			{% import "data/data-lk.html" as pay %}
+			{% for item in pay.payItem %}
+			<div class="delivery-item {% if item.class %} delivery-item--{{ item.class }} {% endif %} cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox" data-info-delivery="{{ item.data }}">
+				<div class="delivery-item__info js-tooltip" {% if item.desc %} title="{{ item.desc }}" {% endif %}>
+					<i class="fal fa-info-circle"></i>
+				</div>
+				<img class="delivery-item__img" src="img/general/payment/logos/{{ item.icon }}.png" alt="{{ item.title }}">
+				<h5 class="delivery-item__title">{{ item.title }}</h5>
+			</div>
+			{% endfor %}
+		</div>
+
+	</div>
+	<div class="cart-box__bottom">
+		<div class="button-box button-box--end">
+			<button class="btn btn-outline-gray-light cart-box__btn" onclick="Cart.nextPage(2);">Назад</button>
+			<button class="btn btn-accent cart-box__btn" onclick="Cart.nextPage(0);">Далее</button>
+		</div>
+	</div>
+</div>

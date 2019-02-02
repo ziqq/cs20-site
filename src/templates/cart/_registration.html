@@ -1,0 +1,71 @@
+<div class="cart-box">
+	<div class="cart-box__header">
+		<h1 class="h1 cart-box__title">Регистрация</h1>
+	</div>
+	<div class="cart-box__content">
+		<div class="row">
+			<div class="col-6 col-sm-8 col-xs-12">
+				<div class="row block-validate is-invalid">
+					<div class="col-6 col-xs-12">
+						<div class="pedit__item">
+							<div class="pedit__title">Логин:<i>*</i></div>
+							<div class="pedit__field">
+								<div class="cs-input">
+									<input type="email" class="cs-input__field">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-6 col-xs-12">
+						<div class="pedit__item">
+							<div class="pedit__title">E-mail:<i>*</i></div>
+							<div class="pedit__field">
+								<div class="cs-input is-invalid">
+									<input type="email" class="cs-input__field">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="block-validate__message">Пользователь с таким адресом уже зарегистрирован. <a href="enter.html">Войти в аккаунт?</a></div>
+
+				</div>
+
+				<div class="row block-validate block-validate--password is-invalid">
+					<div class="col-6 col-xs-12">
+						<div class="pedit__item">
+							<div class="pedit__title no-wrap">Пароль: <i>*</i></div>
+							<div class="pedit__field">
+								<div class="cs-input ">
+									<input type="password" class="cs-input__field">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-6 col-xs-12">
+						<div class="pedit__item">
+							<div class="pedit__title no-wrap">Подтверждение пароля:<i>*</i></div>
+							<div class="pedit__field">
+								<div class="cs-input is-invalid">
+									<input type="password" class="cs-input__field">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="block-validate__message">Пароли не совпадают</div>
+				</div>
+
+				<p class="pedit__info-text">* - поля, отмеченные звёздочкой, обязательны для заполнения</p>
+			</div>
+		</div>
+	</div>
+	<div class="cart-box__bottom cart-box__bottom--column">
+		<div class="button-box button-box--end">
+			<button class="btn btn-outline-gray-light cart-box__btn" onclick="Cart.nextPage(1);">Назад</button>
+			<button class="btn btn-accent cart-box__btn" onclick="Cart.nextPage(2);">Далее</button>
+		</div>
+	</div>
+</div>

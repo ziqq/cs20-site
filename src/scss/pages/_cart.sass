@@ -5,6 +5,26 @@
 	+r(768)
 		background-color: #fff
 
+	//.cart__tabs
+	&__tabs
+		.breadcrumbs
+			padding: 30px 0
+			&__item
+				&:firs-child
+					.breadcrumbs__link
+						padding-left: 0
+				&:last-child
+					.breadcrumbs__link
+						padding-right: 0
+			&__link
+				&:hover
+					color: $gray--darken
+					.icon
+						fill: $gray--darken
+		.cart-box
+			width: 100%
+			margin-top: 0
+
 	//.cart__wrap
 	&__wrap
 		padding-bottom: 50px
@@ -348,6 +368,7 @@
 		font-weight: 300
 		font-size: 30px
 		color: $color-text
+		+nosel
 		flex-shrink: 0
 
 		+r(1024)

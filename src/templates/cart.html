@@ -9,91 +9,66 @@ title: Корзина
 <!-- begin cart -->
 <div class="content-wrapper cart">
 
-	<!-- begin breadcrumbs -->
 	<div class="container">
-		<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
-			<ul class="breadcrumbs__list">
-				<li class="breadcrumbs__item">
-					<a href="#" class="breadcrumbs__link" itemprop="url">
-						<span class="breadcrumbs__title" itemprop="title">Главная</span>
-					</a>
-				</li>
-				<li class="breadcrumbs__item">
-					<span class="breadcrumbs__title" itemprop="title">Корзина</span>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<!-- end breadcrumbs -->
-
-	<div class="container">
-		<div class="cart__inner">
-			<!-- begin cart__left -->
-			<div class="cart__left">
-				<div class="product-item__wrap loyout-column cart__items js-cart-items">
-					{% import "data/data-product.html" as productItem %}
-					{% for product in productItem.productSimilar %}
-					<a href="#" class="product-item product-item--wide">
-
-						<div class="product-item__img">
-							<img src="img/products/product/{{ product.img }}.jpg"  alt="{{ product.title }}" />
-						</div>
-
-						<div class="product-item__desc">
-							<h4 class="product-item__title" itemprop="name">{{ product.title }}</h4>
-
-							<div class="product-item__price price">
-								<span class="price__cost">
-									{{ product.price }}<i class="fa fa-rub"></i>
-								</span>
-							</div>
-
-							<div class="product-item__counter counter">
-								<span class="counter__control counter__control--minus js-counter--minus">—</span>
-								<input type="text" class="counter__field" value="1">
-								<span class="counter__control counter__control--plus js-counter--plus">+</span>
-							</div>
-
-							<button class="product-item__dell" title="Убрать из корзины">
-								{{mixin.icon('cs-close', 'xs-hide')}}
-								{{mixin.icon('cs-basket', 'xs-only')}}
-							</button>
-						</div>
-					</a>
-					{% endfor %}
-				</div>
+		<div class="cart__tabs" id="cart-tabs">
+			<div class="cart__breadcrumbs breadcrumbs breadcrumbs--icon">
+				<ul class="breadcrumbs__list">
+					<li class="breadcrumbs__item">
+						<a href="#cart-page-1" class="breadcrumbs__link">
+							{{ mixin.icon('cs-cart') }}
+							<span>Корзина</span>
+						</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<a href="#cart-page-2" class="breadcrumbs__link">
+							{{ mixin.icon('cs-user') }}
+							<span>Авторизация</span>
+						</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<a href="#cart-page-3" class="breadcrumbs__link">
+							{{ mixin.icon('cs-delivery') }}
+							<span>Доставка</span>
+						</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<a href="#cart-page-4" class="breadcrumbs__link">
+							{{ mixin.icon('cs-wallet') }}
+							<span>Оплата</span>
+						</a>
+					</li>
+				</ul>
 			</div>
-			<!-- end cart__left -->
-			<!-- begin cart__right -->
-			<div class="cart__right js-cart-sticky">
-				<div class="cart__sum js-cart-sum">
-					<ul class="list list--dot">
-						<li class="list__item">
-							<span>Сумма заказа: </span>
-							<span>4 567 р.</span>
-						</li>
-						<li class="list__item list__item--light">
-							<span>Скидка: </span>
-							<span>229 р.</span>
-						</li>
-						<li class="list__item list__item--bold">
-							<span>Итого: </span>
-							<span>4 338 р.</span>
-						</li>
-					</ul>
-					<div class="button-box button-box--column">
-						<!-- <div class="input-group">
-							<span class="input-group__info">Персональные скидки с купонами не суммируются</span>
-							<div class="input-group__field">
-								<input type="text" placeholder="Купон">
-								<button class="btn btn-gray-light input-group__btn">Применить</button>
-							</div>
-						</div> -->
 
-						<a href="#enter" class="btn btn-accent" data-fancybox>Оформить заказ</a>
-					</div>
-				</div>
-			</div><!-- end cart__right -->
+			<div class="cart__inner" id="cart-page-1">
+				{% include "cart/_order.html" %}
+			</div>
+
+			<div class="cart__content" id="cart-page-2">
+				{% include "cart/_registration.html" %}
+
+				{% include "cart/_add-profile-create.html" %}
+
+				{% include "cart/_add-profile.html" %}
+
+				{% include "cart/_add-profile-1.html" %}
+
+				{% include "cart/_add-profile-2.html" %}
+
+				{% include "cart/_info.html" %}
+			</div>
+
+			<div class="cart__content" id="cart-page-3">
+				{% include "cart/_delivery-choice.html" %}
+
+				{% include "cart/_delivery-pickup.html" %}
+
+				{% include "cart/_delivery-place.html" %}
+			</div>
+
+			<div class="cart__content" id="cart-page-4">
+				{% include "cart/_pay.html" %}
+			</div>
 		</div>
 	</div>
 

@@ -1,0 +1,75 @@
+<div class="cart-box">
+	<div class="cart-box__header">
+		<h1 class="h1 cart-box__title">Подтвердите место доставки</h1>
+	</div>
+	<div class="cart-box__content">
+
+		<div class="cart-box__inner">
+			<div class="row row--end js-select--box">
+				<div class="col-4 col-sm-6 col-xs-12">
+					<div class="pedit__item">
+						<div class="pedit__title">Укажите ваш адрес:<i>*</i></div>
+						<div class="pedit__field">
+							<select class="js-select js-select--country" data-placeholder="Выбор страны">
+								<option></option>
+								{% for i in range(0, 5) %}
+								<option value="{{ i+1 }}">{{ i+1 }}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-4 col-sm-6 col-xs-12">
+					<div class="pedit__item">
+						<div class="pedit__field">
+							<select class="js-select js-select--region" data-placeholder="Выбор региона" disabled>
+								<option></option>
+								{% for i in range(0, 5) %}
+								<option value="{{ i+1 }}">{{ i+1 }}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-4 col-sm-6 col-xs-12">
+					<div class="pedit__item">
+						<div class="pedit__field">
+							<select class="js-select js-select--city" data-placeholder="Выбор  города" disabled>
+								<option></option>
+								{% for i in range(0, 5) %}
+								<option value="{{ i+1 }}">{{ i+1 }}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-4 col-sm-6 col-xs-12">
+					<div class="pedit__item">
+						<div class="pedit__field">
+							{{item.input(type='number', placeholder='Индекс')}}
+						</div>
+					</div>
+				</div>
+
+				<div class="col-8 col-sm-12">
+					<div class="pedit__item">
+						<div class="pedit__field">
+							{{item.input(type='text', placeholder='Улица, дом, офис, кв.')}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="cart-box__bottom">
+		<div class="button-box button-box--end">
+			<p>Нажимая на кнопку "Далее", я даю <a class="btn-link" href="privacy.html">согласие на обработку персональных данных</a></p>
+			<button class="btn btn-outline-gray-light cart-box__btn" onclick="Cart.nextPage(1);">Назад</button>
+			<button class="btn btn-accent cart-box__btn" onclick="Cart.nextPage(3);">Далее</button>
+		</div>
+	</div>
+</div>
