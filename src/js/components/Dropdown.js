@@ -16,6 +16,12 @@
 			}
 		});
 
+		$(this)
+			.find('.c-dropdown__list')
+			.on('click', function(e) {
+				e.stopPropagation();
+			});
+
 		$('.js-cs-dropdown--close').on('click', function(e) {
 			e.stopPropagation();
 

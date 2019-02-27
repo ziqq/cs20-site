@@ -5,7 +5,7 @@
  */
 
 $(function() {
-	Base.init();
+	App.init();
 	Cart.init();
 
 	//=include components/Select.js
@@ -17,9 +17,10 @@ $(function() {
 	//=include partials/cs-scripts.js
 });
 
-const Base = {
+const App = {
 	init: function() {
 		this.scrollBar();
+		this.checkBox();
 		this.select();
 		this.tooltip();
 		this.inputMask();
@@ -89,6 +90,10 @@ const Base = {
 					.resize();
 			});
 		}
+	},
+	checkBox() {
+		new CheckBox({ selector: '.js-cs-checkbox' });
+		new Radio({ selector: '.js-cs-radio' });
 	},
 	setHeight: function() {
 		//Product title equalheight
@@ -397,6 +402,7 @@ const Base = {
 	}
 };
 
+//=include components/Checkbox.js
 //=include pages/catalog.js
 //=include pages/card.js
 //=include pages/cart.js

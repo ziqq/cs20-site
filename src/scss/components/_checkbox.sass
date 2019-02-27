@@ -60,7 +60,7 @@
 			// border-color: $color-border--darken
 			// &::before
 			// 	opacity: 1
-			border: 1px solid #8c8c8c
+			border: 2px solid #8c8c8c
 			// background-color: $color-accent
 			&::before
 				// display: block
@@ -303,6 +303,54 @@
 				margin-left: 5px
 				left: auto
 				right: 0
+
+	&--accent
+
+		&:hover
+
+			.cs-checkbox
+				&__box
+					border-color: $color-accent
+
+
+		& + .cs-checkbox--accent
+			margin-left: 15px
+
+		.cs-checkbox
+			&__box
+				margin: 0
+				display: flex
+				align-items: center
+				justify-content: center
+				+centre('y')
+				right: 0
+
+				&::before
+					display: none !important
+				&::after
+					display: none
+					font-size: 11px
+					content: '\f00c'
+					+fa
+
+		input:checked
+			& + .cs-checkbox__box
+				box-shadow: 0px 1px 4px #ffba01
+				background-color: $color-accent
+				&::after
+					display: block
+					color: #fff
+
+		&.is-checked
+			.cs-checkbox
+				&__box
+					box-shadow: 0px 1px 4px #ffba01
+					background-color: $color-accent
+					&::after
+						display: block
+						color: #fff
+				&__title
+					font-family: $f-medium
 
 	//cs-checkbox--slide
 	&--slide

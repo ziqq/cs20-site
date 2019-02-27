@@ -1,5 +1,9 @@
 'use strict';
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
@@ -9,7 +13,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  */
 
 $(function () {
-	Base.init();
+	App.init();
 	Cart.init();
 
 	(function () {
@@ -124,6 +128,10 @@ $(function () {
 				} else {
 					_close();
 				}
+			});
+
+			$(this).find('.c-dropdown__list').on('click', function (e) {
+				e.stopPropagation();
 			});
 
 			$('.js-cs-dropdown--close').on('click', function (e) {
@@ -580,46 +588,12 @@ $(function () {
 			e.stopPropagation();
 		});
 	}
-
-	//cs checkbox
-	$('.js-cs-checkbox').on('click', function () {
-		var _this = $(this);
-		var input = _this.find('input');
-		var $leftTitle = $(this).prev('.cs-checkbox__title');
-		var $rightTitle = $(this).next('.cs-checkbox__title');
-		var $notIpItem = $('.js-not-ip');
-		var $input = $('.js-checkbox--box').find('.pedit__field');
-		var $item = $('.js-checkbox--box').find('.pedit__item');
-
-		if (input.is(':checked')) {
-			_this.removeClass('is-checked');
-			input.prop('checked', false);
-			$leftTitle.addClass('is-checked');
-			$rightTitle.removeClass('is-checked');
-			$notIpItem.show();
-		} else {
-			_this.addClass('is-checked');
-			input.prop('checked', true);
-			$rightTitle.addClass('is-checked');
-			$leftTitle.removeClass('is-checked');
-			$notIpItem.hide();
-		}
-	});
-
-	$('.js-cs-radio--pseudo').on('click', function () {
-		var id = $(this).data('info-delivery');
-
-		$('.js-cs-radio--pseudo').not($(this)).removeClass('is-checked');
-		$(this).addClass('is-checked');
-
-		$('[data-info-delivery-text]').hide();
-		$('[data-info-delivery-text=' + id + ']').show();
-	});
 });
 
-var Base = {
+var App = {
 	init: function init() {
 		this.scrollBar();
+		this.checkBox();
 		this.select();
 		this.tooltip();
 		this.inputMask();
@@ -688,6 +662,11 @@ var Base = {
 			});
 		}
 	},
+	checkBox: function checkBox() {
+		new CheckBox({ selector: '.js-cs-checkbox' });
+		new Radio({ selector: '.js-cs-radio' });
+	},
+
 	setHeight: function setHeight() {
 		//Product title equalheight
 		_heightses($('.js-product-title-equalheight'));
@@ -984,11 +963,118 @@ var Base = {
 	}
 };
 
+var CheckBox = function () {
+	function CheckBox(args) {
+		_classCallCheck(this, CheckBox);
+
+		this.selector = args.selector;
+		this.init();
+		this.checkStatus();
+	}
+
+	_createClass(CheckBox, [{
+		key: 'init',
+		value: function init() {
+			$(this.selector).click(function () {
+				var element = $(this);
+				var elementToggle = element.find('input[type="checkbox"]');
+				if (elementToggle.prop('checked')) {
+					elementToggle.removeAttr('checked');
+					elementToggle.prop('checked', false).trigger('change');
+					element.removeClass('is-checked');
+				} else {
+					elementToggle.attr('checked', 'checked');
+					elementToggle.prop('checked', true).trigger('change');
+					element.addClass('is-checked');
+				}
+			});
+		}
+	}, {
+		key: 'checkStatus',
+		value: function checkStatus() {
+			$(this.selector).each(function () {
+				var element = $(this);
+				var elementToggle = element.find('input[type="checkbox"]');
+				if (!elementToggle.prop('checked')) {
+					elementToggle.removeAttr('checked');
+					elementToggle.prop('checked', false).trigger('change');
+					element.removeClass('is-checked');
+				} else {
+					elementToggle.attr('checked', 'checked');
+					elementToggle.prop('checked', true).trigger('change');
+					element.addClass('is-checked');
+				}
+			});
+		}
+	}]);
+
+	return CheckBox;
+}();
+
+/* html example
+<label class="bb-checkbox bb-checkbox--radio js-bb-radio">
+    <input name="role" type="radio">
+    <span class="bb-checkbox__box"></span>
+    <span class="bb-checkbox__title">Салон</span>
+</label>
+*/
+
+
+var Radio = function () {
+	function Radio(args) {
+		_classCallCheck(this, Radio);
+
+		this.selector = args.selector;
+		this.init();
+	}
+
+	_createClass(Radio, [{
+		key: 'init',
+		value: function init() {
+			var mainScope = this;
+			$(this.selector).click(function (event) {
+				var element = $(this),
+				    elementToggle = element.find('input[type="radio"]') || element.find('.bb-checkbox__toggle');
+				var elementToggleName = elementToggle.attr('name');
+				var allElements = $(mainScope.selector, '[name="' + elementToggleName + '"]').prevObject;
+				for (var a = 0; a < allElements.length; a++) {
+					if (allElements[a] != elementToggle[0]) {
+						var otherRadio = $(mainScope._getClickElement(mainScope.selector.split('.')[1], allElements[a])),
+						    otherRadioToggle = otherRadio.find('input[type="radio"]');
+						otherRadioToggle.removeAttr('checked');
+						otherRadioToggle.prop('checked', false).trigger('change');
+						otherRadio.removeClass('is-checked');
+					}
+				}
+				if (!elementToggle.prop('checked')) {
+					elementToggle.attr('checked', 'checked');
+					elementToggle.prop('checked', true).trigger('change');
+					element.addClass('is-checked');
+				}
+			});
+		}
+	}, {
+		key: '_getClickElement',
+		value: function _getClickElement(elementClass, newTarget) {
+			var target = newTarget != undefined ? newTarget : event.target,
+			    body = document.querySelector('body');
+			while (!target.classList.contains(elementClass) && target != body) {
+				target = target.parentNode;
+			}
+			return target == body ? undefined : target;
+		}
+	}]);
+
+	return Radio;
+}();
+
 /**
  * Catalog.js
  *
  * @author Anton Ustinoff <a.a.ustinoff@gmail.com>
  */
+
+
 (function () {
 	var Filter = {
 		init: function init() {

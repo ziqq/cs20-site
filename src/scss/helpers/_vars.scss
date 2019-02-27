@@ -66,14 +66,17 @@ $gradientTwo : linear-gradient(275.07deg, #FE6CB8 -36.19%, #A40C95 99.51%);;
 //gray
 $gray--lighten       :#e3dede;
 $gray--light         :#bdbdbd;
-$gray                :#707070;
-$gray--dark          :#8c8c8c;
+$gray                :#8c8c8c;
+$gray--dark          :#707070;
 $gray--darken        :#272727;
 
 //text
 $color-text          :$gray--darken;
 $color-text--light   :#8c8c8c;
 $color-text--header  :#000;
+
+$color-icon: $gray;
+$color-icon--hover: $gray--darken;
 
 //bg
 $color-bg--dark      :#191919;

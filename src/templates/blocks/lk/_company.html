@@ -7,13 +7,9 @@
 	<form class="form pedit">
 		<div class="form__title pos-xs-top">Добавление профиля юридического лица</div>
 
-		<div class="cs-checkbox-slide pedit__item pos-xs-top">
-			<span class="cs-checkbox__title cs-checkbox__title--left is-checked">Компания</span>
-			<label class="cs-checkbox cs-checkbox--slide js-cs-checkbox js-studio-system-btn">
-				<input type="checkbox">
-				<span class="cs-checkbox__box"></span>
-			</label>
-			<span class="cs-checkbox__title cs-checkbox__title--right">ИП</span>
+		<div class="pedit__item pos-xs-top">
+			{{ item.radio('Физ. лицо', name='role', class='cs-checkbox--accent js-cs-radio', checked='true') }}
+			{{ item.radio('Юр.лицо', name='role', class='cs-checkbox--accent js-cs-radio') }}
 		</div>
 
 		<!-- begin Name of organization -->

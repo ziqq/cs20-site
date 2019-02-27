@@ -1,29 +1,23 @@
 {% import "partials/assets/_mixins.html" as mixin %}
 
-<!--
-<div class="cs-dropdown js-cs-dropdown">
-	наведи сюда
-	<div class="cs-dropdown__list">это появится</div>
-</div>
--->
-
-{% macro checkbox(title, class) %}
-<label class="cs-checkbox {{class}}">
-	<input type="checkbox">
+{% macro checkbox(title, class, checked) %}
+<label class="cs-checkbox {{ class }} {% if checked %}is-checked{% endif %}">
+	<input type="checkbox" {% if checked %}checked{% endif %}>
 	<span class="cs-checkbox__box"></span>
-	<span class="cs-checkbox__title">{{title}}</span>
+	{% if title %}<span class="cs-checkbox__title">{{ title }}</span>{% endif %}
 </label>
 {% endmacro %}
-<!-- item.checkbox('мужской', 'cs-checkbox--radio, profile-editor__checkbox') -->
+{# form.checkbox('title', 'class') #}
 
-{% macro radio(title, name, class) %}
-<label class="cs-checkbox cs-checkbox--radio {{class}}">
-	<input type="radio" name="{{name}}">
+{% macro radio(title, subtitle, name='name', class, checked) %}
+<label class="cs-checkbox cs-checkbox--radio {{ class }} {% if checked %}is-checked{% endif %}" >
+	<input name="{{ name | escape }}" type="radio" {% if checked %}checked{% endif %}>
 	<span class="cs-checkbox__box"></span>
-	<span class="cs-checkbox__title">{{title}}</span>
+	{% if title %}<span class="cs-checkbox__title">{{ title }}</span>{% endif %}
+	{% if subtitle %}<div class="cs-checkbox__subtitle">{{ subtitle }}</div>{% endif %}
 </label>
 {% endmacro %}
-<!-- item.checkbox('мужской', 'cs-checkbox--radio, profile-editor__checkbox') -->
+{# form.radio('title', 'name', 'class') #}
 
 {% macro input(type, placeholder, class, inputClass) %}
 <div class="cs-input {{class}}">
