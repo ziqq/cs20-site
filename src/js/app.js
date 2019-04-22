@@ -67,11 +67,11 @@ const App = {
 		}
 
 		$(window).resize(function() {
-			Base.setHeight();
-			Base.textOverflow();
+			App.setHeight();
+			App.textOverflow();
 		});
 	},
-	scrollBar: function() {
+	scrollBar() {
 		let scrollBar = $('.js-scroll');
 		if (scrollBar.length && $(window).width() > 768) {
 			scrollBar.niceScroll({
@@ -95,7 +95,7 @@ const App = {
 		new CheckBox({ selector: '.js-cs-checkbox' });
 		new Radio({ selector: '.js-cs-radio' });
 	},
-	setHeight: function() {
+	setHeight() {
 		//Product title equalheight
 		_heightses($('.js-product-title-equalheight'));
 		_heightses($('.js-category-title-equalheight'));
@@ -104,7 +104,7 @@ const App = {
 			selector.equalHeights();
 		}
 	},
-	textOverflow: function() {
+	textOverflow() {
 		$('.js-text-overflow').each(function() {
 			let media = $(this).data('text-media');
 			let size = $(this).data('text-overflow');
@@ -127,7 +127,7 @@ const App = {
 			}
 		});
 	},
-	plusMinus: function() {
+	plusMinus() {
 		$('.js-counter--minus').click(function() {
 			var $input = $(this)
 				.parent()
@@ -147,7 +147,7 @@ const App = {
 			return false;
 		});
 	},
-	inputMask: function() {
+	inputMask() {
 		//Masked inputmask https://github.com/RobinHerbots/Inputmask
 		if ($('.js-phone-mask').length) {
 			$('.js-phone-mask').inputmask({
@@ -156,7 +156,7 @@ const App = {
 			});
 		}
 	},
-	popups: function() {
+	popups() {
 		//Modal FancyBox 3 https://fancyapps.com/fancybox/3/
 		if ($('[data-fancybox]').length) {
 			$('[data-fancybox]').fancybox({
@@ -181,7 +181,7 @@ const App = {
 			}, 100);
 		});
 	},
-	select: function() {
+	select() {
 		let $select = $('.js-select');
 
 		if ($(window).width() > 768) {
@@ -203,7 +203,7 @@ const App = {
 			$select.wrap('<label class="cs-select">');
 		}
 	},
-	tooltip: function() {
+	tooltip() {
 		let $tooltip = $('.js-tooltip');
 		let trigger;
 
@@ -222,7 +222,7 @@ const App = {
 			});
 		}
 	},
-	setFixedBlcok: function() {
+	setFixedBlcok() {
 		let $fixBlock = $('.js-fix-block');
 		let fixBlockHeight = $fixBlock.outerHeight(true);
 		let blockOffsetTop = $fixBlock.offset().top;
@@ -238,7 +238,7 @@ const App = {
 			}
 		});
 	},
-	showHideText: function() {
+	showHideText() {
 		let $textBlock = $('.js-text');
 		let $textBtnShow = $('.js-text--show');
 		let open = false;
@@ -255,7 +255,7 @@ const App = {
 			}
 		});
 	},
-	addInCart: function() {
+	addInCart() {
 		//Add in card
 		$('.js-add-in-cart').on('click', function(e) {
 			if ($(this).hasClass('is-checked')) {
@@ -268,7 +268,7 @@ const App = {
 			e.stopPropagation();
 		});
 	},
-	stopScroll: function() {
+	stopScroll() {
 		let $cartSum = $('.js-cart-sum');
 
 		$cartSum.addClass('is-visible');
@@ -290,7 +290,7 @@ const App = {
 			$cartSum.removeClass('is-visible');
 		});
 	},
-	goTop: function() {
+	goTop() {
 		//Click event to scroll to top
 		$('.js-go-top').on('click', function(e) {
 			e.preventDefault();
@@ -305,7 +305,7 @@ const App = {
 			}
 		});
 	},
-	goTo: function() {
+	goTo() {
 		//Click event to scroll to section whith id like href
 		$('.js-goto').click(function() {
 			let _this = $(this);
@@ -330,7 +330,7 @@ const App = {
 			return false;
 		});
 	},
-	relativeBtn: function() {
+	relativeBtn() {
 		if ($(window).width() <= 768) {
 			$(window).scroll(function() {
 				let wHeight = $(window).height();
@@ -342,15 +342,13 @@ const App = {
 
 				if (scroll + wHeight < blockOffset + blockHeight) {
 					$btn.css('display', 'block');
-					console.log('---', '1');
 				} else {
 					$btn.css('display', 'none');
-					console.log('---', '2');
 				}
 			});
 		}
 	},
-	moveBlocks: function() {
+	moveBlocks() {
 		let $imageBlock = $('.js-block-image');
 		let $quote = $('.js-quote');
 

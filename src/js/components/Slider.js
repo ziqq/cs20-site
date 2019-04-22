@@ -164,7 +164,6 @@
 				$slides
 					.on('init', function(event, slick, currentSlide) {
 						let slide = $(this).find('.slick-slide');
-						console.log('---currentSlide', currentSlide);
 
 						slide
 							.eq(currentSlide + 1)

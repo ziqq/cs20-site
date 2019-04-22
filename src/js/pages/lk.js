@@ -36,8 +36,6 @@
 			let offset = 20;
 			let thisPage = true;
 
-			console.log('---', boxHeight);
-
 			$wrapper
 				.addClass('content-is-visible')
 				.css('min-height', boxHeight);
@@ -81,8 +79,6 @@
 					if ($(this).hasClass('is-open')) {
 						wrapperHeight = $wrapper.outerHeight(true);
 
-						console.log('--- wrapperHeight first', wrapperHeight);
-
 						setTimeout(() => {
 							height = $(this).outerHeight(true);
 							$wrapper.animate(
@@ -93,11 +89,6 @@
 					} else {
 						wrapperHeight = $parent.outerHeight(true);
 						height = $(this).height();
-
-						console.log('--- $parent', $parent);
-						console.log('--- wrapperHeight else', wrapperHeight);
-						console.log('--- height else', height);
-						console.log('--- result else', wrapperHeight - height);
 
 						setTimeout(() => {
 							$wrapper.animate(

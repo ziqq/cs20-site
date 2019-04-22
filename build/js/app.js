@@ -356,7 +356,6 @@ $(function () {
 					$arrowNext.css('display', 'flex');
 					$slides.on('init', function (event, slick, currentSlide) {
 						var slide = $(this).find('.slick-slide');
-						console.log('---currentSlide', currentSlide);
 
 						slide.eq(currentSlide + 1).addClass('slick-slide--next');
 						slide.eq(currentSlide + 2).addClass('slick-slide--next-1');
@@ -640,8 +639,8 @@ var App = {
 		}
 
 		$(window).resize(function () {
-			Base.setHeight();
-			Base.textOverflow();
+			App.setHeight();
+			App.textOverflow();
 		});
 	},
 	scrollBar: function scrollBar() {
@@ -666,7 +665,6 @@ var App = {
 		new CheckBox({ selector: '.js-cs-checkbox' });
 		new Radio({ selector: '.js-cs-radio' });
 	},
-
 	setHeight: function setHeight() {
 		//Product title equalheight
 		_heightses($('.js-product-title-equalheight'));
@@ -905,10 +903,8 @@ var App = {
 
 				if (scroll + wHeight < blockOffset + blockHeight) {
 					$btn.css('display', 'block');
-					console.log('---', '1');
 				} else {
 					$btn.css('display', 'none');
-					console.log('---', '2');
 				}
 			});
 		}
@@ -1306,9 +1302,6 @@ var Radio = function () {
 				titleId = $(this).attr('href').slice(1);
 			});
 
-			console.log('--- contentId', contentId);
-			console.log('--- titleId', titleId);
-
 			if (contentId === titleId) {}
 		});
 	}
@@ -1340,13 +1333,22 @@ var Cart = {
 		$('#cart-tabs').tabs();
 	},
 	nextPage: function nextPage(page) {
-		$('#cart-tabs').tabs({
+		var $tab = $(document).find('#cart-tabs');
+
+		$tab.tabs({
 			active: page
 		});
+
+		setTimeout(function () {
+			$(document).find('.cart-box__title').trigger('click');
+		}, 300);
+
+		// $(this)
+		// 	.closest('.cart-box')
+		// 	.find('.cart-box__title')
+		// 	.trigger('click');
 	}
 };
-
-Cart.init();
 
 /**
  * Lk.js
@@ -1385,8 +1387,6 @@ Cart.init();
 			var timeOut = 200;
 			var offset = 20;
 			var thisPage = true;
-
-			console.log('---', boxHeight);
 
 			$wrapper.addClass('content-is-visible').css('min-height', boxHeight);
 			setTimeout(function () {
@@ -1429,8 +1429,6 @@ Cart.init();
 					if ($(this).hasClass('is-open')) {
 						wrapperHeight = $wrapper.outerHeight(true);
 
-						console.log('--- wrapperHeight first', wrapperHeight);
-
 						setTimeout(function () {
 							height = $(_this3).outerHeight(true);
 							$wrapper.animate({ 'min-height': wrapperHeight + height }, 300);
@@ -1438,11 +1436,6 @@ Cart.init();
 					} else {
 						wrapperHeight = $parent.outerHeight(true);
 						height = $(this).height();
-
-						console.log('--- $parent', $parent);
-						console.log('--- wrapperHeight else', wrapperHeight);
-						console.log('--- height else', height);
-						console.log('--- result else', wrapperHeight - height);
 
 						setTimeout(function () {
 							$wrapper.animate({ 'min-height': wrapperHeight - height / 1.15 }, 300);

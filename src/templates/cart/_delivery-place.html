@@ -68,8 +68,8 @@
 	<div class="cart-box__bottom">
 		<div class="button-box button-box--end">
 			<p>Нажимая на кнопку "Далее", я даю <a class="btn-link" href="privacy.html">согласие на обработку персональных данных</a></p>
-			<button class="btn btn-outline-gray-light cart-box__btn" onclick="Cart.nextPage(1);">Назад</button>
-			<button class="btn btn-accent cart-box__btn" onclick="Cart.nextPage(3);">Далее</button>
+			<button class="btn btn-outline-gray-light cart-box__btn" onclick="Cart.nextPage.call(this, 1);">Назад</button>
+			<button class="btn btn-accent cart-box__btn" onclick="Cart.nextPage.call(this, 3);">Далее</button>
 		</div>
 	</div>
 </div>

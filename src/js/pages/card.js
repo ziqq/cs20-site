@@ -43,9 +43,6 @@
 							.slice(1);
 					});
 
-				console.log('--- contentId', contentId);
-				console.log('--- titleId', titleId);
-
 				if (contentId === titleId) {
 				}
 			});

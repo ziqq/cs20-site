@@ -361,6 +361,61 @@
 		}
 	}
 
+	&.no-offset {
+		padding: 0;
+		overflow: hidden;
+
+		@include r-max(xs) {
+			padding: 30px 0 0;
+			border-radius: 0;
+			overflow: initial;
+		}
+
+		.cs-card {
+			&__inner {
+				width: 100%;
+				padding: 50px 80px;
+
+				@include r-max(sm) {
+					padding: 30px;
+				}
+
+				@include r-max(xs) {
+					padding: 0;
+				}
+			}
+			&__bottom {
+				padding: 10px 80px;
+				background-image: $gradientTwo;
+
+				@include r-max(sm) {
+					padding: 10px 30px;
+				}
+
+				@include r-max(xs) {
+					padding: 10px 15px;
+					margin: 0 -10px;
+					width: auto;
+				}
+
+				p {
+					margin: 0;
+					color: #fff;
+					line-height: 1.4;
+					font-family: $f-light;
+					font-size: 14px;
+				}
+			}
+		}
+
+		.auth__left {
+			@include xs-block() {
+				width: 100%;
+				margin: 0;
+			}
+		}
+	}
+
 	&.no-padding {
 		padding: 0 !important;
 

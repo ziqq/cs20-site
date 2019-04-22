@@ -23,10 +23,21 @@ const Cart = {
 		$('#cart-tabs').tabs();
 	},
 	nextPage(page) {
-		$('#cart-tabs').tabs({
+		let $tab = $(document).find('#cart-tabs');
+
+		$tab.tabs({
 			active: page
 		});
+
+		setTimeout(() => {
+			$(document)
+				.find('.cart-box__title')
+				.trigger('click');
+		}, 300);
+
+		// $(this)
+		// 	.closest('.cart-box')
+		// 	.find('.cart-box__title')
+		// 	.trigger('click');
 	}
 };
-
-Cart.init();
