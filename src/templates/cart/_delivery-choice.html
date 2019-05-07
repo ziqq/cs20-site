@@ -1,33 +1,38 @@
-<div class="cart-box">
+<div class="cart-box cart-box--small">
 	<div class="cart-box__header">
-		<h1 class="h1 cart-box__title">Доставка</h1>
-		{% include "blocks/cart/_breadcrumbs.html" %}
+		{{ mixin.icon('delivery--transparent') }}
+		<span class="h1 cart-box__title">Доставка</span>
 	</div>
 	<div class="cart-box__content">
+		<span class="cart-box__subtitle">Выберете удобный способ доставки:</span>
 
 		<div class="delivery-item__wrap">
 			{% import "data/data-lk.html" as delivery %}
 			{% for item in delivery.deliveryItem %}
-			<div class="delivery-item {% if item.class %} delivery-item--{{ item.class }} {% endif %} cs-checkbox cs-checkbox--pseudo js-cs-radio--pseudo delivery-item__checkbox" data-info-delivery="{{ item.data }}">
-				<div class="delivery-item__info js-tooltip" {% if item.desc %} title="{{ item.desc }}" {% endif %}>
-					<i class="fal fa-info-circle"></i>
-				</div>
-				<img class="delivery-item__img" src="img/general/delivery/logos/{{ item.icon }}.png" alt="{{ item.title }}">
+			<label class="delivery-item {% if item.class %} delivery-item--{{ item.class }} {% endif %} cs-checkbox cs-checkbox--pseudo js-cs-radio delivery-item__checkbox">
+				<input name="delivery" type="radio">
+				<img
+					class="delivery-item__img"
+					src="img/general/delivery/logos/{{ item.icon }}.png"
+					alt="{{ item.title }}">
 				<h5 class="delivery-item__title">{{ item.title }}</h5>
-			</div>
+			</label>
 			{% endfor %}
 		</div>
 
+		<p class="cart-box__desc">Вы можете самостоятельно забрать заказ из нашего магазина.</p>
+
+		<div class="cart-box__info">Стоимость: 0 руб.</div>
+
 	</div>
 	<div class="cart-box__bottom js-fix-block">
-
-		<div class="info-text js-info-text" data-info-delivery-text="mail" style="display: none;"><span>Стоимость доставки:</span> 450 руб.</div>
-
-		<div class="info-text" data-info-delivery-text="auto" style="display: none;"><span>Стоимость доставки:</span> Автоматический расчет не доступен. Стоимость доставки оплачивается отдельно при получении.</div>
-
 		<div class="button-box button-box--end">
-			<button class="btn btn-outline-gray-light cart-box__btn" onclick="Cart.nextPage.call(this, 1);">Назад</button>
-			<button class="btn btn-accent cart-box__btn" onclick="Cart.nextPage.call(this, 3);">Далее</button>
+			<button class="btn btn-outline-gray-light cart-box__btn" onclick="Cart.nextPage.call(this, 1);">
+				Назад
+			</button>
+			<button class="btn btn-accent cart-box__btn" onclick="Cart.nextPage.call(this, 3);">
+				Далее
+			</button>
 		</div>
 	</div>
 </div>

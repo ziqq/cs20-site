@@ -14,7 +14,10 @@
 
 				<div class="product-item__price price">
 					<span class="price__cost">
-						{{ product.price }}<i class="fa fa-rub"></i>
+						514,56 руб.
+					</span>
+					<span class="price__stock">
+						536 руб.
 					</span>
 				</div>
 
@@ -23,6 +26,8 @@
 					<input type="text" class="counter__field" value="1">
 					<span class="counter__control counter__control--plus js-counter--plus">+</span>
 				</div>
+
+				<div class="product-item__sale">Накопительная скидка: 4%</div>
 
 				<button class="product-item__dell" title="Убрать из корзины">
 					{{mixin.icon('cs-close', 'xs-hide')}}
@@ -42,9 +47,13 @@
 				<span>Сумма заказа: </span>
 				<span>4 567 р.</span>
 			</li>
-			<li class="list__item list__item--light">
+			<li class="list__item">
 				<span>Скидка: </span>
 				<span>229 р.</span>
+			</li>
+			<li class="list__item">
+				<span>Вес: </span>
+				<span>350 г.</span>
 			</li>
 			<li class="list__item list__item--bold">
 				<span>Итого: </span>

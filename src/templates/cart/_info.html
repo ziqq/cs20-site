@@ -1,117 +1,58 @@
-<div class="cart-box">
+<div class="cart-box cart-box--small">
 	<div class="cart-box__header">
+		{{ mixin.icon('payment') }}
 		<h1 class="h1 cart-box__title">Информация о получателе</h1>
 	</div>
 	<div class="cart-box__content">
-		<div class="row">
-			<div class="col-7 col-md-12">
 
-				<div class="row">
-					<div class="col-8 col-sm-6 col-xs-12">
-						<div class="pedit__item">
-							<div class="pedit__title">Фамилия Имя Отчество:<i>*</i></div>
-							<div class="pedit__field">
-								{{item.input(type='text', placeholder='Например, Петров Иван Петрович')}}
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-4 col-sm-6 col-xs-12">
-						<div class="pedit__item">
-							<div class="pedit__title">Номер телефона:<i>*</i></div>
-							<div class="pedit__field">
-								{{item.input(type='tel', placeholder='+7 (927) 107-11-39')}}
-							</div>
-						</div>
-					</div>
-					<div class="col-4 col-sm-6 col-xs-12">
-						<div class="pedit__item">
-							<div class="pedit__title">E-mail:<i>*</i></div>
-							<div class="pedit__field">
-								{{item.input(type='email', placeholder='Например info@example.ru')}}
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-4 col-sm-4 col-xs-12">
-						<div class="pedit__item">
-							<div class="pedit__title">Серия паспорта:</div>
-							<div class="pedit__field">
-								{{item.input(type='num')}}
-							</div>
-						</div>
-					</div>
-
-					<div class="col-4 col-sm-4 col-xs-12">
-						<div class="pedit__item">
-							<div class="pedit__title">Номер паспорта:</div>
-							<div class="pedit__field">
-								{{item.input(type='num')}}
-							</div>
-						</div>
-					</div>
-
-					<div class="col-4 col-sm-4 col-xs-12">
-						<div class="pedit__item">
-							<div class="pedit__title">Дата выдачи:</div>
-							<div class="pedit__field">
-								{{item.input(type='num')}}
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row row--end">
-
-					<div class="col-4 col-sm4 col-xs-12">
-						<div class="pedit__item">
-							<div class="pedit__title">Адрес доставки:</div>
-							<div class="pedit__field">
-								{{item.input(type='number', placeholder='Индекс')}}
-							</div>
-						</div>
-					</div>
-
-					<div class="col-4 col-sm4 col-xs-12">
-						<div class="pedit__item">
-							<div class="pedit__field">
-								<select class="js-select" data-placeholder="Выбор  города">
-									<option></option>
-									{% for i in range(0, 5) %}
-									<option value="{{ i+1 }}">{{ i+1 }}</option>
-									{% endfor %}
-								</select>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-4 col-sm-4 col-xs-12">
-						<div class="pedit__item">
-							<div class="pedit__field">
-								{{item.input(type='text', placeholder='Улица, дом, офис, кв.')}}
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<p class="pedit__info-text">* - поля, отмеченные звёздочкой, обязательны для заполнения</p>
-
-				<div class="form__box form__box--checkbox mb-30">
-					{{ item.checkbox('Я юридическое лицо') }}
-				</div>
-
+		<div class="pedit__item">
+			<div class="pedit__title">Фамилия Имя Отчество:</div>
+			<div class="pedit__field">
+				{{item.input(type='text', placeholder='Например, Петров Иван Петрович')}}
 			</div>
 		</div>
+
+		<div class="pedit__item">
+			<div class="pedit__title">E-mail:</div>
+			<div class="pedit__field">
+				{{item.input(type='email', placeholder='example@example.ru')}}
+			</div>
+		</div>
+
+		<div class="pedit__item">
+			<div class="pedit__title">Номер телефона:</div>
+			<div class="pedit__field">
+				{{item.input(type='tel', placeholder='+7 (927) 107-11-39')}}
+			</div>
+		</div>
+
+		<div class="pedit__item">
+			<div class="pedit__title">Адрес доставки:</div>
+			<div class="pedit__field">
+				<textarea placeholder="Например Набережная Леонова д.2 оф.15"></textarea>
+			</div>
+		</div>
+
+		<div class="pedit__item">
+			<div class="pedit__title">Оставьте дополнительную информацию:</div>
+			<div class="pedit__field">
+				<textarea placeholder="Оставить комментарий..."></textarea>
+			</div>
+		</div>
+
+
+		<div class="form__box form__box--checkbox mb-30">
+			<label class="cs-checkbox">
+				<input type="checkbox">
+				<span class="cs-checkbox__box"></span>
+				<span class="cs-checkbox__title">Я согласен на обработку <a href="privacy.html">персональных данных</a></span>
+			</label>
+		</div>
+
 	</div>
 	<div class="cart-box__bottom">
 		<div class="button-box button-box--end">
-			<p>Нажимая на кнопку "Далее", я даю <strong>согласие на обработку персональных данных</strong></p>
-			<button class="btn btn-outline-gray-light cart-box__btn" onclick="Cart.nextPage.call(this, 0);">Назад</button>
-			<button class="btn btn-accent cart-box__btn" onclick="Cart.nextPage.call(this, 2);">Далее</button>
+			<button class="btn btn-accent cart-box__btn">Оформить заказ</button>
 		</div>
 	</div>
 </div>

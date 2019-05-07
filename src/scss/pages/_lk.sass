@@ -8,6 +8,9 @@
 	+r(768)
 		background-color: #fff
 
+	+landscape
+		background-color: #fff
+
 	+r(480)
 		padding: 20px 0
 
@@ -40,6 +43,8 @@
 			font-family: $f-medium
 			font-weight: 500
 			+r(480)
+				font-size: 17px
+			+landscape
 				font-size: 17px
 
 		&_desc
@@ -82,11 +87,9 @@
 
 	//.lk__order
 	&__order
-		+r(480)
-			// height: 100%
+		+landscape
 			height: auto
 			padding: 30px 10px
-			// background-color: $color-bg
 			.lk
 				&__top-line
 					margin-bottom: 10px
@@ -95,9 +98,24 @@
 
 					//.lk__order .lk__top-line .sorting__count
 					.sorting__count
-						// margin-left: auto
-						// margin-right: 30px
+						.cs-select
+							&::before
+								right: 0
 
+				&__box_title
+					margin-bottom: 0
+					margin-top: -2px
+		+r(480)
+			height: auto
+			padding: 30px 10px
+			.lk
+				&__top-line
+					margin-bottom: 10px
+					+flexColumn
+					align-items: flex-start
+
+					//.lk__order .lk__top-line .sorting__count
+					.sorting__count
 						.cs-select
 							&::before
 								right: 0
@@ -158,6 +176,8 @@
 	&__nav
 		+r(480)
 			width: 100%
+		+landscape
+			width: 100%
 
 	//.lk__content
 	&__content
@@ -169,6 +189,15 @@
 			width: calc(100% - 250px - 15px)
 
 		+r(480)
+			width: 100%
+			// min-height: 100vh;
+			margin-left: 0
+			background-color: #fff
+			border-radius: 0
+			+coverdiv
+			+trfY(100vh)
+
+		+landscape
 			width: 100%
 			// min-height: 100vh;
 			margin-left: 0
@@ -208,6 +237,13 @@
 		margin-right: 15px
 
 	+r(480)
+		width: 100%
+		padding: 0
+		margin-right: 0
+		box-shadow: none
+		background-color: transparent
+
+	+landscape
 		width: 100%
 		padding: 0
 		margin-right: 0
@@ -260,6 +296,25 @@
 						+centre('y')
 						right: 33px
 
+			+landscape
+				background-color: transparent
+				box-shadow: none
+				.lk-nav__item
+					padding: 10px 0
+					background: #fff
+					border-radius: $border-radius
+					box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.08)
+					border-radius: $border-radius
+					overflow: hidden
+					position: relative
+					&::after
+						content: '\f105'
+						+fa('light')
+						font-size: 18px
+						color: $color-text--light
+						+centre('y')
+						right: 33px
+
 	//.lk-nav__item
 	&__item
 		background-color: #fff
@@ -287,6 +342,11 @@
 			&.is-active, &.ui-tabs-active
 				&::before
 					display: block
+
+		+landscape
+			&.is-active, &.ui-tabs-active
+				&::before
+					display: none
 
 
 		& + &

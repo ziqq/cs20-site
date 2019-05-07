@@ -1,0 +1,69 @@
+---
+wrapClass: page-cart
+title: Корзина
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin cart -->
+<div class="content-wrapper cart">
+
+	<!-- begin breadcrumbs -->
+	<div class="container">
+		<div class="breadcrumbs" itemtype="http://www.data-vocabulary.org/Breadcrumb">
+			<ul class="breadcrumbs__list">
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link" itemprop="url">
+						<span class="breadcrumbs__title" itemprop="title">Главная</span>
+					</a>
+				</li>
+				<li class="breadcrumbs__item">
+					<span class="breadcrumbs__title" itemprop="title">Корзина</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- end breadcrumbs -->
+
+	<div class="container">
+		<div class="cart__tabs" id="cart-tabs">
+
+			<div class="cart__inner" id="cart-page-1">
+				{% include "cart/_order.html" %}
+			</div>
+
+			<div class="cart__content" id="cart-page-2">
+				{% include "cart/_registration.html" %}
+
+				{% include "cart/_add-profile-create.html" %}
+
+				{% include "cart/_add-profile.html" %}
+
+				{% include "cart/_add-profile-1.html" %}
+
+				{% include "cart/_add-profile-2.html" %}
+
+				{% include "cart/_info.html" %}
+
+				{% include "cart/_pasport.html" %}
+			</div>
+
+			<div class="cart__content" id="cart-page-3">
+				{% include "cart/_delivery-choice.html" %}
+
+				{% include "cart/_delivery-pickup.html" %}
+
+				{% include "cart/_delivery-place.html" %}
+			</div>
+
+			<div class="cart__content" id="cart-page-4">
+				{% include "cart/_pay.html" %}
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- end cart -->
+
+{% endblock %}

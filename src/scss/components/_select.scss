@@ -34,6 +34,10 @@
 			padding: 0 20px 0 40px;
 		}
 
+		@include landscape() {
+			padding: 0 20px 0 40px;
+		}
+
 		&:hover {
 			background-color: $color-bg--light;
 
@@ -80,6 +84,10 @@
 			columns: auto !important;
 			max-height: 400px;
 			overflow-y: auto;
+		}
+
+		@include landscape() {
+			max-width: 650px;
 		}
 	}//.c-select__dropdown
 

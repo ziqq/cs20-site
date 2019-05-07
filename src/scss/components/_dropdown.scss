@@ -112,6 +112,7 @@
 			position: absolute;
 			top: 15px;
 			right: 5px;
+			z-index: z(fixed);
 
 			@include r-min(xs) {
 				display: none;

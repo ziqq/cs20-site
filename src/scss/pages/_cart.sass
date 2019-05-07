@@ -64,6 +64,10 @@
 			margin-right: 0
 			box-shadow: none
 
+		&.no-bg
+			background-color: transparent
+			box-shadow: none
+
 		.product-item
 			+r(480)
 				cursor: default
@@ -474,6 +478,42 @@
 				p
 					margin-bottom: 10px
 
+	&__info
+		font-family: $f-bold
+		font-size: 18px
+		color: $color-text
+
+	&--small
+		margin: 0
+		padding: 30px 35px
+
+		& + .cart-box--small
+			margin-top: 30px
+
+		.cart-box
+			&__header
+				margin-bottom: 25px
+
+				.icon
+					width: 28px
+					height: 28px
+					margin-right: 10px
+					position: relative
+					top: 2px
+
+			&__title
+				font-size: 20px
+				font-family: $f-medium
+
+			&__subtitle
+				display: block
+				font-family: $f
+				font-size: 15px
+
+			&__desc
+				font-size: 15px
+				color: $color-text--light
+
 	.button-box--end
 		+r(480)
 			justify-content: center
@@ -665,6 +705,7 @@
 //.cart-success
 
 .delivery-item
+	max-width: 165px
 	width: 100%
 	margin-right: 25px
 	margin-bottom: 20px
@@ -706,16 +747,18 @@
 
 	//.delivery-item__checkbox
 	&__wrap
-		+row-flex
+		display: flex
+
 		.delivery-item
 			min-height: 200px
-			+col
-			+size(2)
-			+size-md(3)
-			+size-xs(6)
+			margin-bottom: 30px
 
+			&:last-child
+				margin-right: 0
+
+	//.delivery-item__img
 	&__img
-		width: 120px
+		width: 90px
 		margin: 25px auto
 
 	//.delivery-item__title
@@ -744,6 +787,7 @@
 		color: #000
 
 	&--pickup
+
 		.delivery-item
 			&__img
 				width: fit-content
